@@ -7,6 +7,14 @@ Hi there. This repository is the course site for the 2026–2027 iteration of [
 <br>
 
 It is taught by [@mfehrenbach](https://github.com/mfehrenbach), [@rijkvanzanten](https://github.com/rijkvanzanten), and [@eli8527](https://github.com/eli8527).
+
+<br>
+
 ## Use and Re-use
 
 In the original spirit of the open web, this repo (and the course content within) is made <kbd>Public</kbd> (&thinsp;[*“source available”*](https://en.wikipedia.org/wiki/Source-available_software)&thinsp;) for personal and educational, non-commercial use under the [CC BY-NC-SA 4.0 license](https://creativecommons.org/licenses/by-nc-sa/4.0/). Such as one might consider this “software,” it’s provided as-is and without any warranty.
+
+<br>
+<br>
+
+✊
