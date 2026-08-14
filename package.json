@@ -1,5 +1,7 @@
 {
 	"dependencies": {
+		"@11ty/eleventy-plugin-webc": "0.12.0-beta.7",
+		"@11ty/webc": "0.12.0-beta.2",
 		"@awesome.me/buildawesome": "4.0.0-alpha.10"
 	},
 	"devEngines": {
