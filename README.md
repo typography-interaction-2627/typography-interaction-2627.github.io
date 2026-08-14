@@ -17,4 +17,6 @@ In the original spirit of the open web, this repo (and the course content withi
 <br>
 <br>
 
+**We’ll be adding more here as we build out this year’s site!**
+
 ✊
