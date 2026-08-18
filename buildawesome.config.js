@@ -10,6 +10,16 @@ export default (config) => {
 	})
 	config.setDataFileSuffixes(['.config'])
 
+	// Set up sorted collections.
+	for (const directory of ['week', 'project', 'topic'])
+		config.addCollection(`${directory}s`, collection =>
+			collection.getFilteredByGlob(`content/${directory}/{*.md,*/index.md}`)
+				.sort((a, b) =>
+					a.data.week - b.data.week ||
+					a.inputPath.localeCompare(b.inputPath, undefined, { numeric: true })
+				)
+		)
+
 	// Don’t render out drafts—but this leaves them in the collections for date calculations.
 	process.env.ELEVENTY_RUN_MODE === 'build' && config.addGlobalData('buildawesomeComputed', { permalink: (data) => data.draft ? false : data.permalink })
 
