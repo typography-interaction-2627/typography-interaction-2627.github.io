@@ -10,6 +10,10 @@ export default (config) => {
 	})
 	config.setDataFileSuffixes(['.config'])
 
+	// Other filters.
+	config.addFilter('displayDate', (date) => new Date(date).toLocaleDateString('en-US', { day: 'numeric', month: 'short', timeZone: 'UTC' })
+		.replace(/(\w{3})/, (month) => month === 'May' ? month : month + '.'))
+
 	// Set up sorted collections.
 	for (const directory of ['week', 'project', 'topic'])
 		config.addCollection(`${directory}s`, collection =>
@@ -29,6 +33,7 @@ export default (config) => {
 			output: '_site',
 
 			// Relative to `input`.
+			data: '../data',
 			layouts: '../templates',
 		},
 		htmlTemplateEngine: 'webc',
