@@ -6,8 +6,10 @@
 			content="initial-scale=1, width=device-width, viewport-fit=cover"
 			name="viewport"
 		>
+		<title @html="title"></title>
 	</head>
 	<body>
+		<h1 @html="title"></h1>
 		<template
 			webc:nokeep
 			@raw="content"

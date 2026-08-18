@@ -4,6 +4,11 @@ export default (config) => {
 	// Setup.
 	config.addGlobalData('layout', 'base.webc')
 	config.addPlugin(webC, { components: 'templates/inline/**/*.webc' })
+	config.setFrontMatterParsingOptions({
+		delimiters: ['<script front-matter>', '</script>'],
+		language: 'js',
+	})
+	config.setDataFileSuffixes(['.config'])
 
 	return {
 		dir: {
