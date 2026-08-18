@@ -14,5 +14,29 @@
 			webc:nokeep
 			@raw="content"
 		></template>
+		<h2>Sessions</h2>
+		<ul>
+			<li webc:for="item of $data.collections.weeks">
+				<a :href="item.url">
+					<p @html="item.data.title"></p>
+				</a>
+			</li>
+		</ul>
+		<h2>Projects</h2>
+		<ul>
+			<li webc:for="item of $data.collections.projects">
+				<a :href="item.url">
+					<p @html="item.data.title"></p>
+				</a>
+			</li>
+		</ul>
+		<h2>Topics</h2>
+		<ul>
+			<li webc:for="item of $data.collections.topics">
+				<a :href="item.url">
+					<p @html="item.data.title"></p>
+				</a>
+			</li>
+		</ul>
 	</body>
 </html>
