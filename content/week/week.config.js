@@ -1,5 +1,5 @@
 export default {
-	eleventyComputed: {
+	buildawesomeComputed: {
 		title: (data) => `Week ${data.page.fileSlug}`,
 	},
 }

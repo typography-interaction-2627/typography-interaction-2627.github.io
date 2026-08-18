@@ -10,6 +10,9 @@ export default (config) => {
 	})
 	config.setDataFileSuffixes(['.config'])
 
+	// Don’t render out drafts—but this leaves them in the collections for date calculations.
+	process.env.ELEVENTY_RUN_MODE === 'build' && config.addGlobalData('buildawesomeComputed', { permalink: (data) => data.draft ? false : data.permalink })
+
 	return {
 		dir: {
 			input: 'content',
