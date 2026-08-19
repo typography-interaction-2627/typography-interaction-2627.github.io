@@ -90,12 +90,10 @@ export default (config) => {
 	}
 
 	const markdown = markdownIt(markdownOptions)
-		// Remove H1 (already pulled for `title`).
-		.use((markdown) => markdown.render = (src, env = {}) =>
-			markdown.constructor.prototype.render.call(markdown, String(src).replace(/^# .*\n?/m, ''), env))
-		// Fix name collision with global `env.abbreviations` data and `markdown-it-abbr`.
-		.use((markdown) => markdown.render = (src, env = {}) =>
-			(delete env.abbreviations, markdown.constructor.prototype.render.call(markdown, src, env)))
+		.use((markdown) => markdown.render = (src, env = {}) => {
+			delete env.abbreviations // Fix name collision with global `env.abbreviations` data and `markdown-it-abbr`.
+			return markdown.constructor.prototype.render.call(markdown, String(src).replace(/^# .*\n?/m, ''), env) // Remove H1 (pulled for `title`).
+		})
 		.use(markdownItAbbr)
 		.use(markdownItDeflist)
 		.use(markdownItHeaderSections)
