@@ -7,14 +7,14 @@ export default (config) => {
 	// Setup.
 	config.setDataFileSuffixes(['.config'])
 	config.addPlugin(webC, { components: 'templates/*/**/*.webc' })
-	config.addGlobalData('buildawesomeComputed.layout', () => ({ page }) => page.templateSyntax.includes('md') ? 'page' : 'base')
 	config.setFrontMatterParsingOptions({
 		delimiters: ['<script front-matter>', '</script>'],
 		language: 'js',
 	})
 
 	// Avoid front-matter in `page.webc`.
-	config.addTemplate('templates/page.webc', readFileSync('templates/page.webc', 'utf8'), { layout: 'base' })
+	config.addGlobalData('buildawesomeComputed.layout', () => ({ page }) => page.templateSyntax.includes('md') ? 'page' : 'base')
+	config.addTemplate('page.webc', readFileSync('templates/page.webc', 'utf8'), { layout: 'base' })
 
 	// Other filters.
 	// config.addFilter('stripTags', (content) => stripTags(String(content)))
@@ -23,7 +23,7 @@ export default (config) => {
 		.toLocaleDateString('en-US', { day: 'numeric', month: 'short', timeZone: 'UTC' })
 		.replace(/(\w{3})/, (month) => month === 'May' ? month : month + '.'))
 
-	// Set up sorted collections.
+	// Set up sorted page collections.
 	for (const directory of ['', 'week', 'project', 'topic'])
 		config.addCollection(directory ? `${directory}s` : 'root', collection => collection
 			.getFilteredByGlob(`content/${directory ? `${directory}/{*.md,*/index.md}` : '*.md'}`)
@@ -53,6 +53,7 @@ export default (config) => {
 			data: '../data',
 			layouts: '../templates',
 		},
+		markdownTemplateEngine: false, // Turn off `liquid` parsing.
 		htmlTemplateEngine: 'webc',
 	}
 }
