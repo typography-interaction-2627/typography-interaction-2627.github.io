@@ -5,5 +5,43 @@
 				<p @html="item.fileSlug?.replace(/./, firstChar => firstChar.toUpperCase()) || '&'"></p>
 			</a>
 		</li>
+		<li>
+			<details>
+				<summary>Sessions</summary>
+				<ul>
+					<li webc:for="item of $data.collections.weeks">
+						<a :href="item.url">
+							<p @html="item.data.title"></p>
+							<p @text="displayDate(item.data.date)"></p>
+						</a>
+					</li>
+				</ul>
+			</details>
+		</li>
+		<li>
+			<details>
+				<summary>Projects</summary>
+				<ul>
+					<li webc:for="item of $data.collections.projects">
+						<a :href="item.url">
+							<p @html="item.data.title"></p>
+							<p @text="displayDate(item.data.date)"></p>
+						</a>
+					</li>
+				</ul>
+			</details>
+		</li>
+		<li>
+			<details>
+				<summary>Topics</summary>
+				<ul>
+					<li webc:for="item of $data.collections.topics">
+						<a :href="item.url">
+							<p @html="item.data.title"></p>
+						</a>
+					</li>
+				</ul>
+			</details>
+		</li>
 	</ul>
 </nav>
