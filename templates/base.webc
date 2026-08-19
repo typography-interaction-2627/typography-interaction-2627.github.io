@@ -3,7 +3,30 @@
 	<head>
 		<meta charset="utf-8">
 		<meta content="initial-scale=1, width=device-width, viewport-fit=cover" name="viewport">
-		<title @html="stripTags(title)"></title>
+		<title @text="stripTags(title)"></title>
+		<script webc:setup>
+			export const getDescription = ({ content, description }) => {
+				const document = parseHtml(content)
+
+				const descriptions = document.querySelectorAll('main [data-description]')
+
+				const descriptionHtml = description
+					? description
+					: descriptions.length
+						? [...descriptions].map((node) => node.innerHTML).join(' ')
+						: document.querySelector('main p')?.innerHTML || ''
+
+				return stripTags(descriptionHtml)
+					.trim()
+					.replace(/\s+/g, ' ') // Collapse white space.
+					.replace(/:$/, '.') // Fix ending colons.
+					.replace(/&amp;/g, '\u0026') // Decode entity so Eleventy doesn’t `&amp;` it twice.
+					.replace(/&nbsp;/g, '\u00A0') // Same.
+			}
+		</script>
+		<template webc:if="!eleventyExcludeFromCollections" webc:nokeep>
+			<meta :content="getDescription($data)" name="description">
+		</template>
 	</head>
 	<body>
 		<template

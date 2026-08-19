@@ -9,6 +9,7 @@
 		"markdown-it-attrs": "^5.0.1",
 		"markdown-it-deflist": "^4.0.0",
 		"markdown-it-header-sections": "^1.0.0",
+		"node-html-parser": "^9.0.1",
 		"striptags": "^3.2.0"
 	},
 	"devEngines": {

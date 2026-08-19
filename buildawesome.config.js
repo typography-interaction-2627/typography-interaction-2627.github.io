@@ -14,6 +14,8 @@ import abbreviations from './data/abbreviations.js'
 
 import stripTags from 'striptags'
 
+import { parse } from 'node-html-parser'
+
 export default (config) => {
 	// Setup.
 	config.setDataFileSuffixes(['.config'])
@@ -161,6 +163,7 @@ export default (config) => {
 		.toLocaleDateString('en-US', { day: 'numeric', month: 'short', timeZone: 'UTC' })
 		.replace(/(\w{3})/, (month) => month === 'May' ? month : month + '.'))
 	config.addFilter('stripTags', (content) => stripTags(String(content)))
+	config.addFilter('parseHtml', (content) => parse(content))
 
 	return {
 		dir: {
