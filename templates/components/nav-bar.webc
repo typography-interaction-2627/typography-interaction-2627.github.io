@@ -6,22 +6,13 @@
 			</a>
 		</li>
 		<li>
-			<nav-details :@collection="$data.collections.weeks" @title="Sessions">
-				<p @html="item.data.title"></p>
-				<p @text="displayDate(item.data.date)"></p>
-			</nav-details>
+			<nav-details @collection="weeks" @title="Sessions"></nav-details>
 		</li>
 		<li>
-			<nav-details :@collection="$data.collections.projects" @title="Projects">
-				<p @html="item.data.title"></p>
-				<p @text="displayDate(item.data.date)"></p>
-			</nav-details>
+			<nav-details @collection="projects"></nav-details>
 		</li>
 		<li>
-			<nav-details :@collection="$data.collections.topics" @title="Topics">
-				<p @html="item.data.title"></p>
-				<p @text="displayDate(item.data.date)"></p>
-			</nav-details>
+			<nav-details @collection="topics"></nav-details>
 		</li>
 	</ul>
 </nav>

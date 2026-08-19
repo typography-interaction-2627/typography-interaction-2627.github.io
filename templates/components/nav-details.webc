@@ -1,9 +1,10 @@
 <details>
-	<summary @html="title"></summary>
+	<summary @html="title || capitalize(collection)"></summary>
 	<ul>
-		<li webc:for="item of collection">
+		<li webc:for="item of $data.collections[collection]">
 			<a :href="item.url">
-				<slot></slot>
+				<p @html="item.data.title"></p>
+				<p @text="displayDate(item.data.date)"></p>
 			</a>
 		</li>
 	</ul>
