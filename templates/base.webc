@@ -9,8 +9,6 @@
 		<title @html="title"></title>
 	</head>
 	<body>
-		<nav-bar></nav-bar>
-		<h1 @html="title"></h1>
 		<template
 			webc:nokeep
 			@raw="content"
