@@ -1,0 +1,10 @@
+<details open>
+	<summary @html="title"></summary>
+	<ul>
+		<li webc:for="item of collection">
+			<a :href="item.url">
+				<slot></slot>
+			</a>
+		</li>
+	</ul>
+</details>

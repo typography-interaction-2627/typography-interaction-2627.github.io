@@ -9,7 +9,7 @@
 		<title @html="title"></title>
 	</head>
 	<body>
-		<template webc:import="blocks/nav.webc"></template>
+		<block webc:import="blocks/nav.webc"></block>
 		<h1 @html="title"></h1>
 		<template
 			webc:nokeep

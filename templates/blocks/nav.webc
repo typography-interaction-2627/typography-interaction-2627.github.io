@@ -1,4 +1,4 @@
-<nav webc:root="override">
+<nav>
 	<ul>
 		<li webc:for="item of $data.collections.root">
 			<a :href="item.url">
@@ -6,42 +6,22 @@
 			</a>
 		</li>
 		<li>
-			<details>
-				<summary>Sessions</summary>
-				<ul>
-					<li webc:for="item of $data.collections.weeks">
-						<a :href="item.url">
-							<p @html="item.data.title"></p>
-							<p @text="displayDate(item.data.date)"></p>
-						</a>
-					</li>
-				</ul>
-			</details>
+			<block :@collection="$data.collections.weeks" @title="Sessions" webc:import="nav-details.webc">
+				<p @html="item.data.title"></p>
+				<p @text="displayDate(item.data.date)"></p>
+			</block>
 		</li>
 		<li>
-			<details>
-				<summary>Projects</summary>
-				<ul>
-					<li webc:for="item of $data.collections.projects">
-						<a :href="item.url">
-							<p @html="item.data.title"></p>
-							<p @text="displayDate(item.data.date)"></p>
-						</a>
-					</li>
-				</ul>
-			</details>
+			<block :@collection="$data.collections.projects" @title="Projects" webc:import="nav-details.webc">
+				<p @html="item.data.title"></p>
+				<p @text="displayDate(item.data.date)"></p>
+			</block>
 		</li>
 		<li>
-			<details>
-				<summary>Topics</summary>
-				<ul>
-					<li webc:for="item of $data.collections.topics">
-						<a :href="item.url">
-							<p @html="item.data.title"></p>
-						</a>
-					</li>
-				</ul>
-			</details>
+			<block :@collection="$data.collections.topics" @title="Topics" webc:import="nav-details.webc">
+				<p @html="item.data.title"></p>
+				<p @text="displayDate(item.data.date)"></p>
+			</block>
 		</li>
 	</ul>
 </nav>
