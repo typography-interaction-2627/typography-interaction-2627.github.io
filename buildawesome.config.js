@@ -13,7 +13,9 @@ export default (config) => {
 	config.setDataFileSuffixes(['.config'])
 
 	// Other filters.
-	config.addFilter('displayDate', (date) => new Date(date).toLocaleDateString('en-US', { day: 'numeric', month: 'short', timeZone: 'UTC' })
+	// config.addFilter('stripTags', (content) => stripTags(String(content)))
+	config.addFilter('displayDate', (date) => new Date(date)
+		.toLocaleDateString('en-US', { day: 'numeric', month: 'short', timeZone: 'UTC' })
 		.replace(/(\w{3})/, (month) => month === 'May' ? month : month + '.'))
 
 	// Set up sorted collections.
@@ -21,9 +23,9 @@ export default (config) => {
 		config.addCollection(directory ? `${directory}s` : 'root', collection => collection
 			.getFilteredByGlob(`content/${directory ? `${directory}/{*.md,*/index.md}` : '*.md'}`)
 			.sort((a, b) =>
-				a.data.week - b.data.week ||
-				a.data.order - b.data.order ||
-				a.inputPath.localeCompare(b.inputPath, undefined, { numeric: true })
+				a.data.week - b.data.week
+				|| a.data.order - b.data.order
+				|| a.inputPath.localeCompare(b.inputPath, undefined, { numeric: true })
 			)
 		)
 
