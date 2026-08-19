@@ -25,7 +25,6 @@ export default (config) => {
 
 	// Allow in-Markdown `title` via H1.
 	config.addGlobalData('markdownH1', () => (data) => data.page.rawInput.match(/^# (.+)/m)?.[1].trim() || data.title)
-	config.addFilter('removeH1', (content) => String(content).replace(/<h1>[\s\S]*?<\/h1>/, ''))
 
 	// Set up sorted page collections.
 	for (const directory of ['', 'week', 'project', 'topic'])
@@ -89,6 +88,9 @@ export default (config) => {
 	}
 
 	const markdown = markdownIt(markdownOptions)
+		// Remove H1 (already pulled for `title`).
+		.use((markdown) => markdown.render = (src, env = {}) =>
+			markdown.constructor.prototype.render.call(markdown, String(src).replace(/^# .*\n?/m, ''), env))
 		.use(markdownItAbbr)
 		.use(markdownItDeflist)
 		.use(markdownItHeaderSections)
