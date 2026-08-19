@@ -1,6 +1,6 @@
 <script front-matter>
 	const title = 'Our Class'
-	const order = 2
+	const order = 3
 </script>
 
 ## TKTKTK
