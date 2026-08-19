@@ -27,6 +27,7 @@
 		<template webc:if="!eleventyExcludeFromCollections" webc:nokeep>
 			<meta :content="getDescription($data)" name="description">
 		</template>
+		<meta webc:else content="noindex, nofollow" name="robots">
 	</head>
 	<body>
 		<template
