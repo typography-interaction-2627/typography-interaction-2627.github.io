@@ -4,7 +4,7 @@
 		<li webc:for="item of $data.collections[collection]">
 			<a :href="item.url">
 				<p @html="item.data.title"></p>
-				<p @text="displayDate(item.data.date)"></p>
+				<p webc:if="collection != 'topics'" @text="displayDate(item.data.date)"></p>
 			</a>
 		</li>
 	</ul>
