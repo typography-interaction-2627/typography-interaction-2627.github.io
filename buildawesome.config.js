@@ -13,7 +13,7 @@ export default (config) => {
 	})
 
 	// Avoid front-matter in `page.webc`.
-	config.addTemplate('page.webc', readFileSync('templates/page.webc', 'utf8'), { layout: 'base' })
+	config.addTemplate('templates/page.webc', readFileSync('templates/page.webc', 'utf8'), { layout: 'base' })
 	config.addGlobalData('buildawesomeComputed.layout', () => ({ page }) => page.templateSyntax.includes('md') ? 'page' : 'base')
 
 	// Other filters.
