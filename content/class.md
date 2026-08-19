@@ -1,4 +1,4 @@
-```js
+```javascript
 	const title = 'Our Class'
 	const order = 3
 ```
