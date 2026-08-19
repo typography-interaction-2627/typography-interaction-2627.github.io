@@ -1,0 +1,5 @@
+# Treat these as HTML.
+*.webc linguist-language=html
+
+# Show our Markdown.
+*.md linguist-detectable
