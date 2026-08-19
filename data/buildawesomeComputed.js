@@ -40,12 +40,9 @@ const getWeek = (data) => {
 	}
 }
 
-const getMarkdownTitle = (data) =>
-	data.page.rawInput.match(/^# (.+)/m)?.[1].trim() || data.title
-
 export default {
 	date: (data) => getWeek(data)?.date,
-	title: (data) => getMarkdownTitle(data),
+	title: (data) => data.markdownH1(data),
 	unit: (data) => getWeek(data)?.unit,
 	unitNumber: (data) => getWeek(data)?.unitNumber,
 }

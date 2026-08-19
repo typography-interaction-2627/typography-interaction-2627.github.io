@@ -16,13 +16,16 @@ export default (config) => {
 	config.addTemplate('templates/page.webc', readFileSync('templates/page.webc', 'utf8'), { layout: 'base' })
 	config.addGlobalData('buildawesomeComputed.layout', () => ({ page }) => page.templateSyntax.includes('md') ? 'page' : 'base')
 
+	// Allow in-Markdown `title` via H1.
+	config.addGlobalData('markdownH1', () => (data) => data.page.rawInput.match(/^# (.+)/m)?.[1].trim() || data.title)
+	config.addFilter('removeH1', (content) => String(content).replace(/<h1>[\s\S]*?<\/h1>/, ''))
+
 	// Other filters.
 	// config.addFilter('stripTags', (content) => stripTags(String(content)))
 	config.addFilter('capitalize', (string) => string?.replace(/^./, firstChar => firstChar.toUpperCase()))
 	config.addFilter('displayDate', (date) => new Date(date)
 		.toLocaleDateString('en-US', { day: 'numeric', month: 'short', timeZone: 'UTC' })
 		.replace(/(\w{3})/, (month) => month === 'May' ? month : month + '.'))
-	config.addFilter('removeH1', (content) => String(content).replace(/<h1>[\s\S]*?<\/h1>/, ''))
 
 	// Set up sorted page collections.
 	for (const directory of ['', 'week', 'project', 'topic'])
