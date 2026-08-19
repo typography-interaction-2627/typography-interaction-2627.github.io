@@ -2,7 +2,13 @@
 	"dependencies": {
 		"@11ty/eleventy-plugin-webc": "0.12.0-beta.7",
 		"@11ty/webc": "0.12.0-beta.2",
-		"@awesome.me/buildawesome": "4.0.0-alpha.10"
+		"@awesome.me/buildawesome": "4.0.0-alpha.10",
+		"markdown-it": "^15.0.0",
+		"markdown-it-abbr": "^2.0.0",
+		"markdown-it-anchor": "^9.2.1",
+		"markdown-it-attrs": "^5.0.1",
+		"markdown-it-deflist": "^4.0.0",
+		"markdown-it-header-sections": "^1.0.0"
 	},
 	"devEngines": {
 		"runtime": {
@@ -18,5 +24,6 @@
 		"build": "pnpm clean && buildawesome",
 		"serve": "pnpm clean && buildawesome --serve --port=80 --incremental"
 	},
-	"type": "module"
+	"type": "module",
+	"devDependencies": {}
 }
