@@ -1,0 +1,9 @@
+<nav webc:root="override">
+	<ul>
+		<li webc:for="item of $data.collections.root">
+			<a :href="item.url">
+				<p @html="item.fileSlug || '&'"></p>
+			</a>
+		</li>
+	</ul>
+</nav>
