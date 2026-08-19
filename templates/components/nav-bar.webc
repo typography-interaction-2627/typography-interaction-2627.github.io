@@ -2,7 +2,7 @@
 	<ul>
 		<li webc:for="item of $data.collections.root">
 			<a :href="item.url">
-				<p @html="capitalize(item.fileSlug) || '&'"></p>
+				<p @html="initialCap(item.fileSlug) || '&'"></p>
 			</a>
 		</li>
 		<li>

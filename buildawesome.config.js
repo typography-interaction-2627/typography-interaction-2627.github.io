@@ -158,7 +158,7 @@ export default (config) => {
 	config.setLibrary('md', markdown)
 
 	// Other filters.
-	config.addFilter('capitalize', (string) => string?.replace(/^./, firstChar => firstChar.toUpperCase()))
+	config.addFilter('initialCap', (string) => string?.replace(/^./, firstChar => firstChar.toUpperCase()))
 	config.addFilter('displayDate', (date) => new Date(date)
 		.toLocaleDateString('en-US', { day: 'numeric', month: 'short', timeZone: 'UTC' })
 		.replace(/(\w{3})/, (month) => month === 'May' ? month : month + '.'))

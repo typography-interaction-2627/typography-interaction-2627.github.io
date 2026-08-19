@@ -1,5 +1,5 @@
 <details>
-	<summary @html="title || capitalize(collection)"></summary>
+	<summary @html="title || initialCap(collection)"></summary>
 	<ul>
 		<li webc:for="item of $data.collections[collection]">
 			<a :href="item.url">
