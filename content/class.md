@@ -1,5 +1,5 @@
 ```javascript
-	const order = 3
+const order = 3
 ```
 
 # Our Class

@@ -1,6 +1,6 @@
 ```javascript
-	const week = 9
-	const draft = true
+const week = 9
+const draft = true
 ```
 
 # Some Additional, Advanced CSS

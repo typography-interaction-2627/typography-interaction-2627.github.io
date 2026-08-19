@@ -1,5 +1,5 @@
 ```javascript
-	const order = 2
+const order = 2
 ```
 
 # The Syllabus

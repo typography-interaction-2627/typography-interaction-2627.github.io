@@ -1,5 +1,5 @@
 ```javascript
-	const order = 1
+const order = 1
 ```
 
 # Typography & Interaction
