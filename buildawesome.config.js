@@ -1,16 +1,20 @@
 import { utimes } from 'node:fs/promises'
+import { readFileSync } from 'node:fs'
 
 import webC from '@11ty/eleventy-plugin-webc'
 
 export default (config) => {
 	// Setup.
-	config.addGlobalData('layout', 'page')
+	config.setDataFileSuffixes(['.config'])
 	config.addPlugin(webC, { components: 'templates/*/**/*.webc' })
+	config.addGlobalData('buildawesomeComputed.layout', () => ({ page }) => page.templateSyntax.includes('md') ? 'page' : 'base')
 	config.setFrontMatterParsingOptions({
 		delimiters: ['<script front-matter>', '</script>'],
 		language: 'js',
 	})
-	config.setDataFileSuffixes(['.config'])
+
+	// Avoid front-matter in `page.webc`.
+	config.addTemplate('templates/page.webc', readFileSync('templates/page.webc', 'utf8'), { layout: 'base' })
 
 	// Other filters.
 	// config.addFilter('stripTags', (content) => stripTags(String(content)))
