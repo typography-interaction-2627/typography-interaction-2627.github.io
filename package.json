@@ -16,7 +16,7 @@
 		"prepare": "git config core.hooksPath .githooks",
 		"clean": "node -e \"require('fs').rmSync('_site', { recursive: true, force: true })\"",
 		"build": "pnpm clean && buildawesome",
-		"serve": "pnpm clean && buildawesome --serve --port=80"
+		"serve": "pnpm clean && buildawesome --serve --port=80 --incremental"
 	},
 	"type": "module"
 }
