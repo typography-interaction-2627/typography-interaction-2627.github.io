@@ -12,6 +12,8 @@ import markdownItHeaderSections from 'markdown-it-header-sections'
 
 import abbreviations from './data/abbreviations.js'
 
+import stripTags from 'striptags'
+
 export default (config) => {
 	// Setup.
 	config.setDataFileSuffixes(['.config'])
@@ -154,11 +156,11 @@ export default (config) => {
 	config.setLibrary('md', markdown)
 
 	// Other filters.
-	// config.addFilter('stripTags', (content) => stripTags(String(content)))
 	config.addFilter('capitalize', (string) => string?.replace(/^./, firstChar => firstChar.toUpperCase()))
 	config.addFilter('displayDate', (date) => new Date(date)
 		.toLocaleDateString('en-US', { day: 'numeric', month: 'short', timeZone: 'UTC' })
 		.replace(/(\w{3})/, (month) => month === 'May' ? month : month + '.'))
+	config.addFilter('stripTags', (content) => stripTags(String(content)))
 
 	return {
 		dir: {

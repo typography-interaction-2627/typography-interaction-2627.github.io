@@ -8,7 +8,8 @@
 		"markdown-it-anchor": "^9.2.1",
 		"markdown-it-attrs": "^5.0.1",
 		"markdown-it-deflist": "^4.0.0",
-		"markdown-it-header-sections": "^1.0.0"
+		"markdown-it-header-sections": "^1.0.0",
+		"striptags": "^3.2.0"
 	},
 	"devEngines": {
 		"runtime": {
