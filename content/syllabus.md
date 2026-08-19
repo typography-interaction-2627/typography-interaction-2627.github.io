@@ -1,6 +1,6 @@
-<script front-matter>
+```javascript
 	const title = 'The Syllabus'
 	const order = 2
-</script>
+```
 
 ## TKTKTK

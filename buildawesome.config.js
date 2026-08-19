@@ -8,7 +8,7 @@ export default (config) => {
 	config.setDataFileSuffixes(['.config'])
 	config.addPlugin(webC, { components: 'templates/*/**/*.webc' })
 	config.setFrontMatterParsingOptions({
-		delimiters: ['<script front-matter>', '</script>'],
+		delimiters: ['```js', '```'],
 		language: 'js',
 	})
 

@@ -1,7 +1,7 @@
-<script front-matter>
+```javascript
 	const title = 'An Intro to HTML'
 	const week = 3
 	const draft = true
-</script>
+```
 
 ## TKTKTK
