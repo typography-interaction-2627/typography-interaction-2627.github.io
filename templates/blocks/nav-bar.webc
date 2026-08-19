@@ -6,22 +6,22 @@
 			</a>
 		</li>
 		<li>
-			<block :@collection="$data.collections.weeks" @title="Sessions" webc:import="nav-details.webc">
+			<nav-details :@collection="$data.collections.weeks" @title="Sessions">
 				<p @html="item.data.title"></p>
 				<p @text="displayDate(item.data.date)"></p>
-			</block>
+			</nav-details>
 		</li>
 		<li>
-			<block :@collection="$data.collections.projects" @title="Projects" webc:import="nav-details.webc">
+			<nav-details :@collection="$data.collections.projects" @title="Projects">
 				<p @html="item.data.title"></p>
 				<p @text="displayDate(item.data.date)"></p>
-			</block>
+			</nav-details>
 		</li>
 		<li>
-			<block :@collection="$data.collections.topics" @title="Topics" webc:import="nav-details.webc">
+			<nav-details :@collection="$data.collections.topics" @title="Topics">
 				<p @html="item.data.title"></p>
 				<p @text="displayDate(item.data.date)"></p>
-			</block>
+			</nav-details>
 		</li>
 	</ul>
 </nav>

@@ -1,4 +1,4 @@
-<details open>
+<details>
 	<summary @html="title"></summary>
 	<ul>
 		<li webc:for="item of collection">
