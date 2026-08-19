@@ -22,6 +22,7 @@ export default (config) => {
 	config.addFilter('displayDate', (date) => new Date(date)
 		.toLocaleDateString('en-US', { day: 'numeric', month: 'short', timeZone: 'UTC' })
 		.replace(/(\w{3})/, (month) => month === 'May' ? month : month + '.'))
+	config.addFilter('removeH1', (content) => String(content).replace(/<h1>[\s\S]*?<\/h1>/, ''))
 
 	// Set up sorted page collections.
 	for (const directory of ['', 'week', 'project', 'topic'])
