@@ -10,6 +10,8 @@ import markdownItAttrs from 'markdown-it-attrs'
 import markdownItDeflist from 'markdown-it-deflist'
 import markdownItHeaderSections from 'markdown-it-header-sections'
 
+import abbreviations from './data/abbreviations.js'
+
 export default (config) => {
 	// Setup.
 	config.setDataFileSuffixes(['.config'])
@@ -91,6 +93,9 @@ export default (config) => {
 		// Remove H1 (already pulled for `title`).
 		.use((markdown) => markdown.render = (src, env = {}) =>
 			markdown.constructor.prototype.render.call(markdown, String(src).replace(/^# .*\n?/m, ''), env))
+		// Fix name collision with global `env.abbreviations` data and `markdown-it-abbr`.
+		.use((markdown) => markdown.render = (src, env = {}) =>
+			(delete env.abbreviations, markdown.constructor.prototype.render.call(markdown, src, env)))
 		.use(markdownItAbbr)
 		.use(markdownItDeflist)
 		.use(markdownItHeaderSections)
@@ -122,6 +127,12 @@ export default (config) => {
 			</pre>`,
 		)
 		.use(markdownRagging)
+
+	// Append abbreviations for `markdownItAbbr`.
+	const markdownAbbreviations = abbreviations.map((item) => `\n*[${item.abbr}]: ${item.title}`).join('\n')
+
+	// Append them for the plugin.
+	config.addPreprocessor('abbreviations', '.md', (data, content) => content + markdownAbbreviations)
 
 	// Convert HTML comments to curly brackets for `markdownItAttrs` to pick up.
 	config.addPreprocessor('commentsToCurlies', '.md', (data, content) =>
