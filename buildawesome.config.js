@@ -15,13 +15,14 @@ export default (config) => {
 		.replace(/(\w{3})/, (month) => month === 'May' ? month : month + '.'))
 
 	// Set up sorted collections.
-	for (const directory of ['week', 'project', 'topic'])
-		config.addCollection(`${directory}s`, collection =>
-			collection.getFilteredByGlob(`content/${directory}/{*.md,*/index.md}`)
-				.sort((a, b) =>
-					a.data.week - b.data.week ||
-					a.inputPath.localeCompare(b.inputPath, undefined, { numeric: true })
-				)
+	for (const directory of ['', 'week', 'project', 'topic'])
+		config.addCollection(directory ? `${directory}s` : 'root', collection => collection
+			.getFilteredByGlob(`content/${directory ? `${directory}/{*.md,*/index.md}` : '*.md'}`)
+			.sort((a, b) =>
+				a.data.week - b.data.week ||
+				a.data.order - b.data.order ||
+				a.inputPath.localeCompare(b.inputPath, undefined, { numeric: true })
+			)
 		)
 
 	// Don’t render out drafts—but this leaves them in the collections for date calculations.
