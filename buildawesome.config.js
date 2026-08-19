@@ -4,7 +4,7 @@ import webC from '@11ty/eleventy-plugin-webc'
 
 export default (config) => {
 	// Setup.
-	config.addGlobalData('layout', 'base.webc')
+	config.addGlobalData('layout', 'page')
 	config.addPlugin(webC, { components: 'templates/*/**/*.webc' })
 	config.setFrontMatterParsingOptions({
 		delimiters: ['<script front-matter>', '</script>'],
