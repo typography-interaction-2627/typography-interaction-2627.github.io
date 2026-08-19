@@ -13,8 +13,8 @@ export default (config) => {
 	})
 
 	// Avoid front-matter in `page.webc`.
-	config.addGlobalData('buildawesomeComputed.layout', () => ({ page }) => page.templateSyntax.includes('md') ? 'page' : 'base')
 	config.addTemplate('page.webc', readFileSync('templates/page.webc', 'utf8'), { layout: 'base' })
+	config.addGlobalData('buildawesomeComputed.layout', () => ({ page }) => page.templateSyntax.includes('md') ? 'page' : 'base')
 
 	// Other filters.
 	// config.addFilter('stripTags', (content) => stripTags(String(content)))
@@ -35,7 +35,7 @@ export default (config) => {
 		)
 
 	// Don’t render out drafts—but this leaves them in the collections for date calculations.
-	process.env.ELEVENTY_RUN_MODE === 'build' && config.addGlobalData('buildawesomeComputed', { permalink: (data) => data.draft ? false : data.permalink })
+	process.env.ELEVENTY_RUN_MODE === 'build' && config.addGlobalData('buildawesomeComputed.permalink', () => (data) => data.draft ? false : data.permalink)
 
 	// Nested `.webc` components don’t invalidate their parent layout's cache:
 	// https://github.com/11ty/eleventy-plugin-webc/issues/115
