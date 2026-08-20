@@ -104,9 +104,9 @@ By the end of this semester, students will:
 The course is structured into thematic units, each bookended by readings on the subject and a project that will demonstrate the material:
 <!-- .intro -->
 
-### Unit Nº 1: *Type and the Web* <!-- .fall -->
+### Unit 1: *Type and the Web* <!-- .fall -->
 
-#### Weeks Nº 1–6
+#### Weeks 1–6
 
 We will focus on reviewing the core principles of typography, and introduce the web and its base technologies. Students will learn about HTML, semantic DOM, basic CSS, as well as type hierarchy and the use of custom typefaces for the web.
 <!-- .balance -->
@@ -128,7 +128,7 @@ We will focus on reviewing the core principles of typography, and introduce the 
 - [<cite>A Handmade Web</cite>](http://luckysoap.com/statements/handmadeweb.html)
 	J.R. Carpenter, 2015
 
-#### Project Nº 1: *Manuscript*
+#### Project 1: *Manuscript*
 
 The unit ends with Project 1, *Manuscript*, which students will present on October 3.
 <!-- .pretty -->
@@ -138,9 +138,9 @@ Students will choose a seminal design text from [readings.design](https://readin
 We’ll be looking for the quality of responses, appropriate type selection and hierarchy, semantic HTML, and basic CSS.
 <!-- .note -->
 
-### Unit Nº 2: *There Is No Perfect Layout* <!-- .fall .print--break -->
+### Unit 2: *There Is No Perfect Layout* <!-- .fall .print--break -->
 
-#### Weeks Nº 7–10
+#### Weeks 7–10
 
 Students will learn how to design and implement more complex, flexible layouts, while collaborating closely with a classmate. We’ll introduce responsive design, media query CSS, and advanced web type techniques.
 
@@ -161,7 +161,7 @@ Students will learn how to design and implement more complex, flexible layouts, 
 - [<cite>The Diminishing Marginal Value of Aesthetics</cite>](https://subpixel.space/entries/diminishing-marginal-aesthetic-value/)
 	Toby Shorin, 2017
 
-#### Project Nº 2: *Spread* <!-- .print--break -->
+#### Project 2: *Spread* <!-- .print--break -->
 
 This unit concludes with Project 2, *Spread*, which students will present on October 31.
 <!-- .pretty -->
@@ -171,9 +171,9 @@ Students will work in pairs, with the texts they selected in *Manuscript*. Each 
 Here we’re looking for successful design and development collaboration, box-model layout design, and use of responsive media queries.
 <!-- .note -->
 
-### Unit Nº 3: *Typography as Interface* <!-- .fall -->
+### Unit 3: *Typography as Interface* <!-- .fall -->
 
-#### Weeks Nº 11–15
+#### Weeks 11–15
 
 In our final Fall unit, we will focus on creating advanced, multi-page layouts with grid systems, prototyping their flows, and exploring typography’s usage as interface elements for navigating a website.
 
@@ -194,7 +194,7 @@ In our final Fall unit, we will focus on creating advanced, multi-page layouts w
 - [<cite>My website is a shifting house next to a river of knowledge. What could yours be?</cite>](https://thecreativeindependent.com/essays/laurel-schwulst-my-website-is-a-shifting-house-next-to-a-river-of-knowledge-what-could-yours-be/)
 	Laurel Schwulst, 2018
 
-#### Project Nº 3: *Binding*
+#### Project 3: *Binding*
 
 This unit, and the first semester, will culminate with Project 3, *Binding*, which will be presented in class on December 5.
 <!-- .pretty -->
@@ -204,9 +204,9 @@ Students will assemble a collection of texts from *Spread*, combined with their 
 We want to see effective multi-page design and navigation, advanced layouts (flexbox, grid), consistency across the pages and content, and polish/nuance.
 <!-- .note -->
 
-### Unit Nº 4: *Interface as Interface* <!-- .spring -->
+### Unit 4: *Interface as Interface* <!-- .spring -->
 
-#### Weeks Nº 16–21
+#### Weeks 16–21
 
 We will expand on our first-semester foundations in design, typography, HTML, and CSS—now incorporating images and other media while introducing JavaScript to enliven our work. Students will learn to work with a CMS and use an API for dynamic content.
 
@@ -227,7 +227,7 @@ We will expand on our first-semester foundations in design, typography, HTML, an
 - [<cite>Folk Interfaces</cite>](https://maggieappleton.com/folk-interfaces)
 	Maggie Appleton, 2022
 
-#### Project Nº 4: *Links*
+#### Project 4: *Links*
 
 The unit ends with Project 4, *Links*, which students will present on February 25.
 <!-- .pretty -->
@@ -237,9 +237,9 @@ Students will collaboratively assemble, connect, and present a collection using 
 In addition to our previous project requirements, here we’ll be looking for the effective use of images/media, meaningful interactive interface functionality, and your use of JavaScript.
 <!-- .note -->
 
-### Unit Nº 5: *If All You Have Is a Hammer, Everything Looks Like a Nail* <!-- .spring -->
+### Unit 5: *If All You Have Is a Hammer, Everything Looks Like a Nail* <!-- .spring -->
 
-#### Weeks Nº 22–30
+#### Weeks 22–30
 
 To wrap up the semester (and course), we’ll round out our knowledge of the web’s intricacies—handling user input, managing state, constructing metadata. We will examine how our projects participate in and live elsewhere on the web, and outline real-world processes to make them come together.
 
@@ -300,7 +300,7 @@ To wrap up the semester (and course), we’ll round out our knowledge of the web
 	Microsoft, 2023 (*ongoing*)
 <!-- #hig-ongoing -->
 
-#### Project Nº 5: *Functions* <!-- .before--2 .print--break -->
+#### Project 5: *Functions* <!-- .before--2 .print--break -->
 
 This unit will culminate with Project 5, *Functions*, which will be presented in class on April 22.
 <!-- .pretty -->
@@ -352,9 +352,9 @@ There will be check-ins and reviews around each of these before the final due da
 | ~~Quizzes,~~ Exercises, Milestones | 10% |
 | Engagement                         | 20% |
 | &nbsp;                             |     |
-| Project Nº 1: *Manuscript*         | 10% |
-| Project Nº 2: *Spread*             | 20% |
-| Project Nº 3: *Binding*            | 30% |
+| Project 1: *Manuscript*         | 10% |
+| Project 2: *Spread*             | 20% |
+| Project 3: *Binding*            | 30% |
 
 ### Spring <!-- .spring -->
 
@@ -365,8 +365,8 @@ There will be check-ins and reviews around each of these before the final due da
 | Engagement                     | 20% |
 | &nbsp;                         |     |
 | Project *Index*                | 10% |
-| Project Nº 4: *Links*          | 20% |
-| Project Nº 5: *Functions*      | 30% |
+| Project 4: *Links*          | 20% |
+| Project 5: *Functions*      | 30% |
 
 ## Materials and Supplies <!-- .print--break -->
 
