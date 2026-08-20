@@ -105,7 +105,7 @@ We will focus on reviewing the core principles of typography, and introduce the 
 
 #### Project 1: *Manuscript*
 
-The unit ends with Project 1, *Manuscript*, which students will present on October 3.
+The unit ends with Project 1, *Manuscript*, which students will present on October 1.
 
 Students will choose a seminal design text from [readings.design](https://readings.design), read and respond to it, and typeset their selection and reply together as a web page. Other texts are also allowed on a case-by-case basis.
 
@@ -137,7 +137,7 @@ Students will learn how to design and implement more complex, flexible layouts, 
 
 #### Project 2: *Spread*
 
-This unit concludes with Project 2, *Spread*, which students will present on October 31.
+This unit concludes with Project 2, *Spread*, which students will present on October 29.
 
 Students will work in pairs, with the texts they selected in *Manuscript*. Each duo will sketch collaboratively and then implement a new expression together, via pair programming. The final web page will be responsive for mobile, desktop, and print layouts.
 
@@ -169,7 +169,7 @@ In our final Fall unit, we will focus on creating advanced, multi-page layouts w
 
 #### Project 3: *Binding*
 
-This unit, and the first semester, will culminate with Project 3, *Binding*, which will be presented in class on December 5.
+This unit, and the first semester, will culminate with Project 3, *Binding*, which will be presented in class on December 3.
 
 Students will assemble a collection of texts from *Spread*, combined with their original selection, into a “book.” The book will be a multi-page website with a homepage (cover), navigation (table of contents), individual pages for each text, and an introduction (colophon)—with consistent styles applied across all pages.
 
@@ -201,7 +201,7 @@ We will expand on our first-semester foundations in design, typography, HTML, an
 
 #### Project 4: *Links*
 
-The unit ends with Project 4, *Links*, which students will present on February 25.
+The unit ends with Project 4, *Links*, which students will present on February 24.
 
 Students will collaboratively assemble, connect, and present a collection using [Are.na](https://www.are.na) as a platform/CMS—designing and building an interface to explore and understand it.
 
@@ -270,7 +270,7 @@ To wrap up the semester (and course), we’ll round out our knowledge of the web
 
 #### Project 5: *Functions*
 
-This unit will culminate with Project 5, *Functions*, which will be presented in class on April 22.
+This unit will culminate with Project 5, *Functions*, which will be presented in class on April 21.
 
 Students will identify a problem and conceptualize how to solve it on the web. They will plan, design, and implement a novel solution towards this problem—incorporating data and interaction with the tools, technologies, and techniques they’ve learned in this course.
 
