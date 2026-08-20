@@ -1,5 +1,5 @@
-import { utimes } from 'node:fs/promises'
-import { readFileSync } from 'node:fs'
+import { readFileSync } from 'fs'
+import { utimes } from 'fs/promises'
 
 import webC from '@11ty/eleventy-plugin-webc'
 
