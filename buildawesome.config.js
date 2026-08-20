@@ -27,6 +27,14 @@ export default (config) => {
 		delimiters: ['```javascript', '```'],
 		language: 'js',
 	})
+	config.addBundle('css', { toFileDirectory: 'assets' })
+
+	// Watch for changes.
+	config.addWatchTarget('**/*.css')
+	config.addWatchTarget('**/*.js')
+
+	// Slide these on over.
+	config.addPassthroughCopy('assets/reset.css')
 
 	// Avoid front-matter in `page.webc`.
 	config.addTemplate('templates/page.webc', readFileSync('templates/page.webc'), { layout: 'base', permalink: false })

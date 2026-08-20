@@ -29,6 +29,7 @@
 			<meta :content="$data.course.site + $data.page.url + 'meta.png'" property="og:image">
 		</template>
 		<meta webc:else content="noindex, nofollow" name="robots">
+		<style webc:is="style-buckets" webc:nokeep></style>
 	</head>
 	<body>
 		<template webc:nokeep @raw="content"></template>

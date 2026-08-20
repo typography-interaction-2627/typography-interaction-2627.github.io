@@ -1,0 +1,14 @@
+<link
+	webc:bucket="base"
+	href="../../assets/styles/test.css"
+	rel="stylesheet"
+>
+<style
+	webc:keep
+	@raw="`
+		@layer reset, base, components, print;
+
+		@import url('/assets/reset.css') layer(reset);
+		@import url('${getBundleFileUrl('css', 'base')}') layer(base);
+	`"
+></style>

@@ -1,8 +1,5 @@
 <nav-bar></nav-bar>
 <main>
 	<h1 @html="title"></h1>
-	<template
-		webc:nokeep
-		@html="content"
-	></template>
+	<template webc:nokeep @html="content"></template>
 </main>
