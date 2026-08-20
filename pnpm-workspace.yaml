@@ -1,2 +1,2 @@
 allowBuilds:
-  puppeteer: false
+  puppeteer: true
