@@ -1,0 +1,1 @@
+<h1 @html="meta.data.title"></h1>

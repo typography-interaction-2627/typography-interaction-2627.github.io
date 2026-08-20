@@ -29,6 +29,18 @@ export default (config) => {
 	config.addTemplate('templates/page.webc', readFileSync('templates/page.webc'), { layout: 'base', permalink: false })
 	config.addGlobalData('buildawesomeComputed.layout', () => ({ page }) => page.templateSyntax.includes('md') ? 'page' : 'base')
 
+	// Meta sidecars for `og:image`.
+	config.addTemplate('templates/meta.webc', readFileSync('templates/meta.webc'), {
+		eleventyExcludeFromCollections: true,
+		pagination: {
+			alias: 'meta',
+			before: (items) => items.filter(({ url }) => url),
+			data: 'collections.all',
+			size: 1,
+		},
+		permalink: ({ meta }) => `${meta.url}meta.html`,
+	})
+
 	// Allow in-Markdown `title` via H1.
 	config.addGlobalData('markdownH1', () => (data) => data.page.rawInput.match(/^# (.+)/m)?.[1].trim() || data.title)
 
