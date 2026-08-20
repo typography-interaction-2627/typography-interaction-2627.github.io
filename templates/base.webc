@@ -26,13 +26,11 @@
 		</script>
 		<template webc:if="!buildawesomeExcludeFromCollections" webc:nokeep>
 			<meta :content="getDescription($data)" name="description">
+			<meta :content="$data.course.site + $data.page.url + 'meta.png'" property="og:image">
 		</template>
 		<meta webc:else content="noindex, nofollow" name="robots">
 	</head>
 	<body>
-		<template
-			webc:nokeep
-			@raw="content"
-		></template>
+		<template webc:nokeep @raw="content"></template>
 	</body>
 </html>
