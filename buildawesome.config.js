@@ -26,7 +26,7 @@ export default (config) => {
 	})
 
 	// Avoid front-matter in `page.webc`.
-	config.addTemplate('templates/page.webc', readFileSync('templates/page.webc', 'utf8'), { layout: 'base', permalink: false })
+	config.addTemplate('templates/page.webc', readFileSync('templates/page.webc'), { layout: 'base', permalink: false })
 	config.addGlobalData('buildawesomeComputed.layout', () => ({ page }) => page.templateSyntax.includes('md') ? 'page' : 'base')
 
 	// Allow in-Markdown `title` via H1.
