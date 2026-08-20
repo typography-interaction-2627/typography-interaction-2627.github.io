@@ -31,7 +31,7 @@ export default (config) => {
 
 	// Meta sidecars for `og:image`.
 	config.addTemplate('templates/meta.webc', readFileSync('templates/meta.webc'), {
-		eleventyExcludeFromCollections: true,
+		buildawesomeExcludeFromCollections: true,
 		pagination: {
 			alias: 'meta',
 			before: (items) => items.filter(({ url }) => url),
@@ -56,11 +56,11 @@ export default (config) => {
 		)
 
 	// Don’t render out drafts—but this leaves them in the collections for date calculations.
-	process.env.ELEVENTY_RUN_MODE === 'build' && config.addGlobalData('buildawesomeComputed.permalink', () => (data) => data.draft ? false : data.permalink)
+	process.env.BUILDAWESOME_RUN_MODE === 'build' && config.addGlobalData('buildawesomeComputed.permalink', () => (data) => data.draft ? false : data.permalink)
 
 	// Nested `.webc` components don’t invalidate their parent layout's cache:
 	// https://github.com/11ty/eleventy-plugin-webc/issues/115
-	config.on('eleventy.beforeWatch', (changedFiles) =>
+	config.on('buildawesome.beforeWatch', (changedFiles) =>
 		changedFiles.some((filePath) => filePath.endsWith('.webc') && !filePath.endsWith('base.webc'))
 		&& utimes('templates/base.webc', new Date(), new Date())
 	)

@@ -20,11 +20,11 @@
 					.trim()
 					.replace(/\s+/g, ' ') // Collapse white space.
 					.replace(/:$/, '.') // Fix ending colons.
-					.replace(/&amp;/g, '\u0026') // Decode entity so Eleventy doesn’t `&amp;` it twice.
+					.replace(/&amp;/g, '\u0026') // Decode entity so BA doesn’t `&amp;` it twice.
 					.replace(/&nbsp;/g, '\u00A0') // Same.
 			}
 		</script>
-		<template webc:if="!eleventyExcludeFromCollections" webc:nokeep>
+		<template webc:if="!buildawesomeExcludeFromCollections" webc:nokeep>
 			<meta :content="getDescription($data)" name="description">
 		</template>
 		<meta webc:else content="noindex, nofollow" name="robots">
