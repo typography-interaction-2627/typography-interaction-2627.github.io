@@ -1,3 +1,5 @@
+// Until we package these properly, this gets our fonts from my private repo!
+
 import 'dotenv/config'
 import { mkdir, writeFile } from 'fs/promises'
 
