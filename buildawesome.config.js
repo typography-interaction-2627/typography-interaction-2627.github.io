@@ -1,5 +1,6 @@
 import { readFileSync } from 'fs'
-import { utimes } from 'fs/promises'
+import { readdir, readFile, utimes } from 'fs/promises'
+import { resolve, join, dirname } from 'path'
 
 import webC from '@11ty/eleventy-plugin-webc'
 
@@ -15,6 +16,8 @@ import abbreviations from './data/abbreviations.js'
 import stripTags from 'striptags'
 
 import { parse } from 'node-html-parser'
+
+import puppeteer from 'puppeteer'
 
 export default (config) => {
 	// Setup.
@@ -176,6 +179,45 @@ export default (config) => {
 		.replace(/(\w{3})/, (month) => month === 'May' ? month : month + '.'))
 	config.addFilter('stripTags', (content) => stripTags(String(content)))
 	config.addFilter('parseHtml', (content) => parse(content))
+
+	// Save `meta.html` to `meta.png` for dynamic `og:image`.
+	config.on('buildawesome.after', async ({ dir }) => {
+		if (process.env.BUILDAWESOME_RUN_MODE !== 'build') return
+
+		const output = resolve(dir.output)
+		const entries = await readdir(output, { recursive: true, withFileTypes: true })
+		const files = entries
+			.filter((entry) => entry.isFile() && entry.name === 'meta.html')
+			.map((entry) => join(entry.parentPath, entry.name))
+
+		const browser = await puppeteer.launch({
+			args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--disable-gpu', '--disable-accelerated-2d-canvas'],
+		})
+
+		try {
+			await Promise.all(files.map(async (file) => {
+				const page = await browser.newPage()
+
+				await page.setRequestInterception(true)
+
+				page.on('request', async (req) => {
+					try {
+						const body = await readFile(join(output, new URL(req.url()).pathname))
+						await req.respond({ body, status: 200 })
+					} catch {
+						await req.abort()
+					}
+				})
+
+				await page.setViewport({ deviceScaleFactor: 2, height: 1000, width: 1000 })
+				await page.goto(`http://localhost/${file.replace(output + '/', '')}`, { waitUntil: 'load' })
+				await page.screenshot({ path: join(dirname(file), 'meta.png') })
+				await page.close()
+			}))
+		} finally {
+			await browser.close()
+		}
+	})
 
 	return {
 		dir: {
