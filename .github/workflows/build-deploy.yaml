@@ -31,6 +31,8 @@ jobs:
           node-version-file: package.json
           cache: pnpm
       - name: Install dependencies and build
+        env:
+            GITHUB_TOKEN: ${{ secrets.VARIABLE_MAC_FONTS }}
         run: |
           pnpm install
           pnpm build
