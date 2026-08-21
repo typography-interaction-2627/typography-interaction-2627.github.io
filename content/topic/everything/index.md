@@ -206,7 +206,7 @@ And the web exploded from there.
 >
 > Its universality is essential: the fact that a hypertext link can point to anything, be it personal, local or global, be it draft or highly polished.
 >
-> [<cite>Tim Berners-Lee, 1998</cite>](https://www.scienceandmediamuseum.org.uk/objects-and-stories/short-history-internet))
+> [<cite>Tim Berners-Lee, 1998</cite>](https://www.scienceandmediamuseum.org.uk/objects-and-stories/short-history-internet)
 
 
 ## So What Are Web Pages?
