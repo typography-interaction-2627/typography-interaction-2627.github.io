@@ -10,9 +10,7 @@ const draft = true
 ### When Was the Internet Invented?
 
 <details>
-	<summary>
-		<p>1969 or 1989?</p>
-	</summary>
+<summary>1969 or 1989?</summary>
 
 1969!
 
@@ -56,18 +54,13 @@ A catalyst in the formation of the internet was the Cold War. The threat of nucl
 	>
 </figure>
 
-<blockquote
-	@attribution="Paul Baran, 2008"
-	@citation="https://www.vanityfair.com/news/2008/07/internet200807)"
-	>
-
-It was necessary to have a strategic system that could withstand a first attack and then be able to return the favor in kind.
-
-The problem was that we didn’t have a survivable communications system, and so Soviet missiles aimed at US missiles would take out the entire [system] that was highly centralized.
-
-Well, then, let’s not make it centralized. Let’s spread it out so that we can have other paths to get around the damage.
-
-</blockquote>
+> It was necessary to have a strategic system that could withstand a first attack and then be able to return the favor in kind.
+>
+> The problem was that we didn’t have a survivable communications system, and so Soviet missiles aimed at US missiles would take out the entire [system] that was highly centralized.
+>
+> Well, then, let’s not make it centralized. Let’s spread it out so that we can have other paths to get around the damage.
+>
+> [<cite>Paul Baran, 2008</cite>](https://www.vanityfair.com/news/2008/07/internet200807)
 
 <figure
 	@caption="The original sketch of ARPANET (*Advanced Research Projects Agency Network*)."
@@ -104,9 +97,7 @@ In 1974, Robert Kahn and Vinton Cerf (two ARPA scientists) developed the *Transm
 ### When Was the Web Invented?
 
 <details>
-	<summary>
-		<p>1969 or 1989?</p>
-	</summary>
+<summary>1969 or 1989?</summary>
 
 1989!
 
@@ -211,16 +202,12 @@ And the web exploded from there.
 	>
 </figure>
 
-<blockquote
-	@attribution="Tim Berners-Lee, 1998"
-	@citation="https://www.scienceandmediamuseum.org.uk/objects-and-stories/short-history-internet)"
-	>
+> The dream behind the Web is of a common information space in which we communicate by sharing information.
+>
+> Its universality is essential: the fact that a hypertext link can point to anything, be it personal, local or global, be it draft or highly polished.
+>
+> [<cite>Tim Berners-Lee, 1998</cite>](https://www.scienceandmediamuseum.org.uk/objects-and-stories/short-history-internet))
 
-The dream behind the Web is of a common information space in which we communicate by sharing information.
-
-Its universality is essential: the fact that a hypertext link can point to anything, be it personal, local or global, be it draft or highly polished.
-
-</blockquote>
 
 ## So What Are Web Pages?
 
@@ -254,16 +241,11 @@ In its openness, connectedness, and ubiquity, the web has come to dominate over 
 
 And in that latter role, we’ll need to learn how to swim. Our path into *design* then is to understand how these things are made and how they function. Their technological construction both empowers and constrains our work. You can’t separate the design from this foundation; the medium is inextricable from the end product.
 
-<blockquote
-	@attribution="Steve Jobs, 2003"
-	@citation="https://www.nytimes.com/2003/11/30/magazine/the-guts-of-a-new-machine.html"
-	>
-
-Most people make the mistake of thinking design is what it looks like. People think it’s this veneer—that the designers are handed this box and told, “Make it look good!”
-
-That’s not what we think design is. It’s not just what it looks like and feels like. Design is how it works.
-
-</blockquote>
+> Most people make the mistake of thinking design is what it looks like. People think it’s this veneer—that the designers are handed this box and told, “Make it look good!”
+>
+> That’s not what we think design is. It’s not just what it looks like and feels like. Design is how it works.
+>
+> [<cite>Steve Jobs, 2003</cite>](https://www.nytimes.com/2003/11/30/magazine/the-guts-of-a-new-machine.html)
 
 ---
 
@@ -317,14 +299,9 @@ Learning good, effective design in any medium necessitates knowing it thoroughly
 
 In your careers, the software, languages, and platforms might be different, and to some extent, are ever-changing–but the design ideas and considerations are analogous and universal. To understand design for the web is to understand interactive design. And in our lives today, to understand interactive design is to understand all design.
 
-<blockquote
-	@attribution="Abigail Disney, 2021"
-	@citation="https://www.theatlantic.com/ideas/archive/2021/06/abigail-disney-rich-protect-dynastic-wealth-propublica-tax/619212/"
-	>
-
-All I know is that if you are a fish, it is hard to describe water, much less to ask if water is necessary, ethical, and structured the way it ought to be.
-
-</blockquote>
+> All I know is that if you are a fish, it is hard to describe water, much less to ask if water is necessary, ethical, and structured the way it ought to be.
+>
+> [<cite>Abigail Disney, 2021</cite>](https://www.theatlantic.com/ideas/archive/2021/06/abigail-disney-rich-protect-dynastic-wealth-propublica-tax/619212/)
 
 ---
 
