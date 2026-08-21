@@ -1,5 +1,6 @@
 ```javascript
 const order = 2
+const draft = 1
 ```
 
 # The Syllabus
