@@ -1,0 +1,20 @@
+:is(li, summary):where(:not(:has(ol, p, section, ul))), /* “Tight” lists/summaries. */
+dd,
+dt,
+figcaption,
+h1,
+h2,
+h3,
+h4,
+p,
+td,
+th {
+	margin-inline-end:   calc(-1 * var(--right));
+	margin-inline-start: calc(-1 * var(--left));
+	overflow-wrap:       break-word;
+	text-box:            trim-both cap alphabetic;
+
+	/* Chrome doesn’t apply `text-box-trim` on inline elements, so can’t set on `*`:
+	/* https://codepen.io/nileshprajapati/pen/RweKdmw */
+	/* https://caniuse.com/mdn-css_properties_text-box-trim_inline_elements */
+}
