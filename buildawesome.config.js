@@ -21,7 +21,6 @@ import puppeteer from 'puppeteer'
 
 export default (config) => {
 	// Setup.
-	config.setDataFileSuffixes(['.config'])
 	config.addPlugin(webC, { components: 'templates/*/**/*.webc' })
 	config.setFrontMatterParsingOptions({
 		delimiters: ['```javascript', '```'],
