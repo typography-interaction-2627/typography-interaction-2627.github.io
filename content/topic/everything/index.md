@@ -278,20 +278,10 @@ Ultimately, a web page is a just text file on a computer. It is written in a sp
 
 These all started as simple, hand-typed documents. Then as the power of computers grew, and the languages of the web evolved alongside—web pages expanded almost inconceivably in complexity and capabilities. *Cascading Style Sheets* (CSS) gave them marvelous abilities to be customized and designed. *JavaScript* (JS) gave them remarkable, newfound interactivity and function. Websites (collections of web pages) today are built on top of an incredible *stack* of technology—networks, servers, databases, libraries, browsers, devices.
 
-
 <figure>
 <img src="org.png">
-</figure>
-
-<figure>
 <img src="screens.jpg">
-</figure>
-
-<figure>
 <img src="kiosk.png">
-</figure>
-
-<figure>
 <img src="turner.jpg">
 <figcaption>
 
