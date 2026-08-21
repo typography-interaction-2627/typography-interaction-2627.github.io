@@ -120,17 +120,15 @@ export default (config) => {
 	// Convert to local links, ex: `../class.md` → `../class/`.
 	const markdownLocalLinks = (md) =>
 		md.core.ruler.after('inline', 'localLinks', ({ tokens }) => {
-			for (const token of tokens) {
-				if (token.type !== 'inline') continue
+			for (const { children } of tokens) {
+				if (!children) continue
 
-				for (const child of token.children) {
+				for (const child of children) {
 					if (child.type !== 'link_open') continue
 
 					const href = child.attrGet('href')
 
-					if (href) {
-						child.attrSet('href', href.replace(/(?![a-z][a-z\d+.-]*:|\/\/)([^/?#]+)\.md(?=$|[?#])/i, (_, name) => name === 'index' ? '' : `${name}/`))
-					}
+					if (href) child.attrSet('href', href.replace(/(?![a-z][a-z\d+.-]*:|\/\/)([^/?#]+)\.md(?=$|[?#])/, (_, name) => name === 'index' ? '' : `${name}/`))
 				}
 			}
 		})
