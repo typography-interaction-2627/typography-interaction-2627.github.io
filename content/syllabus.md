@@ -390,13 +390,12 @@ This agreement is intended to help us create and maintain a safe, empathetic, an
 - We will always [attribute](#attribution) our work when referencing others, tools, or examples.
 <!-- .screen -->
 
-<aside class="screen">
+<!-- <mark>This is a living document!</mark> -->
 
-<mark>This is a living document!</mark>
-
-We can (and should) revisit this agreement throughout the year. Please let us know if you’d like to raise something with the class.
-
-</aside>
+> [!NOTE]
+>
+> We can (and should) revisit this agreement throughout the year. Please let us know if you’d like to raise something with the class.
+<!-- .screen -->
 
 ### Inclusion
 
@@ -424,15 +423,14 @@ If adapting, with attribution, students must explain the usage and demonstrate a
 
 We have zero tolerance for any sort of plagiarism—which ranges from “verbatim copying” (copying-and-pasting) to “thorough paraphrasing” (changing names or rearranging) and “autocompleting” (with LLM-assisted editors). Students should also review the [Academic Integrity Policy](https://docs.google.com/document/d/175hXxUbLI8Jy7NEtbeoyX3Va_MQzXzgxzFUjj7hSkSU).
 
-<aside class="screen" id="attribution">
+<!-- <mark>External Resources *Subject* to Attribution</mark> -->
 
-<mark>External Resources *Subject* to Attribution</mark>
+> [!WARNING]
 
-We are not saying you can’t learn from and incorporate other resources. We do, all the time!
-
-If you make use of other tools, we should see [code](topic/html/index.md#comments) [comments](topic/css/index.md#element-preview) that explain *why* you used them, *what* you referenced, and your overall understanding of *how* it works.
-
-</aside>
+> We are not saying you can’t learn from and incorporate other resources. We do, all the time!
+>
+> If you make use of other tools, we should see [code](topic/html/index.md#comments) [comments](topic/css/index.md#element-preview) that explain *why* you used them, *what* you referenced, and your overall understanding of *how* it works.
+<!-- .screen -->
 
 **An example:** <!-- .screen -->
 
@@ -445,13 +443,12 @@ If you make use of other tools, we should see [code](topic/html/index.md#commen
 }
 ```
 
-<aside class="screen">
+<!-- <mark>Management thanks you for your cooperation</mark> -->
 
-<mark>Management thanks you for your cooperation</mark>
-
-Copying, pasting, or autocompleting code in the absence of an attribution and explanation is plagiarism.
-
-</aside>
+> [!CAUTION]
+>
+> Copying, pasting, or autocompleting code in the absence of an attribution and explanation is plagiarism.
+<!-- .screen -->
 
 ### LLM<small>s</small> and “Artificial Intelligence”
 
@@ -485,13 +482,12 @@ We think you first need to write code yourself to understand the medium. Copying
 
 **The LLM is there to help answer your questions—not write your code/do your work.**
 
-<aside class="screen">
+<!-- <mark>Detailed “AI” policy now in effect</mark> -->
 
-<mark>Detailed “AI” policy now in effect</mark>
-
-This elucidated, agreed-upon approach is what we will be adhering to for the remainder of the course.
-
-</aside>
+> [!NOTE]
+>
+> This elucidated, agreed-upon approach is what we will be adhering to for the remainder of the course.
+<!-- .screen -->
 
 ### Recording Sessions
 

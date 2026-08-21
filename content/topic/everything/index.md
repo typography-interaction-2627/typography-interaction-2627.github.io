@@ -27,15 +27,13 @@ The *Harvard Computers* in the late 1800s. [<cite>↗</cite>](https://en.wikiped
 </figcaption>
 </figure>
 
-<aside>
+<!-- <mark>Warning: Lots of Dudes in this Area</mark> -->
 
-<mark>Warning: Lots of Dudes in this Area</mark>
-
-It is worth noting these pioneers [were often women](https://www.nytimes.com/2019/02/13/magazine/women-coding-computer-programming.html), and they were usually underpaid and underrecognized compared to men in their field. Many would go on to operate the early mechanical/electronic computers.
-
-We’re going talk about a lot of men, here—but know that women have been present from the start, as usual.
-
-</aside>
+> [!NOTE]
+>
+> It is worth noting these pioneers [were often women](https://www.nytimes.com/2019/02/13/magazine/women-coding-computer-programming.html), and they were usually underpaid and underrecognized compared to men in their field. Many would go on to operate the early mechanical/electronic computers.
+>
+> We’re going talk about a lot of men, here—but know that women have been present from the start, as usual.
 
 By the 1960s, computers were room-sized, institutional electronic machines–used by governments (the military), businesses, and universities. They were used to solve complex math problems and sort data, but were still very slow and didn’t communicate with one another.
 
@@ -309,13 +307,11 @@ This means that JavaScript doesn’t just run *in* a webpage you’re looking at
 
 This “JavaScript everywhere” movement means that the tendrils of the web can encompass many non-web-page uses. Maybe it is in an app, maybe a headless data API, maybe a [hardware integration](https://www.theverge.com/2022/8/18/23206110/james-webb-space-telescope-javascript-jwst-instrument-control), maybe it is even something entirely *offline*—but it is still web technologies, most of the way down.
 
-<aside>
+<!-- <mark>Only resort to JS when necessary</mark> -->
 
-<mark>Only resort to JS when necessary</mark>
-
-Even <a :href="$data.repo">this very course site</a> is (mostly) static HTML and CSS—but it is compiled [using JavaScript](https://www.11ty.dev)!
-
-</aside>
+> [!TIP]
+>
+> Even <a :href="$data.repo">this very course site</a> is (mostly) static HTML and CSS—but it is compiled [using JavaScript](https://www.11ty.dev)!
 
 ### Even Things That Aren’t Web Pages Are Web-Page-Like
 
