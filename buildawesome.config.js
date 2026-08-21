@@ -139,6 +139,36 @@ export default (config) => {
 			}
 		})
 
+	// Turn GitHub Flavored Markdown `> [!NOTE]` blockquotes into `<aside class="note">`, etc.
+	const markdownAsides = (md) =>
+		md.core.ruler.after('inline', 'alerts', ({ tokens }) => {
+			for (let index = 0; index < tokens.length; index++) {
+				if (tokens[index].type !== 'blockquote_open') continue
+
+				const [markerOpen, marker, markerClose] = tokens.slice(index + 1, index + 4)
+				const type = markerOpen?.type === 'paragraph_open' && marker?.type === 'inline'
+					&& marker.content.match(/^\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]$/)?.[1].toLowerCase()
+
+				if (!type) continue
+
+				tokens[index].tag = 'aside'
+				tokens[index].attrSet('class', [type, tokens[index].attrGet('class')].filter(Boolean).join(' '))
+
+				// Find the matching `blockquote_close`, accounting for nested blockquotes.
+				let depth = 0
+				for (let closeIndex = index + 1; closeIndex < tokens.length; closeIndex++) {
+					if (tokens[closeIndex].type === 'blockquote_open') depth++
+					else if (tokens[closeIndex].type === 'blockquote_close') {
+						if (depth === 0) { tokens[closeIndex].tag = 'aside'; break }
+						depth--
+					}
+				}
+
+				// Drop the `[!TYPE]` marker paragraph now that its info lives on the `aside`.
+				tokens.splice(index + 1, 3)
+			}
+		})
+
 	const markdown = markdownIt(markdownOptions)
 		.use((markdown) => markdown.render = (src, env = {}) => {
 			delete env.abbreviations // Fix name collision with global `env.abbreviations` data and `markdown-it-abbr`.
@@ -176,6 +206,7 @@ export default (config) => {
 		)
 		.use(markdownRagging)
 		.use(markdownLocalLinks)
+		.use(markdownAsides)
 
 	// Append abbreviations for `markdownItAbbr`.
 	const markdownAbbreviations = abbreviations.map((item) => `\n*[${item.abbr}]: ${item.title}`).join('\n')
