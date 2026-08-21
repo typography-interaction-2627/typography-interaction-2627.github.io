@@ -22,7 +22,7 @@
 	},
 	"packageManager": "pnpm@11.21.0",
 	"scripts": {
-		"prepare": "git config core.hooksPath .githooks",
+		"prepare": "git config core.hooksPath .githooks && pnpm fonts",
 		"clean": "node -e \"require('fs').rmSync('_site', { recursive: true, force: true })\"",
 		"fonts": "node fetch-fonts.js",
 		"build": "pnpm fonts && pnpm clean && buildawesome",
