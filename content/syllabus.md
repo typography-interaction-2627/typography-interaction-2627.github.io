@@ -426,7 +426,7 @@ We have zero tolerance for any sort of plagiarism—which ranges from “verbati
 <!-- <mark>External Resources *Subject* to Attribution</mark> -->
 
 > [!WARNING]
-
+>
 > We are not saying you can’t learn from and incorporate other resources. We do, all the time!
 >
 > If you make use of other tools, we should see [code](topic/html/index.md#comments) [comments](topic/css/index.md#element-preview) that explain *why* you used them, *what* you referenced, and your overall understanding of *how* it works.
