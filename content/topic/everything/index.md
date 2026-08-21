@@ -311,7 +311,7 @@ This “JavaScript everywhere” movement means that the tendrils of the web can
 
 > [!TIP]
 >
-> Even <a :href="$data.repo">this very course site</a> is (mostly) static HTML and CSS—but it is compiled [using JavaScript](https://www.11ty.dev)!
+> Even [this very course site](https://github.com/typography-interaction-2627/typography-interaction-2627.github.io) is (mostly) static HTML/text and CSS—but it is compiled [using JavaScript](https://www.11ty.dev)!
 
 ### Even Things That Aren’t Web Pages Are Web-Page-Like
 

@@ -21,8 +21,8 @@ Digital design, the web in particular, is inextricably linked with typography—
 
 In this class, students will learn intermediate and advanced methods in typography and layout as they concern interactive design. We will use web technologies as the lens to examine this subject—introducing the foundational, front-end languages of HTML (*HyperText Markup Language*) and CSS (*Cascading Style Sheets*) to achieve our designs. Students will understand the specific challenges of type in this medium, but also how it offers unique and particular forms to us as designers. They will learn the common tools and paradigms with which we practice, while developing their own visual, design vocabulary and critical understanding.
 
-- <a :href="course.syllabus.fall"><cite>Submitted Version</cite></a>
-- <a :href="course.catalog.fall"><cite>Course Catalog</cite></a>
+- [<cite>Submitted Version</cite>](../assets/PMCD_5001_F26.pdf)
+- [<cite>Course Catalog</cite>](https://courses.newschool.edu/courses/PMCD5001)
 
 ### Spring <!-- .spring -->
 
@@ -35,8 +35,8 @@ Contemporary digital design exists in the continuum of the ever-shifting, evolvi
 
 In this class, students will learn to give form to and then work at these intersections. We will again use web technologies as our lens for the subject, building on our foundations in HTML and CSS by incorporating JS (*JavaScript*)—to give behavior, interaction, and life to our designs. We will survey modern approaches to front-end design and development, as our discipline has as many methodologies as we do names. There is no one way to do this work, nor one thing to do it for—and through our readings, discussions, exercises, and projects, students will understand and then situate themselves and their practice within the larger field.
 
-- <a :href="course.syllabus.spring"><cite>Submitted Version</cite></a>
-- <a :href="course.catalog.spring"><cite>Course Catalog</cite></a>
+- [<cite>Submitted Version</cite>](../assets/PMCD_5002_S27.pdf)
+- [<cite>Course Catalog</cite>](https://courses.newschool.edu/courses/PMCD5002)
 
 ## Learning Outcomes
 
@@ -342,32 +342,32 @@ In class, we will demonstrate using [Figma](http://figma.com) for visual design 
 We will use the following tools to organize our class:
 <!-- .intro -->
 
-- <a :href="pkg.homepage"><cite>Course Site</cite></a> \
+- [<cite>Course Site</cite>](https://typography-interaction-2627.github.io/) \
 	For housekeeping, agendas, and lectures <span class="screen">(you are here)</span>
 
-- <a :href="course.channel.submit"><cite>Submission Form</cite></a> \
+- [<cite>Submission Form</cite>](https://docs.google.com/forms/d/e/TKTKTK) \
 	For submitting your work/URL&NoBreak;s
 
-- <a :href="course.channel.slack"><cite>Slack Channel</cite></a> \
+- [<cite>Slack Channel</cite>](https://mpscd.slack.com/archives/TKTKTK) \
 	For direct and asynchronous communication (*not* email)
 
-- <a :href="course.channel.figma"><cite>Figma Team</cite></a> \
-	For visual sketching, sharing
+- [<cite>Figma Team</cite>](https://www.figma.com/files/team/TKTKTK) \
+	For visual sketching and collaboration
 
-- <a :href="course.channel.github"><cite>GitHub Organization</cite></a> \
-	For code examples, sharing
+- [<cite>GitHub Organization</cite>](https://github.com/typography-interaction-2627) \
+	For code examples and sharing
 
-- <a :href="course.channel.google"><cite>Google Drive</cite></a> \
-	For document collaboration, recorded lectures
+- [<cite>Google Drive</cite>](https://drive.google.com/drive/folders/TKTKTK) \
+	For document collaboration and recorded lectures
 
-- <a :href="course.channel.zoom"><cite>Zoom Room</cite></a> \
+- [<cite>Zoom Room</cite>](https://NewSchool.zoom.us/j/TKTKTK) \
 	For screen sharing and recording
 
 ## Class Policies
 
 ### Our Community
 
-Our class will create and maintain an agreement, intended to help us foster a safe, empathetic, and productive space for our course. It is built on trust and accumulated experience across cohorts. It can be revised and modified, with all of our input, over the year, and lives on <a :href="`${pkg.homepage}/syllabus/#our-community`">our course site</a>.
+Our class will create and maintain an agreement, intended to help us foster a safe, empathetic, and productive space for our course. It is built on trust and accumulated experience across cohorts. It can be revised and modified, with all of our input, over the year, and lives on [our course site](https://typography-interaction-2627.github.io/syllabus/#our-community).
 <!-- .print -->
 
 This agreement is intended to help us create and maintain a safe, empathetic, and productive space for our course. It is built on trust and accumulated experience across cohorts. It can be revised and modified, with all of our input, over the year:
@@ -377,7 +377,7 @@ This agreement is intended to help us create and maintain a safe, empathetic, an
 
 - We will have a short break, roughly halfway through the class.
 
-- The class should feel comfortable asking the instructors anything—nothing is too trivial, or embarrassing, or off-topic. Tangents are good! Students can always ask us via <a :href="course.channel.slack">Slack</a>, if they would like to remain anonymous.
+- The class should feel comfortable asking the instructors anything—nothing is too trivial, or embarrassing, or off-topic. Tangents are good! Students can always ask us via [Slack](https://mpscd.slack.com/archives/TKTKTK), if they would like to remain anonymous.
 
 - When presenting, students will “have the floor” while they take us through their work. This means everyone else will be quiet, we’ll close our laptops/turn off our phones, and give our full attention to the person showing their work.
 
@@ -403,9 +403,9 @@ Our intent is to respect and give forum to a range of perspectives and backgrou
 
 ### Office Hours
 
-We will have limited availability outside of our class time, and won’t keep scheduled “office hours.” Students should not expect us to immediately solve specific design or technical problems, or have their progress be blocked by this. Their first resource should be themselves, then <a :href="pkg.homepage">our course site</a> and its materials, and then each other.
+We will have limited availability outside of our class time, and won’t keep scheduled “office hours.” Students should not expect us to immediately solve specific design or technical problems, or have their progress be blocked by this. Their first resource should be themselves, then [our course site](https://typography-interaction-2627.github.io) and its materials, and then each other.
 
-That said: if there are still questions—particularly logistical or content ones—students can message us on <a :href="course.channel.slack">Slack</a>, and we will respond when we can. But again this should never be a bottleneck; all of this works better when not done at the last minute.
+That said: if there are still questions—particularly logistical or content ones—students can message us on [Slack](https://mpscd.slack.com/archives/TKTKTK), and we will respond when we can. But again this should never be a bottleneck; all of this works better when not done at the last minute.
 
 ### Additional Technical Help
 
@@ -491,7 +491,7 @@ We think you first need to write code yourself to understand the medium. Copying
 
 ### Recording Sessions
 
-We will take recordings of our sessions for students to reference later. As these will include the students and their work, the recordings will be stored on our <a :href="course.channel.google">Google Drive</a> and made available only to New School email users.
+We will take recordings of our sessions for students to reference later. As these will include the students and their work, the recordings will be stored on our [Google Drive](https://drive.google.com/drive/folders/TKTKTK) and made available only to New School email users.
 
 ## Attendance, Grading, and Other Policies
 
