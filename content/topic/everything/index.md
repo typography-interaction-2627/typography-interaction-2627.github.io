@@ -18,11 +18,15 @@ const draft = true
 
 Before this time, the term *computer* usually referred to a person, not a machine—someone who would *compute* (solve) math problems.
 
-<figure
-	@caption="The *Harvard Computers* in the late 1800s."
-	@citation="https://en.wikipedia.org/wiki/Harvard_Computers#/media/File:Astronomer_Edward_Charles_Pickering%27s_Harvard_computers.jpg"
-	@source="harvard.jpg"
-	>
+<figure>
+<img src="harvard.jpg">
+<figcaption>
+
+The *Harvard Computers* in the late 1800s.
+
+[<cite>Source</cite>](https://en.wikipedia.org/wiki/Harvard_Computers#/media/File:Astronomer_Edward_Charles_Pickering%27s_Harvard_computers.jpg)
+
+</figcaption>
 </figure>
 
 <aside>
@@ -37,21 +41,28 @@ We’re going talk about a lot of men, here—but know that women have been pres
 
 By the 1960s, computers were room-sized, institutional electronic machines–used by governments (the military), businesses, and universities. They were used to solve complex math problems and sort data, but were still very slow and didn’t communicate with one another.
 
-<figure
-	@caption="Univac, the first commercial computer in the US."
-	@citation="https://time.com/4271506/census-bureau-computer-history/"
-	@source="univac.jpg"
-	>
+<figure>
+<img src="univac.jpg">
+<figcaption>
+
+Univac, the first commercial computer in the US.
+
+[<cite>Source</cite>](https://time.com/4271506/census-bureau-computer-history/)
+
+</figcaption>
 </figure>
 
 A catalyst in the formation of the internet was the Cold War. The threat of nuclear conflict spurred the US Defense Department to consider decentralized and distributed networks—to disseminate orders and information in the event of an attack (and ultimately, for retaliation).
 
-<figure
-	@caption="Different network topologies."
-	@citation="https://www.rand.org/content/dam/rand/pubs/research_memoranda/2006/RM3420.pdf"
-	@source="networks.png"
-	class="multiply"
-	>
+<figure>
+<img src="networks.png">
+<figcaption>
+
+Different network topologies.
+
+[<cite>Source</cite>](https://www.rand.org/content/dam/rand/pubs/research_memoranda/2006/RM3420.pdf)
+
+</figcaption>
 </figure>
 
 > It was necessary to have a strategic system that could withstand a first attack and then be able to return the favor in kind.
@@ -62,34 +73,43 @@ A catalyst in the formation of the internet was the Cold War. The threat of nucl
 >
 > [<cite>Paul Baran, 2008</cite>](https://www.vanityfair.com/news/2008/07/internet200807)
 
-<figure
-	@caption="The original sketch of ARPANET (*Advanced Research Projects Agency Network*)."
-	@citation="https://www.scientificamerican.com/gallery/early-sketch-of-arpanets-first-four-nodes/"
-	@source="arpanet.png"
-	style="--lines: 16"
-	>
+<figure>
+<img src="arpanet.png">
+<figcaption>
+
+The original sketch of ARPANET (*Advanced Research Projects Agency Network*).
+
+[<cite>Source</cite>](https://www.scientificamerican.com/gallery/early-sketch-of-arpanets-first-four-nodes/)
+
+</figcaption>
 </figure>
 
 By 1969, computer nodes connected the Stanford Research Institute, UCLA, UCSB and the University of Utah—developed by the Defense Department’s *Advanced Research Project Agency* (ARPA).
 
 Over the following decade, [ARPANET](https://www.britannica.com/topic/ARPANET) would grow to include other cities in the US. It had its first expansion outside the States in 1973, with connections to the UK and Norway. Slowly, similar commercial and academic networks were developing alongside, each with their own communication protocols.
 
-<figure
-	@caption="The growth of ARPANET into the 1970s."
-	@citation="https://medium.com/syntropynet/the-internet-was-not-developed-it-just-happened-part-1-a123fe4628"
-	@source="arpanet.gif"
-	class="multiply"
-	>
+<figure>
+<img src="arpanet.gif">
+<figcaption>
+
+The growth of ARPANET into the 1970s.
+
+[<cite>Source</cite>](https://medium.com/syntropynet/the-internet-was-not-developed-it-just-happened-part-1-a123fe4628)
+
+</figcaption>
 </figure>
 
 In 1974, Robert Kahn and Vinton Cerf (two ARPA scientists) developed the *Transmission Control Protocol* and the *Internet Protocol* (TCP/IP). By the 80s, it became the standard network communication format—and still underpins the internet we all use today.
 
-<figure
-	@caption="The core of TCP/IP is routing bundles of data called *packets.*"@citation="https://web.eecs.umich.edu/~prabal/teaching/eecs582-w13/readings/CK74.pdf"
-	@source="tcpip.png"
-	class="multiply"
-	style="--lines: 14"
-	>
+<figure>
+<img src="tcpip.png">
+<figcaption>
+
+The core of TCP/IP is routing bundles of data called *packets.*
+
+[<cite>Source</cite>](https://web.eecs.umich.edu/~prabal/teaching/eecs582-w13/readings/CK74.pdf)
+
+</figcaption>
 </figure>
 
 ## What About the Web?
@@ -103,11 +123,15 @@ In 1974, Robert Kahn and Vinton Cerf (two ARPA scientists) developed the *Transm
 
 </details>
 
-<figure
-	@caption="Our guy Tim."
-	@citation="https://cds.cern.ch/images/CERN-GE-9407011-31"
-	@source="tim.jpg"
-	>
+<figure>
+<img src="tim.jpg">
+<figcaption>
+
+Our guy Tim.
+
+[<cite>Source</cite>](https://cds.cern.ch/images/CERN-GE-9407011-31)
+
+</figcaption>
 </figure>
 
 Tim Berners-Lee, a British academic and scientist, invented the *World Wide Web* (WWW) with his team while working at [CERN (*European Organization for Nuclear Research*) in 1989](https://home.cern/science/computing/birth-web/short-history-web). It was developed on top of TCP/IP as a standard way to connect documents, living on different computers in different places, via *hypertext* links.
@@ -122,44 +146,61 @@ Their proposal had four components:
 
 1. Software that gives access to the documents: the *server*
 
-<figure
-	@caption="The cover of the original proposal, visualizing the idea of *hypertext.*"
-	@citation="https://cds.cern.ch/record/1405411/files/ARCH-WWW-4-010.pdf"
-	@source="web.png"
-	class="multiply"
-	>
+<figure>
+<img src="web.png">
+<figcaption>
+
+The cover of the original proposal, visualizing the idea of *hypertext.*
+
+[<cite>Source</cite>](https://cds.cern.ch/record/1405411/files/ARCH-WWW-4-010.pdf)
+
+</figcaption>
 </figure>
 
-<figure
-	@caption="How it looked for Tim, back then."
-	@citation="https://worldwideweb.cern.ch/browser/"
-	@source="worldwideweb.png"
-	>
+<figure>
+<img src="worldwideweb.png">
+<figcaption>
+
+How it looked for Tim, back then.
+
+[<cite>Source</cite>](https://worldwideweb.cern.ch/browser/)
+</figcaption>
 </figure>
 
-<figure
-	@caption="How it looks for us, now."
-	@citation="http://info.cern.ch/hypertext/WWW/TheProject.html"
-	@source="chrome.png"
-	style="--inset: -3.5%"
-	>
+<figure>
+<img src="chrome.png">
+<figcaption>
+
+How it looks for us, now.
+
+[<cite>Source</cite>](http://info.cern.ch/hypertext/WWW/TheProject.html)
+
+</figcaption>
 </figure>
 
 By 1991, the [first web page](http://info.cern.ch/hypertext/WWW/TheProject.html) was up and running and the web began to take off.
 <!-- .intro -->
 
-<figure
-	@caption="Mosaic was one of the first widely-available browsers. It introduced support for *images*."
-	@citation="https://en.wikipedia.org/wiki/Mosaic_(web_browser)#/media/File:NCSA_Mosaic_Browser_Screenshot.png"
-	@source="mosaic.png"
-	>
+<figure>
+<img src="mosaic.png">
+<figcaption>
+
+Mosaic was one of the first widely-available browsers. It introduced support for *images*.
+
+[<cite>Source</cite>](https://en.wikipedia.org/wiki/Mosaic_(web_browser)#/media/File:NCSA_Mosaic_Browser_Screenshot.png)
+
+</figcaption>
 </figure>
 
-<figure
-	@caption="Netscape, the first browser that Michael ever used."
-	@citation="https://commons.wikimedia.org/wiki/File:Netscape_Navigator_3_Screenshot.png"
-	@source="netscape.png"
-	>
+<figure>
+<img src="netscape.png">
+<figcaption>
+
+Netscape, the first browser that Michael ever used.
+
+[<cite>Source</cite>](https://commons.wikimedia.org/wiki/File:Netscape_Navigator_3_Screenshot.png)
+
+</figcaption>
 </figure>
 
 The 1990s then saw more-affordable home computers bring internet access to many more people—escaping the government (military), business, and university settings it had been siloed in before. Early web browsers like [Mosaic and Netscape](https://en.wikipedia.org/wiki/History_of_the_web_browser) (1993) helped evolve what was possible online—adding color, images, and interactivity.
@@ -167,39 +208,58 @@ The 1990s then saw more-affordable home computers bring internet access to many 
 And the web exploded from there.
 <!-- .intro -->
 
-<figure
-	@caption="1994: Before search engines, there were web directories like Yahoo."
-	@citation="https://www.webdesignmuseum.org/gallery/yahoo-1994"
-	@source="yahoo.png"
-	>
+<figure>
+<img src="yahoo.png">
+<figcaption>
+
+1994: Before search engines, there were web directories like Yahoo.
+
+[<cite>Source</cite>](https://www.webdesignmuseum.org/gallery/yahoo-1994)
+
+</figcaption>
 </figure>
 
-<figure
-	@caption="1995: GeoCities brought web design to the masses, for better or for worse."
-	@citation="https://blog.geocities.institute/archives/791"
-	@source="geocities.png"
-	>
+<figure>
+<img src="geocities.png">
+<figcaption>
+
+1995: GeoCities brought web design to the masses, for better or for worse.
+
+[<cite>Source</cite>](https://blog.geocities.institute/archives/791)
+
+</figcaption>
 </figure>
 
-<figure
-	@caption="1995: They used to sell books, if you can believe it."
-	@citation="https://www.versionmuseum.com/history-of/amazon-website"
-	@source="amazon.gif"
-	>
+<figure>
+<img src="amazon.gif">
+<figcaption>
+
+1995: They used to sell books, if you can believe it.
+
+[<cite>Source</cite>](https://www.versionmuseum.com/history-of/amazon-website)
+
+</figcaption>
 </figure>
 
-<figure
-	@caption="1998: We eventually got search engines."
-	@citation="https://www.webdesignmuseum.org/gallery/google-1998"
-	@source="google.png"
-	>
+<figure>
+<img src="google.png">
+<figcaption>
+
+1998: We eventually got search engines.
+
+[<cite>Source</cite>](https://www.webdesignmuseum.org/gallery/google-1998)
+
+</figcaption>
 </figure>
 
-<figure
-	@caption="2004: And then social networks."
-	@citation="https://www.webdesignmuseum.org/gallery/google-1998"
-	@source="facebook.png"
-	>
+<figure>
+<img src="facebook.png">
+<figcaption>
+
+2004: And then social networks.
+
+[<cite>Source</cite>](https://www.webdesignmuseum.org/gallery/google-1998)
+</figcaption>
 </figure>
 
 > The dream behind the Web is of a common information space in which we communicate by sharing information.
@@ -218,16 +278,26 @@ Ultimately, a web page is a just text file on a computer. It is written in a sp
 
 These all started as simple, hand-typed documents. Then as the power of computers grew, and the languages of the web evolved alongside—web pages expanded almost inconceivably in complexity and capabilities. *Cascading Style Sheets* (CSS) gave them marvelous abilities to be customized and designed. *JavaScript* (JS) gave them remarkable, newfound interactivity and function. Websites (collections of web pages) today are built on top of an incredible *stack* of technology—networks, servers, databases, libraries, browsers, devices.
 
-<figure @source="org.png"></figure>
 
-<figure @source="screens.jpg"></figure>
+<figure>
+<img src="org.png">
+</figure>
 
-<figure @source="kiosk.png"></figure>
+<figure>
+<img src="screens.jpg">
+</figure>
 
-<figure
-	@caption="Michael used to work at MoMA. These are all web pages!"
-	@source="turner.jpg"
-	>
+<figure>
+<img src="kiosk.png">
+</figure>
+
+<figure>
+<img src="turner.jpg">
+<figcaption>
+
+Michael used to work at MoMA. These are all web pages!
+
+</figcaption>
 </figure>
 
 It all starts with text, and thus, with type.
@@ -251,19 +321,26 @@ And in that latter role, we’ll need to learn how to swim. Our path into *desig
 
 ### These Days, Apps Are Often Web Pages Too
 
-<figure
-	@caption="We’ll be using a couple of these."
-	@source="electron.png"
-	>
+<figure>
+<img src="electron.png">
+<figcaption>
+
+We’ll be using a couple of these.
+
+</figcaption>
 </figure>
 
 All these desktop “apps” are built in [Electron](https://www.electronjs.org)—and so are really just web pages inside a slim, platform-native wrapper. (Essentially, a single-website browser!)
 
 The core application only has to be written once, instead of rewritten for each platform. And why design it all again? (Designers are expensive!) Why hire Windows and Mac devs when you can just hire web devs? …then why hire i&NoBreak;OS or Android devs, either? (Developers are even more expensive!) So many companies take approach, for cross-platform development.
 
-<figure
-	@caption="These mobile “apps” are all built with [React Native](https://reactnative.dev), following a similar paradigm."
-	@source="mobile.png">
+<figure>
+<img src="mobile.png">
+<figcaption>
+
+These mobile “apps” are all built with [React Native](https://reactnative.dev), following a similar paradigm.
+
+</figcaption>
 </figure>
 
 The app is really just a *web view* (browser), and every screen within is a *web page*.
