@@ -318,7 +318,6 @@ There will be check-ins and reviews around each of these before the final due da
 | Reading Responses                  | 10% |
 | ~~Quizzes,~~ Exercises, Milestones | 10% |
 | Engagement                         | 20% |
-|                                    |     |
 | Project 1: *Manuscript*            | 10% |
 | Project 2: *Spread*                | 20% |
 | Project 3: *Binding*               | 30% |
@@ -330,7 +329,6 @@ There will be check-ins and reviews around each of these before the final due da
 | Reading Responses              | 10% |
 | Exercises, Milestones          | 10% |
 | Engagement                     | 20% |
-|                                |     |
 | Project *Index*                | 10% |
 | Project 4: *Links*             | 20% |
 | Project 5: *Functions*         | 30% |
