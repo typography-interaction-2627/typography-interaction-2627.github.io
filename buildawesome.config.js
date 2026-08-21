@@ -117,6 +117,24 @@ export default (config) => {
 		)
 	}
 
+	// Convert to local links, ex: `../class.md` → `../class/`.
+	const markdownLocalLinks = (md) =>
+		md.core.ruler.after('inline', 'localLinks', ({ tokens }) => {
+			for (const token of tokens) {
+				if (token.type !== 'inline') continue
+
+				for (const child of token.children) {
+					if (child.type !== 'link_open') continue
+
+					const href = child.attrGet('href')
+
+					if (href) {
+						child.attrSet('href', href.replace(/(?![a-z][a-z\d+.-]*:|\/\/)([^/?#]+)\.md(?=$|[?#])/i, (_, name) => name === 'index' ? '' : `${name}/`))
+					}
+				}
+			}
+		})
+
 	const markdown = markdownIt(markdownOptions)
 		.use((markdown) => markdown.render = (src, env = {}) => {
 			delete env.abbreviations // Fix name collision with global `env.abbreviations` data and `markdown-it-abbr`.
@@ -153,6 +171,7 @@ export default (config) => {
 			</pre>`,
 		)
 		.use(markdownRagging)
+		.use(markdownLocalLinks)
 
 	// Append abbreviations for `markdownItAbbr`.
 	const markdownAbbreviations = abbreviations.map((item) => `\n*[${item.abbr}]: ${item.title}`).join('\n')
@@ -171,6 +190,7 @@ export default (config) => {
 		markdownIt(markdownOptions)
 			.use(markdownItAbbr)
 			.use(markdownRagging)
+			.use(markdownLocalLinks)
 			.render(String(content + markdownAbbreviations))
 			.replace('<p>', '')
 			.replace('</p>', '')
