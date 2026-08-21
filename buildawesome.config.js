@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs'
 import { readdir, readFile, utimes } from 'fs/promises'
-import { resolve, join, dirname } from 'path'
+import { resolve, join, dirname, normalize } from 'path'
 
 import webC from '@11ty/eleventy-plugin-webc'
 
@@ -130,7 +130,10 @@ export default (config) => {
 
 					if (!href || /^(?:[a-z][a-z\d+.-]*:|\/\/)/i.test(href)) continue
 
-					child.attrSet('href', href.replace(/([^/?#]+)\.md(?=$|[?#])/, (_, name) => `${isIndex ? '' : '../'}${name === 'index' ? '' : `${name}/`}`))
+					const cleaned = href.replace(/([^/?#]+)\.md(?=$|[?#])/, (_, name) => name === 'index' ? '' : `${name}/`)
+					const shifted = isIndex ? cleaned : `../${cleaned}`
+
+					child.attrSet('href', normalize(shifted))
 				}
 			}
 		})
