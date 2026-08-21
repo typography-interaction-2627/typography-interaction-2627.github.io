@@ -24,7 +24,7 @@ In this class, students will learn intermediate and advanced methods in typograp
 - [<cite>Submitted Version</cite>](../assets/PMCD_5001_F26.pdf)
 - [<cite>Course Catalog</cite>](https://courses.newschool.edu/courses/PMCD5001)
 
-### Spring <!-- .spring -->
+### Spring <!-- .spring inert -->
 
 Our second semester will build on the type and layout foundations from the first, moving into interface design and interactive experiences on the web.
 <!-- .intro -->
@@ -57,7 +57,7 @@ By the end of this semester, students will:
 
 - Think critically and develop their own, distinct thoughts on the role of digital within the larger canon of design.
 
-### Spring <!-- .spring -->
+### Spring <!-- .spring inert -->
 
 By the end of this semester, students will:
 <!-- .intro -->
@@ -177,7 +177,7 @@ Students will assemble a collection of texts from *Spread*, combined with their 
 We want to see effective multi-page design and navigation, advanced layouts (flexbox, grid), consistency across the pages and content, and polish/nuance.
 <!-- .note -->
 
-### Unit 4: *Interface as Interface* <!-- .spring -->
+### Unit 4: *Interface as Interface* <!-- .spring inert -->
 
 #### Weeks 16–21
 
@@ -209,7 +209,7 @@ Students will collaboratively assemble, connect, and present a collection using 
 In addition to our previous project requirements, here we’ll be looking for the effective use of images/media, meaningful interactive interface functionality, and your use of JavaScript.
 <!-- .note -->
 
-### Unit 5: *If All You Have Is a Hammer, Everything Looks Like a Nail* <!-- .spring -->
+### Unit 5: *If All You Have Is a Hammer, Everything Looks Like a Nail* <!-- .spring inert -->
 
 #### Weeks 22–30
 
@@ -322,7 +322,7 @@ There will be check-ins and reviews around each of these before the final due da
 | Project 2: *Spread*                | 20% |
 | Project 3: *Binding*               | 30% |
 
-### Spring <!-- .spring -->
+### Spring <!-- .spring inert -->
 
 |                                |     |
 | ------------------------------ | --- |
