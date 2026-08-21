@@ -232,33 +232,29 @@ To wrap up the semester (and course), we’ll round out our knowledge of the web
 - [<cite>*A notional design studio.*</cite>](https://ethanmarcotte.com/wrote/a-notional-design-studio/) \
 	Ethan Marcotte, 2025
 
-&nbsp;
-
-- [<cite>*Human Interface Guidelines*</cite>](https://andymatuschak.org/files/papers/Apple%20Human%20Interface%20Guidelines%201987.pdf) \
+* [<cite>*Human Interface Guidelines*</cite>](https://andymatuschak.org/files/papers/Apple%20Human%20Interface%20Guidelines%201987.pdf) \
 	Apple, 1987
 
-- [<cite>*Macintosh Human Interface Guidelines*</cite>](https://vintageapple.org/macprogramming/pdf/Macintosh_Human_Interface_Guidelines_1992.pdf) \
+* [<cite>*Macintosh Human Interface Guidelines*</cite>](https://vintageapple.org/macprogramming/pdf/Macintosh_Human_Interface_Guidelines_1992.pdf) \
 	Apple, 1992
 
-- [<cite>*The Windows Interface Guidelines*</cite>](https://www.ics.uci.edu/~kobsa/courses/ICS104/course-notes/Microsoft_WindowsGuidelines.pdf) \
+* [<cite>*The Windows Interface Guidelines*</cite>](https://www.ics.uci.edu/~kobsa/courses/ICS104/course-notes/Microsoft_WindowsGuidelines.pdf) \
 	Microsoft, 1995
 
-- [<cite>*Aqua Human Interface Guidelines*</cite>](http://www.multimedialab.be/doc/tech/doc_osx_hi_guidelines.pdf) \
+* [<cite>*Aqua Human Interface Guidelines*</cite>](http://www.multimedialab.be/doc/tech/doc_osx_hi_guidelines.pdf) \
 	Apple, 2001
 
-- [<cite>*iPhone Human Interface Guidelines*</cite>](http://coolx.net/board/upload/develop/MobileHIG.pdf) \
+* [<cite>*iPhone Human Interface Guidelines*</cite>](http://coolx.net/board/upload/develop/MobileHIG.pdf) \
 	Apple, 2008
 
-- [<cite>*Windows Phone 7 UI Design and Interaction Guide*</cite>](http://tableless.github.io/exemplos/pdf/guidelines-interface-mobiles/UI%20Design%20and%20Interaction%20Guide%20for%20Windows%20Phone%207%20v2.0.pdf) \
+* [<cite>*Windows Phone 7 UI Design and Interaction Guide*</cite>](http://tableless.github.io/exemplos/pdf/guidelines-interface-mobiles/UI%20Design%20and%20Interaction%20Guide%20for%20Windows%20Phone%207%20v2.0.pdf) \
 	Microsoft, 2010
 
-- [<cite>*Material Design 1*</cite>](https://m1.material.io/) \
+* [<cite>*Material Design 1*</cite>](https://m1.material.io/) \
 	Google, 2014
 
-- [<cite>*<small>i</small>OS Human Interface Guidelines*</cite>](https://www.evl.uic.edu/datsoupi/420_14/docs/MobileHIG.pdf) \
+* [<cite>*<small>i</small>OS Human Interface Guidelines*</cite>](https://www.evl.uic.edu/datsoupi/420_14/docs/MobileHIG.pdf) \
 	Apple, 2014
-
-&nbsp;
 
 - [<cite>*Material Design 3*</cite>](https://m3.material.io/) \
 	Google, 2021 (*ongoing*)
