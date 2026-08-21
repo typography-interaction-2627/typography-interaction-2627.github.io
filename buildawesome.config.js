@@ -36,6 +36,7 @@ export default (config) => {
 	// Slide these on over.
 	config.addPassthroughCopy('assets/reset.css')
 	config.addPassthroughCopy('assets/fonts/*.woff2')
+	config.addPassthroughCopy('content/**/*.(gif|jpg|png|svg)')
 
 	// Avoid front-matter in `page.webc`.
 	config.addTemplate('templates/page.webc', readFileSync('templates/page.webc'), { layout: 'base', permalink: false })
