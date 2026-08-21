@@ -89,19 +89,19 @@ We will focus on reviewing the core principles of typography, and introduce the 
 
 #### Readings
 
-- [<cite>The Principles of the New Typography</cite>](https://readings.design/PDF/ThePrinciplesoftheNewTypography.pdf) \
+- [<cite>*The Principles of the New Typography*</cite>](https://readings.design/PDF/ThePrinciplesoftheNewTypography.pdf) \
 	Jan Tschichold, 1928
 
-- [<cite>The Crystal Goblet, or Printing Should Be Invisible</cite>](https://readings.design/PDF/The%20Crystal%20Goblet.pdf) \
+- [<cite>*The Crystal Goblet, or Printing Should Be Invisible*</cite>](https://readings.design/PDF/The%20Crystal%20Goblet.pdf) \
 	Beatrice Warde, 1932
 
-- [<cite>Detail in Typography</cite>](https://static.trogu.com/documents/articles/palgrave/references/hochuli-Jost-H-Detail-in-Typography%20scribd%20-%2064-page.pdf) \
+- [<cite>*Detail in Typography*</cite>](https://static.trogu.com/documents/articles/palgrave/references/hochuli-Jost-H-Detail-in-Typography%20scribd%20-%2064-page.pdf) \
 	Jost Hochuli, 1987
 
-- [<cite>The Elements of Typographic Style</cite>](https://readings.design/PDF/the_elements_of_typographic_style.pdf) \
+- [<cite>*The Elements of Typographic Style*</cite>](https://readings.design/PDF/the_elements_of_typographic_style.pdf) \
 	Robert Bringhurst, 1992
 
-- [<cite>A Handmade Web</cite>](http://luckysoap.com/statements/handmadeweb.html) \
+- [<cite>*A Handmade Web*</cite>](http://luckysoap.com/statements/handmadeweb.html) \
 	J.R. Carpenter, 2015
 
 #### Project 1: *Manuscript*
@@ -121,19 +121,19 @@ Students will learn how to design and implement more complex, flexible layouts, 
 
 #### Readings
 
-- [<cite>Investigations on Gestalt Principles</cite>](https://g-e-s-t-a-l-t.org/media/pdf/Investigations-on-Gestalt-Principles.pdf) \
+- [<cite>*Investigations on Gestalt Principles*</cite>](https://g-e-s-t-a-l-t.org/media/pdf/Investigations-on-Gestalt-Principles.pdf) \
 	Max Wertheimer, 1923
 
-- [<cite>Continuity and Change</cite>](https://readings.design/PDF/MaxBill-ContinuityAndChange.pdf) \
+- [<cite>*Continuity and Change*</cite>](https://readings.design/PDF/MaxBill-ContinuityAndChange.pdf) \
 	Max Bill, 1953
 
-- [<cite>Grid Systems in Graphic Design</cite>](https://monoskop.org/images/a/a4/Mueller-Brockmann_Josef_Grid_Systems_in_Graphic_Design_Raster_Systeme_fuer_die_Visuele_Gestaltung_English_German_no_OCR.pdf) \
+- [<cite>*Grid Systems in Graphic Design*</cite>](https://monoskop.org/images/a/a4/Mueller-Brockmann_Josef_Grid_Systems_in_Graphic_Design_Raster_Systeme_fuer_die_Visuele_Gestaltung_English_German_no_OCR.pdf) \
 	Josef Müller-Brockmann, 1981
 
-- [<cite>The Web’s Grain</cite>](https://frankchimero.com/blog/2015/the-webs-grain/) \
+- [<cite>*The Web’s Grain*</cite>](https://frankchimero.com/blog/2015/the-webs-grain/) \
 	Frank Chimero, 2015
 
-- [<cite>The Diminishing Marginal Value of Aesthetics</cite>](https://subpixel.space/entries/diminishing-marginal-aesthetic-value/) \
+- [<cite>*The Diminishing Marginal Value of Aesthetics*</cite>](https://subpixel.space/entries/diminishing-marginal-aesthetic-value/) \
 	Toby Shorin, 2017
 
 #### Project 2: *Spread*
@@ -153,19 +153,19 @@ In our final Fall unit, we will focus on creating advanced, multi-page layouts w
 
 #### Readings
 
-- [<cite>Design Interface: How Man and Machine Communicate</cite>](https://i-n-t-e-r-f-a-c-e.org/media/pdf/Design-Interface.pdf) \
+- [<cite>*Design Interface: How Man and Machine Communicate*</cite>](https://i-n-t-e-r-f-a-c-e.org/media/pdf/Design-Interface.pdf) \
 	Gianni Barbacetto, 1987
 
-- [<cite>A Software Design Manifesto</cite>](https://hci.stanford.edu/publications/bds/1-kapor.html) \
+- [<cite>*A Software Design Manifesto*</cite>](https://hci.stanford.edu/publications/bds/1-kapor.html) \
 	Mitchell Kapor, 1990
 
-- [<cite>Typeface As Programme</cite>](https://www.typotheque.com/articles/typeface_as_programme) \
+- [<cite>*Typeface As Programme*</cite>](https://www.typotheque.com/articles/typeface_as_programme) \
 	Jürg Lehni, 2011
 
-- [<cite>Interface Writing: Code for Humans</cite>](https://www.nicolefenton.com/interface-writing/) \
+- [<cite>*Interface Writing: Code for Humans*</cite>](https://www.nicolefenton.com/interface-writing/) \
 	Nicole Fenton, 2014
 
-- [<cite>My website is a shifting house next to a river of knowledge. What could yours be?</cite>](https://thecreativeindependent.com/essays/laurel-schwulst-my-website-is-a-shifting-house-next-to-a-river-of-knowledge-what-could-yours-be/) \
+- [<cite>*My website is a shifting house next to a river of knowledge. What could yours be?*</cite>](https://thecreativeindependent.com/essays/laurel-schwulst-my-website-is-a-shifting-house-next-to-a-river-of-knowledge-what-could-yours-be/) \
 	Laurel Schwulst, 2018
 
 #### Project 3: *Binding*
@@ -185,19 +185,19 @@ We will expand on our first-semester foundations in design, typography, HTML, an
 
 #### Readings
 
-- [<cite>The Design of Everyday Things</cite>](https://dl.icdst.org/pdfs/files4/4bb8d08a9b309df7d86e62ec4056ceef.pdf) \
+- [<cite>*The Design of Everyday Things*</cite>](https://dl.icdst.org/pdfs/files4/4bb8d08a9b309df7d86e62ec4056ceef.pdf) \
 	Don Norman, 1988 (*revised* 2013)
 
-- [<cite>I Am a Handle</cite>](https://linedandunlined.com/archive/i-am-a-handle/) \
+- [<cite>*I Am a Handle*</cite>](https://linedandunlined.com/archive/i-am-a-handle/) \
 	Rob Giampietro, 2012
 
-- [<cite>Sometimes It Looks Like a Duck, Sometimes It Looks Like a Rabbit</cite>](https://veryinteractive.net/pdfs/michaelson-sometimesitlookslikeaduck.pdf) \
+- [<cite>*Sometimes It Looks Like a Duck, Sometimes It Looks Like a Rabbit*</cite>](https://veryinteractive.net/pdfs/michaelson-sometimesitlookslikeaduck.pdf) \
 	Jack Balkin, Dan Michaelson, 2012
 
-- [<cite>Laws of UX</cite>](https://lawsofux.com/) \
+- [<cite>*Laws of UX*</cite>](https://lawsofux.com/) \
 	Jon Yablonski, 2018 (*ongoing*)
 
-- [<cite>Folk Interfaces</cite>](https://maggieappleton.com/folk-interfaces) \
+- [<cite>*Folk Interfaces*</cite>](https://maggieappleton.com/folk-interfaces) \
 	Maggie Appleton, 2022
 
 #### Project 4: *Links*
@@ -217,56 +217,56 @@ To wrap up the semester (and course), we’ll round out our knowledge of the web
 
 #### Readings
 
-- [<cite>What Is Code?</cite>](https://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/) \
+- [<cite>*What Is Code?*</cite>](https://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/) \
 	Paul Ford, 2015
 
-- [<cite>TikTok’s Enshittification</cite>](https://pluralistic.net/2023/01/21/potemkin-ai/#hey-guys) \
+- [<cite>*TikTok’s Enshittification*</cite>](https://pluralistic.net/2023/01/21/potemkin-ai/#hey-guys) \
 	Cory Doctorow, 2023
 
-- [<cite>The Age of Average</cite>](https://www.alexmurrell.co.uk/articles/the-age-of-average) \
+- [<cite>*The Age of Average*</cite>](https://www.alexmurrell.co.uk/articles/the-age-of-average) \
 	Alex Murrell, 2023
 
-- [<cite>Why A.I. Isn’t Going to Make Art</cite>](https://web.archive.org/web/20240831102229/https://www.newyorker.com/culture/the-weekend-essay/why-ai-isnt-going-to-make-art) \
+- [<cite>*Why A.I. Isn’t Going to Make Art*</cite>](https://web.archive.org/web/20240831102229/https://www.newyorker.com/culture/the-weekend-essay/why-ai-isnt-going-to-make-art) \
 	Ted Chiang, 2024
 
-- [<cite>A notional design studio.</cite>](https://ethanmarcotte.com/wrote/a-notional-design-studio/) \
+- [<cite>*A notional design studio.*</cite>](https://ethanmarcotte.com/wrote/a-notional-design-studio/) \
 	Ethan Marcotte, 2025
 
 &nbsp;
 
-- [<cite>Human Interface Guidelines</cite>](https://andymatuschak.org/files/papers/Apple%20Human%20Interface%20Guidelines%201987.pdf) \
+- [<cite>*Human Interface Guidelines*</cite>](https://andymatuschak.org/files/papers/Apple%20Human%20Interface%20Guidelines%201987.pdf) \
 	Apple, 1987
 
-- [<cite>Macintosh Human Interface Guidelines</cite>](https://vintageapple.org/macprogramming/pdf/Macintosh_Human_Interface_Guidelines_1992.pdf) \
+- [<cite>*Macintosh Human Interface Guidelines*</cite>](https://vintageapple.org/macprogramming/pdf/Macintosh_Human_Interface_Guidelines_1992.pdf) \
 	Apple, 1992
 
-- [<cite>The Windows Interface Guidelines</cite>](https://www.ics.uci.edu/~kobsa/courses/ICS104/course-notes/Microsoft_WindowsGuidelines.pdf) \
+- [<cite>*The Windows Interface Guidelines*</cite>](https://www.ics.uci.edu/~kobsa/courses/ICS104/course-notes/Microsoft_WindowsGuidelines.pdf) \
 	Microsoft, 1995
 
-- [<cite>Aqua Human Interface Guidelines</cite>](http://www.multimedialab.be/doc/tech/doc_osx_hi_guidelines.pdf) \
+- [<cite>*Aqua Human Interface Guidelines*</cite>](http://www.multimedialab.be/doc/tech/doc_osx_hi_guidelines.pdf) \
 	Apple, 2001
 
-- [<cite>iPhone Human Interface Guidelines</cite>](http://coolx.net/board/upload/develop/MobileHIG.pdf) \
+- [<cite>*iPhone Human Interface Guidelines*</cite>](http://coolx.net/board/upload/develop/MobileHIG.pdf) \
 	Apple, 2008
 
-- [<cite>Windows Phone 7 UI Design and Interaction Guide</cite>](http://tableless.github.io/exemplos/pdf/guidelines-interface-mobiles/UI%20Design%20and%20Interaction%20Guide%20for%20Windows%20Phone%207%20v2.0.pdf) \
+- [<cite>*Windows Phone 7 UI Design and Interaction Guide*</cite>](http://tableless.github.io/exemplos/pdf/guidelines-interface-mobiles/UI%20Design%20and%20Interaction%20Guide%20for%20Windows%20Phone%207%20v2.0.pdf) \
 	Microsoft, 2010
 
-- [<cite>Material Design 1</cite>](https://m1.material.io/) \
+- [<cite>*Material Design 1*</cite>](https://m1.material.io/) \
 	Google, 2014
 
-- [<cite><small>i</small>OS Human Interface Guidelines</cite>](https://www.evl.uic.edu/datsoupi/420_14/docs/MobileHIG.pdf) \
+- [<cite>*<small>i</small>OS Human Interface Guidelines*</cite>](https://www.evl.uic.edu/datsoupi/420_14/docs/MobileHIG.pdf) \
 	Apple, 2014
 
 &nbsp;
 
-- [<cite>Material Design 3</cite>](https://m3.material.io/) \
+- [<cite>*Material Design 3*</cite>](https://m3.material.io/) \
 	Google, 2021 (*ongoing*)
 
-- [<cite>Human Interface Guidelines</cite>](https://developer.apple.com/design/human-interface-guidelines) \
+- [<cite>*Human Interface Guidelines*</cite>](https://developer.apple.com/design/human-interface-guidelines) \
 	Apple, 2022 (*ongoing*)
 
-- [<cite>Fluent 2 Design System</cite>](https://www.microsoft.com/design/fluent/) \
+- [<cite>*Fluent 2 Design System*</cite>](https://www.microsoft.com/design/fluent/) \
 	Microsoft, 2023 (*ongoing*)
 
 #### Project 5: *Functions*
