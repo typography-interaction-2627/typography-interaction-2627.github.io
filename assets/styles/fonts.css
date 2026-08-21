@@ -1,7 +1,16 @@
 @font-face {
 	font-family: 'Geneva';
 	src:         url('../assets/fonts/geneva.woff2');
-	font-weight: 400 700;
+}
+
+@font-face {
+	font-family: 'New York';
+	src:         url('../assets/fonts/new-york.woff2');
+}
+
+@font-face {
+	font-family: 'Monaco';
+	src:         url('../assets/fonts/monaco.woff2');
 }
 
 :where(:root) {
