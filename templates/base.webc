@@ -30,6 +30,7 @@
 		</template>
 		<meta webc:else content="noindex, nofollow" name="robots">
 		<style webc:is="style-buckets" webc:nokeep></style>
+		<script webc:keep @raw="getBundle('js')" type="module"></script>
 	</head>
 	<body>
 		<template webc:nokeep @raw="content"></template>
