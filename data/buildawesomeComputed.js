@@ -40,18 +40,17 @@ const getWeek = (data) => {
 	}
 }
 
-const isWeek = (data) => data.page.filePathStem.startsWith('/week/')
-const isProject = (data) => data.page.filePathStem.startsWith('/project/')
+const isCollection = (data, name) => data.collections[name]?.some((item) => item.inputPath === data.page.inputPath)
 
 export default {
 	date: (data) => getWeek(data)?.date,
 	title: (data) =>
-		isWeek(data) ? `Week ${data.page.fileSlug}`
-		: isProject(data) ? (Number.isInteger(+data.page.fileSlug)
+		isCollection(data, 'weeks') ? `Week ${data.page.fileSlug}`
+		: isCollection(data, 'projects') ? (Number.isInteger(+data.page.fileSlug)
 			? `Project ${data.page.fileSlug}: “${data.markdownH1(data)}”`
 			: `Project “${data.markdownH1(data)}”`)
 		: data.markdownH1(data),
 	unit: (data) => getWeek(data)?.unit,
 	unitNumber: (data) => getWeek(data)?.unitNumber,
-	week: (data) => isWeek(data) ? Number(data.page.fileSlug) : data.week,
+	week: (data) => isCollection(data, 'weeks') ? Number(data.page.fileSlug) : data.week,
 }
