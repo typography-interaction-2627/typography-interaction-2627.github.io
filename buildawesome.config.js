@@ -61,7 +61,7 @@ export default (config) => {
 		config.addCollection(directory ? `${directory}s` : 'root', collection => collection
 			.getFilteredByGlob(`content/${directory ? `${directory}/{*.md,*/index.md}` : '*.md'}`)
 			.sort((a, b) =>
-				a.data.week - b.data.week
+				(a.data.week || Infinity) - (b.data.week || Infinity)
 				|| a.data.order - b.data.order
 				|| a.inputPath.localeCompare(b.inputPath, undefined, { numeric: true })
 			)
