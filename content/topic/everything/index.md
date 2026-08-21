@@ -130,7 +130,6 @@ Their proposal had four components:
 1. A program to display (and edit) these documents: the first *web browser* (called WorldWideWeb)
 
 1. Software that gives access to the documents: the *server*
-<!-- .balance -->
 
 <figure
 	@caption="The cover of the original proposal, visualizing the idea of *hypertext.*"
@@ -228,19 +227,9 @@ Its universality is essential: the fact that a hypertext link can point to anyth
 Obviously, *this* is a web page. Think about how many other web pages you have visited in the past day. Dozens, even hundreds?
 <!-- .intro -->
 
-<div>
-
-<div class="sticky">
-
 Ultimately, a web page is a just text file on a computer. It is written in a special format, the aforementioned HTML, which structures the content of the document and also links it to other resources—other web pages, images, computers, really almost anything. Think of the web as *type with instructions*.
 
 These all started as simple, hand-typed documents. Then as the power of computers grew, and the languages of the web evolved alongside—web pages expanded almost inconceivably in complexity and capabilities. *Cascading Style Sheets* (CSS) gave them marvelous abilities to be customized and designed. *JavaScript* (JS) gave them remarkable, newfound interactivity and function. Websites (collections of web pages) today are built on top of an incredible *stack* of technology—networks, servers, databases, libraries, browsers, devices.
-
-</div>
-
-</div>
-
-<div class="right start stack" style="margin-block-start: 2rlh; row-gap: 1rlh">
 
 <figure @source="org.png"></figure>
 
@@ -254,10 +243,8 @@ These all started as simple, hand-typed documents. Then as the power of computer
 	>
 </figure>
 
-</div>
-
 It all starts with text, and thus, with type.
-<!-- .intro .body -->
+<!-- .intro -->
 
 ## An Ever-Present Visual Medium
 
@@ -289,10 +276,8 @@ That’s not what we think design is. It’s not just what it looks like and fee
 </figure>
 
 All these desktop “apps” are built in [Electron](https://www.electronjs.org)—and so are really just web pages inside a slim, platform-native wrapper. (Essentially, a single-website browser!)
-<!-- .balance -->
 
 The core application only has to be written once, instead of rewritten for each platform. And why design it all again? (Designers are expensive!) Why hire Windows and Mac devs when you can just hire web devs? …then why hire i&NoBreak;OS or Android devs, either? (Developers are even more expensive!) So many companies take approach, for cross-platform development.
-<!-- .balance -->
 
 <figure
 	@caption="These mobile “apps” are all built with [React Native](https://reactnative.dev), following a similar paradigm."
@@ -300,7 +285,6 @@ The core application only has to be written once, instead of rewritten for each
 </figure>
 
 The app is really just a *web view* (browser), and every screen within is a *web page*.
-<!-- .balance -->
 
 ### It’s Increasingly Just JS, Behind the Scenes
 
