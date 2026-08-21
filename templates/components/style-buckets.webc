@@ -12,3 +12,7 @@
 		@import url('${getBundleFileUrl('css', 'base')}') layer(base);
 	`"
 ></style>
+<style
+	webc:keep
+	@raw="`@layer components { ${getBundle('css')} }`"
+></style>
