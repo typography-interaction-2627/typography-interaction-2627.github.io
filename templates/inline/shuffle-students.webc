@@ -1,0 +1,10 @@
+<script>
+	const students = document.querySelector('#students')
+	const shuffleStudents = () => students.append(...[...students.children].sort(() => Math.random() - 0.5))
+
+	shuffleStudents()
+	document.querySelector('#shuffle').onclick = () => shuffleStudents()
+</script>
+<button id="shuffle">
+	<p>Shuffle</p>
+</button>

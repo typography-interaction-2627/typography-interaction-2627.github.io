@@ -18,14 +18,4 @@ const order = 3
 - [Jiho]()
 <!-- #students -->
 
-<button id="shuffle">
-	<p>Shuffle</p>
-</button>
-
-<script>
-	const students = document.querySelector('#students')
-	const shuffleStudents = () => students.append(...[...students.children].sort(() => Math.random() - 0.5))
-
-	shuffleStudents()
-	document.querySelector('#shuffle').onclick = () => shuffleStudents()
-</script>
+<shuffle-students></shuffle-students>
