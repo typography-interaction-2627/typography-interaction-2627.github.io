@@ -12,7 +12,7 @@ const draft = true
 <details>
 <summary>1969 or 1989?</summary>
 
-1969!
+**1969!**
 
 </details>
 
@@ -22,9 +22,7 @@ Before this time, the term *computer* usually referred to a person, not a machi
 <img src="harvard.jpg">
 <figcaption>
 
-The *Harvard Computers* in the late 1800s.
-
-[<cite>Source</cite>](https://en.wikipedia.org/wiki/Harvard_Computers#/media/File:Astronomer_Edward_Charles_Pickering%27s_Harvard_computers.jpg)
+The *Harvard Computers* in the late 1800s. [<cite>Source</cite>](https://en.wikipedia.org/wiki/Harvard_Computers#/media/File:Astronomer_Edward_Charles_Pickering%27s_Harvard_computers.jpg)
 
 </figcaption>
 </figure>
@@ -45,9 +43,7 @@ By the 1960s, computers were room-sized, institutional electronic machines–use
 <img src="univac.jpg">
 <figcaption>
 
-Univac, the first commercial computer in the US.
-
-[<cite>Source</cite>](https://time.com/4271506/census-bureau-computer-history/)
+Univac, the first commercial computer in the US. [<cite>Source</cite>](https://time.com/4271506/census-bureau-computer-history/)
 
 </figcaption>
 </figure>
@@ -58,9 +54,7 @@ A catalyst in the formation of the internet was the Cold War. The threat of nucl
 <img src="networks.png">
 <figcaption>
 
-Different network topologies.
-
-[<cite>Source</cite>](https://www.rand.org/content/dam/rand/pubs/research_memoranda/2006/RM3420.pdf)
+Different network topologies. [<cite>Source</cite>](https://www.rand.org/content/dam/rand/pubs/research_memoranda/2006/RM3420.pdf)
 
 </figcaption>
 </figure>
@@ -77,9 +71,7 @@ Different network topologies.
 <img src="arpanet.png">
 <figcaption>
 
-The original sketch of ARPANET (*Advanced Research Projects Agency Network*).
-
-[<cite>Source</cite>](https://www.scientificamerican.com/gallery/early-sketch-of-arpanets-first-four-nodes/)
+The original sketch of ARPANET (*Advanced Research Projects Agency Network*). [<cite>Source</cite>](https://www.scientificamerican.com/gallery/early-sketch-of-arpanets-first-four-nodes/)
 
 </figcaption>
 </figure>
@@ -92,9 +84,7 @@ Over the following decade, [ARPANET](https://www.britannica.com/topic/ARPANET) w
 <img src="arpanet.gif">
 <figcaption>
 
-The growth of ARPANET into the 1970s.
-
-[<cite>Source</cite>](https://medium.com/syntropynet/the-internet-was-not-developed-it-just-happened-part-1-a123fe4628)
+The growth of ARPANET into the 1970s. [<cite>Source</cite>](https://medium.com/syntropynet/the-internet-was-not-developed-it-just-happened-part-1-a123fe4628)
 
 </figcaption>
 </figure>
@@ -105,9 +95,7 @@ In 1974, Robert Kahn and Vinton Cerf (two ARPA scientists) developed the *Transm
 <img src="tcpip.png">
 <figcaption>
 
-The core of TCP/IP is routing bundles of data called *packets.*
-
-[<cite>Source</cite>](https://web.eecs.umich.edu/~prabal/teaching/eecs582-w13/readings/CK74.pdf)
+The core of TCP/IP is routing bundles of data called *packets.* [<cite>Source</cite>](https://web.eecs.umich.edu/~prabal/teaching/eecs582-w13/readings/CK74.pdf)
 
 </figcaption>
 </figure>
@@ -119,7 +107,7 @@ The core of TCP/IP is routing bundles of data called *packets.*
 <details>
 <summary>1969 or 1989?</summary>
 
-1989!
+**1989!**
 
 </details>
 
@@ -127,9 +115,7 @@ The core of TCP/IP is routing bundles of data called *packets.*
 <img src="tim.jpg">
 <figcaption>
 
-Our guy Tim.
-
-[<cite>Source</cite>](https://cds.cern.ch/images/CERN-GE-9407011-31)
+Our guy Tim. [<cite>Source</cite>](https://cds.cern.ch/images/CERN-GE-9407011-31)
 
 </figcaption>
 </figure>
@@ -150,9 +136,7 @@ Their proposal had four components:
 <img src="web.png">
 <figcaption>
 
-The cover of the original proposal, visualizing the idea of *hypertext.*
-
-[<cite>Source</cite>](https://cds.cern.ch/record/1405411/files/ARCH-WWW-4-010.pdf)
+The cover of the original proposal, visualizing the idea of *hypertext.* [<cite>Source</cite>](https://cds.cern.ch/record/1405411/files/ARCH-WWW-4-010.pdf)
 
 </figcaption>
 </figure>
@@ -161,9 +145,7 @@ The cover of the original proposal, visualizing the idea of *hypertext.*
 <img src="worldwideweb.png">
 <figcaption>
 
-How it looked for Tim, back then.
-
-[<cite>Source</cite>](https://worldwideweb.cern.ch/browser/)
+How it looked for Tim, back then. [<cite>Source</cite>](https://worldwideweb.cern.ch/browser/)
 </figcaption>
 </figure>
 
@@ -171,9 +153,7 @@ How it looked for Tim, back then.
 <img src="chrome.png">
 <figcaption>
 
-How it looks for us, now.
-
-[<cite>Source</cite>](http://info.cern.ch/hypertext/WWW/TheProject.html)
+How it looks for us, now. [<cite>Source</cite>](http://info.cern.ch/hypertext/WWW/TheProject.html)
 
 </figcaption>
 </figure>
@@ -185,9 +165,7 @@ By 1991, the [first web page](http://info.cern.ch/hypertext/WWW/TheProject.html)
 <img src="mosaic.png">
 <figcaption>
 
-Mosaic was one of the first widely-available browsers. It introduced support for *images*.
-
-[<cite>Source</cite>](https://en.wikipedia.org/wiki/Mosaic_(web_browser)#/media/File:NCSA_Mosaic_Browser_Screenshot.png)
+Mosaic was one of the first widely-available browsers. It introduced support for *images*. [<cite>Source</cite>](https://en.wikipedia.org/wiki/Mosaic_(web_browser)#/media/File:NCSA_Mosaic_Browser_Screenshot.png)
 
 </figcaption>
 </figure>
@@ -196,9 +174,7 @@ Mosaic was one of the first widely-available browsers. It introduced support for
 <img src="netscape.png">
 <figcaption>
 
-Netscape, the first browser that Michael ever used.
-
-[<cite>Source</cite>](https://commons.wikimedia.org/wiki/File:Netscape_Navigator_3_Screenshot.png)
+Netscape, the first browser that Michael ever used. [<cite>Source</cite>](https://commons.wikimedia.org/wiki/File:Netscape_Navigator_3_Screenshot.png)
 
 </figcaption>
 </figure>
@@ -212,9 +188,7 @@ And the web exploded from there.
 <img src="yahoo.png">
 <figcaption>
 
-1994: Before search engines, there were web directories like Yahoo.
-
-[<cite>Source</cite>](https://www.webdesignmuseum.org/gallery/yahoo-1994)
+1994: Before search engines, there were web directories like Yahoo. [<cite>Source</cite>](https://www.webdesignmuseum.org/gallery/yahoo-1994)
 
 </figcaption>
 </figure>
@@ -223,9 +197,7 @@ And the web exploded from there.
 <img src="geocities.png">
 <figcaption>
 
-1995: GeoCities brought web design to the masses, for better or for worse.
-
-[<cite>Source</cite>](https://blog.geocities.institute/archives/791)
+1995: GeoCities brought web design to the masses, for better or for worse. [<cite>Source</cite>](https://blog.geocities.institute/archives/791)
 
 </figcaption>
 </figure>
@@ -234,9 +206,7 @@ And the web exploded from there.
 <img src="amazon.gif">
 <figcaption>
 
-1995: They used to sell books, if you can believe it.
-
-[<cite>Source</cite>](https://www.versionmuseum.com/history-of/amazon-website)
+1995: They used to sell books, if you can believe it. [<cite>Source</cite>](https://www.versionmuseum.com/history-of/amazon-website)
 
 </figcaption>
 </figure>
@@ -245,9 +215,7 @@ And the web exploded from there.
 <img src="google.png">
 <figcaption>
 
-1998: We eventually got search engines.
-
-[<cite>Source</cite>](https://www.webdesignmuseum.org/gallery/google-1998)
+1998: We eventually got search engines. [<cite>Source</cite>](https://www.webdesignmuseum.org/gallery/google-1998)
 
 </figcaption>
 </figure>
@@ -256,9 +224,7 @@ And the web exploded from there.
 <img src="facebook.png">
 <figcaption>
 
-2004: And then social networks.
-
-[<cite>Source</cite>](https://www.webdesignmuseum.org/gallery/google-1998)
+2004: And then social networks. [<cite>Source</cite>](https://www.webdesignmuseum.org/gallery/google-1998)
 </figcaption>
 </figure>
 
