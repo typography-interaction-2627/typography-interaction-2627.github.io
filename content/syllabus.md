@@ -317,7 +317,7 @@ There will be check-ins and reviews around each of these before the final due da
 | Reading Responses                  | 10% |
 | ~~Quizzes,~~ Exercises, Milestones | 10% |
 | Engagement                         | 20% |
-| &nbsp;                             |     |
+|                                    |     |
 | Project 1: *Manuscript*            | 10% |
 | Project 2: *Spread*                | 20% |
 | Project 3: *Binding*               | 30% |
@@ -329,7 +329,7 @@ There will be check-ins and reviews around each of these before the final due da
 | Reading Responses              | 10% |
 | Exercises, Milestones          | 10% |
 | Engagement                     | 20% |
-| &nbsp;                         |     |
+|                                |     |
 | Project *Index*                | 10% |
 | Project 4: *Links*             | 20% |
 | Project 5: *Functions*         | 30% |
@@ -374,7 +374,7 @@ Our class will create and maintain an agreement, intended to help us foster a sa
 This agreement is intended to help us create and maintain a safe, empathetic, and productive space for our course. It is built on trust and accumulated experience across cohorts. It can be revised and modified, with all of our input, over the year:
 <!-- .screen -->
 
-- Classmates should use our [preferred names and pronouns](/class/).
+- Classmates should use our [preferred names and pronouns](class.md).
 
 - We will have a short break, roughly halfway through the class.
 
@@ -429,9 +429,9 @@ We have zero tolerance for any sort of plagiarism—which ranges from “verbati
 
 <mark>External Resources *Subject* to Attribution</mark>
 
-	We are not saying you can’t learn from and incorporate other resources. We do, all the time!
+We are not saying you can’t learn from and incorporate other resources. We do, all the time!
 
-	If you make use of other tools, we should see [code](/topic/html/#comments) [comments](/topic/css/#element-preview) that explain *why* you used them, *what* you referenced, and your overall understanding of *how* it works.
+If you make use of other tools, we should see [code](topic/html/index.md#comments) [comments](topic/css/index.md#element-preview) that explain *why* you used them, *what* you referenced, and your overall understanding of *how* it works.
 
 </aside>
 
@@ -504,4 +504,4 @@ All CD classes adhere to the same [common program and university policies](http
 
 ## Acknowledgments
 
-We’d like to thank [Brendan Griffiths](https://brendangriffiths.com/), [Lynn Kiang](http://www.lynnkiang.com), [Andrew LeClair](https://andrewleclair.com), and the [extended MPS CD family](https://mpscd.parsons.edu/faculty/) for their support in the planning and running of this course. And thank you, for reading this far.
+We’d like to thank [Lynn Kiang](http://www.lynnkiang.com), [Brendan Griffiths](https://brendangriffiths.com/), [Andrew LeClair](https://andrewleclair.com), and the [extended MPS CD family](https://mpscd.parsons.edu/faculty/) for their support in the planning and running of this course. And thank you, for reading this far.
