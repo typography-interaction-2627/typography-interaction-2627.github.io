@@ -26,4 +26,15 @@ em {
 
 	/* `font-style` does *not* set `ital` axes! */
 	/* https://arrowtype.github.io/vf-slnt-test/slnt-ital-tests/index.html */
+
+[inert] {
+	background-clip:  text;
+	background-image: url('patterns/3.svg');
+	background-size:  var(--8px);
+	color:            transparent;
+
+	* { color: inherit }
+
+	/* Headings have the attribute again; don’t double up. */
+	[inert] { background: initial }
 }
