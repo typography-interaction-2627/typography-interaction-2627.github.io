@@ -1,0 +1,23 @@
+/* How many (CSS) pixels in our pixel. */
+@property --scaling {
+	inherits:      true;
+	initial-value: 1.5;
+	syntax:        '<number>';
+}
+
+/* Specified as integer/unitless for `calc` and `opsz` use. */
+@property --size {
+	inherits:      true;
+	initial-value: 12;
+	syntax:        '<integer>';
+}
+
+:where(:root) {
+	@media (resolution: 3x) { --scaling: 1.666666 } /* Crisp phone pixels. */
+
+	@media (width >= 35em) { /* Landscape phones. */
+		@media (height >= 27em), (width >= 60em) { /* Tablets. */
+			--scaling: 2;
+		}
+	}
+}
