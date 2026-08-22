@@ -53,9 +53,6 @@ export default (config) => {
 		permalink: ({ meta }) => `${meta.url}meta.html`,
 	})
 
-	// Allow in-Markdown `title` via H1.
-	config.addGlobalData('markdownH1', () => (data) => data.page.rawInput.match(/^# (.+)/m)?.[1].trim() || data.title)
-
 	// Set up sorted page collections.
 	for (const directory of ['', 'week', 'project', 'topic'])
 		config.addCollection(directory ? `${directory}s` : 'root', collection => collection

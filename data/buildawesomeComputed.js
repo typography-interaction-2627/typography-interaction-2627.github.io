@@ -42,15 +42,18 @@ const getWeek = (data) => {
 
 const inCollection = (data, name) => data.collections[name]?.some((item) => item.inputPath === data.page.inputPath)
 
+// Allow in-Markdown `title` via H1.
+const getH1 = (data) => (data.page.rawInput.match(/^# (.+)/m)?.[1].trim() || data.title)
+
 export default {
 	date: (data) => getWeek(data)?.date,
 	title: (data) => inCollection(data, 'weeks')
 		? `Week ${data.page.fileSlug}`
 		: inCollection(data, 'projects')
 			? (Number.isInteger(+data.page.fileSlug)
-				? `Project ${data.page.fileSlug}: “${data.markdownH1(data)}”`
-				: `Project “${data.markdownH1(data)}”`)
-			: data.markdownH1(data),
+				? `Project ${data.page.fileSlug}: “${getH1(data)}”`
+				: `Project “${getH1(data)}”`)
+			: getH1(data),
 	unit: (data) => getWeek(data)?.unit,
 	unitNumber: (data) => getWeek(data)?.unitNumber,
 	week: (data) => inCollection(data, 'weeks')
