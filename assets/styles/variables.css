@@ -12,6 +12,12 @@
 	syntax:        '<integer>';
 }
 
+@property --ital {
+	inherits:      true;
+	initial-value: 0;
+	syntax:        '<integer>';
+}
+
 :where(:root) {
 	@media (resolution: 3x) { --scaling: 1.666666 } /* Crisp phone pixels. */
 

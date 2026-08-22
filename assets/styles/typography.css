@@ -18,3 +18,12 @@ th {
 	/* https://codepen.io/nileshprajapati/pen/RweKdmw */
 	/* https://caniuse.com/mdn-css_properties_text-box-trim_inline_elements */
 }
+
+em {
+	--ital: 1;
+
+	font-style: italic;
+
+	/* `font-style` does *not* set `ital` axes! */
+	/* https://arrowtype.github.io/vf-slnt-test/slnt-ital-tests/index.html */
+}
