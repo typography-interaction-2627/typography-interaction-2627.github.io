@@ -29,11 +29,11 @@ export default (config) => {
 	})
 	config.addBundle('css', { toFileDirectory: 'assets' })
 
-	// Watch for changes.
-	config.addWatchTarget('**/*.css')
-	config.addWatchTarget('**/*.js')
+	// Watch for changes, full rebuilds needed for re-bundling.
+	config.addWatchTarget('**/*.css', { resetConfig: true })
+	config.addWatchTarget('**/*.js', { resetConfig: true })
 
-	// Virtual/nested `.webc` don’t invalidate their parent layout's cache, so full rebuild:
+	// Virtual/nested `.webc` don’t invalidate their parent layout's cache:
 	// https://github.com/11ty/buildawesome/issues/3468
 	// https://github.com/11ty/eleventy-plugin-webc/issues/115
 	config.addWatchTarget('templates/**/*.webc', { resetConfig: true })
