@@ -1,5 +1,5 @@
 import { readFileSync } from 'fs'
-import { readdir, readFile, utimes } from 'fs/promises'
+import { readdir, readFile } from 'fs/promises'
 import { resolve, join, dirname, normalize } from 'path'
 
 import webC from '@11ty/eleventy-plugin-webc'
@@ -31,6 +31,11 @@ export default (config) => {
 	// Watch for changes.
 	config.addWatchTarget('**/*.css')
 	config.addWatchTarget('**/*.js')
+
+	// Virtual/nested `.webc` don’t invalidate their parent layout's cache, so full rebuild:
+	// https://github.com/11ty/buildawesome/issues/3468
+	// https://github.com/11ty/eleventy-plugin-webc/issues/115
+	config.addWatchTarget('templates/**/!(base).webc', { resetConfig: true })
 
 	// Slide these on over.
 	config.addPassthroughCopy('assets/reset.css')
@@ -66,13 +71,6 @@ export default (config) => {
 
 	// Don’t render out drafts—but this leaves them in the collections for date calculations.
 	process.env.BUILDAWESOME_RUN_MODE === 'build' && config.addGlobalData('buildawesomeComputed.permalink', () => (data) => data.draft ? false : data.permalink)
-
-	// Nested `.webc` components don’t invalidate their parent layout's cache:
-	// https://github.com/11ty/eleventy-plugin-webc/issues/115
-	config.on('buildawesome.beforeWatch', (changedFiles) =>
-		changedFiles.some((filePath) => filePath.endsWith('.webc') && !filePath.endsWith('base.webc'))
-		&& utimes('templates/base.webc', new Date(), new Date())
-	)
 
 	// Markdown stuff.
 	const markdownOptions = {
