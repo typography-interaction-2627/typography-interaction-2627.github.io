@@ -1,23 +1,13 @@
-<link
-	webc:bucket="base"
-	href="../../assets/styles/fonts.css"
-	rel="stylesheet"
->
-<link
-	webc:bucket="base"
-	href="../../assets/styles/typography.css"
-	rel="stylesheet"
->
-<style
-	webc:keep
+<link webc:bucket="base" href="../../assets/styles/variables.css"  rel="stylesheet">
+<link webc:bucket="base" href="../../assets/styles/fonts.css"      rel="stylesheet">
+<link webc:bucket="base" href="../../assets/styles/typography.css" rel="stylesheet">
+<style webc:keep
 	@raw="`
 		@layer reset, base, components, print;
 
 		@import url('/assets/reset.css') layer(reset);
 		@import url('${getBundleFileUrl('css', 'base')}') layer(base);
+		@import url('${getBundleFileUrl('css', 'print')}') layer(print) print;
 	`"
 ></style>
-<style
-	webc:keep
-	@raw="`@layer components { ${getBundle('css')} }`"
-></style>
+<style webc:keep @raw="`@layer components { ${getBundle('css')} }`"></style>
