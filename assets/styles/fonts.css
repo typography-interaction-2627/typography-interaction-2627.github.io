@@ -16,7 +16,7 @@
 
 	* {
 		color:                   var(--color, currentcolor);
-		font-variation-settings: 'opsz' var(--size), 'ital' var(--italic);
+		font-variation-settings: 'opsz' var(--size), 'ital' var(--italic, 0);
 		font-size:               calc(var(--size) * var(--px));
 	}
 }
