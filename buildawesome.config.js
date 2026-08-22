@@ -1,6 +1,7 @@
 import { readFileSync } from 'fs'
 import { readdir, readFile } from 'fs/promises'
 import { resolve, join, dirname, normalize } from 'path'
+import path from 'path'
 
 import webC from '@11ty/eleventy-plugin-webc'
 
@@ -35,7 +36,7 @@ export default (config) => {
 	// Virtual/nested `.webc` don’t invalidate their parent layout's cache, so full rebuild:
 	// https://github.com/11ty/buildawesome/issues/3468
 	// https://github.com/11ty/eleventy-plugin-webc/issues/115
-	config.addWatchTarget('templates/**/!(base).webc', { resetConfig: true })
+	config.addWatchTarget('templates/**/*.webc', { resetConfig: true })
 
 	// Slide these on over.
 	config.addPassthroughCopy('assets/reset.css')
@@ -47,16 +48,27 @@ export default (config) => {
 	config.addGlobalData('buildawesomeComputed.layout', () => ({ page }) => page.templateSyntax.includes('md') ? 'page' : 'base')
 
 	// Meta sidecars for `og:image`.
-	config.addTemplate('templates/meta.webc', readFileSync('templates/meta.webc'), {
-		buildawesomeExcludeFromCollections: true,
-		pagination: {
-			alias: 'meta',
-			before: (items) => items.filter(({ url }) => url),
-			data: 'collections.all',
-			size: 1,
-		},
-		permalink: ({ meta }) => `${meta.url}meta.html`,
-	})
+	{
+		let changedFiles = new Set()
+		const isIncremental = process.argv.includes('--incremental')
+
+		config.on('eleventy.beforeWatch', (changed = []) =>
+			changedFiles = new Set(changed.map(f => path.resolve(f)))
+		)
+
+		config.addTemplate('templates/meta.webc', readFileSync('templates/meta.webc'), {
+			eleventyExcludeFromCollections: true,
+			pagination: {
+				alias: 'meta',
+				before: items => items.filter(({ url, inputPath }) =>
+					url && (!isIncremental || !changedFiles.size || changedFiles.has(path.resolve(inputPath)))
+				),
+				data: 'collections.all',
+				size: 1,
+			},
+			permalink: ({ meta }) => `${meta.url}meta.html`,
+		})
+	}
 
 	// Set up sorted page collections.
 	for (const directory of ['', 'week', 'project', 'topic'])
