@@ -27,19 +27,20 @@
 }
 
 :where(:root) {
-	font-family: 'Geneva', sans-serif;
-	font-size:   calc((var(--size) * var(--scaling) / 16) * 100%);
-	line-height: 1;
+	-moz-osx-font-smoothing:  grayscale; /* This functions as `none`. */
+	-webkit-font-smoothing:   none;
+	-webkit-text-size-adjust: none;
+	font-family:              'Geneva', sans-serif;
+	font-optical-sizing:      none;
+	font-size:                calc((var(--size) * var(--scaling) / 16) * 100%);
+	font-smooth:              never;
+	font-synthesis:           none;
+	line-height:              1;
+	text-rendering:           geometricPrecision;
+
 
 	* {
-		-moz-osx-font-smoothing:  grayscale; /* This functions as `none`. */
-		-webkit-font-smoothing:   none;
-		-webkit-text-size-adjust: none;
-		color:                    var(--color, currentcolor);
-		font-optical-sizing:      none;
-		font-smooth:              never;
-		font-synthesis:           none;
-		font-variation-settings:  'opsz' var(--size);
-		text-rendering:           geometricPrecision;
+		color:                   var(--color, currentcolor);
+		font-variation-settings: 'opsz' var(--size), 'ital' var(--ital);
 	}
 }
