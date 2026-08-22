@@ -44,4 +44,29 @@
 
 	@font-face { font-family: 'Monaco 9';  src: url('../assets/fonts/moncao--9.woff2') }
 	@font-face { font-family: 'Monaco 12'; src: url('../assets/fonts/moncao--12.woff2') }
+
+	/* Swap them in. */
+	* { font-family: var(--font) }
+
+	*, *::before, *::after {
+		@container style(--size: 9)  and style(--family: 'Geneva') { --font: 'Geneva 9' }
+		@container style(--size: 10) and style(--family: 'Geneva') { --font: 'Geneva 10' }
+		@container style(--size: 12) and style(--family: 'Geneva') { --font: 'Geneva 12' }
+		@container style(--size: 14) and style(--family: 'Geneva') { --font: 'Geneva 14' }
+		@container style(--size: 18) and style(--family: 'Geneva') { --font: 'Geneva 18' }
+		@container style(--size: 20) and style(--family: 'Geneva') { --font: 'Geneva 20' }
+		@container style(--size: 24) and style(--family: 'Geneva') { --font: 'Geneva 24' }
+
+		@container style(--size: 9)  and style(--family: 'New York') { --font: 'New York 9' }
+		@container style(--size: 10) and style(--family: 'New York') { --font: 'New York 10' }
+		@container style(--size: 12) and style(--family: 'New York') { --font: 'New York 12' }
+		@container style(--size: 14) and style(--family: 'New York') { --font: 'New York 14' }
+		@container style(--size: 18) and style(--family: 'New York') { --font: 'New York 18' }
+		@container style(--size: 20) and style(--family: 'New York') { --font: 'New York 20' }
+		@container style(--size: 24) and style(--family: 'New York') { --font: 'New York 24' }
+		@container style(--size: 36) and style(--family: 'New York') { --font: 'New York 36' }
+
+		@container style(--size: 9)  and style(--family: 'Monaco') { --font: 'Monaco 9' }
+		@container style(--size: 12) and style(--family: 'Monaco') { --font: 'Monaco 12' }
+	}
 }
