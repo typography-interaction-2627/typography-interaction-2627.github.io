@@ -2,6 +2,24 @@
 @font-face { font-family: 'New York'; src: url('../assets/fonts/new-york.woff2') }
 @font-face { font-family: 'Monaco';   src: url('../assets/fonts/monaco.woff2') }
 
+:where(:root) {
+	-moz-osx-font-smoothing:  grayscale; /* This functions as `none`. */
+	-webkit-font-smoothing:   none;
+	-webkit-text-size-adjust: none;
+	font-family:              var(--font), sans-serif;
+	font-optical-sizing:      none;
+	font-size:                calc((var(--size) * var(--scaling) / 16) * 100%);
+	font-smooth:              never;
+	font-synthesis:           none;
+	line-height:              1;
+	text-rendering:           geometricPrecision;
+
+	* {
+		color:                   var(--color, currentcolor);
+		font-variation-settings: 'opsz' var(--size), 'ital' var(--italic);
+	}
+}
+
 /* Separate strike files for each `opsz` until Chrome gets its act together: */
 /* https://issues.chromium.org/issues/505751224 */
 @supports (not (font: -apple-system-body)) and (not (-moz-appearance: none)) {
@@ -26,21 +44,4 @@
 	@font-face { font-family: 'Monaco 12'; src: url('../assets/fonts/moncao--12.woff2') }
 }
 
-:where(:root) {
-	-moz-osx-font-smoothing:  grayscale; /* This functions as `none`. */
-	-webkit-font-smoothing:   none;
-	-webkit-text-size-adjust: none;
-	font-family:              'Geneva', sans-serif;
-	font-optical-sizing:      none;
-	font-size:                calc((var(--size) * var(--scaling) / 16) * 100%);
-	font-smooth:              never;
-	font-synthesis:           none;
-	line-height:              1;
-	text-rendering:           geometricPrecision;
 
-
-	* {
-		color:                   var(--color, currentcolor);
-		font-variation-settings: 'opsz' var(--size), 'ital' var(--ital);
-	}
-}

@@ -12,7 +12,7 @@
 	syntax:        '<integer>';
 }
 
-@property --ital {
+@property --italic {
 	inherits:      true;
 	initial-value: 0;
 	syntax:        '<integer>';
