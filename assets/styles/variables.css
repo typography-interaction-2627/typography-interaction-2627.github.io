@@ -13,7 +13,16 @@
 }
 
 :where(:root) {
-	--px: calc(1 / var(--size) * 1rem); /* Scaled pixel. */
+	--1px: calc(1 / var(--size) * 1rem); /* Scaled pixel. */
+
+	/* Shorthands. */
+	--2px: calc(var(--1px) * 2);
+	--3px: calc(var(--1px) * 3);
+	--4px: calc(var(--1px) * 4);
+	--5px: calc(var(--1px) * 5);
+	--6px: calc(var(--1px) * 6);
+	--7px: calc(var(--1px) * 7);
+	--8px: calc(var(--1px) * 8);
 
 	@media (resolution: 3x) { --scaling: 1.666666 } /* Crisp phone pixels. */
 
