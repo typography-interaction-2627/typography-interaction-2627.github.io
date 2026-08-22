@@ -5,6 +5,12 @@
 	syntax:        '<number>';
 }
 
+@property --family {
+	inherits:      true;
+	initial-value: 'Geneva';
+	syntax:        '<string>';
+}
+
 /* Specified as integer/unitless for `calc` and `opsz` use. */
 @property --size {
 	inherits:      true;
