@@ -1,0 +1,6 @@
+main {
+	/* TEMP! */
+	padding-inline: 1rlh;
+
+	*:not(:first-child) { margin-top: var(--8px) }
+}
