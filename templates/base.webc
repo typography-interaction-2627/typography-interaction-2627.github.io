@@ -23,6 +23,9 @@
 					.replace(/&amp;/g, '\u0026') // Decode entity so BA doesn’t `&amp;` it twice.
 					.replace(/&nbsp;/g, '\u00A0') // Same.
 			}
+
+			export const removeDescriptionAttr = (content, document = parseHtml(content)) =>
+				(document.querySelectorAll('[data-description]').forEach(n => n.removeAttribute('data-description')), document.toString())
 		</script>
 		<template webc:if="!buildawesomeExcludeFromCollections" webc:nokeep>
 			<meta :content="getDescription($data)" name="description">
@@ -34,7 +37,5 @@
 		<style webc:is="style-buckets" webc:nokeep></style>
 		<script webc:keep @raw="getBundle('js')" type="module"></script>
 	</head>
-	<body>
-		<template webc:nokeep @raw="content"></template>
-	</body>
+	<body @raw="removeDescriptionAttr(content)"></body>
 </html>
