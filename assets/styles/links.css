@@ -1,0 +1,30 @@
+:where(:root) { -webkit-tap-highlight-color: transparent }
+
+a:where([href]),
+button:where(:not([disabled])),
+summary {
+	cursor:         pointer;
+	display:        block;
+	outline-offset: var(--enlargement);
+	position:       relative;
+
+	/* Focus outline. */
+	&:focus {
+		outline: none;
+
+		&:focus-visible {
+			outline-color: var(--color);
+			outline-style: solid;
+			outline-width: var(--1px);
+		}
+	}
+
+	/* Pseudo for clicks, enlarged without shenanigans on parent. */
+	&::after {
+		content:                    '';
+		cursor:                     inherit;
+		inset:                      calc(-1 * var(--enlargement));
+		pointer-events:             auto;
+		position:                   absolute;
+	}
+}
