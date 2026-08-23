@@ -29,7 +29,7 @@
 			<meta :content="`https://typography-interaction-2627.github.io${$data.page.url}meta.png`" property="og:image">
 		</template>
 		<meta webc:else content="noindex, nofollow" name="robots">
-		<link :href="sequence ? `/assets/patterns/${sequence}.svg` : '/assets/icons/favicon.svg'" rel="icon" type="image/svg+xml">
+		<link :href="`/assets/${sequence ? '/patterns/' + sequence : 'icons/base'}.svg`" rel="icon" type="image/svg+xml">
 		<style webc:is="style-buckets" webc:nokeep></style>
 		<script webc:keep @raw="getBundle('js')" type="module"></script>
 	</head>
