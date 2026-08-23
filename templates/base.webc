@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta content="initial-scale=1, width=device-width, viewport-fit=cover" name="viewport">
-		<title @text="stripTags(title)"></title>
+		<title @html="stripTags(title)"></title>
 		<script webc:setup>
 			export const getDescription = ({ content, description }) => {
 				const document = parseHtml(content)
