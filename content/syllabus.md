@@ -344,7 +344,7 @@ We will use the following tools to organize our class:
 - [<cite>Submission Form</cite>](https://docs.google.com/forms/d/e/TKTKTK) \
 	For submitting your work/URL&NoBreak;s
 
-- [<cite>Slack Channel</cite>](https://mpscd.slack.com/archives/TKTKTK) \
+- [<cite>Slack Channel</cite>](https://mpscd.slack.com/archives/C0BRNBPC6QP) \
 	For direct and asynchronous communication (*not* email)
 
 - [<cite>Figma Team</cite>](https://www.figma.com/files/team/TKTKTK) \
@@ -373,7 +373,7 @@ This agreement is intended to help us create and maintain a safe, empathetic, an
 
 - We will have a short break, roughly halfway through the class.
 
-- The class should feel comfortable asking the instructors anything—nothing is too trivial, or embarrassing, or off-topic. Tangents are good! Students can always ask us via [Slack](https://mpscd.slack.com/archives/TKTKTK), if they would like to remain anonymous.
+- The class should feel comfortable asking the instructors anything—nothing is too trivial, or embarrassing, or off-topic. Tangents are good! Students can always ask us via [Slack](https://mpscd.slack.com/archives/C0BRNBPC6QP), if they would like to remain anonymous.
 
 - When presenting, students will “have the floor” while they take us through their work. This means everyone else will be quiet, we’ll close our laptops/turn off our phones, and give our full attention to the person showing their work.
 
@@ -401,7 +401,7 @@ Our intent is to respect and give forum to a range of perspectives and backgrou
 
 We will have limited availability outside of our class time, and won’t keep scheduled “office hours.” Students should not expect us to immediately solve specific design or technical problems, or have their progress be blocked by this. Their first resource should be themselves, then [our course site](https://typography-interaction-2627.github.io) and its materials, and then each other.
 
-That said: if there are still questions—particularly logistical or content ones—students can message us on [Slack](https://mpscd.slack.com/archives/TKTKTK), and we will respond when we can. But again this should never be a bottleneck; all of this works better when not done at the last minute.
+That said: if there are still questions—particularly logistical or content ones—students can message us on [Slack](https://mpscd.slack.com/archives/C0BRNBPC6QP), and we will respond when we can. But again this should never be a bottleneck; all of this works better when not done at the last minute.
 
 ### Additional Technical Help
 
