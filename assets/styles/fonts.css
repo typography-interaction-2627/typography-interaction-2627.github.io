@@ -11,7 +11,7 @@
 	font-size:                calc((var(--size) * var(--scaling) / 16) * 100%);
 	font-smooth:              never;
 	font-synthesis:           none;
-	line-height:              1;
+	line-height:              var(--leading);
 	text-rendering:           geometricPrecision;
 
 	* {
@@ -19,6 +19,7 @@
 		font-family:             var(--family);
 		font-variation-settings: 'opsz' var(--size), 'ital' var(--italic, 0);
 		font-size:               calc(var(--size) * var(--1px));
+		line-height:             var(--leading);
 	}
 }
 

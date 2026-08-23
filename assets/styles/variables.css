@@ -30,6 +30,8 @@
 	--7px: calc(var(--1px) * 7);
 	--8px: calc(var(--1px) * 8);
 
+	--leading: round(calc(4 / 3 * 1em), var(--1px));
+
 	--enlargement: var(--4px);
 
 	--color:      black;
