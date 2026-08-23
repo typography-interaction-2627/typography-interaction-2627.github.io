@@ -63,3 +63,9 @@ abbr {
 		}
 	}
 }
+
+/* On parent for `@container`. */
+hgroup:has(h1) {
+	--family: 'New York';
+	--size:   var(--size--h1);
+}
