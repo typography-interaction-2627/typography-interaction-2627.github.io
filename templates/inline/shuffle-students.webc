@@ -5,6 +5,6 @@
 	shuffleStudents()
 	document.querySelector('#shuffle').onclick = () => shuffleStudents()
 </script>
-<button id="shuffle">
+<button webc:root="override" id="shuffle">
 	<p>Shuffle</p>
 </button>

@@ -12,6 +12,8 @@ import markdownItAttrs from 'markdown-it-attrs'
 import markdownItDeflist from 'markdown-it-deflist'
 import markdownItHeaderSections from 'markdown-it-header-sections'
 
+import { componentPlugin } from '@mdit-vue/plugin-component' // Pretend we are Vue.
+
 import abbreviations from './data/abbreviations.js'
 
 import stripTags from 'striptags'
@@ -218,6 +220,7 @@ export default (config) => {
 		.use(markdownRagging)
 		.use(markdownLocalLinks)
 		.use(markdownAsides)
+		.use(componentPlugin) //Allows custom inline HTML component names (otherwise made into strings/wrapped in paragraphs).
 
 	// Append abbreviations for `markdownItAbbr`.
 	const markdownAbbreviations = abbreviations.map((item) => `\n*[${item.abbr}]: ${item.title}`).join('\n')

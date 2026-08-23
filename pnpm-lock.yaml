@@ -17,6 +17,9 @@ importers:
       '@awesome.me/buildawesome':
         specifier: 4.0.0-alpha.10
         version: 4.0.0-alpha.10
+      '@mdit-vue/plugin-component':
+        specifier: ^3.0.2
+        version: 3.0.2
       fontkit:
         specifier: ^2.0.4
         version: 2.0.4
@@ -130,6 +133,10 @@ packages:
   '@awesome.me/buildawesome@4.0.0-alpha.10':
     resolution: {integrity: sha512-GXraP+gUEVKgN39BXSdXV6bjDTIv0FirXuqpxI67MYXpVjMdw+JkJOYrisr4OBSF+oQoCzEMOuwgezQdNKW6Eg==}
     hasBin: true
+
+  '@mdit-vue/plugin-component@3.0.2':
+    resolution: {integrity: sha512-Fu53MajrZMOAjOIPGMTdTXgHLgGU9KwTqKtYc6WNYtFZNKw04euSfJ/zFg8eBY/2MlciVngkF7Gyc2IL7e8Bsw==}
+    engines: {node: '>=20.0.0'}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -1097,6 +1104,11 @@ snapshots:
       - bufferutil
       - supports-color
       - utf-8-validate
+
+  '@mdit-vue/plugin-component@3.0.2':
+    dependencies:
+      '@types/markdown-it': 14.2.0
+      markdown-it: 14.3.0
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
