@@ -37,19 +37,29 @@ abbr {
 }
 
 [inert] {
-	background-clip:  text;
-	background-image: url('patterns/3.svg');
-	background-size:  var(--8px);
-	color:            transparent;
+	:is(figcaption, li, summary):where(:not(:has(details, ol, p, section, ul))),
+	dd,
+	dt,
+	h1,
+	h2,
+	h3,
+	h4,
+	p,
+	td,
+	th {
+		background-clip:   text;
+		background-image:  url('patterns/check.svg');
+		background-size:   var(--2px);
+		color:             transparent;
+		padding-block-end: var(--4px);
+		margin-block-end:  calc(-1 * var(--4px));
 
-	* { color: inherit }
+		* { color: inherit }
 
-	/* Headings have the attribute again; don’t double up. */
-	[inert] { background: initial }
-
-	/* Fix Safari rounding. 🤷‍♀️ */
-	@supports (font: -apple-system-body) {
-		a { position: static }
-		a, em, abbr { letter-spacing: 0.0001em }
+		/* Fix Safari rounding. 🤷‍♀️ */
+		@supports (font: -apple-system-body) {
+			a { position: static }
+			a, em, abbr { letter-spacing: 0.0001em }
+		}
 	}
 }
