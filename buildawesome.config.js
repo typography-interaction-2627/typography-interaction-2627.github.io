@@ -41,7 +41,7 @@ export default (config) => {
 	// Slide these on over.
 	config.addPassthroughCopy({ 'assets/icons/favicon.ico': '/favicon.ico' })
 	config.addPassthroughCopy('assets/reset.css')
-	config.addPassthroughCopy('assets/**/*.(svg|woff2)')
+	config.addPassthroughCopy('assets/**/*.(png|svg|woff2)')
 	config.addPassthroughCopy('content/**/*.(gif|jpg|png|svg)')
 
 	// Avoid front-matter in `page.webc`.
