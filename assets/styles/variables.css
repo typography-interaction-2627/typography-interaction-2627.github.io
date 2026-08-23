@@ -37,7 +37,7 @@
 	--color:      black;
 	--background: white;
 
-	@media (resolution: 3x) { --scaling: 1.666666 } /* Crisp phone pixels. */
+	@media (resolution: 3x) { --scaling: calc(5 / 3) } /* 🤞 Crisp phone pixels. */
 
 	@media (width >= 35em) { /* Landscape phones. */
 		@media (height >= 27em), (width >= 60em) { /* Tablets. */
