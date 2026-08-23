@@ -1,7 +1,6 @@
 :is(figcaption, li, summary):where(:not(:has(details, ol, p, section, ul))), /* “Tight” ones. */
 dd,
 dt,
-figcaption,
 h1,
 h2,
 h3,
