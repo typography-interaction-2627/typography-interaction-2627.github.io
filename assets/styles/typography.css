@@ -27,6 +27,14 @@ em {
 
 	/* `font-style` does *not* set `ital` axes! */
 	/* https://arrowtype.github.io/vf-slnt-test/slnt-ital-tests/index.html */
+}
+
+abbr {
+	background-image:      url('patterns/dashed.svg');
+	background-position-y: bottom var(--1px);
+	background-repeat:     repeat-x;
+	background-size:       var(--2px) var(--1px);
+}
 
 [inert] {
 	background-clip:  text;
