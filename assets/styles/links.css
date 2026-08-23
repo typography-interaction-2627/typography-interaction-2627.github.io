@@ -21,10 +21,29 @@ summary {
 
 	/* Pseudo for clicks, enlarged without shenanigans on parent. */
 	&::after {
-		content:                    '';
-		cursor:                     inherit;
-		inset:                      calc(-1 * var(--enlargement));
-		pointer-events:             auto;
-		position:                   absolute;
+		content:  '';
+		inset:    calc(-1 * var(--enlargement));
+		position: absolute;
+	}
+}
+
+/* Inline links. */
+:where(
+	:is(figcaption, li, summary):where(:not(:has(details, ol, p, section, ul))), /* “Tight” ones. */
+	dd,
+	dt,
+	h1,
+	h2,
+	h3,
+	h4,
+	p,
+	td,
+	th
+) a:where(:not(:has(cite))) {
+		display:        inline;
+		outline-offset: initial;
+
+		/* Use background for active highlight, as it might wrap. */
+		&::after { all: unset }
 	}
 }
