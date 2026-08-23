@@ -2,5 +2,10 @@ main {
 	/* TEMP! */
 	padding-inline: 1rlh;
 
-	*:not(:first-child) { margin-top: var(--8px) }
+	* { margin-top: calc(2 * var(--8px)) }
+
+
+	p { max-width: 65ch }
+
+	overflow: hidden;
 }
