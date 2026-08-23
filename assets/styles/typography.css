@@ -1,4 +1,4 @@
-:is(li, summary):where(:not(:has(ol, p, section, ul))), /* “Tight” lists/summaries. */
+:is(figcaption, li, summary):where(:not(:has(details, ol, p, section, ul))), /* “Tight” ones. */
 dd,
 dt,
 figcaption,
@@ -22,7 +22,9 @@ th {
 em {
 	--italic: 1;
 
-	font-style: italic;
+	font-style:          italic;
+	margin-inline-end:   var(--3px);
+	margin-inline-start: calc(-1 * var(--2px));
 
 	/* `font-style` does *not* set `ital` axes! */
 	/* https://arrowtype.github.io/vf-slnt-test/slnt-ital-tests/index.html */
