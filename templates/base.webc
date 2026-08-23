@@ -34,7 +34,7 @@
 		<meta webc:else content="noindex, nofollow" name="robots">
 		<link :href="`/assets/${sequence ? 'patterns/' + sequence : 'icons/tab'}.svg`" rel="icon" type="image/svg+xml">
 		<link href="/assets/icons/touch.png"  rel="apple-touch-icon">
-		<style webc:is="style-buckets" webc:nokeep></style>
+		<style webc:is="style-buckets" webc:nokeep>/* Can’t use custom element in the `head`! */</style>
 		<script webc:keep @raw="getBundle('js')" type="module"></script>
 	</head>
 	<body @raw="removeDescriptionAttr(content)"></body>
