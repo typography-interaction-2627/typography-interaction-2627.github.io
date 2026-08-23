@@ -29,7 +29,7 @@
 			<meta :content="`https://typography-interaction-2627.github.io${$data.page.url}meta.png`" property="og:image">
 		</template>
 		<meta webc:else content="noindex, nofollow" name="robots">
-		<link href="/assets/icons/favicon.svg" rel="icon" type="image/svg+xml">
+		<link href="/assets/icons/favicon.ico" rel="icon" sizes="64x64" type="image/x-icon">
 		<style webc:is="style-buckets" webc:nokeep></style>
 		<script webc:keep @raw="getBundle('js')" type="module"></script>
 	</head>
