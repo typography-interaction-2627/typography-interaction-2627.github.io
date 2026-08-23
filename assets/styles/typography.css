@@ -46,4 +46,10 @@ abbr {
 
 	/* Headings have the attribute again; don’t double up. */
 	[inert] { background: initial }
+
+	/* Fix Safari rounding. 🤷‍♀️ */
+	@supports (font: -apple-system-body) {
+		a { position: static }
+		a, em, abbr { letter-spacing: 0.0001em }
+	}
 }

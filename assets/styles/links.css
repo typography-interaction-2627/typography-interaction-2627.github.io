@@ -44,10 +44,11 @@ summary {
 		font-weight:               bold;
 		margin-inline-end:         calc(-1 * var(--enlargement));
 		margin-inline-start:       calc(-1 * var(--enlargement));
-		outline-offset:            initial;
+		outline-offset:            unset;
 		padding-block:             var(--1px);
 		padding-inline-end:        calc(var(--enlargement));
 		padding-inline-start:      calc(var(--enlargement));
+		position:                  unset;
 		text-decoration-line:      underline;
 		text-decoration-thickness: var(--1px);
 		text-underline-offset:     var(--1px);
