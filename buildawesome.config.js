@@ -45,7 +45,11 @@ export default (config) => {
 	config.addPassthroughCopy('content/**/*.(gif|jpg|png|svg)')
 
 	// Avoid front-matter in `page.webc`.
-	config.addTemplate('templates/page.webc', readFileSync('templates/page.webc'), { layout: 'base', permalink: false })
+	config.addTemplate('templates/page.webc', readFileSync('templates/page.webc'), {
+		buildawesomeExcludeFromCollections: true,
+		layout: 'base',
+		permalink: false,
+	})
 	config.addGlobalData('buildawesomeComputed.layout', () => ({ page }) => page.templateSyntax.includes('md') ? 'page' : 'base')
 
 	// Meta sidecars for `og:image`.
@@ -58,7 +62,7 @@ export default (config) => {
 		)
 
 		config.addTemplate('templates/meta.webc', readFileSync('templates/meta.webc'), {
-			eleventyExcludeFromCollections: true,
+			buildawesomeExcludeFromCollections: true,
 			pagination: {
 				alias: 'meta',
 				before: items => items.filter(({ url, inputPath }) =>
