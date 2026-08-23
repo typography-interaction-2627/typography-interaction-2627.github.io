@@ -40,6 +40,18 @@ const getWeek = (data) => {
 	}
 }
 
+const types = ['week', 'topic', 'project']
+const getType = page => types.find(type => page.inputPath.includes(`/${type}/`))
+
+const getSequence = data => [
+	...data.collections.root,
+	...types.flatMap(type => data.collections[`${type}s`]).sort((a, b) =>
+		(a.data.week || Infinity) - (b.data.week || Infinity)
+		|| types.indexOf(getType(a)) - types.indexOf(getType(b))
+		|| a.data.order - b.data.order
+	)
+]
+
 const inCollection = (data, name) => data.collections[name]?.some((item) => item.inputPath === data.page.inputPath)
 
 // Allow in-Markdown `title` via H1.
@@ -47,6 +59,7 @@ const getH1 = (data) => (data.page.rawInput.match(/^# (.+)/m)?.[1].trim() || dat
 
 export default {
 	date: (data) => getWeek(data)?.date,
+	sequence: data => getSequence(data).findIndex(page => page.inputPath === data.page.inputPath) + 1,
 	title: (data) => inCollection(data, 'weeks')
 		? `Week ${data.page.fileSlug}`
 		: inCollection(data, 'projects')
