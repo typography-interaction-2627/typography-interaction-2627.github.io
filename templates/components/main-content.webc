@@ -1,0 +1,11 @@
+<style>
+	main {
+		/* TEMP! */
+		padding-inline: 1rlh;
+
+		* { margin-top: calc(2 * var(--8px)) }
+
+		p { max-width: 65ch }
+	}
+</style>
+<main webc:root="override" webc:bucket="components" @html="content"></main>

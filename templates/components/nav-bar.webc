@@ -1,4 +1,8 @@
-<nav>
+<style>
+	/* TEMP! */
+	nav { display: none }
+</style>
+<nav webc:root="override">
 	<ul>
 		<li webc:for="item of $data.collections.root">
 			<a :href="item.url">

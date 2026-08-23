@@ -1,6 +1,6 @@
 <details>
-	<summary @html="title || initialCap(collection)"></summary>
-	<ul>
+	<summary @html="markdown(title || initialCap(collection))"></summary>
+	<ul webc:if="collection">
 		<li webc:for="item of $data.collections[collection]">
 			<a :href="item.url">
 				<p @html="item.data.title"></p>

@@ -1,0 +1,10 @@
+<style>
+	:where(body) > header {
+		padding-inline: 1rlh;
+	}
+</style>
+<header webc:root="override">
+	<hgroup>
+		<h1 @html="$data.title"></h1>
+	</hgroup>
+</header>

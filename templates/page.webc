@@ -1,5 +1,5 @@
-<nav-bar></nav-bar>
-<main>
-	<h1 @html="title"></h1>
-	<template webc:nokeep @html="content"></template>
-</main>
+<template webc:bucket="components" webc:nokeep>
+	<nav-bar></nav-bar>
+	<page-header></page-header>
+	<main-content :@content="content" webc:bucket="default"></main-content>
+</template>
