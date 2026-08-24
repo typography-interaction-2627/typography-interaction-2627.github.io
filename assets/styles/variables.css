@@ -26,6 +26,8 @@
 	--7px: calc(var(--1px) * 7);
 	--8px: calc(var(--1px) * 8);
 
+	--size--h1: 24;
+
 	--leading: round(calc(4 / 3 * 1em), var(--1px)); /* “Snap” to scaled pixel. */
 
 	--enlargement: var(--4px);
@@ -36,6 +38,8 @@
 	@media (width >= 35em) { /* Landscape phones. */
 		@media (height >= 27em), (width >= 60em) { /* Tablets. */
 			--size: 12;
+
+			--size--h1: 36;
 		}
 	}
 }
