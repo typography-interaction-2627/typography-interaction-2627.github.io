@@ -35,6 +35,7 @@
 
 	--gutter--inner: var(--lead);
 	--gutter--outer: var(--5px);
+	--gutter--total: calc(var(--gutter--inner) + var(--gutter--outer));
 	--page:          round(down, calc(100vw - 2 * var(--gutter--outer)), var(--1px));
 
 	--enlargement: var(--4px);
@@ -42,7 +43,12 @@
 	--color:      black;
 	--background: white;
 
+	--border: solid var(--1px) var(--color);
+	--shadow: var(--1px) var(--1px) 0 var(--color);
+
 	@media (width >= 35em) { /* Landscape phones. */
+		--gutter--outer: round(5vw, var(--1px));
+
 		@media (height >= 27em), (width >= 60em) { /* Tablets. */
 			--size: 12;
 

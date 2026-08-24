@@ -1,6 +1,17 @@
 <style>
 	:where(body) > header {
-		padding-inline: 1rlh;
+		block-size:     round(85vh, var(--1px));
+		overflow:       clip;
+		padding-inline: var(--gutter--total);
+		display:        grid;
+		place-items:    center;
+
+		hgroup {
+			background-color: var(--background);
+			border:           var(--border);
+			box-shadow:       var(--shadow);
+			padding:          round(0.5ex, var(--1px));
+		}
 	}
 </style>
 <header webc:root="override">
