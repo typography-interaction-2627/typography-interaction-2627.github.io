@@ -71,15 +71,13 @@ abbr {
 
 /* On parent for `@container`. */
 hgroup:has(h1, h2, h3) {
-	--family: 'New York';
+	--family:  'New York';
+	--leading: 1;
 
 	letter-spacing: round(calc(-0.05 * var(--size) * var(--1px)), var(--1px));
 }
 
-hgroup:has(h1) {
-	--size:   var(--size--h1);
-}
-
+hgroup:has(h1) { --size:   var(--size--h1) }
 hgroup:has(h2) { --size:   var(--size--h2) }
 hgroup:has(h3) { --size:   var(--size--h3) }
 
