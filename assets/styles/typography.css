@@ -56,10 +56,15 @@ abbr {
 
 		* { color: inherit }
 
-		/* Fix Safari rounding. 🤷‍♀️ */
 		@supports (font: -apple-system-body) {
-			a { position: static }
+			/* Fix Safari rounding. 🤷‍♀️ */
 			a, em, abbr { letter-spacing: 0.0001em }
+
+			a {
+				position: static; /* These straight up disappear… */
+
+				&::after { all: unset } /* And cause a scroll! */
+			}
 		}
 	}
 }
