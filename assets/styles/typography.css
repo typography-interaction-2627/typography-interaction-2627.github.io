@@ -31,7 +31,7 @@ em {
 
 abbr {
 	background-image:      url('patterns/dash.svg');
-	background-position-y: bottom var(--1px);
+	background-position-y: calc(1em + var(--1px));
 	background-repeat:     repeat-x;
 	background-size:       var(--2px) var(--1px);
 }
