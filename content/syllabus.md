@@ -347,7 +347,7 @@ We will use the following tools to organize our class:
 - [<cite>Slack Channel</cite>](https://mpscd.slack.com/archives/C0BRNBPC6QP) \
 	For direct and asynchronous communication (*not* email)
 
-- [<cite>Figma Team</cite>](https://www.figma.com/files/team/TKTKTK) \
+- [<cite>Figma Team</cite>](https://www.figma.com/files/team/1670950360853186233/all-projects) \
 	For visual sketching and collaboration
 
 - [<cite>GitHub Organization</cite>](https://github.com/typography-interaction-2627) \
