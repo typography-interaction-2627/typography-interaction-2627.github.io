@@ -1,5 +1,7 @@
 <style>
 	main {
+		background-color: var(--background);
+
 		/* TEMP! */
 		padding-inline: 1rlh;
 

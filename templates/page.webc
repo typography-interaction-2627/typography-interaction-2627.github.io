@@ -1,4 +1,15 @@
+<style webc:if="sequence" @raw="` body { background-image: url('/assets/patterns/${$data.sequence}.svg') }`"></style>
+<style webc:else>
+	:where(:root) {
+		--color:      white;
+		--background: black;
+	}
+</style>
 <template webc:bucket="components" webc:nokeep>
+	<style>
+		html { background-color: black } /* Landing page and iOS “forehead.” */
+		body { background-size:  var(--8px) }
+	</style>
 	<nav-bar></nav-bar>
 	<page-header></page-header>
 	<main-content :@content="content" webc:bucket="default"></main-content>
