@@ -18,5 +18,8 @@
 		<li>
 			<nav-details @collection="topics"></nav-details>
 		</li>
+		<li>
+			<nav-details @title="Elsewhere"></nav-details>
+		</li>
 	</ul>
 </nav>
