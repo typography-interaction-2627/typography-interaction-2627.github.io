@@ -341,7 +341,7 @@ We will use the following tools to organize our class:
 - [<cite>Course Site</cite>](https://typography-interaction-2627.github.io/) \
 	For housekeeping, agendas, and lectures <span class="screen">(you are here)</span>
 
-- [<cite>Submission Form</cite>](https://docs.google.com/forms/d/e/TKTKTK) \
+- [<cite>Submission Form</cite>](https://docs.google.com/forms/d/e/1FAIpQLSc3LUp6nqA1RTTloLM_u_xVHSNpcTQt3v2VG-L-HT9srsG_hA/viewform) \
 	For submitting your work/URL&NoBreak;s
 
 - [<cite>Slack Channel</cite>](https://mpscd.slack.com/archives/C0BRNBPC6QP) \
