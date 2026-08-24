@@ -5,7 +5,7 @@ const draft = true
 
 # Everything Is a “Web Page”
 
-## Let’s Start With the Internet
+## Let’s Start With *The Internet*
 
 ### When Was the Internet Invented?
 
@@ -98,7 +98,7 @@ The core of TCP/IP is routing bundles of data called *packets.* [<cite>↗</cite
 </figcaption>
 </figure>
 
-## What About the Web?
+## What About *The Web*?
 
 ### When Was the Web Invented?
 
