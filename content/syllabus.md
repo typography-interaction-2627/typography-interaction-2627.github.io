@@ -353,7 +353,7 @@ We will use the following tools to organize our class:
 - [<cite>GitHub Organization</cite>](https://github.com/typography-interaction-2627) \
 	For code examples and sharing
 
-- [<cite>Google Drive</cite>](https://drive.google.com/drive/folders/TKTKTK) \
+- [<cite>Google Drive</cite>](https://drive.google.com/drive/folders/1gxl_TpXu0Sd7oJbW1pk7Dd89VNpJwsHK) \
 	For document collaboration and recorded lectures
 
 - [<cite>Zoom Room</cite>](https://NewSchool.zoom.us/j/TKTKTK) \
