@@ -1,0 +1,16 @@
+<style>
+	a:has(> cite) {
+		inline-size: fit-content;
+
+		cite {
+			padding:          1ex;
+			background-color: var(--color);
+			display:          block;
+			inline-size:      fit-content;
+			color:            var(--background);
+
+			* { --color: var(--background) }
+		}
+	}
+</style>
+<cite webc:root="override"><slot></slot></cite>
