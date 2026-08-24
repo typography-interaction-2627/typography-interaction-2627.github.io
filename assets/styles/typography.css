@@ -75,6 +75,7 @@ hgroup:has(h1, h2, h3) {
 	--leading: 1;
 
 	letter-spacing: round(calc(-0.05 * var(--size) * var(--1px)), var(--1px));
+	text-wrap:      balance;
 }
 
 hgroup:has(h1) { --size:   var(--size--h1) }
