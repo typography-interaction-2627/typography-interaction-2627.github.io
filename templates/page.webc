@@ -1,6 +1,6 @@
 <style webc:if="sequence" @raw="` body { background-image: url('/assets/patterns/${$data.sequence}.svg') }`"></style>
 <style webc:else>
-	:where(:root) {
+	body > header {
 		--color:      white;
 		--background: black;
 	}

@@ -31,6 +31,11 @@
 	--size--h3: 14;
 
 	--leading: round(calc(4 / 3 * 1em), var(--1px)); /* “Snap” to scaled pixel. */
+	--lead:    round(calc(1lh - 1ex), var(--1px)); /* Between x-heights. */
+
+	--gutter--inner: var(--lead);
+	--gutter--outer: var(--5px);
+	--page:          round(down, calc(100vw - 2 * var(--gutter--outer)), var(--1px));
 
 	--enlargement: var(--4px);
 
