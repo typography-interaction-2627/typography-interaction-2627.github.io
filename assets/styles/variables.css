@@ -27,6 +27,8 @@
 	--8px: calc(var(--1px) * 8);
 
 	--size--h1: 24;
+	--size--h2: 20;
+	--size--h3: 14;
 
 	--leading: round(calc(4 / 3 * 1em), var(--1px)); /* “Snap” to scaled pixel. */
 
@@ -40,6 +42,8 @@
 			--size: 12;
 
 			--size--h1: 36;
+			--size--h2: 24;
+			--size--h3: 18;
 		}
 	}
 }
