@@ -8,7 +8,11 @@
 <template webc:bucket="components" webc:nokeep>
 	<style>
 		html { background-color: black } /* Landing page and iOS “forehead.” */
-		body { background-size:  var(--8px) }
+
+		body {
+			background-size: var(--8px);
+			padding-bottom:  33vh;
+		}
 	</style>
 	<nav-bar></nav-bar>
 	<page-header></page-header>
