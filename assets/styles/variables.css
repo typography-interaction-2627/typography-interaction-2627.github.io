@@ -12,6 +12,18 @@
 	syntax:        '<integer>';
 }
 
+@property --color {
+	inherits:      true;
+	initial-value: black;
+	syntax:        '<color>';
+}
+
+@property --background {
+	inherits:      true;
+	initial-value: white;
+	syntax:        '<color>';
+}
+
 :where(:root) {
 	--scaling: 2; /* How many (CSS) pixels in our pixel. */
 
@@ -39,9 +51,6 @@
 	--page:          round(down, calc(100vw - 2 * var(--gutter--outer)), var(--1px));
 
 	--enlargement: var(--4px);
-
-	--color:      black;
-	--background: white;
 
 	--border: solid var(--1px) var(--color);
 	--shadow: var(--1px) var(--1px) 0 var(--color);
