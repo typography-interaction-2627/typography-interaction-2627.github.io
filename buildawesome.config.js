@@ -253,8 +253,7 @@ export default (config) => {
 	// Other filters.
 	config.addFilter('initialCap', (string) => string?.replace(/^./, firstChar => firstChar.toUpperCase()))
 	config.addFilter('displayDate', (date) => new Date(date)
-		.toLocaleDateString('en-US', { day: 'numeric', month: 'short', timeZone: 'UTC' })
-		.replace(/(\w{3})/, (month) => month === 'May' ? month : month + '.'))
+		.toLocaleDateString('en-US', { day: 'numeric', month: 'long', timeZone: 'UTC' }))
 	config.addFilter('stripTags', (content) => stripTags(String(content)))
 	config.addFilter('parseHtml', (content) => parse(content))
 
