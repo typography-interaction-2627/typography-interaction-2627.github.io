@@ -1,5 +1,6 @@
 ```javascript
 const order = 3
+const description = 'Our (randomized) classmates.'
 ```
 
 # Our Class
