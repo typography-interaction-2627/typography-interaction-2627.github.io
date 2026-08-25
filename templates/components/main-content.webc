@@ -42,11 +42,15 @@
 					translate:  0 var(--3px); /* The hash glyph is weirdly high/small! */
 				}
 			}
+		}
 
-			@media (any-hover: hover) {
-				--opacity: 0;
+		/* Toggle the anchor links. */
+		@media (any-hover: hover) {
+			section {
+				> hgroup { --opacity: 0 }
 
-				&:hover {
+				/* Only show when its own/immediate content is hovered. */
+				&:has(> :hover:not(section)) > hgroup {
 					--opacity: 1;
 					--delay:   0;
 				}
