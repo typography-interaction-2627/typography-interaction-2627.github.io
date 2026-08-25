@@ -58,6 +58,8 @@ abbr {
 
 		* { color: inherit }
 
+		a:empty { visibility: hidden } /* Heading anchor links. */
+
 		@supports (font: -apple-system-body) {
 			/* Fix Safari rounding. 🤷‍♀️ */
 			a, em, abbr { letter-spacing: 0.0001em }

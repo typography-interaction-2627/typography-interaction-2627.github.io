@@ -17,6 +17,8 @@
 		hgroup {
 			--resolve: 1cap; /* Pass this down. */
 
+			inline-size: fit-content;
+
 			/* Anchor links. */
 			a:empty {
 				--family: 'Geneva';
@@ -27,7 +29,9 @@
 				font-weight:         normal;
 				inline-size:         var(--8px);
 				margin-inline-start: round(calc(var(--resolve) / 3), var(--1px));
+				opacity:             var(--opacity);
 				text-box:            trim-both cap alphabetic;
+				transition-delay:    var(--delay, 1s); /* “Coyote time.” */
 				translate:           0 round(down, calc(-1 * var(--resolve) + var(--8px)), var(--1px));
 
 				&::before {
@@ -38,7 +42,19 @@
 					translate:  0 var(--3px); /* The hash glyph is weirdly high/small! */
 				}
 			}
+
+			@media (any-hover: hover) {
+				--opacity: 0;
+
+				&:hover {
+					--opacity: 1;
+					--delay:   0;
+				}
+			}
 		}
+
+		/* Cinch solo `cite` (for `:hover`). */
+		p:has(> a > cite) { inline-size: fit-content }
 
 		/* TEMP! */
 		> *, section > * { margin-top: calc(2 * var(--8px)) }
