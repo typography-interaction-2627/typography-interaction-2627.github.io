@@ -23,6 +23,35 @@
 	}
 }
 
+/* Insets baked into font. Varies, but going from an M. */
+*, *::before, *::after {
+	@container style(--family: 'Geneva') {
+		@container style(--size: 9)  { --left: 0;          --right: var(--1px) }
+		@container style(--size: 10) { --left: var(--1px); --right: var(--1px) }
+		@container style(--size: 12) { --left: var(--1px); --right: var(--1px) }
+		@container style(--size: 14) { --left: var(--1px); --right: var(--1px) }
+		@container style(--size: 18) { --left: var(--1px); --right: var(--2px) }
+		@container style(--size: 20) { --left: var(--2px); --right: var(--3px) }
+		@container style(--size: 24) { --left: var(--1px); --right: var(--2px) }
+	}
+
+	@container style(--family: 'New York') {
+		@container style(--size: 9)  { --left: 0;          --right: var(--1px) }
+		@container style(--size: 10) { --left: 0;          --right: var(--1px) }
+		@container style(--size: 12) { --left: 0;          --right: var(--1px) }
+		@container style(--size: 14) { --left: 0;          --right: var(--1px) }
+		@container style(--size: 18) { --left: var(--1px); --right: var(--1px) }
+		@container style(--size: 20) { --left: var(--1px); --right: var(--1px) }
+		@container style(--size: 24) { --left: var(--2px); --right: var(--2px) }
+		@container style(--size: 36) { --left: var(--3px); --right: var(--3px) }
+	}
+
+	@container style(--family: 'Monaco') {
+		@container style(--size: 9)  { --left: 0;          --right: var(--1px) }
+		@container style(--size: 12) { --left: var(--1px); --right: var(--1px) }
+	}
+}
+
 /* Separate strike files for each `opsz` until Chrome gets its act together: */
 /* https://issues.chromium.org/issues/505751224 */
 @supports (not (font: -apple-system-body)) and (not (-moz-appearance: none)) {

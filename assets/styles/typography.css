@@ -9,7 +9,7 @@ h4,
 p,
 td,
 th {
-	margin-inline-end:   calc(-1 * var(--right));
+	margin-inline-end:   calc(-1 * var(--right) - var(--kerning, 0em));
 	margin-inline-start: calc(-1 * var(--left));
 	overflow-wrap:       break-word;
 	text-box:            trim-both cap alphabetic;
