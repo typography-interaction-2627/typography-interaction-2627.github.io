@@ -14,41 +14,39 @@
 	line-height:              var(--leading);
 	text-rendering:           geometricPrecision;
 
-	* {
+	*, *::before, *::after {
 		color:                   var(--color, currentcolor);
 		font-family:             var(--family);
 		font-variation-settings: 'opsz' var(--size), 'ital' var(--italic, 0);
 		font-size:               calc(var(--size) * var(--1px));
 		line-height:             var(--leading);
-	}
-}
 
-/* Insets baked into font. Varies, but going from an M. */
-*, *::before, *::after {
-	@container style(--family: 'Geneva') {
-		@container style(--size: 9)  { --left: 0;          --right: var(--1px) }
-		@container style(--size: 10) { --left: var(--1px); --right: var(--1px) }
-		@container style(--size: 12) { --left: var(--1px); --right: var(--1px) }
-		@container style(--size: 14) { --left: var(--1px); --right: var(--1px) }
-		@container style(--size: 18) { --left: var(--1px); --right: var(--2px) }
-		@container style(--size: 20) { --left: var(--2px); --right: var(--3px) }
-		@container style(--size: 24) { --left: var(--1px); --right: var(--2px) }
-	}
+		/* Insets baked into font. Varies, but going from an M. */
+		@container style(--family: 'Geneva') {
+			@container style(--size: 9)  { --left: 0;          --right: var(--1px) }
+			@container style(--size: 10) { --left: var(--1px); --right: var(--1px) }
+			@container style(--size: 12) { --left: var(--1px); --right: var(--1px) }
+			@container style(--size: 14) { --left: var(--1px); --right: var(--1px) }
+			@container style(--size: 18) { --left: var(--1px); --right: var(--2px) }
+			@container style(--size: 20) { --left: var(--2px); --right: var(--3px) }
+			@container style(--size: 24) { --left: var(--1px); --right: var(--2px) }
+		}
 
-	@container style(--family: 'New York') {
-		@container style(--size: 9)  { --left: 0;          --right: var(--1px) }
-		@container style(--size: 10) { --left: 0;          --right: var(--1px) }
-		@container style(--size: 12) { --left: 0;          --right: var(--1px) }
-		@container style(--size: 14) { --left: 0;          --right: var(--1px) }
-		@container style(--size: 18) { --left: var(--1px); --right: var(--1px) }
-		@container style(--size: 20) { --left: var(--1px); --right: var(--1px) }
-		@container style(--size: 24) { --left: var(--2px); --right: var(--2px) }
-		@container style(--size: 36) { --left: var(--3px); --right: var(--3px) }
-	}
+		@container style(--family: 'New York') {
+			@container style(--size: 9)  { --left: 0;          --right: var(--1px) }
+			@container style(--size: 10) { --left: 0;          --right: var(--1px) }
+			@container style(--size: 12) { --left: 0;          --right: var(--1px) }
+			@container style(--size: 14) { --left: 0;          --right: var(--1px) }
+			@container style(--size: 18) { --left: var(--1px); --right: var(--1px) }
+			@container style(--size: 20) { --left: var(--1px); --right: var(--1px) }
+			@container style(--size: 24) { --left: var(--2px); --right: var(--2px) }
+			@container style(--size: 36) { --left: var(--3px); --right: var(--3px) }
+		}
 
-	@container style(--family: 'Monaco') {
-		@container style(--size: 9)  { --left: 0;          --right: var(--1px) }
-		@container style(--size: 12) { --left: var(--1px); --right: var(--1px) }
+		@container style(--family: 'Monaco') {
+			@container style(--size: 9)  { --left: 0;          --right: var(--1px) }
+			@container style(--size: 12) { --left: var(--1px); --right: var(--1px) }
+		}
 	}
 }
 
@@ -76,9 +74,9 @@
 	@font-face { font-family: 'Monaco 12'; src: url('../assets/fonts/moncao--12.woff2') }
 
 	/* Swap them in. */
-	* { font-family: var(--font) }
+	:where(:root) :is(*, *::before, *::after) {
+		font-family: var(--font);
 
-	*, *::before, *::after {
 		@container style(--family: 'Geneva') {
 			@container style(--size: 9)  { --font: 'Geneva 9' }
 			@container style(--size: 10) { --font: 'Geneva 10' }
