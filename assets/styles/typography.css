@@ -13,6 +13,7 @@ th {
 	margin-inline-start: calc(-1 * var(--left));
 	overflow-wrap:       break-word;
 	text-box:            trim-both cap alphabetic;
+	text-wrap:           pretty;
 
 	/* Chrome doesn’t apply `text-box-trim` on inline elements, so can’t set on `*`:
 	/* https://codepen.io/nileshprajapati/pen/RweKdmw */
