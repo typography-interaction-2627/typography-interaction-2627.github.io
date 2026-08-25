@@ -4,9 +4,8 @@
 		html { background-color: black } /* Landing page and iOS “forehead.” */
 
 		body {
-			background-size: var(--8px);
-			inline-size:     round(down, 100vw, var(--1px));
-			padding-bottom:  33vh;
+			inline-size:    round(down, 100vw, var(--1px));
+			padding-bottom: 33vh;
 		}
 	</style>
 	<nav-bar></nav-bar>

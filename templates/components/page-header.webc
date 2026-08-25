@@ -36,10 +36,10 @@
 </style>
 <header webc:root="override">
 	<hgroup>
-		<h1 @html="$data.title"></h1>
-		<div webc:if="$data.date || $data.page.url === '/'">
+		<h1 @html="meta?.data?.title || $data.title"></h1>
+		<div webc:if="meta?.data?.date || $data.date || meta?.url === '/' || $data.page.url === '/'">
 			<p>
-				<time webc:if="$data.date" @html="displayDate($data.date)"></time>
+				<time webc:if="meta?.data?.date || $data.date" @html="displayDate(meta?.data?.date || $data.date)"></time>
 				<time webc:else>2026–2027</time>
 			</p>
 		</div>

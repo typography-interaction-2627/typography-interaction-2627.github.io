@@ -1,1 +1,2 @@
-<h1 @html="meta.data.title"></h1>
+<page-pattern :@meta="$data.meta"></page-pattern>
+<page-header :@meta="$data.meta"></page-header>
