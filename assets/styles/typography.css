@@ -101,4 +101,9 @@ hgroup:has(h3) {
 	}
 }
 
-hgroup:has(h4) { font-weight: bold } /* Stay swiss. */
+/* Stay swiss. */
+hgroup:has(h4) {
+	--size: var(--size--h4);
+
+	font-weight: bold;
+}

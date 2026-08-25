@@ -38,9 +38,12 @@
 	--7px: calc(var(--1px) * 7);
 	--8px: calc(var(--1px) * 8);
 
+	--size--root: var(--size); /* For resets/overrides. */
+
 	--size--h1: 24;
 	--size--h2: 20;
 	--size--h3: 14;
+	--size--h4: 12;
 
 	--leading: round(calc(4 / 3 * 1em), var(--1px)); /* “Snap” to scaled pixel. */
 	--lead:    round(calc(1lh - 1ex), var(--1px)); /* Between x-heights. */
@@ -64,6 +67,8 @@
 			--size--h1: 36;
 			--size--h2: 24;
 			--size--h3: 18;
+			--size--h4: 14;
 		}
 	}
+	@media (width >= 108em) { --scaling: 3 }
 }
