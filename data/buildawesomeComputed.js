@@ -58,7 +58,7 @@ const inCollection = (data, name) => data.collections[name]?.some((item) => item
 const getH1 = (data) => (data.page.rawInput.match(/^# (.+)/m)?.[1].trim() || data.title)
 
 export default {
-	date:       (data) => getWeek(data)?.date,
+	date:       (data) => !data.page.filePathStem.includes('topic') && getWeek(data)?.date,
 	sequence:   (data) => getSequence(data).findIndex(page => page.inputPath === data.page.inputPath),
 	title:      (data) => inCollection(data, 'weeks')
 					? `Week ${data.page.fileSlug}`
