@@ -14,7 +14,7 @@
 		}
 
 		/* TEMP! */
-		* { margin-top: calc(2 * var(--8px)) }
+		> *, section > * { margin-top: calc(2 * var(--8px)) }
 		p { max-width: 65ch }
 	}
 </style>
