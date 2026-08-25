@@ -202,8 +202,7 @@ export default (config) => {
 				token.content =
 					`
 					<hgroup>
-						${headingOpen}${headingHtml}${headingClose}
-						<a href="#${headingId}" aria-labelledby="${headingId}"></a>
+						${headingOpen}${headingHtml}<a href="#${headingId}"></a>${headingClose}
 					</hgroup>
 					`
 

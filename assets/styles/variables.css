@@ -1,4 +1,4 @@
-/* Explicitly defined for `@container` query. */
+/* Explicitly defined variables for `@container` queryies. */
 @property --family {
 	inherits:      true;
 	initial-value: 'Geneva';
@@ -22,6 +22,15 @@
 	inherits:      true;
 	initial-value: white;
 	syntax:        '<color>';
+}
+
+
+/* Resolve where *declared*, for passing compted type values down! */
+/* https://lea.verou.me/blog/2021/06/inherit-ancestor-font-size-for-fun-and-profit/ */
+@property --resolve {
+	inherits:      true;
+	initial-value: 0;
+	syntax:        '<length>';
 }
 
 :where(:root) {

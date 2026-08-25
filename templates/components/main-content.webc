@@ -13,6 +13,33 @@
 			&:not(:first-of-type) { margin-block-start: round(20vh, var(--1px)) }
 		}
 
+		/* Headings */
+		hgroup {
+			--resolve: 1cap; /* Pass this down. */
+
+			/* Anchor links. */
+			a:empty {
+				--family: 'Geneva';
+				--size:   14;
+
+				block-size:          var(--8px);
+				display:             inline-grid;
+				font-weight:         normal;
+				inline-size:         var(--8px);
+				margin-inline-start: round(calc(var(--resolve) / 3), var(--1px));
+				text-box:            trim-both cap alphabetic;
+				translate:           0 round(down, calc(-1 * var(--resolve) + var(--8px)), var(--1px));
+
+				&::before {
+					content:    '#';
+					place-self: end;
+					position:   absolute;
+					text-box:   trim-both cap alphabetic;
+					translate:  0 var(--3px); /* The hash glyph is weirdly high/small! */
+				}
+			}
+		}
+
 		/* TEMP! */
 		> *, section > * { margin-top: calc(2 * var(--8px)) }
 		p { max-width: 65ch }
