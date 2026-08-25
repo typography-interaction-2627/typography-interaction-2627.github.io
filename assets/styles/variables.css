@@ -55,8 +55,9 @@
 
 	--enlargement: var(--4px);
 
-	--border: solid var(--1px) var(--color);
-	--shadow: var(--1px) var(--1px) 0 var(--color);
+	--border:         solid var(--1px) var(--color);
+	--shadow:         var(--1px) var(--1px) 0 var(--color);
+	--shadow--double: var(--2px) var(--2px) 0 var(--color);
 
 	@media (width >= 35em) { /* Landscape phones. */
 		--gutter--outer: round(5vw, var(--1px));

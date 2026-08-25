@@ -7,26 +7,28 @@
 		place-content:  center;
 
 		hgroup {
-			block-size:  round(up, var(--block), var(--1px));
+			--gap: round(calc(1lh - 1ex), var(--1px));
+
 			display:     grid;
-			inline-size: round(up, var(--inline), var(--3px));
 			place-items: center;
-			row-gap:     1ex;
+			row-gap:     var(--gap);
 			text-align:  center;
 
 			div {
 				--family: 'Geneva';
-				--size:   var(--size--h4);
+				--size:   var(--size--root);
 
 				letter-spacing: initial;
 			}
 
 			/* Only on “interior” pages (not landing). */
 			@container style(--color: black) {
+				--gap: round(0.5ex, var(--1px));
+
 				background-color: var(--background);
 				border:           var(--border);
-				box-shadow:       var(--shadow);
-				padding:          round(0.5ex, var(--1px));
+				box-shadow:       var(--shadow--double);
+				padding:          var(--gap);
 			}
 		}
 
