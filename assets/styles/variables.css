@@ -29,7 +29,7 @@
 /* https://lea.verou.me/blog/2021/06/inherit-ancestor-font-size-for-fun-and-profit/ */
 @property --resolve {
 	inherits:      true;
-	initial-value: 0;
+	initial-value: 0px;
 	syntax:        '<length>';
 }
 
@@ -54,22 +54,26 @@
 	--size--h3: 14;
 	--size--h4: 12;
 
-	--leading: round(calc(4 / 3 * 1em), var(--1px)); /* “Snap” to scaled pixel. */
-	--lead:    round(calc(1lh - 1ex), var(--1px)); /* Between x-heights. */
+	--leading: round(calc(4 / 3 * 1em),       var(--1px)); /* “Snap” to scaled pixel. */
+	--lead:    round(calc(1lh - 1cap),        var(--1px));
+	--line:    round(calc(1lh + var(--lead)), var(--1px));
+	--rhythm:  round(calc(1lh - 1ex),         var(--1px)); /* Visually between x-heights. */
 
-	--gutter--inner: var(--lead);
+	--gutter--inner: var(--rhythm);
 	--gutter--outer: var(--5px);
 	--gutter--total: calc(var(--gutter--inner) + var(--gutter--outer));
-	--page:          round(down, calc(100vw - 2 * var(--gutter--outer)), var(--1px));
+	--page:          round(down, min(calc(100vw - 2 * var(--gutter--outer)), var(--max)), var(--1px));
+	--max:           calc(640 * var(--1px));
 
 	--enlargement: var(--4px);
 
 	--border:         solid var(--1px) var(--color);
-	--shadow:         var(--1px) var(--1px) 0 var(--color);
+	--shadow--single: var(--1px) var(--1px) 0 var(--color);
 	--shadow--double: var(--2px) var(--2px) 0 var(--color);
 
 	@media (width >= 35em) { /* Landscape phones. */
 		--gutter--outer: round(5vw, var(--1px));
+		--gutter--start: round(calc((100vw - var(--page)) / 2), var(--1px)); /* Land on-pattern. */
 
 		@media (height >= 27em), (width >= 60em) { /* Tablets. */
 			--size: 12;
@@ -80,6 +84,8 @@
 			--size--h4: 14;
 		}
 	}
+
+	@media (width >= 60em) { --gutter--inner: var(--line) }
 
 	@media (width >= 108em) { --scaling: 3 }
 }

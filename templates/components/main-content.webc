@@ -2,13 +2,15 @@
 	main {
 		/* Our “windows.” */
 		&:not(:has(> section)), > section {
-			background-color:  var(--background);
-			border:            var(--border);
-			box-shadow:        var(--shadow);
-			inline-size:       var(--page);
-			margin-inline:     var(--gutter--outer);
-			padding-inline:    var(--gutter--inner);
-			padding-block-end: calc(2 * var(--8px));
+			background-color:    var(--background);
+			border:              var(--border);
+			box-shadow:          var(--shadow--single);
+			inline-size:         var(--page);
+			margin-inline-end:   var(--gutter--outer);
+			margin-inline-start: var(--gutter--start, var(--gutter--outer));
+			padding-inline:      var(--gutter--inner);
+
+			padding-block-end:   calc(2 * var(--8px)); /* TEMP! */
 
 			&:not(:first-of-type) { margin-block-start: round(20vh, var(--1px)) }
 		}
@@ -62,7 +64,7 @@
 		p:has(> a > cite) { inline-size: fit-content }
 
 		/* TEMP! */
-		> *, section > * { margin-top: calc(2 * var(--8px)) }
+		> *, section > * { margin-top: var(--line) }
 		p { max-width: 65ch }
 	}
 </style>
