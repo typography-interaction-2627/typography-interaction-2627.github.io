@@ -4,10 +4,12 @@ const getWeek = (data) => {
 	const weeks = data.collections.weeks
 
 	if (weeks?.length) {
+		const isTopic = data.page.filePathStem.includes('topic')
+
 		let weekIndex = week - 1, unitIndex = weekIndex
 
-		let date = data.page.filePathStem.includes('topic')
-			? undefined // No date for topics.
+		let date = isTopic
+			? null // No date for topics.
 			: (data.page.fileSlug === 'project' && data.date)
 				? data.date // Override for “Index” project at end of semester.
 				: weeks[weekIndex]?.data.date
@@ -15,7 +17,7 @@ const getWeek = (data) => {
 		let weekOffset = 0
 		let unit = data.unit
 
-		while (!date && weekIndex > 0) {
+		while (!isTopic && !date && weekIndex > 0) {
 			date = weeks[weekIndex - 1].data.date
 			weekOffset++
 			weekIndex--
