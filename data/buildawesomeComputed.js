@@ -67,7 +67,7 @@ export default {
 					? `Week ${data.page.fileSlug}`
 					: inCollection(data, 'projects')
 						? (Number.isInteger(+data.page.fileSlug)
-							? `Project ${data.page.fileSlug}: <em>${getH1(data)}</em>`
+							? `Project ${data.page.fileSlug}: <em>${getH1(data)}</em>`
 							: `Project <em>${getH1(data)}</em>`)
 						: getH1(data),
 	unit:       (data) => getWeek(data)?.unit,

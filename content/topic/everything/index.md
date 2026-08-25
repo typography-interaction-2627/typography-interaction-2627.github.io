@@ -3,7 +3,7 @@ const week = 1
 const draft = true
 ```
 
-# Everything Is a “Web Page”
+# Everything Is a “Web Page”
 
 ## Let’s Start With *The Internet*
 

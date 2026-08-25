@@ -33,6 +33,16 @@
 		}
 
 	}
+
+	/* Meta sidecar. */
+	:root:has(body > header:only-child) {
+		--scaling: 3;
+
+		body > header:only-child {
+			block-size:     100vh;
+			padding-inline: var(--gutter--outer);
+		}
+	}
 </style>
 <header webc:root="override">
 	<hgroup>
