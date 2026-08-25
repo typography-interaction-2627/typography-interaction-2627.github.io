@@ -58,18 +58,18 @@ const inCollection = (data, name) => data.collections[name]?.some((item) => item
 const getH1 = (data) => (data.page.rawInput.match(/^# (.+)/m)?.[1].trim() || data.title)
 
 export default {
-	date: (data) => getWeek(data)?.date,
-	sequence: data => getSequence(data).findIndex(page => page.inputPath === data.page.inputPath),
-	title: (data) => inCollection(data, 'weeks')
-		? `Week ${data.page.fileSlug}`
-		: inCollection(data, 'projects')
-			? (Number.isInteger(+data.page.fileSlug)
-				? `Project ${data.page.fileSlug}: <em>${getH1(data)}</em>`
-				: `Project <em>${getH1(data)}</em>`)
-			: getH1(data),
-	unit: (data) => getWeek(data)?.unit,
+	date:       (data) => getWeek(data)?.date,
+	sequence:   (data) => getSequence(data).findIndex(page => page.inputPath === data.page.inputPath),
+	title:      (data) => inCollection(data, 'weeks')
+					? `Week ${data.page.fileSlug}`
+					: inCollection(data, 'projects')
+						? (Number.isInteger(+data.page.fileSlug)
+							? `Project ${data.page.fileSlug}: <em>${getH1(data)}</em>`
+							: `Project <em>${getH1(data)}</em>`)
+						: getH1(data),
+	unit:       (data) => getWeek(data)?.unit,
 	unitNumber: (data) => getWeek(data)?.unitNumber,
-	week: (data) => inCollection(data, 'weeks')
-		? Number(data.page.fileSlug)
-		: data.week,
+	week:       (data) => inCollection(data, 'weeks')
+					? Number(data.page.fileSlug)
+					: data.week,
 }
