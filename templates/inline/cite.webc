@@ -3,7 +3,7 @@
 		inline-size: fit-content;
 
 		cite {
-			padding:          1ex;
+			padding:          round(1ex, var(--1px));
 			background-color: var(--color);
 			display:          block;
 			inline-size:      fit-content;
