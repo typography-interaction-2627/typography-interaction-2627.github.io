@@ -142,7 +142,7 @@ export default (config) => {
 
 					const href = child.attrGet('href')
 
-					if (!href || /^(?:[a-z][a-z\d+.-]*:|\/\/)/i.test(href)) continue
+					if (!href || href.startsWith('#') || /^(?:[a-z][a-z\d+.-]*:|\/\/)/i.test(href)) continue
 
 					const cleaned = href.replace(/([^/?#]+)\.md(?=$|[?#])/, (_, name) => name === 'index' ? '' : `${name}/`)
 					const shifted = isIndex ? cleaned : `../${cleaned}`
