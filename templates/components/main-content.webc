@@ -127,6 +127,8 @@
 	// Update the hash while scrolling through.
 	const observeSections = () => {
 		main.querySelectorAll('[id]:not(figure)').forEach((id) => {
+			if (id.closest('[inert]')) return
+
 			const section = id.closest('section')
 
 			if (section && !sections.has(section)) {
