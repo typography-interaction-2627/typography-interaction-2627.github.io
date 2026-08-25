@@ -83,7 +83,6 @@
 				max-inline-size: 100%; /* Retain wrapping! */
 
 				/* Anchor links. */
-				/* TODO These wrap to next line! At least after `em`. */
 				a:empty {
 					--family: 'Geneva';
 					--size:   14;
