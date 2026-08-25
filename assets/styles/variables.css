@@ -71,5 +71,6 @@
 			--size--h4: 14;
 		}
 	}
+
 	@media (width >= 108em) { --scaling: 3 }
 }
