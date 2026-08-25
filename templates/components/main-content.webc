@@ -53,7 +53,8 @@
 				> hgroup { --opacity: 0 }
 
 				/* Only show when its own/immediate content is hovered. */
-				&:has(> :hover:not(section)) > hgroup {
+				&:has(> :hover:not(section)) > hgroup,
+				a:empty:focus:focus-visible {
 					--opacity: 1;
 					--delay:   0;
 				}
