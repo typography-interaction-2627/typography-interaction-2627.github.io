@@ -286,7 +286,7 @@ export default (config) => {
 					}
 				})
 
-				await page.setViewport({ deviceScaleFactor: 2, height: 1000, width: 1000 })
+				await page.setViewport({ deviceScaleFactor: 2, height: 540, width: 720 })
 				await page.goto(`http://localhost/${file.replace(output + '/', '')}`, { waitUntil: 'load' })
 				await page.screenshot({ path: join(dirname(file), 'meta.png') })
 				await page.close()
