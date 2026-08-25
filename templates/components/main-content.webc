@@ -1,5 +1,9 @@
 <style webc:bucket="components">
 	main {
+		/* Space above anchor destination. */
+		[id]   { scroll-margin-block: var(--gutter) }
+		h2[id] { scroll-margin-block: calc(2 * var(--gutter)) }
+
 		/* Our “windows.” */
 		&:not(:has(> section)), > section {
 			align-items:         baseline;
