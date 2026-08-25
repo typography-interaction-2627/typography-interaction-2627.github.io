@@ -8,5 +8,5 @@
 	</style>
 	<nav-bar></nav-bar>
 	<page-header></page-header>
-	<main-content :@content="content" webc:bucket="default"></main-content>
+	<main-content :@content="content"></main-content>
 </template>

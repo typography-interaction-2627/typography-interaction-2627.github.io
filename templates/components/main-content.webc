@@ -1,4 +1,4 @@
-<style>
+<style webc:bucket="components">
 	main {
 		/* Our “windows.” */
 		&:not(:has(> section)), > section {
@@ -65,4 +65,45 @@
 		p { max-width: 65ch }
 	}
 </style>
-<main webc:root="override" webc:bucket="components" @html="content"></main>
+<script>
+	console.log('yo!')
+	const main = document.querySelector('main')
+	const hash = window.location.hash.slice(1)
+
+	const sections = new Set()
+
+	// Update the hash while scrolling through.
+	const observeSections = () => {
+		main.querySelectorAll('[id]:not(figure)').forEach((id) => {
+			const section = id.closest('section')
+
+			if (section && !sections.has(section)) {
+				sections.add(section)
+
+				new IntersectionObserver(
+					([entry]) => {
+						(entry.isIntersecting)
+							? history.replaceState(null, '', `#${section.querySelector('[id]')?.id}`)
+							: ((section === ([...sections][0]) && entry.boundingClientRect.top >= 0)
+								|| (section === ([...sections].at(-1)) && entry.boundingClientRect.top <= 0)) &&
+									history.replaceState(null, '', window.location.pathname + window.location.search)
+					},
+					{
+						rootMargin:
+							section.matches('main > section:first-child')
+								? '0% 0% -100%'
+								: section.matches('main > section:last-child')
+									? '0% 0% -50%'
+									: '-50% 0%',
+					},
+				).observe(section)
+			}
+		})
+	}
+
+	// After any anchoring.
+	(!hash)
+		? observeSections()
+		: setTimeout(observeSections, 1500)
+</script>
+<main webc:root="override" webc:bucket="default" @html="content"></main>
