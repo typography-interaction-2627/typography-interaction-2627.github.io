@@ -1,5 +1,6 @@
 <style webc:bucket="components">
 	main {
+		margin-block-start: calc(-1 * var(--gutter));
 		/* Space above anchor destination. */
 		[id]   { scroll-margin-block: var(--gutter) }
 		h2[id] { scroll-margin-block: calc(2 * var(--gutter)) }
