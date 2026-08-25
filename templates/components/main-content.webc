@@ -143,7 +143,7 @@
 					{
 						rootMargin:
 							section.matches('main > section:first-child')
-								? '0% 0% -100%'
+								? '0% 0% -33%'
 								: section.matches('main > section:last-child')
 									? '0% 0% -50%'
 									: '-50% 0%',
