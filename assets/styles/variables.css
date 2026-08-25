@@ -30,6 +30,12 @@
 	syntax:        '<integer>';
 }
 
+@property --gutter {
+	inherits:      true;
+	initial-value: 0px;
+	syntax:        '<length>';
+}
+
 /* Resolve where *declared*, for passing compted type values down! */
 /* https://lea.verou.me/blog/2021/06/inherit-ancestor-font-size-for-fun-and-profit/ */
 @property --resolve {
@@ -64,11 +70,10 @@
 	--line:    round(calc(1lh + var(--lead)), var(--1px));
 	--rhythm:  round(calc(1lh - 1ex),         var(--1px)); /* Visually between x-heights. */
 
-	--gutter--inner: var(--rhythm);
-	--gutter--outer: var(--5px);
-	--gutter--total: calc(var(--gutter--inner) + var(--gutter--outer));
+	--gutter:        var(--rhythm);
+	--bleed:         var(--5px);
 	--alley:         calc(var(--rhythm) * 2);
-	--page:          round(down, min(calc(100vw - 2 * var(--gutter--outer)), var(--max)), var(--1px));
+	--page:          round(down, min(calc(100vw - 2 * var(--bleed)), var(--max)), var(--1px));
 	--max:           calc(720 * var(--1px));
 
 	--enlargement: var(--4px);
@@ -78,8 +83,8 @@
 	--shadow--double: var(--2px) var(--2px) 0 var(--color);
 
 	@media (width >= 35em) { /* Landscape phones. */
-		--gutter--outer: var(--line);
-		--gutter--round: round(calc((100vw - var(--page)) / 2), var(--1px)); /* Land on-pattern. */
+		--bleed:        var(--line);
+		--bleed--round: round(calc((100vw - var(--page)) / 2), var(--1px)); /* Land on-pattern. */
 
 		@media (height >= 27em), (width >= 65em) { /* Tablets. */
 			--size: 12;
@@ -89,7 +94,7 @@
 			--size--h3: 18;
 			--size--h4: 14;
 
-			--gutter--inner: var(--line);
+			--gutter: var(--line);
 		}
 
 		@media (orientation: landscape), (width >= 75em) { --columns: 6 }

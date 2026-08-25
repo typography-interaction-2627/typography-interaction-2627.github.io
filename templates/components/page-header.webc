@@ -3,7 +3,7 @@
 		block-size:     round(85vh, var(--1px));
 		display:        grid;
 		overflow:       clip;
-		padding-inline: var(--gutter--total);
+		padding-inline: calc(var(--gutter) + var(--bleed));
 		place-content:  center;
 
 		hgroup {

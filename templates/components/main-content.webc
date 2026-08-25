@@ -10,9 +10,11 @@
 			display:             grid;
 			grid-auto-rows:      min-content;
 			inline-size:         var(--page);
-			margin-inline-end:   var(--gutter--outer);
-			margin-inline-start: var(--gutter--round, var(--gutter--outer));
-			padding:             var(--gutter--inner);
+			margin-inline-end:   var(--bleed);
+			margin-inline-start: var(--bleed--round, var(--bleed));
+			padding-block-end:   calc(2 * var(--gutter));
+			padding-block-start: var(--gutter);
+			padding-inline:      var(--gutter);
 			row-gap:             var(--line);
 
 			grid-template-columns:
