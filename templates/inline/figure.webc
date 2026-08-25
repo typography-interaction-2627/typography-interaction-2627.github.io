@@ -1,0 +1,3 @@
+<figure webc:root="override">
+	<slot></slot>
+</figure>
