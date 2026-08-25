@@ -1,21 +1,45 @@
 <style>
 	:where(body) > header {
 		block-size:     round(85vh, var(--1px));
+		display:        grid;
 		overflow:       clip;
 		padding-inline: var(--gutter--total);
-		display:        grid;
-		place-items:    center;
+		place-content:  center;
 
 		hgroup {
-			background-color: var(--background);
-			border:           var(--border);
-			box-shadow:       var(--shadow);
-			padding:          round(0.5ex, var(--1px));
+			block-size:  round(up, var(--block), var(--1px));
+			display:     grid;
+			inline-size: round(up, var(--inline), var(--3px));
+			place-items: center;
+			row-gap:     1ex;
+			text-align:  center;
+
+			div {
+				--family: 'Geneva';
+				--size:   var(--size--h4);
+
+				letter-spacing: initial;
+			}
+
+			/* Only on “interior” pages (not landing). */
+			@container style(--color: black) {
+				background-color: var(--background);
+				border:           var(--border);
+				box-shadow:       var(--shadow);
+				padding:          round(0.5ex, var(--1px));
+			}
 		}
+
 	}
 </style>
 <header webc:root="override">
 	<hgroup>
 		<h1 @html="$data.title"></h1>
+		<div webc:if="$data.date || $data.page.url === '/'">
+			<p>
+				<time webc:if="$data.date" @html="displayDate($data.date)"></time>
+				<time webc:else>2026–2027</time>
+			</p>
+		</div>
 	</hgroup>
 </header>
