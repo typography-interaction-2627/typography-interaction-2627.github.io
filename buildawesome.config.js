@@ -279,8 +279,11 @@ export default (config) => {
 
 				page.on('request', async (req) => {
 					try {
-						const body = await readFile(join(output, new URL(req.url()).pathname))
-						await req.respond({ body, status: 200 })
+						const pathname = new URL(req.url()).pathname
+						const body = await readFile(join(output, pathname))
+						const contentType = pathname.endsWith('.svg') ? 'image/svg+xml' : undefined
+
+						await req.respond({ body, contentType, status: 200 })
 					} catch {
 						await req.abort()
 					}
