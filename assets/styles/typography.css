@@ -23,8 +23,8 @@ em {
 	--italic: 1;
 
 	font-style:          italic;
-	margin-inline-end:   var(--3px);
-	margin-inline-start: calc(-1 * var(--2px));
+	margin-inline-end:   round(0.25em, var(--1px));
+	margin-inline-start: round(-0.125em, var(--1px));
 
 	/* `font-style` does *not* set `ital` axes! */
 	/* https://arrowtype.github.io/vf-slnt-test/slnt-ital-tests/index.html */
