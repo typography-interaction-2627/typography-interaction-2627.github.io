@@ -1,8 +1,6 @@
 <page-pattern></page-pattern>
 <template webc:bucket="components" webc:nokeep>
 	<style>
-		html { background-color: black } /* Landing page and iOS “forehead.” */
-
 		body {
 			inline-size:    round(down, 100vw, var(--1px));
 			padding-bottom: 33vh;

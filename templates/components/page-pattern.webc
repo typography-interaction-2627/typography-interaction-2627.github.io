@@ -1,5 +1,5 @@
-<style webc:root="override" webc:if="meta?.data?.sequence || $data.sequence"
-	@raw="` body { background-image: url('/assets/patterns/${meta?.data?.sequence || $data.sequence}.svg') }`">
+<style webc:root="override" webc:if="(meta ?? $data).sequence"
+	@raw="` body { background-image: url('/assets/patterns/${(meta ?? $data).sequence}.svg') }`">
 </style>
 <style webc:root="override" webc:else>
 	body > header {
@@ -8,5 +8,6 @@
 	}
 </style>
 <style webc:bucket="components">
+	html { background-color: black } /* Landing page and iOS “forehead.” */
 	body { background-size: var(--8px) }
 </style>

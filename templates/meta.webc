@@ -1,2 +1,3 @@
-<page-pattern :@meta="$data.meta"></page-pattern>
-<page-header :@meta="$data.meta"></page-header>
+<!-- `meta` virtual template data is nested; make it match the `$data`. -->
+<page-pattern :@meta="$data.meta.data"></page-pattern>
+<page-header :@meta="$data.meta.data"></page-header>
