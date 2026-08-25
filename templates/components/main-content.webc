@@ -2,17 +2,69 @@
 	main {
 		/* Our “windows.” */
 		&:not(:has(> section)), > section {
+			align-items:         baseline;
 			background-color:    var(--background);
 			border:              var(--border);
 			box-shadow:          var(--shadow--single);
+			column-gap:          var(--alley);
+			display:             grid;
+			grid-auto-rows:      min-content;
 			inline-size:         var(--page);
 			margin-inline-end:   var(--gutter--outer);
-			margin-inline-start: var(--gutter--start, var(--gutter--outer));
-			padding-inline:      var(--gutter--inner);
+			margin-inline-start: var(--gutter--round, var(--gutter--outer));
+			padding:             var(--gutter--inner);
+			row-gap:             var(--line);
 
-			padding-block-end:   calc(2 * var(--8px)); /* TEMP! */
+			grid-template-columns:
+				[ all-start aside-start body-start middle-start five-start four-start intro-start left-start one-start recto-start right-start six-start three-start two-start verso-start ]
+				minmax(0, 1fr)
+				[ all-end aside-end body-end middle-end five-end four-end intro-end left-end one-end recto-end right-end six-end three-end two-end verso-end ];
 
+			/* Between “windows.“ */
 			&:not(:first-of-type) { margin-block-start: round(20vh, var(--1px)) }
+
+			/* Default to body width. */
+			:where(&, details, section) > * { grid-column: body }
+
+			/* Limit paragraphs (inside things), sameish. */
+			:where(p) { max-inline-size: 55ch }
+
+			/* Containers. */
+			details,
+			div,
+			dl,
+			ol,
+			section,
+			ul {
+				align-items:           inherit;
+				display:               grid;
+				grid-template-columns: minmax(0, 1fr);
+				row-gap:               inherit;
+			}
+
+			/* Subgridded `section`. */
+			details, section {
+				grid-column:           all;
+				grid-template-columns: subgrid;
+			}
+
+			/* The actual columns. */
+			@container style(--columns: 6) {
+				grid-template-columns:
+					[ all-start body-start intro-start left-start one-start verso-start ]
+					minmax(0, 1fr)
+					[ aside-start one-end two-start]
+					minmax(0, 1fr)
+					[ middle-start left-end three-start two-end ]
+					minmax(0, 1fr)
+					[four-start recto-start three-end verso-end]
+					minmax(0, 1fr)
+					[ body-end middle-end five-start four-end right-start ]
+					minmax(0, 1fr)
+					[ intro-end five-end six-start]
+					minmax(0, 1fr)
+					[ all-end aside-end recto-end right-end six-end];
+			}
 		}
 
 		/* Headings */
@@ -63,10 +115,6 @@
 
 		/* Cinch solo `cite` (for `:hover`). */
 		p:has(> a > cite) { inline-size: fit-content }
-
-		/* TEMP! */
-		> *, section > * { margin-top: var(--line) }
-		p { max-width: 65ch }
 	}
 </style>
 <script>
