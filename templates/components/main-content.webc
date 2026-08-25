@@ -102,6 +102,31 @@
 					}
 				}
 			}
+
+			/* Dividers. */
+			&:has(h2, h3, h4) { grid-column: all }
+
+			&:has(h2) {
+				border-block-end:  var(--border);
+				margin-inline:     calc(-1 * var(--gutter));
+				padding-block-end: var(--gutter);
+				padding-inline:    var(--gutter);
+
+				+ * { margin-block-start: 1rlh }
+			}
+
+			&:has(h3) + * { margin-block-start: 1rlh }
+
+			&:has(h4) { margin-block-start:  1rlh }
+		}
+
+		/* Not right after `h2`. */
+		section section:not(hgroup + section) > hgroup:has(h3) {
+			background-image:    url('patterns/dash.svg');
+			background-repeat:   repeat-x;
+			background-size:     var(--2px) var(--1px);
+			margin-block-start:  2rlh;
+			padding-block-start: 1cap;
 		}
 
 		/* Toggle anchor links. */
