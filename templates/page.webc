@@ -1,10 +1,4 @@
-<style webc:if="sequence" @raw="` body { background-image: url('/assets/patterns/${$data.sequence}.svg') }`"></style>
-<style webc:else>
-	body > header {
-		--color:      white;
-		--background: black;
-	}
-</style>
+<page-pattern></page-pattern>
 <template webc:bucket="components" webc:nokeep>
 	<style>
 		html { background-color: black } /* Landing page and iOS “forehead.” */
