@@ -32,7 +32,7 @@ em {
 
 abbr {
 	background-image:      url('patterns/dash.svg');
-	background-position-y: calc(1em + var(--1px));
+	background-position-y: calc(1em + round(0.1em, var(--1px)));
 	background-repeat:     repeat-x;
 	background-size:       var(--2px) var(--1px);
 }
@@ -53,8 +53,8 @@ abbr {
 		background-image:  url('patterns/check.svg');
 		background-size:   var(--2px);
 		color:             transparent;
-		padding-block-end: var(--4px);
-		margin-block-end:  calc(-1 * var(--4px));
+		padding-block-end: round(0.5ex, var(--1px));
+		margin-block-end:  calc(-1 * round(0.5ex, var(--1px)));
 
 		* { color: inherit }
 
@@ -75,7 +75,11 @@ abbr {
 hgroup:has(h1, h2, h3) {
 	--family:  'New York';
 	--leading: 1;
-	--kerning: round(calc(-0.05 * var(--size) * var(--1px)), var(--1px));
+
+	--kerning: round(
+		calc(-0.0625em * pow(var(--size) / 24, 1.5)),
+		var(--1px)
+	);
 
 	letter-spacing: var(--kerning);
 	text-wrap:      balance;
