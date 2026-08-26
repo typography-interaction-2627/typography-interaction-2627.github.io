@@ -1,3 +1,48 @@
+<style>
+	main { grid-auto-flow: dense }
+
+	button {
+		background-color: var(--color);
+		display:          block;
+		grid-column:      left;
+		inline-size:      fit-content;
+		margin-block-end: round(1rlh, var(--1px));
+		padding:          round(1ex, var(--1px));
+
+		&::after {
+			background:     var(--check);
+			content:        '';
+			inset:          0;
+			mix-blend-mode: multiply;
+			position:       absolute;
+			translate:      var(--2px) var(--2px);
+		}
+
+		p {
+			--color: var(--background);
+
+			position: relative;
+			z-index:  1;
+		}
+	}
+
+	#students {
+		--rows: 10;
+
+		column-gap:         var(--alley);
+		display:            grid;
+		grid-auto-columns:  minmax(0, 1fr);
+		grid-auto-flow:     column;
+		grid-template-rows: repeat(var(--rows), min-content);
+		grid-column:        middle-start / all-end;
+		grid-row:           span 3;
+
+		@media (width >= 86em) { --rows: 5 }
+	}
+
+	main > p:not(:first-of-type) { grid-column: left }
+
+</style>
 <script>
 	const students = document.querySelector('#students')
 	const shuffleStudents = () => students.append(...[...students.children].sort(() => Math.random() - 0.5))
@@ -6,5 +51,5 @@
 	document.querySelector('#shuffle').onclick = () => shuffleStudents()
 </script>
 <button webc:root="override" id="shuffle">
-	<p>Shuffle</p>
+	<p>Shuffle List!</p>
 </button>
