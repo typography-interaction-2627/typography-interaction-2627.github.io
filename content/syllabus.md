@@ -491,8 +491,10 @@ We will take recordings of our sessions for students to reference later. As thes
 
 ## Attendance, Grading, and Other Policies
 
-All CD classes adhere to the same [common program and university policies](https://docs.google.com/document/d/1u358io8doX_SVVMGqIM_oH5V0OIccneYu4Ww-uE55QM).
+All CD classes adhere to the same common program and university policies:
 
-## Acknowledgments
+[<cite>CD Program & University Policies</cite>](https://docs.google.com/document/d/1u358io8doX_SVVMGqIM_oH5V0OIccneYu4Ww-uE55QM)
+
+## Acknowledg&shy;ments
 
 We’d like to thank [Lynn Kiang](http://www.lynnkiang.com), [Brendan Griffiths](https://brendangriffiths.com/), [Andrew LeClair](https://andrewleclair.com), and the [extended MPS CD family](https://mpscd.parsons.edu/faculty/) for their support in the planning and running of this course. And thank you, for reading this far.
