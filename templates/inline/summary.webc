@@ -1,0 +1,56 @@
+<style>
+	main {
+		details {
+			summary {
+				background-color: var(--color);
+				display:          block;
+				grid-column:      left;
+				inline-size:      fit-content;
+				margin-block-end: round(1rlh, var(--1px));
+				padding:          round(1ex, var(--1px));
+
+				&::after {
+					background:     var(--check);
+					content:        '';
+					inset:          0;
+					mix-blend-mode: multiply;
+					position:       absolute;
+					translate:      var(--2px) var(--2px);
+				}
+
+				p {
+					--color: var(--background);
+
+					position: relative;
+					z-index:  1;
+
+					&::before {
+						margin-inline-end: var(--lead);
+						content:           var(--icon, '+');
+					}
+				}
+
+				+ * { margin-block-start: initial }
+			}
+
+			&[open] {
+				--icon: '-';
+
+				&::details-content {
+					display:               grid;
+					grid-column:           all;
+					grid-template-columns: subgrid;
+					row-gap:               inherit;
+				}
+			}
+
+			+ * { margin-block-start: round(1rlh, var(--1px)) }
+		}
+	}
+
+	/* TODO Make this a `details.webc` actually! */
+	/* TODO Some way to not to filter slot content? */
+</style>
+<summary webc:root="override">
+	<slot></slot>
+</summary>

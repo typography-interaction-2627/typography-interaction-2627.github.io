@@ -7,10 +7,14 @@ const draft = true
 
 ## Let’s Start With *The Internet*
 
-### When Was the Internet Invented?
+### When Was *The Internet* Invented?
 
 <details>
-<summary>1969 or 1989?</summary>
+<summary>
+
+1969 or 1989?
+
+</summary>
 
 **1969!**
 
@@ -100,10 +104,14 @@ The core of TCP/IP is routing bundles of data called *packets.* [<cite>↗</cite
 
 ## What About *The Web*?
 
-### When Was the Web Invented?
+### When Was *The Web* Invented?
 
 <details>
-<summary>1969 or 1989?</summary>
+<summary>
+
+1969 or 1989?
+
+</summary>
 
 **1989!**
 
