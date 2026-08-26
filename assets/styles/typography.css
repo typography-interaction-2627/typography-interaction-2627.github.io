@@ -67,7 +67,7 @@ abbr {
 
 		@supports (font: -apple-system-body) {
 			/* Fix Safari rounding. 🤷‍♀️ */
-			a, em, abbr { letter-spacing: 0.0001em }
+			a, em, strong, abbr { letter-spacing: 0.0001em }
 
 			a {
 				position: static; /* These straight up disappear… */
