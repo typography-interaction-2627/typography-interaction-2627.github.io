@@ -175,6 +175,14 @@
 			}
 		}
 
+		hr {
+			border-block-start: var(--border);
+			grid-column:        all;
+			margin-inline:      calc(-1 * var(--gutter));
+			margin-block:       var(--gutter);
+			padding-inline:     var(--gutter);
+		}
+
 		/* Née ”intro.” */
 		:where(p:has(> strong:only-child)) {
 			--size:    var(--size--h4);
