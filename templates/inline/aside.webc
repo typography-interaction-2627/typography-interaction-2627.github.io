@@ -1,0 +1,35 @@
+<style>
+	aside {
+		--family: 'Chicago';
+
+		background-color:   var(--color);
+		border:             var(--2px) solid var(--background);
+		display:            grid;
+		grid-column:        aside;
+		isolation:          isolate;
+		margin-block-start: calc(var(--line) + 1rlh);
+		outline:            var(--1px) solid var(--color);
+		padding:            var(--gutter);
+		place-items:        center;
+		position:           relative;
+		row-gap:            var(--line);
+		text-align:         center;
+
+		&::after {
+			content:          '';
+			position:         absolute;
+			background-color: var(--background);
+			inset:            var(--2px);
+			z-index:          -1;
+		}
+
+		* {
+			text-wrap: balance; /* Overrides `pretty` default. */
+		}
+
+		+ * { margin-block-start: calc(var(--line) + 1rlh) }
+	}
+</style>
+<aside webc:root="override" id="testy">
+	<slot></slot>
+</aside>
