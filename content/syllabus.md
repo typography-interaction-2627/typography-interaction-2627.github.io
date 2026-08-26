@@ -13,14 +13,15 @@ const draft = 1
 
 **This first semester will focus on a mastery of type and layout concepts on the web:**
 
-Typography is the infrastructure of communication in nearly any visual medium. It provides the very first shape and form to written content, and as designers, it is our responsibility to do this with intention and care. Whether towards goals of expression itself or in the service of ideas, the designer must understand type to use it successfully. In this way, we are stewards of meaning.
-
-Digital design, the web in particular, is inextricably linked with typography—from the very letters of code at its base to the words in arrangement we see on a screen. Type, thus, is the scaffolding in which all interaction design first rises. The very shape of the web, in its layouts, grid systems, and patterns—and its various technologies—all exist in the service of type, at their root. They provide the tools with which we can breathe a form and different, digital life into that meaning.
-
-In this class, students will learn intermediate and advanced methods in typography and layout as they concern interactive design. We will use web technologies as the lens to examine this subject—introducing the foundational, front-end languages of HTML (*HyperText Markup Language*) and CSS (*Cascading Style Sheets*) to achieve our designs. Students will understand the specific challenges of type in this medium, but also how it offers unique and particular forms to us as designers. They will learn the common tools and paradigms with which we practice, while developing their own visual, design vocabulary and critical understanding.
+Typography is the infrastructure of communication in nearly any visual medium. It provides the very first shape and form to written content, and as designers, it is our responsibility to practice this with intention and care. Whether towards goals of expression itself or in the service of ideas, the designer must understand type to use it successfully. In this way, we are stewards of meaning.
 
 <!-- - [<cite>Submitted Version</cite>](../assets/PMCD_5001_F26.pdf)  -->
 - [<cite>Course Catalog</cite>](https://courses.newschool.edu/courses/PMCD5001)
+<!-- .right -->
+
+Digital design, the web in particular, is inextricably linked with typography—from the very letters of code at its base to the words in arrangement we see on a screen. Type, thus, is the scaffolding in which all interaction design first rises. The very shape of the web, in its layouts, systems, and patterns—and its various technologies—all exist in the service of type, at their root. They provide the tools with which we can breathe a form and different, digital life into that meaning.
+
+In this class, students will learn intermediate and advanced methods in typography and layout as they concern interactive design. We will use web technologies as the lens to examine this subject—introducing the foundational, front-end languages of HTML (*HyperText Markup Language*) and CSS (*Cascading Style Sheets*) to achieve our designs. Students will understand the specific challenges of type in this medium, but also how it offers unique and particular forms to us as designers. They will learn the common tools and paradigms with which we practice, while developing their own visual, design vocabulary and critical understanding.
 
 ### Spring <!-- .spring inert -->
 
@@ -28,12 +29,13 @@ In this class, students will learn intermediate and advanced methods in typograp
 
 Interaction, interactive, interface, product, UI, UX designers—we are known by many names. These are all monikers for a digitally-native design practice. It is our responsibility, as practitioners in this increasingly consequential and broadening field, to both understand existing paradigms and help manifest, refine, and sustain purposeful new ones.
 
+<!-- - [<cite>Submitted Version</cite>](../assets/PMCD_5002_S27.pdf) -->
+- [<cite>Course Catalog</cite>](https://courses.newschool.edu/courses/PMCD5002)
+<!-- .right -->
+
 Contemporary digital design exists in the continuum of the ever-shifting, evolving, and ubiquitous web. Designers today work at many different scales and within many different systems. We act as mediators—not only for users, meaning, and experience—but with these systems themselves, as well. They shape our work and we shape them—at the meeting point, the *interface*, between things.
 
 In this class, students will learn to give form to and then work at these intersections. We will again use web technologies as our lens for the subject, building on our foundations in HTML and CSS by incorporating JS (*JavaScript*)—to give behavior, interaction, and life to our designs. We will survey modern approaches to front-end design and development, as our discipline has as many methodologies as we do names. There is no one way to do this work, nor one thing to do it for—and through our readings, discussions, exercises, and projects, students will understand and then situate themselves and their practice within the larger field.
-
-<!-- - [<cite>Submitted Version</cite>](../assets/PMCD_5002_S27.pdf) -->
-- [<cite>Course Catalog</cite>](https://courses.newschool.edu/courses/PMCD5002)
 
 ## Learning Outcomes
 
@@ -49,7 +51,7 @@ In this class, students will learn to give form to and then work at these inters
 
 - Design and prototype work while taking into account the ever-shifting, bespoke challenges of web design.
 
-- Give, receive, and respond productively to feedback in critiques.
+- Give, receive, and respond productively to feedback and critiques.
 
 - Think critically and develop their own, distinct thoughts on the role of digital within the larger canon of design.
 
@@ -79,7 +81,7 @@ In this class, students will learn to give form to and then work at these inters
 
 #### Weeks 1–6
 
-We will focus on reviewing the core principles of typography, and introduce the web and its base technologies. Students will learn about HTML, semantic DOM, basic CSS, as well as type hierarchy and the use of custom typefaces for the web.
+We will focus on reviewing the core principles of typography, and introduce the web and its base technologies. Students will learn about HTML, semantic DOM, basic CSS, as well as type hierarchy and the use of typefaces on the web.
 
 #### Readings
 
@@ -101,11 +103,11 @@ We will focus on reviewing the core principles of typography, and introduce the 
 
 #### Project 1: *Manuscript*
 
-**The unit ends with Project 1, *Manuscript*, which students will present on October 1.**
+**The unit ends with Project 1, *Manuscript*, which students will present for critique on October 1.**
 
 Students will choose a seminal design text from [readings.design](https://readings.design), read and respond to it, and typeset their selection and reply together as a web page. Other texts are also allowed on a case-by-case basis.
 
-<sub>We’ll be looking for the quality of responses, appropriate type selection and hierarchy, semantic HTML, and basic CSS.</sub>
+<sub>We’ll be looking at the quality of the responses, appropriate type selection and hierarchy, semantic HTML, and basic CSS.</sub>
 
 ### Unit 2: *There Is No Perfect Layout* <!-- .fall -->
 
@@ -133,11 +135,11 @@ Students will learn how to design and implement more complex, flexible layouts, 
 
 #### Project 2: *Spread*
 
-**This unit concludes with Project 2, *Spread*, which students will present on October 29.**
+**This unit concludes with Project 2, *Spread*, which students will present together on October 29.**
 
-Students will work in pairs, with the texts they selected in *Manuscript*. Each duo will sketch collaboratively and then implement a new expression together, via pair programming. The final web page will be responsive for mobile, desktop, and print layouts.
+Students will work in pairs, with the texts they selected in *Manuscript*. Each duo will sketch collaboratively and then implement a new expression together, via pair programming. The final web page will be responsive for mobile, desktop, and print layouts.
 
-<sub>Here we’re looking for successful design and development collaboration, box-model layout design, and use of responsive media queries.</sub>
+<sub>Here we’re looking for successful design and development collaboration, box-model layout design, and the use of responsive media queries.</sub>
 
 ### Unit 3: *Typography as Interface* <!-- .fall -->
 
@@ -167,9 +169,9 @@ In our final Fall unit, we will focus on creating advanced, multi-page layouts w
 
 **This unit, and the first semester, will culminate with Project 3, *Binding*, which will be presented in class on December 3.**
 
-Students will assemble a collection of texts from *Spread*, combined with their original selection, into a “book.” The book will be a multi-page website with a homepage (cover), navigation (table of contents), individual pages for each text, and an introduction (colophon)—with consistent styles applied across all pages.
+Students will assemble a collection of texts from *Spread*, combined with their original selection, into a “book.” The book will take the form of a multi-page website with a homepage (cover), navigation (table of contents), individual pages for each text, and an introduction (colophon)—with a consistent design system applied across all pages.
 
-<sub>We want to see effective multi-page design and navigation, advanced layouts (flexbox, grid), consistency across the pages and content, and polish/nuance.</sub>
+<sub>Here we want to see effective multi-page design and site navigation, advanced layouts (flexbox, grid), consistency and expression across the pages and content, and overall polish/nuance.</sub>
 
 ### Unit 4: *Interface as Interface* <!-- .spring inert -->
 
@@ -282,11 +284,11 @@ Students will build a landing page for themselves and their *Typography & Inter
 
 ### Reading Responses
 
-Each unit begins with a set of readings to introduce the subject. Students are expected to read the required selections and synthesize their thoughts in a written response, prior to the next class. We are not looking for summarization, here—these should be personal reflections on the subjects, and are evaluated with this lens. We will then discuss these readings as a group.
+Each unit begins with a set of readings to introduce the subject. Students are expected to read the required selections and synthesize their own thoughts in a considered, written response prior to the next class. We are not looking for summarization, here—these should be personal reflections on the subjects, and are evaluated with this lens. We then discuss these readings as a group.
 
-### ~~Quizzes,~~ Exercises, Milestones
+### Exercises and Milestones
 
-Each unit will also have ~~short quizzes on topic material, and~~ specific, technical exercises and milestones that are assigned towards completion of the projects. ~~Quizzes will occur in the class following new material;~~ Assignments are expected to be completed outside of class, before the next session. Some of these will be small; some of these will be large. They are *all* evaluated for completion and quality.
+Each unit will also have specific, technical exercises and milestones that are assigned towards completion of the projects. These assignments are expected to be completed outside of class, before the next session. Some of these will be small; some of these will be large. They are *all* evaluated for completion and quality.
 
 ### Engagement
 
@@ -296,9 +298,9 @@ This engagement will be unavoidably reflected in the quality of students’ work
 
 ### Projects
 
-The bulk of the work for this class takes the form of projects. They are intended as opportunities for students to demonstrate the knowledge and skills learned in class while developing their own practice, and are evaluated in this light.
+The bulk of the work for this class takes the form of projects. They are intended as opportunities for students to demonstrate the knowledge and skills learned in class while developing their own practice, and are evaluated in this light.
 
-There will be check-ins and reviews around each of these before the final due dates, when we will have critiques as a group. In addition to the quality of the project itself, students will be subject to an <nobr>in-person</nobr> code review and will also be assessed on the presentation of their work. More specific evaluation criteria will be delineated with each project’s introduction.
+There will be check-ins and reviews around each of these before the final due dates, when we will have critiques as a group. In addition to the quality of the project itself, students will be subject to an <nobr>in-person</nobr> code review and will also be assessed on their presentation and explanation of their work. More specific evaluation criteria will be delineated with each project’s introduction.
 
 ## Grade Calculation
 
@@ -307,7 +309,7 @@ There will be check-ins and reviews around each of these before the final due da
 |                                    |     |
 | ---------------------------------- | --- |
 | Reading Responses                  | 10% |
-| ~~Quizzes,~~ Exercises, Milestones | 10% |
+| Exercises and Milestones           | 10% |
 | Engagement                         | 20% |
 | Project 1: *Manuscript*            | 10% |
 | Project 2: *Spread*                | 20% |
@@ -318,7 +320,7 @@ There will be check-ins and reviews around each of these before the final due da
 |                                |     |
 | ------------------------------ | --- |
 | Reading Responses              | 10% |
-| Exercises, Milestones          | 10% |
+| Exercises and Milestones       | 10% |
 | Engagement                     | 20% |
 | Project *Index*                | 10% |
 | Project 4: *Links*             | 20% |
@@ -326,32 +328,32 @@ There will be check-ins and reviews around each of these before the final due da
 
 ## Materials and Supplies
 
-In the open tradition of the early web, the only materials truly required are a computer, a browser, a text editor, and an internet connection. The specifics of these are open to the student’s individual preferences and practices. We will do our best to accommodate everyone and will make recommendations, when needed.
+In the open tradition of the early web, the only materials required are a computer, a browser, a text editor, and an internet connection. The specifics of these are open to the student’s individual preferences and practices. We will do our best to accommodate everyone and will make recommendations, when needed.
 
-In class, we will demonstrate using [Figma](http://figma.com) for visual design and sketching, [Visual Studio Code](https://code.visualstudio.com) for programming, and [GitHub](https://github.com)/[GitHub Desktop](https://desktop.github.com) for version control and project hosting. All of these products are available for free, or offer free education licenses with New School emails.
+In class, we will demonstrate using [Figma](http://figma.com) for visual design and sketching, [Visual Studio Code](https://code.visualstudio.com) for programming, and [GitHub](https://github.com)/[GitHub Desktop](https://desktop.github.com) for version control and our project hosting. All of these products are available for free, or offer free education licenses with New School emails.
 
 **We will use the following tools to organize our class:**
 
 - [<cite>Course Site</cite>](https://typography-interaction-2627.github.io/) \
-	For housekeeping, agendas, and lectures <span class="screen">(you are here)</span>
+	For housekeeping, agendas, and lectures <span class="screen">(you are here)</span>.
 
 - [<cite>Submission Form</cite>](https://docs.google.com/forms/d/e/1FAIpQLSc3LUp6nqA1RTTloLM_u_xVHSNpcTQt3v2VG-L-HT9srsG_hA/viewform) \
-	For submitting your work/URL&NoBreak;s
+	For submitting your work/URL&NoBreak;s—this is “turning it in.”
 
 - [<cite>Slack Channel</cite>](https://mpscd.slack.com/archives/C0BRNBPC6QP) \
-	For direct and asynchronous communication (*not* email)
+	For direct and asynchronous communication (*not* email).
 
 - [<cite>Figma Team</cite>](https://www.figma.com/files/team/1670950360853186233/all-projects) \
-	For visual sketching and collaboration
+	For visual sketching and collaboration.
 
 - [<cite>GitHub Organization</cite>](https://github.com/typography-interaction-2627) \
-	For code examples and sharing
+	For code examples and sharing.
 
 - [<cite>Google Drive</cite>](https://drive.google.com/drive/folders/1gxl_TpXu0Sd7oJbW1pk7Dd89VNpJwsHK) \
-	For document collaboration and recorded lectures
+	For document collaboration and recorded lectures.
 
 - [<cite>Zoom Room</cite>](https://NewSchool.zoom.us/j/97800365415) \
-	For screen sharing and recording
+	For screen sharing and recording.
 
 ## Class Policies
 
