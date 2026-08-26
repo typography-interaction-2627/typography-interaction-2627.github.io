@@ -1,6 +1,5 @@
 ```javascript
 const order = 2
-const draft = 1
 ```
 
 # The Syllabus
@@ -453,6 +452,8 @@ These attributions should explain *why* they were brought in, *what* was referen
 ### LLM<small>s</small> and “Artificial Intelligence”
 
 There has been much discussion and development in our field (and others) around [*large language models*](https://en.wikipedia.org/wiki/Large_language_model), a.k.a. “artificial intelligence.” Tools like the conspicuous [Chat&NoBreak;GPT](https://openai.com/blog/chatgpt), [Claude Code](https://claude.com/product/claude-code), [Cursor’s IDE](https://cursor.com/en), [Google Gemini](https://gemini.google.com), and [GitHub Copilot](https://github.com/features/copilot) are upending the industry and changing how we work. But aside from (the many) other concerns, their use in the classroom remains fraught, at best.
+
+#### Writing Is Thinking; Code Is Writing
 
 Every course has different learning objectives. In ours, we think students first need to write code themselves in order to truly understand our medium. We believe that writing is thinking, and code is no different—the slowness, friction, and resistance of it are necessary for learning that lasts. We might in some ways get “less” done, but we think we will all take more from it.
 
