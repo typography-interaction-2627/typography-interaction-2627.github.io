@@ -11,12 +11,13 @@
 		margin-block-start: var(--gutter);
 		margin-inline:      var(--edge);
 		position:           fixed;
-		row-gap:            var(--gutter);
+		row-gap:            var(--edge);
 		z-index:            1;
 
 		@media (width > 42em) {
-			justify-content: space-between;
-			flex-direction: row;
+			flex-direction:     row;
+			justify-content:    space-between;
+			margin-block-start: var(--edge);
 		}
 
 		> ul {
