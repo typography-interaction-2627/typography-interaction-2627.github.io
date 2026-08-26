@@ -105,8 +105,7 @@ The unit ends with Project 1, *Manuscript*, which students will present on Octo
 
 Students will choose a seminal design text from [readings.design](https://readings.design), read and respond to it, and typeset their selection and reply together as a web page. Other texts are also allowed on a case-by-case basis.
 
-We’ll be looking for the quality of responses, appropriate type selection and hierarchy, semantic HTML, and basic CSS.
-<!-- .note -->
+<sub>We’ll be looking for the quality of responses, appropriate type selection and hierarchy, semantic HTML, and basic CSS.</sub>
 
 ### Unit 2: *There Is No Perfect Layout* <!-- .fall -->
 
@@ -138,8 +137,7 @@ This unit concludes with Project 2, *Spread*, which students will present on Oc
 
 Students will work in pairs, with the texts they selected in *Manuscript*. Each duo will sketch collaboratively and then implement a new expression together, via pair programming. The final web page will be responsive for mobile, desktop, and print layouts.
 
-Here we’re looking for successful design and development collaboration, box-model layout design, and use of responsive media queries.
-<!-- .note -->
+<sub>Here we’re looking for successful design and development collaboration, box-model layout design, and use of responsive media queries.</sub>
 
 ### Unit 3: *Typography as Interface* <!-- .fall -->
 
@@ -171,8 +169,7 @@ This unit, and the first semester, will culminate with Project 3, *Binding*, wh
 
 Students will assemble a collection of texts from *Spread*, combined with their original selection, into a “book.” The book will be a multi-page website with a homepage (cover), navigation (table of contents), individual pages for each text, and an introduction (colophon)—with consistent styles applied across all pages.
 
-We want to see effective multi-page design and navigation, advanced layouts (flexbox, grid), consistency across the pages and content, and polish/nuance.
-<!-- .note -->
+<sub>We want to see effective multi-page design and navigation, advanced layouts (flexbox, grid), consistency across the pages and content, and polish/nuance.</sub>
 
 ### Unit 4: *Interface as Interface* <!-- .spring inert -->
 
@@ -204,8 +201,7 @@ The unit ends with Project 4, *Links*, which students will present on February�
 
 Students will collaboratively assemble, connect, and present a collection using [Are.na](https://www.are.na) as a platform/CMS—designing and building an interface to explore and understand it.
 
-In addition to our previous project requirements, here we’ll be looking for the effective use of images/media, meaningful interactive interface functionality, and your use of JavaScript.
-<!-- .note -->
+<sub>In addition to our previous project requirements, here we’ll be looking for the effective use of images/media, meaningful interactive interface functionality, and your use of JavaScript.</sub>
 
 ### Unit 5: *If All You Have Is a Hammer, Everything Looks Like a Nail* <!-- .spring inert -->
 
@@ -272,8 +268,7 @@ This unit will culminate with Project 5, *Functions*, which will be presented i
 
 Students will identify a problem and conceptualize how to solve it on the web. They will plan, design, and implement a novel solution towards this problem—incorporating data and interaction with the tools, technologies, and techniques they’ve learned in this course.
 
-We’ll first be looking for strong concepts—not limited to or by existing conventions—that push the grain of interaction design in new and interesting directions. And as the capstone for this course, we’re expecting the highest level of nuance and polish in the organizational, aesthetic, and technical aspects of these final projects.
-<!-- .note -->
+<sub>We’ll first be looking for strong concepts—not limited to or by existing conventions—that push the grain of interaction design in new and interesting directions. And as the capstone for this course, we’re expecting the highest level of nuance and polish in the organizational, aesthetic, and technical aspects of these final projects.</sub>
 
 #### Project *Index*
 
@@ -281,8 +276,7 @@ The Spring semester, and the entire course, end with the Project *Index*, which
 
 Students will build a landing page for themselves and their *Typography & Interaction* projects, providing links and context for them. They will update this with their finished projects, and refine it to deliberately and uniquely represent themselves and their work online.
 
-We’ll be looking for self-expression within the their now-familiar materials of the web—demonstrating an understanding of HTML, CSS, and JavaScript as a means to manifest a personal taste in this medium.
-<!-- .note -->
+<sub>We’ll be looking for self-expression within the their now-familiar materials of the web—demonstrating an understanding of HTML, CSS, and JavaScript as a means to manifest a personal taste in this medium.</sub>
 
 ## Evaluation Criteria
 
@@ -466,7 +460,7 @@ We think you first need to write code yourself to understand the medium. Copying
 
 - Your questions there should clearly demonstrate the tool is being used to *aid your understanding*, not as a *shortcut*.
 
-	Think: these are questions you would ask your instructors. <!-- .note -->
+	<sub>Think: these are questions you would ask your instructors.</sub>
 
 - If you cannot furnish a link to your “conversation” and questions, you cannot use the tool nor its output.
 

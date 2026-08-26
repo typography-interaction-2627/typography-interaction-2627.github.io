@@ -40,9 +40,11 @@ nobr { --wrap: nowrap }
 
 abbr {
 	background-image:      url('patterns/dash.svg');
-	background-position-y: calc(1em + round(0.1em, var(--1px)));
+	background-position-y: calc(1em + var(--1px));
 	background-repeat:     repeat-x;
 	background-size:       var(--2px) var(--1px);
+
+	@container style(--size < 10) { background-position-y: calc(1em + var(--2px)) }
 }
 
 [inert] {

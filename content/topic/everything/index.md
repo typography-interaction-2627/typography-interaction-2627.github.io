@@ -330,5 +330,4 @@ In your careers, the software, languages, and platforms might be different, and 
 
 ---
 
-A hat-tip to friend-of-the-program [Tuan](https://tuanpham.info) on this lecture.
-<!-- .note -->
+<sub>A hat-tip to friend-of-the-program [Tuan](https://tuanpham.info) on this lecture.</sub>
