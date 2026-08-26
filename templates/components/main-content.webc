@@ -242,11 +242,12 @@
 			}
 
 			/* “Tight” lists. */
-			&:where(:not(:has(li > p, a > cite))) { row-gap: var(--lead) }
+			&:where(:not(:has(li > p))) { row-gap: var(--lead) }
 
 			/* More vertical space when the items have multiple paragraphs. */
 			&:where(:has(:where(dt, li) > p:not(:only-child))) {
-				row-gap: calc(var(--line) + round(1rlh, var(--1px)));
+				margin-block-start: round(1rlh, var(--1px));
+				row-gap:            calc(var(--line) + round(1rlh, var(--1px)));
 
 				> :where(dt, li):where(:has(p:not(:only-child))) {
 					display:               grid;
