@@ -38,7 +38,6 @@ summary {
 	th
 ) a:where(:not(:has(cite))) {
 		display:                   inline;
-		font-weight:               bold;
 		margin-inline-end:         calc(-1 * var(--enlargement));
 		margin-inline-start:       calc(-1 * var(--enlargement));
 		outline-offset:            unset;
