@@ -97,6 +97,7 @@ We will focus on reviewing the core principles of typography, and introduce the 
 
 - [<cite>*A Handmade Web*</cite>](http://luckysoap.com/statements/handmadeweb.html) \
 	J.R. Carpenter, 2015
+<!-- .all -->
 
 #### Project 1: *Manuscript*
 
@@ -129,6 +130,7 @@ Students will learn how to design and implement more complex, flexible layouts, 
 
 - [<cite>*The Diminishing Marginal Value of Aesthetics*</cite>](https://subpixel.space/entries/diminishing-marginal-aesthetic-value/) \
 	Toby Shorin, 2017
+<!-- .all -->
 
 #### Project 2: *Spread*
 
@@ -159,8 +161,9 @@ In our final Fall unit, we will focus on creating advanced, multi-page layouts w
 - [<cite>*Interface Writing: Code for Humans*</cite>](https://www.nicolefenton.com/interface-writing/) \
 	Nicole Fenton, 2014
 
-- [<cite>*My website is a shifting house next to a river of knowledge. What could yours be?*</cite>](https://thecreativeindependent.com/essays/laurel-schwulst-my-website-is-a-shifting-house-next-to-a-river-of-knowledge-what-could-yours-be/) \
+- [<cite>*My website is a shifting house next to <br>a river of knowledge. What could yours be?*</cite>](https://thecreativeindependent.com/essays/laurel-schwulst-my-website-is-a-shifting-house-next-to-a-river-of-knowledge-what-could-yours-be/) \
 	Laurel Schwulst, 2018
+<!-- .all -->
 
 #### Project 3: *Binding*
 
@@ -193,6 +196,7 @@ We will expand on our first-semester foundations in design, typography, HTML, an
 
 - [<cite>*Folk Interfaces*</cite>](https://maggieappleton.com/folk-interfaces) \
 	Maggie Appleton, 2022
+<!-- .all -->
 
 #### Project 4: *Links*
 
@@ -225,6 +229,7 @@ To wrap up the semester (and course), we’ll round out our knowledge of the web
 
 - [<cite>*A notional design studio.*</cite>](https://ethanmarcotte.com/wrote/a-notional-design-studio/) \
 	Ethan Marcotte, 2025
+<!-- .all -->
 
 * [<cite>*Human Interface Guidelines*</cite>](https://andymatuschak.org/files/papers/Apple%20Human%20Interface%20Guidelines%201987.pdf) \
 	Apple, 1987
@@ -249,6 +254,7 @@ To wrap up the semester (and course), we’ll round out our knowledge of the web
 
 * [<cite>*<small>i</small>OS Human Interface Guidelines*</cite>](https://www.evl.uic.edu/datsoupi/420_14/docs/MobileHIG.pdf) \
 	Apple, 2014
+<!-- .all -->
 
 - [<cite>*Material Design 3*</cite>](https://m3.material.io/) \
 	Google, 2021 (*ongoing*)
@@ -258,6 +264,7 @@ To wrap up the semester (and course), we’ll round out our knowledge of the web
 
 - [<cite>*Fluent 2 Design System*</cite>](https://www.microsoft.com/design/fluent/) \
 	Microsoft, 2023 (*ongoing*)
+<!-- .all -->
 
 #### Project 5: *Functions*
 
@@ -423,7 +430,7 @@ We have zero tolerance for any sort of plagiarism—which ranges from “verbati
 
 **An example:** <!-- .screen -->
 
-```css <!-- .screen -->
+```css <!-- .screen .all -->
 /* I wanted to treat large grids differently in my design! */
 /* I found this tool: https://css-tip.com/quantity-queries/ */
 /* The selector matches when the container has a sixth child. */
