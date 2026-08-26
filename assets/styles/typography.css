@@ -31,6 +31,8 @@ em {
 	/* https://arrowtype.github.io/vf-slnt-test/slnt-ital-tests/index.html */
 }
 
+nobr { text-wrap: nowrap }
+
 abbr {
 	background-image:      url('patterns/dash.svg');
 	background-position-y: calc(1em + round(0.1em, var(--1px)));
