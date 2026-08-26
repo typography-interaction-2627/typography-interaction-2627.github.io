@@ -1,6 +1,38 @@
 <style>
 	/* TEMP! */
-	nav { display: none }
+	nav {
+		--wrap: nowrap;
+		--edge: round(calc(var(--gutter) / 2), var(--1px));
+
+		align-items:        center;
+		display:            flex;
+		flex-direction:     column;
+		inset-inline:       0;
+		margin-block-start: var(--gutter);
+		margin-inline:      var(--edge);
+		position:           fixed;
+		row-gap:            var(--gutter);
+		z-index:            1;
+
+		@media (width > 45em) {
+			justify-content: space-between;
+			flex-direction: row;
+		}
+
+		> ul {
+			--gap: round(1ex, var(--1px));
+
+			column-gap: var(--gap);
+			display:    flex;
+
+			> li > a {
+				padding:          round(1ex, var(--1px));
+				background-color: var(--color);
+
+				* { --color: var(--background) }
+			}
+		}
+	}
 </style>
 <nav webc:root="override">
 	<ul>
@@ -9,6 +41,7 @@
 				<p @html="initialCap(item.fileSlug) || '&'"></p>
 			</a>
 		</li>
+		<!--
 		<li>
 			<nav-details @collection="weeks" @title="Sessions"></nav-details>
 		</li>
@@ -20,6 +53,20 @@
 		</li>
 		<li>
 			<nav-details @title="Elsewhere"></nav-details>
+		</li>
+		-->
+	</ul>
+	<!-- Temp for first class! 🫣 -->
+	<ul>
+		<li>
+			<a href="/week/1/">
+				<p>Week 1</p>
+			</a>
+		</li>
+		<li>
+			<a href="/topic/everything/">
+				<p><em>Everything</em></p>
+			</a>
 		</li>
 	</ul>
 </nav>
