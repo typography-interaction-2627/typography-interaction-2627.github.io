@@ -164,7 +164,6 @@
 	}
 </style>
 <script>
-	console.log('yo!')
 	const main = document.querySelector('main')
 	const hash = window.location.hash.slice(1)
 
