@@ -150,7 +150,7 @@
 					background-image:    url('patterns/dash.svg');
 					background-repeat:   repeat-x;
 					background-size:     var(--2px) var(--1px);
-					margin-block-start:  2rlh;
+					margin-block-start:  round(2rlh, var(--1px));
 					padding-block-start: round(1cap, var(--1px));
 				}
 
@@ -181,15 +181,15 @@
 			--leading: round(1rlh, var(--1px));
 			--wrap:    balance;
 
-			> strong { display: block } /* Fixes `line-height` rounding. 🤷‍♀️ */
+			*:not(hgroup) + & { margin-block-start: round(1rlh, var(--1px)) }
 
-			&:not(:first-of-type) { margin-block-start: round(1rlh, var(--1px)) }
+			> strong { display: block } /* Fixes `line-height` rounding. 🤷‍♀️ */
 
 			@container style(--columns: 6) {
 				&:where(:not(:has(~ .right))) { grid-column: all-start / five-end }
 			}
 
-			+ * { margin-block-start: round(1rlh, var(--1px)) }
+			+ *:not(section) { margin-block-start: round(1rlh, var(--1px)) }
 		}
 
 		/* Previously “note.” */
