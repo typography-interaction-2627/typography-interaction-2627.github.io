@@ -56,7 +56,7 @@ abbr {
 	p,
 	td,
 	th {
-		background:        var(--check);
+		background:        var(--check--text);
 		color:             transparent;
 		padding-block-end: round(0.5ex, var(--1px));
 		margin-block-end:  calc(-1 * round(0.5ex, var(--1px)));

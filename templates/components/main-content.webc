@@ -211,7 +211,7 @@
 					}
 
 					[inert] & {
-						background: var(--check);
+						background: var(--check--text);
 						color:      transparent;
 					}
 				}

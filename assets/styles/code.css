@@ -18,9 +18,6 @@ samp {
 		inset:      calc(-1 * var(--1px));
 		position:   absolute;
 		z-index:    -1;
-
-		/* Override `text` from var. */
-		background-clip: border-box;
 	}
 }
 
