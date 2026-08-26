@@ -395,7 +395,7 @@ Our class will create and maintain an agreement, intended to help us foster a sa
 
 Our intent is to respect and give forum to a range of perspectives and backgrounds, including culture, race, gender, sexual orientation, socioeconomic status, disability, and age. In instances where we are not personally qualified to speak from a specific perspective—which is most of them—students are encouraged to explore these area themselves.
 
-Please let us know if there are ways that the course can better serve these goals!
+**Please let us know if there are ways that the course can better serve these goals!**
 
 ### Office Hours
 
@@ -419,7 +419,7 @@ We have zero tolerance for plagiarism and passing off the work of others (or [LL
 
 Everything that is turned in should be a product of each students’ own ideas, synthesis, and execution. They will always be expected to understand it, explain it, and defend it as they would themselves.
 
-Students also should review the school’s [Academic Integrity Policy](https://docs.google.com/document/d/175hXxUbLI8Jy7NEtbeoyX3Va_MQzXzgxzFUjj7hSkSU).
+**Students also should review the school’s [Academic Integrity Policy](https://docs.google.com/document/d/175hXxUbLI8Jy7NEtbeoyX3Va_MQzXzgxzFUjj7hSkSU).**
 
 > [!WARNING]
 >
@@ -460,7 +460,7 @@ Every course has different learning objectives. In ours, we think students first
 
 #### Our “AI” Guidelines
 
-Here’s how we think we can use these tools to support our learning:<br><br>
+Here’s how we think we can use these tools to support our learning: <br><br>
 
 - LLM&NoBreak;s should only ever be used in “ask” mode, which means no “agent” use—including IDE/CLI and other types of integrations (such as *Claude Code* or *GitHub Copilot*).
 
@@ -478,11 +478,15 @@ Here’s how we think we can use these tools to support our learning:<br><br>
 
 - Any design, writing, or code that is turned in is considered [the work of the student](#plagiarism-and-derivative-work)—and they should understand it and be able to demonstrate that when we ask.
 
-- Any other uses/edge-cases require prior instructor approval, but we’re always happy to discuss.
+- Any other uses/edge-cases require prior instructor approval, but we’re always happy to discuss! <br><br>
 
-**An LLM is there to help answer your questions—not write your code/do your work.**
+**Students should also review our evolving [program AI guidelines](https://mpscd.notion.site/MPS-AI-Guidelines-3c63d2d61b2e80938f8bf14dd5b6be57).**
 
-Students should also review our evolving [program AI guidelines](https://mpscd.notion.site/MPS-AI-Guidelines-3c63d2d61b2e80938f8bf14dd5b6be57).
+> [!NOTE]
+>
+> LLM&NoBreak;s are there to help answer your questions—not write your code/do your work!
+>
+> <sub>This approach is what we will be expecting for our course.</sub>
 
 ### Recording Sessions
 
