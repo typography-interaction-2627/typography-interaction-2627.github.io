@@ -277,7 +277,7 @@ We’ll first be looking for strong concepts—not limited to or by existing con
 
 #### Project *Index*
 
-The Spring semester, and the entire course, end with the Project *Index*, which will be due on May 15.
+The Spring semester, and the entire course, end with the Project *Index*, which will be due on May 14.
 
 Students will build a landing page for themselves and their *Typography & Interaction* projects, providing links and context for them. They will update this with their finished projects, and refine it to deliberately and uniquely represent themselves and their work online.
 
