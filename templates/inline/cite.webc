@@ -1,5 +1,7 @@
 <style>
 	:where(p, li):has(a > cite) {
+		--wrap: balance;
+
 		max-inline-size: initial;
 
 		/* With a note after. */
@@ -30,7 +32,6 @@
 				padding-inline-end:   calc(var(--padding) - var(--right));
 				padding-inline-start: calc(var(--padding) - var(--left));
 				position:             relative;
-				text-wrap:            balance;
 				z-index:              1; /* In front of the link enlargement. */
 			}
 		}

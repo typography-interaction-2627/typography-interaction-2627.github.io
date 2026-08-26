@@ -1,6 +1,7 @@
 <style>
 	aside {
 		--family: 'Chicago';
+		--wrap:   balance;
 
 		background-color:   var(--color);
 		border:             var(--2px) solid var(--background);
@@ -21,10 +22,6 @@
 			background-color: var(--background);
 			inset:            var(--2px);
 			z-index:          -1;
-		}
-
-		* {
-			text-wrap: balance; /* Overrides `pretty` default. */
 		}
 
 		+ * { margin-block-start: calc(var(--line) + 1rlh) }

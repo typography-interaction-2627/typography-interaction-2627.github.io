@@ -13,7 +13,6 @@ th {
 	margin-inline-start: calc(-1 * var(--left));
 	overflow-wrap:       break-word;
 	text-box:            trim-both cap alphabetic;
-	text-wrap:           pretty;
 
 	/* Chrome doesn’t apply `text-box-trim` on inline elements, so can’t set on `*`:
 	/* https://codepen.io/nileshprajapati/pen/RweKdmw */
@@ -37,7 +36,7 @@ strong {
 	@container style(--size >= 12) { letter-spacing: calc(-1 * var(--1px)) }
 }
 
-nobr { text-wrap: nowrap }
+nobr { --wrap: nowrap }
 
 abbr {
 	background-image:      url('patterns/dash.svg');
@@ -85,6 +84,7 @@ abbr {
 hgroup:has(h1, h2, h3) {
 	--family:  'New York';
 	--leading: 1;
+	--wrap:    balance;
 
 	--kerning: round(
 		calc(-0.0625em * pow(var(--size) / 24, 1.5)),
@@ -92,7 +92,6 @@ hgroup:has(h1, h2, h3) {
 	);
 
 	letter-spacing: var(--kerning);
-	text-wrap:      balance;
 }
 
 hgroup:has(h1) { --size: var(--size--h1) }

@@ -175,8 +175,7 @@
 		:where(p:has(> strong:only-child)) {
 			--size:    var(--size--h4);
 			--leading: round(1rlh, var(--1px));
-
-			text-wrap: balance;
+			--wrap:    balance;
 
 			> strong { display: block } /* Fixes `line-height` rounding. 🤷‍♀️ */
 
@@ -193,7 +192,7 @@
 		/* Some automatic balancin’. */
 		section > p:only-of-type,
 		section > p:first-of-type:has(+ p:last-child > a > cite) {
-			text-wrap: balance;
+			--wrap: balance;
 		}
 
 		/* Tables for the grade breakdown. */

@@ -18,9 +18,10 @@
 	:where(*, *::before, *::after) {
 		color:                   var(--color, currentcolor);
 		font-family:             var(--family);
-		font-variation-settings: 'opsz' var(--size), 'ital' var(--italic, 0);
 		font-size:               calc(var(--size) * var(--1px));
+		font-variation-settings: 'opsz' var(--size), 'ital' var(--italic, 0);
 		line-height:             var(--leading);
+		text-wrap:               var(--wrap, pretty);
 
 		/* Insets baked into font. Varies, but going from an M. */
 		@container style(--family: 'Geneva') {
