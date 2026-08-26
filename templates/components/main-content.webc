@@ -195,6 +195,27 @@
 			--wrap: balance;
 		}
 
+		/* Lists, lists, lists. */
+		:is(dl, ol, ul) {
+			/* Not `cite` lists. */
+			&:where(:not(:has(> li > a > cite, > li > p:only-child > a > cite))) {
+				/* Item inset. */
+				> :where(dd, dt, li) { padding-inline-start: var(--line) }
+
+				> :where(dt, li) {
+					position: relative;
+
+					/* ”Markers.” */
+					&::before {
+						content:            '•' / '';
+						inset-inline-start: 0;
+						position:           absolute;
+						text-box:           trim-both cap alphabetic;
+					}
+				}
+			}
+		}
+
 		/* Tables for the grade breakdown. */
 		table {
 			inline-size: fit-content;
