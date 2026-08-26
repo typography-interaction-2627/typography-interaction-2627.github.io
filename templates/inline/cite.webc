@@ -1,5 +1,5 @@
 <style>
-	:where(p, li):has(a > cite) {
+	:where(p, li):has(a > cite):not(:has(ul)) {
 		--wrap: balance;
 
 		max-inline-size: initial;
