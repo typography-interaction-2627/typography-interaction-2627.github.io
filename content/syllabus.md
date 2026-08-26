@@ -369,43 +369,45 @@ Our class will create and maintain an agreement, intended to help us foster a sa
 
 - We will have a short break, roughly halfway through the class.
 
-- The class should feel comfortable asking the instructors anything—nothing is too trivial, or embarrassing, or off-topic. Tangents are good! Students can always ask us via [Slack](https://mpscd.slack.com/archives/C0BRNBPC6QP), if they would like to remain anonymous.
+- The class should feel comfortable asking the instructors *anything*—nothing is too trivial, or embarrassing, or off-topic. Tangents are good! Students can always ask us via [Slack](https://mpscd.slack.com/archives/C0BRNBPC6QP), if they would like to remain anonymous.
 
-- When presenting, students will “have the floor” while they take us through their work. This means everyone else will be quiet, we’ll close our laptops/turn off our phones, and give our full attention to the person showing their work.
+- When presenting for critiques, students will “have the floor” while they take us through their work. This means everyone else will be quiet, we’ll close our laptops/turn off our phones, and give our full attention to the person explaining their work.
 
 - Likewise for when the *instructors* are presenting new material—no laptops, no phones. If students require either for assisting their learning, they must request approval beforehand. Our default setting should be “full attention, up front.”
 
-- We will all engage meaningfully with presented work and try to give constructive feedback (no fluff).
+- We will all endeavor to engage meaningfully with presented work, and try to give constructive feedback—not just fluff. Our classroom should be a safe place for this; no mercy, no malice.
 
-- For Fall semester, we’re not going to use LLM agents/autocomplete (“artificial intelligence”), nor traditional copy/pasting, nor any other tools where we do not write our own code. We will talk through appropriate, allowed use of these technologies in the Spring.
+- We will use all our tools (LLM&NoBreak;s/“artificial intelligence,” or otherwise) with criticality, transparency, and *in support* of our learning. We are here to do the work ourselves!
 
-- We will always [attribute](#attribution) our work when referencing others, tools, or examples.
+- When incorporating materials from outside of the class, we will demonstrate our understanding by explaining our work and always [attributing](#attribution) any references, tools, or others.
 <!-- .screen -->
 
-<!-- <mark>This is a living document!</mark> -->
-
 > [!NOTE]
+>
+> This is a living document!
 >
 > We can (and should) revisit this agreement throughout the year. Please let us know if you’d like to raise something with the class.
 <!-- .screen -->
 
 ### Inclusion
 
-Our intent is to respect and give forum to a range of perspectives and backgrounds, including culture, race, gender, sexual orientation, socioeconomic status, disability, and age. In instances where we are personally not qualified to speak from a specific perspective, students are encouraged to explore this area themselves. And please let us know if there are ways that the course can better serve these goals.
+Our intent is to respect and give forum to a range of perspectives and backgrounds, including culture, race, gender, sexual orientation, socioeconomic status, disability, and age. In instances where we are not personally qualified to speak from a specific perspective—which is most of them—students are encouraged to explore these area themselves.
+
+Please let us know if there are ways that the course can better serve these goals!
 
 ### Office Hours
 
-We will have limited availability outside of our class time, and won’t keep scheduled “office hours.” Students should not expect us to immediately solve specific design or technical problems, or have their progress be blocked by this. Their first resource should be themselves, then [our course site](https://typography-interaction-2627.github.io) and its materials, and then each other.
+We will have limited availability outside of our class time, and won’t keep scheduled “office hours.” Students should not expect us to immediately solve specific design or technical problems, or have their progress be blocked by this. Their first resource should be themselves, then [our course site](https://typography-interaction-2627.github.io) and its materials, and then each other.
 
-That said: if there are still questions—particularly logistical or content ones—students can message us on [Slack](https://mpscd.slack.com/archives/C0BRNBPC6QP), and we will respond when we can. But again this should never be a bottleneck; all of this works better when not done at the last minute.
+That said: if there are still questions—particularly logistical or content ones—students can message us any time on [Slack](https://mpscd.slack.com/archives/C0BRNBPC6QP), and we will respond when we can. But again, this should never be a bottleneck; all of this works better when not done at the last minute.
 
 ### Additional Technical Help
 
 For more specific technical instruction and questions, Parsons has dedicated CD-program tutors available to help students with HTML, CSS, and JavaScript—as well as offering general design critiques and feedback. Their [daily schedules](https://parsonscd.notion.site/student-resources) are available midway through the semester; sessions are by-appointment.
 
-The University Learning Center also offers its own [tutoring sessions](https://www.newschool.edu/learning-center/); these are also by-appointment.
+The University Learning Center also offers its own [tutoring sessions](https://www.newschool.edu/learning-center/) on a wide range of subjects, beyond design and programming; these are also by-appointment.
 
-As tutors are only available a limited number of hours per week, it is advisable to start early on your projects and seek help along the way—to avoid the usual end of project/semester rush for additional help.
+As tutors are only available a limited number of hours per week, it is advisable to start early on your projects and seek help along the way—to avoid the usual end-of-semester rush for additional help.
 
 ### Code Plagiarism
 
