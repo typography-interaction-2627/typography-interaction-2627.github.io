@@ -84,6 +84,7 @@
 	--enlargement: var(--4px);
 
 	--border:         solid var(--1px) var(--color);
+	--check:          url('patterns/check.svg') 0 0/var(--2px) text;
 	--shadow--single: var(--1px) var(--1px) 0 var(--color);
 	--shadow--double: var(--2px) var(--2px) 0 var(--color);
 

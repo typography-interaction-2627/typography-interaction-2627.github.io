@@ -207,6 +207,11 @@
 						position:           absolute;
 						text-box:           trim-both cap alphabetic;
 					}
+
+					[inert] & {
+						background: var(--check);
+						color:      transparent;
+					}
 				}
 			}
 

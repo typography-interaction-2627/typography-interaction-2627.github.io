@@ -56,9 +56,7 @@ abbr {
 	p,
 	td,
 	th {
-		background-clip:   text;
-		background-image:  url('patterns/check.svg');
-		background-size:   var(--2px);
+		background:        var(--check);
 		color:             transparent;
 		padding-block-end: round(0.5ex, var(--1px));
 		margin-block-end:  calc(-1 * round(0.5ex, var(--1px)));
