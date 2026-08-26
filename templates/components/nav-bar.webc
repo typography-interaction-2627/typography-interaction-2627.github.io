@@ -14,7 +14,7 @@
 		row-gap:            var(--gutter);
 		z-index:            1;
 
-		@media (width > 45em) {
+		@media (width > 42em) {
 			justify-content: space-between;
 			flex-direction: row;
 		}
@@ -31,6 +31,9 @@
 
 				* { --color: var(--background) }
 			}
+
+			/* Logo. */
+			&:first-child > li:first-child { --family: 'New York' }
 		}
 	}
 </style>
