@@ -141,7 +141,7 @@
 				padding-block-end: var(--gutter);
 				padding-inline:    var(--gutter);
 
-				+ * { margin-block-start: 1rlh }
+				+ * { margin-block-start: round(1rlh, var(--1px)) }
 			}
 
 			&:has(h3) {
@@ -154,10 +154,10 @@
 					padding-block-start: round(1cap, var(--1px));
 				}
 
-				+ * { margin-block-start: 1rlh }
+				+ * { margin-block-start: round(1rlh, var(--1px)) }
 			}
 
-			&:has(h4) { margin-block-start:  1rlh }
+			&:has(h4) { margin-block-start:  round(1rlh, var(--1px)) }
 		}
 
 		/* Toggle anchor links. */
@@ -189,7 +189,7 @@
 				&:where(:not(:has(~ .right))) { grid-column: all-start / five-end }
 			}
 
-			+ * { margin-block-start: 1rlh }
+			+ * { margin-block-start: round(1rlh, var(--1px)) }
 		}
 
 		/* Previously “note.” */
@@ -234,7 +234,7 @@
 
 			/* More vertical space when the items have multiple paragraphs. */
 			&:where(:has(:where(dt, li) > p:not(:only-child))) {
-				row-gap: calc(var(--line) + 1rlh);
+				row-gap: calc(var(--line) + round(1rlh, var(--1px)));
 
 				> :where(dt, li):where(:has(p:not(:only-child))) {
 					display:               grid;
