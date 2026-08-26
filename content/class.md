@@ -17,6 +17,16 @@ const description = 'Our (randomized) classmates.'
 - [Claire]()
 - [Jun]()
 - [Jiho]()
+- [Charitaa]()
+- [Hannah]()
+- [Joey]()
+- [Gia]()
+- [Crystal]()
+- [Felix]()
+- [Simrin]()
+- [Jon]()
+- [Natay]()
+- [Andrea]()
 <!-- #students -->
 
 <shuffle-students></shuffle-students>
