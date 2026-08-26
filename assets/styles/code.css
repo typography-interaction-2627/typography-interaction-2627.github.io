@@ -4,7 +4,10 @@ code, kbd, samp {
 
 pre {
 	background-color: var(--color);
+	display:          flex;
 	inline-size:      fit-content;
+	max-inline-size:  100%;
+	overflow-x:       scroll;
 	padding:          var(--lead);
 	text-box:         trim-both cap alphabetic;
 
