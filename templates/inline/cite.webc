@@ -10,7 +10,7 @@
 
 			line-height: round(1cap, var(--1px));
 
-			* { line-height: inherit } /* Helps with `em` and rounding? */
+			* { line-height: 1 } /* Helps with `em` and rounding? */
 
 			> a:has(> cite) { margin-block-end: var(--shim) }
 		}
