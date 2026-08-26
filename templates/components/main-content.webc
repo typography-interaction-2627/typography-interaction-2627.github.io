@@ -6,6 +6,9 @@
 		[id]   { scroll-margin-block: var(--gutter) }
 		h2[id] { scroll-margin-block: calc(2 * var(--gutter)) }
 
+		/* Print-only. */
+		.print { display: none }
+
 		/* Our “windows.” */
 		&:not(:has(> section)), > section {
 			align-items:         baseline;
