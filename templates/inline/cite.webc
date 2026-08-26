@@ -14,6 +14,9 @@
 			* { line-height: 1 } /* Helps with `em` and rounding? */
 
 			> a:has(> cite) { margin-block-end: var(--shim) }
+
+			/* TODO Unravel this! Shouldn’t need the override. */
+			@supports (not (font: -apple-system-body)) and (not (-moz-appearance: none)) { --font: 'Geneva 9' }
 		}
 
 		> a:has(> cite) {
