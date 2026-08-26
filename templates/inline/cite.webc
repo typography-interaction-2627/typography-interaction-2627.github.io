@@ -8,7 +8,9 @@
 		&:has(br) {
 			--size: var(--size--note);
 
-			line-height: 1cap;
+			line-height: round(1cap, var(--1px));
+
+			* { line-height: inherit } /* Helps with `em` and rounding? */
 
 			> a:has(> cite) { margin-block-end: var(--shim) }
 		}
@@ -34,12 +36,20 @@
 				position:             relative;
 				z-index:              1; /* In front of the link enlargement. */
 			}
-		}
-	}
 
-	[inert] cite {
-		box-shadow: initial;
-		border:     initial;
+			[inert] & {
+				border:              var(--1px) solid transparent;
+				border-image-slice:  2;
+				border-image-source: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8'><rect x='0' y='0' width='4' height='2'/><rect x='6' y='0' width='2' height='2'/><rect x='0' y='6' width='4' height='2'/><rect x='6' y='6' width='2' height='2'/><rect x='0' y='2' width='2' height='2'/><rect x='6' y='2' width='2' height='2'/></svg>");
+				border-image-repeat: round;
+
+				cite {
+					box-shadow: initial;
+					border:     initial;
+				}
+			}
+
+		}
 	}
 </style>
 <cite webc:root="override"><slot></slot></cite>
