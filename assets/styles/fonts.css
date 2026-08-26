@@ -1,6 +1,7 @@
 @font-face { font-family: 'Geneva';   src: url('../assets/fonts/geneva.woff2') }
 @font-face { font-family: 'New York'; src: url('../assets/fonts/new-york.woff2') }
 @font-face { font-family: 'Monaco';   src: url('../assets/fonts/monaco.woff2') }
+@font-face { font-family: 'Chicago';  src: url('../assets/fonts/chicago.woff2') }
 
 :where(:root) {
 	-moz-osx-font-smoothing:  grayscale; /* This functions as `none`. */
@@ -14,7 +15,7 @@
 	line-height:              var(--leading);
 	text-rendering:           geometricPrecision;
 
-	*, *::before, *::after {
+	:where(*, *::before, *::after) {
 		color:                   var(--color, currentcolor);
 		font-family:             var(--family);
 		font-variation-settings: 'opsz' var(--size), 'ital' var(--italic, 0);
@@ -47,6 +48,13 @@
 			@container style(--size: 9)  { --left: 0;          --right: var(--1px) }
 			@container style(--size: 12) { --left: var(--1px); --right: var(--1px) }
 		}
+
+		@container style(--family: 'Chicago') {
+			--size: 12; /* Just the one! */
+
+			--left: var(--1px);
+			--right: var(--1px);
+		}
 	}
 }
 
@@ -74,7 +82,7 @@
 	@font-face { font-family: 'Monaco 12'; src: url('../assets/fonts/moncao--12.woff2') }
 
 	/* Swap them in. */
-	:where(:root) :is(*, *::before, *::after) {
+	:where(:root) :where(*, *::before, *::after) {
 		font-family: var(--font);
 
 		@container style(--family: 'Geneva') {
@@ -102,5 +110,7 @@
 			@container style(--size: 9)  { --font: 'Monaco 9' }
 			@container style(--size: 12) { --font: 'Monaco 12' }
 		}
+
+		@container style(--family: 'Chicago') { --font: 'Chicago' }
 	}
 }
