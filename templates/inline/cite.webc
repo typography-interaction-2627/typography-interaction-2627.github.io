@@ -4,7 +4,7 @@
 
 		/* With a note after. */
 		&:has(br) {
-			--size: 9;
+			--size: var(--size--note);
 
 			line-height: 1cap;
 

@@ -67,6 +67,7 @@
 	--size--h3: 14;
 	--size--h4: 12;
 
+	--size--note: 9;
 	--size--code: 9;
 
 	--leading: round(calc(4 / 3 * 1em),       var(--1px)); /* “Snap” to scaled pixel. */
