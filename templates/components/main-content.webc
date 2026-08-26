@@ -202,6 +202,7 @@
 
 		/* Previously “note.” */
 		:where(p:has(> sub:only-child)) {
+			--family:  'Geneva';
 			--size:    var(--size--note);
 			--leading: round(1rlh, var(--1px));
 			--wrap:    balance;

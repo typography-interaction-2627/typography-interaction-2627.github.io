@@ -386,7 +386,7 @@ Our class will create and maintain an agreement, intended to help us foster a sa
 >
 > This is a living document!
 >
-> We can (and should) revisit this agreement throughout the year. Please let us know if you’d like to raise something with the class.
+> <sub>We can (and should) revisit this agreement throughout the year. Please let us know if you’d like to raise something with the class.</sub>
 <!-- .screen -->
 
 ### Inclusion
