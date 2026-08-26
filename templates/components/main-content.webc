@@ -23,9 +23,9 @@
 			row-gap:             var(--line);
 
 			grid-template-columns:
-				[ all-start aside-start body-start middle-start five-start four-start intro-start left-start one-start recto-start right-start six-start three-start two-start verso-start ]
+				[ all-start aside-start body-start middle-start five-start four-start left-start one-start recto-start right-start six-start three-start two-start verso-start ]
 				minmax(0, 1fr)
-				[ all-end aside-end body-end middle-end five-end four-end intro-end left-end one-end recto-end right-end six-end three-end two-end verso-end ];
+				[ all-end aside-end body-end middle-end five-end four-end left-end one-end recto-end right-end six-end three-end two-end verso-end ];
 
 			/* Between “windows.“ */
 			&:not(:first-of-type) { margin-block-start: round(20vh, var(--1px)) }
@@ -55,10 +55,32 @@
 				grid-template-columns: subgrid;
 			}
 
+			/* Manual column placements. */
+			:where(.all, .aside, .body, .middle, .five, .four, .left, .one, .recto, .right, .six, .three, .two, .verso) {
+				grid-row: span var(--rows, 1);
+			}
+
+			/* Only when on The Grid. */
+			:where(&, section) {
+				> .all    { grid-column: all }
+				> .aside  { grid-column: aside }
+				> .body   { grid-column: body }
+				> .five   { grid-column: five }
+				> .four   { grid-column: four }
+				> .left   { grid-column: left }
+				> .middle { grid-column: middle }
+				> .one    { grid-column: one }
+				> .recto  { grid-column: recto }
+				> .right  { grid-column: right }
+				> .six    { grid-column: six }
+				> .three  { grid-column: three }
+				> .two    { grid-column: two }
+				> .verso  { grid-column: verso }
+			}
 			/* The actual columns. */
 			@container style(--columns: 6) {
 				grid-template-columns:
-					[ all-start body-start intro-start left-start one-start verso-start ]
+					[ all-start body-start left-start one-start verso-start ]
 					minmax(0, 1fr)
 					[ aside-start one-end two-start]
 					minmax(0, 1fr)
@@ -68,9 +90,9 @@
 					minmax(0, 1fr)
 					[ body-end middle-end five-start four-end right-start ]
 					minmax(0, 1fr)
-					[ intro-end five-end six-start]
+					[ aside-end five-end six-start]
 					minmax(0, 1fr)
-					[ all-end aside-end recto-end right-end six-end];
+					[ all-end recto-end right-end six-end];
 			}
 		}
 
