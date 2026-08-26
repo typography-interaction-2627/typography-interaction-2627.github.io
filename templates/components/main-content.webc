@@ -28,7 +28,7 @@
 				[ all-end aside-end body-end middle-end five-end four-end left-end one-end recto-end right-end six-end three-end two-end verso-end ];
 
 			/* Between “windows.“ */
-			&:not(:first-of-type) { margin-block-start: round(20vh, var(--1px)) }
+			&:where(:not(:first-of-type)) { margin-block-start: round(20vh, var(--1px)) }
 
 			/* Default to body width. */
 			:where(&, details, section) > * { grid-column: body }
@@ -37,12 +37,7 @@
 			:where(p) { max-inline-size: 55ch }
 
 			/* Containers. */
-			details,
-			div,
-			dl,
-			ol,
-			section,
-			ul {
+			:where(details, div, dl, ol, section, ul) {
 				align-items:           inherit;
 				display:               grid;
 				grid-template-columns: minmax(0, 1fr);
@@ -50,7 +45,7 @@
 			}
 
 			/* Subgridded `section`. */
-			details, section {
+			:where(details, section) {
 				grid-column:           all;
 				grid-template-columns: subgrid;
 			}
@@ -98,7 +93,7 @@
 		}
 
 		/* Headings */
-		hgroup {
+		:where(hgroup) {
 			:where(h2, h3, h4) {
 				--resolve: 1cap; /* Pass this down. */
 
@@ -190,8 +185,8 @@
 		p:has(> a > cite) { inline-size: fit-content }
 
 		/* Some automatic balancin’. */
-		section > p:only-of-type,
-		section > p:first-of-type:has(+ p:last-child > a > cite) {
+		:where(section, li) > p:only-of-type,
+		:where(section, li) > p:first-of-type:has(+ p:last-child > a > cite) {
 			--wrap: balance;
 		}
 
@@ -212,6 +207,17 @@
 						position:           absolute;
 						text-box:           trim-both cap alphabetic;
 					}
+				}
+			}
+
+			/* More vertical space when the items have multiple paragraphs. */
+			&:where(:has(:where(dt, li) > p:not(:only-child))) {
+				row-gap: calc(var(--line) + 1rlh);
+
+				> :where(dt, li):where(:has(p:not(:only-child))) {
+					display:               grid;
+					grid-template-columns: minmax(0, 1fr);
+					row-gap:               var(--line); /* Back to `main` spacing. */
 				}
 			}
 		}
