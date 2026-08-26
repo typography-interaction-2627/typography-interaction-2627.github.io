@@ -150,6 +150,17 @@
 
 		/* Cinch solo `cite` (for `:hover`). */
 		p:has(> a > cite) { inline-size: fit-content }
+
+		/* Tables for the grade breakdown. */
+		table {
+			inline-size: fit-content;
+
+			td:not(:first-child), th:not(:first-child) {
+				border-inline-start: calc(var(--line) - var(--left) - var(--right)) solid transparent;
+			}
+
+			tr:not(:first-child) td, tr:not(:first-child) th { border-block-start: 1cap solid transparent }
+		}
 	}
 </style>
 <script>
