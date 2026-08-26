@@ -300,7 +300,9 @@ This engagement will be unavoidably reflected in the quality of students’ work
 
 The bulk of the work for this class takes the form of projects. They are intended as opportunities for students to demonstrate the knowledge and skills learned in class while developing their own practice, and are evaluated in this light.
 
-There will be check-ins and reviews around each of these before the final due dates, when we will have critiques as a group. In addition to the quality of the project itself, students will be subject to an <nobr>in-person</nobr> code review and will also be assessed on their presentation and explanation of their work. More specific evaluation criteria will be delineated with each project’s introduction.
+There will be check-ins and reviews around each of these before the final due dates, when we will have critiques as a group. In addition to the quality of the finished project itself, students will have <nobr>in-person</nobr> design and technical reviews—where they will be assessed on their explanation and understanding of their work, to determine whether they have met our learning objectives.
+
+More specific, per-project evaluation criteria will be delineated with each project’s introduction.
 
 ## Grade Calculation
 
@@ -409,24 +411,29 @@ The University Learning Center also offers its own [tutoring sessions](https://w
 
 As tutors are only available a limited number of hours per week, it is advisable to start early on your projects and seek help along the way—to avoid the usual end-of-semester rush for additional help.
 
-### Code Plagiarism
+### Plagiarism and Derivative Work
 
-Students may find code similar to our exercises or projects elsewhere online. But the copying or adapting of *any* code beyond our provided course material (lectures, exercises, demos), without attribution, is not allowed under any circumstances. This *includes* from LLM&NoBreak;s, [more below](#llms-and-artificial-intelligence).
+While all design work is, to some extent, built on the the continuum of culture before us—our expectation is that the students’ work in our class is *their own creation*. That is why we are all here, and there is no point in us engaging with any work that is not.
 
-If adapting, with attribution, students must explain the usage and demonstrate an understanding of how the code works. We may have <nobr>in-person</nobr> code reviews to facilitate and gauge this understanding.
+We have zero tolerance for plagiarism and passing off the work of others (or [LLM&NoBreak;s](#llms-and-artificial-intelligence)) as one’s own—from initial ideas through to final implementation. This ranges from “verbatim” (copying-and-pasting), to “paraphrasing” (rewording, rearranging, deriving), to “autocompleting” (with LLM-assisted editors), to “vibe coding” (wholesale agentic use). None of these are your creation.
 
-We have zero tolerance for any sort of plagiarism—which ranges from “verbatim copying” (copying-and-pasting) to “thorough paraphrasing” (changing names or rearranging) and “autocompleting” (with LLM-assisted editors). Students should also review the [Academic Integrity Policy](https://docs.google.com/document/d/175hXxUbLI8Jy7NEtbeoyX3Va_MQzXzgxzFUjj7hSkSU).
+Everything that is turned in should be a product of each students’ own ideas, synthesis, and execution. They will always be expected to understand it, explain it, and defend it as they would themselves.
 
-<!-- <mark>External Resources *Subject* to Attribution</mark> -->
+Students also should review the school’s [Academic Integrity Policy](https://docs.google.com/document/d/175hXxUbLI8Jy7NEtbeoyX3Va_MQzXzgxzFUjj7hSkSU).
 
 > [!WARNING]
 >
-> We are not saying you can’t learn from and incorporate other resources. We do, all the time!
+> We are *not* saying you can’t learn from and incorporate other resources. We do, all the time!
 >
-> If you make use of other tools, we should see [code](topic/html/index.md#comments) [comments](topic/css/index.md#element-preview) that explain *why* you used them, *what* you referenced, and your overall understanding of *how* it works.
-<!-- .screen -->
+> <sub>Here’s how we think this can be helpful and productive for us all.</sub>
 
-**An example:** <!-- .screen -->
+#### Attribution
+
+When referencing or incorporating materials outside of our course-provided ones (lectures, exercises, demos, recordings, Slack conversations, etc.), students should always attribute their use.
+
+These attributions should explain *why* they were brought in, *what* was referenced, and an overall understanding of *how* it works. (This includes anything from LLM&NoBreak;s, [more below](#llms-and-artificial-intelligence).) This will both help us gauge what students are getting out of it, and also where we can expand and guide our learning together as a class.
+
+**Practically, these will take the form of [code](topic/html/index.md#comments) [comments](topic/css/index.md#element-preview). An example:** <!-- .screen -->
 
 ```css <!-- .screen .all -->
 /* I wanted to treat large grids differently in my design! */
@@ -437,51 +444,45 @@ We have zero tolerance for any sort of plagiarism—which ranges from “verbati
 }
 ```
 
-<!-- <mark>Management thanks you for your cooperation</mark> -->
-
 > [!CAUTION]
 >
-> Copying, pasting, or autocompleting code in the absence of an attribution and explanation is plagiarism.
+> Copying/pasting, autocompleting, or LLM&NoBreak;-ing work in the absence of an attribution and explanation is plagiarism.
 <!-- .screen -->
+
 
 ### LLM<small>s</small> and “Artificial Intelligence”
 
-Relatedly, there has been much discussion and developments in our field (and others) around [*large language models*](https://en.wikipedia.org/wiki/Large_language_model), a.k.a. “artificial intelligence.”
+There has been much discussion and development in our field (and others) around [*large language models*](https://en.wikipedia.org/wiki/Large_language_model), a.k.a. “artificial intelligence.” Tools like the conspicuous [Chat&NoBreak;GPT](https://openai.com/blog/chatgpt), [Claude Code](https://claude.com/product/claude-code), [Cursor’s IDE](https://cursor.com/en), [Google Gemini](https://gemini.google.com), and [GitHub Copilot](https://github.com/features/copilot) are upending the industry and changing how we work. But aside from (the many) other concerns, their use in the classroom remains fraught, at best.
 
-Here’s what we’re going to say about this: tools like the conspicuous [Chat&NoBreak;GPT](https://openai.com/blog/chatgpt), [Claude Code](https://claude.com/product/claude-code), [Cursor’s IDE](https://cursor.com/en), or [GitHub Copilot](https://github.com/features/copilot) are known to often generate wrong or unnecessarily verbose code. This, combined with the fact that their results are derived from copyrighted and/or legally questionable sources—usually without permission or attribution—means the use of these tools continues to be fraught, at best.
+Every course has different learning objectives. In ours, we think students first need to write code themselves in order to truly understand our medium. We believe that writing is thinking, and code is no different—the slowness, friction, and resistance of it are necessary for learning that lasts. We might in some ways get “less” done, but we think we will all take more from it.
 
-We think you first need to write code yourself to understand the medium. Copying/adapting code from LLM&NoBreak;s is no different from anywhere else ([see above](#code-plagiarism)) and is ultimately a disservice to your education. These are always to be treated like any other tools at our disposal—as *aides* to our understanding, not *shortcuts* around learning. We think you know the difference.
+ We think that avoiding these difficulties is ultimately a disservice to your education. LLM&NoBreak;s are the same as any other tool in this regard, and are always to be treated like any at our disposal—as *aides* to our understanding, not *shortcuts* around learning.
 
-#### “Aides to our understanding” <!-- .screen -->
+#### Our “AI” Guidelines
 
-- LLM&NoBreak;s can only be used in “ask” mode, and then only via their own web/app “conversation” interfaces.
+Here’s how we think we can use these tools to support our learning:<br><br>
 
-- This means any/all “agent” use is be forbidden—including IDE/CLI and other integrations (such as *Claude Code* or *GitHub Copilot*).
+- LLM&NoBreak;s should only ever be used in “ask” mode, which means no “agent” use—including IDE/CLI and other types of integrations (such as *Claude Code* or *GitHub Copilot*).
 
-- You are still expected to *write* your code—you are not just copying/pasting the LLM output and commenting on it.
+- We still want students to *write* their code—not just copy/paste LLM (or other) code and add comments. There is value in the speed and (literal) muscle memory!
 
-- In the [attribution](#attribution) for each LLM use, you must include a link to the actual, corresponding “conversation” with your questions.
+- We’ll be working from template repos for our projects, each of which will include an `CLAUDE.md`/`AGENTS.md` with some per-project guidelines for our acceptable usage.
 
-- Your questions there should clearly demonstrate the tool is being used to *aid your understanding*, not as a *shortcut*.
+- In the [attribution](#attribution) for each LLM use, we’ll have students include links to the actual, corresponding “conversation” with their questions alongside their explanations.
 
-	<sub>Think: these are questions you would ask your instructors.</sub>
+- These questions should clearly demonstrate the tool is being used to *aid our understanding*, not as a *shortcut*—always think of them as questions one would ask their instructors.
 
-- If you cannot furnish a link to your “conversation” and questions, you cannot use the tool nor its output.
+- If a student cannot furnish a link to their “conversation” and questions, they cannot use the tool nor its output.
 
 - Students will attest to their understanding of this, and agree to use the tools only in this prescribed manner.
 
-- Any other uses/edge-cases require prior instructor approval.
+- Any design, writing, or code that is turned in is considered [the work of the student](#plagiarism-and-derivative-work)—and they should understand it and be able to demonstrate that when we ask.
 
-- Finally, any indication that LLM&NoBreak;s are being used outside of these rules will be considered [academic dishonesty](https://docs.google.com/document/d/175hXxUbLI8Jy7NEtbeoyX3Va_MQzXzgxzFUjj7hSkSU), which will be reported (and result in a failing grade).
+- Any other uses/edge-cases require prior instructor approval, but we’re always happy to discuss.
 
-**The LLM is there to help answer your questions—not write your code/do your work.**
+**An LLM is there to help answer your questions—not write your code/do your work.**
 
-<!-- <mark>Detailed “AI” policy now in effect</mark> -->
-
-> [!NOTE]
->
-> This elucidated, agreed-upon approach is what we will be adhering to for the remainder of the course.
-<!-- .screen -->
+Students should also review our evolving [program AI guidelines](https://mpscd.notion.site/MPS-AI-Guidelines-3c63d2d61b2e80938f8bf14dd5b6be57).
 
 ### Recording Sessions
 
