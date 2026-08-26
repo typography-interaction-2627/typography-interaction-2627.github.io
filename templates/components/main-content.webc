@@ -130,7 +130,7 @@
 			background-repeat:   repeat-x;
 			background-size:     var(--2px) var(--1px);
 			margin-block-start:  2rlh;
-			padding-block-start: 1cap;
+			padding-block-start: round(1cap, var(--1px));
 		}
 
 		/* Toggle anchor links. */
