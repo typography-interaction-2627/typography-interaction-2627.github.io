@@ -31,6 +31,12 @@ em {
 	/* https://arrowtype.github.io/vf-slnt-test/slnt-ital-tests/index.html */
 }
 
+strong {
+	font-weight: bold;
+
+	@container style(--size >= 12) { letter-spacing: calc(-1 * var(--1px)) }
+}
+
 nobr { text-wrap: nowrap }
 
 abbr {
