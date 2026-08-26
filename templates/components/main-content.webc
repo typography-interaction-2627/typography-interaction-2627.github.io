@@ -137,18 +137,20 @@
 				+ * { margin-block-start: 1rlh }
 			}
 
-			&:has(h3) + * { margin-block-start: 1rlh }
+			&:has(h3) {
+				/* Not right after `h2`. */
+				section section:not(hgroup + section) > & {
+					background-image:    url('patterns/dash.svg');
+					background-repeat:   repeat-x;
+					background-size:     var(--2px) var(--1px);
+					margin-block-start:  2rlh;
+					padding-block-start: round(1cap, var(--1px));
+				}
+
+				+ * { margin-block-start: 1rlh }
+			}
 
 			&:has(h4) { margin-block-start:  1rlh }
-		}
-
-		/* Not right after `h2`. */
-		section section:not(hgroup + section) > hgroup:has(h3) {
-			background-image:    url('patterns/dash.svg');
-			background-repeat:   repeat-x;
-			background-size:     var(--2px) var(--1px);
-			margin-block-start:  2rlh;
-			padding-block-start: round(1cap, var(--1px));
 		}
 
 		/* Toggle anchor links. */
