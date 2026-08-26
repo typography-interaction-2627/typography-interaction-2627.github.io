@@ -40,7 +40,6 @@ abbr {
 
 [inert] {
 	:is(figcaption, li, summary):where(:not(:has(details, ol, p, section, ul))),
-	cite,
 	dd,
 	dt,
 	h1,

@@ -1,16 +1,44 @@
 <style>
-	a:has(> cite) {
-		inline-size: fit-content;
+	:where(p, li):has(a > cite) {
+		max-inline-size: initial;
 
-		cite {
-			padding:          round(1ex, var(--1px));
-			background-color: var(--color);
-			display:          block;
-			inline-size:      fit-content;
-			color:            var(--background);
+		/* With a note after. */
+		&:has(br) {
+			--size: 9;
 
-			* { --color: var(--background) }
+			line-height: 1cap;
+
+			> a:has(> cite) { margin-block-end: var(--shim) }
 		}
+
+		> a:has(> cite) {
+			--size: var(--size--root);
+
+			inline-size:         fit-content;
+			margin-inline-end:   var(--right);
+			margin-inline-start: var(--left);
+
+			cite {
+				--padding: round(1ex, var(--1px));
+
+				border:               var(--border);
+				box-shadow:           var(--shadow--single);
+				display:              block;
+				inline-size:          fit-content;
+				margin-inline:        initial;
+				padding-block:        var(--padding);
+				padding-inline-end:   calc(var(--padding) - var(--right));
+				padding-inline-start: calc(var(--padding) - var(--left));
+				position:             relative;
+				text-wrap:            balance;
+				z-index:              1; /* In front of the link enlargement. */
+			}
+		}
+	}
+
+	[inert] cite {
+		box-shadow: initial;
+		border:     initial;
 	}
 </style>
 <cite webc:root="override"><slot></slot></cite>
