@@ -1,0 +1,19 @@
+code, kbd, samp {
+	white-space: pre;
+}
+
+pre {
+	background-color: var(--color);
+	inline-size:      fit-content;
+	padding:          var(--lead);
+	text-box:         trim-both cap alphabetic;
+
+	@supports (not (font: -apple-system-body)) and (not (-moz-appearance: none)) {
+		border-radius:    var(--1px);
+		corner-shape:     notch;
+	}
+
+	code {
+		color: var(--background);
+	}
+}

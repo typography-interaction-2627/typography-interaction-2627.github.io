@@ -109,3 +109,10 @@ hgroup:has(h4) {
 
 	font-weight: bold;
 }
+
+/* Code stuff! */
+code, kbd, samp {
+	--size: var(--size--code);
+
+	font-family: 'Monaco', monospace;
+}

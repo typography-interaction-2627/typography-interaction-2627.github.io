@@ -67,6 +67,8 @@
 	--size--h3: 14;
 	--size--h4: 12;
 
+	--size--code: 9;
+
 	--leading: round(calc(4 / 3 * 1em),       var(--1px)); /* “Snap” to scaled pixel. */
 	--lead:    round(calc(1lh - 1cap),        var(--1px));
 	--line:    round(calc(1lh + var(--lead)), var(--1px));
@@ -95,6 +97,8 @@
 			--size--h2: 24;
 			--size--h3: 18;
 			--size--h4: 14;
+
+			--size--code: 12;
 
 			--gutter: var(--line);
 		}
