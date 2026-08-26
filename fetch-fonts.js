@@ -11,6 +11,7 @@ const FONTS = [
 	{ name: 'geneva.woff2', path: 'exports/web/geneva.woff2' },
 	{ name: 'new-york.woff2', path: 'exports/web/new-york.woff2' },
 	{ name: 'monaco.woff2', path: 'exports/web/monaco.woff2' },
+	{ name: 'chicago.woff2', path: 'exports/web/chicago.woff2' },
 ]
 
 const REF = process.env.FONTS_REF ?? 'main'
