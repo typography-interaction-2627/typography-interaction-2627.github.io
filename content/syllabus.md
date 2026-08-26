@@ -19,7 +19,7 @@ Digital design, the web in particular, is inextricably linked with typography—
 
 In this class, students will learn intermediate and advanced methods in typography and layout as they concern interactive design. We will use web technologies as the lens to examine this subject—introducing the foundational, front-end languages of HTML (*HyperText Markup Language*) and CSS (*Cascading Style Sheets*) to achieve our designs. Students will understand the specific challenges of type in this medium, but also how it offers unique and particular forms to us as designers. They will learn the common tools and paradigms with which we practice, while developing their own visual, design vocabulary and critical understanding.
 
-- [<cite>Submitted Version</cite>](../assets/PMCD_5001_F26.pdf)
+<!-- - [<cite>Submitted Version</cite>](../assets/PMCD_5001_F26.pdf)  -->
 - [<cite>Course Catalog</cite>](https://courses.newschool.edu/courses/PMCD5001)
 
 ### Spring <!-- .spring inert -->
@@ -32,7 +32,7 @@ Contemporary digital design exists in the continuum of the ever-shifting, evolvi
 
 In this class, students will learn to give form to and then work at these intersections. We will again use web technologies as our lens for the subject, building on our foundations in HTML and CSS by incorporating JS (*JavaScript*)—to give behavior, interaction, and life to our designs. We will survey modern approaches to front-end design and development, as our discipline has as many methodologies as we do names. There is no one way to do this work, nor one thing to do it for—and through our readings, discussions, exercises, and projects, students will understand and then situate themselves and their practice within the larger field.
 
-- [<cite>Submitted Version</cite>](../assets/PMCD_5002_S27.pdf)
+<!-- - [<cite>Submitted Version</cite>](../assets/PMCD_5002_S27.pdf) -->
 - [<cite>Course Catalog</cite>](https://courses.newschool.edu/courses/PMCD5002)
 
 ## Learning Outcomes
