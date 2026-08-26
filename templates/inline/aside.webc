@@ -27,6 +27,6 @@
 		+ * { margin-block-start: calc(var(--line) + 1rlh) }
 	}
 </style>
-<aside webc:root="override" id="testy">
+<aside webc:root="override">
 	<slot></slot>
 </aside>
