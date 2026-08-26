@@ -2,6 +2,7 @@
 	:where(p, li):has(a > cite):not(:has(ul)) {
 		--wrap: balance;
 
+		inline-size: fit-content; /* Cinch (for `:hover`). */
 		max-inline-size: initial;
 
 		/* With a note after. */

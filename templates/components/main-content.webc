@@ -184,10 +184,9 @@
 			@container style(--columns: 6) {
 				&:where(:not(:has(~ .right))) { grid-column: all-start / five-end }
 			}
-		}
 
-		/* Cinch solo `cite` (for `:hover`). */
-		p:has(> a > cite) { inline-size: fit-content }
+			+ * { margin-block-start: 1rlh }
+		}
 
 		/* Some automatic balancin’. */
 		:where(section, li) > p:only-of-type,
