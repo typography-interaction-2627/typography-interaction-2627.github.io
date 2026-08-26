@@ -171,6 +171,18 @@
 			}
 		}
 
+		/* Née `.intro`. */
+		p:has(> strong:only-child) {
+			--size:    var(--size--h4);
+			--leading: round(1rlh, var(--1px));
+
+			text-wrap: balance;
+
+			> strong { display: block } /* Fixes `line-height` rounding. 🤷‍♀️ */
+
+			&:not(:first-of-type) { margin-block-start: round(1rlh, var(--1px)) }
+		}
+
 		/* Cinch solo `cite` (for `:hover`). */
 		p:has(> a > cite) { inline-size: fit-content }
 

@@ -7,13 +7,11 @@ const draft = 1
 
 ## Course Description
 
-*Typography & Interaction* is a year-long course, divided into two classes, which will provide a rigorous foundation of typographic and interaction principles in the context of digital design. Over both classes, students will acquire and hone the skills they need for success in the field of interactive design.
-<!-- .intro -->
+***Typography & Interaction* is a year-long course, divided into two classes, which will provide a rigorous foundation of typographic and interaction principles in the context of digital design. Over both classes, students will acquire and hone the skills they need for success in the field of interactive design.**
 
 ### Fall <!-- .fall -->
 
-This first semester will focus on a mastery of type and layout concepts on the web.
-<!-- .intro -->
+**This first semester will focus on a mastery of type and layout concepts on the web:**
 
 Typography is the infrastructure of communication in nearly any visual medium. It provides the very first shape and form to written content, and as designers, it is our responsibility to do this with intention and care. Whether towards goals of expression itself or in the service of ideas, the designer must understand type to use it successfully. In this way, we are stewards of meaning.
 
@@ -26,8 +24,7 @@ In this class, students will learn intermediate and advanced methods in typograp
 
 ### Spring <!-- .spring inert -->
 
-Our second semester will build on the type and layout foundations from the first, moving into interface design and interactive experiences on the web.
-<!-- .intro -->
+**Our second semester will build on the type and layout foundations from the first, moving into interface design and interactive experiences on the web:**
 
 Interaction, interactive, interface, product, UI, UX designers—we are known by many names. These are all monikers for a digitally-native design practice. It is our responsibility, as practitioners in this increasingly consequential and broadening field, to both understand existing paradigms and help manifest, refine, and sustain purposeful new ones.
 
@@ -42,8 +39,7 @@ In this class, students will learn to give form to and then work at these inters
 
 ### Fall <!-- .fall -->
 
-By the end of this semester, students will:
-<!-- .intro -->
+**By the end of this semester, students will:**
 
 - Demonstrate advanced knowledge of and be able to critically analyze type, form, and interactivity as it applies to screen-based media.
 
@@ -59,8 +55,7 @@ By the end of this semester, students will:
 
 ### Spring <!-- .spring inert -->
 
-By the end of this semester, students will:
-<!-- .intro -->
+**By the end of this semester, students will:**
 
 - Thoroughly exercise and extend their typographic, design, and technical web skills developed in the first semester.
 
@@ -78,8 +73,7 @@ By the end of this semester, students will:
 
 ## Course Outline
 
-The course is structured into thematic units, each bookended by readings on the subject and a project that will demonstrate the material:
-<!-- .intro -->
+**The course is structured into thematic units, each bookended by readings on the subject and a project that will demonstrate the material:**
 
 ### Unit 1: *Type and the Web* <!-- .fall -->
 
@@ -335,8 +329,7 @@ In the open tradition of the early web, the only materials truly required are a 
 
 In class, we will demonstrate using [Figma](http://figma.com) for visual design and sketching, [Visual Studio Code](https://code.visualstudio.com) for programming, and [GitHub](https://github.com)/[GitHub Desktop](https://desktop.github.com) for version control and project hosting. All of these products are available for free, or offer free education licenses with New School emails.
 
-We will use the following tools to organize our class:
-<!-- .intro -->
+**We will use the following tools to organize our class:**
 
 - [<cite>Course Site</cite>](https://typography-interaction-2627.github.io/) \
 	For housekeeping, agendas, and lectures <span class="screen">(you are here)</span>

@@ -156,8 +156,7 @@ How it looks for us, now. [<cite>↗</cite>](http://info.cern.ch/hypertext/WWW/T
 </figcaption>
 </figure>
 
-By 1991, the [first web page](http://info.cern.ch/hypertext/WWW/TheProject.html) was up and running and the web began to take off.
-<!-- .intro -->
+**By 1991, the [first web page](http://info.cern.ch/hypertext/WWW/TheProject.html) was up and running and the web began to take off.**
 
 <figure>
 <img src="mosaic.png">
@@ -179,8 +178,7 @@ Netscape, the first browser that Michael ever used. [<cite>↗</cite>](https://c
 
 The 1990s then saw more-affordable home computers bring internet access to many more people—escaping the government (military), business, and university settings it had been siloed in before. Early web browsers like [Mosaic and Netscape](https://en.wikipedia.org/wiki/History_of_the_web_browser) (1993) helped evolve what was possible online—adding color, images, and interactivity.
 
-And the web exploded from there.
-<!-- .intro -->
+**And the web exploded from there.**
 
 <figure>
 <img src="yahoo.png">
@@ -235,8 +233,7 @@ And the web exploded from there.
 
 ## So What Are Web Pages?
 
-Obviously, *this* is a web page. Think about how many other web pages you have visited in the past day. Dozens, even hundreds?
-<!-- .intro -->
+**Obviously, *this* is a web page. Think about how many other web pages you have visited in the past day. Dozens, even hundreds?**
 
 Ultimately, a web page is a just text file on a computer. It is written in a special format, the aforementioned HTML, which structures the content of the document and also links it to other resources—other web pages, images, computers, really almost anything. Think of the web as *type with instructions*.
 
@@ -254,8 +251,7 @@ Michael used to work at MoMA. These are all web pages!
 </figcaption>
 </figure>
 
-It all starts with text, and thus, with type.
-<!-- .intro -->
+**It all starts with text, and thus, with type.**
 
 ## An Ever-Present Visual Medium
 
