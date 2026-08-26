@@ -2,6 +2,28 @@ code, kbd, samp {
 	white-space: pre;
 }
 
+:where(*:not(pre)) > code,
+kbd,
+samp {
+	background-clip:  padding-box;
+	background-color: var(--background);
+	border:           var(--1px) solid transparent;
+	isolation:        isolate;
+	padding-inline:   var(--3px);
+	position:         relative;
+
+	&::after {
+		background: var(--check);
+		content:    '';
+		inset:      calc(-1 * var(--1px));
+		position:   absolute;
+		z-index:    -1;
+
+		/* Override `text` from var. */
+		background-clip: border-box;
+	}
+}
+
 pre {
 	background-color: var(--color);
 	display:          flex;
