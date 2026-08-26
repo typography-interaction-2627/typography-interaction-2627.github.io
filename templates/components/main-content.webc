@@ -230,8 +230,9 @@
 						content:            '•' / '';
 						inset-inline-start: 0;
 						position:           absolute;
-						text-box:           trim-both cap alphabetic;
 					}
+
+					&:has(p)::before { text-box: trim-both cap alphabetic } /* Match for “loose” ones. */
 
 					[inert] & {
 						background: var(--check--text);
@@ -239,6 +240,9 @@
 					}
 				}
 			}
+
+			/* “Tight” lists. */
+			&:where(:not(:has(li > p, a > cite))) { row-gap: var(--lead) }
 
 			/* More vertical space when the items have multiple paragraphs. */
 			&:where(:has(:where(dt, li) > p:not(:only-child))) {
