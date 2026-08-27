@@ -26,6 +26,8 @@
 			--size: var(--size--note);
 			--wrap: balance;
 
+			p { max-inline-size: 72ch }
+
 			&:has(a > cite) {
 				--icon: calc(var(--1px) * 12);
 
