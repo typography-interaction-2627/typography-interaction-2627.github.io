@@ -20,6 +20,7 @@
 		font-family:             var(--family);
 		font-size:               calc(var(--size) * var(--1px));
 		font-variation-settings: 'opsz' var(--size), 'ital' var(--italic, 0);
+		letter-spacing:          var(--kerning);
 		line-height:             var(--leading);
 		text-wrap:               var(--wrap, pretty);
 

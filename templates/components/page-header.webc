@@ -17,8 +17,7 @@
 			div {
 				--family: 'Geneva';
 				--size:   var(--size--root);
-
-				letter-spacing: initial;
+				--kerning: initial;
 			}
 
 			/* Only on “interior” pages (not landing). */

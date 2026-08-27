@@ -33,7 +33,7 @@ em {
 strong {
 	font-weight: bold;
 
-	@container style(--size >= 12) { letter-spacing: calc(-1 * var(--1px)) }
+	@container style(--size >= 12) { --kerning: calc(-1 * var(--1px)) }
 }
 
 nobr { --wrap: nowrap }
@@ -69,7 +69,7 @@ abbr {
 
 		@supports (font: -apple-system-body) {
 			/* Fix Safari rounding. 🤷‍♀️ */
-			a, em, strong, abbr { letter-spacing: 0.0001em }
+			a, em, strong, abbr { --kerning: 0.0001em }
 
 			a {
 				position: static; /* These straight up disappear… */
@@ -81,17 +81,17 @@ abbr {
 }
 
 /* On parent for `@container`. */
-hgroup:has(h1, h2, h3) {
-	--family:  'New York';
-	--leading: 1;
-	--wrap:    balance;
+hgroup:has(h1, h2, h3) { --family:  'New York' }
 
-	--kerning: round(
-		calc(-0.0625em * pow(var(--size) / 24, 1.5)),
-		var(--1px)
-	);
-
-	letter-spacing: var(--kerning);
+@container style(--family: 'New York') {
+	:where(*, *::before, *::after) {
+		--wrap:    balance;
+		--leading: 1;
+		--kerning: round(
+			calc(-0.0625em * pow(var(--size) / 24, 1.5)),
+			var(--1px)
+		);
+	}
 }
 
 hgroup:has(h1) { --size: var(--size--h1) }
@@ -100,13 +100,11 @@ hgroup:has(h2) { --size: var(--size--h2) }
 hgroup:has(h3) {
 	--size: var(--size--h3);
 
-	font-weight:    bold; /* Goes to `1px`; bulk up. */
-	letter-spacing: initial;
+	/* Tweak smaller breaks. */
+	@container style(--size < 12) {
+		--kerning: initial;
 
-	/* Revert at larger breaks. */
-	@container style(--size: 12) {
-		font-weight:    normal;
-		letter-spacing: var(--kerning);
+		font-weight: bold; /* Goes to `1px`; bulk up. */
 	}
 }
 
