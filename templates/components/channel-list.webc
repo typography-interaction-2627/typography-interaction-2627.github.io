@@ -1,0 +1,20 @@
+<script webc:setup>
+	export const channels = {
+		submit: 'https://docs.google.com/forms/d/e/1FAIpQLSc3LUp6nqA1RTTloLM_u_xVHSNpcTQt3v2VG-L-HT9srsG_hA/viewform',
+		slack:  'https://mpscd.slack.com/archives/C0BRNBPC6QP',
+		zoom:   'https://NewSchool.zoom.us/j/97800365415',
+		google: 'https://drive.google.com/drive/folders/1gxl_TpXu0Sd7oJbW1pk7Dd89VNpJwsHK',
+		github: 'https://github.com/typography-interaction-2627',
+		figma:  'https://www.figma.com/files/team/1670950360853186233/all-projects',
+	}
+</script>
+<ul webc:root="override">
+	<li webc:for="(key, href) in channels">
+		<a :href="href">
+			<cite webc:if="cite">
+				<p @text="initialCap(key)"></p>
+			</cite>
+			<p webc:else @text="initialCap(key)"></p>
+		</a>
+	</li>
+</ul>
