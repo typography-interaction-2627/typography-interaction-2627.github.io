@@ -59,8 +59,10 @@
 			}
 
 			/* Manual column placements. */
-			:where(.all, .aside, .body, .middle, .five, .four, .left, .one, .recto, .right, .six, .three, .two, .verso) {
+			:where(div, .all, .aside, .body, .middle, .five, .four, .left, .one, .recto, .right, .six, .three, .two, .verso) {
 				grid-row: span var(--rows, 1);
+
+				* { grid-column: initial }
 			}
 
 			/* Some `--rows` shorthands. */

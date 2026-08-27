@@ -12,29 +12,41 @@ const order = 2
 
 **This first semester will focus on a mastery of type and layout concepts on the web:**
 
-Typography is the infrastructure of communication in nearly any visual medium. It provides the very first shape and form to written content, and as designers, it is our responsibility to practice this with intention and care. Whether towards goals of expression itself or in the service of ideas, the designer must understand type to use it successfully. In this way, we are stewards of meaning.
+<div>
 
-<!-- - [<cite>Submitted Version</cite>](../assets/PMCD_5001_F26.pdf)  -->
-- [<cite>Course Catalog</cite>](https://courses.newschool.edu/courses/PMCD5001)
-<!-- .right -->
+
+Typography is the infrastructure of communication in nearly any visual medium. It provides the very first shape and form to written content, and as designers, it is our responsibility to practice this with intention and care. Whether towards goals of expression itself or in the service of ideas, the designer must understand type to use it successfully. In this way, we are stewards of meaning.
 
 Digital design, the web in particular, is inextricably linked with typography—from the very letters of code at its base to the words in arrangement we see on a screen. Type, thus, is the scaffolding in which all interaction design first rises. The very shape of the web, in its layouts, systems, and patterns—and its various technologies—all exist in the service of type, at their root. They provide the tools with which we can breathe a form and different, digital life into that meaning.
 
 In this class, students will learn intermediate and advanced methods in typography and layout as they concern interactive design. We will use web technologies as the lens to examine this subject—introducing the foundational, front-end languages of HTML (*HyperText Markup Language*) and CSS (*Cascading Style Sheets*) to achieve our designs. Students will understand the specific challenges of type in this medium, but also how it offers unique and particular forms to us as designers. They will learn the common tools and paradigms with which we practice, while developing their own visual, design vocabulary and critical understanding.
 
+</div>
+
+<div class="sticky right">
+
+<!-- - [<cite>Submitted Version</cite>](../assets/PMCD_5001_F26.pdf)  -->
+- [<cite>Course Catalog</cite>](https://courses.newschool.edu/courses/PMCD5001)
+
+</div>
+
 ### Spring <!-- .spring inert -->
 
 **Our second semester will build on the type and layout foundations from the first, moving into interface design and interactive experiences on the web:**
 
-Interaction, interactive, interface, product, UI, UX designers—we are known by many names. These are all monikers for a digitally-native design practice. It is our responsibility, as practitioners in this increasingly consequential and broadening field, to both understand existing paradigms and help manifest, refine, and sustain purposeful new ones.
+<div>
 
-<!-- - [<cite>Submitted Version</cite>](../assets/PMCD_5002_S27.pdf) -->
-- [<cite>Course Catalog</cite>](https://courses.newschool.edu/courses/PMCD5002)
-<!-- .right -->
+Interaction, interactive, interface, product, UI, UX designers—we are known by many names. These are all monikers for a digitally-native design practice. It is our responsibility, as practitioners in this increasingly consequential and broadening field, to both understand existing paradigms and help manifest, refine, and sustain purposeful new ones.
 
 Contemporary digital design exists in the continuum of the ever-shifting, evolving, and ubiquitous web. Designers today work at many different scales and within many different systems. We act as mediators—not only for users, meaning, and experience—but with these systems themselves, as well. They shape our work and we shape them—at the meeting point, the *interface*, between things.
 
 In this class, students will learn to give form to and then work at these intersections. We will again use web technologies as our lens for the subject, building on our foundations in HTML and CSS by incorporating JS (*JavaScript*)—to give behavior, interaction, and life to our designs. We will survey modern approaches to front-end design and development, as our discipline has as many methodologies as we do names. There is no one way to do this work, nor one thing to do it for—and through our readings, discussions, exercises, and projects, students will understand and then situate themselves and their practice within the larger field.
+
+</div>
+
+<!-- - [<cite>Submitted Version</cite>](../assets/PMCD_5002_S27.pdf) -->
+- [<cite>Course Catalog</cite>](https://courses.newschool.edu/courses/PMCD5002)
+<!-- .right -->
 
 ## Learning Outcomes
 
