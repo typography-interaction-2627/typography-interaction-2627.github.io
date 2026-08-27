@@ -7,7 +7,7 @@ const description = 'Our (randomized) classmates.'
 
 **We are joined this year by 20 students from around the world:**
 
-[<cite>Who We Are</cite>](https://docs.google.com/document/d/TKTKTK) \
+[<cite>Who We Are</cite>](https://docs.google.com/document/d/10EBL_rdsbtGllK0Fx6bdzeuczYl4fDipCJE1ji_uZew) \
 A bit about ourselves!
 
 <shuffle-students></shuffle-students>
