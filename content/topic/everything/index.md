@@ -133,13 +133,13 @@ Tim Berners-Lee, a British academic and scientist, invented the *World Wide Web*
 > <sub>[Bill Atkinson](https://en.wikipedia.org/wiki/Bill_Atkinson) was the first developer of *HyperCard*, while working on the original Macintosh. He also made the [*MacPaint*](https://en.wikipedia.org/wiki/MacPaint) patterns we’re using on the site, and worked with [Susan Kare](https://en.wikipedia.org/wiki/Susan_Kare) on the fonts! [RIP](https://www.nytimes.com/2025/06/07/technology/bill-atkinson-dead.html), Bill.</sub>
 
 
-**Their proposal had four components:**
+**Their proposal had four components, defining a paradigm still in use today:**
 
 1. A text file format to represent the documents: the *HyperText Markup Language* (HTML)
 
 1. The rules for exchanging these documents: the *HyperText Transfer Protocol* (HTTP)
 
-1. A program to display (and edit) these documents: the first *web browser* (called WorldWideWeb)
+1. A program to display (and edit) these documents: the first *web browser* (called *WorldWideWeb*)
 
 1. Software that gives access to the documents: the *server*
 
@@ -243,8 +243,11 @@ The 1990s then saw more-affordable home computers bring internet access to many 
 >
 > [<cite>Tim Berners-Lee, 1998</cite>](https://www.scienceandmediamuseum.org.uk/objects-and-stories/short-history-internet)
 
-
 ## So What Are Web Pages?
+
+<div class="body start">
+
+<div class="sticky">
 
 **Obviously, *this* is a web page. Think about how many other web pages you have visited in the past day. Dozens, even hundreds?**
 
@@ -252,7 +255,11 @@ Ultimately, a web page is a just text file on a computer. It is written in a sp
 
 These all started as simple, hand-typed documents. Then as the power of computers grew, and the languages of the web evolved alongside—web pages expanded almost inconceivably in complexity and capabilities. *Cascading Style Sheets* (CSS) gave them marvelous abilities to be customized and designed. *JavaScript* (JS) gave them remarkable, newfound interactivity and function. Websites (collections of web pages) today are built on top of an incredible *stack* of technology—networks, servers, databases, libraries, browsers, devices.
 
-<figure>
+</div>
+
+</div>
+
+<figure class="right">
 <img src="org.png">
 <img src="screens.jpg">
 <img src="kiosk.png">
@@ -264,7 +271,7 @@ Michael used to work at MoMA. These are all web pages!
 </figcaption>
 </figure>
 
-**It all starts with text, and thus, with type.**
+**It *all* starts with text, and thus, with type.**
 
 ## An Ever-Present Visual Medium
 
@@ -279,8 +286,6 @@ And in that latter role, we’ll need to learn how to swim. Our path into *desig
 > That’s not what we think design is. It’s not just what it looks like and feels like. Design is how it works.
 >
 > [<cite>Steve Jobs, 2003</cite>](https://www.nytimes.com/2003/11/30/magazine/the-guts-of-a-new-machine.html)
-
----
 
 ### These Days, Apps Are Often Web Pages Too
 
@@ -306,7 +311,7 @@ These mobile “apps” are all built with [React Native](https://reactnative.de
 </figcaption>
 </figure>
 
-The app is really just a *web view* (browser), and every screen within is a *web page*.
+**The app is really just a *web view* (browser), and every screen within is a *web page*.**
 
 ### It’s Increasingly Just JS, Behind the Scenes
 
@@ -326,16 +331,16 @@ This “JavaScript everywhere” movement means that the tendrils of the web can
 
 In the coming year we are going to dive properly into HTML, CSS, and JS–the *fabric* of web pages.
 
-Let’s try to also think of these—more conceptually and semantically—as *content*, *form*, and *function*. (Or in another way, *skeleton*, *skin*, and *muscles.*) This ordering or *layering* of responsibilities is often called *progressive enhancement*. The semantic content (HTML) forms the foundation on which you can layer the form (CSS) and functionality (JS).
+Let’s try to also think of these—more conceptually and semantically—as *content*, *form*, and *function*. (Or in another way, *skeleton*, *skin*, and *muscles.*) This ordering or *layering* of responsibilities is often called *progressive enhancement*. The semantic content (HTML) forms the foundation on which you can layer the form (CSS) and enhance the functionality (JS).
 
-With this understanding, the same model exists in nearly all software. (For example, [*Resources*, *Views*, and *States*](https://developer.apple.com/tutorials/app-dev-training/#swiftui-essentials) in Mac/i&NoBreak;OS development, though the lines are being blurred.) So we can say that software that hasn’t yet been eaten by web technologies is often still *web-like*. And the web is likely coming for them, eventually.
+With this understanding, the same model exists in nearly all software. (For example, [*Resources*, *Views*, and *States*](https://developer.apple.com/tutorials/app-dev-training/#swiftui-essentials) in Mac/i&NoBreak;OS development, though the lines are being blurred.) So we can say that software that hasn’t yet been eaten by web technologies is often still *web-like*, and can be understood similarly. And the web is likely coming for them, eventually!
 
 ## Our Lens
 
 Learning good, effective design in any medium necessitates knowing it thoroughly and completely, and we’re going strive to do that by truly understanding the web. It is fundamentally a medium of text, and thus a medium of typography—and this semester we will use that as our lens.
 <!-- data-description -->
 
-In your careers, the software, languages, and platforms might be different, and to some extent, are ever-changing–but the design ideas and considerations are analogous and universal. To understand design for the web is to understand interactive design. And in our lives today, to understand interactive design is to understand all design.
+In your careers the software, languages, methodologies, and platforms might be different, and to some extent, are <nobr>ever-changing</nobr>—but the design ideas and considerations are analogous and universal. To understand design for the web is to understand interactive design. And in our lives today, to understand interactive design is to understand all design.
 
 > All I know is that if you are a fish, it is hard to describe water, much less to ask if water is necessary, ethical, and structured the way it ought to be.
 >
