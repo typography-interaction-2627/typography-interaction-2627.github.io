@@ -36,7 +36,7 @@
 				[ all-end aside-end body-end middle-end five-end four-end left-end one-end recto-end right-end six-end three-end two-end verso-end ];
 
 			/* Between “windows.“ */
-			&:where(:not(:first-of-type)) { margin-block-start: round(20vh, var(--1px)) }
+			&:where(:not(:first-of-type)) { margin-block-start: var(--break) }
 
 			/* Default to body width. */
 			:where(&, details, section) > * { grid-column: body }

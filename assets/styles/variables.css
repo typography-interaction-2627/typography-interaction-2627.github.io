@@ -89,6 +89,7 @@
 	--alley:         calc(var(--rhythm) * 2);
 	--page:          round(down, min(calc(100vw - 2 * var(--bleed)), var(--max)), var(--1px));
 	--max:           calc(720 * var(--1px));
+	--break:         round(20vh, var(--1px));
 
 	--enlargement: var(--4px);
 
