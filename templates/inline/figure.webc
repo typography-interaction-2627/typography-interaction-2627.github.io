@@ -1,10 +1,10 @@
 <style>
 	@keyframes dither-visibility {
 		0%   { --opacity: 1 }
-		25%  { --opacity: 1 }
-		35%  { --opacity: 0 }
-		65%  { --opacity: 0 }
-		75%  { --opacity: 1 }
+		33%  { --opacity: 1 }
+		45%  { --opacity: 0 }
+		55%  { --opacity: 0 }
+		66%  { --opacity: 1 }
 		100% { --opacity: 1 }
 	}
 
@@ -91,14 +91,23 @@
 </style>
 <script type="module">
 	document.querySelectorAll('figure').forEach((figure) => {
-		const image = figure.querySelector('img[src]')
-		const wrapper = figure.querySelector('div')
-		const dithered = wrapper.querySelector('as-dithered-image')
+		const images = figure.querySelectorAll('img[src]')
+		const template = figure.querySelector('div')
 
-		if (!image) return wrapper.remove()
+		if (!images.length) return template.remove()
 
-		wrapper.prepend(image)
-		dithered.setAttribute('src', image.src)
+		let previous = template
+
+		images.forEach((image, i) => {
+			// Always clone from the untouched template so prior images aren't carried along.
+			const div = template.cloneNode(true)
+
+			i ? previous.after(div) : template.replaceWith(div)
+
+			div.prepend(image)
+			div.querySelector('as-dithered-image').setAttribute('src', image.src)
+			previous = div
+		})
 	})
 </script>
 <figure webc:root="override">
