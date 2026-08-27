@@ -30,6 +30,6 @@
 		}
 	}
 </style>
-<blockquote webc:root="override" id="testing">
+<blockquote webc:root="override">
 	<slot></slot>
 </blockquote>
