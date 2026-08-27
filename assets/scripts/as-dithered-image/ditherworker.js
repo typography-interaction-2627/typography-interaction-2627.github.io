@@ -9,7 +9,7 @@ onmessage = function (e) {
 }
 
 function getRGBAArrayBuffer(color) {
-    let buffer = new ArrayBuffer(4)
+    let buffer = new Uint8Array(4)
     for (let i = 0; i < 4; ++i) {
         buffer[i] = color[i]
     }
@@ -21,7 +21,12 @@ function dither(imageData, scaleFactor, cutoff, blackRGBA, whiteRGBA) {
     const whiteRGBABuffer = getRGBAArrayBuffer(whiteRGBA)
     let output = new ImageData(imageData.width * scaleFactor, imageData.height * scaleFactor)
     for (let i = 0; i < imageData.data.length; i += 4) {
-        imageData.data[i] = imageData.data[i + 1] = imageData.data[i + 2] = Math.floor(imageData.data[i] * 0.3 + imageData.data[i + 1] * 0.59 + imageData.data[i + 2] * 0.11)
+        const alpha = imageData.data[i + 3] / 255
+        const red = imageData.data[i] * alpha + 255 * (1 - alpha)
+        const green = imageData.data[i + 1] * alpha + 255 * (1 - alpha)
+        const blue = imageData.data[i + 2] * alpha + 255 * (1 - alpha)
+        const luminance = Math.floor(red * 0.3 + green * 0.59 + blue * 0.11)
+        imageData.data[i] = imageData.data[i + 1] = imageData.data[i + 2] = luminance
     }
 
     // most implementations I see just distribute error into the existing image, wrapping around edge pixels
