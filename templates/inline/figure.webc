@@ -14,12 +14,38 @@
 			@container style(--columns: 6) { margin-block-start: round(3rlh, var(--1px)) }
 		}
 
-		img {
-			--height--fallback: round(calc(var(--lines) * 1rlh - 1rcap), var(--1px));
+		/* Container for placing the dithered one. */
+		div {
+			inline-size: fit-content;
+			position:    relative;
 
-			block-size:      var(--height, var(--height--fallback));
-			max-block-size:  calc(round(80svh, 1rcap));
-			max-inline-size: 100%;
+			img {
+				--height--fallback: round(calc(var(--lines) * 1rlh - 1rcap), var(--1px));
+
+				block-size:      var(--height, var(--height--fallback));
+				max-block-size:  calc(round(80svh, 1rcap));
+				max-inline-size: 100%;
+			}
+
+			/* Web component that does the Atkinson dithering! */
+			as-dithered-image {
+				inset:                      0;
+				opacity:                    var(--opacity, 0);
+				position:                   absolute;
+				transition-delay:           var(--delay, 1s); /* “Coyote time.” */
+				transition-duration:        500ms;
+				transition-timing-function: ease-in-out;
+
+			}
+
+			@media (any-hover: hover) {
+				--opacity: 1;
+
+				&:hover {
+					--opacity: 0;
+					--delay:   0;
+				}
+			}
 		}
 
 		figcaption {
@@ -53,6 +79,22 @@
 		}
 	}
 </style>
+<script webc:keep src="/assets/scripts/as-dithered-image/as-dithered-image.js"></script>
+<script type="module">
+	document.querySelectorAll('figure').forEach((figure) => {
+		const image = figure.querySelector('img[src]')
+		const wrapper = figure.querySelector('div')
+		const dithered = wrapper.querySelector('as-dithered-image')
+
+		if (!image) return wrapper.remove()
+
+		wrapper.prepend(image)
+		dithered.setAttribute('src', image.src)
+	})
+</script>
 <figure webc:root="override">
+	<div>
+		<as-dithered-image crunch="2"></as-dithered-image>
+	</div>
 	<slot></slot>
 </figure>
