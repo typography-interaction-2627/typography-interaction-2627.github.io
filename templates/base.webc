@@ -32,6 +32,7 @@
 			<!-- TODO Generate /preview metadata? -->
 			<meta :content="getDescription($data)" name="description">
 			<meta :content="`https://typography-interaction-2627.github.io${$data.page.url}meta.png`" property="og:image">
+			<script webc:keep src="/assets/scripts/as-dithered-image/as-dithered-image.js"></script>
 		</template>
 		<meta webc:else content="noindex, nofollow" name="robots">
 		<link :href="`/assets/${sequence ? 'patterns/' + sequence : 'icons/tab'}.svg`" rel="icon" type="image/svg+xml">

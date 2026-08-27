@@ -93,7 +93,6 @@
 		}
 	}
 </style>
-<script webc:keep src="/assets/scripts/as-dithered-image/as-dithered-image.js"></script>
 <script type="module">
 	document.querySelectorAll('figure').forEach((figure) => {
 		const image = figure.querySelector('img[src]')
