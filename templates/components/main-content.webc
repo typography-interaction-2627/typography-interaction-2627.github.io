@@ -63,6 +63,28 @@
 				grid-row: span var(--rows, 1);
 			}
 
+			/* Some `--rows` shorthands. */
+			.rows--2 { --rows: 2 }
+			.rows--3 { --rows: 3 }
+			.rows--4 { --rows: 4 }
+			.rows--5 { --rows: 5 }
+			.rows--6 { --rows: 6 }
+
+			/* TODO Organize these! */
+			.start  { align-self: start }
+			.stack  { figure { margin: initial } }
+			.center { align-self: center }
+			.end    { align-self: end }
+
+			*:has(> .sticky) {
+				align-self: stretch;
+
+				.sticky {
+					inset-block-start: 4rlh;
+					position:          sticky;
+				}
+			}
+
 			/* Only when on The Grid. */
 			:where(&, section) {
 				> .all    { grid-column: all }

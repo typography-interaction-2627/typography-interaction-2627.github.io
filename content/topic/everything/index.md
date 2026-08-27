@@ -50,7 +50,7 @@ Univac, the first commercial computer in the US. [<cite>↗</cite>](https://time
 
 A catalyst in the formation of the internet was the [Cold War](https://en.wikipedia.org/wiki/Cold_War). The threat of nuclear conflict spurred the US Defense Department to consider decentralized and distributed communication networks—to disseminate orders and information in the event of an attack (and ultimately, for retaliation).
 
-<figure>
+<figure class="aside">
 <img src="networks.png">
 <figcaption>
 
@@ -124,9 +124,16 @@ Our guy Tim. [<cite>↗</cite>](https://cds.cern.ch/images/CERN-GE-9407011-31)
 </figcaption>
 </figure>
 
-Tim Berners-Lee, a British academic and scientist, invented the *World Wide Web* (WWW) with his team while working at [CERN (*European Organization for Nuclear Research*) in 1989](https://home.cern/science/computing/birth-web/short-history-web). It was developed on top of TCP/IP as a standard way to connect documents, living on different computers in different places, via *hypertext* links.
+Tim Berners-Lee, a British academic and scientist, invented the *World Wide Web* (WWW) with his team while working at [CERN (*European Organization for Nuclear Research*) in 1989](https://home.cern/science/computing/the-birth-of-the-web/short-history-web/). It was developed on top of TCP/IP as a standard way to connect documents, living on different computers in different places, via *hypertext* links.
 
-Their proposal had four components:
+> [!NOTE]
+>
+> Tim and his colleagues were heavily influenced by [*HyperCard*](https://en.wikipedia.org/wiki/HyperCard)—an early *hypermedia* application.
+>
+> <sub>[Bill Atkinson](https://en.wikipedia.org/wiki/Bill_Atkinson) was the first developer of *HyperCard*, while working on the original Macintosh. He also made the [*MacPaint*](https://en.wikipedia.org/wiki/MacPaint) patterns we’re using on the site, and worked with [Susan Kare](https://en.wikipedia.org/wiki/Susan_Kare) on the fonts! [RIP](https://www.nytimes.com/2025/06/07/technology/bill-atkinson-dead.html), Bill.</sub>
+
+
+**Their proposal had four components:**
 
 1. A text file format to represent the documents: the *HyperText Markup Language* (HTML)
 
@@ -136,7 +143,7 @@ Their proposal had four components:
 
 1. Software that gives access to the documents: the *server*
 
-<figure>
+<figure class="aside">
 <img src="web.png">
 <figcaption>
 
@@ -145,7 +152,7 @@ The cover of the original proposal, visualizing the idea of *hypertext.* [<cite>
 </figcaption>
 </figure>
 
-<figure>
+<figure class="verso">
 <img src="worldwideweb.png">
 <figcaption>
 
@@ -153,7 +160,7 @@ How it looked for Tim, back then. [<cite>↗</cite>](https://worldwideweb.cern.c
 </figcaption>
 </figure>
 
-<figure>
+<figure class="recto">
 <img src="chrome.png">
 <figcaption>
 
