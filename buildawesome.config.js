@@ -110,9 +110,15 @@ export default (config) => {
 						// Keep short words with the following…
 						child.content = child.content.replace( new RegExp(`(\\s|^)(${shortWords}) (\\S)`, 'gi'), '$1$2\u00A0$3') // `&nbsp;`
 
+						// TODO This is broken! Applies inside of `em`, after chops `i&thinsp;OS`.
+						// // Also when followed by a node (link, emphasis, etc.).
+						// children[index + 1] && (child.content = child.content.replace(new RegExp(`(\\s|^)(${shortWords})( ?)$`, 'i'), '$1$2\u00A0'))
+
+						// TODO Breaks `abbr` before!
 						// Adds a “word joiner” `&NoBreak;` before em-dashes, to keep them from starting lines.
 						child.content = child.content.replace(/—/g, '\u2060—')
 
+						// TODO Breaks `abbr` after!
 						// Adds a `&ZeroWidthSpace;` after every slash.
 						child.content = child.content.replace(/\//g, '/\u200B')
 
@@ -187,10 +193,12 @@ export default (config) => {
 			delete env.abbreviations // Fix name collision with global `env.abbreviations` data and `markdown-it-abbr`.
 			return markdown.constructor.prototype.render.call(markdown, String(src).replace(/^# .*\n?/m, ''), env) // Remove H1 (pulled for `title`).
 		})
-		.use(markdownItAbbr)
-		.use(markdownItDeflist)
+		.use(markdownItAbbr) // TODO can we have this run after ragging?
+		.use(markdownItDeflist) // TODO This will not work for GFM right?
 		.use(markdownItHeaderSections)
 		.use(markdownItAnchor, {
+			// TODO Apostrophes!
+			// TODO Inline overrides don’t work (search `#external`)! It is the `section` wrapping.
 			permalink: (slug, opts, state, idx) => {
 				const headingId = state.tokens[idx].attrs.find(([id]) => id === 'id')[1]
 				const headingOpen = state.md.renderer.renderToken(state.tokens, idx, state.options)

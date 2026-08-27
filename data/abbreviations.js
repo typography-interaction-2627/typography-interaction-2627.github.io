@@ -74,6 +74,7 @@ export default [
 	{ abbr: 'SSO',     title: 'Single Sign-On' },
 	{ abbr: 'SSR',     title: 'Server-Side Rendering' },
 	{ abbr: 'SVG',     title: 'Scalable Vector Graphics' },
+	// TODO This one is broken by text processing!
 	{ abbr: 'TCP/IP',  title: 'Transmission Control Protocol / Internet Protocol' },
 	{ abbr: 'UCLA',    title: 'University of California, Los Angeles' },
 	{ abbr: 'UCSB',    title: 'University of California, Santa Barbara' },
