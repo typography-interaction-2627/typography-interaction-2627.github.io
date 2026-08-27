@@ -44,6 +44,13 @@
 	syntax:        '<length>';
 }
 
+/* To make this animatable. */
+@property --opacity {
+	inherits: true;
+	initial-value: 1;
+	syntax: '<number>';
+}
+
 :where(:root) {
 	--scaling: 2; /* How many (CSS) pixels in our pixel. */
 

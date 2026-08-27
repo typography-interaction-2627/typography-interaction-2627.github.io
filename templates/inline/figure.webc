@@ -1,4 +1,13 @@
 <style>
+	@keyframes dither-visibility {
+		0%   { --opacity: 1 }
+		33%  { --opacity: 1 }
+		40%  { --opacity: 0 }
+		60%  { --opacity: 0 }
+		66%  { --opacity: 1 }
+		100% { --opacity: 1 }
+	}
+
 	figure {
 		align-items: start;
 		display:     grid;
@@ -29,21 +38,26 @@
 
 			/* Web component that does the Atkinson dithering! */
 			as-dithered-image {
-				inset:                      0;
-				opacity:                    var(--opacity, 0);
-				position:                   absolute;
-				transition-delay:           var(--delay, 1s); /* “Coyote time.” */
-				transition-duration:        500ms;
-				transition-timing-function: ease-in-out;
+				--opacity: 0;
 
-			}
+				inset:      0;
+				opacity:    var(--opacity);
+				position:   absolute;
 
-			@media (any-hover: hover) {
-				--opacity: 1;
+				@supports (animation-timeline: view()) {
+					animation-name:            dither-visibility;
+					animation-timing-function: ease-in-out;
+					animation-fill-mode:       both;
+					animation-timeline:        view();
+					animation-range:           cover;
+				}
 
-				&:hover {
-					--opacity: 0;
-					--delay:   0;
+				@media (any-hover: hover) {
+					--opacity: 1;
+
+					&:hover {
+						--opacity: 0;
+					}
 				}
 			}
 		}
