@@ -212,7 +212,8 @@
 
 		/* Some automatic balancin’. */
 		:where(section, li) > p:only-of-type,
-		:where(section, li) > p:first-of-type:has(+ p:last-child > a > cite) {
+		:where(section, li) > p:first-of-type:has(+ p:last-child > a > cite),
+		:where(section, li) > *:not(p) + p:has(+ *:not(p)) {
 			--wrap: balance;
 		}
 
