@@ -12,7 +12,7 @@ const draft = true
 <details>
 <summary>
 
-1969 or 1989?
+*The Internet* was invented in…
 
 </summary>
 
@@ -20,26 +20,24 @@ const draft = true
 
 </details>
 
-Before this time, the term *computer* usually referred to a person, not a machine—someone who would *compute* (solve) math problems.
+Before this time, the term *computer* usually referred to a person, not a machine—someone who would *compute* (solve) math problems by hand!
 
 <figure>
 <img src="harvard.jpg">
 <figcaption>
 
-The *Harvard Computers* in the late 1800s. [<cite>↗</cite>](https://en.wikipedia.org/wiki/Harvard_Computers#/media/File:Astronomer_Edward_Charles_Pickering%27s_Harvard_computers.jpg)
+The [*Harvard Computers*](https://en.wikipedia.org/wiki/Harvard_Computers) in the late 1800s. [<cite>↗</cite>](https://en.wikipedia.org/wiki/Harvard_Computers#/media/File:Astronomer_Edward_Charles_Pickering%27s_Harvard_computers.jpg)
 
 </figcaption>
 </figure>
 
-<!-- <mark>Warning: Lots of Dudes in this Area</mark> -->
-
 > [!NOTE]
 >
-> It is worth noting these pioneers [were often women](https://www.nytimes.com/2019/02/13/magazine/women-coding-computer-programming.html), and they were usually underpaid and underrecognized compared to men in their field. Many would go on to operate the early mechanical/electronic computers.
+> These pioneers [were often women](https://www.nytimes.com/2019/02/13/magazine/women-coding-computer-programming.html)! And they were usually underpaid and underrecognized compared to men in their field. Many would go on to operate the early mechanical and electronic computers.
 >
-> We’re going talk about a lot of men, here—but know that women have been present from the start, as usual.
+> <sub>We’re going talk about a lot of men, here—but know that women have been [present and essential](https://en.wikipedia.org/wiki/History_of_computing#Important_women_and_their_contributions) from the start, as usual.</sub>
 
-By the 1960s, computers were room-sized, institutional electronic machines–used by governments (the military), businesses, and universities. They were used to solve complex math problems and sort data, but were still very slow and didn’t communicate with one another.
+By the 1960s, computers were [room-sized, institutional electronic machines](https://en.wikipedia.org/wiki/History_of_computing_hardware_(1960s%E2%80%93present)) owned by governments (the military), businesses, and universities. They were used to solve complex math problems and sort data, but were still very slow and didn’t communicate with one another.
 
 <figure>
 <img src="univac.jpg">
@@ -50,7 +48,7 @@ Univac, the first commercial computer in the US. [<cite>↗</cite>](https://time
 </figcaption>
 </figure>
 
-A catalyst in the formation of the internet was the Cold War. The threat of nuclear conflict spurred the US Defense Department to consider decentralized and distributed networks—to disseminate orders and information in the event of an attack (and ultimately, for retaliation).
+A catalyst in the formation of the internet was the [Cold War](https://en.wikipedia.org/wiki/Cold_War). The threat of nuclear conflict spurred the US Defense Department to consider decentralized and distributed communication networks—to disseminate orders and information in the event of an attack (and ultimately, for retaliation).
 
 <figure>
 <img src="networks.png">
@@ -109,7 +107,7 @@ The core of TCP/IP is routing bundles of data called *packets.* [<cite>↗</cite
 <details>
 <summary>
 
-1969 or 1989?
+*The Web* was invented in…
 
 </summary>
 
