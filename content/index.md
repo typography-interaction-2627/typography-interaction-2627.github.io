@@ -20,4 +20,4 @@ We’ll be using this course site for our agendas, lectures, general class house
 
 </div>
 
-<channel-list class="left" @cite="true"></channel-list>
+<channel-list></channel-list>

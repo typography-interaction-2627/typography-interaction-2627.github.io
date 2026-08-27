@@ -1,13 +1,3 @@
-<style>
-	main > ul {
-		column-gap:         var(--alley);
-		display:            grid;
-		grid-auto-columns:  minmax(0, 1fr);
-		grid-auto-flow:     column;
-		grid-template-rows: repeat(3, min-content);
-		margin-block-start: round(1rlh, var(--1px));
-	}
-</style>
 <script webc:setup>
 	export const channels = {
 		submit: 'https://docs.google.com/forms/d/e/1FAIpQLSc3LUp6nqA1RTTloLM_u_xVHSNpcTQt3v2VG-L-HT9srsG_hA/viewform',
@@ -18,13 +8,23 @@
 		figma:  'https://www.figma.com/files/team/1670950360853186233/all-projects',
 	}
 </script>
+<style>
+	main > ul {
+		column-gap:         var(--alley);
+		display:            grid;
+		grid-auto-columns:  minmax(0, 1fr);
+		grid-auto-flow:     column;
+		grid-column:        left;
+		grid-template-rows: repeat(3, min-content);
+	}
+</style>
 <ul webc:root="override">
 	<li webc:for="(key, href) in channels">
 		<a :href="href">
-			<cite webc:if="cite">
+			<p webc:if="plain" @text="initialCap(key)"></p>
+			<cite webc:else>
 				<p @text="initialCap(key)"></p>
 			</cite>
-			<p webc:else @text="initialCap(key)"></p>
 		</a>
 	</li>
 </ul>
