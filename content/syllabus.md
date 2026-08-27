@@ -356,17 +356,18 @@ In class, we will demonstrate using [Figma](http://figma.com) for visual design 
 - [<cite>Slack Channel</cite>](https://mpscd.slack.com/archives/C0BRNBPC6QP) \
 	For direct and asynchronous communication (*not* email).
 
-- [<cite>Figma Team</cite>](https://www.figma.com/files/team/1670950360853186233/all-projects) \
-	For visual sketching and collaboration.
-
-- [<cite>GitHub Organization</cite>](https://github.com/typography-interaction-2627) \
-	For code examples and sharing.
+- [<cite>Zoom Room</cite>](https://NewSchool.zoom.us/j/97800365415) \
+	For screen sharing and recording.
 
 - [<cite>Google Drive</cite>](https://drive.google.com/drive/folders/1gxl_TpXu0Sd7oJbW1pk7Dd89VNpJwsHK) \
 	For document collaboration and recorded lectures.
 
-- [<cite>Zoom Room</cite>](https://NewSchool.zoom.us/j/97800365415) \
-	For screen sharing and recording.
+- [<cite>GitHub Organization</cite>](https://github.com/typography-interaction-2627) \
+	For code examples and sharing.
+
+- [<cite>Figma Team</cite>](https://www.figma.com/files/team/1670950360853186233/all-projects) \
+	For visual sketching and collaboration.
+
 
 ## Class Policies
 
