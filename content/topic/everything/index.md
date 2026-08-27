@@ -171,7 +171,7 @@ How it looks for us, now. [<cite>↗</cite>](http://info.cern.ch/hypertext/WWW/T
 
 **By 1991, the [first web page](http://info.cern.ch/hypertext/WWW/TheProject.html) was up and running and the web began to take off.**
 
-<figure>
+<figure class="aside">
 <img src="mosaic.png">
 <figcaption>
 
@@ -193,7 +193,7 @@ The 1990s then saw more-affordable home computers bring internet access to many 
 
 **And the web exploded from there.**
 
-<figure>
+<figure class="aside">
 <img src="yahoo.png">
 <figcaption>
 
@@ -202,7 +202,7 @@ The 1990s then saw more-affordable home computers bring internet access to many 
 </figcaption>
 </figure>
 
-<figure>
+<figure class="recto">
 <img src="geocities.png">
 <figcaption>
 
@@ -220,7 +220,7 @@ The 1990s then saw more-affordable home computers bring internet access to many 
 </figcaption>
 </figure>
 
-<figure>
+<figure class="aside">
 <img src="google.png">
 <figcaption>
 
@@ -229,7 +229,7 @@ The 1990s then saw more-affordable home computers bring internet access to many 
 </figcaption>
 </figure>
 
-<figure>
+<figure class="recto">
 <img src="facebook.png">
 <figcaption>
 
