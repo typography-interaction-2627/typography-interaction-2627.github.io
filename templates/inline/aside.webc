@@ -8,7 +8,6 @@
 		display:            grid;
 		grid-column:        aside;
 		isolation:          isolate;
-		margin-block-start: calc(var(--line) + 1rlh);
 		outline:            var(--1px) solid var(--color);
 		padding:            var(--gutter);
 		place-items:        center;
@@ -24,7 +23,13 @@
 			z-index:          -1;
 		}
 
-		+ * { margin-block-start: calc(var(--line) + 1rlh) }
+		/* TODO This pattern could be consolidated! */
+		&:where(:not(:first-child)),
+		&:where(:not(:last-child)) + * {
+			margin-block-start: round(1rlh, var(--1px));
+
+			@container style(--columns: 6) { margin-block-start: round(2rlh, var(--1px)) }
+		}
 	}
 </style>
 <aside webc:root="override">
