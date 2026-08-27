@@ -4,7 +4,6 @@
 			summary {
 				background-color: var(--color);
 				display:          block;
-				grid-column:      left;
 				inline-size:      fit-content;
 				margin-block-end: round(1rlh, var(--1px));
 				padding:          round(1ex, var(--1px));
