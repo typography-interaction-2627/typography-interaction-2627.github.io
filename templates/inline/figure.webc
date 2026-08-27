@@ -24,10 +24,14 @@
 
 		figcaption {
 			--size: var(--size--note);
-			--icon: calc(var(--1px) * 12);
+			--wrap: balance;
 
-			position:             relative;
-			padding-inline-start: calc(var(--icon) + round(1rlh, var(--1px)));
+			&:has(a > cite) {
+				--icon: calc(var(--1px) * 12);
+
+				position:             relative;
+				padding-inline-start: calc(var(--icon) + round(1rlh, var(--1px)));
+			}
 
 			a:has(cite) {
 				/* TODO This is off on mobile! */
