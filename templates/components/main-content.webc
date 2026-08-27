@@ -42,7 +42,7 @@
 			:where(&, details, section) > * { grid-column: body }
 
 			/* Limit paragraphs (inside things), sameish. */
-			:where(p) { max-inline-size: 55ch }
+			:where(p) { max-inline-size: 53rch }
 
 			/* Containers. */
 			:where(details, div, dl, ol, section, ul) {
