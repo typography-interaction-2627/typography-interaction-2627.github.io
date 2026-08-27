@@ -1,0 +1,31 @@
+<script webc:setup>
+	export const license = {
+		name:  'CC BY-NC-SA 4.0',
+		url:   'https://creativecommons.org/licenses/by-nc-sa/4.0/',
+		repo:  'https://github.com/typography-interaction-2627/typography-interaction-2627.github.io',
+	}
+</script>
+<style>
+	footer {
+		--size: var(--size--note);
+		--wrap: balance;
+
+		display:            grid;
+		margin-block-start: var(--break);
+		overflow:           clip;
+		padding-inline:     calc(var(--gutter) + var(--bleed));
+		place-content:      center;
+
+		p {
+			background-color: var(--background);
+			border:           var(--border);
+			box-shadow:       var(--shadow--single);
+			inline-size:      fit-content;
+			padding:          round(1cap, var(--1px));
+			text-align:       center;
+		}
+	}
+</style>
+<footer webc:root="override" id="license">
+	<p><a :href="license.repo + '#use-and-re-use'">Licensed</a> under <a :href="license.url" rel="license"><nobr @text="license.name"></nobr></a> for personal and educational, non-commercial use. The <a :href="`${license.repo}/blob/main/${$data.page.inputPath.replace('./', '')}`">source code</a> is also available!</p>
+</footer>

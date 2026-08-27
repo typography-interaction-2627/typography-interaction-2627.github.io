@@ -3,10 +3,11 @@
 	<style>
 		body {
 			inline-size:    round(down, 100vw, var(--1px));
-			padding-bottom: 33vh;
+			padding-bottom: var(--break);
 		}
 	</style>
 	<nav-bar></nav-bar>
 	<page-header></page-header>
 	<main-content :@content="content"></main-content>
+	<license-footer></license-footer>
 </template>
