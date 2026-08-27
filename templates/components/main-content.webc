@@ -1,10 +1,14 @@
 <style webc:bucket="components">
 	main {
+		--anchor: calc(9 * var(--gutter)); /* Adjust with the `nav`! */
+
+		@media (width > 42em) { --anchor: calc(3 * var(--gutter)) }
+
 		margin-block-start: calc(-1 * var(--gutter)); /* Peek above fold. */
 
 		/* Space above anchor destination. */
-		[id]   { scroll-margin-block: var(--gutter) }
-		h2[id] { scroll-margin-block: calc(2 * var(--gutter)) }
+		[id]   { scroll-margin-block: var(--anchor) }
+		h2[id] { scroll-margin-block: calc(var(--anchor) + var(--gutter)) }
 
 		/* Print-only. */
 		.print { display: none }
