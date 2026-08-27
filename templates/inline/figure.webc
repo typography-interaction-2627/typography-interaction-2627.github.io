@@ -1,3 +1,51 @@
+<style>
+	figure {
+		align-items: start;
+		display:     grid;
+		position:    relative;
+		row-gap:     round(1rlh, var(--1px));
+
+		&:not([class]) { grid-column: all }
+
+		&:where(:not(:first-child)),
+		&:where(:not(:last-child)) + * {
+			margin-block-start: round(1rlh, var(--1px));
+
+			@container style(--columns: 6) { margin-block-start: round(2rlh, var(--1px)) }
+		}
+
+		img {
+			--height--fallback: round(calc(var(--lines) * 1rlh - 1rcap), var(--1px));
+
+			block-size:      var(--height, var(--height--fallback));
+			max-block-size:  calc(round(80svh, 1rcap));
+			max-inline-size: 100%;
+		}
+
+		figcaption {
+			--size: var(--size--note);
+			--icon: calc(var(--1px) * 12);
+
+			position:             relative;
+			padding-inline-start: calc(var(--icon) + round(1rlh, var(--1px)));
+
+			a:has(cite) {
+				inset-block-start:  calc(-1 * var(--3px) - var(--shim));
+				inset-inline-start: 0;
+				position:           absolute;
+
+				cite {
+					aspect-ratio:        1;
+					background-image:    url('/assets/icons/arrow.svg');
+					background-position: center;
+					background-repeat:   no-repeat;
+					background-size:     var(--7px);
+					font-size:           0; /* Hide the `↗` */
+				}
+			}
+		}
+	}
+</style>
 <figure webc:root="override">
 	<slot></slot>
 </figure>

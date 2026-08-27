@@ -27,7 +27,7 @@
 			margin-inline-start: var(--left);
 
 			cite {
-				--padding: calc(round(1ex, var(--1px)) - var(--1px));
+				--padding: calc(round(1rex, var(--1px)) - var(--1px));
 
 				border:               var(--border);
 				box-shadow:           var(--shadow--single);
