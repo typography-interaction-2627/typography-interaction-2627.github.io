@@ -28,6 +28,7 @@
 			inline-size: fit-content;
 			position:    relative;
 
+			/* TODO How to have this snap to pixel height? Takes “windows” off-pattern! */
 			img {
 				--height--fallback: round(calc(var(--lines) * 1rlh - 1rcap), var(--1px));
 
