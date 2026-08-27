@@ -2,8 +2,8 @@
 	@keyframes dither-visibility {
 		0%   { --opacity: 1 }
 		33%  { --opacity: 1 }
-		45%  { --opacity: 0 }
-		55%  { --opacity: 0 }
+		40%  { --opacity: 0 }
+		60%  { --opacity: 0 }
 		66%  { --opacity: 1 }
 		100% { --opacity: 1 }
 	}
@@ -77,6 +77,7 @@
 				inset-inline-start: 0;
 				position:           absolute;
 
+				/* TODO The size for this is wonky in Safari! */
 				cite {
 					aspect-ratio:        1;
 					background-image:    url('/assets/icons/arrow.svg');
