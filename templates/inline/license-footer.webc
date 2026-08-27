@@ -12,14 +12,13 @@
 
 		display:            grid;
 		margin-block-start: var(--break);
-		overflow:           clip;
 		padding-inline:     calc(var(--gutter) + var(--bleed));
 		place-content:      center;
 
 		p {
 			background-color: var(--background);
 			border:           var(--border);
-			box-shadow:       var(--shadow--single);
+			box-shadow:       var(--shadow--double);
 			inline-size:      fit-content;
 			padding:          round(1cap, var(--1px));
 			text-align:       center;

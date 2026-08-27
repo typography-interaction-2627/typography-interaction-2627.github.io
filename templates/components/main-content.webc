@@ -4,6 +4,7 @@
 
 		@media (width > 42em) { --anchor: calc(3 * var(--gutter)) }
 
+		isolation:          isolate; /* Internal `z-index`. */
 		margin-block-start: calc(-1 * var(--gutter)); /* Peek above fold. */
 
 		/* Space above anchor destination. */
