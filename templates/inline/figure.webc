@@ -109,6 +109,8 @@
 			previous = div
 		})
 	})
+
+	// TODO Need a `crunch="3"` based on scaling variable!
 </script>
 <figure webc:root="override">
 	<div>
