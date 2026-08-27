@@ -12,7 +12,7 @@
 		@container style(--columns: 6) {
 			--size:   var(--size--h2);
 
-			margin-inline: calc(2 * var(--gutter));
+			margin-inline: var(--gutter);
 		}
 
 		&:where(:not(:first-child)),
@@ -21,6 +21,9 @@
 
 			@container style(--columns: 6) { margin-block-start: round(3rlh, var(--1px)) }
 		}
+
+		/* Go big. */
+		@media (width >= 86em) { &:not(:has(> p:nth-of-type(4))) { --size: var(--size--h1) } }
 
 		p:has(a > cite) {
 			--family: 'Geneva';
