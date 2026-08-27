@@ -30,6 +30,7 @@ em {
 	/* https://arrowtype.github.io/vf-slnt-test/slnt-ital-tests/index.html */
 }
 
+/* TODO `markdown-it` process solo `strong`/`sub` out to something more semantic? */
 strong {
 	font-weight: bold;
 
@@ -38,6 +39,7 @@ strong {
 
 nobr { --wrap: nowrap }
 
+/* TODO This is way off on large NY. */
 abbr {
 	background-image:      url('patterns/dash.svg');
 	background-position-y: calc(1em + var(--1px));
@@ -47,6 +49,7 @@ abbr {
 	@container style(--size < 10) { background-position-y: calc(1em + var(--2px)) }
 }
 
+/* TODO Do this as white-check overlay? */
 [inert] {
 	:is(figcaption, li, summary):where(:not(:has(details, ol, p, section, ul))),
 	dd,

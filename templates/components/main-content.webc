@@ -100,6 +100,7 @@
 			}
 		}
 
+		/* TODO Could make a separate `.webc` for this? */
 		/* Headings */
 		:where(hgroup) {
 			:where(h2, h3, h4) {
@@ -109,6 +110,7 @@
 				max-inline-size: 100%; /* Retain wrapping! */
 
 				/* Anchor links. */
+				/* TODO These wrap to next line! At least after `em`. */
 				a:empty {
 					--family: 'Geneva';
 					--size:   14;
@@ -225,6 +227,8 @@
 		:is(dl, ol, ul) {
 			/* Not `cite` lists. */
 			&:where(:not(:has(> li > a > cite, > li > p:only-child > a > cite))) {
+			/* TODO There still has to be a simpler way to check for these! */
+
 				/* Item inset. */
 				> :where(dd, dt, li) { padding-inline-start: var(--line) }
 

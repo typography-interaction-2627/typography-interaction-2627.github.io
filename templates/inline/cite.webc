@@ -1,4 +1,5 @@
 <style>
+	/* TODO This could be better (”For Next Week”). */
 	:where(p, li):has(a > cite):not(:has(ul)) {
 		--wrap: balance;
 

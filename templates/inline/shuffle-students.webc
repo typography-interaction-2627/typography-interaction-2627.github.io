@@ -53,3 +53,5 @@
 <button webc:root="override" id="shuffle">
 	<p>Shuffle List!</p>
 </button>
+
+<!-- TODO Consolidste button/summary block! -->

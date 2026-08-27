@@ -58,6 +58,8 @@
 	--7px: calc(var(--1px) * 7);
 	--8px: calc(var(--1px) * 8);
 
+	/* TODO `--1rlh` to bake in rounding! */
+
 	--shim: calc(var(--1px) / 2); /* Get back on-pattern. */
 
 	--size--root: var(--size); /* For resets/overrides. */

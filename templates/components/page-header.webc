@@ -5,6 +5,7 @@
 		overflow:       clip;
 		padding-inline: calc(var(--gutter) + var(--bleed));
 		place-content:  center;
+		/* TODO With transform/translate, for sub-px? */
 
 		hgroup {
 			--gap: round(calc(1lh - 1ex), var(--1px));

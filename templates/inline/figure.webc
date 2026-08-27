@@ -30,6 +30,7 @@
 			padding-inline-start: calc(var(--icon) + round(1rlh, var(--1px)));
 
 			a:has(cite) {
+				/* TODO This is off on mobile! */
 				inset-block-start:  calc(-1 * var(--3px) - var(--shim));
 				inset-inline-start: 0;
 				position:           absolute;

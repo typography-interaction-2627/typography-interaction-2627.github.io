@@ -5,6 +5,7 @@
 		<meta content="initial-scale=1, width=device-width, viewport-fit=cover" name="viewport">
 		<title @html="stripTags(title)"></title>
 		<script webc:setup>
+			// TODO I think we can move this to data? For less parseHtml use!
 			export const getDescription = ({ content, description }) => {
 				const document = parseHtml(content)
 
@@ -28,6 +29,7 @@
 				(document.querySelectorAll('[data-description]').forEach(n => n.removeAttribute('data-description')), document.toString())
 		</script>
 		<template webc:if="!buildawesomeExcludeFromCollections" webc:nokeep>
+			<!-- TODO Generate /preview metadata? -->
 			<meta :content="getDescription($data)" name="description">
 			<meta :content="`https://typography-interaction-2627.github.io${$data.page.url}meta.png`" property="og:image">
 		</template>
