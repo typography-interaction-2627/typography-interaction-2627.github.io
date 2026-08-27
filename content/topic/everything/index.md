@@ -67,7 +67,7 @@ Different network topologies. [<cite>↗</cite>](https://www.rand.org/content/da
 >
 > [<cite>Paul Baran, 2008</cite>](https://www.vanityfair.com/news/2008/07/internet200807)
 
-<figure>
+<figure style="--lines: 16">
 <img src="arpanet.png">
 <figcaption>
 
@@ -76,9 +76,9 @@ The original sketch of ARPANET (*Advanced Research Projects Agency Network*). [
 </figcaption>
 </figure>
 
-By 1969, computer nodes connected the Stanford Research Institute, UCLA, UCSB and the University of Utah—developed by the Defense Department’s *Advanced Research Project Agency* (ARPA).
+By 1969, computer nodes [connected](https://en.wikipedia.org/wiki/History_of_the_Internet#Networks_that_led_to_the_Internet) the Stanford Research Institute, UCLA, UCSB and the University of Utah—developed by the Defense Department’s *Advanced Research Project Agency* (ARPA).
 
-Over the following decade, [ARPANET](https://www.britannica.com/topic/ARPANET) would grow to include other cities in the US. It had its first expansion outside the States in 1973, with connections to the UK and Norway. Slowly, similar commercial and academic networks were developing alongside, each with their own communication protocols.
+Over the following decade, [ARPANET](https://www.britannica.com/topic/ARPANET) would grow to include other networks and reach more cities in the US. It had its first expansion outside the States in 1973, with connections to the UK and Norway. Slowly, similar commercial and academic networks were developing alongside, each with their own communication protocols.
 
 <figure>
 <img src="arpanet.gif">
@@ -89,9 +89,9 @@ The growth of ARPANET into the 1970s. [<cite>↗</cite>](https://medium.com/synt
 </figcaption>
 </figure>
 
-In 1974, Robert Kahn and Vinton Cerf (two ARPA scientists) developed the *Transmission Control Protocol* and the *Internet Protocol* (TCP/IP). By the 80s, it became the standard network communication format—and still underpins the internet we all use today.
+In 1974, Robert Kahn and Vinton Cerf (two ARPA scientists) developed the *Transmission Control Protocol* and the *Internet Protocol* (TCP/IP) for computers to talk to each other. By the 80s, it became the standard network communication format—and still underpins the internet we all use today.
 
-<figure>
+<figure class="recto">
 <img src="tcpip.png">
 <figcaption>
 
