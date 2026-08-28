@@ -1,0 +1,36 @@
+@page {
+	margin:  0;
+	size:    letter;
+}
+
+:root {
+	--gutter: initial;
+
+	background: initial;
+
+	/* Swap. */
+	.screen, [inert] { display: none }
+	.print  { display: block }
+
+
+	body {
+		background: initial;
+		padding:    1in;
+
+		> :where(nav, header, footer) { display: none }
+
+		> main {
+			margin: initial;
+
+			/* Our “windows.” */
+			&:not(:has(> section)), > section {
+				background:  initial;
+				border:      initial;
+				box-shadow:  initial;
+				inline-size: initial;
+				margin:      initial;
+				padding:     initial;
+			}
+		}
+	}
+}
