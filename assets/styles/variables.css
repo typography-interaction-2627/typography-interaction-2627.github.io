@@ -121,4 +121,6 @@
 
 	@media (width >= 65em)  { --alley: calc(var(--line) * 2) }
 	@media (width >= 120em) { --scaling: 3 }
+
+	/* TODO Adjust for “full width” 1920✕1080 (projector). Smaller gutters? */
 }

@@ -199,6 +199,7 @@ export default (config) => {
 		.use(markdownItAnchor, {
 			// TODO Apostrophes!
 			// TODO Inline overrides don’t work (search `#external`)! It is the `section` wrapping.
+			// TODO Could this be moved to a `.webc` Same for `markdownAsides`?
 			permalink: (slug, opts, state, idx) => {
 				const headingId = state.tokens[idx].attrs.find(([id]) => id === 'id')[1]
 				const headingOpen = state.md.renderer.renderToken(state.tokens, idx, state.options)
