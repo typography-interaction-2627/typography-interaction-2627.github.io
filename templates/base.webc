@@ -11,18 +11,20 @@
 
 				const descriptions = document.querySelectorAll('main [data-description]')
 
-				const descriptionHtml = description
-					? description
-					: descriptions.length
-						? [...descriptions].map((node) => node.innerHTML).join(' ')
-						: document.querySelector('main p')?.innerHTML || ''
-
-				return stripTags(descriptionHtml)
+				const formatDescription = (html) => stripTags(html)
 					.trim()
 					.replace(/\s+/g, ' ') // Collapse white space.
 					.replace(/:$/, '.') // Fix ending colons.
 					.replace(/&amp;/g, '\u0026') // Decode entity so BA doesn’t `&amp;` it twice.
 					.replace(/&nbsp;/g, '\u00A0') // Same.
+
+				return description
+					? formatDescription(description)
+					: descriptions.length
+						? [...descriptions]
+							.map((node) => formatDescription(node.innerHTML))
+							.join(' ')
+						: formatDescription(document.querySelector('main p:not(figcaption p)')?.innerHTML || '')
 			}
 
 			export const removeDescriptionAttr = (content, document = parseHtml(content)) =>
