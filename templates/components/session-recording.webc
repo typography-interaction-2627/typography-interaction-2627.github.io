@@ -2,7 +2,10 @@
 	hgroup:has(h2[id="session-recording"]) ~ figure {
 		margin-block-start: calc(var(--gutter) - round(1rlh, var(--1px)));
 
-		div { background-color: var(--color) }
+		div {
+			background-color: var(--color);
+			border:           var(--border);
+		}
 
 		p > span:last-of-type { display: none }
 
@@ -23,7 +26,7 @@
 		</div>
 		<figcaption>
 			<p>
-				<span>You’ll need to be signed in to your New School account to see these in-page!</span>
+				<span>You’ll need to be <a href="https://accounts.google.com/AccountChooser">signed in</a> to your New School account to see these in-page!</span>
 				<span>Safari prevents Google Drive <nobr>embeds—</nobr>so you’ll need to go to <a :href="`https://drive.google.com/file/d/${$data.video}`">the originals</a>!</span>
 				<a :href="`https://drive.google.com/file/d/${$data.video}`"><cite>↗</cite></a>
 			</p>
