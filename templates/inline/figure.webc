@@ -1,11 +1,11 @@
 <style>
-	@keyframes dither-visibility {
-		0%   { --opacity: 1 }
-		33%  { --opacity: 1 }
-		40%  { --opacity: 0 }
-		60%  { --opacity: 0 }
-		66%  { --opacity: 1 }
-		100% { --opacity: 1 }
+	@keyframes in-view {
+		0%   { --in-view: 0 }
+		33%  { --in-view: 0 }
+		40%  { --in-view: 1 }
+		60%  { --in-view: 1 }
+		66%  { --in-view: 0 }
+		100% { --in-view: 0 }
 	}
 
 	figure {
@@ -42,21 +42,18 @@
 
 			iframe {
 				aspect-ratio: var(--aspect-ratio, 16/9);
+				inline-size:  100%;
 			}
 
 			/* Web component that does the Atkinson dithering! */
 			as-dithered-image {
-				--opacity: 0;
-
 				inset:    0;
-				opacity:  var(--opacity);
+				opacity:  calc(1 - var(--in-view));
 				position: absolute;
 
 				@supports (animation-timeline: view()) {
-					--opacity: 1;
-
 					animation-fill-mode: both;
-					animation-name: dither-visibility;
+					animation-name: in-view;
 					animation-range: cover;
 					animation-timeline: view();
 					animation-timing-function: ease-in-out;

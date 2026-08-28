@@ -44,8 +44,8 @@
 	syntax:        '<length>';
 }
 
-/* To make this animatable. */
-@property --opacity {
+/* Make this animatable for scroll-driven stuff. */
+@property --in-view {
 	inherits: true;
 	initial-value: 1;
 	syntax: '<number>';
