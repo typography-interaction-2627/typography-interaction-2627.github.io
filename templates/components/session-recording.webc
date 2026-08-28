@@ -1,0 +1,20 @@
+<style>
+	hgroup:has(h2[id="session-recording"]) ~ figure {
+		margin-block-start: calc(var(--gutter) - round(1rlh, var(--1px)));
+
+		iframe { background-color: var(--color) }
+	}
+</style>
+<section webc:root="override">
+	<hgroup>
+		<h2 id="session-recording" tabindex="-1">Session Recording<a href="#session-recording"></a></h2>
+	</hgroup>
+	<figure>
+		<div>
+			<iframe :src="`https://drive.google.com/file/d/${$data.video}/preview`"></iframe>
+		</div>
+		<figcaption>
+			<p><a :href="`https://drive.google.com/file/d/${$data.video}`"><cite>↗</cite></a></p>
+		</figcaption>
+	</figure>
+</section>

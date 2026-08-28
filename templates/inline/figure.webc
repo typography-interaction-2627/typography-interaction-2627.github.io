@@ -25,16 +25,23 @@
 
 		/* Container for placing the dithered one. */
 		div {
-			inline-size: fit-content;
-			position:    relative;
+			position: relative;
+
+			&:has(img, object) { inline-size: fit-content }
 
 			/* TODO How to have this snap to pixel height? Takes “windows” off-pattern! */
-			img {
+			img,
+			object,
+			iframe {
 				--height--fallback: round(calc(var(--lines) * 1rlh - 1rcap), var(--1px));
 
 				block-size:      var(--height, var(--height--fallback));
 				max-block-size:  calc(round(80svh, 1rcap));
 				max-inline-size: 100%;
+			}
+
+			iframe {
+				aspect-ratio: var(--aspect-ratio, 16/9);
 			}
 
 			/* Web component that does the Atkinson dithering! */

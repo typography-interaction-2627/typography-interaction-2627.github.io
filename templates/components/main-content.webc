@@ -346,4 +346,7 @@
 		? observeSections()
 		: setTimeout(observeSections, 1500)
 </script>
-<main webc:root="override" webc:bucket="default" @html="content"></main>
+<main webc:root="override" webc:bucket="default">
+	<session-recording webc:if="$data.video"></session-recording>
+	<template webc:nokeep @html="content"></template>
+</main>
