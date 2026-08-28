@@ -2,7 +2,15 @@
 	hgroup:has(h2[id="session-recording"]) ~ figure {
 		margin-block-start: calc(var(--gutter) - round(1rlh, var(--1px)));
 
-		iframe { background-color: var(--color) }
+		div { background-color: var(--color) }
+
+		p > span:last-of-type { display: none }
+
+		/* Hide for Safari, toggle note. */
+		@supports (font: -apple-system-body) {
+			div, p > span:first-of-type { display: none }
+			p > span:last-of-type  { display: initial }
+		}
 	}
 </style>
 <section webc:root="override">
@@ -14,7 +22,11 @@
 			<iframe :src="`https://drive.google.com/file/d/${$data.video}/preview`"></iframe>
 		</div>
 		<figcaption>
-			<p><a :href="`https://drive.google.com/file/d/${$data.video}`"><cite>↗</cite></a></p>
+			<p>
+				<span>You’ll need to be signed in to your New School account to see these in-page!</span>
+				<span>Safari prevents Google Drive <nobr>embeds—</nobr>so you’ll need to go to <a :href="`https://drive.google.com/file/d/${$data.video}`">the originals</a>!</span>
+				<a :href="`https://drive.google.com/file/d/${$data.video}`"><cite>↗</cite></a>
+			</p>
 		</figcaption>
 	</figure>
 </section>
