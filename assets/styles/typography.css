@@ -91,7 +91,7 @@ hgroup:has(h1, h2, h3) { --family:  'New York' }
 		--wrap:    balance;
 		--leading: 1;
 		--kerning: round(
-			calc(-0.0625em * pow(var(--size) / 24, 1.5)),
+			calc(-0.1em * pow(var(--size) / 36, 1.5)),
 			var(--1px)
 		);
 	}
