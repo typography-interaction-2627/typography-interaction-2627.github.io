@@ -5,6 +5,7 @@
 	<link href="../../assets/styles/links.css"      rel="stylesheet">
 	<link href="../../assets/styles/code.css"       rel="stylesheet">
 </template>
+<link webc:bucket="print" href="../../assets/styles/print.css" rel="stylesheet">
 <style webc:keep
 	@raw="`
 		@layer reset, base, components, inline, print;
