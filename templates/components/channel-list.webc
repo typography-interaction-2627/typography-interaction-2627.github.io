@@ -19,11 +19,11 @@
 	}
 </style>
 <ul webc:root="override">
-	<li webc:for="(key, href) in channels">
-		<a :href="href">
-			<p webc:if="plain" @text="initialCap(key)"></p>
+	<li webc:for="(channel, url) in channels">
+		<a :href="url">
+			<p webc:if="plain" @text="initialCap(channel)"></p>
 			<cite webc:else>
-				<p @text="initialCap(key)"></p>
+				<p @text="initialCap(channel)"></p>
 			</cite>
 		</a>
 	</li>
