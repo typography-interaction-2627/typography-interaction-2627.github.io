@@ -1,0 +1,30 @@
+<script webc:setup>
+	export const instructors = [
+		{
+			name:  'Michael Fehrenbach',
+			url:   'https://michaelfehrenbach.com',
+			email: 'mfehrenbach@newschool.edu',
+		},
+		{
+			name:  'Rijk van Zanten',
+			url:   'https://rijk.nyc',
+			email: 'rijk@newschool.edu',
+		},
+		{
+			name:  'Eric Li',
+			url:   'https://eric.young.li/',
+			email: 'lie@newschool.edu',
+		},
+	]
+</script>
+<ul webc:root="override">
+	<li webc:for="instructor, index of instructors" :class="index === 1 ? 'fall' : index === 2 ? 'spring' : ''">
+		<p>
+			<a :href="instructor.url">
+				<cite @raw="instructor.name"></cite>
+			</a>
+			<br>
+			<a :href="`mailto:${instructor.email}`" @text="instructor.email"></a>
+		</p>
+	</li>
+</ul>

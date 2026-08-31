@@ -1,0 +1,10 @@
+ <header class="print">
+	<hgroup>
+		<h1>Typography & Interaction</h1>
+	</hgroup>
+	<hgroup>
+		<h2 class="fall">Fall 2026</h2>
+		<h2 class="spring">Spring 2027</h2>
+	</hgroup>
+	<instructor-list></instructor-list>
+</header>

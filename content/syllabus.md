@@ -2,6 +2,8 @@
 const order = 2
 ```
 
+<print-info></print-info>
+
 # The Syllabus
 
 ## Course Description
