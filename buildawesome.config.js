@@ -24,7 +24,10 @@ import puppeteer from 'puppeteer'
 
 export default (config) => {
 	// Setup.
-	config.addPlugin(webC, { components: 'templates/*/**/*.webc' })
+	config.addPlugin(webC, {
+		components: 'templates/*/**/*.webc',
+		before: page => page.setTransform('md', content => markdown.render(content)),
+	})
 	config.setFrontMatterParsingOptions({
 		delimiters: ['```javascript', '```'],
 		language: 'js',
