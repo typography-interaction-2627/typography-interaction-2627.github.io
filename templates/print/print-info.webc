@@ -18,7 +18,7 @@
 			</div>
 		</hgroup>
 	</header>
-	<section>
+	<section class="print">
 		<template webc:nokeep @raw="getLogistics($data)"></template>
 		<instructor-list></instructor-list>
 	</section>
