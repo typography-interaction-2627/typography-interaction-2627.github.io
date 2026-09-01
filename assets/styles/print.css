@@ -20,6 +20,7 @@ body > :where(nav, header, footer) {
 	display: none;
 }
 
+/* Resets. */
 :root {
 	--scaling: 1.5;
 	--gutter:  initial;
@@ -27,25 +28,23 @@ body > :where(nav, header, footer) {
 	background:         initial;
 	padding:            1in;
 	print-color-adjust: exact;
-
-	abbr { background: initial}
-
-	body {
-		background:  initial;
-		inline-size: initial;
-
-		> main {
-			margin: initial;
-
-			/* Reset the “windows.” */
-			&:not(:has(> section)), > section {
-				background:  initial;
-				border:      initial;
-				box-shadow:  initial;
-				inline-size: initial;
-				margin:      initial;
-				padding:     initial;
-			}
-		}
-	}
 }
+
+body {
+	background:  initial;
+	inline-size: initial;
+	padding:     initial;
+}
+
+/* The “windows.” */
+main:not(:has(> section)),
+main > section {
+	background:  initial;
+	border:      initial;
+	box-shadow:  initial;
+	inline-size: initial;
+	margin:      initial;
+	padding:     initial;
+}
+
+abbr { background: initial }
