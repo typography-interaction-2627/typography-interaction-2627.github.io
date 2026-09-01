@@ -21,6 +21,8 @@
 		display: none;
 	}
 
+	abbr { background: initial}
+
 	body {
 		background: initial;
 		padding:    1in;
