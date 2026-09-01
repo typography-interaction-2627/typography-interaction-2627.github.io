@@ -375,8 +375,7 @@ In class, we will demonstrate using [Figma](http://figma.com) for visual design 
 
 ### Our Community
 
-Our class will create and maintain an agreement, intended to help us foster a safe, empathetic, and productive space for our course. It is built on trust and accumulated experience across cohorts. It can be revised and modified, with all of our input, over the year, and lives on [our course site](https://typography-interaction-2627.github.io/syllabus/#our-community).
-<!-- .print -->
+<print-community></print-community>
 
 **This agreement is intended to help us create and maintain a safe, empathetic, and productive space for our course. It is built on trust and accumulated experience across cohorts. It can be revised and modified, with all of our input, over the year:**
 <!-- .screen -->
@@ -474,8 +473,7 @@ Every course has different learning objectives. In ours, we think students first
 
  We think that avoiding these difficulties is ultimately a disservice to your education. LLM&NoBreak;s are the same as any other tool in this regard, and are always to be treated like any at our disposal—as *aides* to our understanding, not *shortcuts* around learning.
 
-**Students should also review our evolving [program “AI” guidelines](https://mpscd.notion.site/MPS-AI-Guidelines-3c63d2d61b2e80938f8bf14dd5b6be57). Our class-specific LLM/“artificial intelligence” guidelines will live on [our course site](https://typography-interaction-2627.github.io/syllabus/#our-ai-guidelines).**
-<!-- .print -->
+<print-llm></print-llm>
 
 #### Our “AI” Guidelines <!-- .screen -->
 
