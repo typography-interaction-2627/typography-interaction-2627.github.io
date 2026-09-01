@@ -5,16 +5,21 @@
 	export const getTitle = (data) => landing(data).data.title
 	export const getLogistics = (data) => parseHtml(landing(data).content).querySelector('#logistics')?.outerHTML ?? ''
 </script>
-<header class="print">
-	<hgroup>
-		<h1 @text="getTitle($data)"></h1>
-		<div>
-			<p class="fall">Fall 2026</p>
-			<p class="spring">Spring 2027</p>
-		</div>
-	</hgroup>
-</header>
-<section>
-	<template webc:nokeep @raw="getLogistics($data)"></template>
-	<instructor-list></instructor-list>
-</section>
+<style>
+	body:has(main > header) > header { display: none } /* Swap! */
+</style>
+<template webc:nokeep webc:root="override">
+	<header class="print">
+		<hgroup>
+			<h1 @text="getTitle($data)"></h1>
+			<div>
+				<p class="fall">Fall 2026</p>
+				<p class="spring">Spring 2027</p>
+			</div>
+		</hgroup>
+	</header>
+	<section>
+		<template webc:nokeep @raw="getLogistics($data)"></template>
+		<instructor-list></instructor-list>
+	</section>
+</template>

@@ -47,4 +47,10 @@ main > section {
 	padding:     initial;
 }
 
+header:has(h1) {
+	block-size: initial;
+	overflow:   initial;
+	padding:    initial;
+}
+
 abbr { background: initial }
