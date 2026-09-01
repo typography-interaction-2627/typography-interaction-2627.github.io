@@ -2,20 +2,6 @@
 	hgroup:has(h2[id="session-recording"]) ~ figure {
 		margin-block-start: calc(var(--gutter) - round(1rlh, var(--1px)));
 
-		div {
-			background-color: var(--color);
-			border:           var(--border);
-			filter:           saturate(var(--in-view));
-
-			@supports (animation-timeline: view()) {
-				animation-fill-mode: both;
-				animation-name: in-view;
-				animation-range: cover;
-				animation-timeline: view();
-				animation-timing-function: ease-in-out;
-			}
-		}
-
 		p > span:last-of-type { display: none }
 
 		/* Hide for Safari, toggle note. */

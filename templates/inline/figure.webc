@@ -29,6 +29,28 @@
 
 			&:has(img, object) { inline-size: fit-content }
 
+			&:has(iframe) {
+				background-color: var(--color);
+				filter:           saturate(var(--in-view));
+
+				/* A “border” around these. */
+				&::after {
+					box-shadow:     var(--shadow--border);
+					content:        '';
+					inset:          0;
+					position:       absolute;
+					pointer-events: none;
+				}
+
+				@supports (animation-timeline: view()) {
+					animation-fill-mode:       both;
+					animation-name:            in-view;
+					animation-range:           cover;
+					animation-timeline:        view();
+					animation-timing-function: ease-in-out;
+				}
+			}
+
 			/* TODO How to have this snap to pixel height? Takes “windows” off-pattern! */
 			img,
 			object,
@@ -52,10 +74,10 @@
 				position: absolute;
 
 				@supports (animation-timeline: view()) {
-					animation-fill-mode: both;
-					animation-name: in-view;
-					animation-range: cover;
-					animation-timeline: view();
+					animation-fill-mode:       both;
+					animation-name:            in-view;
+					animation-range:           cover;
+					animation-timeline:        view();
 					animation-timing-function: ease-in-out;
 				}
 
