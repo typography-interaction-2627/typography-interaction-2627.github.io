@@ -99,6 +99,38 @@ export default (config) => {
 		typographer: true,
 	}
 
+	const markdownEnv = (markdown) => {
+		const render = markdown.render.bind(markdown)
+
+		markdown.render = (src, env = {}) => {
+			const data = { ...env }
+
+			delete data.abbreviations // Fix name collision with global `env.abbreviations` data and `markdown-it-abbr`.
+
+			return render(src, data)
+		}
+	}
+
+	// Remove H1 (pulled for `title`).
+	const markdownRemoveH1 = (markdown) => markdown.core.ruler.before('normalize', 'removeH1', (state) =>
+		state.src = state.src.replace(/^# .*\n?/m, ''),
+	)
+
+	// Append abbreviations for `markdownItAbbr`.
+	const mardownAddAbbreviations = (markdown) => {
+		const definitions = abbreviations.map((item) => `\n*[${item.abbr}]: ${item.title}`).join('\n')
+
+		markdown.core.ruler.after('normalize', 'abbreviations', (state) =>
+			state.src += definitions,
+		)
+	}
+
+	// Convert HTML comments to curly brackets for `markdownItAttrs` to pick up.
+	const markdownCommentsToCurlies = (markdown) => markdown.core.ruler.after('abbreviations', 'commentsToCurlies', (state) =>
+		// Only match `.class`…, `#id`…, `data`…, `style`… so example/other comments aren’t transformed.
+		state.src = state.src.replace(/<!--\s*(\.(?:[\s\S]*?)|#(?:[\s\S]*?)|data(?:[\s\S]*?)|style(?:[\s\S]*?)|inert)\s*-->$/gm, '{ $1 }'),
+	)
+
 	// Do some automatic ragging.
 	const markdownRagging = (markdown) => {
 		const shortWords = 'a|an|as|at|I|in|is|it|of|on|to'
@@ -188,19 +220,11 @@ export default (config) => {
 			}
 		})
 
-	// Append abbreviations for `markdownItAbbr`.
-	const markdownAbbreviations = abbreviations.map((item) => `\n*[${item.abbr}]: ${item.title}`).join('\n')
-
-	// Convert HTML comments to curly brackets for `markdownItAttrs` to pick up.
-	const markdownCommentsToCurlies = (content) =>
-		// Only match `.class`…, `#id`…, `data`…, `style`… so example/other comments aren’t transformed.
-		String(content).replace(/<!--\s*(\.(?:[\s\S]*?)|#(?:[\s\S]*?)|data(?:[\s\S]*?)|style(?:[\s\S]*?)|inert)\s*-->$/gm, '{ $1 }')
-
 	const markdown = markdownIt(markdownOptions)
-		.use((markdown) => markdown.render = (src, env = {}) => {
-			delete env.abbreviations // Fix name collision with global `env.abbreviations` data and `markdown-it-abbr`.
-			return markdown.constructor.prototype.render.call(markdown, markdownCommentsToCurlies(src + markdownAbbreviations).replace(/^# .*\n?/m, ''), env) // Remove H1 (pulled for `title`).
-		})
+		.use(markdownEnv)
+		.use(markdownRemoveH1)
+		.use(mardownAddAbbreviations)
+		.use(markdownCommentsToCurlies)
 		.use(markdownItAbbr) // TODO can we have this run after ragging?
 		.use(markdownItDeflist) // TODO This will not work for GFM right?
 		.use(markdownItHeaderSections)
@@ -244,7 +268,7 @@ export default (config) => {
 			.use(markdownItAbbr)
 			.use(markdownRagging)
 			.use(markdownLocalLinks)
-			.render(String(content + markdownAbbreviations))
+			.render(String(content))
 			.replace('<p>', '')
 			.replace('</p>', '')
 			.replace('&amp;', '&')
