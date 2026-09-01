@@ -8,11 +8,13 @@
 <header class="print">
 	<hgroup>
 		<h1 @text="getTitle($data)"></h1>
+		<div>
+			<p class="fall">Fall 2026</p>
+			<p class="spring">Spring 2027</p>
+		</div>
 	</hgroup>
-	<hgroup>
-		<h2 class="fall">Fall 2026</h2>
-		<h2 class="spring">Spring 2027</h2>
-	</hgroup>
+</header>
+<section>
 	<template webc:nokeep @raw="getLogistics($data)"></template>
 	<instructor-list></instructor-list>
-</header>
+</section>

@@ -16,7 +16,7 @@
 [inert],
 hgroup a,
 hgroup:has(a[href^="#fall"]),
-body > :where(nav, header, footer) {
+body > :where(nav, footer) {
 	display: none;
 }
 

@@ -1,5 +1,5 @@
 <style>
-	:where(body) > header {
+	header:has(h1) {
 		block-size:     round(100svh, var(--1px));
 		display:        grid;
 		overflow:       clip;
@@ -38,7 +38,7 @@
 	:root:has(body > header:only-child) {
 		--scaling: 3;
 
-		body > header:only-child { padding-inline: var(--bleed) }
+		header { padding-inline: var(--bleed) }
 	}
 </style>
 <header webc:root="override">
