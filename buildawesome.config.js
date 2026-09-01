@@ -131,6 +131,12 @@ export default (config) => {
 		state.src = state.src.replace(/<!--\s*(\.(?:[\s\S]*?)|#(?:[\s\S]*?)|data(?:[\s\S]*?)|style(?:[\s\S]*?)|inert)\s*-->$/gm, '{ $1 }'),
 	)
 
+	// Nice `pre` blocks.
+	const markdownPreCode = (markdown) => markdown.renderer.rules.fence = (tokens, index, options, env, self) =>
+		`<pre ${self.renderAttrs(tokens[index])}>
+			<code class="language-${tokens[index].info.trim()}">${markdown.utils.escapeHtml(tokens[index].content)}</code>
+		</pre>`
+
 	// Do some automatic ragging.
 	const markdownRagging = (markdown) => {
 		const shortWords = 'a|an|as|at|I|in|is|it|of|on|to'
@@ -252,11 +258,7 @@ export default (config) => {
 			slugify: config.getFilter('slugify'),
 		})
 		.use(markdownItAttrs)
-		.use((markdown) => markdown.renderer.rules.fence = (tokens, index, options, env, self) =>
-			`<pre ${self.renderAttrs(tokens[index])}>
-				<code class="language-${tokens[index].info.trim()}">${markdown.utils.escapeHtml(tokens[index].content)}</code>
-			</pre>`,
-		)
+		.use(markdownPreCode)
 		.use(markdownRagging)
 		.use(markdownLocalLinks)
 		.use(markdownAsides)
@@ -265,6 +267,7 @@ export default (config) => {
 	// Filter for component use.
 	config.addFilter('markdown', (content) =>
 		markdownIt(markdownOptions)
+			.use(mardownAddAbbreviations)
 			.use(markdownItAbbr)
 			.use(markdownRagging)
 			.use(markdownLocalLinks)
