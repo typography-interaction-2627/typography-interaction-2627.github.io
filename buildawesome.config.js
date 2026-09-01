@@ -131,6 +131,31 @@ export default (config) => {
 		state.src = state.src.replace(/<!--\s*(\.(?:[\s\S]*?)|#(?:[\s\S]*?)|data(?:[\s\S]*?)|style(?:[\s\S]*?)|inert)\s*-->$/gm, '{ $1 }'),
 	)
 
+	// Heading wrapping/links.
+	const markdownAnchors = (markdown) => markdown.use(markdownItAnchor, {
+		// TODO Apostrophes!
+		// TODO Inline overrides don’t work (search `#external`)! It is the `section` wrapping.
+		// TODO Could this be moved to a `.webc` Same for `markdownAsides`?
+		permalink: (slug, opts, state, idx) => {
+			const headingId = state.tokens[idx].attrs.find(([id]) => id === 'id')[1]
+			const headingOpen = state.md.renderer.renderToken(state.tokens, idx, state.options)
+			const headingHtml = state.md.renderer.render([state.tokens[idx + 1]], state.options, state.env)
+			const headingClose = state.md.renderer.renderToken(state.tokens, idx + 2, state.options)
+
+			const token = new state.Token('html_inline', '', 0)
+
+			token.content =
+				`
+				<hgroup>
+					${headingOpen}${headingHtml}<a href="#${headingId}"></a>${headingClose}
+				</hgroup>
+				`
+
+			state.tokens.splice(idx, 3, token)
+		},
+		slugify: config.getFilter('slugify'),
+	})
+
 	// Nice `pre` blocks.
 	const markdownPreCode = (markdown) => markdown.renderer.rules.fence = (tokens, index, options, env, self) =>
 		`<pre ${self.renderAttrs(tokens[index])}>
@@ -234,29 +259,7 @@ export default (config) => {
 		.use(markdownItAbbr) // TODO can we have this run after ragging?
 		.use(markdownItDeflist) // TODO This will not work for GFM right?
 		.use(markdownItHeaderSections)
-		.use(markdownItAnchor, {
-			// TODO Apostrophes!
-			// TODO Inline overrides don’t work (search `#external`)! It is the `section` wrapping.
-			// TODO Could this be moved to a `.webc` Same for `markdownAsides`?
-			permalink: (slug, opts, state, idx) => {
-				const headingId = state.tokens[idx].attrs.find(([id]) => id === 'id')[1]
-				const headingOpen = state.md.renderer.renderToken(state.tokens, idx, state.options)
-				const headingHtml = state.md.renderer.render([state.tokens[idx + 1]], state.options, state.env)
-				const headingClose = state.md.renderer.renderToken(state.tokens, idx + 2, state.options)
-
-				const token = new state.Token('html_inline', '', 0)
-
-				token.content =
-					`
-					<hgroup>
-						${headingOpen}${headingHtml}<a href="#${headingId}"></a>${headingClose}
-					</hgroup>
-					`
-
-				state.tokens.splice(idx, 3, token)
-			},
-			slugify: config.getFilter('slugify'),
-		})
+		.use(markdownAnchors)
 		.use(markdownItAttrs)
 		.use(markdownPreCode)
 		.use(markdownRagging)
