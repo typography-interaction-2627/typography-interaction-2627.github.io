@@ -28,10 +28,9 @@
 			margin-inline-start: var(--left);
 
 			cite {
-				--padding: calc(round(1rex, var(--1px)) - var(--1px));
+				--padding: round(1rex, var(--1px));
 
-				border:               var(--border);
-				box-shadow:           var(--shadow--single);
+				box-shadow:           var(--shadow--border), var(--shadow--single);
 				display:              block;
 				inline-size:          fit-content;
 				margin-inline:        initial;
@@ -49,6 +48,8 @@
 				border-image-repeat: round;
 
 				cite {
+					--padding: calc(round(1rex, var(--1px)) - var(--1px)); /* Extra for actual border. */
+
 					box-shadow: initial;
 					border:     initial;
 				}

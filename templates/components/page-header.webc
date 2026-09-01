@@ -26,9 +26,8 @@
 				--gap: round(0.5ex, var(--1px));
 
 				background-color: var(--background);
-				border:           var(--border);
-				box-shadow:       var(--shadow--double);
-				padding:          var(--gap);
+				box-shadow:       var(--shadow--border), var(--shadow--double);
+				padding:          calc(var(--gap) + var(--1px));
 			}
 		}
 

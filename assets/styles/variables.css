@@ -93,9 +93,9 @@
 
 	--enlargement: var(--4px);
 
-	--border:         solid var(--1px) var(--color);
 	--check:          url('/assets/patterns/check.svg') 0 0/var(--2px) border-box;
 	--check--text:    url('/assets/patterns/check.svg') 0 0/var(--2px) text;
+	--shadow--border: inset 0 0 0 var(--1px) var(--color); /* Avoid `border` CSS-pixel rounding. */
 	--shadow--single: var(--1px) var(--1px) 0 var(--color);
 	--shadow--double: var(--2px) var(--2px) 0 var(--color);
 

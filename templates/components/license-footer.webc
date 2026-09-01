@@ -17,10 +17,9 @@
 
 		p {
 			background-color: var(--background);
-			border:           var(--border);
-			box-shadow:       var(--shadow--double);
+			box-shadow:       var(--shadow--border), var(--shadow--double);
 			inline-size:      fit-content;
-			padding:          round(1cap, var(--1px));
+			padding:          round(calc(1cap + var(--1px)), var(--1px));
 			text-align:       center;
 		}
 	}

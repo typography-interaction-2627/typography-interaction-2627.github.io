@@ -20,17 +20,16 @@
 		&:not(:has(> section)), > section {
 			align-items:         baseline;
 			background-color:    var(--background);
-			border:              var(--border);
-			box-shadow:          var(--shadow--single);
+			box-shadow:          var(--shadow--border), var(--shadow--single);
 			column-gap:          var(--alley);
 			display:             grid;
 			grid-auto-rows:      min-content;
 			inline-size:         var(--page);
 			margin-inline-end:   var(--bleed);
 			margin-inline-start: var(--bleed--round, var(--bleed));
-			padding-block-end:   calc(2 * var(--gutter));
-			padding-block-start: var(--gutter);
-			padding-inline:      var(--gutter);
+			padding-block-end:   calc(2 * var(--gutter) + var(--1px));
+			padding-block-start: calc(var(--gutter) + var(--1px));
+			padding-inline:      calc(var(--gutter) + var(--1px));
 			row-gap:             var(--line);
 
 			grid-template-columns:
@@ -166,10 +165,19 @@
 			&:has(h2, h3, h4) { grid-column: all }
 
 			&:has(h2) {
-				border-block-end:  var(--border);
 				margin-inline:     calc(-1 * var(--gutter));
-				padding-block-end: var(--gutter);
+				padding-block-end: calc(var(--gutter) + var(--1px));
 				padding-inline:    var(--gutter);
+				position:          relative;
+
+				&::after {
+					background-color: var(--color);
+					block-size:       var(--1px);
+					content:          '';
+					inset-block-end:  0;
+					inset-inline:     0;
+					position:         absolute;
+				}
 
 				+ * { margin-block-start: round(1rlh, var(--1px)) }
 			}
@@ -206,11 +214,11 @@
 		}
 
 		hr {
-			border-block-start: var(--border);
-			grid-column:        all;
-			margin-inline:      calc(-1 * var(--gutter));
-			margin-block:       var(--gutter);
-			padding-inline:     var(--gutter);
+			background-color: var(--color);
+			block-size:       var(--1px);
+			grid-column:      all;
+			margin-block:     var(--gutter);
+			margin-inline:    calc(-1 * var(--gutter));
 		}
 
 		/* Née ”intro.” */
