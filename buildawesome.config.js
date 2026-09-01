@@ -99,18 +99,6 @@ export default (config) => {
 		typographer: true,
 	}
 
-	const markdownEnv = (markdown) => {
-		const render = markdown.render.bind(markdown)
-
-		markdown.render = (src, env = {}) => {
-			const data = { ...env }
-
-			delete data.abbreviations // Fix name collision with global `env.abbreviations` data and `markdown-it-abbr`.
-
-			return render(src, data)
-		}
-	}
-
 	// Remove H1 (pulled for `title`).
 	const markdownRemoveH1 = (markdown) => markdown.core.ruler.before('normalize', 'removeH1', (state) =>
 		state.src = state.src.replace(/^# .*\n?/m, ''),
@@ -252,7 +240,8 @@ export default (config) => {
 		})
 
 	const markdown = markdownIt(markdownOptions)
-		.use(markdownEnv)
+		// `abbreviations.js` collides with `markdown-it-abbr` internal map.
+		.use(markdown => markdown.core.ruler.before('normalize', 'abbreviationEnv', ({ env }) => delete env.abbreviations))
 		.use(markdownRemoveH1)
 		.use(mardownAddAbbreviations)
 		.use(markdownCommentsToCurlies)
