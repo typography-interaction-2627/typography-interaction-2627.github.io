@@ -188,10 +188,18 @@ export default (config) => {
 			}
 		})
 
+	// Append abbreviations for `markdownItAbbr`.
+	const markdownAbbreviations = abbreviations.map((item) => `\n*[${item.abbr}]: ${item.title}`).join('\n')
+
+	// Convert HTML comments to curly brackets for `markdownItAttrs` to pick up.
+	const markdownCommentsToCurlies = (content) =>
+		// Only match `.class`…, `#id`…, `data`…, `style`… so example/other comments aren’t transformed.
+		String(content).replace(/<!--\s*(\.(?:[\s\S]*?)|#(?:[\s\S]*?)|data(?:[\s\S]*?)|style(?:[\s\S]*?)|inert)\s*-->$/gm, '{ $1 }')
+
 	const markdown = markdownIt(markdownOptions)
 		.use((markdown) => markdown.render = (src, env = {}) => {
 			delete env.abbreviations // Fix name collision with global `env.abbreviations` data and `markdown-it-abbr`.
-			return markdown.constructor.prototype.render.call(markdown, String(src).replace(/^# .*\n?/m, ''), env) // Remove H1 (pulled for `title`).
+			return markdown.constructor.prototype.render.call(markdown, markdownCommentsToCurlies(src + markdownAbbreviations).replace(/^# .*\n?/m, ''), env) // Remove H1 (pulled for `title`).
 		})
 		.use(markdownItAbbr) // TODO can we have this run after ragging?
 		.use(markdownItDeflist) // TODO This will not work for GFM right?
@@ -229,18 +237,6 @@ export default (config) => {
 		.use(markdownLocalLinks)
 		.use(markdownAsides)
 		.use(componentPlugin) //Allows custom inline HTML component names (otherwise made into strings/wrapped in paragraphs).
-
-	// Append abbreviations for `markdownItAbbr`.
-	const markdownAbbreviations = abbreviations.map((item) => `\n*[${item.abbr}]: ${item.title}`).join('\n')
-
-	// Append them for the plugin.
-	config.addPreprocessor('abbreviations', '.md', (data, content) => content + markdownAbbreviations)
-
-	// Convert HTML comments to curly brackets for `markdownItAttrs` to pick up.
-	config.addPreprocessor('commentsToCurlies', '.md', (data, content) =>
-		// Only match `.class`…, `#id`…, `data`…, `style`… so example/other comments aren’t transformed.
-		 content.replace(/<!--\s*(\.(?:[\s\S]*?)|#(?:[\s\S]*?)|data(?:[\s\S]*?)|style(?:[\s\S]*?)|inert)\s*-->$/gm, '{ $1 }'),
-	)
 
 	// Filter for component use.
 	config.addFilter('markdown', (content) =>
