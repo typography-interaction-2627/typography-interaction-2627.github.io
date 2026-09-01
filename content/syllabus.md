@@ -432,7 +432,7 @@ We have zero tolerance for plagiarism and passing off the work of others (or [LL
 
 Everything that is turned in should be a product of each students’ own ideas, synthesis, and execution. They will always be expected to understand it, explain it, and defend it as they would themselves.
 
-**Students also should review the school’s [Academic Integrity Policy](https://docs.google.com/document/d/175hXxUbLI8Jy7NEtbeoyX3Va_MQzXzgxzFUjj7hSkSU).**
+**Students also should review the school’s [Academic Integrity Policy](https://catalog.newschool.edu/academic-progress-standing/academic-integrity/academic-integrity-policy).**
 
 > [!WARNING]
 >
@@ -509,7 +509,7 @@ Here’s how we think we can use these tools to support our learning: <br><br>
 
 We will take recordings of all of our class sessions for students to reference later. As these will include the students and their work, the recordings will be stored on our [Google Drive](https://drive.google.com/drive/folders/1gxl_TpXu0Sd7oJbW1pk7Dd89VNpJwsHK) and made available only to New School email users.
 
-## Attendance, Grading, and Other Policies
+### Attendance, Grading, and Other Policies
 
 All CD classes adhere to the same [common program and university policies](https://docs.google.com/document/d/1u358io8doX_SVVMGqIM_oH5V0OIccneYu4Ww-uE55QM).
 
