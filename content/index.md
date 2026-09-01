@@ -5,11 +5,11 @@ const order = 1
 # Typography & Interaction
 
 **The New School, Parsons, MPS CD
-PMCD 5001, <nobr>CRN 4253/9023</nobr>
-PMCD 5002, <nobr>CRN 3992/9589</nobr>
+<span class="fall">PMCD 5001, <nobr>CRN 4253/9023</nobr></span>
+<span class="spring">PMCD 5002, <nobr>CRN 3992/9589</nobr></span>
 2 W 13th St., Room 1201
 Thursdays, 4–6:40 pm**
-<!-- .verso -->
+<!-- .verso #logistics -->
 
 <div class="recto rows--3">
 
