@@ -1,12 +1,13 @@
  <script webc:setup>
-	// Pull the `#logistics` block from the landing.
-	export const getLogistics = ({ collections }) =>
-		parseHtml(collections.root.find(({ inputPath }) => inputPath.endsWith('content/index.md')).content)
-			.querySelector('#logistics')?.outerHTML ?? ''
+	const landing = ({ collections }) => collections.root.find(({ inputPath }) => inputPath.endsWith('content/index.md'))
+
+	// Pull the heading and `#logistics` block from the landing.
+	export const getTitle = (data) => landing(data).data.title
+	export const getLogistics = (data) => parseHtml(landing(data).content).querySelector('#logistics')?.outerHTML ?? ''
 </script>
 <header class="print">
 	<hgroup>
-		<h1>Typography & Interaction</h1>
+		<h1 @text="getTitle($data)"></h1>
 	</hgroup>
 	<hgroup>
 		<h2 class="fall">Fall 2026</h2>
