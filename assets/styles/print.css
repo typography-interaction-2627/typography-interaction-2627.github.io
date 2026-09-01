@@ -1,32 +1,38 @@
 @page {
-	margin:  0;
-	size:    letter;
+	margin-block:  1in;
+	margin-inline: 0in; /* On `:root` for nicer Rendering-tab preview. */
+	size:          letter;
+}
+
+@page :first { margin-block-start: initial }
+@page :last  { margin-block-start: initial }
+
+/* Toggle stuff. */
+.print  { display: block }
+
+.screen,
+.spring,
+.spring + br,
+[inert],
+hgroup a,
+hgroup:has(a[href^="#fall"]),
+body > :where(nav, header, footer) {
+	display: none;
 }
 
 :root {
 	--scaling: 1.5;
 	--gutter:  initial;
 
-	background: initial;
-
-	/* Toggle stuff. */
-	.print  { display: block }
-
-	.screen,
-	.spring,
-	.spring + br,
-	[inert],
-	hgroup a,
-	hgroup:has(a[href^="#fall"]),
-	body > :where(nav, header, footer) {
-		display: none;
-	}
+	background:         initial;
+	padding:            1in;
+	print-color-adjust: exact;
 
 	abbr { background: initial}
 
 	body {
-		background: initial;
-		padding:    1in;
+		background:  initial;
+		inline-size: initial;
 
 		> main {
 			margin: initial;
