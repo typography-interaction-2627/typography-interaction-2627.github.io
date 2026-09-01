@@ -165,19 +165,11 @@
 			&:has(h2, h3, h4) { grid-column: all }
 
 			&:has(h2) {
+				background:        var(--background--border);
 				margin-inline:     calc(-1 * var(--gutter));
 				padding-block-end: calc(var(--gutter) + var(--1px));
 				padding-inline:    var(--gutter);
 				position:          relative;
-
-				&::after {
-					background-color: var(--color);
-					block-size:       var(--1px);
-					content:          '';
-					inset-block-end:  0;
-					inset-inline:     0;
-					position:         absolute;
-				}
 
 				+ * { margin-block-start: round(1rlh, var(--1px)) }
 			}
@@ -214,11 +206,11 @@
 		}
 
 		hr {
-			background-color: var(--color);
-			block-size:       var(--1px);
-			grid-column:      all;
-			margin-block:     var(--gutter);
-			margin-inline:    calc(-1 * var(--gutter));
+			background:        var(--background--border);
+			grid-column:       all;
+			margin-block:      var(--gutter);
+			margin-inline:     calc(-1 * var(--gutter));
+			padding-block-end: var(--1px);
 		}
 
 		/* Née ”intro.” */

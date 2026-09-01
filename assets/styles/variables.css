@@ -93,11 +93,14 @@
 
 	--enlargement: var(--4px);
 
-	--check:          url('/assets/patterns/check.svg') 0 0/var(--2px) border-box;
-	--check--text:    url('/assets/patterns/check.svg') 0 0/var(--2px) text;
-	--shadow--border: inset 0 0 0 var(--1px) var(--color); /* Avoid `border` CSS-pixel rounding. */
-	--shadow--single: var(--1px) var(--1px) 0 var(--color);
-	--shadow--double: var(--2px) var(--2px) 0 var(--color);
+	--check:           url('/assets/patterns/check.svg') 0 0/var(--2px) border-box;
+	--check--text:     url('/assets/patterns/check.svg') 0 0/var(--2px) text;
+
+	--shadow--border:  inset 0 0 0 var(--1px) var(--color); /* Avoid `border` CSS-pixel rounding. */
+	--shadow--single:  var(--1px) var(--1px) 0 var(--color);
+	--shadow--double:  var(--2px) var(--2px) 0 var(--color);
+
+	--background--border: linear-gradient(var(--color)) bottom / 100% var(--1px) no-repeat;
 
 	@media (width >= 35em) { /* Landscape phones. */
 		--bleed:        var(--line);
