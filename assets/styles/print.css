@@ -4,25 +4,31 @@
 }
 
 :root {
-	--gutter: initial;
+	--scaling: 1.5;
+	--gutter:  initial;
 
 	background: initial;
 
-	/* Swap. */
-	.screen, [inert] { display: none }
+	/* Toggle stuff. */
 	.print  { display: block }
 
+	.screen,
+	.spring,
+	[inert],
+	hgroup a,
+	hgroup:has(a[href^="#fall"]),
+	body > :where(nav, header, footer) {
+		display: none;
+	}
 
 	body {
 		background: initial;
 		padding:    1in;
 
-		> :where(nav, header, footer) { display: none }
-
 		> main {
 			margin: initial;
 
-			/* Our “windows.” */
+			/* Reset the “windows.” */
 			&:not(:has(> section)), > section {
 				background:  initial;
 				border:      initial;
