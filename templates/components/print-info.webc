@@ -6,7 +6,7 @@
 	export const getLogistics = (data) => parseHtml(landing(data).content).querySelector('#logistics')?.outerHTML ?? ''
 </script>
 <style>
-	body:has(main > header) > header { display: none } /* Swap! */
+	@media print { body:has(main > header) > header { display: none } } /* Swap! */
 </style>
 <template webc:nokeep webc:root="override">
 	<header class="print">
