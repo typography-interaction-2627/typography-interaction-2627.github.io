@@ -48,7 +48,6 @@ body {
 main:not(:has(> section)),
 main > section {
 	background:  initial;
-	border:      initial;
 	box-shadow:  initial;
 	inline-size: initial;
 	margin:      initial;
