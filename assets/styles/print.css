@@ -14,6 +14,7 @@
 
 	.screen,
 	.spring,
+	.spring + br,
 	[inert],
 	hgroup a,
 	hgroup:has(a[href^="#fall"]),
