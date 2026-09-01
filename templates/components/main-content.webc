@@ -4,8 +4,10 @@
 
 		@media (width > 42em) { --anchor: calc(3 * var(--gutter)) }
 
+		display:            grid;
 		isolation:          isolate; /* Internal `z-index`. */
 		margin-block-start: calc(-1 * var(--gutter)); /* Peek above fold. */
+		row-gap:            var(--break); /* Between “windows.“ */
 
 		/* Space above anchor destination. */
 		[id]   { scroll-margin-block: var(--anchor) }
@@ -35,9 +37,6 @@
 				[ all-start aside-start body-start middle-start five-start four-start left-start one-start recto-start right-start six-start three-start two-start verso-start ]
 				minmax(0, 1fr)
 				[ all-end aside-end body-end middle-end five-end four-end left-end one-end recto-end right-end six-end three-end two-end verso-end ];
-
-			/* Between “windows.“ */
-			&:where(:not(:first-of-type)) { margin-block-start: var(--break) }
 
 			/* Default to body width. */
 			:where(&, details, section) > * { grid-column: body }

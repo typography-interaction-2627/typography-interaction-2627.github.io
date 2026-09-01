@@ -36,6 +36,12 @@ body {
 	background:  initial;
 	inline-size: initial;
 	padding:     initial;
+
+	/* Landing. */
+	> header {
+		--color:      initial;
+		--background: initial;
+	}
 }
 
 /* The “windows.” */
@@ -59,10 +65,10 @@ header:has(h1) {
 abbr { background: initial }
 
 /* Adjustments. */
-section {
+main, section {
 	display: block; /* Needed for break (fragmentation) control! */
 
-	> * { margin-block-start: var(--line) }
+	> *:where(:not(:first-child)) { margin-block-start: var(--line) }
 }
 
 section:has(> hgroup > h2) {
