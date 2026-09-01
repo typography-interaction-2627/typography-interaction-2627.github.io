@@ -1,4 +1,10 @@
- <header class="print">
+ <script webc:setup>
+	// Pull the `#logistics` block from the landing.
+	export const getLogistics = ({ collections }) =>
+		parseHtml(collections.root.find(({ inputPath }) => inputPath.endsWith('content/index.md')).content)
+			.querySelector('#logistics')?.outerHTML ?? ''
+</script>
+<header class="print">
 	<hgroup>
 		<h1>Typography & Interaction</h1>
 	</hgroup>
@@ -6,5 +12,6 @@
 		<h2 class="fall">Fall 2026</h2>
 		<h2 class="spring">Spring 2027</h2>
 	</hgroup>
+	<template webc:nokeep @raw="getLogistics($data)"></template>
 	<instructor-list></instructor-list>
 </header>
