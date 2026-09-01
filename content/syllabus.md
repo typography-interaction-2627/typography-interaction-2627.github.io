@@ -162,7 +162,7 @@ In our final Fall unit, we will focus on creating advanced, multi-page layouts w
 
 #### Readings
 
-- [<cite>*Design Interface: How Man and Machine Communicate*</cite>](https://i-n-t-e-r-f-a-c-e.org/media/pdf/Design-Interface.pdf) \
+- [<cite>*Design Interface: How Man <br>and Machine Communicate*</cite>](https://i-n-t-e-r-f-a-c-e.org/media/pdf/Design-Interface.pdf) \
 	Gianni Barbacetto, 1987
 
 - [<cite>*A Software Design Manifesto*</cite>](https://hci.stanford.edu/publications/bds/1-kapor.html) \
@@ -315,7 +315,7 @@ The bulk of the work for this class takes the form of projects. They are intend
 
 There will be check-ins and reviews around each of these before the final due dates, when we will have critiques as a group. In addition to the quality of the finished project itself, students will have <nobr>in-person</nobr> design and technical reviews—where they will be assessed on their explanation and understanding of their work, to determine whether they have met our learning objectives.
 
-More specific, per-project evaluation criteria will be delineated with each project’s introduction.
+**More specific, per-project evaluation criteria will be delineated with each project’s introduction.**
 
 ## Grade Calculation
 
@@ -440,6 +440,7 @@ Everything that is turned in should be a product of each students’ own ideas, 
 > We are *not* saying you can’t learn from and incorporate other resources. We do, all the time!
 >
 > <sub>Here’s how we think this can be helpful and productive for us all.</sub>
+<!-- .screen -->
 
 #### Attribution
 
@@ -463,7 +464,6 @@ These attributions should explain *why* they were brought in, *what* was referen
 > Copying/pasting, autocompleting, or LLM&NoBreak;-ing work in the absence of an attribution and explanation is plagiarism.
 <!-- .screen -->
 
-
 ### LLM<small>s</small> and “Artificial Intelligence”
 
 There has been much discussion and development in our field (and others) around [*large language models*](https://en.wikipedia.org/wiki/Large_language_model), a.k.a. “artificial intelligence.” Tools like the conspicuous [Chat&NoBreak;GPT](https://openai.com/blog/chatgpt), [Claude Code](https://claude.com/product/claude-code), [Cursor’s IDE](https://cursor.com/en), [Google Gemini](https://gemini.google.com), and [GitHub Copilot](https://github.com/features/copilot) are upending the industry and changing how we work. But aside from (the many) other concerns, their use in the classroom remains fraught, at best.
@@ -474,7 +474,10 @@ Every course has different learning objectives. In ours, we think students first
 
  We think that avoiding these difficulties is ultimately a disservice to your education. LLM&NoBreak;s are the same as any other tool in this regard, and are always to be treated like any at our disposal—as *aides* to our understanding, not *shortcuts* around learning.
 
-#### Our “AI” Guidelines
+**Students should also review our evolving [program “AI” guidelines](https://mpscd.notion.site/MPS-AI-Guidelines-3c63d2d61b2e80938f8bf14dd5b6be57). Our class-specific LLM/“artificial intelligence” guidelines will live on [our course site](https://typography-interaction-2627.github.io/syllabus/#our-ai-guidelines).**
+<!-- .print -->
+
+#### Our “AI” Guidelines <!-- .screen -->
 
 Here’s how we think we can use these tools to support our learning: <br><br>
 
@@ -496,7 +499,7 @@ Here’s how we think we can use these tools to support our learning: <br><br>
 
 - Any other uses/edge-cases require prior instructor approval, but we’re always happy to discuss! <br><br>
 
-**Students should also review our evolving [program AI guidelines](https://mpscd.notion.site/MPS-AI-Guidelines-3c63d2d61b2e80938f8bf14dd5b6be57).**
+**Students should also review our evolving [program “AI” guidelines](https://mpscd.notion.site/MPS-AI-Guidelines-3c63d2d61b2e80938f8bf14dd5b6be57).**
 
 > [!NOTE]
 >
@@ -510,9 +513,7 @@ We will take recordings of all of our class sessions for students to reference l
 
 ## Attendance, Grading, and Other Policies
 
-All CD classes adhere to the same common program and university policies:
-
-[<cite>CD Program & University Policies</cite>](https://docs.google.com/document/d/1u358io8doX_SVVMGqIM_oH5V0OIccneYu4Ww-uE55QM)
+All CD classes adhere to the same [common program and university policies](https://docs.google.com/document/d/1u358io8doX_SVVMGqIM_oH5V0OIccneYu4Ww-uE55QM).
 
 ## Acknowledg&shy;ments
 
