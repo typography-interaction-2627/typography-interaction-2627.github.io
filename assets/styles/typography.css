@@ -132,3 +132,47 @@ code, kbd, samp {
 
 	font-family: 'Monaco', monospace;
 }
+
+/* “Kerning” on top of overall adjustment above. */
+h1 {
+	--resolve: var(--kerning); /* Pass down. */
+
+	span[aria-hidden] { --kerning: calc(var(--resolve) + var(--kern) * var(--1px)) }
+
+	/* Relative `---1px`. */
+	@container style(--size: 24) {
+		.T:has(+ .y) { --kern: -4 }
+		.y:has(+ .p) { --kern: -1 }
+		.o:has(+ .g) { --kern: 1 }
+		.r:has(+ .a) { --kern: -1 }
+		.a:has(+ .p) { --kern: -1 }
+		.p:has(+ .h) { --kern: -1 }
+		.h:has(+ .y) { --kern: -1 }
+
+		.y:has(+ .amp) { --kern: -1 }
+		.amp:has(+ .I) { --kern: -3 }
+
+		.I:has(+ .n) { --kern: -1 }
+		.n:has(+ .t) { --kern: -1 }
+	}
+
+	/* Relative `---4px`. */
+	@container style(--size: 36) {
+		.T:has(+ .y) { --kern: -3 }
+		.y:has(+ .p) { --kern: 1 }
+		.o:has(+ .g) { --kern: 1 }
+		.g:has(+ .r) { --kern: 1 }
+		.a:has(+ .p) { --kern: 1 }
+		.p:has(+ .h) { --kern: -2 }
+
+		.amp:has(+ .I) { --kern: -1 }
+
+		.I:has(+ .n) { --kern: -1 }
+		.n:has(+ .t) { --kern: -1 }
+		.a:has(+ .c) { --kern: 1 }
+		.c:has(+ .t) { --kern: -1 }
+		.t:has(+ .i) { --kern: -2 }
+		.i:has(+ .o) { --kern: -2 }
+		.o:has(+ .n) { --kern: 1 }
+	}
+}

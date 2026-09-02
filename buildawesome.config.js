@@ -288,6 +288,8 @@ export default (config) => {
 		.toLocaleDateString('en-US', { day: 'numeric', month: 'long', timeZone: 'UTC' }))
 	config.addFilter('stripTags', (content) => stripTags(String(content)))
 	config.addFilter('parseHtml', (content) => parse(content))
+
+	// Spans for “kerning.”
 	config.addFilter('letterSpans', (content) => String(content)
 		.replace(/(<[^>]+>)|(&amp;|&(?![#\w]+;))|(&[#\w]+;)|([^<&]+)/g, (match, tag, ampersand, entity, text) =>
 			tag ?? entity ?? (ampersand
