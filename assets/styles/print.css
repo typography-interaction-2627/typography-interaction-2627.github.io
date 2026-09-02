@@ -6,7 +6,6 @@
 }
 
 @page :first { margin-block-start: initial }
-@page :last  { margin-block-start: initial }
 
 /* Toggle stuff. */
 .print  { display: block }
@@ -18,8 +17,9 @@
 	--gutter:  initial;
 
 	background:         initial;
+	margin-block:       1in;
 	orphans:            5;
-	padding:            1in;
+	padding-inline:     1in;
 	print-color-adjust: exact;
 	widows:             5;
 }
