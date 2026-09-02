@@ -290,11 +290,18 @@ export default (config) => {
 	config.addFilter('parseHtml', (content) => parse(content))
 
 	// Spans for “kerning.”
+	const span = (name, character) => `<span aria-hidden="true" class="${name}">${character}</span>`
+	const characterClasses = { '&': 'amp', ':': 'colon', '‘': 'lsquo', '’': 'rsquo', '“': 'ldquo', '”': 'rdquo' }
+
+	// Tags and numeric entities pass through; named entities reuse their own name as the class.
 	config.addFilter('letterSpans', (content) => String(content)
-		.replace(/(<[^>]+>)|(&amp;|&(?![#\w]+;))|(&[#\w]+;)|([^<&]+)/g, (match, tag, ampersand, entity, text) =>
-			tag ?? entity ?? (ampersand
-				? '<span aria-hidden="true" class="amp">&amp;</span>'
-				: text.replace(/[a-z\d]/gi, (character) => `<span aria-hidden="true" class="${/\d/.test(character) ? 'num' : ''}${character}">${character}</span>`)),
+		.replace(/(<[^>]+>)|(&#\w+;)|(&[a-z]+\d*;)|(&(?![#\w]+;))|([^<&]+)/gi, (match, tag, numeric, named, ampersand, text) =>
+			tag ?? numeric
+			?? (named ? span(named.slice(1, -1), named) : null)
+			?? (ampersand ? span('amp', '&amp;') : null)
+			?? text.replace(/[a-z\d:‘’“”]/gi, (character) =>
+				span(characterClasses[character] ?? (/\d/.test(character) ? `num${character}` : character), character),
+			),
 		),
 	)
 
