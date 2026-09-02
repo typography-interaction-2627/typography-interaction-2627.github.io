@@ -40,11 +40,14 @@ strong {
 nobr { --wrap: nowrap }
 
 abbr {
-	background: var(--background--dashed);
-
-	/* Down from the top. */
-	background-position-y: calc(1em + var(--1px));
-	/* TODO This is way off on large NY. */
+	background:            var(--background--dashed);
+	background-clip:       content-box;
+	background-position-y: var(--underline);
+	line-height:           inherit;
+	margin-inline-end:     calc(-1 * var(--right) - var(--kerning, 0em));
+	margin-inline-start:   calc(-1 * var(--left));
+	padding-inline-end:    var(--right);
+	padding-inline-start:  var(--left);
 }
 
 /* TODO Do this as white-check overlay? */

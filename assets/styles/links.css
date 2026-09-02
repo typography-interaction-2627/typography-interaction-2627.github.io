@@ -37,19 +37,17 @@ summary {
 	td,
 	th
 ) a:where(:not(:has(cite))) {
-		--underline: 1.34em;
-
 		/* Instead of `text-decoration`, which rounds to nearest (CSS) pixel! */
 		background:            var(--background--border);
 		background-clip:       content-box;
-		background-position-y: round(down, calc(var(--underline) + var(--shift, 0em)), var(--1px));
-		box-decoration-break:  clone; /* “Restart” inline padding/margin over on wrapped links. */
+		background-position-y: var(--underline);
+		box-decoration-break:  clone; /* “Restart” inline `padding`/`margin` on wrapped links. */
 		display:               inline;
 		line-height:           inherit;
 		margin-inline-end:     calc(-1 * var(--enlargement));
 		margin-inline-start:   calc(-1 * var(--enlargement));
 		outline-offset:        unset;
-		padding-block:         var(--1px);
+		border-block:          var(--1px) solid transparent;
 		padding-inline-end:    var(--enlargement);
 		padding-inline-start:  var(--enlargement);
 		position:              unset;
@@ -65,13 +63,6 @@ summary {
 				var(--background) var(---1px) 0,           /* E  */
 				var(--background) var(---1px) var(---1px)  /* NE */
 			;
-
-			@container style(--size: 10) { --underline: 1.2em }
-			@container style(--size: 12) { --underline: 1.17em }
-			@container style(--size: 14) { --underline: 1.15em }
-
-			/* Safariiii! */
-			@supports (font: -apple-system-body) { @container style(--size: 9) { --shift: -0.05em } }
 
 		/* Use background for active highlight, as it might wrap. */
 		&::after { all: unset }

@@ -25,6 +25,8 @@
 		text-wrap:               var(--wrap, pretty);
 
 		/* Insets baked into font. Varies, but going from an M. */
+		/* Safari doesn‘t support range comparisons in style queries! */
+		/* https://caniuse.com/mdn-css_at-rules_container_style_queries_for_custom_properties_range_syntax */
 		@container style(--family: 'Geneva') {
 			@container style(--size: 9)  { --left: 0;          --right: var(--1px) }
 			@container style(--size: 10) { --left: var(--1px); --right: var(--1px) }
@@ -57,6 +59,17 @@
 			--left: var(--1px);
 			--right: var(--1px);
 		}
+
+		/* For inline element backgrounds (links and such). */
+		--underline: calc((var(--size) + var(--underline--shift)) * var(--1px));
+
+		@container style(--size: 9)   { --underline--shift: 2 }
+		@container style(--size: 10)  { --underline--shift: 1 }
+		@container style(--size: 12)  { --underline--shift: 2 }
+		@container style(--size: 14)  { --underline--shift: 2 }
+
+		/* Safariiii! 🤌 */
+		@supports (font: -apple-system-body) { @container style(--size: 9) { --underline--shift: 1 } }
 	}
 }
 
