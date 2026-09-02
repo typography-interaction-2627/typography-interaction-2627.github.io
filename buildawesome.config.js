@@ -357,7 +357,11 @@ export default (config) => {
 					await page.goto('http://localhost/syllabus/index.html', { waitUntil: 'load' })
 					await page.emulateMediaType('print')
 
+					// Override metadata.
+					await page.evaluate(() => document.title = 'Typography & Interaction, Fall 2026')
+
 					// Output to the original folder (not `_site`), to be checked in!
+					// TODO Edit class/name for Spring!
 					await page.pdf({ path: resolve('assets', 'PMCD_5001_F26.pdf'), preferCSSPageSize: true })
 					await page.close()
 				})()]),
