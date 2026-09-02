@@ -436,7 +436,7 @@ We have zero tolerance for plagiarism and passing off the work of others (or [LL
 
 Everything that is turned in should be a product of each students’ own ideas, synthesis, and execution. They will always be expected to understand it, explain it, and defend it as they would themselves.
 
-**Students also should review the school’s [Academic Integrity Policy](https://catalog.newschool.edu/academic-progress-standing/academic-integrity/academic-integrity-policy).**
+**Students should also review the school’s [Academic Integrity Policy](https://catalog.newschool.edu/academic-progress-standing/academic-integrity/academic-integrity-policy).**
 
 > [!WARNING]
 >
