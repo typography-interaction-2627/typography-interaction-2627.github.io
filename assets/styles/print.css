@@ -26,10 +26,10 @@ body > :where(nav, footer) {
 	--gutter:  initial;
 
 	background:         initial;
-	orphans:            3;
+	orphans:            5;
 	padding:            1in;
 	print-color-adjust: exact;
-	widows:             3;
+	widows:             5;
 }
 
 body {
@@ -75,6 +75,9 @@ section:has(> hgroup > h2) {
 
 	> hgroup:has(h2) {
 		padding-block-end: 1cap;
+		display:           flow-root;
+
+		h2 { padding-block-start: var(--1px) } /* Fix cross-page rounding. */
 
 		+ * { margin-block-start: calc(var(--line) + 1rlh) }
 	}
@@ -82,19 +85,22 @@ section:has(> hgroup > h2) {
 
 /* Get around CSS-pixel rounding for the pattern. 🫠 */
 section section:not(hgroup + section) > hgroup:has(h3) {
+	--resolve: -1cap; /* Pass down. */
+
 	background: initial;
 	position:   relative;
 
-	&::after {
+	&::before {
 		--size: var(--size--root);
 
-		content:           '................................................................................................................................................................................................................................................';
-		font-size:         calc(var(--size) * var(--1px)); /* TODO Unclear why we need to repeat this! */
-		inline-size:       100%;
-		inset-block-start: round(-1.25em, var(--1px));
-		letter-spacing:    calc(-1 * var(--1px)); /* Same here! Vs. `--kerning`. */
-		overflow:          clip;
-		position:          absolute;
+		content:        '................................................................................................................................................................................................................................................';
+		font-size:      calc(var(--size) * var(--1px)); /* TODO Unclear why we need to repeat this! */
+		inline-size:    100%;
+		inset:          0;
+		letter-spacing: calc(-1 * var(--1px)); /* Same here! Vs. `--kerning`. */
+		overflow:       clip;
+		position:       absolute;
+		translate:      0 var(--resolve);
 	}
 }
 
@@ -104,14 +110,9 @@ section section:not(hgroup + section) > hgroup:has(h3) {
 section:has(> hgroup > h3) { margin-block-start: calc(var(--line) + 2rlh) }
 section:has(> hgroup > h4) { margin-block-start: calc(var(--line) + 1rlh) }
 
-p {
-	max-inline-size: 6in;
+p:has(> strong:only-child) + * { margin-block-start: calc(var(--line) + 1rlh) }
 
-	&:has(> strong:only-child) {
-		max-inline-size: initial;
-
-		&:not(:first-of-type) { margin-block-start: calc(var(--line) + 1rlh) }
-
-		+ * { margin-block-start: calc(var(--line) + 1rlh) }
-	}
-}
+/* Breaks. */
+hgroup, p:has(> strong:only-child):has(+ p, + ul) { break-after: avoid }
+:where(p, li):has(a > cite):has(br) { break-inside: avoid }
+:where(p:has(> sub:only-child)) { break-before: avoid }
