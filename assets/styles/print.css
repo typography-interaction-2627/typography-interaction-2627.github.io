@@ -10,16 +10,7 @@
 
 /* Toggle stuff. */
 .print  { display: block }
-
-.screen,
-.spring,
-.spring + br,
-[inert],
-hgroup a,
-hgroup:has(a[href^="#fall"]),
-body > :where(nav, footer) {
-	display: none;
-}
+.screen, hgroup a, body > :where(nav, footer) { display: none }
 
 /* Resets. */
 :root {
@@ -45,14 +36,19 @@ body {
 	}
 }
 
-/* The “windows.” */
-main:not(:has(> section)),
-main > section {
-	background:  initial;
-	box-shadow:  initial;
-	inline-size: initial;
-	margin:      initial;
-	padding:     initial;
+main {
+	/* Swap semester content. */
+	&.fall :is(.spring, .spring + br, hgroup:has(a[href^="#fall"])),
+	&.spring :is(.fall, .fall + br, hgroup:has(a[href^="#spring"])) { display: none }
+
+	/* The “windows.” */
+	&:not(:has(> section)), & > section {
+		background:  initial;
+		box-shadow:  initial;
+		inline-size: initial;
+		margin:      initial;
+		padding:     initial;
+	}
 }
 
 header:has(h1) {
