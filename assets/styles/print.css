@@ -106,6 +106,9 @@ section:has(> hgroup > h4) { margin-block-start: calc(var(--line) + 1rlh) }
 
 p:has(> strong:only-child) + * { margin-block-start: calc(var(--line) + 1rlh) }
 
+/* Catalog link. */
+.sticky { margin-block-start: calc(var(--line) + 1rlh) }
+
 /* Breaks. */
 hgroup, p:has(> strong:only-child):has(+ p, + ul) { break-after: avoid }
 :where(p, li):has(a > cite):has(br) { break-inside: avoid }
