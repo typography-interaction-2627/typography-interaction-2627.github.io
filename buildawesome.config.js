@@ -260,6 +260,7 @@ export default (config) => {
 		.use(componentPlugin) //Allows custom inline HTML component names (otherwise made into strings/wrapped in paragraphs).
 
 	// Filter for component use.
+	// TODO We don’t use this anymore?
 	config.addFilter('markdown', (content) =>
 		markdownIt(markdownOptions)
 			.use(mardownAddAbbreviations)

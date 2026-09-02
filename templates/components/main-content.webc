@@ -124,6 +124,7 @@
 		}
 
 		/* TODO Could make a separate `.webc` for this? */
+		/* TODO Move these to select the parent `section`! */
 		/* Headings */
 		:where(hgroup) {
 			:where(h2, h3, h4) {

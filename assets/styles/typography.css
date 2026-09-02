@@ -50,7 +50,7 @@ abbr {
 	padding-inline-start:  var(--left);
 }
 
-/* TODO Do this as white-check overlay? */
+/* TODO Do this as white-check overlay? Or as `mask-image`! */
 [inert] {
 	:is(figcaption, li, summary):where(:not(:has(details, ol, p, section, ul))),
 	dd,
