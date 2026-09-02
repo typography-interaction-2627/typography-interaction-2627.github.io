@@ -1,3 +1,7 @@
+<script webc:setup>
+	export const syllabusSemester = ({ page, currentWeek }) =>
+		page.url == '/syllabus/' && currentWeek < 15 ? 'fall' : 'spring'
+</script>
 <style webc:bucket="components">
 	main {
 		--anchor: calc(9 * var(--gutter)); /* Adjust with the `nav`! */
@@ -347,7 +351,9 @@
 		? observeSections()
 		: setTimeout(observeSections, 1500)
 </script>
-<main webc:root="override" webc:bucket="default">
-	<session-recording webc:if="$data.video"></session-recording>
-	<template webc:nokeep @html="content"></template>
-</main>
+<template webc:root="override" webc:bucket="default" webc:nokeep>
+	<main :class="syllabusSemester($data)">
+		<session-recording webc:if="$data.video"></session-recording>
+		<template webc:nokeep @html="content"></template>
+	</main>
+</template>
