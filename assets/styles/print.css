@@ -98,6 +98,9 @@ section section:not(hgroup + section) > hgroup:has(h3) {
 	}
 }
 
+/* These get fractional, just turn them off. */
+:where(p, li):has(a > cite) a:not(:has(cite)) { background: initial }
+
 section:has(> hgroup > h3) { margin-block-start: calc(var(--line) + 2rlh) }
 section:has(> hgroup > h4) { margin-block-start: calc(var(--line) + 1rlh) }
 
