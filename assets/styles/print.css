@@ -1,7 +1,8 @@
 @page {
-	margin-block:  1in;
-	margin-inline: 0in; /* On `:root` for nicer Rendering-tab preview. */
-	size:          letter;
+	margin-block-end:   calc(1in - var(--3px)); /* Don’t clip descenders. */
+	margin-block-start: 1in;
+	margin-inline:      0in; /* On `:root` for nicer Rendering-tab preview. */
+	size:               letter;
 }
 
 @page :first { margin-block-start: initial }
@@ -75,9 +76,6 @@ section:has(> hgroup > h2) {
 
 	> hgroup:has(h2) {
 		padding-block-end: 1cap;
-		display:           flow-root;
-
-		h2 { padding-block-start: var(--1px) } /* Fix cross-page rounding. */
 
 		+ * { margin-block-start: calc(var(--line) + 1rlh) }
 	}
