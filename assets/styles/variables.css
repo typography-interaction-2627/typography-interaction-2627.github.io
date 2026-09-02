@@ -101,6 +101,7 @@
 	--shadow--double:  var(--2px) var(--2px) 0 var(--color);
 
 	--background--border: linear-gradient(var(--color)) bottom / 100% var(--1px) no-repeat;
+	--background--dashed: repeating-linear-gradient(to right, var(--color) 0 var(--1px), transparent 0 var(--2px)) bottom / 100% var(--1px) no-repeat;
 
 	@media (width >= 35em) { /* Landscape phones. */
 		--bleed:        var(--line);

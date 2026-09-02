@@ -80,6 +80,24 @@ section:has(> hgroup > h2) {
 	}
 }
 
+/* Get around CSS-pixel rounding for the pattern. 🫠 */
+section section:not(hgroup + section) > hgroup:has(h3) {
+	background: initial;
+	position:   relative;
+
+	&::after {
+		--size: var(--size--root);
+
+		content:           '................................................................................................................................................................................................................................................';
+		font-size:         calc(var(--size) * var(--1px)); /* TODO Unclear why we need to repeat this! */
+		inline-size:       100%;
+		inset-block-start: round(-1.25em, var(--1px));
+		letter-spacing:    calc(-1 * var(--1px));
+		overflow:          clip;
+		position:          absolute;
+	}
+}
+
 section:has(> hgroup > h3) { margin-block-start: calc(var(--line) + 2rlh) }
 section:has(> hgroup > h4) { margin-block-start: calc(var(--line) + 1rlh) }
 

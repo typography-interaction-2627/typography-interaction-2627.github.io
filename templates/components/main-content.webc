@@ -177,11 +177,12 @@
 			&:has(h3) {
 				/* Not right after `h2`. */
 				section section:not(hgroup + section) > & {
-					background-image:    url('patterns/dash.svg');
-					background-repeat:   repeat-x;
-					background-size:     var(--2px) var(--1px);
+					background:          var(--background--dashed);
 					margin-block-start:  round(2rlh, var(--1px));
 					padding-block-start: round(1cap, var(--1px));
+
+					/* Override default bottom-edge. */
+					background-position-y: top;
 				}
 
 				+ * { margin-block-start: round(1rlh, var(--1px)) }

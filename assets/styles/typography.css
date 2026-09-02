@@ -39,14 +39,12 @@ strong {
 
 nobr { --wrap: nowrap }
 
-/* TODO This is way off on large NY. */
 abbr {
-	background-image:      url('patterns/dash.svg');
-	background-position-y: calc(1em + var(--1px));
-	background-repeat:     repeat-x;
-	background-size:       var(--2px) var(--1px);
+	background: var(--background--dashed);
 
-	@container style(--size < 10) { background-position-y: calc(1em + var(--2px)) }
+	/* Down from the top. */
+	background-position-y: calc(1em + var(--1px));
+	/* TODO This is way off on large NY. */
 }
 
 /* TODO Do this as white-check overlay? */
