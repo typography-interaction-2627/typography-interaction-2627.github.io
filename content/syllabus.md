@@ -25,9 +25,9 @@ In this class, students will learn intermediate and advanced methods in typograp
 
 </div>
 
-<div class="sticky right screen">
+<div class="sticky right">
 
-<!-- - [<cite>Submitted Version</cite>](../assets/PMCD_5001_F26.pdf)  -->
+- [<cite>Submitted Version</cite>](../assets/PMCD_5001_F26.pdf) <!-- .screen -->
 - [<cite>Course Catalog</cite>](https://courses.newschool.edu/courses/PMCD5001)
 
 </div>
