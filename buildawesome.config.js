@@ -155,14 +155,19 @@ export default (config) => {
 
 	// Do some automatic ragging.
 	const markdownRagging = (markdown) => {
-		const shortWords = 'a|an|as|at|I|in|is|it|of|on|to'
+		const singleLetters = 'a|i'
+		const shortWords = 'an|as|at|be|in|is|it|of|on|or|to|we'
+		const wordStarts = '^|\\s|\\(|\\[|“|‘|—|–' // Start of a token, whitespace, or opening/joining punctuation.
 
 		markdown.core.ruler.after('inline', 'ragging', ({ tokens }) =>
 			tokens?.forEach(({ children, type }) =>
 				type === 'inline' && children?.forEach((child, index, children) => {
 					if (child.type === 'text') {
-						// Keep short words with the following…
-						child.content = child.content.replace( new RegExp(`(\\s|^)(${shortWords}) (\\S)`, 'gi'), '$1$2\u00A0$3') // `&nbsp;`
+						// Keep single-letter words with the following…
+						child.content = child.content.replace(new RegExp(`(${wordStarts})(${singleLetters}) (\\S)`, 'gi'), '$1$2\u00A0$3') // `&nbsp;`
+
+						// …then two-letter words, but not when the next word is already joined to a single-letter one.
+						child.content = child.content.replace(new RegExp(`(${wordStarts})(${shortWords}) (?!\\S*\u00A0)(\\S)`, 'gi'), '$1$2\u00A0$3')
 
 						// TODO This is broken! Applies inside of `em`, after chops `i&thinsp;OS`.
 						// // Also when followed by a node (link, emphasis, etc.).
