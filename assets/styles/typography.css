@@ -34,8 +34,12 @@ em {
 strong {
 	font-weight: bold;
 
+	@container style(--size >= 12) { --kerning: calc(-1 * var(--1px)) }
+
 	/* Sure would be great if Safari supported range comparisons here! */
-	@container style(--size: 9) or style(--size: 10) or style(--size: 12) { --kerning: calc(-1 * var(--1px)) }
+	@supports (font: -apple-system-body) {
+		@container style(--size: 9) or style(--size: 10) or style(--size: 12) { --kerning: calc(-1 * var(--1px)) }
+	}
 }
 
 nobr { --wrap: nowrap }
