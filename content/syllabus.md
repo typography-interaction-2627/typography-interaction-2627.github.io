@@ -352,7 +352,7 @@ In class, we will demonstrate using [Figma](http://figma.com) for visual design 
 - [<cite>Course Site</cite>](https://typography-interaction-2627.github.io/) \
 	For housekeeping, agendas, and lectures<span class="screen"> (you are here)</span>.
 
-- [<cite>Submission Form</cite>](https://docs.google.com/forms/d/e/1FAIpQLSc3LUp6nqA1RTTloLM_u_xVHSNpcTQt3v2VG-L-HT9srsG_hA/viewform) \
+- [<cite>Submission Form</cite>](https://forms.gle/w7Y1GmHEDZeY53w39) \
 	For submitting your work/URL&NoBreak;s—this is “turning it in.”
 
 - [<cite>Slack Channel</cite>](https://mpscd.slack.com/archives/C0BRNBPC6QP) \

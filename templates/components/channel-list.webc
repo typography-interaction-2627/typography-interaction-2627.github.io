@@ -1,7 +1,7 @@
 <script webc:setup>
 	// TODO Could grab these from the Syllabus markdown, á la `#logstics`.
 	export const channels = {
-		submit: 'https://docs.google.com/forms/d/e/1FAIpQLSc3LUp6nqA1RTTloLM_u_xVHSNpcTQt3v2VG-L-HT9srsG_hA/viewform',
+		submit: 'https://forms.gle/w7Y1GmHEDZeY53w39',
 		slack:  'https://mpscd.slack.com/archives/C0BRNBPC6QP',
 		zoom:   'https://NewSchool.zoom.us/j/97800365415',
 		google: 'https://drive.google.com/drive/folders/1gxl_TpXu0Sd7oJbW1pk7Dd89VNpJwsHK',
