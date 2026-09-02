@@ -5,7 +5,7 @@
 		repo:  'https://github.com/typography-interaction-2627/typography-interaction-2627.github.io',
 	}
 </script>
-<style>
+<style webc:bucket="components">
 	footer {
 		--size: var(--size--note);
 		--wrap: balance;
