@@ -406,9 +406,9 @@ In class, we will demonstrate using [Figma](http://figma.com) for visual design 
 
 ### Inclusion
 
-Our intent is to respect and give forum to a range of perspectives and backgrounds, including culture, race, gender, sexual orientation, socioeconomic status, disability, and age. In instances where we are not personally qualified to speak from a specific perspective—which is most of them—students are encouraged to explore these area themselves.
+Our intent is to respect and give forum to a range of perspectives and backgrounds, including culture, race, gender, sexual orientation, socioeconomic status, disability, and age. In instances where we are not personally qualified to speak from a specific perspective—which is most of them—students are encouraged to explore these area themselves. We believe we are all enriched by this.
 
-**Please let us know if there are ways that the course can better serve these goals!**
+**We are always open to input such that the course can better serve these goals. Students should feel comfortable approaching us with their suggestions.**
 
 ### Office Hours
 
@@ -423,6 +423,10 @@ For more specific technical instruction and questions, Parsons has dedicated CD-
 The University Learning Center also offers its own [tutoring sessions](https://www.newschool.edu/learning-center/) on a wide range of subjects, beyond design and programming; these are also by-appointment.
 
 As tutors are only available a limited number of hours per week, it is advisable to start early on your projects and seek help along the way—to avoid the usual end-of-semester rush for additional help.
+
+### Recording Sessions
+
+We will take recordings of all of our class sessions for students to reference later. As these will include the students and their work, the recordings will be stored on our [Google Drive](https://drive.google.com/drive/folders/1gxl_TpXu0Sd7oJbW1pk7Dd89VNpJwsHK) and made available only to New School email users.
 
 ### Plagiarism and Derivative Work
 
@@ -441,7 +445,7 @@ Everything that is turned in should be a product of each students’ own ideas, 
 > <sub>Here’s how we think this can be helpful and productive for us all.</sub>
 <!-- .screen -->
 
-#### Attribution
+### Attribution
 
 When referencing or incorporating materials outside of our course-provided ones (lectures, exercises, demos, recordings, Slack conversations, etc.), students should always attribute their use.
 
@@ -460,7 +464,7 @@ These attributions should explain *why* they were brought in, *what* was referen
 
 > [!CAUTION]
 >
-> Copying/pasting, autocompleting, or LLM&NoBreak;-ing work in the absence of an attribution and explanation is plagiarism.
+> Copying/pasting, autocompleting, or LLM&NoBreak;-ing work in the absence of an attribution and explanation is [plagiarism](#plagiarism-and-derivative-work).
 <!-- .screen -->
 
 ### LLM<small>s</small> and “Artificial Intelligence”
@@ -504,10 +508,6 @@ Here’s how we think we can use these tools to support our learning: <br><br>
 > LLM&NoBreak;s are there to help answer your questions—not write your code/do your work!
 >
 > <sub>This approach is what we will be expecting for our course.</sub>
-
-### Recording Sessions
-
-We will take recordings of all of our class sessions for students to reference later. As these will include the students and their work, the recordings will be stored on our [Google Drive](https://drive.google.com/drive/folders/1gxl_TpXu0Sd7oJbW1pk7Dd89VNpJwsHK) and made available only to New School email users.
 
 ## Attendance, Grading, and Other Policies
 

@@ -133,6 +133,8 @@ hgroup, p:has(> strong:only-child):has(+ p, + ul) { break-after: avoid }
 :where(p:has(> sub:only-child)) { break-before: avoid }
 
 /* 🍝 */
+hgroup:has(#course-outline) + p + section { margin-block: 1in }
 hgroup:has(#course-description, #reading-responses) + p { --wrap: pretty }
-hgroup:has(#materials-and-supplies, #inclusion) + p,
+hgroup:has(#materials-and-supplies) + p,
 hgroup:has(#project-1-manuscript) ~ p { --wrap: balance }
+section:has(hgroup #attendance-grading-and-other-policies) { margin-block-start: 2in }
