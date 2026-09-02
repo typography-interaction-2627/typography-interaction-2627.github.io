@@ -105,10 +105,12 @@ hgroup:has(h3) {
 	--size: var(--size--h3);
 
 	/* Tweak smaller breaks. */
-	@container style(--size < 12) {
-		--kerning: initial;
+	@container style(--size: 14) {
+		h3 {
+			--kerning: initial;
 
-		font-weight: bold; /* Goes to `1px`; bulk up. */
+			font-weight: bold; /* Goes to `1px`; bulk up. */
+		}
 	}
 }
 
