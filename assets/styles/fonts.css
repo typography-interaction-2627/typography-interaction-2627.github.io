@@ -16,6 +16,9 @@
 	text-rendering:           geometricPrecision;
 
 	:where(*, *::before, *::after) {
+		/* For inline element backgrounds (links and such). */
+		--underline: calc((var(--size) + var(--baseline)) * var(--1px));
+
 		color:                   var(--color, currentcolor);
 		font-family:             var(--family);
 		font-size:               calc(var(--size) * var(--1px));
@@ -28,29 +31,32 @@
 		/* Safari doesn‘t support range comparisons in style queries! */
 		/* https://caniuse.com/mdn-css_at-rules_container_style_queries_for_custom_properties_range_syntax */
 		@container style(--family: 'Geneva') {
-			@container style(--size: 9)  { --left: 0;          --right: var(--1px) }
-			@container style(--size: 10) { --left: var(--1px); --right: var(--1px) }
-			@container style(--size: 12) { --left: var(--1px); --right: var(--1px) }
-			@container style(--size: 14) { --left: var(--1px); --right: var(--1px) }
-			@container style(--size: 18) { --left: var(--1px); --right: var(--2px) }
-			@container style(--size: 20) { --left: var(--2px); --right: var(--3px) }
-			@container style(--size: 24) { --left: var(--1px); --right: var(--2px) }
+			@container style(--size: 9)  { --left: 0;          --right: var(--1px); --baseline: 2 }
+			@container style(--size: 10) { --left: var(--1px); --right: var(--1px); --baseline: 1 }
+			@container style(--size: 12) { --left: var(--1px); --right: var(--1px); --baseline: 2 }
+			@container style(--size: 14) { --left: var(--1px); --right: var(--1px); --baseline: 2 }
+			@container style(--size: 18) { --left: var(--1px); --right: var(--2px); --baseline: 3 }
+			@container style(--size: 20) { --left: var(--2px); --right: var(--3px); --baseline: 3 }
+			@container style(--size: 24) { --left: var(--1px); --right: var(--2px); --baseline: 3 }
 		}
 
+		/* Safariiii! 🤌 */
+		@supports (font: -apple-system-body) { @container style(--family: 'Geneva') and style(--size: 9) { --baseline: 1 } }
+
 		@container style(--family: 'New York') {
-			@container style(--size: 9)  { --left: 0;          --right: var(--1px) }
-			@container style(--size: 10) { --left: 0;          --right: var(--1px) }
-			@container style(--size: 12) { --left: 0;          --right: var(--1px) }
-			@container style(--size: 14) { --left: 0;          --right: var(--1px) }
-			@container style(--size: 18) { --left: var(--1px); --right: var(--1px) }
-			@container style(--size: 20) { --left: var(--1px); --right: var(--1px) }
-			@container style(--size: 24) { --left: var(--2px); --right: var(--2px) }
-			@container style(--size: 36) { --left: var(--3px); --right: var(--3px) }
+			@container style(--size: 9)  { --left: 0;          --right: var(--1px); --baseline: 2 }
+			@container style(--size: 10) { --left: 0;          --right: var(--1px); --baseline: 1 }
+			@container style(--size: 12) { --left: 0;          --right: var(--1px); --baseline: 2 }
+			@container style(--size: 14) { --left: 0;          --right: var(--1px); --baseline: 2 }
+			@container style(--size: 18) { --left: var(--1px); --right: var(--1px); --baseline: 1 }
+			@container style(--size: 20) { --left: var(--1px); --right: var(--1px); --baseline: 1 }
+			@container style(--size: 24) { --left: var(--2px); --right: var(--2px); --baseline: 0 }
+			@container style(--size: 36) { --left: var(--3px); --right: var(--3px); --baseline: 2 }
 		}
 
 		@container style(--family: 'Monaco') {
-			@container style(--size: 9)  { --left: 0;          --right: var(--1px) }
-			@container style(--size: 12) { --left: var(--1px); --right: var(--1px) }
+			@container style(--size: 9)  { --left: 0;          --right: var(--1px); --baseline: 1 }
+			@container style(--size: 12) { --left: var(--1px); --right: var(--1px); --baseline: 2 }
 		}
 
 		@container style(--family: 'Chicago') {
@@ -58,18 +64,9 @@
 
 			--left: var(--1px);
 			--right: var(--1px);
+
+			--baseline: 2;
 		}
-
-		/* For inline element backgrounds (links and such). */
-		--underline: calc((var(--size) + var(--underline--shift)) * var(--1px));
-
-		@container style(--size: 9)   { --underline--shift: 2 }
-		@container style(--size: 10)  { --underline--shift: 1 }
-		@container style(--size: 12)  { --underline--shift: 2 }
-		@container style(--size: 14)  { --underline--shift: 2 }
-
-		/* Safariiii! 🤌 */
-		@supports (font: -apple-system-body) { @container style(--size: 9) { --underline--shift: 1 } }
 	}
 }
 
