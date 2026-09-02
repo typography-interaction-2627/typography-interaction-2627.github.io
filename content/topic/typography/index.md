@@ -464,8 +464,7 @@ Where does one find typefaces? From *foundries*, again referencing the days whe
 	Free for students!
 <!-- .middle .after -->
 
-While not a type foundry itself, we include (and will use) *Google Fonts* resource because of its vast array of open-source typefaces. *Adobe Fonts* is similar, but requires a paid subscription.
-<!-- .note -->
+<sub>While not a type foundry itself, we include (and will use) *Google Fonts* resource because of its vast array of open-source typefaces. *Adobe Fonts* is similar, but requires a paid subscription.</sub>
 
 <!-- <style>
 	ul.all {
@@ -498,5 +497,4 @@ Always remember that typographers are designers, just like you—and deserve to 
 
 ___
 
-Shout-out to Spring instructor [Eric](https://eric.young.li) on this one.
-<!-- .note -->
+<sub>Shout-out to our Spring instructor [Eric](https://eric.young.li) on this one.</sub>
