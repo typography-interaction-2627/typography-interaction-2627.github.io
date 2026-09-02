@@ -289,7 +289,11 @@ export default (config) => {
 	config.addFilter('stripTags', (content) => stripTags(String(content)))
 	config.addFilter('parseHtml', (content) => parse(content))
 	config.addFilter('letterSpans', (content) => String(content)
-		.replace(/(<[^>]+>)|([^<]+)/g, (match, tag, text) => tag ?? text.replace(/[a-z]/gi, (letter) => `<span aria-hidden="true" class="${letter}">${letter}</span>`)),
+		.replace(/(<[^>]+>)|(&amp;|&(?![#\w]+;))|(&[#\w]+;)|([^<&]+)/g, (match, tag, ampersand, entity, text) =>
+			tag ?? entity ?? (ampersand
+				? '<span aria-hidden="true" class="amp">&amp;</span>'
+				: text.replace(/[a-z\d]/gi, (character) => `<span aria-hidden="true" class="${/\d/.test(character) ? 'num' : ''}${character}">${character}</span>`)),
+		),
 	)
 
 	// Save `meta.html` to `meta.png` for dynamic `og:image`.
