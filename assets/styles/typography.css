@@ -154,6 +154,30 @@ h1 {
 
 		.I:has(+ .n) { --kern: -1 }
 		.n:has(+ .t) { --kern: -1 }
+
+		.T:has(+ .h) { --kern: -1 }
+		.h:has(+ .e) { --kern: -1 }
+
+		.S:has(+ .y) { --kern: -2 }
+		.y:has(+ .l) { --kern: -1 }
+		.l:has(+ .a) { --kern: -1 }
+		.a:has(+ .b) { --kern: -1 }
+		.b:has(+ .u) { --kern: -3 }
+		.u:has(+ .s) { --kern: -1 }
+
+		.a:has(+ .s) { --kern: -1 }
+		.s:has(+ .s) { --kern: -1 }
+
+		.W:has(+ .e) { --kern: -4 }
+		.e:has(+ .k) { --kern: -1 }
+
+		.v:has(+ .e) { --kern: -1 }
+
+		.I:has(+ .s) { --kern: -2 }
+
+		.e:has(+ .b) { --kern: -1 }
+
+		.g:has(+ .e) { --kern: -1 }
 	}
 
 	/* Relative `---4px`. */
@@ -174,5 +198,37 @@ h1 {
 		.t:has(+ .i) { --kern: -2 }
 		.i:has(+ .o) { --kern: -2 }
 		.o:has(+ .n) { --kern: 1 }
+
+		.h:has(+ .e) { --kern: 1 }
+
+		.S:has(+ .y) { --kern: 1 }
+		.y:has(+ .l) { --kern: -1 }
+		.l:has(+ .l) { --kern: -3 }
+		.l:has(+ .a) { --kern: -1 }
+		.a:has(+ .b) { --kern: 1 }
+		.b:has(+ .u) { --kern: -1 }
+		.u:has(+ .s) { --kern: -1 }
+
+		.C:has(+ .l) { --kern: -1 }
+		.u:has(+ .r) { --kern: -1 }
+		.a:has(+ .s) { --kern: 1 }
+		.s:has(+ .s) { --kern: -2 }
+
+		.W:has(+ .e) { --kern: -3 }
+		.e:has(+ .e) { --kern: 2 }
+
+		.v:has(+ .e) { --kern: 1 }
+		.r:has(+ .y) { --kern: 2 }
+		.y:has(+ .t) { --kern: 2 }
+		.t:has(+ .h) { --kern: -1 }
+		.n:has(+ .g) { --kern: 1 }
+
+		.I:has(+ .s) { --kern: -2 }
+
+		.e:has(+ .b) { --kern: 1 }
+
+		.P:has(+ .a) { --kern: 1 }
+		.a:has(+ .g) { --kern: 2 }
+		.g:has(+ .e) { --kern: 1 }
 	}
 }
