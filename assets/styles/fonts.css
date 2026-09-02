@@ -93,8 +93,8 @@
 	@font-face { font-family: 'New York 24'; src: url('../assets/fonts/new-york--24.woff2') }
 	@font-face { font-family: 'New York 36'; src: url('../assets/fonts/new-york--36.woff2') }
 
-	@font-face { font-family: 'Monaco 9';  src: url('../assets/fonts/moncao--9.woff2') }
-	@font-face { font-family: 'Monaco 12'; src: url('../assets/fonts/moncao--12.woff2') }
+	@font-face { font-family: 'Monaco 9';  src: url('../assets/fonts/monaco--9.woff2') }
+	@font-face { font-family: 'Monaco 12'; src: url('../assets/fonts/monaco--12.woff2') }
 
 	/* Swap them in. */
 	:where(:root) :where(*, *::before, *::after) {
