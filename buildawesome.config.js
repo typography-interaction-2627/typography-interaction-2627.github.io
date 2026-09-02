@@ -288,6 +288,9 @@ export default (config) => {
 		.toLocaleDateString('en-US', { day: 'numeric', month: 'long', timeZone: 'UTC' }))
 	config.addFilter('stripTags', (content) => stripTags(String(content)))
 	config.addFilter('parseHtml', (content) => parse(content))
+	config.addFilter('letterSpans', (content) => String(content)
+		.replace(/(<[^>]+>)|([^<]+)/g, (match, tag, text) => tag ?? text.replace(/[a-z]/gi, (letter) => `<span aria-hidden="true" class="${letter}">${letter}</span>`)),
+	)
 
 	// Save `meta.html` to `meta.png` for dynamic `og:image`.
 	config.on('buildawesome.after', async ({ dir }) => {

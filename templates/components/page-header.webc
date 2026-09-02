@@ -42,7 +42,7 @@
 </style>
 <header webc:root="override">
 	<hgroup>
-		<h1 @html="(meta ?? $data).title"></h1>
+		<h1 :aria-label="stripTags((meta ?? $data).title)" @html="letterSpans((meta ?? $data).title)"></h1>
 		<div webc:if="(meta ?? $data).date || (meta ?? $data).page.url === '/'">
 			<p>
 				<time webc:if="(meta ?? $data).date" @html="displayDate((meta ?? $data).date)"></time>

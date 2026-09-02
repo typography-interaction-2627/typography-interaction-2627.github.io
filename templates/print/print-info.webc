@@ -11,7 +11,7 @@
 <template webc:nokeep webc:root="override">
 	<header class="print">
 		<hgroup>
-			<h1 @text="getTitle($data)"></h1>
+			<h1 :aria-label="stripTags(getTitle($data))" @html="letterSpans(getTitle($data))"></h1>
 			<div>
 				<p class="fall">Fall 2026</p>
 				<p class="spring">Spring 2027</p>
