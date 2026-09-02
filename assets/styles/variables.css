@@ -65,6 +65,16 @@
 	--7px: calc(var(--1px) * 7);
 	--8px: calc(var(--1px) * 8);
 
+	/* Negatives. */
+	---1px: calc(var(--1px) * -1);
+	---2px: calc(var(--1px) * -2);
+	---3px: calc(var(--1px) * -3);
+	---4px: calc(var(--1px) * -4);
+	---5px: calc(var(--1px) * -5);
+	---6px: calc(var(--1px) * -6);
+	---7px: calc(var(--1px) * -7);
+	---8px: calc(var(--1px) * -8);
+
 	/* TODO `--1rlh` to bake in rounding! */
 
 	--shim: calc(var(--1px) / 2); /* Get back on-pattern. */
