@@ -350,7 +350,8 @@ export default (config) => {
 					await page.screenshot({ path: join(dirname(file), 'meta.png') })
 					await page.close()
 				}),
-				(async () => {
+				// Skip on GitHub!
+				...(process.env.CI ? [] : [(async () => {
 					const page = await openLocalPage(browser, output)
 
 					await page.goto('http://localhost/syllabus/index.html', { waitUntil: 'load' })
@@ -359,7 +360,7 @@ export default (config) => {
 					// Output to the original folder (not `_site`), to be checked in!
 					await page.pdf({ path: resolve('assets', 'PMCD_5001_F26.pdf'), preferCSSPageSize: true })
 					await page.close()
-				})(),
+				})()]),
 			])
 		} finally {
 			await browser.close()
