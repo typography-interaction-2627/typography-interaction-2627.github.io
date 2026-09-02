@@ -17,9 +17,9 @@ const order = 2
 <div>
 
 
-Typography is the infrastructure of communication in nearly any visual medium. It provides the very first shape and form to written content, and as designers, it is our responsibility to practice this with intention and care. Whether towards goals of expression itself or in the service of ideas, the designer must understand type to use it successfully. In this way, we are stewards of meaning.
+Typography is the infrastructure of communication in nearly any visual medium. It provides the very first shape and form to written content, and as designers, it is our responsibility to practice this with intention and care. Whether towards goals of expression itself or in the service of ideas, the designer must understand type to use it successfully. In this way, we are stewards of meaning.
 
-Digital design, the web in particular, is inextricably linked with typography—from the very letters of code at its base to the words in arrangement we see on a screen. Type, thus, is the scaffolding in which all interaction design first rises. The very shape of the web, in its layouts, systems, and patterns—and its various technologies—all exist in the service of type, at their root. They provide the tools with which we can breathe a form and different, digital life into that meaning.
+Digital design, the web in particular, is inextricably linked with typography—from the very letters of code at its base to the words in arrangement we see on a screen. Type, thus, is the scaffolding in which all interaction design first rises. The very shape of the web, in its layouts, systems, and patterns—and its various technologies—all exist in the service of type, at their root. They provide the tools with which we can breathe a form and different, digital life into that meaning.
 
 In this class, students will learn intermediate and advanced methods in typography and layout as they concern interactive design. We will use web technologies as the lens to examine this subject—introducing the foundational, front-end languages of HTML (*HyperText Markup Language*) and CSS (*Cascading Style Sheets*) to achieve our designs. Students will understand the specific challenges of type in this medium, but also how it offers unique and particular forms to us as designers. They will learn the common tools and paradigms with which we practice, while developing their own visual, design vocabulary and critical understanding.
 
@@ -64,7 +64,7 @@ In this class, students will learn to give form to and then work at these inters
 
 - Design and prototype work while taking into account the ever-shifting, bespoke challenges of web design.
 
-- Give, receive, and respond productively to feedback and critiques.
+- Give, receive, and respond productively to feedback and critiques both asynchronously and in-person.
 
 - Think critically and develop their own, distinct thoughts on the role of digital within the larger canon of design.
 
@@ -118,7 +118,7 @@ We will focus on reviewing the core principles of typography, and introduce the 
 
 **The unit ends with Project 1, *Manuscript*, which students will present for critique on October 1.**
 
-Students will choose a seminal design text from [readings.design](https://readings.design), read and respond to it, and typeset their selection and reply together as a web page. Other texts are also allowed on a case-by-case basis.
+Students will choose a seminal design text from [readings.design](https://readings.design), read and respond to it, and typeset their selection and reply together as a web page. Other texts are also allowed on a <nobr>case-by-case</nobr> basis.
 
 <sub>We’ll be looking at the quality of the responses, appropriate type selection and hierarchy, semantic HTML, and basic CSS.</sub>
 
@@ -162,7 +162,7 @@ In our final Fall unit, we will focus on creating advanced, multi-page layouts w
 
 #### Readings
 
-- [<cite>*Design Interface: How Man <br>and Machine Communicate*</cite>](https://i-n-t-e-r-f-a-c-e.org/media/pdf/Design-Interface.pdf) \
+- [<cite>*Design Interface: How Man and Machine Communicate*</cite>](https://i-n-t-e-r-f-a-c-e.org/media/pdf/Design-Interface.pdf) \
 	Gianni Barbacetto, 1987
 
 - [<cite>*A Software Design Manifesto*</cite>](https://hci.stanford.edu/publications/bds/1-kapor.html) \
@@ -200,7 +200,7 @@ We will expand on our first-semester foundations in design, typography, HTML, an
 - [<cite>*I Am a Handle*</cite>](https://linedandunlined.com/archive/i-am-a-handle/) \
 	Rob Giampietro, 2012
 
-- [<cite>*Sometimes It Looks Like a Duck, Sometimes It Looks Like a Rabbit*</cite>](https://veryinteractive.net/pdfs/michaelson-sometimesitlookslikeaduck.pdf) \
+- [<cite>*Sometimes It Looks Like a Duck, <br>Sometimes It Looks Like a Rabbit*</cite>](https://veryinteractive.net/pdfs/michaelson-sometimesitlookslikeaduck.pdf) \
 	Jack Balkin, Dan Michaelson, 2012
 
 - [<cite>*Laws of UX*</cite>](https://lawsofux.com/) \
@@ -350,7 +350,7 @@ In class, we will demonstrate using [Figma](http://figma.com) for visual design 
 **We will use the following tools to organize our class:**
 
 - [<cite>Course Site</cite>](https://typography-interaction-2627.github.io/) \
-	For housekeeping, agendas, and lectures <span class="screen">(you are here)</span>.
+	For housekeeping, agendas, and lectures<span class="screen"> (you are here)</span>.
 
 - [<cite>Submission Form</cite>](https://docs.google.com/forms/d/e/1FAIpQLSc3LUp6nqA1RTTloLM_u_xVHSNpcTQt3v2VG-L-HT9srsG_hA/viewform) \
 	For submitting your work/URL&NoBreak;s—this is “turning it in.”
@@ -414,7 +414,7 @@ Our intent is to respect and give forum to a range of perspectives and backgrou
 
 We will have limited availability outside of our class time, and won’t keep scheduled “office hours.” Students should not expect us to immediately solve specific design or technical problems, or have their progress be blocked by this. Their first resource should be themselves, then [our course site](https://typography-interaction-2627.github.io) and its materials, and then each other.
 
-That said: if there are still questions—particularly logistical or content ones—students can message us any time on [Slack](https://mpscd.slack.com/archives/C0BRNBPC6QP), and we will respond when we can. But again, this should never be a bottleneck; all of this works better when not done at the last minute.
+That said: if there are still questions—particularly logistical or content ones—students can message us any time on [Slack](https://mpscd.slack.com/archives/C0BRNBPC6QP), and we will respond when we can. But again, this should never be a bottleneck; all of this works better when not done at the last minute.
 
 ### Additional Technical Help
 
@@ -445,7 +445,7 @@ Everything that is turned in should be a product of each students’ own ideas, 
 
 When referencing or incorporating materials outside of our course-provided ones (lectures, exercises, demos, recordings, Slack conversations, etc.), students should always attribute their use.
 
-These attributions should explain *why* they were brought in, *what* was referenced, and an overall understanding of *how* it works. (This includes anything from LLM&NoBreak;s, [more below](#llms-and-artificial-intelligence).) This will both help us gauge what students are getting out of it, and also where we can expand and guide our learning together as a class.
+These attributions should explain *why* they were brought in, *what* was referenced, and an overall understanding of *how* it works. (This includes anything from LLM&NoBreak;s<span class="screen">, [more below](#llms-and-artificial-intelligence)</span>.) This will both help us gauge what students are getting out of it, and also where we can expand and guide our learning together as a class.
 
 **Practically, these will take the form of [code](topic/html/index.md#comments) [comments](topic/css/index.md#element-preview). An example:** <!-- .screen -->
 
@@ -467,11 +467,11 @@ These attributions should explain *why* they were brought in, *what* was referen
 
 There has been much discussion and development in our field (and others) around [*large language models*](https://en.wikipedia.org/wiki/Large_language_model), a.k.a. “artificial intelligence.” Tools like the conspicuous [Chat&NoBreak;GPT](https://openai.com/blog/chatgpt), [Claude Code](https://claude.com/product/claude-code), [Cursor’s IDE](https://cursor.com/en), [Google Gemini](https://gemini.google.com), and [GitHub Copilot](https://github.com/features/copilot) are upending the industry and changing how we work. But aside from (the many) other concerns, their use in the classroom remains fraught, at best.
 
-#### Writing Is Thinking; Code Is Writing
+#### Code Is Writing; Writing Is Thinking
 
 Every course has different learning objectives. In ours, we think students first need to write code themselves in order to truly understand our medium. We believe that writing is thinking, and code is no different—the slowness, friction, and resistance of it are necessary for learning that lasts. We might in some ways get “less” done, but we think we will all take more from it.
 
- We think that avoiding these difficulties is ultimately a disservice to your education. LLM&NoBreak;s are the same as any other tool in this regard, and are always to be treated like any at our disposal—as *aides* to our understanding, not *shortcuts* around learning.
+ We think that avoiding these difficulties is ultimately a disservice to your education. LLM&NoBreak;s are the same as any other tool in this regard, and are always to be treated like any at our disposal—as *aides* to our understanding, not *shortcuts* around learning.
 
 <print-llm></print-llm>
 

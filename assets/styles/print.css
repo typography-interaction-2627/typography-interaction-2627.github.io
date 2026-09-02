@@ -110,3 +110,8 @@ p:has(> strong:only-child) + * { margin-block-start: calc(var(--line) + 1rlh) }
 hgroup, p:has(> strong:only-child):has(+ p, + ul) { break-after: avoid }
 :where(p, li):has(a > cite):has(br) { break-inside: avoid }
 :where(p:has(> sub:only-child)) { break-before: avoid }
+
+/* 🍝 */
+hgroup:has(#course-description, #reading-responses) + p { --wrap: pretty }
+hgroup:has(#materials-and-supplies, #inclusion) + p,
+hgroup:has(#project-1-manuscript) ~ p { --wrap: balance }
