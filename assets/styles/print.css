@@ -78,23 +78,41 @@ section:has(> hgroup > h2) {
 }
 
 /* Get around CSS-pixel rounding for the pattern. 🫠 */
+hgroup:has(h2),
 section section:not(hgroup + section) > hgroup:has(h3) {
-	--resolve: -1cap; /* Pass down. */
-
 	background: initial;
 	position:   relative;
 
 	&::before {
 		--size: var(--size--root);
 
-		content:        '................................................................................................................................................................................................................................................';
-		font-size:      calc(var(--size) * var(--1px)); /* TODO Unclear why we need to repeat this! */
-		inline-size:    100%;
-		inset:          0;
-		letter-spacing: calc(-1 * var(--1px)); /* Same here! Vs. `--kerning`. */
+		/* TODO Unclear why we need to repeat this! */
+		font-size:      calc(var(--size) * var(--1px));
+		inset-inline:   var(---1px);
 		overflow:       clip;
+		pointer-events: none;
 		position:       absolute;
 		translate:      0 var(--resolve);
+	}
+}
+
+hgroup:has(h2) {
+	--resolve: calc(1cap + var(---3px)); /* Pass down. */
+
+	&::before {
+		inset-block-end: 0;
+		content:         '————————————————————————————————————————————————————————————————————————————————————————————————————' / '';
+		letter-spacing:  var(---2px); /* Same here! Vs. `--kerning`. */
+	}
+}
+
+section section:not(hgroup + section) > hgroup:has(h3) {
+	--resolve: calc(-1cap + var(---1px));
+
+	&::before {
+		inset-block-start: 0;
+		content:           '................................................................................................................................................................................................................................................' / '';
+		letter-spacing:    var(---1px);
 	}
 }
 
