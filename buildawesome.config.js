@@ -1,5 +1,5 @@
 import { readFileSync } from 'fs'
-import { readdir, readFile } from 'fs/promises'
+import { readdir, readFile, writeFile } from 'fs/promises'
 import { resolve, join, dirname, normalize } from 'path'
 import path from 'path'
 
@@ -46,7 +46,7 @@ export default (config) => {
 	// Slide these on over.
 	config.addPassthroughCopy({ 'assets/icons/favicon.ico': '/favicon.ico' })
 	config.addPassthroughCopy('assets/reset.css')
-	config.addPassthroughCopy('assets/**/*.(js|png|svg|woff2)')
+	config.addPassthroughCopy('assets/**/*.(js|pdf|png|svg|woff2)')
 	config.addPassthroughCopy('content/**/*.(gif|jpg|png|svg)')
 
 	// Avoid front-matter in `page.webc`.
@@ -305,7 +305,28 @@ export default (config) => {
 		),
 	)
 
-	// Save `meta.html` to `meta.png` for dynamic `og:image`.
+	// Serve `_site` files to Puppeteer.
+	const openLocalPage = async (browser, output) => {
+		const page = await browser.newPage()
+
+		await page.setRequestInterception(true)
+
+		page.on('request', async (req) => {
+			try {
+				const pathname = new URL(req.url()).pathname
+				const body = await readFile(join(output, pathname))
+				const contentType = pathname.endsWith('.svg') ? 'image/svg+xml' : undefined
+
+				await req.respond({ body, contentType, status: 200 })
+			} catch {
+				await req.abort()
+			}
+		})
+
+		return page
+	}
+
+	// Save `meta.html` to `meta.png` for dynamic `og:image`, and Syllabus page to PDF.
 	config.on('buildawesome.after', async ({ dir }) => {
 		if (process.env.BUILDAWESOME_RUN_MODE !== 'build') return
 
@@ -320,28 +341,26 @@ export default (config) => {
 		})
 
 		try {
-			await Promise.all(files.map(async (file) => {
-				const page = await browser.newPage()
+			await Promise.all([
+				...files.map(async (file) => {
+					const page = await openLocalPage(browser, output)
 
-				await page.setRequestInterception(true)
+					await page.setViewport({ deviceScaleFactor: 2, height: 540, width: 720 })
+					await page.goto(`http://localhost/${file.replace(output + '/', '')}`, { waitUntil: 'load' })
+					await page.screenshot({ path: join(dirname(file), 'meta.png') })
+					await page.close()
+				}),
+				(async () => {
+					const page = await openLocalPage(browser, output)
 
-				page.on('request', async (req) => {
-					try {
-						const pathname = new URL(req.url()).pathname
-						const body = await readFile(join(output, pathname))
-						const contentType = pathname.endsWith('.svg') ? 'image/svg+xml' : undefined
+					await page.goto('http://localhost/syllabus/index.html', { waitUntil: 'load' })
+					await page.emulateMediaType('print')
 
-						await req.respond({ body, contentType, status: 200 })
-					} catch {
-						await req.abort()
-					}
-				})
-
-				await page.setViewport({ deviceScaleFactor: 2, height: 540, width: 720 })
-				await page.goto(`http://localhost/${file.replace(output + '/', '')}`, { waitUntil: 'load' })
-				await page.screenshot({ path: join(dirname(file), 'meta.png') })
-				await page.close()
-			}))
+					// Output to the original folder (not `_site`), to be checked in!
+					await page.pdf({ path: resolve('assets', 'PMCD_5001_F26.pdf'), preferCSSPageSize: true })
+					await page.close()
+				})(),
+			])
 		} finally {
 			await browser.close()
 		}
