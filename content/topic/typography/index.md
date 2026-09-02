@@ -4,6 +4,9 @@ const draft = true
 ```
 
 # It’s All About Type
+
+## A Brief History of Typography
+
 <blockquote
 	@attribution="Paul Elliman, 1998"
 	@citation="https://readings.design/PDF/MyTypographies.pdf"
@@ -15,8 +18,6 @@ Writing gives the impression of things. Conversely, things can give the impressi
 
 Typography is the form and structure into which words are manifested into our world. It has a long and storied history, and it’s our job to both understand this history and, from it, how to apply type effectively.
 <!-- data-description -->
-
-## A Brief History of Typography
 
 <figure
 	@caption="Early example of Chinese movable type."
@@ -432,8 +433,7 @@ A third mistake is to use characters rather than mathematical symbols. This comm
 9 / 5&ensp;→&ensp;9 ÷ 5<br>
 <!-- style="--size: var(--size--h3)" -->
 
-When in doubt, [*The Elements of Typographic Style*](https://readings.design/PDF/the_elements_of_typographic_style.pdf) probably has the answers you need. It is among the best single references for typographic minutia.
-<!-- .intro -->
+**When in doubt, [*The Elements of Typographic Style*](https://readings.design/PDF/the_elements_of_typographic_style.pdf) probably has the answers you need. It is among the best single references for typographic minutia.**
 
 ## Type Foundries
 
