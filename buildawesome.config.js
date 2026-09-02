@@ -169,9 +169,9 @@ export default (config) => {
 						// …then two-letter words, but not when the next word is already joined to a single-letter one.
 						child.content = child.content.replace(new RegExp(`(${wordStarts})(${shortWords}) (?!\\S*\u00A0)(\\S)`, 'gi'), '$1$2\u00A0$3')
 
-						// TODO This is broken! Applies inside of `em`, after chops `i&thinsp;OS`.
-						// // Also when followed by a node (link, emphasis, etc.).
-						// children[index + 1] && (child.content = child.content.replace(new RegExp(`(\\s|^)(${shortWords})( ?)$`, 'i'), '$1$2\u00A0'))
+						// Also when the word ends the token and content follows in a node (link, emphasis, etc.)—`nesting` skips closing tags and breaks.
+						children[index + 1]?.nesting >= 0 && !/break$/.test(children[index + 1].type) &&
+							(child.content = child.content.replace(new RegExp(`(${wordStarts})(${singleLetters}|${shortWords}) $`, 'i'), '$1$2\u00A0'))
 
 						// TODO Breaks `abbr` before!
 						// Adds a “word joiner” `&NoBreak;` before em-dashes, to keep them from starting lines.
