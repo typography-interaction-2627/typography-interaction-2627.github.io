@@ -86,13 +86,13 @@ section section:not(hgroup + section) > hgroup:has(h3) {
 	position:   relative;
 
 	&::after {
-		--size:    var(--size--root);
-		--kerning: calc(-1 * var(--1px));
+		--size: var(--size--root);
 
 		content:           '................................................................................................................................................................................................................................................';
 		font-size:         calc(var(--size) * var(--1px)); /* TODO Unclear why we need to repeat this! */
 		inline-size:       100%;
 		inset-block-start: round(-1.25em, var(--1px));
+		letter-spacing:    calc(-1 * var(--1px)); /* Same here! Vs. `--kerning`. */
 		overflow:          clip;
 		position:          absolute;
 	}
