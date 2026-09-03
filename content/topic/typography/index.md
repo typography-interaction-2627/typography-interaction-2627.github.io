@@ -7,14 +7,9 @@ const draft = true
 
 ## A Brief History of Typography
 
-<blockquote
-	@attribution="Paul Elliman, 1998"
-	@citation="https://readings.design/PDF/MyTypographies.pdf"
-	>
-
-Writing gives the impression of things. Conversely, things can give the impression of writing.
-
-</blockquote>
+> Writing gives the impression of things. Conversely, things can give the impression of writing.
+>
+>	[<cite>Paul Elliman, 1998</cite>](https://readings.design/PDF/MyTypographies.pdf)
 
 Typography is the form and structure into which words are manifested into our world. It has a long and storied history, and it’s our job to both understand this history and, from it, how to apply type effectively.
 <!-- data-description -->
@@ -55,7 +50,9 @@ Dürer examined Roman letterforms and attempted to create a rational system for 
 
 > [!NOTE]
 >
-> Our discussion of typesetting here is within a narrow European (and subsequently American) tradition. The norms, conventions, and rules will be different, [outside of that lens](https://en.wikipedia.org/wiki/History_of_printing_in_East_Asia)—and we recognize we have a limited ability to speak to other paradigms.
+> Our discussion of typesetting here is within a narrow European (and subsequently American) tradition.
+>
+> The norms, conventions, and rules will be different, [outside of that lens](https://en.wikipedia.org/wiki/History_of_printing_in_East_Asia)—and we recognize we have a limited ability to speak to other paradigms.
 >
 > <sub>We encourage students to bring their own experience in this area—introducing us all to other typographic forms, customs, and traditions.</sub>
 
@@ -289,26 +286,21 @@ What Are Things to Consider When Picking a Typeface?
 
 </details>
 
-<blockquote
-	@attribution="Michael Bierut, 2017"
-	@citation="https://www.fastcompany.com/90148989/how-pentagrams-michael-bierut-picks-a-typeface"
-	>
-
-1. Because it works.
-2. Because you like its history.
-3. Because you like its name.
-4. Because of who designed it.
-5. Because it was there.
-6. Because they made you.
-7. Because it reminds you of something.
-8. Because it’s beautiful.
-9. Because it’s ugly.
-10. Because it’s boring.
-11. Because it’s special.
-12. Because you believe in it.
-13. Because you can’t not.
-
-</blockquote>
+> Because it works.
+> Because you like its history.
+> Because you like its name.
+> Because of who designed it.
+> Because it was there.
+> Because they made you.
+> Because it reminds you of something.
+> Because it’s beautiful.
+> Because it’s ugly.
+> Because it’s boring.
+> Because it’s special.
+> Because you believe in it.
+> Because you can’t not.
+>
+> [<cite>Michael Bierut, 2017</cite>](https://www.fastcompany.com/90148989/how-pentagrams-michael-bierut-picks-a-typeface)
 
 > [!TIP]
 >
