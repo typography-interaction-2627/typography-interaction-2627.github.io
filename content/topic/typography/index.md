@@ -53,15 +53,11 @@ Dürer examined Roman letterforms and attempted to create a rational system for 
 	>
 </figure>
 
-<aside>
-
-<mark>Caution: Typically Euro-centric</mark>
-
-Our discussion of typesetting here is within a narrow European (and subsequently American) tradition. The norms, conventions, and rules will be different, [outside of that lens](https://en.wikipedia.org/wiki/History_of_printing_in_East_Asia)—and we recognize we have a limited ability to speak to other paradigms.
-
-We encourage students to bring their own experience in this area—introducing us all to other typographic forms, customs, and traditions.
-
-</aside>
+> [!NOTE]
+>
+> Our discussion of typesetting here is within a narrow European (and subsequently American) tradition. The norms, conventions, and rules will be different, [outside of that lens](https://en.wikipedia.org/wiki/History_of_printing_in_East_Asia)—and we recognize we have a limited ability to speak to other paradigms.
+>
+> <sub>We encourage students to bring their own experience in this area—introducing us all to other typographic forms, customs, and traditions.</sub>
 
 ## The First Typefaces
 
@@ -314,13 +310,11 @@ What Are Things to Consider When Picking a Typeface?
 
 </blockquote>
 
-<aside>
-
-<mark>Your medium always informs your typography!</mark>
-
-Our course site this year is set in *Gorton*—one common name for [a vernacular family](https://aresluna.org/the-hardest-working-font-in-manhattan/) informed (like all type) by its original medium—in this case, machined/milled/routed metal.
-
-</aside>
+> [!TIP]
+>
+> Your medium always informs your typography!
+>
+> <sub>Our course site this year is set in *Gorton*—one common name for [a vernacular family](https://aresluna.org/the-hardest-working-font-in-manhattan/) informed (like all type) by its original medium—in this case, machined/milled/routed metal.</sub>
 
 <figure
 	@caption="A *Gorton* pantograph milling machine in action."
@@ -483,17 +477,13 @@ Where does one find typefaces? From *foundries*, again referencing the days whe
 	}
 </style> -->
 
-<aside>
-
-<mark>Proper licenses are required</mark>
-
-While many of these type foundries offer trial versions to use, you should always properly license (pay for) a typeface before using it for commercial purposes.
-
-Many foundries offer student discounts. There are also many open-source typefaces and fonts licensed under the [SIL Open Font License](https://openfontlicense.org/).
-
-Always remember that typographers are designers, just like you—and deserve to be paid fairly for their work. It’s hard for you to do well, without their efforts.
-
-</aside>
+> [!IMPORTANT]
+>
+> While many of these type foundries offer trial versions to use, you should always properly license (pay for) a typeface before using it for commercial purposes.
+>
+> Many foundries offer student discounts. There are also many open-source typefaces and fonts licensed under the [SIL Open Font License](https://openfontlicense.org/).
+>
+> <sub>Always remember that typographers are designers, just like you—and deserve to be paid fairly for their work. It’s hard for you to do well, without their efforts.</sub>
 
 ___
 
