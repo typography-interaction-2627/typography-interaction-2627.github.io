@@ -18,9 +18,7 @@ const draft = true
 <img src="asian-type.jpg">
 <figcaption>
 
-Early example of Chinese movable type.
-
-[<cite>↗</cite>](https://dghaskell.com/2014/10/13/move-over-gutenberg-carved-movable-type-from-china/)
+Early example of Chinese movable type. [<cite>↗</cite>](https://dghaskell.com/2014/10/13/move-over-gutenberg-carved-movable-type-from-china/)
 
 </figcaption>
 </figure>
@@ -39,9 +37,7 @@ Dürer examined Roman letterforms and attempted to create a rational *system* fo
 <img src="durer.jpg">
 <figcaption>
 
-Image from Dürer’s *Directions for the Construction of the Text.*
-
-[<cite>↗</cite>](https://biblioklept.org/2013/11/12/directions-for-the-construction-of-the-text-albrecht-durer/)
+Image from Dürer’s *Directions for the Construction of the Text.* [<cite>↗</cite>](https://biblioklept.org/2013/11/12/directions-for-the-construction-of-the-text-albrecht-durer/)
 
 </figcaption>
 </figure>
@@ -52,9 +48,7 @@ Image from Dürer’s *Directions for the Construction of the Text.*
 <img src="fraktur.jpg">
 <figcaption>
 
-An early example of blackletter script—a style that reflected the thick nibbed pens that were in use at the time.
-
-[<cite>↗</cite>](https://en.wikipedia.org/wiki/Blackletter)
+An early example of blackletter script—a style that reflected the thick nibbed pens that were in use at the time. [<cite>↗</cite>](https://en.wikipedia.org/wiki/Blackletter)
 
 </figcaption>
 </figure>
@@ -73,9 +67,7 @@ An early example of blackletter script—a style that reflected the thick nibbed
 <img src="cuneiform.jpg">
 <figcaption>
 
-Cuneiform tablet: administrative account concerning the distribution of barley and emmer.
-
-[<cite>↗</cite>](https://www.metmuseum.org/art/collection/search/327384)
+Cuneiform tablet: administrative account concerning the distribution of barley and emmer. [<cite>↗</cite>](https://www.metmuseum.org/art/collection/search/327384)
 
 </figcaption>
 </figure>
@@ -99,9 +91,7 @@ Often, words and forms were expressed into a particular physical medium with wha
 <img src="pen.jpg">
 <figcaption>
 
-Brush and pen strokes defining typeforms.
-
-[<cite>↗</cite>](https://www.thing.net/~grist/ld/TextBackHome/Roman.htm)
+Brush and pen strokes defining typeforms. [<cite>↗</cite>](https://www.thing.net/~grist/ld/TextBackHome/Roman.htm)
 
 </figcaption>
 </figure>
@@ -110,9 +100,7 @@ Brush and pen strokes defining typeforms.
 <img src="letter-styles.jpg">
 <figcaption>
 
-Type forms which came from chisel on marble *(a)*, stubby pen or metal stylus *(b, c)*, reed pen *(d)*, reed pen inspired by stone *(e)*, and pen or brush on parchment *(f)*.
-
-[<cite>↗</cite>](https://www.thing.net/~grist/ld/TextBackHome/Roman.htm)
+Type forms which came from chisel on marble *(a)*, stubby pen or metal stylus *(b, c)*, reed pen *(d)*, reed pen inspired by stone *(e)*, and pen or brush on parchment *(f)*. [<cite>↗</cite>](https://www.thing.net/~grist/ld/TextBackHome/Roman.htm)
 
 </figcaption>
 </figure>
@@ -130,9 +118,7 @@ The first typefaces created with movable type attempted to emulate handwritten s
 <img src="punch-cut.jpg">
 <figcaption>
 
-Creating movable type from punch cut forms.
-
-[<cite>↗</cite>](https://web.archive.org/web/20230924025255/https://erenow.org/biographies/gutenberg-how-one-man-remade-the-world-with-words/6.php)
+Creating movable type from punch cut forms. [<cite>↗</cite>](https://web.archive.org/web/20230924025255/https://erenow.org/biographies/gutenberg-how-one-man-remade-the-world-with-words/6.php)
 
 </figcaption>
 </figure>
@@ -154,9 +140,7 @@ A “lockup” of metal type, describing the frame holding forms together. We st
 <img src="atf.jpg">
 <figcaption>
 
-Anatomy of metal type.
-
-[<cite>↗</cite>](https://www.flickr.com/photos/depressionpress/2009461000)
+Anatomy of metal type. [<cite>↗</cite>](https://www.flickr.com/photos/depressionpress/2009461000)
 
 </figcaption>
 </figure>
@@ -168,9 +152,7 @@ Type was stored in drawers where the *lower* case held the uncapitalized forms, 
 <img src="type-case.jpg">
 <figcaption>
 
-Conventions and standards carry on through history!
-
-[<cite>↗</cite>](https://commons.wikimedia.org/wiki/File:Plan_%28top%29,_and_three-quarter_view_%28below%29,_of_a_type_case,_Wellcome_V0023764.jpg)
+Conventions and standards carry on through history! [<cite>↗</cite>](https://commons.wikimedia.org/wiki/File:Plan_%28top%29,_and_three-quarter_view_%28below%29,_of_a_type_case,_Wellcome_V0023764.jpg)
 
 </figcaption>
 </figure>
@@ -181,9 +163,7 @@ Conventions and standards carry on through history!
 <iframe src="https://player.vimeo.com/video/127605643?h=3281eeb33f&color=99CC99&title=0&byline=0&portrait=0"></iframe>
 <figcaption>
 
-*Farewell Etaoin Shrdlu*, a documentary made at the end of the metal type era at *The New York Times*, in 1978.
-
-[<cite>↗</cite>](https://archive.nytimes.com/www.nytimes.com/times-insider/2014/11/13/1978-farewell-etaoin-shrdlu/)
+*Farewell Etaoin Shrdlu*, a documentary made at the end of the metal type era at *The New York Times*, in 1978. [<cite>↗</cite>](https://archive.nytimes.com/www.nytimes.com/times-insider/2014/11/13/1978-farewell-etaoin-shrdlu/)
 
 </figcaption>
 </figure>
@@ -202,9 +182,7 @@ In fact, some of the first computer programs for digital typesetting, such as [`
 <img src="photo-typesetting.jpg">
 <figcaption>
 
-A master plate for *Futura* phototypesetting.
-
-[<cite>↗</cite>](https://en.wikipedia.org/wiki/Phototypesetting)
+A master plate for *Futura* phototypesetting. [<cite>↗</cite>](https://en.wikipedia.org/wiki/Phototypesetting)
 
 </figcaption>
 </figure>
@@ -223,9 +201,7 @@ Most significantly, the [Apple Macintosh and Lisa](https://www.youtube.com/watc
 <img src="mac.png">
 <figcaption>
 
-Some typefaces that came with the original Macintosh. Look familiar?
-
-[<cite>↗</cite>](https://en.wikipedia.org/wiki/Fonts_on_Macintosh#Fonts_of_the_original_Macintosh)
+Some typefaces that came with the original Macintosh. Look familiar? [<cite>↗</cite>](https://en.wikipedia.org/wiki/Fonts_on_Macintosh#Fonts_of_the_original_Macintosh)
 
 </figcaption>
 </figure>
@@ -240,7 +216,7 @@ Some typefaces that came with the original Macintosh. Look familiar?
 <iframe src="https://www.youtube.com/embed/ZmWOtf4Ziso"></iframe>
 <figcaption>
 
-Susan explains how to use the Macintosh interface, in 1984.
+Susan explains how to use the Macintosh interface, in 1984. [<cite>↗</cite>](https://www.youtube.com/watch?v=ZmWOtf4Ziso)
 
 </figcaption>
 </figure>
@@ -249,22 +225,18 @@ Susan explains how to use the Macintosh interface, in 1984.
 <img src="bit-to-line.jpg">
 <figcaption>
 
-Physical type had to be converted to digital formats in order to be presented on a screen. We started with pixel and bitmap encodings of typefaces, before switching to vector-based representations.
-
-[<cite>↗</cite>](http://www.designhistory.org/Digital_Revolution_pages/EarlyDigType.html)
+Physical type had to be converted to digital formats in order to be presented on a screen. We started with pixel and bitmap encodings of typefaces, before switching to vector-based representations. [<cite>↗</cite>](http://www.designhistory.org/Digital_Revolution_pages/EarlyDigType.html)
 
 </figcaption>
 </figure>
 
 With the transition to digital screens, the representation of fonts also evolved over time. Today, almost all digital fonts are presented as vectors—the basic mathematical instructions for recreating the letterforms.
 
-<figure style="--lines: 8" >
+<figure class="aside" style="--lines: 8" >
 <img src="pixels.jpg">
 <figcaption>
 
-Hinting typefaces to sit on a pixel grid.
-
-[<cite>↗</cite>](http://www.designhistory.org/Digital_Revolution_pages/EarlyDigType.html)
+Hinting typefaces to sit on a pixel grid. [<cite>↗</cite>](http://www.designhistory.org/Digital_Revolution_pages/EarlyDigType.html)
 
 </figcaption>
 </figure>
@@ -275,13 +247,11 @@ This is how we get artifacts such as [*aliasing*](https://en.wikipedia.org/wiki/
 
 ## So What Is a Typeface?
 
-<figure>
+<figure class="borderless middle">
 <img src="anatomy.png">
 <figcaption>
 
-Anatomy of a typeface, from Ellen Lupton’s *Thinking with Type*.
-
-[<cite>↗</cite>](https://readings.design/PDF/thinkingwithtype_ellenlupton.pdf)
+Anatomy of a typeface, from Ellen Lupton’s *Thinking with Type*. [<cite>↗</cite>](https://readings.design/PDF/thinkingwithtype_ellenlupton.pdf)
 
 </figcaption>
 </figure>
@@ -305,9 +275,7 @@ The term *font* is mostly used for a single style such as *Geneva 12 Bold*.
 <img src="material-typeface.png">
 <figcaption>
 
-More typeface anatomy!
-
-[<cite>↗</cite>](https://material.io/design/typography/understanding-typography.html)
+More typeface anatomy! [<cite>↗</cite>](https://material.io/design/typography/understanding-typography.html)
 
 </figcaption>
 </figure>
