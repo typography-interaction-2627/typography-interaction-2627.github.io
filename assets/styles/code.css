@@ -33,6 +33,7 @@ samp {
 	}
 }
 
+/* TODO move to `pre.web`? */
 pre {
 	background-color: var(--color);
 	display:          flex;
