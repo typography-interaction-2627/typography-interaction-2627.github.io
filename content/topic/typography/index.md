@@ -478,9 +478,10 @@ Another common mistake is misusing [apostrophes and quotations](https://cmosshop
 A third mistake is to use characters rather than mathematical symbols. This common practice started when typewriters (or early computers) were the norm which only had a limited characters set. This excuse no longer applies! For example:
 <!-- style="margin-block-start: round(2rlh, var(--1px)" -->
 
-- 9 x 5&ensp;→&ensp;9 × 5
+- 9 x 5&ensp;<span class="arrow">→</span>&ensp;9 × 5
 
-- 9 / 5&ensp;→&ensp;9 ÷ 5
+- 9 / 5&ensp;<span class="arrow">→</span>&ensp;9 ÷ 5
+
 
 **When in doubt, [*The Elements of Typographic Style*](https://readings.design/PDF/the_elements_of_typographic_style.pdf) probably has the answers you need. It is among the best single references for typographic minutia.**
 
