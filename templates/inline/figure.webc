@@ -139,7 +139,17 @@
 		})
 	})
 
-	// TODO Need a `crunch="3"` based on scaling variable!
+	// Match the dithering “pixel” to our scaled pixel, which changes at breakpoints.
+	const setCrunch = () => {
+		const crunch = getComputedStyle(document.documentElement).getPropertyValue('--scaling').trim() || '2'
+
+		document.querySelectorAll('as-dithered-image').forEach((dither) => dither.getAttribute('crunch') === crunch || dither.setAttribute('crunch', crunch))
+	}
+
+	let frame
+
+	setCrunch()
+	addEventListener('resize', () => (cancelAnimationFrame(frame), frame = requestAnimationFrame(setCrunch)))
 </script>
 <figure webc:root="override">
 	<div>
