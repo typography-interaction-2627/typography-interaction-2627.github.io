@@ -28,7 +28,14 @@
 		div {
 			position: relative;
 
-			&:has(img, object) { inline-size: fit-content }
+			&:has(img, object) {
+				inline-size: fit-content;
+
+				@supports (inline-size: calc-size(fit-content, size)) {
+					inline-size: calc-size(fit-content, round(size, var(--1px)));
+				}
+			}
+
 
 			/* TODO How to have this always snap to pixel height? Takes “windows” off-pattern! */
 			img,
