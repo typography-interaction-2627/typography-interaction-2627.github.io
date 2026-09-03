@@ -123,21 +123,22 @@
 </style>
 <script type="module">
 	document.querySelectorAll('figure').forEach((figure) => {
-		const images = figure.querySelectorAll('img[src]')
+		const media = figure.querySelectorAll('img[src], :scope > iframe')
 		const template = figure.querySelector('div')
 
-		if (!images.length) return template.remove()
+		if (!media.length) return template.remove()
 
-		let previous = template
+		const pristine = template.cloneNode(true) // Clone from this so prior media aren't carried along.
 
-		images.forEach((image, i) => {
-			// Always clone from the untouched template so prior images aren't carried along.
-			const div = template.cloneNode(true)
+		let previous
 
-			i ? previous.after(div) : template.replaceWith(div)
+		media.forEach((element) => {
+			const div = previous ? pristine.cloneNode(true) : template
+			const dither = div.querySelector('as-dithered-image')
 
-			div.prepend(image)
-			div.querySelector('as-dithered-image').setAttribute('src', image.src)
+			previous?.after(div)
+			div.prepend(element)
+			element.localName === 'img' ? dither.setAttribute('src', element.src) : dither.remove()
 			previous = div
 		})
 	})
