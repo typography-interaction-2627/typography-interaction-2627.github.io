@@ -68,6 +68,7 @@
 				+ * { margin-block-start: round(1rlh, var(--1px)) }
 			}
 
+			/* Space these out. */
 			:where(details):not(:first-child) { margin-block-start: round(1rlh, var(--1px)) }
 
 			/* Manual column placements. */
@@ -91,13 +92,16 @@
 			.end    { align-self: end }
 
 			*:has(> .sticky) {
-				block-size: 100%;
+				align-self: stretch;
 
 				.sticky {
 					inset-block-start: 4rlh;
 					position:          sticky;
 				}
 			}
+
+			/* TODO Probably a better way to do this? (On Projects.)*/
+			.body + .right { margin-block-start: round(1rlh, var(--1px)) }
 
 			/* Only when on The Grid. */
 			:where(&, section) {
