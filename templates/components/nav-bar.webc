@@ -60,16 +60,21 @@
 		</li>
 		-->
 	</ul>
-	<!-- Temp for first class! 🫣 -->
+	<!-- Temp for ~~first~~ second class! 🫣 -->
 	<ul>
 		<li>
-			<a href="/week/1/">
-				<p>Week 1</p>
+			<a href="/week/2/">
+				<p>Week 2</p>
 			</a>
 		</li>
 		<li>
-			<a href="/topic/everything/">
-				<p><em>Everything</em></p>
+			<a href="/project/1/">
+				<p><em>Manuscript</em></p>
+			</a>
+		</li>
+		<li>
+			<a href="/topic/typography/">
+				<p><em>Typography</em></p>
 			</a>
 		</li>
 	</ul>
