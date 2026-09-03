@@ -10,11 +10,9 @@
 		&:has(br) {
 			--size: var(--size--note);
 
-			line-height: round(1cap, var(--1px));
+			em { line-height: 1 } /* Helps with `em` and rounding? */
 
-			* { line-height: 1 } /* Helps with `em` and rounding? */
-
-			> a:has(> cite) { margin-block-end: var(--shim) }
+			> a:has(> cite) { margin-block-end: calc(var(---4px)) }
 
 			/* TODO Unravel this! Shouldn’t need the override. */
 			@supports (not (font: -apple-system-body)) and (not (-moz-appearance: none)) { --font: 'Geneva 9' }
