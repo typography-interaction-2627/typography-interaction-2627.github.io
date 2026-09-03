@@ -91,7 +91,7 @@
 			.end    { align-self: end }
 
 			*:has(> .sticky) {
-				align-self: stretch;
+				block-size: 100%;
 
 				.sticky {
 					inset-block-start: 4rlh;
