@@ -98,6 +98,7 @@
 	--bleed:         var(--5px);
 	--alley:         calc(var(--rhythm) * 2);
 	--page:          round(down, min(calc(100vw - 2 * var(--bleed)), var(--max)), var(--1px));
+	--main:          calc(var(--page) - 2 * var(--gutter) - var(--2px)); /* Account for “border.” */
 	--max:           calc(720 * var(--1px));
 	--break:         round(20vh, var(--1px));
 
