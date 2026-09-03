@@ -220,6 +220,9 @@
 			}
 		}
 
+		/* Space after loose ones. */
+		:where(section > p:has(a > cite)) + * { margin-block-start: round(1rlh, var(--1px)) }
+
 		:where(hr) {
 			background:        var(--background--border);
 			grid-column:       all;
