@@ -83,8 +83,12 @@
 					animation-timeline:        view();
 					animation-timing-function: ease-in-out;
 				}
+			}
 
-				/* TODO `:hover` override! */
+			/* Override when hovering. */
+			&:hover {
+				img, object, iframe  { animation-play-state: paused; filter: saturate(1) }
+				as-dithered-image    { animation-play-state: paused; opacity: 0 }
 			}
 		}
 
