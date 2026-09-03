@@ -66,4 +66,9 @@ summary {
 
 		/* Use background for active highlight, as it might wrap. */
 		&::after { all: unset }
+
+		&.asterisk {
+			text-shadow: initial;
+			background:  initial;
+		}
 }
