@@ -27,7 +27,7 @@
 			margin-inline-end:   var(--right);
 			margin-inline-start: var(--left);
 
-			cite {
+			:where(cite) {
 				--padding: round(1rex, var(--1px));
 
 				box-shadow:           var(--shadow--border), var(--shadow--single);

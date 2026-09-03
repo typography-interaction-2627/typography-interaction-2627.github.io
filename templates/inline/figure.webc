@@ -118,19 +118,20 @@
 			}
 
 			a:has(cite) {
-				/* TODO This is off on mobile! */
-				inset-block-start:  calc(-1 * var(--3px) - var(--shim));
+				inset-block-start:  var(---4px);
 				inset-inline-start: 0;
 				position:           absolute;
 
-				/* TODO The size for this is wonky in Safari! */
 				cite {
-					aspect-ratio:        1;
 					background-image:    url('/assets/icons/arrow.svg');
 					background-position: center;
 					background-repeat:   no-repeat;
 					background-size:     var(--7px);
-					font-size:           0; /* Hide the `↗` */
+					block-size:          var(--7px);
+					color:               transparent; /* Hide the actual text. */
+					display:             block;
+					inline-size:         var(--7px);
+					padding:             var(--padding);
 				}
 			}
 		}
