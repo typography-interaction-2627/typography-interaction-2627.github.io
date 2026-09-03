@@ -1,6 +1,16 @@
 <page-pattern></page-pattern>
 <template webc:bucket="components" webc:nokeep>
 	<style>
+		:root {
+			scroll-behavior: smooth;
+
+			/* Invert. */
+			::selection {
+				color:            var(--background);
+				background-color: var(--color);
+			}
+		}
+
 		body {
 			inline-size:    round(down, 100vw, var(--1px));
 			padding-bottom: var(--break);
