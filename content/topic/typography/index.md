@@ -11,10 +11,10 @@ const draft = true
 >
 >	[<cite>Paul Elliman, 1998</cite>](https://readings.design/PDF/MyTypographies.pdf)
 
-Typography is the form and structure into which words are manifested into our world. It has a long and storied history, and it’s our job to both understand this history and, from it, how to apply type effectively.
+**Typography is the form and structure into which words are manifested into our world. It has a long and storied history, and it’s our job to both understand this history and, from it, how to apply type effectively.**
 <!-- data-description -->
 
-<figure>
+<figure class="aside">
 <img src="asian-type.jpg">
 <figcaption>
 
@@ -25,21 +25,21 @@ Early example of Chinese movable type.
 </figcaption>
 </figure>
 
-<div class="body">
+<div class="body center">
 
 While [Johannes Gutenberg](https://en.wikipedia.org/wiki/Johannes_Gutenberg) is widely associated with inventing the printing press and movable typography in 1450, earlier forms had been invented [around 1040](https://en.wikipedia.org/wiki/Movable_type#Ceramic_movable_type) in Asia, by Chinese polymath [Bi Sheng](https://en.wikipedia.org/wiki/Bi_Sheng).
 
-Our story here though begins in the early 1500s with [Albrecht Dürer](https://en.wikipedia.org/wiki/Albrecht_Dürer), a seminal figure of the German Renaissance. Dürer made the first inroads towards a *methodology* of type design, the beginnings of formal typography.
+We’ll begin in the early 1500s with [Albrecht Dürer](https://en.wikipedia.org/wiki/Albrecht_Dürer), a seminal figure of the German Renaissance. Dürer made the first inroads towards a *methodology* of type design, the beginnings of formal typography.
 
-Dürer examined Roman letterforms and attempted to create a rational system for recreating glyphs, specifically drawing attention to the form in which words appear. The way words appeared then, as now, was a byproduct of the medium in which they were written.
+Dürer examined Roman letterforms and attempted to create a rational *system* for recreating glyphs, specifically drawing attention to the form in which words appear. The way words appeared then, as now, was a byproduct of the medium in which they were written.
 
 </div>
 
-<figure class="start right" style="--lines: 12" >
+<figure class="right borderless" style="--lines: 12" >
 <img src="durer.jpg">
 <figcaption>
 
-Image from Dürer’s “Directions for the Construction of the Text.”
+Image from Dürer’s *Directions for the Construction of the Text.*
 
 [<cite>↗</cite>](https://biblioklept.org/2013/11/12/directions-for-the-construction-of-the-text-albrecht-durer/)
 
@@ -61,15 +61,15 @@ An early example of blackletter script—a style that reflected the thick nibbed
 
 > [!NOTE]
 >
-> Our discussion of typesetting here is within a narrow European (and subsequently American) tradition.
+> Our discussion of typesetting here is within a narrow Western (and subsequently American) tradition.
 >
 > The norms, conventions, and rules will be different, [outside of that lens](https://en.wikipedia.org/wiki/History_of_printing_in_East_Asia)—and we recognize we have a limited ability to speak to other paradigms.
 >
 > <sub>We encourage students to bring their own experience in this area—introducing us all to other typographic forms, customs, and traditions.</sub>
 
-## The First Typefaces
+## The First “Typefaces”
 
-<figure style="--lines: 20">
+<figure class="aside">
 <img src="cuneiform.jpg">
 <figcaption>
 
@@ -79,6 +79,8 @@ Cuneiform tablet: administrative account concerning the distribution of barley a
 
 </figcaption>
 </figure>
+
+<section>
 
 <div class="verso">
 
@@ -93,7 +95,7 @@ Often, words and forms were expressed into a particular physical medium with wha
 
 <div class="recto">
 
-<figure class="recto start" style="--lines: 7">
+<figure class="recto start borderless" style="--lines: 7">
 <img src="pen.jpg">
 <figcaption>
 
@@ -104,9 +106,7 @@ Brush and pen strokes defining typeforms.
 </figcaption>
 </figure>
 
-
-
-<figure class="recto start" style="--lines: 15" >
+<figure class="recto start borderless" style="--lines: 15" >
 <img src="letter-styles.jpg">
 <figcaption>
 
@@ -119,12 +119,14 @@ Type forms which came from chisel on marble *(a)*, stubby pen or metal stylus *(
 
 </div>
 
+</section>
+
 ## Metal Type
 
 The first typefaces created with movable type attempted to emulate handwritten scripts. A typeface designer would create a *punch* which would function as the source from which a metal form would be created.
 <!-- .center .verso -->
 
-<figure class="recto" style="--lines: 15">
+<figure class="recto borderless" style="--lines: 15">
 <img src="punch-cut.jpg">
 <figcaption>
 
@@ -135,7 +137,7 @@ Creating movable type from punch cut forms.
 </figcaption>
 </figure>
 
-Many of the terms that were created to describe physical attributes of metal type (*leading*, *point size*, *shoulder*) continue through to our digital world:
+**Many of the terms that were created to describe physical attributes of metal type (*leading*, *point size*, *shoulder*) continue through to our digital world:**
 
 <figure class="verso">
 <img src="letterpress.jpg">
@@ -166,7 +168,7 @@ Type was stored in drawers where the *lower* case held the uncapitalized forms, 
 <img src="type-case.jpg">
 <figcaption>
 
-Conventions and standards carry on through history.
+Conventions and standards carry on through history!
 
 [<cite>↗</cite>](https://commons.wikimedia.org/wiki/File:Plan_%28top%29,_and_three-quarter_view_%28below%29,_of_a_type_case,_Wellcome_V0023764.jpg)
 
@@ -175,11 +177,11 @@ Conventions and standards carry on through history.
 
 ## Technological Evolution
 
-<figure>
+<figure class="aside" style="--aspect-ratio: 4 / 3">
 <iframe src="https://player.vimeo.com/video/127605643?h=3281eeb33f&color=99CC99&title=0&byline=0&portrait=0"></iframe>
 <figcaption>
 
-“Farewell Etaoin Shrdlu,” a documentary made at the end of the metal type era at *The New York Times*, in 1978.
+*Farewell Etaoin Shrdlu*, a documentary made at the end of the metal type era at *The New York Times*, in 1978.
 
 [<cite>↗</cite>](https://archive.nytimes.com/www.nytimes.com/times-insider/2014/11/13/1978-farewell-etaoin-shrdlu/)
 
