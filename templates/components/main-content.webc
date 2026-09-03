@@ -61,6 +61,13 @@
 				grid-template-columns: subgrid;
 			}
 
+			/* Inserted in Markdown. */
+			:where(section:not(:has(> hgroup))) {
+				margin-block-start: round(1rlh, var(--1px));
+
+				+ * { margin-block-start: round(1rlh, var(--1px)) }
+			}
+
 			:where(details):not(:first-child) { margin-block-start: round(1rlh, var(--1px)) }
 
 			/* Manual column placements. */
