@@ -123,7 +123,7 @@
 				position:           absolute;
 
 				cite {
-					background-image:    url('/assets/icons/arrow.svg');
+					background-image:    url('/assets/icons/diagonal.svg');
 					background-position: center;
 					background-repeat:   no-repeat;
 					background-size:     var(--7px);

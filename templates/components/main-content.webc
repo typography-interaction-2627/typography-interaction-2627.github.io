@@ -339,8 +339,9 @@
 			tr:not(:first-child) td, tr:not(:first-child) th { border-block-start: 1cap solid transparent }
 		}
 
-		span.arrow {
-			background-image:    url('/assets/icons/right.svg');
+		/* Don’t tell Susan! */
+		span.arrow,
+		span.times {
 			background-position: center;
 			background-repeat:   no-repeat;
 			background-size:     var(--7px);
@@ -350,6 +351,9 @@
 			inline-size:         var(--7px);
 			vertical-align:      middle;
 		}
+
+		span.arrow { background-image: url('/assets/icons/right.svg') }
+		span.times { background-image: url('/assets/icons/times.svg') }
 	}
 </style>
 <script>
