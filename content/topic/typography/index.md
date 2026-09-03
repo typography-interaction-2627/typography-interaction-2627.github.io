@@ -1,6 +1,5 @@
 ```javascript
 const week = 2
-const draft = true
 ```
 
 # It’s All About Type
@@ -525,7 +524,7 @@ Where does one find typefaces? From *foundries*, again referencing the days whe
 - [<cite>Typographer</cite>](https://typographer.com)
 	Free for students!
 
-<sub>While not a type foundry itself, we include (and will use) *Google Fonts* resource because of its vast array of open-source typefaces. *Adobe Fonts* is similar, but requires a paid subscription.</sub>
+<sub>While not a type foundry itself, we include (and will use) *Google Fonts* resource because of its vast array of open-source typefaces. *Adobe Fonts* is similar, but requires a paid subscription.</sub>
 
 </div>
 
