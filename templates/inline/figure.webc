@@ -86,6 +86,9 @@
 			}
 		}
 
+		/* Looser space. */
+		&.borderless { row-gap: var(--line) }
+
 		figcaption {
 			--size: var(--size--note);
 			--wrap: balance;
