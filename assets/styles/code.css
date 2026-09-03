@@ -9,6 +9,7 @@ samp {
 	background-color: var(--background);
 	border:           var(--1px) solid transparent;
 	isolation:        isolate;
+	margin-inline:    var(--2px);
 	padding-inline:   var(--3px);
 	position:         relative;
 
@@ -19,6 +20,10 @@ samp {
 		inset:      calc(-1 * var(--1px));
 		position:   absolute;
 		z-index:    -1;
+	}
+
+	@container style(--size: 9) or style(--size: 10){
+		padding-bottom: calc(var(--3px) / 4); /* 🤷‍♀️ */
 	}
 }
 

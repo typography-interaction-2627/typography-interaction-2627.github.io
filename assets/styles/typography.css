@@ -131,6 +131,8 @@ code, kbd, samp {
 	--size: var(--size--code);
 
 	font-family: 'Monaco', monospace;
+
+	@container style(--size: 9) or style(--size: 10){ --size: 9 } /* Notes and such. */
 }
 
 /* “Kerning” on top of overall adjustment above. */
