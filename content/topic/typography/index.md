@@ -213,9 +213,9 @@ A master plate for *Futura* phototypesetting.
 
 <div class="body center">
 
-By the early 1980s, as the internet was being formed and the web had yet to exist, the advent of computers with screens and visual interfaces made the final typesetting transition: from physical to digital. Most significantly, the [Apple Macintosh and Lisa](https://www.youtube.com/watch?v=2B-XwPjn9YY) were significant milestones in providing the first visual document editing experience on a computer. The term, *What You See Is What You Get* (WYSIWYG) begins with this era of computing.
+By the early 1980s, as the internet was being formed and the web had yet to exist, the advent of computers with screens and visual interfaces made the final typesetting transition: from physical to digital.
 
-To support this, in 1983, [Susan Kare](https://www.moma.org/artists/38483) created a suite of [digital-only typefaces](https://www.storiesofapple.net/the-first-fonts-of-the-macintosh.html).
+Most significantly, the [Apple Macintosh and Lisa](https://www.youtube.com/watch?v=2B-XwPjn9YY) were significant milestones in providing the first visual document editing experience on a computer. The term *What You See Is What You Get* (WYSIWYG) begins with this era of consumer computing.
 
 </div>
 
@@ -223,14 +223,29 @@ To support this, in 1983, [Susan Kare](https://www.moma.org/artists/38483) creat
 <img src="mac.png">
 <figcaption>
 
-Some typefaces that came with the original Macintosh.
+Some typefaces that came with the original Macintosh. Look familiar?
 
 [<cite>↗</cite>](https://en.wikipedia.org/wiki/Fonts_on_Macintosh#Fonts_of_the_original_Macintosh)
 
 </figcaption>
 </figure>
 
-<figure>
+> [!TIP]
+>
+> Our course site this year is set in these early Mac fonts, designed by [Susan Kare](https://www.moma.org/artists/38483)—who created the suite of [digital-only typefaces](https://www.storiesofapple.net/the-first-fonts-of-the-macintosh.html) for the platform.
+>
+> <sub>Your medium, its limitations, and its typography are always intertwined! As with this site, they can both constrain and enrich your work.</sub>
+
+<figure class="aside">
+<iframe src="https://www.youtube.com/embed/ZmWOtf4Ziso"></iframe>
+<figcaption>
+
+Susan explains how to use the Macintosh interface, in 1984.
+
+</figcaption>
+</figure>
+
+<figure class="borderless aside">
 <img src="bit-to-line.jpg">
 <figcaption>
 
@@ -254,7 +269,9 @@ Hinting typefaces to sit on a pixel grid.
 </figcaption>
 </figure>
 
-However, while vector files are infinitely scalable, the medium on which they are shown (screens) are not. As with any analog to digital process, there is some loss of information as a computer samples the original shape of a glyph and then maps it to a pixel grid. This is how we get artifacts such as *aliasing*, which happens when a line or curve doesn’t land perfectly on the pixel grid. The operating system and display use shades of gray to trick our eyes into seeing a smooth curve.
+However, while vector files are infinitely scalable, the medium on which they are shown (screens) are not. As with any analog to digital process, there is some loss of information as a computer samples the original shape of a glyph and then maps it to a pixel grid.
+
+This is how we get artifacts such as [*aliasing*](https://en.wikipedia.org/wiki/Aliasing), which happens when a line or curve doesn’t land perfectly on the pixel grid. The operating system and display use shades of gray to trick our eyes into seeing a smooth curve.
 
 ## So What Is a Typeface?
 
@@ -280,7 +297,7 @@ What Is the Difference Between a Typeface and a Font?
 
 A *typeface* is a *font family*—a collection of fonts based on the same design.
 
-The term *font* is mostly used for a single style such as *Gorton Digital Medium*.
+The term *font* is mostly used for a single style such as *Geneva 12 Bold*.
 
 </details>
 
@@ -353,21 +370,6 @@ What Are Things to Consider When Picking a Typeface?
 > Because you can’t not.
 >
 > [<cite>Michael Bierut, 2017</cite>](https://www.fastcompany.com/90148989/how-pentagrams-michael-bierut-picks-a-typeface)
-
-> [!TIP]
->
-> Your medium always informs your typography!
->
-> <sub>Our course site this year is set in *Gorton*—one common name for [a vernacular family](https://aresluna.org/the-hardest-working-font-in-manhattan/) informed (like all type) by its original medium—in this case, machined/milled/routed metal.</sub>
-
-<figure class="aside">
-<iframe src="https://www.youtube.com/embed/OKaczEUNGeQ"></iframe>
-<figcaption>
-
-A *Gorton* pantograph milling machine in action.
-
-</figcaption>
-</figure>
 
 ## Typesetting and Layout
 
