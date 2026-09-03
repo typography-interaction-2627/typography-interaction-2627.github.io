@@ -265,7 +265,8 @@
 		/* Lists, lists, lists. */
 		:is(dl, ol, ul) {
 			/* Extra spacing around loosies. */
-			&:where(:not([class], :first-child)) {
+			&:where(:not([class], :first-child)),
+			&[class="all"] {
 				margin-block-start: round(1rlh, var(--1px));
 
 				&:where(:not(:last-child)) + * {
@@ -274,6 +275,8 @@
 					@container style(--columns: 6) { + *:where(.recto, .right) { margin-block-start: 1rlh } }
 				}
 			}
+			/* For poking out as needed. */
+			> :where(dt, li).all { inline-size: var(--main) }
 
 			/* Not `cite` lists. */
 			&:where(:not(:has(> li > a > cite, > li > p:only-child > a > cite))) {
