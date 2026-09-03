@@ -282,44 +282,63 @@ More typeface anatomy! [<cite>↗</cite>](https://material.io/design/typography/
 
 **Broadly, we’ll refer to several main styles of typefaces:**
 
-<span style="--size: var(--size--h2); font-family: serif">Serifs</span>
+<dl>
 
-: These have small lines (*serifs*) attached to the ends of letters
+<dt style="--family: 'New York'; font-family: 'New York', serif; font-weight: normal">Serifs</dt>
+<dd>
 
-<span style="--size: var(--size--h2); font-family: sans-serif">Sans Serifs</span>
+<sub>These have small lines (*serifs*) attached to the ends of letters</sub>
 
-: Without these lines (like this site)
+</dd>
 
-<span style="--size: var(--size--h2); font-family: monospace">Monospace</span>
+<dt style="--family: 'Geneva'; font-family: 'Geneva', sans-serif; font-weight: normal">Sans Serifs</dt>
+<dd>
 
-: All characters the same width (as in `code`)
+<sub>Without these lines (like this text here)</sub>
 
-<span style="--size: var(--size--h2); font-family: fantasy">Decorative</span>
+</dd>
 
-: …everything else (be careful)
+<dt style="--family: 'Monaco'; font-family: 'Monaco', monospace; font-weight: normal">Monospace</dt>
+<dd>
+
+<sub>All characters the same width (as in `code`)</sub>
+
+</dd>
+
+<dt style="--family: 'Venice'; font-family: 'Venice', decorative; font-weight: normal">Decorative</dt>
+<dd>
+
+<sub>…everything else (be careful)</sub>
+
+</dd>
+
+</dl>
 
 While there are distinct [subfamilies within](https://www.fonts.com/content/learning/fontology/level-1/type-anatomy/type-classifications) each of these, our selection of a typeface from one of these particular styles already conveys significant meaning.
 
+### Selecting Type
+
 <details>
 <summary>
+
 
 What Are Things to Consider When Picking a Typeface?
 
 </summary>
 
-- Readability
+- **Readability**
 
-- Legibility
+- **Legibility**
 
-- Meaning
+- **Meaning**
 
-- Historical context
+- **Historical context**
 
-- Past usage
+- **Past usage**
 
-- Visual appearance (“vibe”)
+- **Visual appearance (“vibe”)**
 
-- Licensing/rights
+- **Licensing/rights**
 
 </details>
 

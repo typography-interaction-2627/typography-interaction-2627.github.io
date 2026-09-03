@@ -1,6 +1,6 @@
 <style>
-	main {
-		details {
+	:where(main) {
+		:where(details) {
 			summary {
 				background-color: var(--color);
 				display:          block;

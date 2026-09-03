@@ -61,6 +61,8 @@
 				grid-template-columns: subgrid;
 			}
 
+			:where(details):not(:first-child) { margin-block-start: round(1rlh, var(--1px)) }
+
 			/* Manual column placements. */
 			:where(div, .all, .aside, .body, .middle, .five, .four, .left, .one, .recto, .right, .six, .three, .two, .verso) {
 				grid-row: span var(--rows, 1);
@@ -255,6 +257,17 @@
 
 		/* Lists, lists, lists. */
 		:is(dl, ol, ul) {
+			/* Extra spacing around loosies. */
+			&:where(:not([class], :first-child)) {
+				margin-block-start: round(1rlh, var(--1px));
+
+				&:where(:not(:last-child)) + * {
+					margin-block-start: round(1rlh, var(--1px));
+
+					@container style(--columns: 6) { + *:where(.recto, .right) { margin-block-start: 1rlh } }
+				}
+			}
+
 			/* Not `cite` lists. */
 			&:where(:not(:has(> li > a > cite, > li > p:only-child > a > cite))) {
 			/* TODO There still has to be a simpler way to check for these! */
@@ -270,6 +283,9 @@
 						content:            '•' / '';
 						inset-inline-start: 0;
 						position:           absolute;
+
+						/* Bill did not draw us a decorative bullet! */
+						@container style(--family: 'Venice') { font-family: 'Geneva', serif }
 					}
 
 					&:has(p)::before { text-box: trim-both cap alphabetic } /* Match for “loose” ones. */
@@ -294,6 +310,14 @@
 					grid-template-columns: minmax(0, 1fr);
 					row-gap:               var(--line); /* Back to `main` spacing. */
 				}
+			}
+		}
+
+		dl {
+			row-gap: inherit;
+
+			> dt {
+				&:where(:not(:first-of-type)) { margin-block-start: round(1rlh, var(--1px)) }
 			}
 		}
 

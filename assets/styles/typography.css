@@ -120,7 +120,7 @@ hgroup:has(h3) {
 }
 
 /* Stay swiss. */
-hgroup:has(h4) {
+hgroup:has(h4), dt {
 	--size: var(--size--h4);
 
 	font-weight: bold;
