@@ -360,7 +360,7 @@ What Are Things to Consider When Picking a Typeface?
 
 ## Typesetting and Layout
 
-### Type Size, Weight, and Color
+### Type *Size*, *Weight*, and *Color*
 
 A heading (or *display text*) should appear differently than body text (also called *body copy*), which should appear differently than lists, which should appear differently than links, and so on. A well-typeset document considers all of these elements, working together, to create a clear, cohesive layout.
 
@@ -368,7 +368,7 @@ As you typeset it is also important to treat things consistently—headings shou
 
 <!-- TODO `object` instead of `img`? -->
 
-<figure>
+<figure class="aside">
 <img src="type-size.svg">
 <figcaption>
 
@@ -379,7 +379,7 @@ An example of how type *size* informs hierarchy.
 
 We can use differing *type sizes* to distinguish between headings and body text. Generally, we aim to create a visual type hierarchy where the most important parts of a document have the largest size (headings), scaling down through our main, body text to the least important (captions or footnotes) as the smallest.
 
-<figure>
+<figure class="aside">
 <img src="type-weight.svg">
 <figcaption>
 
@@ -390,26 +390,30 @@ An example of how type *weight* informs hierarchy. Did your eyes skip over the f
 
 But the literal size is not our only tool. Another way we can distinguish copy within a document is by making use of *weights*—varying the thickness of the stroke. Good typefaces usually come in a range of weights to facilitate our designs—at the very least a *regular* (or *roman*), *bold*, and *italic* weight. Nowadays, [variable typefaces](https://v-fonts.com) allow us to pick and choose the exact weight combinations that we need.
 
-<figure>
+<figure class="aside">
 <img src="type-color.svg">
 <figcaption>
 
-An example of how type color informs hierarchy. We’re guessing you went to the red, first.
+An example of how type *color* informs hierarchy. We’re guessing you went to the red, first.
 
 </figcaption>
 </figure>
 
 We can also use *color* as a visual element to distinguish our content. Above, we keep the type the same in both the heading and body text. But using only color, we are still able to set the heading apart.
 
-Many of these principles of hierarchy are come from the [*Principles of Gestalt*](https://g-e-s-t-a-l-t.org/media/pdf/Investigations-on-Gestalt-Principles.pdf)—creating associations out of form. (These, in turn, are buried deep in our evolutionary history.) These principles [have become systematized](https://lawsofux.com/en/) in interactive work.
+> [!NOTE]
+>
+>Many of these principles of hierarchy are come from the [*Principles of Gestalt*](https://g-e-s-t-a-l-t.org/media/pdf/Investigations-on-Gestalt-Principles.pdf)—creating associations out of form. (These, in turn, are buried deep in our evolutionary history.)
+>
+> <sub>These principles have become [more systematized](https://lawsofux.com/en/) in interactive work.</sub>
 
 ### Leading
 
-<figure>
+<figure class="aside">
 <img src="type-leading.svg">
 <figcaption>
 
-An example of how leading can inform readability.
+An example of how *leading* can inform readability.
 
 </figcaption>
 </figure>
@@ -420,11 +424,11 @@ We can tolerate close lines for short texts; we struggle with them over longer p
 
 ### Ragging
 
-<figure>
+<figure class="aside">
 <img src="type-rag.svg">
 <figcaption>
 
-An example of ragging text.
+An example of *ragging* text.
 
 </figcaption>
 </figure>
@@ -437,7 +441,7 @@ To avoid *bad rags*, we can make sure that the type size of a container is not t
 
 ### Widows and Orphans
 
-<figure>
+<figure class="aside">
 <img src="type-widows-orphans.svg">
 <figcaption>
 
@@ -452,35 +456,43 @@ An example of a widow *(left)* and orphan *(right)*.
 
 We should avoid orphans and widows through proper ragging, making sure that type sizes aren’t too large for a container, and making use of the [non-breaking space](https://en.wikipedia.org/wiki/Non-breaking_space) character, which makes sure there is not a line-break between two words.
 
-We should also always *wrap* some words together (for example, *September 5*, or *van Zanten*), for ease of reading.
+<sub>We should also always *wrap* some words together (for example, *September 3*, or *van Zanten*), for ease of reading.</sub>
 
 ### Punctuation
 
-It is also our job to make sure that we properly use punctuation—so it is in service of our content, not a distraction.
+**It is also our job to make sure that we properly use punctuation—so it is in service of our content, not a distraction?**
 
 Various dashes are a [very common mistake](https://www.merriam-webster.com/words-at-play/em-dash-en-dash-how-to-use). *Hyphens* (-) are different than <nobr>*en-dashes* (–)</nobr> are different than <nobr>*em-dashes* (—).</nobr> We use hyphens to separate and break words, <nobr>en-dashes</nobr> to dictate a numerical range, and <nobr>em-dashes</nobr> to emphasize phrasing.
 
-Another common mistake is misusing [apostrophes and quotations](https://cmosshoptalk.com/2019/03/19/smart-apostrophes-cmos-6-117/). By default, most computers will generate (&quot;) as a proper *curly* quote when you type it (the feature is usually called “smart quotes”). However, you should be prudent to use opening and closing quotes—note the difference between these two quotes:
-<!-- style="margin-block-start: 2rlh" -->
+> [!CAUTION]
+>
+> These don’t have a lot of inline length variation in our site’s *Geneva* cut. Know that hyphens are generally the narrowest!
 
-&quot;These are sad, ambiguous, straight quotes.&quot;
-<!-- style="--size: var(--size--h3)" -->
+Another common mistake is misusing [apostrophes and quotations](https://cmosshoptalk.com/2019/03/19/smart-apostrophes-cmos-6-117/). By default, most computers will generate (&quot;) as a proper *curly* quote when you type it (the feature is usually called “smart quotes”). However, you should be prudent to use opening and closing quotes—note the difference between these two quotes:
 
-&ldquo;These are better, clearer, opening/closing quotes.&rdquo;
-<!-- style="--size: var(--size--h3)" -->
+- &quot;These are sad, ambiguous, straight quotes.&quot;
 
-A third mistake is to use characters rather than mathematical symbols. This common practice started when typewriters were the norm which only had a limited characters set. This excuse no longer applies! For example:
-<!-- style="margin-block-start: 2rlh" -->
+- &ldquo;These are better, clearer, opening/closing quotes.&rdquo;
+<!-- .all style="--size: var(--size--h4); margin-block-start: round(1rlh, var(--1px)" -->
 
-9 x 5&ensp;→&ensp;9 × 5<br>
-9 / 5&ensp;→&ensp;9 ÷ 5<br>
-<!-- style="--size: var(--size--h3)" -->
+A third mistake is to use characters rather than mathematical symbols. This common practice started when typewriters (or early computers) were the norm which only had a limited characters set. This excuse no longer applies! For example:
+<!-- style="margin-block-start: round(2rlh, var(--1px)" -->
 
-**When in doubt, [*The Elements of Typographic Style*](https://readings.design/PDF/the_elements_of_typographic_style.pdf) probably has the answers you need. It is among the best single references for typographic minutia.**
+- 9 x 5&ensp;→&ensp;9 × 5
+
+- 9 / 5&ensp;→&ensp;9 ÷ 5
+
+**When in doubt, [*The Elements of Typographic Style*](https://readings.design/PDF/the_elements_of_typographic_style.pdf) probably has the answers you need. It is among the best single references for typographic minutia.**
 
 ## Type Foundries
 
 Where does one find typefaces? From *foundries*, again referencing the days when making type involved casting actual metal. While most computers now come with many good ones, there are many other places to get fonts. Here are some that we like:
+
+<section>
+
+<div class="verso">
+
+**Paid**
 
 - [<cite>Adobe Fonts</cite>](https://fonts.google.com/)
 - [<cite>Comercial Type</cite>](https://commercialtype.com/)
@@ -493,27 +505,37 @@ Where does one find typefaces? From *foundries*, again referencing the days whe
 - [<cite>MCKL</cite>](https://mckltype.com/)
 - [<cite>Order</cite>](https://order.design/otf)
 - [<cite>Typotheque</cite>](https://www.typotheque.com/)
-<!-- .left .before--2 -->
 
-<!-- BREAK -->
+</div>
+
+<div class="recto">
+
+**Free**
 
 - [<cite>Google Fonts</cite>](https://fonts.google.com/)
 	Free! And popular/huge.
+
 - [<cite>Fontshare</cite>](https://www.fontshare.com/)
 	Free! From *Indian Type Foundry*, left.
+
 - [<cite>Matthew Hinders-Anderson</cite>](https://wehtt.am/fonts/)
 	Free for non-commercial!
+
 - [<cite>Typographer</cite>](https://typographer.com)
 	Free for students!
-<!-- .middle .after -->
 
 <sub>While not a type foundry itself, we include (and will use) *Google Fonts* resource because of its vast array of open-source typefaces. *Adobe Fonts* is similar, but requires a paid subscription.</sub>
 
+</div>
+
+</section>
+
+
 > [!IMPORTANT]
 >
-> While many of these type foundries offer trial versions to use, you should always properly license (pay for) a typeface before using it for commercial purposes.
+> While many of these type foundries offer trial versions to use, you should always properly license (pay for) a typeface before using it for commercial purposes!
 >
-> Many foundries offer student discounts. There are also many open-source typefaces and fonts licensed under the [SIL Open Font License](https://openfontlicense.org/).
+> <sub>Many foundries offer student discounts. There are also many open-source typefaces and fonts licensed under the [SIL Open Font License](https://openfontlicense.org/).</sub>
 >
 > <sub>Always remember that typographers are designers, just like you—and deserve to be paid fairly for their work. It’s hard for you to do well, without their efforts.</sub>
 
