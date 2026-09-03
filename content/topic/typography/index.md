@@ -265,13 +265,13 @@ What Is the Difference Between a Typeface and a Font?
 
 </summary>
 
-A *typeface* is a *font family*—a collection of fonts based on the same design.
+**A *typeface* is a *font family*—a collection of fonts based on the same design.**
 
-The term *font* is mostly used for a single style such as *Geneva 12 Bold*.
+**The term *font* is mostly used for a single style such as *Geneva 12 Bold*.**
 
 </details>
 
-<figure style="--lines: 13">
+<figure class="aside borderless" style="--lines: 13">
 <img src="material-typeface.png">
 <figcaption>
 
@@ -280,7 +280,7 @@ More typeface anatomy! [<cite>↗</cite>](https://material.io/design/typography/
 </figcaption>
 </figure>
 
-Broadly, we’ll refer to several main styles of typefaces:
+**Broadly, we’ll refer to several main styles of typefaces:**
 
 <span style="--size: var(--size--h2); font-family: serif">Serifs</span>
 
