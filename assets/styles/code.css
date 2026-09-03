@@ -9,7 +9,6 @@ samp {
 	background-color: var(--background);
 	border:           var(--1px) solid transparent;
 	isolation:        isolate;
-	margin-inline:    var(--2px);
 	padding-inline:   var(--3px);
 	position:         relative;
 
@@ -24,6 +23,13 @@ samp {
 
 	@container style(--size: 9) or style(--size: 10){
 		padding-bottom: calc(var(--3px) / 4); /* 🤷‍♀️ */
+	}
+
+	/* Don’t overshoot link underlines. */
+	a & {
+		mix-blend-mode: multiply;
+
+		&::after { inset-block-end: 0 }
 	}
 }
 
