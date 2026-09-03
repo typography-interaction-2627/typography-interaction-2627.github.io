@@ -213,7 +213,7 @@
 			}
 		}
 
-		hr {
+		:where(hr) {
 			background:        var(--background--border);
 			grid-column:       all;
 			margin-block:      var(--gutter);
@@ -313,7 +313,7 @@
 			}
 		}
 
-		dl {
+		:where(dl) {
 			row-gap: inherit;
 
 			> dt {
@@ -322,7 +322,7 @@
 		}
 
 		/* Tables for the grade breakdown. */
-		table {
+		:where(table) {
 			inline-size: fit-content;
 
 			td:not(:first-child), th:not(:first-child) {
