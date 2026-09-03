@@ -14,7 +14,8 @@
 		position:    relative;
 		row-gap:     round(1rlh, var(--1px));
 
-		&:not([class]) { grid-column: all }
+		/* Default full-width. */
+		&:not([class]), &[class="borderless"] { grid-column: all }
 
 		&:where(:not(:first-child)),
 		&:where(:not(:last-child)) + * {
@@ -29,18 +30,16 @@
 
 			&:has(img, object) { inline-size: fit-content }
 
-			&:has(iframe) {
-				background-color: var(--color);
-				filter:           saturate(var(--in-view));
+			/* TODO How to have this always snap to pixel height? Takes “windows” off-pattern! */
+			img,
+			object,
+			iframe {
+				--height--fallback: round(calc(var(--lines) * 1rlh - 1rcap), var(--1px));
 
-				/* A “border” around these. */
-				&::after {
-					box-shadow:     var(--shadow--border);
-					content:        '';
-					inset:          0;
-					position:       absolute;
-					pointer-events: none;
-				}
+				block-size:      var(--height, var(--height--fallback));
+				filter:          saturate(var(--in-view));
+				max-block-size:  calc(round(80svh, var(--1px)));
+				max-inline-size: 100%;
 
 				@supports (animation-timeline: view()) {
 					animation-fill-mode:       both;
@@ -49,17 +48,6 @@
 					animation-timeline:        view();
 					animation-timing-function: ease-in-out;
 				}
-			}
-
-			/* TODO How to have this snap to pixel height? Takes “windows” off-pattern! */
-			img,
-			object,
-			iframe {
-				--height--fallback: round(calc(var(--lines) * 1rlh - 1rcap), var(--1px));
-
-				block-size:      var(--height, var(--height--fallback));
-				max-block-size:  calc(round(80svh, 1rcap));
-				max-inline-size: 100%;
 			}
 
 			iframe {
@@ -82,6 +70,19 @@
 				}
 
 				/* TODO `:hover` override! */
+			}
+		}
+
+		/* A “border” around these. */
+		&:not(.borderless) div:has(img, object, iframe) {
+			background-color: var(--color);
+
+			&::after {
+				box-shadow:     var(--shadow--border);
+				content:        '';
+				inset:          0;
+				position:       absolute;
+				pointer-events: none;
 			}
 		}
 

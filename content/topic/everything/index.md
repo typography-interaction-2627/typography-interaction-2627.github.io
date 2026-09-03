@@ -49,7 +49,7 @@ Univac, the first commercial computer in the US. [<cite>↗</cite>](https://time
 
 A catalyst in the formation of the internet was the [Cold War](https://en.wikipedia.org/wiki/Cold_War). The threat of nuclear conflict spurred the US Defense Department to consider decentralized and distributed communication networks—to disseminate orders and information in the event of an attack (and ultimately, for retaliation).
 
-<figure class="aside">
+<figure class="aside borderless">
 <img src="networks.png">
 <figcaption>
 
@@ -66,7 +66,7 @@ Different network topologies. [<cite>↗</cite>](https://www.rand.org/content/da
 >
 > [<cite>Paul Baran, 2008</cite>](https://www.vanityfair.com/news/2008/07/internet200807)
 
-<figure style="--lines: 16">
+<figure class="borderless" style="--lines: 16">
 <img src="arpanet.png">
 <figcaption>
 
@@ -79,7 +79,7 @@ By 1969, computer nodes [connected](https://en.wikipedia.org/wiki/History_of_the
 
 Over the following decade, [ARPANET](https://www.britannica.com/topic/ARPANET) would grow to include other networks and reach more cities in the US. It had its first expansion outside the States in 1973, with connections to the UK and Norway. Slowly, similar commercial and academic networks were developing alongside, each with their own communication protocols.
 
-<figure>
+<figure class="borderless">
 <img src="arpanet.gif">
 <figcaption>
 
@@ -90,7 +90,7 @@ The growth of ARPANET into the 1970s. [<cite>↗</cite>](https://medium.com/synt
 
 In 1974, Robert Kahn and Vinton Cerf (two ARPA scientists) developed the *Transmission Control Protocol* and the *Internet Protocol* (TCP/IP) for computers to talk to each other. By the 80s, it became the standard network communication format—and still underpins the internet we all use today.
 
-<figure class="recto">
+<figure class="recto borderless">
 <img src="tcpip.png">
 <figcaption>
 
@@ -142,7 +142,7 @@ Tim Berners-Lee, a British academic and scientist, invented the *World Wide Web*
 
 1. Software that gives access to the documents: the *server*
 
-<figure class="aside">
+<figure class="aside borderless">
 <img src="web.png">
 <figcaption>
 
@@ -159,7 +159,7 @@ How it looked for Tim, back then. [<cite>↗</cite>](https://worldwideweb.cern.c
 </figcaption>
 </figure>
 
-<figure class="recto">
+<figure class="recto borderless">
 <img src="chrome.png">
 <figcaption>
 
@@ -288,7 +288,7 @@ And in that latter role, we’ll need to learn how to swim. Our path into *desig
 
 ### These Days, Apps Are Often Web Pages Too
 
-<figure>
+<figure class="borderless">
 <img src="electron.png">
 <figcaption>
 
@@ -301,7 +301,7 @@ All these desktop “apps” are built in [Electron](https://www.electronjs.org)
 
 The core application only has to be written once, instead of rewritten for each platform. And why design it all again? (Designers are expensive!) Why hire Windows and Mac devs when you can just hire web devs? …then why hire i&NoBreak;OS or Android devs, either? (Developers are even more expensive!) So many companies take approach, for cross-platform development.
 
-<figure>
+<figure class="borderless">
 <img src="mobile.png">
 <figcaption>
 
