@@ -9,7 +9,6 @@ import markdownIt from 'markdown-it'
 import markdownItAbbr from 'markdown-it-abbr'
 import markdownItAnchor from 'markdown-it-anchor'
 import markdownItAttrs from 'markdown-it-attrs'
-import markdownItDeflist from 'markdown-it-deflist'
 import markdownItHeaderSections from 'markdown-it-header-sections'
 
 import { componentPlugin } from '@mdit-vue/plugin-component' // Pretend we are Vue.
@@ -254,7 +253,6 @@ export default (config) => {
 		.use(mardownAddAbbreviations)
 		.use(markdownCommentsToCurlies)
 		.use(markdownItAbbr) // TODO can we have this run after ragging?
-		.use(markdownItDeflist) // TODO This will not work for GFM right?
 		.use(markdownItHeaderSections)
 		.use(markdownAnchors)
 		.use(markdownItAttrs)

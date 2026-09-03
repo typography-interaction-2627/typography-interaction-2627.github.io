@@ -9,7 +9,6 @@
 		"markdown-it-abbr": "^2.0.0",
 		"markdown-it-anchor": "^9.2.1",
 		"markdown-it-attrs": "^5.0.1",
-		"markdown-it-deflist": "^4.0.0",
 		"markdown-it-header-sections": "^1.0.0",
 		"node-html-parser": "^9.0.1",
 		"puppeteer": "^25.8.0",
