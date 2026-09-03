@@ -85,10 +85,10 @@
 				}
 			}
 
-			/* Override when hovering. */
 			&:hover {
-				img, object, iframe  { animation-play-state: paused; filter: saturate(1) }
-				as-dithered-image    { animation-play-state: paused; opacity: 0 }
+				--in-view: 1;
+
+				img, object, iframe, as-dithered-image { animation-name: none }
 			}
 		}
 
