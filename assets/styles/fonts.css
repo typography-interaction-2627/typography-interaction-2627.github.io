@@ -2,6 +2,7 @@
 @font-face { font-family: 'New York'; src: url('../assets/fonts/new-york.woff2') }
 @font-face { font-family: 'Monaco';   src: url('../assets/fonts/monaco.woff2') }
 @font-face { font-family: 'Chicago';  src: url('../assets/fonts/chicago.woff2') }
+@font-face { font-family: 'Venice';   src: url('../assets/fonts/venice.woff2') }
 
 :where(:root) {
 	-moz-osx-font-smoothing:  grayscale; /* This functions as `none`. */
@@ -67,6 +68,15 @@
 
 			--baseline: 2;
 		}
+
+		@container style(--family: 'Venice') {
+			--size: 14; /* Same. */
+
+			--left: 0;
+			--right: 0;
+
+			--baseline: 4;
+		}
 	}
 }
 
@@ -124,5 +134,6 @@
 		}
 
 		@container style(--family: 'Chicago') { --font: 'Chicago' }
+		@container style(--family: 'Venice')  { --font: 'Venice' }
 	}
 }
