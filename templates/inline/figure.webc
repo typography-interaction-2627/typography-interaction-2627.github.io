@@ -142,14 +142,14 @@
 		})
 	})
 
-	// Match the dithering “pixel” to our scaled pixel, which changes at breakpoints.
+	// Match the dithering “pixel” to our scaled pixel.
+	let frame
+
 	const setCrunch = () => {
 		const crunch = getComputedStyle(document.documentElement).getPropertyValue('--scaling').trim() || '2'
 
-		document.querySelectorAll('as-dithered-image').forEach((dither) => dither.getAttribute('crunch') === crunch || dither.setAttribute('crunch', crunch))
+		document.querySelectorAll(`as-dithered-image:not([crunch="${crunch}"])`).forEach((dither) => dither.setAttribute('crunch', crunch))
 	}
-
-	let frame
 
 	setCrunch()
 	addEventListener('resize', () => (cancelAnimationFrame(frame), frame = requestAnimationFrame(setCrunch)))
