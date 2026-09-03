@@ -12,7 +12,6 @@ samp {
 	padding-inline:   var(--3px);
 	position:         relative;
 
-	/* TODO Fractional/rounding is off on mobile! */
 	&::after {
 		background: var(--check);
 		content:    '';
@@ -21,9 +20,8 @@ samp {
 		z-index:    -1;
 	}
 
-	@container style(--size: 9) or style(--size: 10){
-		padding-bottom: calc(var(--3px) / 4); /* 🤷‍♀️ */
-	}
+	/* Fix rounding. 🤷‍♀️ */
+	@container style(--size: 9) or style(--size: 10){ padding-bottom: 0.08em }
 
 	/* Don’t overshoot link underlines. */
 	a:not(:has(cite)) & {

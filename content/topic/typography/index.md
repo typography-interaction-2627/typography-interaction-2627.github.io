@@ -300,7 +300,7 @@ More typeface anatomy! [<cite>↗</cite>](https://material.io/design/typography/
 <dt style="--family: 'Monaco'; font-family: 'Monaco', monospace; font-weight: normal">Monospace</dt>
 <dd>
 
-<sub>All characters the same width (as in `code`)</sub>
+<sub>All characters the same width (as in `code`&#x202F;)</sub>
 
 </dd>
 
