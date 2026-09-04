@@ -16,7 +16,7 @@
 	line-height:              var(--leading);
 	text-rendering:           geometricPrecision;
 
-	:where(*, *::before, *::after) {
+	:where(*, ::before, ::after) {
 		/* For inline element backgrounds (links and such). */
 		--underline: calc((var(--size) + var(--baseline)) * var(--1px));
 
@@ -104,7 +104,7 @@
 	@font-face { font-family: 'Monaco 12'; src: url('../assets/fonts/monaco--12.woff2') }
 
 	/* Swap them in. */
-	:where(:root) :where(*, *::before, *::after) {
+	:where(:root) :where(*, ::before, ::after) {
 		font-family: var(--font);
 
 		@container style(--family: 'Geneva') {

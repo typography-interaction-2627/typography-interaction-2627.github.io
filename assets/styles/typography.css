@@ -93,7 +93,7 @@ abbr {
 hgroup:has(h1, h2, h3) { --family:  'New York' }
 
 @container style(--family: 'New York') {
-	:where(*, *::before, *::after) {
+	:where(*, ::before, ::after) {
 		--wrap:    balance;
 		--leading: 1;
 		--kerning: round(
