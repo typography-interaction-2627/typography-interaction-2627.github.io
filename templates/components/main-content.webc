@@ -350,7 +350,7 @@
 		}
 
 		/* Don’t tell Susan! */
-		span.arrow,
+		span.rarr,
 		span.times {
 			background-position: center;
 			background-repeat:   no-repeat;
@@ -362,8 +362,8 @@
 			vertical-align:      middle;
 		}
 
-		span.arrow { background-image: url('/assets/icons/right.svg') }
-		span.times { background-image: url('/assets/icons/times.svg') }
+		span.rarr  { background-image: url('/assets/icons/&rarr.svg') }
+		span.times { background-image: url('/assets/icons/&times.svg') }
 	}
 </style>
 <script>
