@@ -1,79 +1,28 @@
 /* Explicitly defined variables for `@container` queries. */
-@property --family {
-	inherits:      true;
-	initial-value: 'Geneva';
-	syntax:        '<string>';
-}
+@property --family { inherits: true; initial-value: 'Geneva'; syntax: '<string>' }
 
 /* Integer/unitless for `calc` and `opsz` use. */
-@property --size {
-	inherits:      true;
-	initial-value: 10;
-	syntax:        '<integer>';
-}
+@property --size { inherits: true; initial-value: 10;    syntax: '<integer>' }
 
-@property --color {
-	inherits:      true;
-	initial-value: black;
-	syntax:        '<color>';
-}
+@property --color      { inherits: true; initial-value: black; syntax: '<color>' }
+@property --background { inherits: true; initial-value: white; syntax: '<color>' }
 
-@property --background {
-	inherits:      true;
-	initial-value: white;
-	syntax:        '<color>';
-}
-
-@property --columns {
-	inherits:      true;
-	initial-value: 1;
-	syntax:        '<integer>';
-}
+@property --columns { inherits: true; initial-value: 1;     syntax: '<integer>' }
 
 /* So these are resolved at root. */
-@property --gutter {
-	inherits:      true;
-	initial-value: 0px;
-	syntax:        '<length>';
-}
+@property --gutter { inherits: true; initial-value: 0px; syntax: '<length>' }
+@property --bleed  { inherits: true; initial-value: 0px; syntax: '<length>' }
+@property --alley  { inherits: true; initial-value: 0px; syntax: '<length>' }
+@property --page   { inherits: true; initial-value: 0px; syntax: '<length>' }
+@property --main   { inherits: true; initial-value: 0px; syntax: '<length>' }
 
-@property --bleed {
-	inherits:      true;
-	initial-value: 0px;
-	syntax:        '<length>';
-}
 
-@property --alley {
-	inherits:      true;
-	initial-value: 0px;
-	syntax:        '<length>';
-}
-
-@property --page {
-	inherits:      true;
-	initial-value: 0px;
-	syntax:        '<length>';
-}
-
-@property --main {
-	inherits:      true;
-	initial-value: 0px;
-	syntax:        '<length>';
-}
 /* Resolve where *declared*, for passing compted type values down! */
 /* https://lea.verou.me/blog/2021/06/inherit-ancestor-font-size-for-fun-and-profit/ */
-@property --resolve {
-	inherits:      true;
-	initial-value: 0px;
-	syntax:        '<length>';
-}
+@property --resolve { inherits: true; initial-value: 0px; syntax: '<length>' }
 
 /* Make this animatable for scroll-driven stuff. */
-@property --in-view {
-	inherits: true;
-	initial-value: 1;
-	syntax: '<number>';
-}
+@property --in-view { inherits: true; initial-value: 1; syntax: '<number>' }
 
 :where(:root) {
 	--scaling: 2; /* How many (CSS) pixels in our pixel. */
