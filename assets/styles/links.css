@@ -29,7 +29,7 @@ summary {
 
 /* Inline links. */
 :where(
-	:is(figcaption, li, summary):where(:not(:has(details, ol, p, section, ul))),
+	:is(li):where(:not(:has(ol, p, ul))),
 	cite,
 	dd,
 	dt,

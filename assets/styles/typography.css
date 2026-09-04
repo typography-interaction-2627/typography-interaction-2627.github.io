@@ -1,4 +1,4 @@
-:is(figcaption, li, summary):where(:not(:has(details, ol, p, section, ul))), /* “Tight” ones. */
+:is(li):where(:not(:has(ol, p, ul))), /* “Tight” ones. */
 cite,
 dd,
 dt,
@@ -57,7 +57,7 @@ abbr {
 
 /* TODO Do this as white-check overlay? Or as `mask-image`! */
 [inert] {
-	:is(figcaption, li, summary):where(:not(:has(details, ol, p, section, ul))),
+	:is(li):where(:not(:has(ol, p, ul))),
 	dd,
 	dt,
 	h1,
