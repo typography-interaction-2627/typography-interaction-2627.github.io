@@ -2,6 +2,7 @@
 	:where(main) {
 		:where(details) {
 			summary {
+				position:         relative;
 				background-color: var(--color);
 				display:          block;
 				inline-size:      fit-content;
@@ -20,12 +21,16 @@
 				p {
 					--color: var(--background);
 
-					position: relative;
-					z-index:  1;
+					padding-inline-start: round(2ex, var(--1px));
+					position:             relative;
+					user-select:          none;
+					z-index:              1;
 
 					&::before {
-						margin-inline-end: var(--lead);
-						content:           var(--icon, '+');
+						content:            var(--icon, '+') / '';
+						inset-inline-start: 0;
+						margin-inline-end:  var(--lead);
+						position:           absolute;
 					}
 				}
 
