@@ -320,7 +320,6 @@ While there are distinct [subfamilies within](https://www.fonts.com/content/lear
 <details>
 <summary>
 
-
 What Are Things to Consider When Picking a Typeface?
 
 </summary>
@@ -342,18 +341,18 @@ What Are Things to Consider When Picking a Typeface?
 </details>
 
 > Because it works.
-> Because you like its history.
-> Because you like its name.
-> Because of who designed it.
-> Because it was there.
-> Because they made you.
-> Because it reminds you of something.
+> Because you like its history.
+> Because you like its name.
+> Because of who designed it.
+> Because it was there.
+> Because they made you.
+> Because it reminds you of something.
 > Because it’s beautiful.
 > Because it’s ugly.
 > Because it’s boring.
 > Because it’s special.
-> Because you believe in it.
-> Because you can’t not.
+> Because you believe in it.
+> Because you can’t not.
 >
 > [<cite>Michael Bierut, 2017</cite>](https://www.fastcompany.com/90148989/how-pentagrams-michael-bierut-picks-a-typeface)
 
