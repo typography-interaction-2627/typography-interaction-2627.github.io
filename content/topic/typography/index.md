@@ -454,7 +454,7 @@ An example of a widow *(left)* and orphan *(right)*.
 
 We should avoid orphans and widows through proper ragging, making sure that type sizes aren’t too large for a container, and making use of the [non-breaking space](https://en.wikipedia.org/wiki/Non-breaking_space) character, which makes sure there is not a line-break between two words.
 
-<sub>We should also always *wrap* some words together (for example, *September 3*, or *van Zanten*), for ease of reading.</sub>
+We should also always *wrap* some words together (for example, *September 3*, or *van Zanten*), for ease of reading.
 
 ### Punctuation
 
