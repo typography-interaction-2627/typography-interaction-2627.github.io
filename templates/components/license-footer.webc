@@ -10,17 +10,19 @@
 		--size: var(--size--note);
 		--wrap: balance;
 
-		display:            grid;
 		margin-block-start: var(--break);
-		padding-inline:     calc(var(--gutter) + var(--bleed));
-		place-content:      center;
 
 		p {
-			background-color: var(--background);
-			box-shadow:       var(--shadow--border), var(--shadow--double);
-			inline-size:      fit-content;
-			padding:          round(calc(1cap + var(--1px)), var(--1px));
-			text-align:       center;
+			background-color:   var(--background);
+			box-shadow:         var(--shadow--border), var(--shadow--double);
+			inline-size:        fit-content;
+			inline-size:        max-content;
+			inset-inline-start: round(down, 50%, var(--1px));
+			max-inline-size:    var(--main);
+			padding:            round(calc(1cap + var(--1px)), var(--1px));
+			position:           relative;
+			text-align:         center;
+			translate:          round(-50%, var(--1px)) 0;
 		}
 	}
 </style>
