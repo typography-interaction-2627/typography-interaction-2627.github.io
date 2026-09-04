@@ -1,19 +1,24 @@
 <style>
 	header:has(h1) {
-		block-size:     round(100svh, var(--1px));
-		display:        grid;
-		overflow:       clip;
-		padding-inline: calc(var(--gutter) + var(--bleed));
-		place-content:  center;
-		/* TODO With transform/translate, for sub-px? */
+		block-size: round(100svh, var(--1px));
+		overflow:   clip;
+		position:   relative;
 
 		hgroup {
 			--gap: round(calc(1lh - 1ex), var(--1px));
 
-			display:     grid;
-			place-items: center;
-			row-gap:     var(--gap);
-			text-align:  center;
+			display:            grid;
+			inline-size:        max-content;
+			inset-block-start:  round(down, 50%, var(--1px));
+			inset-inline-start: round(down, 50%, var(--1px));
+			max-inline-size:    var(--main);
+			min-inline-size:    min-content;
+			place-items:        center;
+			position:           absolute;
+			row-gap:            var(--gap);
+			text-align:         center;
+			translate:          round(-50%, var(--1px)) round(-50%, var(--1px));
+			/* Centered with `transform` to always land on-pattern. */
 
 			div {
 				--family: 'Geneva';
@@ -37,7 +42,7 @@
 	:root:has(body > header:only-child) {
 		--scaling: 3;
 
-		header { padding-inline: var(--bleed) }
+		hgroup { max-inline-size: var(--page) }
 	}
 </style>
 <header webc:root="override">
