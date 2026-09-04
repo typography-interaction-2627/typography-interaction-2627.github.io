@@ -1,4 +1,4 @@
-/* Explicitly defined variables for `@container` queryies. */
+/* Explicitly defined variables for `@container` queries. */
 @property --family {
 	inherits:      true;
 	initial-value: 'Geneva';
@@ -30,12 +30,36 @@
 	syntax:        '<integer>';
 }
 
+/* So these are resolved at root. */
 @property --gutter {
 	inherits:      true;
 	initial-value: 0px;
 	syntax:        '<length>';
 }
 
+@property --bleed {
+	inherits:      true;
+	initial-value: 0px;
+	syntax:        '<length>';
+}
+
+@property --alley {
+	inherits:      true;
+	initial-value: 0px;
+	syntax:        '<length>';
+}
+
+@property --page {
+	inherits:      true;
+	initial-value: 0px;
+	syntax:        '<length>';
+}
+
+@property --main {
+	inherits:      true;
+	initial-value: 0px;
+	syntax:        '<length>';
+}
 /* Resolve where *declared*, for passing compted type values down! */
 /* https://lea.verou.me/blog/2021/06/inherit-ancestor-font-size-for-fun-and-profit/ */
 @property --resolve {
@@ -94,13 +118,14 @@
 	--line:    round(calc(1lh + var(--lead)), var(--1px));
 	--rhythm:  round(calc(1lh - 1ex),         var(--1px)); /* Visually between x-heights. */
 
-	--gutter:        var(--rhythm);
-	--bleed:         var(--5px);
-	--alley:         calc(var(--rhythm) * 2);
-	--page:          round(down, min(calc(100vw - 2 * var(--bleed)), var(--max)), var(--1px));
-	--main:          calc(var(--page) - 2 * var(--gutter) - var(--2px)); /* Account for “border.” */
-	--max:           calc(720 * var(--1px));
-	--break:         round(20vh, var(--1px));
+	--gutter: var(--rhythm);
+	--bleed:  var(--5px);
+	--alley:  calc(var(--rhythm) * 2);
+	--page:   min(round(down, calc(100vw - 2 * var(--bleed)), var(--1px)), var(--max));
+	--main:   calc(var(--page) - 2 * var(--gutter) - var(--2px)); /* Account for “border.” */
+
+	--max:   calc(720 * var(--1px));
+	--break: round(20vh, var(--1px));
 
 	--enlargement: var(--4px);
 
