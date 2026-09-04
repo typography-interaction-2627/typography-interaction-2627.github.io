@@ -12,7 +12,7 @@
 .screen, hgroup a, body > :where(nav, footer) { display: none }
 
 /* Resets. */
-:root {
+:where(:root) {
 	--scaling: 1.5;
 	--gutter:  initial;
 
