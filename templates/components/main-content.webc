@@ -1,6 +1,6 @@
 <script webc:setup>
 	export const syllabusSemester = ({ page, currentWeek }) =>
-		page.url == '/syllabus/' && currentWeek < 15 ? 'fall' : 'spring'
+		page.url == '/syllabus/' ? (currentWeek < 15 ? 'fall' : 'spring') : ''
 </script>
 <style webc:bucket="components">
 	main {
