@@ -4,17 +4,20 @@
 		--leading: calc(6 / 5 * 100%); /* Tighten to 1.2 */
 		--wrap:    balance;
 
-		background-color:   var(--color);
-		border:             var(--2px) solid var(--background);
-		display:            grid;
-		grid-column:        aside;
-		isolation:          isolate;
-		outline:            var(--1px) solid var(--color);
-		padding:            var(--gutter);
-		place-items:        center;
-		position:           relative;
-		row-gap:            var(--line);
-		text-align:         center;
+		--gap: calc(2lh - 1cap);
+
+		background-color: var(--color);
+		border:           var(--2px) solid var(--background);
+		display:          grid;
+		grid-column:      aside;
+		isolation:        isolate;
+		outline:          var(--1px) solid var(--color);
+		padding-block:    max(var(--gutter), var(--gap));
+		padding-inline:   var(--gutter);
+		place-items:      center;
+		position:         relative;
+		row-gap:          var(--gap);
+		text-align:       center;
 
 		&::after {
 			content:          '';

@@ -29,7 +29,7 @@
 					&::before {
 						content:            var(--icon, '+') / '';
 						inset-inline-start: 0;
-						margin-inline-end:  var(--lead);
+						margin-inline-end:  calc(1lh - 1cap);
 						position:           absolute;
 					}
 				}

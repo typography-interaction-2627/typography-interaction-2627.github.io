@@ -106,7 +106,7 @@
 		}
 
 		/* Looser space. */
-		&.borderless { row-gap: var(--line) }
+		&.borderless { row-gap: calc(2rlh - 1rcap) }
 
 		figcaption {
 			--size: var(--size--note);

@@ -5,7 +5,7 @@
 		position:   relative;
 
 		hgroup {
-			--gap: var(--rhythm);
+			--gap: calc(1lh - 1ex);
 
 			display:            grid;
 			inline-size:        max-content;

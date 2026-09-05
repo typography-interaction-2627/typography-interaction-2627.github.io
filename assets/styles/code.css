@@ -38,7 +38,7 @@ pre {
 	inline-size:      fit-content;
 	max-inline-size:  100%;
 	overflow-x:       scroll;
-	padding:          var(--lead);
+	padding:          calc(1lh - 1cap);
 	text-box:         trim-both cap alphabetic;
 
 	@supports (not (font: -apple-system-body)) and (not (-moz-appearance: none)) {

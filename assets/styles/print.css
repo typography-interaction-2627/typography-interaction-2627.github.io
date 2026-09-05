@@ -71,7 +71,7 @@ abbr { background: initial }
 main, section {
 	display: block; /* Needed for break (fragmentation) control! */
 
-	> *:where(:not(:first-child)) { margin-block-start: var(--line) }
+	> *:where(:not(:first-child)) { margin-block-start: calc(2rlh - 1rcap) }
 }
 
 section:has(> hgroup > h2) {
@@ -80,7 +80,7 @@ section:has(> hgroup > h2) {
 	> hgroup:has(h2) {
 		padding-block-end: 1cap;
 
-		+ * { margin-block-start: calc(var(--line) + 1rlh) }
+		+ * { margin-block-start: calc(3rlh - 1rcap) }
 	}
 }
 
@@ -116,23 +116,27 @@ hgroup:has(h2) {
 section section:not(hgroup + section) > hgroup:has(h3) {
 	--resolve: calc(-1cap + var(---1px));
 
+	padding-block-start: 1cap;
+
 	&::before {
 		inset-block-start: 0;
 		content:           '................................................................................................................................................................................................................................................' / '';
 		letter-spacing:    var(---1px);
 	}
+
+	h3 { margin-block-start: initial }
 }
 
 /* These get fractional, just turn them off. */
 :where(p, li):has(a > cite) a:not(:has(cite)) { background: initial }
 
-section:has(> hgroup > h3) { margin-block-start: calc(var(--line) + 2rlh) } /* `--line` is relative; 2rlh is not! */
-section:has(> hgroup > h4) { margin-block-start: calc(var(--line) + 1rlh) }
+section:has(> hgroup > h3) { margin-block-start: calc(4rlh - 1rcap) }
+section:has(> hgroup > h4) { margin-block-start: calc(3rlh - 1rcap) }
 
-p:has(> strong:only-child) + * { margin-block-start: calc(var(--line) + 1rlh) }
+p:has(> strong:only-child) + * { margin-block-start: calc(3rlh - 1rcap) }
 
 /* Catalog link. */
-.sticky { margin-block-start: calc(var(--line) + 1rlh) }
+.sticky { margin-block-start: calc(3rlh - 1rcap) }
 
 /* Breaks. */
 hgroup, p:has(> strong:only-child):has(+ p, + ul) { break-after: avoid }

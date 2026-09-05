@@ -33,7 +33,7 @@
 			padding-block-end:   calc(2 * var(--gutter) + var(--1px));
 			padding-block-start: calc(var(--gutter) + var(--1px));
 			padding-inline:      calc(var(--gutter) + var(--1px));
-			row-gap:             var(--line);
+			row-gap:             calc(2rlh - 1rcap);
 
 			grid-template-columns:
 				[ all-start aside-start body-start middle-start five-start four-start left-start one-start recto-start right-start six-start three-start two-start verso-start ]
@@ -289,7 +289,7 @@
 			/* TODO There still has to be a simpler way to check for these! */
 
 				/* Item inset. */
-				> :where(dd, dt, li) { padding-inline-start: var(--line) }
+				> :where(dd, dt, li) { padding-inline-start: calc(2rlh - 1rcap) }
 
 				> :where(dt, li) {
 					position: relative;
@@ -314,17 +314,17 @@
 			}
 
 			/* “Tight” lists. */
-			&:where(:not(:has(li > p))) { row-gap: var(--lead) }
+			&:where(:not(:has(li > p))) { row-gap: calc(1rlh - 1rcap) }
 
 			/* More vertical space when the items have multiple paragraphs. */
 			&:where(:has(:where(dt, li) > p:not(:only-child))) {
 				margin-block-start: 1rlh;
-				row-gap:            calc(var(--line) + 1rlh);
+				row-gap:            calc(3rlh - 1rcap);
 
 				> :where(dt, li):where(:has(p:not(:only-child))) {
 					display:               grid;
 					grid-template-columns: minmax(0, 1fr);
-					row-gap:               var(--line); /* Back to `main` spacing. */
+					row-gap:               calc(2rlh - 1rcap); /* Back to `main` spacing. */
 				}
 			}
 		}
@@ -342,7 +342,7 @@
 			inline-size: fit-content;
 
 			td:not(:first-child), th:not(:first-child) {
-				border-inline-start: calc(var(--line) - var(--left) - var(--right)) solid transparent;
+				border-inline-start: calc(2rlh - 1rcap - var(--left) - var(--right)) solid transparent;
 			}
 
 			tr:not(:first-child) td, tr:not(:first-child) th { border-block-start: 1cap solid transparent }

@@ -78,13 +78,9 @@
 	---7px: calc(var(--1px) * -7);
 	---8px: calc(var(--1px) * -8);
 
-	--lead:   calc(1lh - 1cap);
-	--line:   calc(1lh + var(--lead));
-	--rhythm: calc(1lh - 1ex); /* Visually between x-heights. */
-
 	--bleed:  var(--5px);
-	--gutter: var(--rhythm);
-	--alley:  calc(var(--rhythm) * 2);
+	--gutter: calc(1rlh - 1rex); /* Visually between x-heights. */
+	--alley:  calc(var(--gutter) * 2); /* Check tablet */
 	--page:   min(round(down, calc(100vw - 2 * var(--bleed)), var(--1px)), var(--max));
 	--main:   calc(var(--page) - 2 * var(--gutter) - var(--2px)); /* Account for “border.” */
 
@@ -103,12 +99,13 @@
 	--background--border: linear-gradient(var(--color)) bottom / 100% var(--1px) no-repeat;
 	--background--dashed: repeating-linear-gradient(to right, var(--color) 0 var(--1px), transparent 0 var(--2px)) bottom / 100% var(--1px) no-repeat;
 
-	@container style(--columns) or style(--tablet) { --bleed: var(--line) }
+	@container style(--columns) or style(--tablet) { --bleed: calc(2rlh - 1rcap) }
 
 	@container style(--tablet) {
-		--gutter: var(--line);
+		--gutter: var(--bleed);
+		--alley:  var(--gutter);
 
-		@media (width >= 65em) { --alley: calc(var(--line) * 2) }
+		@media (width >= 75em) { --alley: calc(var(--gutter) * 2) }
 	}
 
 	/* TODO Better adjustments for “full width” 1920✕1080 (projector). */
