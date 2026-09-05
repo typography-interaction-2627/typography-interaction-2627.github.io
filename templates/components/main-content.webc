@@ -200,7 +200,7 @@
 					/* Override default bottom-edge. */
 					background-position-y: top;
 
-					h3 { padding-block-start: 1cap }
+					h3 { margin-block-start: 1cap }
 				}
 
 				+ * { margin-block-start: 1rlh }

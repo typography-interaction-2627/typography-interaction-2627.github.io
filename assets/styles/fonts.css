@@ -29,7 +29,7 @@
 		text-wrap:               var(--wrap, pretty);
 
 		/* Insets baked into font. Varies, but going from an M. */
-		/* Safari doesn‘t support range comparisons in style queries! */
+		/* Safari doesn’t support range comparisons in style queries! */
 		/* https://caniuse.com/mdn-css_at-rules_container_style_queries_for_custom_properties_range_syntax */
 		@container style(--family: 'Geneva') {
 			@container style(--size: 9)  { --left: 0;          --right: var(--1px); --baseline: 2 }
