@@ -15,7 +15,7 @@ samp {
 	&::after {
 		background: var(--check);
 		content:    '';
-		inset:      calc(-1 * var(--1px));
+		inset:      var(---1px);
 		position:   absolute;
 		z-index:    -1;
 	}
