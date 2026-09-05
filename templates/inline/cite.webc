@@ -27,7 +27,7 @@
 			margin-inline-start: var(--left);
 
 			:where(cite) {
-				--padding: round(1rex, var(--1px));
+				--padding: 1ex;
 
 				box-shadow:           var(--shadow--border), var(--shadow--single);
 				display:              block;
@@ -47,7 +47,7 @@
 				border-image-repeat: round;
 
 				cite {
-					--padding: calc(round(1rex, var(--1px)) - var(--1px)); /* Extra for actual border. */
+					--padding: calc(1ex - var(--1px)); /* Extra for actual border. */
 
 					box-shadow: initial;
 					border:     initial;

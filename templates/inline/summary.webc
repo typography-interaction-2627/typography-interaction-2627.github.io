@@ -7,7 +7,7 @@
 				display:          block;
 				inline-size:      fit-content;
 				margin-block-end: 1rlh;
-				padding:          round(1ex, var(--1px));
+				padding:          1ex;
 
 				&::after {
 					background:     var(--check);
@@ -21,7 +21,7 @@
 				p {
 					--color: var(--background);
 
-					padding-inline-start: round(2ex, var(--1px));
+					padding-inline-start: 2ex;
 					position:             relative;
 					user-select:          none;
 					z-index:              1;

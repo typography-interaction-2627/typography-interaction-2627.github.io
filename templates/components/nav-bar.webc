@@ -21,7 +21,7 @@
 		}
 
 		> ul {
-			--gap: round(1ex, var(--1px));
+			--gap: 1ex;
 
 			column-gap: var(--gap);
 			display:    flex;

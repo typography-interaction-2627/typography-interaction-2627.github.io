@@ -1,5 +1,5 @@
 @page {
-	margin-block-end:   calc(1in - 3 / var(--size--root) * 1rem); /* Don’t clip descenders, `--3px` on `body`. */
+	margin-block-end:   calc(1in - 1rex); /* Don’t clip descenders. */
 	margin-block-start: 1in;
 	margin-inline:      0in; /* On `:root` for nicer Rendering-tab preview. */
 	size:               letter;

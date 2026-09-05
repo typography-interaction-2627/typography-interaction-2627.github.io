@@ -7,7 +7,7 @@
 		grid-column:      left;
 		inline-size:      fit-content;
 		margin-block-end: 1rlh;
-		padding:          round(1ex, var(--1px));
+		padding:          calc(1ex + var(--1px)); /* Matching outlined `cite` links. */
 
 		&::after {
 			background:     var(--check);

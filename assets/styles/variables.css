@@ -78,11 +78,9 @@
 	---7px: calc(var(--1px) * -7);
 	---8px: calc(var(--1px) * -8);
 
-	/* TODO `--1rlh` to bake in rounding! */
-
-	--lead:    round(calc(1lh - 1cap),        var(--1px));
-	--line:    round(calc(1lh + var(--lead)), var(--1px));
-	--rhythm:  round(calc(1lh - 1ex),         var(--1px)); /* Visually between x-heights. */
+	--lead:   calc(1lh - 1cap);
+	--line:   calc(1lh + var(--lead));
+	--rhythm: calc(1lh - 1ex); /* Visually between x-heights. */
 
 	--bleed:  var(--5px);
 	--gutter: var(--rhythm);

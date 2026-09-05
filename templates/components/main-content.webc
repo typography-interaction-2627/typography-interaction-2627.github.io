@@ -194,12 +194,13 @@
 			&:has(h3) {
 				/* Not right after `h2`. */
 				section section:not(hgroup + section) > & {
-					background:          var(--background--dashed);
-					margin-block-start:  2rlh;
-					padding-block-start: round(1cap, var(--1px));
+					background:         var(--background--dashed);
+					margin-block-start: 2rlh;
 
 					/* Override default bottom-edge. */
 					background-position-y: top;
+
+					h3 { padding-block-start: 1cap }
 				}
 
 				+ * { margin-block-start: 1rlh }

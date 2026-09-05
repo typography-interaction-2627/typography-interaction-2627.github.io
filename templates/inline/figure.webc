@@ -49,7 +49,7 @@
 			img,
 			object,
 			iframe {
-				--height--fallback: round(calc(var(--lines) * 1rlh - 1rcap), var(--1px));
+				--height--fallback: calc(var(--lines) * 1rlh - 1rcap);
 
 				block-size:      var(--height, var(--height--fallback));
 				filter:          saturate(var(--in-view));
