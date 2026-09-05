@@ -80,29 +80,29 @@
 	}
 }
 
-/* Separate strike files for each `opsz` until Safari/Chrome gets their act together: */
+/* Separate cut files for each `opsz` until Safari/Chrome gets their act together: */
 /* Safari updates the `cap` with `opsz`, but not the `ex`. Chrome does neither! */
 /* https://issues.chromium.org/issues/505751224 */
 @supports (not (-moz-appearance: none)) {
-	@font-face { font-family: 'Geneva 9';  src: url('../assets/fonts/geneva--9.woff2') }
-	@font-face { font-family: 'Geneva 10'; src: url('../assets/fonts/geneva--10.woff2') }
-	@font-face { font-family: 'Geneva 12'; src: url('../assets/fonts/geneva--12.woff2') }
-	@font-face { font-family: 'Geneva 14'; src: url('../assets/fonts/geneva--14.woff2') }
-	@font-face { font-family: 'Geneva 18'; src: url('../assets/fonts/geneva--18.woff2') }
-	@font-face { font-family: 'Geneva 20'; src: url('../assets/fonts/geneva--20.woff2') }
-	@font-face { font-family: 'Geneva 24'; src: url('../assets/fonts/geneva--24.woff2') }
+	@font-face { font-family: 'Geneva 9';  src: url('../assets/fonts/cuts/geneva--9.woff2') }
+	@font-face { font-family: 'Geneva 10'; src: url('../assets/fonts/cuts/geneva--10.woff2') }
+	@font-face { font-family: 'Geneva 12'; src: url('../assets/fonts/cuts/geneva--12.woff2') }
+	@font-face { font-family: 'Geneva 14'; src: url('../assets/fonts/cuts/geneva--14.woff2') }
+	@font-face { font-family: 'Geneva 18'; src: url('../assets/fonts/cuts/geneva--18.woff2') }
+	@font-face { font-family: 'Geneva 20'; src: url('../assets/fonts/cuts/geneva--20.woff2') }
+	@font-face { font-family: 'Geneva 24'; src: url('../assets/fonts/cuts/geneva--24.woff2') }
 
-	@font-face { font-family: 'New York 9';  src: url('../assets/fonts/new-york--9.woff2') }
-	@font-face { font-family: 'New York 10'; src: url('../assets/fonts/new-york--10.woff2') }
-	@font-face { font-family: 'New York 12'; src: url('../assets/fonts/new-york--12.woff2') }
-	@font-face { font-family: 'New York 14'; src: url('../assets/fonts/new-york--14.woff2') }
-	@font-face { font-family: 'New York 18'; src: url('../assets/fonts/new-york--18.woff2') }
-	@font-face { font-family: 'New York 20'; src: url('../assets/fonts/new-york--20.woff2') }
-	@font-face { font-family: 'New York 24'; src: url('../assets/fonts/new-york--24.woff2') }
-	@font-face { font-family: 'New York 36'; src: url('../assets/fonts/new-york--36.woff2') }
+	@font-face { font-family: 'New York 9';  src: url('../assets/fonts/cuts/new-york--9.woff2') }
+	@font-face { font-family: 'New York 10'; src: url('../assets/fonts/cuts/new-york--10.woff2') }
+	@font-face { font-family: 'New York 12'; src: url('../assets/fonts/cuts/new-york--12.woff2') }
+	@font-face { font-family: 'New York 14'; src: url('../assets/fonts/cuts/new-york--14.woff2') }
+	@font-face { font-family: 'New York 18'; src: url('../assets/fonts/cuts/new-york--18.woff2') }
+	@font-face { font-family: 'New York 20'; src: url('../assets/fonts/cuts/new-york--20.woff2') }
+	@font-face { font-family: 'New York 24'; src: url('../assets/fonts/cuts/new-york--24.woff2') }
+	@font-face { font-family: 'New York 36'; src: url('../assets/fonts/cuts/new-york--36.woff2') }
 
-	@font-face { font-family: 'Monaco 9';  src: url('../assets/fonts/monaco--9.woff2') }
-	@font-face { font-family: 'Monaco 12'; src: url('../assets/fonts/monaco--12.woff2') }
+	@font-face { font-family: 'Monaco 9';  src: url('../assets/fonts/cuts/monaco--9.woff2') }
+	@font-face { font-family: 'Monaco 12'; src: url('../assets/fonts/cuts/monaco--12.woff2') }
 
 	/* Swap them in. */
 	:where(:root) :where(*, ::before, ::after) {
