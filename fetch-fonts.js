@@ -33,9 +33,11 @@ for (const font of FONTS) {
 	console.log(`✓ assets/fonts/${font.name}`)
 }
 
-const remapCmap = (buffer, codePoint, newGlyphId) => {
+// Remap a character (e.g. U+0078 'x') in sfnt cmap table to a target glyph ID.
+const remapCmap = (buffer, codePoint, glyphId) => {
 	const buf = Buffer.from(buffer)
 	let off = 12
+
 	for (let i = 0; i < buf.readUInt16BE(4); i++, off += 16) {
 		if (buf.toString('utf8', off, off + 4) !== 'cmap') continue
 		const cmap = buf.readUInt32BE(off + 8)
@@ -59,8 +61,8 @@ const remapCmap = (buffer, codePoint, newGlyphId) => {
 				const delta = buf.readInt16BE(deltas + s * 2)
 
 				rangeOff
-					? buf.writeUInt16BE((newGlyphId - delta + 65536) % 65536, offsets + s * 2 + rangeOff + 2 * (codePoint - start))
-					: buf.writeInt16BE((newGlyphId - codePoint + 65536) % 65536, deltas + s * 2)
+					? buf.writeUInt16BE((glyphId - delta + 65536) % 65536, offsets + s * 2 + rangeOff + 2 * (codePoint - start))
+					: buf.writeInt16BE((glyphId - codePoint + 65536) % 65536, deltas + s * 2)
 			}
 		}
 		break
@@ -82,7 +84,7 @@ for (const font of FONTS) {
 
 	const opszValues = new Set(
 		Object.values(parsed.namedVariations)
-			.map((coords) => coords.opsz)
+			.map((c) => c.opsz)
 			.filter((v) => v !== undefined)
 	)
 
@@ -90,17 +92,10 @@ for (const font of FONTS) {
 
 	for (const opsz of opszValues) {
 		const outName = font.name.replace('.woff2', `--${opsz}.woff2`)
-		const sfnt = await subsetFont(buffer, charset, {
-			targetFormat: 'sfnt',
-			variationAxes: { opsz },
-		})
-
+		const sfnt = await subsetFont(buffer, charset, { targetFormat: 'sfnt', variationAxes: { opsz } })
 		const shapedXId = fontkit.create(sfnt).layout('x').glyphs[0]?.id
-		const patchedSfnt = shapedXId !== undefined ? remapCmap(sfnt, 120, shapedXId) : sfnt
-
-		const instanced = await subsetFont(patchedSfnt, charset, {
-			targetFormat: 'woff2',
-		})
+		const patched = shapedXId !== undefined ? remapCmap(sfnt, 120, shapedXId) : sfnt
+		const instanced = await subsetFont(patched, charset, { targetFormat: 'woff2' })
 
 		await writeFile(`assets/fonts/${outName}`, instanced)
 		console.log(`✓ assets/fonts/${outName}`)
