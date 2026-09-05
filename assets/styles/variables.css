@@ -80,8 +80,6 @@
 
 	/* TODO `--1rlh` to bake in rounding! */
 
-	--shim: calc(var(--1px) / 2); /* Get back on-pattern. */
-
 	--lead:    round(calc(1lh - 1cap),        var(--1px));
 	--line:    round(calc(1lh + var(--lead)), var(--1px));
 	--rhythm:  round(calc(1lh - 1ex),         var(--1px)); /* Visually between x-heights. */
