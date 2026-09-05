@@ -107,10 +107,7 @@
 	--background--border: linear-gradient(var(--color)) bottom / 100% var(--1px) no-repeat;
 	--background--dashed: repeating-linear-gradient(to right, var(--color) 0 var(--1px), transparent 0 var(--2px)) bottom / 100% var(--1px) no-repeat;
 
-	@container style(--columns) or style(--tablet) {
-		--bleed:        var(--line);
-		--bleed--round: round(calc((100vw - var(--page)) / 2), var(--1px)); /* Land on-pattern. */
-	}
+	@container style(--columns) or style(--tablet) { --bleed: var(--line) }
 
 	@container style(--tablet) {
 		--gutter: var(--line);
