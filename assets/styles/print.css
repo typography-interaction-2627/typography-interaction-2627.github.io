@@ -57,6 +57,12 @@ header:has(h1) {
 	margin-block-end: 1in;
 	overflow:         initial;
 	padding:          initial;
+
+	hgroup {
+		inset:     initial;
+		position:  initial;
+		translate: initial;
+	}
 }
 
 abbr { background: initial }
