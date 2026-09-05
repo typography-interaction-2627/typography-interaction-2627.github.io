@@ -122,7 +122,7 @@
 			}
 
 			/* The actual columns. */
-			@container style(--columns: 6) {
+			@container style(--columns) {
 				grid-template-columns:
 					[ all-start body-start left-start one-start verso-start ]
 					minmax(0, 1fr)
@@ -238,14 +238,14 @@
 		/* Née ”intro.” */
 		:where(p:has(> strong:only-child)) {
 			--size:    var(--size--h4);
-			--leading: round(1rlh, var(--1px));
+			--leading: 1rlh;
 			--wrap:    balance;
 
 			*:not(hgroup) + & { margin-block-start: round(1rlh, var(--1px)) }
 
 			> strong { display: block } /* Fixes `line-height` rounding. 🤷‍♀️ */
 
-			@container style(--columns: 6) {
+			@container style(--columns) {
 				&:where(:not(:has(~ .right))) { grid-column: all-start / five-end }
 			}
 
@@ -256,7 +256,7 @@
 		:where(p:has(> sub:only-child)) {
 			--family:  'Geneva';
 			--size:    var(--size--note);
-			--leading: round(1rlh, var(--1px));
+			--leading: 1rlh;
 			--wrap:    balance;
 
 			> sub { display: block }
@@ -279,7 +279,7 @@
 				&:where(:not(:last-child)) + * {
 					margin-block-start: round(1rlh, var(--1px));
 
-					@container style(--columns: 6) { + *:where(.recto, .right) { margin-block-start: 1rlh } }
+					@container style(--columns) { + *:where(.recto, .right) { margin-block-start: 1rlh } }
 				}
 			}
 			/* For poking out as needed. */

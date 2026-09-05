@@ -1,35 +1,65 @@
-/* Explicitly defined variables for `@container` queries. */
+/* Explicitly defined variables for specific `@container` queries. */
 @property --family { inherits: true; initial-value: 'Geneva'; syntax: '<string>' }
 
-/* Integer/unitless for `calc` and `opsz` use. */
-@property --size { inherits: true; initial-value: 10;    syntax: '<integer>' }
+@property --size    { inherits: true; initial-value: 10; syntax: '<integer>' } /* Unitless for `calc` and `opsz` use. */
+@property --scaling { inherits: true; initial-value: 2;  syntax: '<number>' } /* How many (CSS) pixels in our pixel. */
+
+@property --leading { inherits: true; initial-value: calc(4 / 3 * 100%); syntax: '<length-percentage>' }
 
 @property --color      { inherits: true; initial-value: black; syntax: '<color>' }
 @property --background { inherits: true; initial-value: white; syntax: '<color>' }
 
-@property --columns { inherits: true; initial-value: 1;     syntax: '<integer>' }
-
-/* So these are resolved at root. */
-@property --gutter { inherits: true; initial-value: 0px; syntax: '<length>' }
+/* So these are resolved at their first declaration. */
 @property --bleed  { inherits: true; initial-value: 0px; syntax: '<length>' }
+@property --gutter { inherits: true; initial-value: 0px; syntax: '<length>' }
 @property --alley  { inherits: true; initial-value: 0px; syntax: '<length>' }
 @property --page   { inherits: true; initial-value: 0px; syntax: '<length>' }
 @property --main   { inherits: true; initial-value: 0px; syntax: '<length>' }
 
+@property --wrap { inherits: true; initial-value: pretty; syntax: '<custom-ident>' }
 
-/* Resolve where *declared*, for passing compted type values down! */
+/* Resolve where *declared*, for passing computed type values down! */
 /* https://lea.verou.me/blog/2021/06/inherit-ancestor-font-size-for-fun-and-profit/ */
 @property --resolve { inherits: true; initial-value: 0px; syntax: '<length>' }
 
 /* Make this animatable for scroll-driven stuff. */
 @property --in-view { inherits: true; initial-value: 1; syntax: '<number>' }
 
+/* Scalars. */
 :where(:root) {
-	--scaling: 2; /* How many (CSS) pixels in our pixel. */
+	--size--root: var(--size); /* For resets/overrides. */
 
-	--1px: calc(1 / var(--size) * 1rem); /* Scaled pixel. */
+	--size--h1: 24;
+	--size--h2: 20;
+	--size--h3: 14;
+	--size--h4: 12;
 
-	/* Shorthands. */
+	--size--note: 9;
+	--size--code: 9;
+
+	/* “Not a phone.” */
+	@media (width >= 28em) and (height >= 60em), (width >= 60em) and (height >= 28em) {
+		--size: 12;
+
+		--size--h1: 36;
+		--size--h2: 24;
+		--size--h3: 18;
+		--size--h4: 14;
+
+		--size--code: 12;
+
+		--tablet: true;
+	}
+
+	@media (width >= 35em) and (orientation: landscape), (width >= 64em) { --columns: true }
+	@media (width >= 120em) { --scaling: 3 }
+	@media (width = 120em) and (height = 67.5em) { --projector: true }
+}
+
+/* Derived, layout variables. */
+:where(body) {
+	/* Scaled pixels. */
+	--1px: calc(1rem / var(--size));
 	--2px: calc(var(--1px) * 2);
 	--3px: calc(var(--1px) * 3);
 	--4px: calc(var(--1px) * 4);
@@ -52,23 +82,12 @@
 
 	--shim: calc(var(--1px) / 2); /* Get back on-pattern. */
 
-	--size--root: var(--size); /* For resets/overrides. */
-
-	--size--h1: 24;
-	--size--h2: 20;
-	--size--h3: 14;
-	--size--h4: 12;
-
-	--size--note: 9;
-	--size--code: 9;
-
-	--leading: round(calc(4 / 3 * 1em),       var(--1px)); /* “Snap” to scaled pixel. */
 	--lead:    round(calc(1lh - 1cap),        var(--1px));
 	--line:    round(calc(1lh + var(--lead)), var(--1px));
 	--rhythm:  round(calc(1lh - 1ex),         var(--1px)); /* Visually between x-heights. */
 
-	--gutter: var(--rhythm);
 	--bleed:  var(--5px);
+	--gutter: var(--rhythm);
 	--alley:  calc(var(--rhythm) * 2);
 	--page:   min(round(down, calc(100vw - 2 * var(--bleed)), var(--1px)), var(--max));
 	--main:   calc(var(--page) - 2 * var(--gutter) - var(--2px)); /* Account for “border.” */
@@ -88,37 +107,21 @@
 	--background--border: linear-gradient(var(--color)) bottom / 100% var(--1px) no-repeat;
 	--background--dashed: repeating-linear-gradient(to right, var(--color) 0 var(--1px), transparent 0 var(--2px)) bottom / 100% var(--1px) no-repeat;
 
-	@media (width >= 35em) { /* Landscape phones. */
+	@container style(--columns) or style(--tablet) {
 		--bleed:        var(--line);
 		--bleed--round: round(calc((100vw - var(--page)) / 2), var(--1px)); /* Land on-pattern. */
-
-		@media (height >= 27em), (width >= 65em) { /* Tablets. */
-			--size: 12;
-
-			--size--h1: 36;
-			--size--h2: 24;
-			--size--h3: 18;
-			--size--h4: 14;
-
-			--size--code: 12;
-
-			--gutter: var(--line);
-		}
-
-		@media (orientation: landscape), (width >= 75em) { --columns: 6 }
 	}
 
-	@media (width >= 65em)  { --alley: calc(var(--line) * 2) }
+	@container style(--tablet) {
+		--gutter: var(--line);
 
-	@media (width >= 120em) {
-		--scaling: 3;
-
-		/* TODO Better adjustments for “full width” 1920✕1080 (projector). */
-		@media (width = 120em) and (height = 67.5em) {
-			--bleed:  1lh;
-			--gutter: 1lh;
-			--alley:  2lh;
-		}
+		@media (orientation: landscape) { --alley: calc(var(--line) * 2) }
 	}
 
+	/* TODO Better adjustments for “full width” 1920✕1080 (projector). */
+	@container style(--projector) {
+		--bleed:  1rlh;
+		--gutter: 1rlh;
+		--alley:  2rlh;
+	}
 }

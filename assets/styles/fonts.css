@@ -13,7 +13,7 @@
 	font-size:                calc((var(--size) * var(--scaling) / 16) * 100%);
 	font-smooth:              never;
 	font-synthesis:           none;
-	line-height:              var(--leading);
+	line-height:              round(var(--leading), calc(1em / var(--size))); /* To scaled pixels. */
 	text-rendering:           geometricPrecision;
 
 	:where(*, ::before, ::after) {
@@ -24,8 +24,8 @@
 		font-family:             var(--family);
 		font-size:               calc(var(--size) * var(--1px));
 		font-variation-settings: 'opsz' var(--size), 'ital' var(--italic, 0);
-		letter-spacing:          var(--kerning);
-		line-height:             var(--leading);
+		letter-spacing:          var(--kerning); /* TODO Move rounding here too? */
+		line-height:             round(var(--leading), var(--1px));
 		text-wrap:               var(--wrap, pretty);
 
 		/* Insets baked into font. Varies, but going from an M. */

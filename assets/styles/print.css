@@ -1,5 +1,5 @@
 @page {
-	margin-block-end:   calc(1in - var(--3px)); /* Don’t clip descenders. */
+	margin-block-end:   calc(1in - 3 / var(--size--root) * 1rem); /* Don’t clip descenders, `--3px` on `body`. */
 	margin-block-start: 1in;
 	margin-inline:      0in; /* On `:root` for nicer Rendering-tab preview. */
 	size:               letter;
@@ -14,7 +14,6 @@
 /* Resets. */
 :where(:root) {
 	--scaling: 1.5;
-	--gutter:  initial;
 
 	background:         initial;
 	margin-block:       1in;
@@ -25,6 +24,8 @@
 }
 
 body {
+	--gutter: initial;
+
 	background:  initial;
 	inline-size: initial;
 	padding:     initial;

@@ -28,7 +28,7 @@
 		&:where(:not(:last-child)) + * {
 			margin-block-start: round(1rlh, var(--1px));
 
-			@container style(--columns: 6) { margin-block-start: round(2rlh, var(--1px)) }
+			@container style(--columns) { margin-block-start: round(2rlh, var(--1px)) }
 		}
 	}
 </style>

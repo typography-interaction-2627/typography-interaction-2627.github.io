@@ -9,7 +9,7 @@
 		row-gap:       inherit;
 		text-align:    center;
 
-		@container style(--columns: 6) {
+		@container style(--columns) {
 			--size:   var(--size--h2);
 
 			margin-inline: var(--gutter);
@@ -19,7 +19,7 @@
 		&:where(:not(:last-child)) + * {
 			margin-block-start: round(2rlh, var(--1px));
 
-			@container style(--columns: 6) { margin-block-start: round(3rlh, var(--1px)) }
+			@container style(--columns) { margin-block-start: round(3rlh, var(--1px)) }
 		}
 
 		/* Go big. */
