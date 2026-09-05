@@ -254,10 +254,9 @@
 
 		/* Previously “note.” */
 		:where(p:has(> sub:only-child)) {
-			--family:  'Geneva';
-			--size:    var(--size--note);
-			--leading: 1rlh;
-			--wrap:    balance;
+			--family: 'Geneva';
+			--size:   var(--size--note);
+			--wrap:   balance;
 
 			> sub { display: block }
 		}
