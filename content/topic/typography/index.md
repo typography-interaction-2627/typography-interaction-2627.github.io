@@ -471,10 +471,10 @@ Another common mistake is misusing [apostrophes and quotations](https://cmosshop
 - &quot;These are sad, ambiguous, straight quotes.&quot;
 
 - &ldquo;These are better, clearer, opening/closing quotes.&rdquo;
-<!-- .all style="--size: var(--size--h4); margin-block-start: round(1rlh, var(--1px)" -->
+<!-- .all style="--size: var(--size--h4); margin-block-start: 1rlh" -->
 
 A third mistake is to use characters rather than [mathematical symbols](https://en.wikipedia.org/wiki/Glossary_of_mathematical_symbols#Arithmetic_operators). This common practice started when typewriters (…&NoBreak;or early computers) were the norm which only had a limited characters set. This excuse no longer applies! For example:
-<!-- style="margin-block-start: round(2rlh, var(--1px)" -->
+<!-- style="margin-block-start: 2rlh" -->
 
 - 9x5&ensp;<span class="rarr">→</span>&ensp;9<span class="times">×</span>5
 

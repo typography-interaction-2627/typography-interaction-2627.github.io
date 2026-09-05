@@ -26,9 +26,9 @@
 		/* TODO This pattern could be consolidated! */
 		&:where(:not(:first-child)),
 		&:where(:not(:last-child)) + * {
-			margin-block-start: round(1rlh, var(--1px));
+			margin-block-start: 1rlh;
 
-			@container style(--columns) { margin-block-start: round(2rlh, var(--1px)) }
+			@container style(--columns) { margin-block-start: 2rlh }
 		}
 	}
 </style>

@@ -62,13 +62,13 @@
 
 			/* Inserted in Markdown. */
 			:where(section:not(:has(> hgroup))) {
-				margin-block-start: round(1rlh, var(--1px));
+				margin-block-start: 1rlh;
 
-				+ * { margin-block-start: round(1rlh, var(--1px)) }
+				+ * { margin-block-start: 1rlh }
 			}
 
 			/* Space these out. */
-			:where(details):not(:first-child) { margin-block-start: round(1rlh, var(--1px)) }
+			:where(details):not(:first-child) { margin-block-start: 1rlh }
 
 			/* Manual column placements. */
 			:where(div, .all, .aside, .body, .middle, .five, .four, .left, .one, .recto, .right, .six, .three, .two, .verso) {
@@ -100,7 +100,7 @@
 			}
 
 			/* TODO Probably a better way to do this? (On Projects.)*/
-			.body + .right { margin-block-start: round(1rlh, var(--1px)) }
+			.body + .right { margin-block-start: 1rlh }
 
 			/* Only when on The Grid. */
 			:where(&, section) {
@@ -188,24 +188,24 @@
 				padding-inline:    var(--gutter);
 				position:          relative;
 
-				+ * { margin-block-start: round(1rlh, var(--1px)) }
+				+ * { margin-block-start: 1rlh }
 			}
 
 			&:has(h3) {
 				/* Not right after `h2`. */
 				section section:not(hgroup + section) > & {
 					background:          var(--background--dashed);
-					margin-block-start:  round(2rlh, var(--1px));
+					margin-block-start:  2rlh;
 					padding-block-start: round(1cap, var(--1px));
 
 					/* Override default bottom-edge. */
 					background-position-y: top;
 				}
 
-				+ * { margin-block-start: round(1rlh, var(--1px)) }
+				+ * { margin-block-start: 1rlh }
 			}
 
-			&:has(h4) { margin-block-start:  round(1rlh, var(--1px)) }
+			&:has(h4) { margin-block-start:  1rlh }
 		}
 
 		/* Toggle anchor links. */
@@ -224,7 +224,7 @@
 		}
 
 		/* Space after loose ones. */
-		:where(section > p:has(a > cite)) + * { margin-block-start: round(1rlh, var(--1px)) }
+		:where(section > p:has(a > cite)) + * { margin-block-start: 1rlh }
 
 		:where(hr) {
 			background:        var(--background--border);
@@ -240,7 +240,7 @@
 			--leading: 1rlh;
 			--wrap:    balance;
 
-			*:not(hgroup) + & { margin-block-start: round(1rlh, var(--1px)) }
+			*:not(hgroup) + & { margin-block-start: 1rlh }
 
 			> strong { display: block } /* Fixes `line-height` rounding. 🤷‍♀️ */
 
@@ -248,7 +248,7 @@
 				&:where(:not(:has(~ .right))) { grid-column: all-start / five-end }
 			}
 
-			+ *:not(section) { margin-block-start: round(1rlh, var(--1px)) }
+			+ *:not(section) { margin-block-start: 1rlh }
 		}
 
 		/* Previously “note.” */
@@ -273,10 +273,10 @@
 			/* Extra spacing around loosies. */
 			&:where(:not([class], :first-child)),
 			&[class="all"] {
-				margin-block-start: round(1rlh, var(--1px));
+				margin-block-start: 1rlh;
 
 				&:where(:not(:last-child)) + * {
-					margin-block-start: round(1rlh, var(--1px));
+					margin-block-start: 1rlh;
 
 					@container style(--columns) { + *:where(.recto, .right) { margin-block-start: 1rlh } }
 				}
@@ -318,8 +318,8 @@
 
 			/* More vertical space when the items have multiple paragraphs. */
 			&:where(:has(:where(dt, li) > p:not(:only-child))) {
-				margin-block-start: round(1rlh, var(--1px));
-				row-gap:            calc(var(--line) + round(1rlh, var(--1px)));
+				margin-block-start: 1rlh;
+				row-gap:            calc(var(--line) + 1rlh);
 
 				> :where(dt, li):where(:has(p:not(:only-child))) {
 					display:               grid;
@@ -333,7 +333,7 @@
 			row-gap: inherit;
 
 			> dt {
-				&:where(:not(:first-of-type)) { margin-block-start: round(1rlh, var(--1px)) }
+				&:where(:not(:first-of-type)) { margin-block-start: 1rlh }
 			}
 		}
 

@@ -1,6 +1,6 @@
 <style>
 	hgroup:has(h2[id="session-recording"]) ~ figure {
-		margin-block-start: calc(var(--gutter) - round(1rlh, var(--1px)));
+		margin-block-start: calc(var(--gutter) - 1rlh);
 
 		p > span:last-of-type { display: none }
 

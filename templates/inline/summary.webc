@@ -6,7 +6,7 @@
 				background-color: var(--color);
 				display:          block;
 				inline-size:      fit-content;
-				margin-block-end: round(1rlh, var(--1px));
+				margin-block-end: 1rlh;
 				padding:          round(1ex, var(--1px));
 
 				&::after {
@@ -48,7 +48,7 @@
 				}
 			}
 
-			+ * { margin-block-start: round(1rlh, var(--1px)) }
+			+ * { margin-block-start: 1rlh }
 		}
 	}
 
