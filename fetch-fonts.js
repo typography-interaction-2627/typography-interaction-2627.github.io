@@ -36,37 +36,44 @@ for (const font of FONTS) {
 // Remap a character (e.g. U+0078 'x') in sfnt cmap table to a target glyph ID.
 const remapCmap = (buffer, codePoint, glyphId) => {
 	const buf = Buffer.from(buffer)
-	let off = 12
 
-	for (let i = 0; i < buf.readUInt16BE(4); i++, off += 16) {
-		if (buf.toString('utf8', off, off + 4) !== 'cmap') continue
-		const cmap = buf.readUInt32BE(off + 8)
+	let cmapOffset = 0
+	for (let i = 0, off = 12; i < buf.readUInt16BE(4); i++, off += 16) {
+		if (buf.toString('utf8', off, off + 4) === 'cmap') {
+			cmapOffset = buf.readUInt32BE(off + 8)
+			break
+		}
+	}
+	if (!cmapOffset) return buf
 
-		for (let j = 0; j < buf.readUInt16BE(cmap + 2); j++) {
-			const sub = cmap + buf.readUInt32BE(cmap + 8 + j * 8)
-			if (buf.readUInt16BE(sub) !== 4) continue
+	const numSubtables = buf.readUInt16BE(cmapOffset + 2)
+	for (let i = 0; i < numSubtables; i++) {
+		const subtableOffset = cmapOffset + buf.readUInt32BE(cmapOffset + 8 + i * 8)
+		if (buf.readUInt16BE(subtableOffset) !== 4) continue
 
-			const segCount = buf.readUInt16BE(sub + 6) / 2
-			const endCodes = sub + 14
-			const startCodes = endCodes + segCount * 2 + 2
-			const deltas = startCodes + segCount * 2
-			const offsets = deltas + segCount * 2
+		const segCount = buf.readUInt16BE(subtableOffset + 6) / 2
+		const endCodes = subtableOffset + 14
+		const startCodes = endCodes + segCount * 2 + 2
+		const deltas = startCodes + segCount * 2
+		const offsets = deltas + segCount * 2
 
-			for (let s = 0; s < segCount; s++) {
-				const start = buf.readUInt16BE(startCodes + s * 2)
-				const end = buf.readUInt16BE(endCodes + s * 2)
-				if (codePoint < start || codePoint > end) continue
+		for (let s = 0; s < segCount; s++) {
+			const start = buf.readUInt16BE(startCodes + s * 2)
+			const end = buf.readUInt16BE(endCodes + s * 2)
+			if (codePoint < start || codePoint > end) continue
 
-				const rangeOff = buf.readUInt16BE(offsets + s * 2)
-				const delta = buf.readInt16BE(deltas + s * 2)
+			const idRangeOffset = buf.readUInt16BE(offsets + s * 2)
+			const idDelta = buf.readInt16BE(deltas + s * 2)
 
-				rangeOff
-					? buf.writeUInt16BE((glyphId - delta + 65536) % 65536, offsets + s * 2 + rangeOff + 2 * (codePoint - start))
-					: buf.writeInt16BE((glyphId - codePoint + 65536) % 65536, deltas + s * 2)
+			if (idRangeOffset !== 0) {
+				const glyphPtr = offsets + s * 2 + idRangeOffset + 2 * (codePoint - start)
+				buf.writeUInt16BE((glyphId - idDelta + 65536) % 65536, glyphPtr)
+			} else {
+				buf.writeInt16BE((glyphId - codePoint + 65536) % 65536, deltas + s * 2)
 			}
 		}
-		break
 	}
+
 	return buf
 }
 
@@ -92,6 +99,7 @@ for (const font of FONTS) {
 
 	for (const opsz of opszValues) {
 		const outName = font.name.replace('.woff2', `--${opsz}.woff2`)
+
 		const sfnt = await subsetFont(buffer, charset, { targetFormat: 'sfnt', variationAxes: { opsz } })
 		const shapedXId = fontkit.create(sfnt).layout('x').glyphs[0]?.id
 		const patched = shapedXId !== undefined ? remapCmap(sfnt, 120, shapedXId) : sfnt
