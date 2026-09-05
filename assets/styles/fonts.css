@@ -80,9 +80,10 @@
 	}
 }
 
-/* Separate strike files for each `opsz` until Chrome gets its act together: */
+/* Separate strike files for each `opsz` until Safari/Chrome gets their act together: */
+/* Safari updates the `cap` with `opsz`, but not the `ex`. Chrome does neither! */
 /* https://issues.chromium.org/issues/505751224 */
-@supports (not (font: -apple-system-body)) and (not (-moz-appearance: none)) {
+@supports (not (-moz-appearance: none)) {
 	@font-face { font-family: 'Geneva 9';  src: url('../assets/fonts/geneva--9.woff2') }
 	@font-face { font-family: 'Geneva 10'; src: url('../assets/fonts/geneva--10.woff2') }
 	@font-face { font-family: 'Geneva 12'; src: url('../assets/fonts/geneva--12.woff2') }
