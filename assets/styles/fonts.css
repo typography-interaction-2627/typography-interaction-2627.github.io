@@ -21,7 +21,7 @@
 		--underline: calc((var(--size) + var(--baseline)) * var(--1px));
 
 		color:                   var(--color, currentcolor);
-		font-family:             var(--family);
+		font-family:             var(--family), var(--generic, sans-serif);
 		font-size:               calc(var(--size) * var(--1px));
 		font-variation-settings: 'opsz' var(--size), 'ital' var(--italic, 0);
 		letter-spacing:          var(--kerning); /* TODO Move rounding here too? */
@@ -42,6 +42,8 @@
 		}
 
 		@container style(--family: 'New York') {
+			--generic: serif;
+
 			@container style(--size: 9)  { --left: 0;          --right: var(--1px); --baseline: 2 }
 			@container style(--size: 10) { --left: 0;          --right: var(--1px); --baseline: 1 }
 			@container style(--size: 12) { --left: 0;          --right: var(--1px); --baseline: 2 }
@@ -53,6 +55,8 @@
 		}
 
 		@container style(--family: 'Monaco') {
+			--generic: monospace;
+
 			@container style(--size: 9)  { --left: 0;          --right: var(--1px); --baseline: 1 }
 			@container style(--size: 12) { --left: var(--1px); --right: var(--1px); --baseline: 2 }
 		}
@@ -73,6 +77,8 @@
 			--right: 0;
 
 			--baseline: 4;
+
+			--generic: decorative;
 		}
 	}
 }
