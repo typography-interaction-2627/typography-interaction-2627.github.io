@@ -25,7 +25,6 @@
 /* Make this animatable for scroll-driven stuff. */
 @property --in-view { inherits: true; initial-value: 1; syntax: '<number>' }
 
-/* Scalars. */
 :where(:root) {
 	--size--root: var(--size); /* For resets/overrides. */
 
@@ -36,6 +35,9 @@
 
 	--size--note: 9;
 	--size--code: 9;
+
+	/* Fix for separate cut files, see `typography.css` */
+	@supports (not (-moz-appearance: none)) { --family: 'Geneva 10' }
 
 	/* “Not a phone.” */
 	@media (width >= 28em) and (height >= 60em), (width >= 60em) and (height >= 28em) {
@@ -49,69 +51,71 @@
 		--size--code: 12;
 
 		--tablet: true;
+
+		@supports (not (-moz-appearance: none)) { --family: 'Geneva 12' }
 	}
 
 	@media (width >= 35em) and (orientation: landscape), (width >= 64em) { --columns: true }
 	@media (width >= 120em) { --scaling: 3 }
 	@media (width = 120em) and (height = 67.5em) { --projector: true }
-}
 
-/* Derived, layout variables. */
-:where(body) {
-	/* Scaled pixels. */
-	--1px: calc(1rem / var(--size));
-	--2px: calc(var(--1px) * 2);
-	--3px: calc(var(--1px) * 3);
-	--4px: calc(var(--1px) * 4);
-	--5px: calc(var(--1px) * 5);
-	--6px: calc(var(--1px) * 6);
-	--7px: calc(var(--1px) * 7);
-	--8px: calc(var(--1px) * 8);
+	/* Derived, layout variables. */
+	:where(body) {
+		/* Scaled pixels. */
+		--1px: calc(1rem / var(--size));
+		--2px: calc(var(--1px) * 2);
+		--3px: calc(var(--1px) * 3);
+		--4px: calc(var(--1px) * 4);
+		--5px: calc(var(--1px) * 5);
+		--6px: calc(var(--1px) * 6);
+		--7px: calc(var(--1px) * 7);
+		--8px: calc(var(--1px) * 8);
 
-	/* Negatives. */
-	---1px: calc(var(--1px) * -1);
-	---2px: calc(var(--1px) * -2);
-	---3px: calc(var(--1px) * -3);
-	---4px: calc(var(--1px) * -4);
-	---5px: calc(var(--1px) * -5);
-	---6px: calc(var(--1px) * -6);
-	---7px: calc(var(--1px) * -7);
-	---8px: calc(var(--1px) * -8);
+		/* Negatives. */
+		---1px: calc(var(--1px) * -1);
+		---2px: calc(var(--1px) * -2);
+		---3px: calc(var(--1px) * -3);
+		---4px: calc(var(--1px) * -4);
+		---5px: calc(var(--1px) * -5);
+		---6px: calc(var(--1px) * -6);
+		---7px: calc(var(--1px) * -7);
+		---8px: calc(var(--1px) * -8);
 
-	--bleed:  var(--5px);
-	--gutter: calc(1rlh - 1rex); /* Visually between x-heights. */
-	--alley:  calc(var(--gutter) * 2); /* Check tablet */
-	--page:   min(round(down, calc(100vw - 2 * var(--bleed)), var(--1px)), var(--max));
-	--main:   calc(var(--page) - 2 * var(--gutter) - var(--2px)); /* Account for “border.” */
+		--bleed:  var(--5px);
+		--gutter: calc(1rlh - 1rex); /* Visually between x-heights. */
+		--alley:  calc(var(--gutter) * 2); /* Check tablet */
+		--page:   min(round(down, calc(100vw - 2 * var(--bleed)), var(--1px)), var(--max));
+		--main:   calc(var(--page) - 2 * var(--gutter) - var(--2px)); /* Account for “border.” */
 
-	--max:   calc(720 * var(--1px));
-	--break: round(20vh, var(--1px));
+		--max:   calc(720 * var(--1px));
+		--break: round(20vh, var(--1px));
 
-	--enlargement: var(--4px);
+		--enlargement: var(--4px);
 
-	--check:       url('/assets/patterns/check.svg') 0 0/var(--2px) border-box;
-	--check--text: url('/assets/patterns/check.svg') 0 0/var(--2px) text;
+		--check:       url('/assets/patterns/check.svg') 0 0/var(--2px) border-box;
+		--check--text: url('/assets/patterns/check.svg') 0 0/var(--2px) text;
 
-	--shadow--border:  inset 0 0 0 var(--1px) var(--color); /* Avoid `border` CSS-pixel rounding. */
-	--shadow--single:  var(--1px) var(--1px) 0 var(--color);
-	--shadow--double:  var(--2px) var(--2px) 0 var(--color);
+		--shadow--border:  inset 0 0 0 var(--1px) var(--color); /* Avoid `border` CSS-pixel rounding. */
+		--shadow--single:  var(--1px) var(--1px) 0 var(--color);
+		--shadow--double:  var(--2px) var(--2px) 0 var(--color);
 
-	--background--border: linear-gradient(var(--color)) bottom / 100% var(--1px) no-repeat;
-	--background--dashed: repeating-linear-gradient(to right, var(--color) 0 var(--1px), transparent 0 var(--2px)) bottom / 100% var(--1px) no-repeat;
+		--background--border: linear-gradient(var(--color)) bottom / 100% var(--1px) no-repeat;
+		--background--dashed: repeating-linear-gradient(to right, var(--color) 0 var(--1px), transparent 0 var(--2px)) bottom / 100% var(--1px) no-repeat;
 
-	@container style(--columns) or style(--tablet) { --bleed: calc(2rlh - 1rcap) }
+		@container style(--columns) or style(--tablet) { --bleed: calc(2rlh - 1rcap) }
 
-	@container style(--tablet) {
-		--gutter: var(--bleed);
-		--alley:  var(--gutter);
+		@container style(--tablet) {
+			--gutter: var(--bleed);
+			--alley:  var(--gutter);
 
-		@media (width >= 75em) { --alley: calc(var(--gutter) * 2) }
-	}
+			@media (width >= 75em) { --alley: calc(var(--gutter) * 2) }
+		}
 
-	/* TODO Better adjustments for “full width” 1920✕1080 (projector). */
-	@container style(--projector) {
-		--bleed:  1rlh;
-		--gutter: 1rlh;
-		--alley:  2rlh;
+		/* TODO Better adjustments for “full width” 1920✕1080 (projector). */
+		@container style(--projector) {
+			--bleed:  1rlh;
+			--gutter: 1rlh;
+			--alley:  2rlh;
+		}
 	}
 }

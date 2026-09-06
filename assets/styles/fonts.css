@@ -108,36 +108,40 @@
 	@font-face { font-family: 'Monaco 12'; src: url('../assets/fonts/cuts/monaco--12.woff2') }
 
 	/* Swap them in. */
-	:where(:root) :where(*, ::before, ::after) {
-		font-family: var(--font);
+	:where(:root) {
+		:where(body) { --family: initial } /* Clear overrides from `variable.css` */
 
-		@container style(--family: 'Geneva') {
-			@container style(--size: 9)  { --font: 'Geneva 9' }
-			@container style(--size: 10) { --font: 'Geneva 10' }
-			@container style(--size: 12) { --font: 'Geneva 12' }
-			@container style(--size: 14) { --font: 'Geneva 14' }
-			@container style(--size: 18) { --font: 'Geneva 18' }
-			@container style(--size: 20) { --font: 'Geneva 20' }
-			@container style(--size: 24) { --font: 'Geneva 24' }
+		:where(*, ::before, ::after) {
+			font-family: var(--font), var(--generic, sans-serif);
+
+			@container style(--family: 'Geneva') {
+				@container style(--size: 9)  { --font: 'Geneva 9' }
+				@container style(--size: 10) { --font: 'Geneva 10' }
+				@container style(--size: 12) { --font: 'Geneva 12' }
+				@container style(--size: 14) { --font: 'Geneva 14' }
+				@container style(--size: 18) { --font: 'Geneva 18' }
+				@container style(--size: 20) { --font: 'Geneva 20' }
+				@container style(--size: 24) { --font: 'Geneva 24' }
+			}
+
+			@container style(--family: 'New York') {
+				@container style(--size: 9)  { --font: 'New York 9' }
+				@container style(--size: 10) { --font: 'New York 10' }
+				@container style(--size: 12) { --font: 'New York 12' }
+				@container style(--size: 14) { --font: 'New York 14' }
+				@container style(--size: 18) { --font: 'New York 18' }
+				@container style(--size: 20) { --font: 'New York 20' }
+				@container style(--size: 24) { --font: 'New York 24' }
+				@container style(--size: 36) { --font: 'New York 36' }
+			}
+
+			@container style(--family: 'Monaco') {
+				@container style(--size: 9)  { --font: 'Monaco 9' }
+				@container style(--size: 12) { --font: 'Monaco 12' }
+			}
+
+			@container style(--family: 'Chicago') { --font: 'Chicago' }
+			@container style(--family: 'Venice')  { --font: 'Venice' }
 		}
-
-		@container style(--family: 'New York') {
-			@container style(--size: 9)  { --font: 'New York 9' }
-			@container style(--size: 10) { --font: 'New York 10' }
-			@container style(--size: 12) { --font: 'New York 12' }
-			@container style(--size: 14) { --font: 'New York 14' }
-			@container style(--size: 18) { --font: 'New York 18' }
-			@container style(--size: 20) { --font: 'New York 20' }
-			@container style(--size: 24) { --font: 'New York 24' }
-			@container style(--size: 36) { --font: 'New York 36' }
-		}
-
-		@container style(--family: 'Monaco') {
-			@container style(--size: 9)  { --font: 'Monaco 9' }
-			@container style(--size: 12) { --font: 'Monaco 12' }
-		}
-
-		@container style(--family: 'Chicago') { --font: 'Chicago' }
-		@container style(--family: 'Venice')  { --font: 'Venice' }
 	}
 }
