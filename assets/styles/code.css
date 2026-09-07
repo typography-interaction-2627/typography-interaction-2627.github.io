@@ -13,7 +13,7 @@ samp {
 	position:         relative;
 
 	&::after {
-		background: var(--check);
+		background: var(--background--check);
 		content:    '';
 		inset:      var(---1px);
 		position:   absolute;

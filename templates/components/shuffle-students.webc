@@ -10,7 +10,7 @@
 		padding:          calc(1ex + var(--1px)); /* Matching outlined `cite` links. */
 
 		&::after {
-			background:     var(--check);
+			background:     var(--background--check);
 			content:        '';
 			inset:          0;
 			mix-blend-mode: multiply;

@@ -10,7 +10,7 @@
 				padding:          1ex;
 
 				&::after {
-					background:     var(--check);
+					background:     var(--background--check);
 					content:        '';
 					inset:          0;
 					mix-blend-mode: multiply;

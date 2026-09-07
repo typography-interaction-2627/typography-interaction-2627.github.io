@@ -20,6 +20,9 @@
 		/* Print-only. */
 		.print { display: none }
 
+		/* Spring stuff. */
+		[inert] { mask: var(--background--check) }
+
 		/* Our “windows.” */
 		&:not(:has(> section)), > section {
 			align-items:         baseline;
@@ -306,10 +309,6 @@
 
 					&:has(p)::before { text-box: trim-both cap alphabetic } /* Match for “loose” ones. */
 
-					[inert] & {
-						background: var(--check--text);
-						color:      transparent;
-					}
 				}
 			}
 
