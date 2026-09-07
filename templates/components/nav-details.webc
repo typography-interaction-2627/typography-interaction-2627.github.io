@@ -1,5 +1,7 @@
 <details>
-	<summary @html="markdown(title || initialCap(collection))"></summary>
+	<summary webc:keep webc:root="override">
+		<p @text="title || initialCap(collection)"></p>
+	</summary>
 	<ul webc:if="collection">
 		<li webc:for="item of $data.collections[collection]">
 			<a :href="item.url">

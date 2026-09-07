@@ -58,9 +58,9 @@
 			</a>
 		</li>
 	</ul>
-	<!-- <ul>
+	<ul>
 		<li>
-			<nav-details @collection="weeks" @title="Sessions"></nav-details>
+			<nav-details @collection="weeks"></nav-details>
 		</li>
 		<li>
 			<nav-details @collection="projects"></nav-details>
@@ -71,5 +71,5 @@
 		<li>
 			<nav-details @title="Elsewhere"></nav-details>
 		</li>
-	</ul> -->
+	</ul>
 </nav>
