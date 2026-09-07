@@ -1,7 +1,8 @@
-<details>
-	<summary webc:keep webc:root="override">
+<details name="nav">
+	<summary :aria-label="initialCap(collection)" webc:keep webc:root="override">
 		<svg webc:nokeep @html="inlineSvg(`assets/icons/nav/${collection?.replace(/s$/, '') || 'channels'}.svg`)"></svg>
-		<p @text="initialCap(collection?.replace(/s$/, '') || 'Elsewhere')"></p>
+		<p webc:if="collection" @text="initialCap(collection?.replace(/s$/, ''))"></p>
+		<svg webc:nokeep @html="inlineSvg('assets/icons/nav/drop.svg')"></svg>
 	</summary>
 	<ul webc:if="collection">
 		<li webc:for="item of $data.collections[collection]">

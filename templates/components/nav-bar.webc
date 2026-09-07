@@ -1,39 +1,72 @@
 <style>
 	/* TEMP! */
 	nav {
+		--edge:    round(down, calc(var(--bleed) + var(--gutter) / 2), var(--1px)); /* Split gutter. */
+		--inline:  var(--padding);
+		--block:   var(--gutter);
+		--padding: var(--4px);
+
 		--wrap: nowrap;
-		--edge: round(calc(var(--gutter) / 2), var(--1px));
 
 		display:             flex;
+		column-gap:          var(--inline);
 		inline-size:         inherit; /* Rounded on-pattern, from `body`. */
 		justify-content:     space-between;
-		padding-block-start: var(--edge);
+		padding-block-start: var(--block);
 		padding-inline:      var(--edge);
 		position:            fixed;
 		z-index:             1;
 
 		> ul {
-			column-gap: var(--edge);
+			column-gap: var(--inline);
 			display:    flex;
 
 			> li {
 				> a, summary {
+					align-items:      center;
 					background-color: var(--color);
+					column-gap:       var(--padding);
 					display:          flex;
-					gap:              1ex;
-					padding:          1ex;
+					padding:          var(--padding);
 
 					* { --color: var(--background) }
 
-					p { display: none }
+					p { display: var(--labels, none) }
 
-					svg {
-						block-size: calc(9 * var(--1px));
-						fill:       var(--color);
-					}
+					svg { fill: var(--color) }
+
+					svg:first-child { block-size: calc(9 * var(--1px)) } /* Type. */
+					svg:last-child:not(:only-of-type) { block-size: var(--3px) } /* Drop arrow. */
 				}
 			}
 		}
+
+		/* Center for lil’ phones. */
+		@media (width <= 24.5em ) {
+			--block: var(--inline);
+
+			inline-size:        initial;
+			inset-inline-start: round(down, 50%, var(--1px)); /* On-pattern. */
+			translate:          round(-50%, var(--1px)) 0;
+
+			> ul { display: contents } /* Treat as one list. */
+		}
+
+		@container style(--columns) {
+			/* Split bleed, or align to island. */
+			--edge:   round(max(calc(var(--bleed) / 2), calc(var(--safe) - var(--gutter))), var(--1px));
+			--inline: var(--gutter);
+		}
+
+		@container style(--tablet) {
+			/* Split bleed, even spacing. */
+			--edge:    round(calc(var(--bleed) / 2), var(--1px));
+			--inline:  var(--edge);
+			--block:   var(--edge);
+			--padding: 1ex;
+		}
+
+		@media (width >= 75em) { --labels: block }
 	}
 </style>
 <nav webc:root="override">
