@@ -369,6 +369,16 @@
 	const hash = window.location.hash.slice(1)
 
 	const sections = new Set()
+	let resizeFrame
+	let resizeScrollPosition = null
+
+	window.addEventListener('resize', () => {
+		resizeScrollPosition = window.scrollY
+		cancelAnimationFrame(resizeFrame)
+		resizeFrame = requestAnimationFrame(() => (resizeFrame = 0))
+	})
+
+	window.addEventListener('scroll', () => (resizeScrollPosition = null), { passive: true })
 
 	// Update the hash while scrolling through.
 	const observeSections = () => {
@@ -382,6 +392,8 @@
 
 				new IntersectionObserver(
 					([entry]) => {
+						if (resizeFrame || resizeScrollPosition !== null) return
+
 						(entry.isIntersecting)
 							? history.replaceState(null, '', `#${section.querySelector('[id]')?.id}`)
 							: ((section === ([...sections][0]) && entry.boundingClientRect.top >= 0)
