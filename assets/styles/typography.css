@@ -1,4 +1,4 @@
-:is(li):where(:not(:has(ol, p, ul))), /* “Tight” ones. */
+:is(li):where(:not(:has(ol, p, svg, ul))), /* “Tight” ones. */
 cite,
 dd,
 dt,
