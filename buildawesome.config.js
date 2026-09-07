@@ -3,6 +3,7 @@ import { readdir, readFile, writeFile } from 'fs/promises'
 import { resolve, join, dirname, normalize } from 'path'
 import path from 'path'
 
+import image from '@11ty/eleventy-img'
 import webC from '@11ty/eleventy-plugin-webc'
 
 import markdownIt from 'markdown-it'
@@ -286,6 +287,7 @@ export default (config) => {
 		.toLocaleDateString('en-US', { day: 'numeric', month: 'long', timeZone: 'UTC' }))
 	config.addFilter('stripTags', (content) => stripTags(String(content)))
 	config.addFilter('parseHtml', (content) => parse(content))
+	config.addFilter('inlineSvg', async (svg) => (await image(svg, { dryRun: true, formats: ['svg'] }))?.svg?.[0]?.buffer?.toString())
 
 	// Spans for “kerning.”
 	const span = (name, character) => `<span aria-hidden="true" class="${name}">${character}</span>`
