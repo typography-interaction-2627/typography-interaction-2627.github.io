@@ -36,8 +36,8 @@ strong {
 
 	@container style(--size >= 12) { --kerning: var(---1px) }
 
-	/* Sure would be great if Safari supported range comparisons here! */
-	@supports (font: -apple-system-body) {
+	/* Sure would be great if Safari/Firefox supported range comparisons here! */
+	@supports (font: -apple-system-body) or (-moz-appearance: none) {
 		@container (not style(--size: 9)) and (not style(--size: 10)) { --kerning: var(---1px) }
 	}
 }
