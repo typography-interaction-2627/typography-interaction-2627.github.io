@@ -20,9 +20,6 @@ samp {
 		z-index:    -1;
 	}
 
-	/* Fix rounding. 🤷‍♀️ */
-	@container style(--size: 9) or style(--size: 10){ padding-bottom: 0.08em }
-
 	/* Don’t overshoot link underlines. */
 	a:not(:has(cite)) & {
 		mix-blend-mode: multiply;

@@ -94,11 +94,20 @@ hgroup:has(h4), dt {
 
 /* Code stuff! */
 code, kbd, samp {
-	--size: var(--size--code);
+	--size:    var(--size--code);
+	--family:  'Monaco';
+	--generic: monospace; /* Redeclared, as these usually don’t have a container for the query. */
 
-	font-family: 'Monaco', monospace;
+	@container style(--size: 9) or style(--size: 10) { --size: 9 } /* Notes and such. */
 
-	@container style(--size: 9) or style(--size: 10){ --size: 9 } /* Notes and such. */
+	/* Chrome/Safari `opsz` dance, again; see `typography.css` */
+	@supports (not (-moz-appearance: none)) {
+		--font: 'Monaco 9';
+
+		@container style(--tablet) { --font: 'Monaco 12' }
+
+		@container style(--size: 9) or style(--size: 10) { --font: 'Monaco 9' }
+	}
 }
 
 /* “Kerning” on top of overall adjustment above. */
