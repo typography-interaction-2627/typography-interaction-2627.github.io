@@ -4,18 +4,16 @@
 		--wrap: nowrap;
 		--edge: round(calc(var(--gutter) / 2), var(--1px));
 
-		display:            flex;
-		inset-inline:       0;
-		justify-content:    space-between;
-		margin-block-start: var(--edge);
-		margin-inline:      var(--edge);
-		position:           fixed;
-		z-index:            1;
+		display:             flex;
+		inline-size:         inherit; /* Rounded on-pattern, from `body`. */
+		justify-content:     space-between;
+		padding-block-start: var(--edge);
+		padding-inline:      var(--edge);
+		position:            fixed;
+		z-index:             1;
 
 		> ul {
-			--gap: 1ex;
-
-			column-gap: var(--gap);
+			column-gap: var(--edge);
 			display:    flex;
 
 			> li {
