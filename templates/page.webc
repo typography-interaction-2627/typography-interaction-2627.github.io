@@ -2,7 +2,9 @@
 <template webc:bucket="components" webc:nokeep>
 	<style>
 		:where(:root) {
-			scroll-behavior: smooth;
+			scroll-behavior:  smooth;
+			scrollbar-gutter: stable;
+			overflow-y:       scroll;
 
 			/* Invert. */
 			::selection {
@@ -12,7 +14,7 @@
 		}
 
 		body {
-			inline-size:    round(down, 100vw, var(--1px));
+			inline-size:    round(down, 100%, var(--1px));
 			padding-bottom: var(--break);
 		}
 	</style>
