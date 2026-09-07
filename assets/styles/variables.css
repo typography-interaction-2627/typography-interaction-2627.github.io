@@ -105,8 +105,8 @@
 
 		--background--check:
 			repeating-conic-gradient(
-				var(--color) 0 25%,
-				transparent 0 50%
+				transparent 0 25%,
+				var(--color) 0 50%
 			)
 			0 100% / var(--2px) var(--2px);
 
