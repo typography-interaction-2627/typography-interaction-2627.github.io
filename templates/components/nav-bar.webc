@@ -4,21 +4,13 @@
 		--wrap: nowrap;
 		--edge: round(calc(var(--gutter) / 2), var(--1px));
 
-		align-items:        center;
 		display:            flex;
-		flex-direction:     column;
 		inset-inline:       0;
-		margin-block-start: var(--gutter);
+		justify-content:    space-between;
+		margin-block-start: var(--edge);
 		margin-inline:      var(--edge);
 		position:           fixed;
-		row-gap:            var(--edge);
 		z-index:            1;
-
-		@media (width > 42em) {
-			flex-direction:     row;
-			justify-content:    space-between;
-			margin-block-start: var(--edge);
-		}
 
 		> ul {
 			--gap: 1ex;
@@ -26,26 +18,47 @@
 			column-gap: var(--gap);
 			display:    flex;
 
-			> li > a {
-				padding:          round(1ex, var(--1px));
-				background-color: var(--color);
+			> li {
+				> a {
+					background-color: var(--color);
+					display:          flex;
+					gap:              1ex;
+					padding:          1ex;
 
-				* { --color: var(--background) }
+					* { --color: var(--background) }
+
+					p { display: none }
+
+					svg {
+						block-size: calc(9 * var(--1px));
+						fill:       var(--color);
+					}
+				}
 			}
-
-			/* Logo. */
-			&:first-child > li:first-child { --family: 'New York' }
 		}
 	}
 </style>
 <nav webc:root="override">
 	<ul>
-		<li webc:for="item of $data.collections.root">
-			<a :href="item.url">
-				<p :aria-label="item.url == '/' && 'Home'" @html="initialCap(item.fileSlug) || '&'"></p>
+		<li>
+			<a aria-label="Home" href="/">
+				<svg webc:nokeep @html="inlineSvg('assets/icons/nav/ampersand.svg')"></svg>
 			</a>
 		</li>
-		<!--
+		<li>
+			<a aria-label="Syllabus" href="/syllabus/">
+				<svg webc:nokeep @html="inlineSvg('assets/icons/nav/syllabus.svg')"></svg>
+				<p>Syllabus</p>
+			</a>
+		</li>
+		<li>
+			<a aria-label="Class" href="/class/">
+				<svg webc:nokeep @html="inlineSvg('assets/icons/nav/class.svg')"></svg>
+				<p>Class</p>
+			</a>
+		</li>
+	</ul>
+	<!-- <ul>
 		<li>
 			<nav-details @collection="weeks" @title="Sessions"></nav-details>
 		</li>
@@ -58,24 +71,5 @@
 		<li>
 			<nav-details @title="Elsewhere"></nav-details>
 		</li>
-		-->
-	</ul>
-	<!-- Temp for ~~first~~ second class! 🫣 -->
-	<ul>
-		<li>
-			<a href="/week/2/">
-				<p>Week 2</p>
-			</a>
-		</li>
-		<li>
-			<a href="/project/1/">
-				<p><em>Manuscript</em></p>
-			</a>
-		</li>
-		<li>
-			<a href="/topic/typography/">
-				<p><em>Typography</em></p>
-			</a>
-		</li>
-	</ul>
+	</ul> -->
 </nav>
