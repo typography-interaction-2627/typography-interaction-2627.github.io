@@ -87,6 +87,8 @@
 		--page:   min(round(down, calc(100vw - 2 * var(--bleed)), var(--1px)), var(--max));
 		--main:   calc(var(--page) - 2 * var(--gutter) - var(--2px)); /* Account for “border.” */
 
+		--safe: round(env(safe-area-inset-left), var(--1px));
+
 		--max:   calc(720 * var(--1px));
 		--break: round(20vh, var(--1px));
 
@@ -102,7 +104,7 @@
 		--background--border: linear-gradient(var(--color)) bottom / 100% var(--1px) no-repeat;
 		--background--dashed: repeating-linear-gradient(to right, var(--color) 0 var(--1px), transparent 0 var(--2px)) bottom / 100% var(--1px) no-repeat;
 
-		@container style(--columns) or style(--tablet) { --bleed: calc(2rlh - 1rcap) }
+		@container style(--columns) or style(--tablet) { --bleed: max(calc(2rlh - 1rcap), var(--safe)) }
 
 		@container style(--tablet) {
 			--gutter: var(--bleed);
