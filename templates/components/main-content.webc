@@ -21,7 +21,11 @@
 		.print { display: none }
 
 		/* Spring stuff. */
-		[inert] { mask: var(--background--check) }
+		[inert] {
+			mask: var(--background--check);
+
+			[inert] { mask: initial } /* Don’t double-apply. */
+		}
 
 		/* Our “windows.” */
 		&:not(:has(> section)), > section {
