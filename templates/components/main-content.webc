@@ -37,7 +37,6 @@
 			grid-auto-rows:      min-content;
 			inline-size:         var(--page);
 			margin-inline-start: round(down, calc((100vw - var(--page)) / 2), var(--1px)); /* Land on-pattern. */
-			overflow:            clip; /* Clip rounded-grid extensions. */
 			padding-block-end:   calc(2 * var(--gutter) + var(--1px));
 			padding-block-start: calc(var(--gutter) + var(--1px));
 			padding-inline:      calc(var(--gutter) + var(--1px));
@@ -318,6 +317,7 @@
 
 					&:has(p)::before { text-box: trim-both cap alphabetic } /* Match for “loose” ones. */
 
+					/* `cite` in lists (“for next week”). */
 				}
 			}
 
