@@ -19,7 +19,7 @@
 			display:    flex;
 
 			> li {
-				> a {
+				> a, summary {
 					background-color: var(--color);
 					display:          flex;
 					gap:              1ex;
@@ -69,7 +69,7 @@
 			<nav-details @collection="topics"></nav-details>
 		</li>
 		<li>
-			<nav-details @title="Elsewhere"></nav-details>
+			<nav-details></nav-details>
 		</li>
 	</ul>
 </nav>

@@ -1,6 +1,7 @@
 <details>
 	<summary webc:keep webc:root="override">
-		<p @text="title || initialCap(collection)"></p>
+		<svg webc:nokeep @html="inlineSvg(`assets/icons/nav/${collection?.replace(/s$/, '') || 'channels'}.svg`)"></svg>
+		<p @text="initialCap(collection?.replace(/s$/, '') || 'Elsewhere')"></p>
 	</summary>
 	<ul webc:if="collection">
 		<li webc:for="item of $data.collections[collection]">
