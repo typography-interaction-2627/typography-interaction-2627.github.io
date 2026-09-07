@@ -15,6 +15,7 @@
 @property --alley  { inherits: true; initial-value: 0px; syntax: '<length>' }
 @property --page   { inherits: true; initial-value: 0px; syntax: '<length>' }
 @property --main   { inherits: true; initial-value: 0px; syntax: '<length>' }
+@property --column { inherits: true; initial-value: 0px; syntax: '<length>' }
 
 @property --wrap { inherits: true; initial-value: pretty; syntax: '<custom-ident>' }
 
@@ -55,7 +56,7 @@
 		@supports (not (-moz-appearance: none)) { --family: 'Geneva 12' }
 	}
 
-	@media (width >= 35em) and (orientation: landscape), (width >= 64em) { --columns: true }
+	@media (width >= 35em) and (orientation: landscape), (width >= 64em) { --columns: 6 }
 	@media (width >= 120em) { --scaling: 3 }
 	@media (width = 120em) and (height = 67.5em) { --projector: true }
 
@@ -86,6 +87,7 @@
 		--alley:  calc(var(--gutter) * 2); /* Check tablet */
 		--page:   min(round(down, calc(100vw - 2 * var(--bleed)), var(--1px)), var(--max));
 		--main:   calc(var(--page) - 2 * var(--gutter) - var(--2px)); /* Account for “border.” */
+		--column: var(--main);
 
 		--safe: round(env(safe-area-inset-left), var(--1px));
 
@@ -119,6 +121,9 @@
 			bottom / 100% var(--1px)
 			no-repeat;
 
+
+		/* Explicit-sized for rounding. */
+		@container style(--columns) { --column: round(down, calc(((var(--main) - (var(--alley) * (var(--columns) - 1)))) / var(--columns)), var(--1px)) }
 
 		@container style(--columns) or style(--tablet) { --bleed: max(calc(2rlh - 1rcap), var(--safe)) }
 

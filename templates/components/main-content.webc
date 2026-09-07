@@ -37,6 +37,7 @@
 			grid-auto-rows:      min-content;
 			inline-size:         var(--page);
 			margin-inline-start: round(down, calc((100vw - var(--page)) / 2), var(--1px)); /* Land on-pattern. */
+			overflow:            clip; /* Clip rounded-grid extensions. */
 			padding-block-end:   calc(2 * var(--gutter) + var(--1px));
 			padding-block-start: calc(var(--gutter) + var(--1px));
 			padding-inline:      calc(var(--gutter) + var(--1px));
@@ -44,7 +45,7 @@
 
 			grid-template-columns:
 				[ all-start aside-start body-start middle-start five-start four-start left-start one-start recto-start right-start six-start three-start two-start verso-start ]
-				minmax(0, 1fr)
+				var(--column)
 				[ all-end aside-end body-end middle-end five-end four-end left-end one-end recto-end right-end six-end three-end two-end verso-end ];
 
 			/* Default to body width. */
@@ -131,17 +132,17 @@
 			@container style(--columns) {
 				grid-template-columns:
 					[ all-start body-start left-start one-start verso-start ]
-					minmax(0, 1fr)
+					var(--column)
 					[ aside-start one-end two-start]
-					minmax(0, 1fr)
+					var(--column)
 					[ middle-start left-end three-start two-end ]
-					minmax(0, 1fr)
+					var(--column)
 					[four-start recto-start three-end verso-end]
-					minmax(0, 1fr)
+					var(--column)
 					[ body-end middle-end five-start four-end right-start ]
-					minmax(0, 1fr)
+					var(--column)
 					[ aside-end five-end six-start]
-					minmax(0, 1fr)
+					var(--column)
 					[ all-end recto-end right-end six-end];
 			}
 		}
@@ -190,6 +191,7 @@
 
 			&:has(h2) {
 				background:        var(--background--border);
+				inline-size:       var(--page); /* Override rounded grid. */
 				margin-inline:     calc(-1 * var(--gutter));
 				padding-block-end: calc(var(--gutter) + var(--1px));
 				padding-inline:    var(--gutter);
@@ -199,6 +201,8 @@
 			}
 
 			&:has(h3) {
+				inline-size: var(--main); /* Override rounded grid. */
+
 				/* Not right after `h2`. */
 				section section:not(hgroup + section) > & {
 					background:         var(--background--dashed);
@@ -237,6 +241,7 @@
 		:where(hr) {
 			background:        var(--background--border);
 			grid-column:       all;
+			inline-size:       var(--page); /* Override rounded grid. */
 			margin-block:      var(--gutter);
 			margin-inline:     calc(-1 * var(--gutter));
 			padding-block-end: var(--1px);
