@@ -1,3 +1,14 @@
+<script webc:setup>
+	export const rootLinks = [
+		{
+			label: 'Home',
+			url:   '/',
+			icon:  'ampersand',
+		},
+		{ url: '/syllabus/' },
+		{ url: '/class/' },
+	]
+</script>
 <style>
 	nav {
 		--edge:    var(--bleed);
@@ -64,19 +75,9 @@
 </style>
 <nav webc:root="override">
 	<ul>
-		<li>
-			<a :aria-current="$data.page.url === '/' && 'page' " aria-label="Home" href="/">
-				<svg webc:nokeep @html="inlineSvg('assets/icons/nav/ampersand.svg')"></svg>
-			</a>
-		</li>
-		<li>
-			<a :aria-current="$data.page.url === '/syllabus/' && 'page' " aria-label="Syllabus" href="/syllabus/">
-				<svg webc:nokeep @html="inlineSvg('assets/icons/nav/syllabus.svg')"></svg>
-			</a>
-		</li>
-		<li>
-			<a :aria-current="$data.page.url === '/class/' && 'page' " aria-label="Class" href="/class/">
-				<svg webc:nokeep @html="inlineSvg('assets/icons/nav/class.svg')"></svg>
+		<li webc:for="link of rootLinks">
+			<a :aria-current="$data.page.url === link.url && 'page'" :aria-label="link.label ?? initialCap(link.url.replaceAll('/', ''))" :href="link.url">
+				<svg webc:nokeep @html="inlineSvg(`assets/icons/nav/${link.icon ?? link.url.replaceAll('/', '')}.svg`)"></svg>
 			</a>
 		</li>
 	</ul>
