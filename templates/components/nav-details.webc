@@ -36,7 +36,30 @@
 			}
 		}
 
-		&[open] { --rotate: 180deg }
+		&[open] {
+			--rotate: 180deg;
+
+			/* TODO Propery variable dance for theses! */
+			summary {
+				background-color: var(--background);
+				box-shadow:       var(--shadow--border--upper), var(--shadow--single);
+
+				* { --color: initial }
+
+				&::before {
+					background-color: var(--background);
+					block-size:       var(--1px);
+					content:          '';
+					inset-block-end:  var(---1px);
+					inset-inline:     var(--1px);
+					mask:             var(--background--check);
+					position:         absolute;
+					z-index:          1;
+				}
+			}
+
+			ul { box-shadow: var(--shadow--border), var(--shadow--single) }
+		}
 
 		&::details-content {
 			inset-block-start:  anchor(end);
@@ -50,27 +73,32 @@
 			/* Space under the `nav`, less gutters. */
 			--remainder: calc(100dvh - var(--block) - (2 * var(--padding) + 9 * var(--1px)) - 2 * var(--gutter));
 
-			inline-size:      max-content;
-			max-inline-size:  round(70vw, var(--1px));
 			background-color: var(--background);
-			max-block-size:   var(--remainder);
+			display:          grid;
+			inline-size:      max-content;
+			max-block-size:   round(var(--remainder), var(--1px));
+			max-inline-size:  round(70vw, var(--1px));
 			overflow-y:       scroll;
+			padding-block:    2ex;
+			padding-inline:   2ex;
+			row-gap:          2ex;
 
 			li {
-				padding-block:  1ex;
-				padding-inline: 1cap;
-
 				a {
 					display: grid;
 					gap:     1ex;
 
 					p {
-						margin-block:  -1ex;
+						margin-block:  var(---3px);
 						overflow:      hidden;
-						padding-block: 1ex;
+						padding-block: var(--3px);
 						text-overflow: ellipsis;
 
-						&:has(sub) { --size: var(--size--note) }
+						&:has(sub) {
+							--size: var(--size--note);
+
+							sub { display: block }
+						}
 					}
 				}
 			}
