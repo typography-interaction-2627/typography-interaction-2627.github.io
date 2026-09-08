@@ -74,15 +74,16 @@
 			--remainder: calc(100dvh - var(--block) - (2 * var(--padding) + 9 * var(--1px)) - 2 * var(--gutter));
 
 			background-color: var(--background);
-			justify-items:    start;
 			display:          grid;
 			inline-size:      max-content;
+			justify-items:    start;
 			max-block-size:   round(var(--remainder), var(--1px));
 			max-inline-size:  round(80vw, var(--1px));
 			overflow-y:       scroll;
 			padding-block:    2ex;
 			padding-inline:   2ex;
 			row-gap:          2ex;
+			scrollbar-width:  none;
 
 			li {
 				a {
