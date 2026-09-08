@@ -82,7 +82,7 @@
 			grid-template-columns: minmax(0, 1fr) max-content;
 			inline-size:           max-content;
 			justify-items:         start;
-			max-block-size:        round(var(--remainder), var(--1px));
+			max-block-size:        calc(round(var(--remainder), 2cap) - var(--3px));
 			max-inline-size:       round(80vw, var(--1px));
 			overflow-y:            scroll;
 			padding-block:         1cap;
