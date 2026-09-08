@@ -8,7 +8,7 @@
 			const cite = link?.querySelector('cite')
 
 			cite && (
-				link.set_content(`<p>${cite.innerHTML}</p>`),
+				link.set_content(`<p><strong>${cite.innerHTML}</strong></p>`),
 				item.set_content(link.outerHTML)
 			)
 		})
@@ -17,8 +17,18 @@
 	}
 </script>
 <style>
+	@position-try --in-page {
+		inset-inline-end:   var(--inline);
+		inset-inline-start: initial;
+		position-area: none;
+	}
+
 	details[name='nav'] {
+		anchor-scope: --nav-details;
+
 		summary {
+			anchor-name: --nav-details;
+
 			/* Drop arrow. */
 			svg:last-child:not(:only-of-type) {
 				block-size: var(--3px);
@@ -29,8 +39,32 @@
 		&[open] { --rotate: 180deg }
 
 		&::details-content {
+			inset-block-start:  anchor(end);
+			inset-inline-start: anchor(start);
+			position-anchor:    --nav-details;
+			position-try:       flip-inline, --in-page;
+			position:           fixed;
+		}
+
+		ul {
+			/* Space under the `nav`, less gutters. */
+			--remainder: calc(100dvh - var(--block) - (2 * var(--padding) + 9 * var(--1px)) - 2 * var(--gutter));
+
 			background-color: var(--background);
-			position:         absolute;
+			max-block-size:   var(--remainder);
+			overflow-y:       scroll;
+
+			li {
+				padding-block:  1ex;
+				padding-inline: 1cap;
+
+				a {
+					display: grid;
+					gap:     1ex;
+
+					p:has(sub) { --size: var(--size--note) }
+				}
+			}
 		}
 	}
 </style>
@@ -43,8 +77,8 @@
 	<ul webc:if="collection">
 		<li webc:for="item of $data.collections[collection]">
 			<a :href="item.url">
-				<p @html="item.data.title"></p>
-				<p webc:if="collection != 'topics'" @text="displayDate(item.data.date)"></p>
+				<p><strong @html="item.data.title"></strong></p>
+				<p webc:if="collection != 'topics'"><sub @text="displayDate(item.data.date)"></sub></p>
 			</a>
 		</li>
 	</ul>

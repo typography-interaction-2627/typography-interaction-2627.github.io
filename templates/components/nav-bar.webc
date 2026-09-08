@@ -5,6 +5,7 @@
 		--block:   var(--gutter);
 		--padding: var(--4px);
 
+		--size: 12;
 		--wrap: nowrap;
 
 		display:             flex;
