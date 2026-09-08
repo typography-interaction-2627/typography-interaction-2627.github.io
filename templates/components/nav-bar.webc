@@ -1,6 +1,6 @@
 <style>
 	nav {
-		--edge:    round(down, calc(var(--bleed) + var(--gutter) / 2), var(--1px)); /* Split gutter. */
+		--edge:    var(--bleed);
 		--inline:  var(--padding);
 		--block:   var(--gutter);
 		--padding: var(--4px);
@@ -43,15 +43,9 @@
 			}
 		}
 
-		/* Center for lil’ phones. */
-		@media (width <= 24.5em ) {
-			--block: var(--inline);
-
-			inline-size:        initial;
-			inset-inline-start: round(down, 50%, var(--1px)); /* On-pattern. */
-			translate:          round(-50%, var(--1px)) 0;
-
-			> ul { display: contents } /* Treat as one list. */
+		@media (width > 24.5em ) {
+			/* Split gutter. */
+			--edge: round(down, calc(var(--bleed) + var(--gutter) / 2), var(--1px));
 		}
 
 		@container style(--columns) {
