@@ -85,10 +85,13 @@
 			max-block-size:        round(var(--remainder), var(--1px));
 			max-inline-size:       round(80vw, var(--1px));
 			overflow-y:            scroll;
-			padding-block:         2ex;
+			padding-block:         1cap;
 			padding-inline:        2ex;
 			row-gap:               1cap;
 			scrollbar-width:       none;
+
+			/* Room for indicator. */
+			&:has([aria-current='page']) { padding-inline-start: 3ex }
 
 			li {
 				display:     inherit;
@@ -102,6 +105,20 @@
 					display:               inherit;
 					grid-column:           inherit;
 					grid-template-columns: inherit;
+
+					/* Indicator. */
+					&[aria-current='page']::before {
+						align-self:          center;
+						background-image:    url('/assets/icons/&diam.svg');
+						background-position: center;
+						background-repeat:   no-repeat;
+						background-size:     var(--7px);
+						block-size:          var(--7px);
+						content:             '';
+						inline-size:         var(--7px);
+						inset-inline-end:    calc(100% + 1ex);
+						position:            absolute;
+					}
 
 					p {
 						margin-block:  var(---3px);
@@ -148,7 +165,7 @@
 	</summary>
 	<ul webc:if="collection">
 		<li webc:for="item of $data.collections[collection]">
-			<a :href="item.url">
+			<a :aria-current="item.url === $data.page.url && 'page'" :href="item.url">
 				<p @html="item.data.title"></p>
 				<p webc:if="collection != 'topics'"><sub @text="shortDate(item.data.date)"></sub></p>
 			</a>
