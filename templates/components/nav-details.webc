@@ -1,4 +1,22 @@
-<details name="nav">
+<style>
+	details[name='nav'] {
+		summary {
+			/* Drop arrow. */
+			svg:last-child:not(:only-of-type) {
+				block-size: var(--3px);
+				rotate:     var(--rotate);
+			}
+		}
+
+		&[open] { --rotate: 180deg }
+
+		&::details-content {
+			background-color: var(--background);
+			position:         absolute;
+		}
+	}
+</style>
+<details name="nav" webc:root="override">
 	<summary :aria-label="initialCap(collection)" webc:keep webc:root="override">
 		<svg webc:nokeep @html="inlineSvg(`assets/icons/nav/${collection?.replace(/s$/, '') || 'channels'}.svg`)"></svg>
 		<p webc:if="collection" @text="initialCap(collection?.replace(/s$/, ''))"></p>

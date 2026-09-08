@@ -1,5 +1,4 @@
 <style>
-	/* TEMP! */
 	nav {
 		--edge:    round(down, calc(var(--bleed) + var(--gutter) / 2), var(--1px)); /* Split gutter. */
 		--inline:  var(--padding);
@@ -33,10 +32,12 @@
 
 					p { display: var(--labels, none) }
 
-					svg { fill: var(--color) }
+					svg {
+						fill: var(--color);
 
-					svg:first-child { block-size: calc(9 * var(--1px)) } /* Type. */
-					svg:last-child:not(:only-of-type) { block-size: var(--3px) } /* Drop arrow. */
+						/* Type icons. */
+						&:first-child { block-size: calc(9 * var(--1px)) }
+					}
 				}
 			}
 		}
