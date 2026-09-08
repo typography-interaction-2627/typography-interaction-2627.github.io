@@ -25,6 +25,8 @@ summary {
 		inset:    calc(-1 * var(--enlargement));
 		position: absolute;
 	}
+
+	/* TODO `:active` and `:hover` states! */
 }
 
 /* Inline links. */
@@ -37,38 +39,38 @@ summary {
 	td,
 	th
 ) a:where(:not(:has(cite))) {
-		/* Instead of `text-decoration`, which rounds to nearest (CSS) pixel! */
-		background:            var(--background--border);
-		background-clip:       content-box;
-		background-position-y: var(--underline);
-		box-decoration-break:  clone; /* “Restart” inline `padding`/`margin` on wrapped links. */
-		display:               inline;
-		line-height:           inherit;
-		margin-inline-end:     calc(-1 * var(--enlargement));
-		margin-inline-start:   calc(-1 * var(--enlargement));
-		outline-offset:        unset;
-		border-block:          var(--1px) solid transparent;
-		padding-inline-end:    var(--enlargement);
-		padding-inline-start:  var(--enlargement);
-		position:              unset;
+	/* Instead of `text-decoration`, which rounds to nearest (CSS) pixel! */
+	background:            var(--background--border);
+	background-clip:       content-box;
+	background-position-y: var(--underline);
+	box-decoration-break:  clone; /* “Restart” inline `padding`/`margin` on wrapped links. */
+	display:               inline;
+	line-height:           inherit;
+	margin-inline-end:     calc(-1 * var(--enlargement));
+	margin-inline-start:   calc(-1 * var(--enlargement));
+	outline-offset:        unset;
+	border-block:          var(--1px) solid transparent;
+	padding-inline-end:    var(--enlargement);
+	padding-inline-start:  var(--enlargement);
+	position:              unset;
 
-		/* Clear/”skip” the descenders, as we know the background color. */
-		text-shadow:
-				var(--background) 0           var(---1px), /* N  */
-				var(--background) var(--1px)  var(---1px), /* NW */
-				var(--background) var(--1px)  0,           /* W  */
-				var(--background) var(--1px)  var(--1px),  /* SW */
-				var(--background) 0           var(--1px),  /* S  */
-				var(--background) var(---1px) var(--1px),  /* SE */
-				var(--background) var(---1px) 0,           /* E  */
-				var(--background) var(---1px) var(---1px)  /* NE */
-			;
+	/* Clear/”skip” the descenders, as we know the background color. */
+	text-shadow:
+			var(--background) 0           var(---1px), /* N  */
+			var(--background) var(--1px)  var(---1px), /* NW */
+			var(--background) var(--1px)  0,           /* W  */
+			var(--background) var(--1px)  var(--1px),  /* SW */
+			var(--background) 0           var(--1px),  /* S  */
+			var(--background) var(---1px) var(--1px),  /* SE */
+			var(--background) var(---1px) 0,           /* E  */
+			var(--background) var(---1px) var(---1px)  /* NE */
+		;
 
-		/* Use background for active highlight, as it might wrap. */
-		&::after { all: unset }
+	/* Use background for active highlight, as it might wrap. */
+	&::after { all: unset }
 
-		&.asterisk {
-			text-shadow: initial;
-			background:  initial;
-		}
+	&.asterisk {
+		text-shadow: initial;
+		background:  initial;
+	}
 }

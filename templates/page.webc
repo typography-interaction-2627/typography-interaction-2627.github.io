@@ -6,6 +6,8 @@
 			scrollbar-gutter: stable;
 			overflow-y:       scroll;
 
+			/* TODO Style scrollbars for black/white! */
+
 			/* Invert. */
 			::selection {
 				color:            var(--background);

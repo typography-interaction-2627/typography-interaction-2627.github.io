@@ -340,6 +340,8 @@ What Are Things to Consider When Picking a Typeface?
 
 </details>
 
+<!-- TODO Come back to `blockquote > ol`? -->
+
 > Because it works.
 > Because you like its history.
 > Because you like its name.
@@ -541,3 +543,5 @@ Where does one find typefaces? From *foundries*, again referencing the days whe
 ___
 
 <sub>Shout-out to our Spring instructor [Eric](https://eric.young.li) on this one.</sub>
+
+<!-- TODO `iframe` are not GFM! -->

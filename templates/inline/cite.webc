@@ -9,6 +9,7 @@
 		/* With a note after. */
 		/* TODO Use `sub` for this? Adjusting Markdown. */
 		&:has(br) {
+			/* TODO Bobble with/without this—type inset? */
 			--size: var(--size--note);
 
 			em { line-height: 1 } /* Helps with `em` and rounding? */
