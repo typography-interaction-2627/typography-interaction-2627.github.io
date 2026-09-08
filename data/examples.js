@@ -1,32 +1,28 @@
 import { readdir, readFile } from 'node:fs/promises'
 import path from 'node:path'
 
-/**
- * Find all examples for all topics, and construct a nested map of all file contents for use in
- * rendering of interactive example live demo page.
- *
- * @note this does not support nested folders in the examples themselves
- */
-
+// Group example files by `topic/example` — only files 2 levels deep, no nested example folders.
 const topicRoot = './content/topic'
+const groups = {}
 
-// Only files at least 2 levels deep (topic/example/filename), matching the old `*/*/**` glob
-const files = (await readdir(topicRoot, { recursive: true, withFileTypes: true }))
-	.filter(entry => entry.isFile() && !entry.name.startsWith('.'))
-	.map(entry => path.relative(topicRoot, path.join(entry.parentPath, entry.name)))
-	.filter(relativePath => relativePath.split(path.sep).length >= 3)
+for (const entry of await readdir(topicRoot, { recursive: true, withFileTypes: true })) {
+	if (!entry.isFile() || entry.name.startsWith('.')) continue
 
-const items = await Promise.all(files.map(async file => {
-	const [topic, example] = file.split(path.sep)
+	const relative = path.relative(topicRoot, path.join(entry.parentPath, entry.name))
+	const [topic, example, filename] = relative.split(path.sep)
+	if (!filename) continue
 
-	return { contents: await readFile(path.join(topicRoot, file), 'utf8'), example, filename: path.basename(file), topic }
-}))
+	const group = groups[`${topic}/${example}`] ??= { example, paths: [], topic }
+	group.paths.push(relative)
+}
 
-const output = Object.values(Object.groupBy(items, ({ topic, example }) => `${topic}/${example}`))
-	.map(group => ({
-		example: group[0].example,
-		files: group.map(({ filename, contents }) => ({ contents, filename })),
-		topic: group[0].topic,
-	}))
+// Read every file concurrently, then swap each group's `paths` for resolved `files`.
+const output = await Promise.all(Object.values(groups).map(async ({ paths, ...group }) => ({
+	...group,
+	files: await Promise.all(paths.map(async relative => ({
+		contents: await readFile(path.join(topicRoot, relative), 'utf8'),
+		filename: path.basename(relative),
+	}))),
+})))
 
 export default output
