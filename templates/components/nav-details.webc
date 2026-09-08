@@ -130,10 +130,10 @@
 		<svg webc:nokeep @html="inlineSvg('assets/icons/nav/drop.svg')"></svg>
 	</summary>
 	<ul webc:if="collection">
-		<li webc:for="item of $data.collections[collection]">
+		<li webc:for="item, index of $data.collections[collection]">
 			<a :href="item.url">
 				<p @html="item.data.title"></p>
-				<p webc:if="collection != 'topics'"><sub @text="displayDate(item.data.date)"></sub></p>
+				<p webc:if="item.url && collection != 'topics' && index === $data.collections[collection].findLastIndex(item => item.url)"><sub @text="displayDate(item.data.date)"></sub></p>
 			</a>
 		</li>
 	</ul>
