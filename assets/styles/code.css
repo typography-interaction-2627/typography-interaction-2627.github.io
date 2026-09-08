@@ -1,30 +1,16 @@
-code, kbd, samp {
-	white-space: pre;
-}
+code, kbd, samp { white-space: pre }
 
 :where(*:not(pre)) > code,
 kbd,
 samp {
-	background-clip:  padding-box;
-	background-color: var(--background);
-	border:           var(--1px) solid transparent;
-	isolation:        isolate;
-	padding-inline:   var(--3px);
-	position:         relative;
-
-	&::after {
-		background: var(--background--check);
-		content:    '';
-		inset:      var(---1px);
-		position:   absolute;
-		z-index:    -1;
-	}
+	border:         var(--1px) solid transparent;
+	background:     linear-gradient(var(--background)) padding-box, var(--background--check) border-box;
+	padding-inline: var(--3px);
 
 	/* Don’t overshoot link underlines. */
 	a:not(:has(cite)) & {
-		mix-blend-mode: multiply;
-
-		&::after { inset-block-end: 0 }
+		mix-blend-mode:   multiply;
+		border-block-end: initial;
 	}
 }
 
