@@ -108,16 +108,10 @@
 
 					/* Indicator. */
 					&[aria-current='page']::before {
-						align-self:          center;
-						background-image:    url('/assets/icons/&diam.svg');
-						background-position: center;
-						background-repeat:   no-repeat;
-						background-size:     var(--7px);
-						block-size:          var(--7px);
-						content:             '';
-						inline-size:         var(--7px);
-						inset-inline-end:    calc(100% + 1ex);
-						position:            absolute;
+						content:          '◆' / '';
+						inset-inline-end: calc(100% + 1ex);
+						position:         absolute;
+						text-box:         trim-both cap alphabetic;
 					}
 
 					p {
