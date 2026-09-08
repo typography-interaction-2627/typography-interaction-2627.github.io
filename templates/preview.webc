@@ -1,5 +1,6 @@
+<template><pre webc:nokeep><!-- Gets the `inline` styles! --></pre></template>
 <ti-preview base="../">
-	<figure webc:for="file of example.files.filter(({ filename }) => ['.html', '.css', '.js'].some((ext) => filename.endsWith(ext)))" webc:raw>
+	<figure webc:raw webc:for="file of example.files.filter(({ filename }) => ['.html', '.css', '.js'].some((ext) => filename.endsWith(ext)))">
 		<pre>
 			<code @text="file.contents"></code>
 		</pre>

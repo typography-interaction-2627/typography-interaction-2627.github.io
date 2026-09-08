@@ -51,6 +51,41 @@
 
 			@container style(--tablet) { --editor-font-family: 'Monaco 12' }
 		}
+
+		--output-background: var(--background);
+		--output-border:     initial;
+
+		--syntax-atom:             var(--background);
+		--syntax-bool:             dodgerblue;
+		--syntax-className:        dodgerblue;
+		--syntax-comment:          color-mix(in srgb, var(--background), transparent 50%);
+		--syntax-definition:       plum;
+		--syntax-deleted:          tomato;
+		--syntax-emphasis:         var(--syntax-comment);
+		--syntax-heading:          tomato;
+		--syntax-inserted:         darkseagreen;
+		--syntax-invalid:          var(--background);
+		--syntax-keyword:          tomato;
+		--syntax-labelName:        cornflowerblue;
+		--syntax-link:             mediumorchid;
+		--syntax-literal:          lightskyblue;
+		--syntax-macroName:        tomato;
+		--syntax-meta:             dodgerblue;
+		--syntax-namespace:        khaki;
+		--syntax-number:           dodgerblue;
+		--syntax-operator:         color-mix(in srgb, var(--background), transparent 33%);
+		--syntax-propertyName:     dodgerblue;
+		--syntax-punctuation:      color-mix(in srgb, var(--background), transparent 33%);
+		--syntax-string:           lightskyblue;
+		--syntax-strong:           var(--syntax-comment);
+		--syntax-text:             var(--background);
+		--syntax-typeName:         limegreen;
+		--syntax-url:              darkturquoise;
+		--syntax-variableName:     orange;
+		--syntax-whitespace-space: '';
+		--syntax-whitespace-tab:   '';
+		--syntax-whitespace:       color-mix(in srgb, var(--background), transparent 85%);
+		/* TODO Pixel whitespace characters via `background` variables ! */
 	}
 </style>
 <ti-preview webc:root="override" @attributes hide-output hide-tabs>
