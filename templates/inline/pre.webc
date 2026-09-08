@@ -1,22 +1,56 @@
 <style>
 	pre {
+		--leading: 1rlh;
+
 		background-color: var(--color);
 		display:          flex;
 		overflow:         auto;
-		padding:          calc(1lh - 1cap);
+		padding:          1rcap;
 		scrollbar-width:  none;
+
+		code {
+			tab-size: 4;
+			color:    var(--background);
+			text-box: trim-both cap alphabetic;
+		}
+	}
+
+	/* In-page. */
+	main :is(pre, ti-preview) {
+		inline-size:     fit-content;
+		max-inline-size: 100%;
 
 		@supports (not (font: -apple-system-body)) and (not (-moz-appearance: none)) {
 			border-radius: var(--1px);
 			corner-shape:  notch;
 		}
 
-		code {
-			color:    var(--background);
-			text-box: trim-both cap alphabetic;
+		&:is(ti-preview) { overflow: clip } /* For the corners; scrolls internally. */
+	}
+
+	/* Live preview settings. */
+	ti-preview {
+		--container-border-radius: initial;
+
+		--editor-background:           var(--color);
+		--editor-caret-color:          var(--background);
+		--editor-font-family:          'Monaco', monospace;
+		--editor-font-size:            calc(var(--size--code) * var(--1px));
+		--editor-line-height:          1rlh;
+		--editor-padding:              1rcap;
+		--editor-selection-background: color-mix(in srgb, var(--background), transparent 80%);
+
+		/* Chrome/Safari `opsz` dance, again; see `typography.css` */
+		@supports (not (-moz-appearance: none)) {
+			--editor-font-family: 'Monaco 9';
+
+			@container style(--tablet) { --editor-font-family: 'Monaco 12' }
 		}
 	}
 </style>
-<pre webc:root="override" @attributes>
-	<slot></slot>
-</pre>
+<ti-preview webc:root="override" @attributes hide-output hide-tabs>
+	<pre>
+		<slot></slot>
+	</pre>
+</ti-preview>
+
