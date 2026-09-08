@@ -27,6 +27,7 @@
 
 		summary {
 			anchor-name: --nav-details;
+			user-select: none;
 
 			/* Drop arrow. */
 			svg:last-child:not(:only-of-type) {
