@@ -18,9 +18,8 @@
 </script>
 <style>
 	@position-try --in-page {
-		inset-inline-end:   var(--inline);
+		inset-inline-end:   var(--edge);
 		inset-inline-start: initial;
-		position-area: none;
 	}
 
 	details[name='nav'] {
@@ -50,6 +49,8 @@
 			/* Space under the `nav`, less gutters. */
 			--remainder: calc(100dvh - var(--block) - (2 * var(--padding) + 9 * var(--1px)) - 2 * var(--gutter));
 
+			inline-size:      max-content;
+			max-inline-size:  round(70vw, var(--1px));
 			background-color: var(--background);
 			max-block-size:   var(--remainder);
 			overflow-y:       scroll;
@@ -62,7 +63,14 @@
 					display: grid;
 					gap:     1ex;
 
-					p:has(sub) { --size: var(--size--note) }
+					p {
+						margin-block:  -1ex;
+						overflow:      hidden;
+						padding-block: 1ex;
+						text-overflow: ellipsis;
+
+						&:has(sub) { --size: var(--size--note) }
+					}
 				}
 			}
 		}
