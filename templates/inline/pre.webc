@@ -32,13 +32,18 @@
 	ti-preview {
 		--container-border-radius: initial;
 
-		--editor-background:           var(--color);
-		--editor-caret-color:          var(--background);
-		--editor-font-family:          'Monaco', monospace;
-		--editor-font-size:            calc(var(--size--code) * var(--1px));
-		--editor-line-height:          1rlh;
-		--editor-padding:              1rcap;
-		--editor-selection-background: color-mix(in srgb, var(--background), transparent 80%);
+		--container-font-smooth:           never;
+		--container-text-rendering:        geometricPrecision;
+		--container-webkit-font-smoothing: none;
+		--editor-background:               var(--color);
+		--editor-caret-color:              var(--background);
+		--editor-font-family:              'Monaco', monospace;
+		--editor-font-size:                calc(var(--size--code) * var(--1px));
+		--editor-line-height:              1rlh;
+		--editor-padding:                  1rcap;
+		--editor-scrollbar-width:          none;
+		--editor-selection-background:     color-mix(in srgb, var(--background), transparent 80%);
+		--editor-text-box:                 trim-both cap alphabetic;
 
 		/* Chrome/Safari `opsz` dance, again; see `typography.css` */
 		@supports (not (-moz-appearance: none)) {
@@ -53,4 +58,3 @@
 		<slot></slot>
 	</pre>
 </ti-preview>
-
