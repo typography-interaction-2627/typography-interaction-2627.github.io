@@ -74,7 +74,7 @@
 
 		ul {
 			/* Space under the `nav`, less gutters. */
-			--remainder: calc(100dvh - var(--block) - (2 * var(--padding) + 9 * var(--1px)) - 2 * var(--gutter));
+			--remainder: calc(100dvh - var(--block) - (2 * var(--padding) + 9 * var(--1px)) - 3 * var(--gutter));
 
 			background-color:      var(--background);
 			column-gap:            2cap;
@@ -83,7 +83,7 @@
 			inline-size:           max-content;
 			justify-items:         start;
 			max-block-size:        calc(round(var(--remainder), 2cap) - var(--3px));
-			max-inline-size:       round(80vw, var(--1px));
+			max-inline-size:       round(max(79vw, 18ch), var(--1px));
 			overflow-y:            scroll;
 			padding-block:         1cap;
 			padding-inline:        2ex;
@@ -97,8 +97,8 @@
 				display:     inherit;
 				grid-column: span 2;
 
-				/* Pass columns down for Weeks/Projects with dates. */
-				&:has(p:not(:only-child)) { grid-template-columns: subgrid }
+				/* Pass columns down for Weeks/Projects with dates, external channels. */
+				&:has(p:not(:only-child), a[href^="https"]) { grid-template-columns: subgrid }
 
 				a {
 					align-items:           baseline;
@@ -106,12 +106,25 @@
 					grid-column:           inherit;
 					grid-template-columns: inherit;
 
-					/* Indicator. */
+					/* Indicators. */
 					&[aria-current='page']::before {
 						content:          '◆' / '';
 						inset-inline-end: calc(100% + 1ex);
 						position:         absolute;
 						text-box:         trim-both cap alphabetic;
+					}
+
+					&[href^="https"]::before {
+						align-self:          end;
+						background-image:    url('/assets/icons/&nearr.svg');
+						background-position: center;
+						background-repeat:   no-repeat;
+						background-size:     var(--7px);
+						block-size:          var(--7px);
+						color:               transparent;
+						content:             '↗' / '';
+						inline-size:         var(--7px);
+						order:               1;
 					}
 
 					p {
