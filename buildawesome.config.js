@@ -50,6 +50,7 @@ export default (config) => {
 	config.addPassthroughCopy('assets/patterns/*.svg')
 	config.addPassthroughCopy('assets/**/*.(js|pdf|png|woff2)')
 	config.addPassthroughCopy('content/**/*.(gif|jpg|png|svg)')
+	config.addPassthroughCopy({'node_modules/@parsons/ti-preview/dist/bundled/**/*.*': 'assets/ti-preview'})
 
 	// Avoid front-matter in `page.webc`.
 	config.addTemplate('templates/page.webc', readFileSync('templates/page.webc'), {

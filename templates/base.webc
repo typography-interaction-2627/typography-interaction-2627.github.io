@@ -41,6 +41,7 @@
 		<link :href="`/assets/${sequence ? 'patterns/' + sequence : 'icons/tab'}.svg`" rel="icon" type="image/svg+xml">
 		<link href="/assets/icons/touch.png"  rel="apple-touch-icon">
 		<style webc:is="style-buckets" webc:nokeep>/* Can’t use custom element in the `head`! */</style>
+		<script webc:keep src="/assets/ti-preview/index.js" type="module"></script>
 		<script webc:keep @raw="getBundle('js')" type="module"></script>
 	</head>
 	<body @raw="removeDescriptionAttr(content)"></body>
