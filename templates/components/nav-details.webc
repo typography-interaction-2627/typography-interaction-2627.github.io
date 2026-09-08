@@ -74,6 +74,7 @@
 			--remainder: calc(100dvh - var(--block) - (2 * var(--padding) + 9 * var(--1px)) - 2 * var(--gutter));
 
 			background-color: var(--background);
+			justify-items:    start;
 			display:          grid;
 			inline-size:      max-content;
 			max-block-size:   round(var(--remainder), var(--1px));
