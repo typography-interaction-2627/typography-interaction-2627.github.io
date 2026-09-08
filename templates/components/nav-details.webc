@@ -1,18 +1,19 @@
 <script webc:setup>
 	export const getChannels = (data) => {
 		const channels = parseHtml(data.collections.root.find(({ inputPath }) => inputPath.endsWith('content/syllabus.md')).content).querySelector('#channels')
+		channels?.firstElementChild?.remove()
 
 		channels?.querySelectorAll('li').forEach((item) => {
 			const link = item.querySelector('a')
 			const cite = link?.querySelector('cite')
 
-			if (link && cite) {
-				link.set_content(`<p>${cite.innerHTML}</p>`)
+			cite && (
+				link.set_content(`<p>${cite.innerHTML}</p>`),
 				item.set_content(link.outerHTML)
-			}
+			)
 		})
 
-		return channels?.outerHTML ?? ''
+		return channels?.innerHTML ?? ''
 	}
 </script>
 <style>
@@ -47,5 +48,5 @@
 			</a>
 		</li>
 	</ul>
-	<ul webc:else web:nokeep @raw="getChannels($data)"></ul>
+	<ul webc:else @raw="getChannels($data)"></ul>
 </details>
