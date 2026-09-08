@@ -1,2 +1,3 @@
 allowBuilds:
   puppeteer: true
+minimumReleaseAge: 0
