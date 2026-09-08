@@ -52,6 +52,10 @@ export default (config) => {
 	config.addPassthroughCopy('content/**/*.(gif|jpg|png|svg)')
 	config.addPassthroughCopy({'node_modules/@parsons/ti-preview/dist/bundled/**/*.*': 'assets/ti-preview'})
 
+	// Don’t render examples as if they’re real pages, but copy them to the output as is.
+	config.ignores.add('content/topic/*/*/*.*')
+	config.addPassthroughCopy('content/topic/*/*/*.*')
+
 	// Avoid front-matter in `page.webc`.
 	config.addTemplate('templates/page.webc', readFileSync('templates/page.webc'), {
 		buildawesomeExcludeFromCollections: true,
@@ -60,12 +64,24 @@ export default (config) => {
 	})
 	config.addGlobalData('buildawesomeComputed.layout', () => ({ page }) => page.templateSyntax.includes('md') ? 'page' : 'base')
 
+	// Previews for examples.
+	config.addTemplate('templates/preview.webc', readFileSync('templates/preview.webc'), {
+		layout: 'base',
+		buildawesomeExcludeFromCollections: true,
+		pagination: {
+			alias: 'examples',
+			data: 'examples',
+			size: 1,
+		},
+		permalink: ({ examples: { example, topic } }) => `topic/${topic}/${example}/preview/`,
+	})
+
 	// Meta sidecars for `og:image`.
 	{
 		let changedFiles = new Set()
 		const isIncremental = process.argv.includes('--incremental')
 
-		config.on('eleventy.beforeWatch', (changed = []) =>
+		config.on('buildawesomeComputed.beforeWatch', (changed = []) =>
 			changedFiles = new Set(changed.map(f => path.resolve(f)))
 		)
 
