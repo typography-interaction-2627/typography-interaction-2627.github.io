@@ -25,6 +25,13 @@
 			mask: var(--background--check);
 
 			[inert] { mask: initial } /* Don’t double-apply. */
+
+			a:empty { visibility: hidden } /* Heading anchor links. */
+
+			@supports (font: -apple-system-body) {
+				/* Fix Safari rounding. 🤷‍♀️ */
+				a, em, strong, abbr { --kerning: 0.0001em }
+			}
 		}
 
 		/* Our “windows.” */
