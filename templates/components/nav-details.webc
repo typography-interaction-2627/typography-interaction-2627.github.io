@@ -116,6 +116,14 @@
 		}
 	}
 </style>
+<script webc:bucket="default">
+	document.addEventListener('click', event =>
+		document.querySelectorAll('nav details[open]').forEach(detail =>
+			!detail.contains(event.target) && detail.removeAttribute('open')))
+
+	document.addEventListener('keydown', event =>
+		event.key === 'Escape' && document.querySelector('nav details[open]')?.removeAttribute('open'))
+</script>
 <details name="nav" webc:root="override">
 	<summary :aria-label="initialCap(collection)" webc:keep webc:root="override">
 		<svg webc:nokeep @html="inlineSvg(`assets/icons/nav/${collection?.replace(/s$/, '') || 'channels'}.svg`)"></svg>
