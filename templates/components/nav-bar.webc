@@ -5,8 +5,9 @@
 		--block:   var(--gutter);
 		--padding: var(--4px);
 
-		--size: 12;
-		--wrap: nowrap;
+		--family: 'Chicago';
+		--size:   12;
+		--wrap:   nowrap;
 
 		display:             flex;
 		column-gap:          var(--inline);
@@ -30,8 +31,6 @@
 					padding:          var(--padding);
 
 					* { --color: var(--background) }
-
-					p { display: var(--labels, none) }
 
 					svg {
 						fill: var(--color);
@@ -61,8 +60,6 @@
 			--block:   var(--edge);
 			--padding: 1ex;
 		}
-
-		@media (width >= 75em) { --labels: block }
 	}
 </style>
 <nav webc:root="override">
@@ -75,13 +72,11 @@
 		<li>
 			<a aria-label="Syllabus" href="/syllabus/">
 				<svg webc:nokeep @html="inlineSvg('assets/icons/nav/syllabus.svg')"></svg>
-				<p>Syllabus</p>
 			</a>
 		</li>
 		<li>
 			<a aria-label="Class" href="/class/">
 				<svg webc:nokeep @html="inlineSvg('assets/icons/nav/class.svg')"></svg>
-				<p>Class</p>
 			</a>
 		</li>
 	</ul>

@@ -8,7 +8,7 @@
 			const cite = link?.querySelector('cite')
 
 			cite && (
-				link.set_content(`<p><strong>${cite.innerHTML}</strong></p>`),
+				link.set_content(`<p>${cite.innerHTML}</p>`),
 				item.set_content(link.outerHTML)
 			)
 		})
@@ -77,7 +77,7 @@
 			display:          grid;
 			inline-size:      max-content;
 			max-block-size:   round(var(--remainder), var(--1px));
-			max-inline-size:  round(70vw, var(--1px));
+			max-inline-size:  round(80vw, var(--1px));
 			overflow-y:       scroll;
 			padding-block:    2ex;
 			padding-inline:   2ex;
@@ -95,6 +95,7 @@
 						text-overflow: ellipsis;
 
 						&:has(sub) {
+							--family: 'Geneva';
 							--size: var(--size--note);
 
 							sub { display: block }
@@ -104,7 +105,9 @@
 
 				/* Drafts. */
 				&:has(a:not([href])) {
+					margin:         var(---3px);
 					mask:           var(--background--check);
+					padding:        var(--3px);
 					pointer-events: none;
 					user-select:    none;
 				}
@@ -115,13 +118,12 @@
 <details name="nav" webc:root="override">
 	<summary :aria-label="initialCap(collection)" webc:keep webc:root="override">
 		<svg webc:nokeep @html="inlineSvg(`assets/icons/nav/${collection?.replace(/s$/, '') || 'channels'}.svg`)"></svg>
-		<p webc:if="collection" @text="initialCap(collection?.replace(/s$/, ''))"></p>
 		<svg webc:nokeep @html="inlineSvg('assets/icons/nav/drop.svg')"></svg>
 	</summary>
 	<ul webc:if="collection">
 		<li webc:for="item of $data.collections[collection]">
 			<a :href="item.url">
-				<p><strong @html="item.data.title"></strong></p>
+				<p @html="item.data.title"></p>
 				<p webc:if="collection != 'topics'"><sub @text="displayDate(item.data.date)"></sub></p>
 			</a>
 		</li>
