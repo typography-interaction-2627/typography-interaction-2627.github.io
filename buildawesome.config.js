@@ -287,6 +287,8 @@ export default (config) => {
 	config.addFilter('initialCap', (string) => string?.replace(/^./, firstChar => firstChar.toUpperCase()))
 	config.addFilter('displayDate', (date) => new Date(date)
 		.toLocaleDateString('en-US', { day: 'numeric', month: 'long', timeZone: 'UTC' }))
+	config.addFilter('shortDate', (date) => new Date(date)
+		.toLocaleDateString('en-US', { day: 'numeric', month: 'numeric', timeZone: 'UTC' }))
 	config.addFilter('stripTags', (content) => stripTags(String(content)))
 	config.addFilter('parseHtml', (content) => parse(content))
 	config.addFilter('inlineSvg', async (svg) => (await image(svg, { dryRun: true, formats: ['svg'] }))?.svg?.[0]?.buffer?.toString())

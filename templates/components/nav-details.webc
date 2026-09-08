@@ -73,22 +73,32 @@
 			/* Space under the `nav`, less gutters. */
 			--remainder: calc(100dvh - var(--block) - (2 * var(--padding) + 9 * var(--1px)) - 2 * var(--gutter));
 
-			background-color: var(--background);
-			display:          grid;
-			inline-size:      max-content;
-			justify-items:    start;
-			max-block-size:   round(var(--remainder), var(--1px));
-			max-inline-size:  round(80vw, var(--1px));
-			overflow-y:       scroll;
-			padding-block:    2ex;
-			padding-inline:   2ex;
-			row-gap:          2ex;
-			scrollbar-width:  none;
+			background-color:      var(--background);
+			column-gap:            2cap;
+			display:               grid;
+			grid-template-columns: minmax(0, 1fr) max-content;
+			inline-size:           max-content;
+			justify-items:         start;
+			max-block-size:        round(var(--remainder), var(--1px));
+			max-inline-size:       round(80vw, var(--1px));
+			overflow-y:            scroll;
+			padding-block:         2ex;
+			padding-inline:        2ex;
+			row-gap:               1cap;
+			scrollbar-width:       none;
 
 			li {
+				display:     inherit;
+				grid-column: span 2;
+
+				/* Pass columns down for Weeks/Projects with dates. */
+				&:has(p:not(:only-child)) { grid-template-columns: subgrid }
+
 				a {
-					display: grid;
-					gap:     1ex;
+					align-items:           baseline;
+					display:               inherit;
+					grid-column:           inherit;
+					grid-template-columns: inherit;
 
 					p {
 						margin-block:  var(---3px);
@@ -96,9 +106,12 @@
 						padding-block: var(--3px);
 						text-overflow: ellipsis;
 
+						/* Dates. */
 						&:has(sub) {
 							--family: 'Geneva';
 							--size: var(--size--note);
+
+							justify-self: end;
 
 							sub { display: block }
 						}
@@ -131,10 +144,10 @@
 		<svg webc:nokeep @html="inlineSvg('assets/icons/nav/drop.svg')"></svg>
 	</summary>
 	<ul webc:if="collection">
-		<li webc:for="item, index of $data.collections[collection]">
+		<li webc:for="item of $data.collections[collection]">
 			<a :href="item.url">
 				<p @html="item.data.title"></p>
-				<p webc:if="item.url && collection != 'topics' && index === $data.collections[collection].findLastIndex(item => item.url)"><sub @text="displayDate(item.data.date)"></sub></p>
+				<p webc:if="collection != 'topics'"><sub @text="shortDate(item.data.date)"></sub></p>
 			</a>
 		</li>
 	</ul>
