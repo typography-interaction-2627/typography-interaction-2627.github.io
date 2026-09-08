@@ -16,20 +16,17 @@ const files = (await readdir(topicRoot, { recursive: true, withFileTypes: true }
 	.map(entry => path.relative(topicRoot, path.join(entry.parentPath, entry.name)))
 	.filter(relativePath => relativePath.split(path.sep).length >= 3)
 
-const output = await Promise.all(
-	Object.entries(Object.groupBy(files, file => file.split(path.sep, 2).join(path.sep)))
-		.map(async ([key, group]) => {
-			const [topic, example] = key.split(path.sep)
+const items = await Promise.all(files.map(async file => {
+	const [topic, example] = file.split(path.sep)
 
-			return {
-				example,
-				files: await Promise.all(group.map(async file => ({
-					contents: await readFile(path.join(topicRoot, file), 'utf8'),
-					filename: path.basename(file),
-				}))),
-				topic,
-			}
-		}),
-)
+	return { contents: await readFile(path.join(topicRoot, file), 'utf8'), example, filename: path.basename(file), topic }
+}))
+
+const output = Object.values(Object.groupBy(items, ({ topic, example }) => `${topic}/${example}`))
+	.map(group => ({
+		example: group[0].example,
+		files: group.map(({ filename, contents }) => ({ contents, filename })),
+		topic: group[0].topic,
+	}))
 
 export default output
