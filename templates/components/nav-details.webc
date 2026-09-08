@@ -55,6 +55,9 @@
 					mask:             var(--background--check);
 					position:         absolute;
 					z-index:          1;
+
+					/* Start pattern on white. */
+					mask-position: var(--2px) 0;
 				}
 			}
 
