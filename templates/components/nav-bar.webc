@@ -65,17 +65,17 @@
 <nav webc:root="override">
 	<ul>
 		<li>
-			<a aria-label="Home" href="/">
+			<a :aria-current="$data.page.url === '/' && 'page' " aria-label="Home" href="/">
 				<svg webc:nokeep @html="inlineSvg('assets/icons/nav/ampersand.svg')"></svg>
 			</a>
 		</li>
 		<li>
-			<a aria-label="Syllabus" href="/syllabus/">
+			<a :aria-current="$data.page.url === '/syllabus/' && 'page' " aria-label="Syllabus" href="/syllabus/">
 				<svg webc:nokeep @html="inlineSvg('assets/icons/nav/syllabus.svg')"></svg>
 			</a>
 		</li>
 		<li>
-			<a aria-label="Class" href="/class/">
+			<a :aria-current="$data.page.url === '/class/' && 'page' " aria-label="Class" href="/class/">
 				<svg webc:nokeep @html="inlineSvg('assets/icons/nav/class.svg')"></svg>
 			</a>
 		</li>
