@@ -69,11 +69,11 @@ export default (config) => {
 		layout: 'base',
 		buildawesomeExcludeFromCollections: true,
 		pagination: {
-			alias: 'examples',
+			alias: 'example',
 			data: 'examples',
 			size: 1,
 		},
-		permalink: ({ examples: { example, topic } }) => `topic/${topic}/${example}/preview/`,
+		permalink: ({ example: { example, topic } }) => `topic/${topic}/${example}/preview/`,
 	})
 
 	// Meta sidecars for `og:image`.
