@@ -19,5 +19,3 @@ Thursdays, 4–6:40 pm**
 We’ll be using this course site for our agendas, lectures, general class housekeeping, and anything else that comes up. It will be updated throughout the semester, so always check here first if you are looking for something or have any questions.
 
 </div>
-
-<channel-list></channel-list>

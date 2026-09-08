@@ -369,6 +369,7 @@ In class, we will demonstrate using [Figma](http://figma.com) for visual design 
 
 - [<cite>Figma Team</cite>](https://www.figma.com/files/team/1670950360853186233/all-projects) \
 	For visual sketching and collaboration.
+<!-- #channels -->
 
 
 ## Class Policies
