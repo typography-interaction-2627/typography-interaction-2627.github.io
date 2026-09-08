@@ -101,6 +101,13 @@
 						}
 					}
 				}
+
+				/* Drafts. */
+				&:has(a:not([href])) {
+					mask:           var(--background--check);
+					pointer-events: none;
+					user-select:    none;
+				}
 			}
 		}
 	}
