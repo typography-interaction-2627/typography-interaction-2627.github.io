@@ -115,10 +115,11 @@
 					}
 
 					p {
-						margin-block:  var(---3px);
-						overflow:      hidden;
-						padding-block: var(--3px);
-						text-overflow: ellipsis;
+						margin-block:    var(---3px);
+						max-inline-size: 20ch;
+						overflow:        hidden;
+						padding-block:   var(--3px);
+						text-overflow:   ellipsis;
 
 						/* Dates. */
 						&:has(sub) {
