@@ -1,4 +1,8 @@
-<p>Hello, world!</p>
 <ti-preview base="../">
-
+	<figure webc:for="file of example.files.filter(({ filename }) => ['.html', '.css', '.js'].some((ext) => filename.endsWith(ext)))" webc:raw>
+		<pre>
+			<code @text="file.contents"></code>
+		</pre>
+		<figcaption @text="file.filename"></figcaption>
+	</figure>
 </ti-preview>
