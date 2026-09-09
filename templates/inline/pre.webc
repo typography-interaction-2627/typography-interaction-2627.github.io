@@ -88,8 +88,13 @@
 		/* TODO Pixel whitespace characters via `background` variables ! */
 	}
 </style>
-<ti-preview webc:root="override" @attributes hide-output hide-tabs>
-	<pre>
+<template webc:nokeep webc:root="override">
+	<ti-preview webc:if="!nested" @attributes hide-output hide-tabs>
+		<pre>
+			<slot></slot>
+		</pre>
+	</ti-preview>
+	<pre webc:else>
 		<slot></slot>
 	</pre>
-</ti-preview>
+</template>
