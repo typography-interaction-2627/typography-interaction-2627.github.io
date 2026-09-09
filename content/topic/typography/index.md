@@ -547,5 +547,3 @@ Where does one find typefaces? From *foundries*, again referencing the days whe
 ___
 
 <sub>Shout-out to our Spring instructor [Eric](https://eric.young.li) on this one.</sub>
-
-<!-- TODO `iframe` are not GFM! -->
