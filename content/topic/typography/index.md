@@ -212,7 +212,9 @@ Some typefaces that came with the original Macintosh. Look familiar? [<cite>↗<
 > <sub>Your medium, its limitations, and its typography are always intertwined! As with this site, they can both constrain and enrich your work.</sub>
 
 <figure class="aside">
-<iframe src="https://www.youtube.com/embed/ZmWOtf4Ziso"></iframe>
+
+[<img src="https://img.youtube.com/vi/ZmWOtf4Ziso/maxresdefault.jpg">](https://youtu.be/ZmWOtf4Ziso)
+
 <figcaption>
 
 Susan explains how to use the Macintosh interface, in 1984. [<cite>↗</cite>](https://www.youtube.com/watch?v=ZmWOtf4Ziso)

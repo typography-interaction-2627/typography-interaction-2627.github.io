@@ -130,9 +130,9 @@ export default (config) => {
 	const mardownAddAbbreviations = (markdown) => {
 		const definitions = abbreviations.map((item) => `\n*[${item.abbr}]: ${item.title}`).join('\n')
 
-		markdown.core.ruler.after('normalize', 'abbreviations', (state) =>
-			state.src += definitions,
-		)
+		markdown.core.ruler.after('normalize', 'abbreviations', (state) => {
+			if (!state.inlineMode) state.src += definitions
+		})
 	}
 
 	// Convert HTML comments to curly brackets for `markdownItAttrs` to pick up.
@@ -272,6 +272,16 @@ export default (config) => {
 		markdown.core.ruler.after('normalize', 'figures', (state) =>
 			state.src = state.src.replace(/<figure\b[^>]*>[\s\S]*?<\/figure>/gi, (html) => {
 				const figure = parse(html).querySelector('figure')
+				const caption = figure.querySelector(':scope > figcaption')
+				const media = parse(markdown.renderInline(figure.innerHTML.replace(caption?.outerHTML ?? '', '').trim()))
+
+				media.querySelectorAll('a[href]').forEach((link) => {
+					const videoId = link.getAttribute('href').match(/^https?:\/\/youtu\.be\/([\w-]+)\/?$/)?.[1]
+
+					videoId && link.querySelector('img') && link.replaceWith(parse(`<iframe src="https://www.youtube.com/embed/${videoId}"></iframe>`).firstChild)
+				})
+
+				figure.innerHTML = `${media.innerHTML}${caption?.outerHTML ?? ''}`
 
 				figure.querySelectorAll(':scope > img[src], :scope > iframe').forEach((media) => {
 					const wrapper = parse('<div></div>').firstChild
@@ -281,13 +291,12 @@ export default (config) => {
 
 					if (media.localName !== 'img') return
 
-					const src = markdown.utils.escapeHtml(media.getAttribute('src'))
-					const dither = parse(`<as-dithered-image crunch="2" src="${src}"></as-dithered-image>`).firstChild
+					const src = media.getAttribute('src')
 
-					wrapper.appendChild(dither)
+					wrapper.insertAdjacentHTML('beforeend', `<as-dithered-image crunch="2" src="${markdown.utils.escapeHtml(src)}"></as-dithered-image>`)
 				})
 
-				return figure.toString()
+				return figure.outerHTML
 			}),
 		)
 
