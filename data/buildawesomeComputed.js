@@ -68,8 +68,8 @@ export default {
 	sequence:    (data) => data.example
 					? getSequence(data).findIndex(page => page.inputPath.includes(`/topic/${data.example.topic}/`))
 					: getSequence(data).findIndex(page => page.inputPath === data.page.inputPath),
-	title:       (data) => data.example?.title
-					? data.example.title
+	title:       (data) => data.example
+					? (data.example.title || data.example.example)
 					: inCollection(data, 'weeks')
 						? `Week ${data.page.fileSlug}`
 						: inCollection(data, 'projects')
