@@ -267,30 +267,29 @@ export default (config) => {
 			}
 		})
 
-	// Likewise do a dance for GFM `figure` for our dithering/`iframe` needs.
-	const markdownFigures = (md) =>
-		md.core.ruler.after('inline', 'figures', ({ tokens }) => {
-			let inFigure = false
-			let inCaption = false
+	// Transform each figure’s media before Markdown parses its caption.
+	const markdownFigures = (markdown) =>
+		markdown.core.ruler.after('normalize', 'figures', (state) =>
+			state.src = state.src.replace(/<figure\b[^>]*>[\s\S]*?<\/figure>/gi, (html) => {
+				const figure = parse(html).querySelector('figure')
 
-			for (const token of tokens) {
-				if (token.type !== 'html_block') continue
+				figure.querySelectorAll(':scope > img[src], :scope > iframe').forEach((media) => {
+					const wrapper = parse('<div></div>').firstChild
 
-				token.content = token.content.replace(/<\/?(?:figure|figcaption)\b[^>]*>|<img\b[^>]*>|<iframe\b[^>]*>[\s\S]*?<\/iframe>/gi, (tag) => {
-					if (/^<figure\b/i.test(tag)) { inFigure = true; return tag }
-					if (/^<\/figure\b/i.test(tag)) { inFigure = false; return tag }
-					if (/^<figcaption\b/i.test(tag)) { inCaption = true; return tag }
-					if (/^<\/figcaption\b/i.test(tag)) { inCaption = false; return tag }
-					if (!inFigure || inCaption) return tag
+					media.replaceWith(wrapper)
+					wrapper.appendChild(media)
 
-					if (/^<iframe\b/i.test(tag)) return `<div>${tag}</div>`
+					if (media.localName !== 'img') return
 
-					const src = tag.match(/\bsrc\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'=<>`]+))/i)?.slice(1).find(Boolean)
+					const src = markdown.utils.escapeHtml(media.getAttribute('src'))
+					const dither = parse(`<as-dithered-image crunch="2" src="${src}"></as-dithered-image>`).firstChild
 
-					return src ? `<div>${tag}<as-dithered-image crunch="2" src="${md.utils.escapeHtml(src)}"></as-dithered-image></div>` : tag
+					wrapper.appendChild(dither)
 				})
-			}
-		})
+
+				return figure.toString()
+			}),
+		)
 
 	const markdown = markdownIt(markdownOptions)
 		// `abbreviations.js` collides with `markdown-it-abbr` internal map.
