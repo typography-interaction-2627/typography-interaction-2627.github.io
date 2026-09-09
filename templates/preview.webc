@@ -42,9 +42,15 @@
 		}
 	}
 </style>
-<!-- <script>
-	window.self !== window.top && document.body.classList.add('iframe')
-</script> -->
+<script>
+	const params = new URLSearchParams(window.location.search)
+
+	const active = params.get('active')
+	if (active) document.querySelector('ti-preview').setAttribute('current', active)
+
+	const width = params.get('width')
+	if (width) document.querySelector('ti-preview').style.setProperty('--editor-width', width)
+</script>
 <ti-preview base="../">
 	<!-- TODO Add link back to the topic page! -->
 	<figure webc:keep webc:root webc:for="file of example.files.filter(({ filename }) => ['.html', '.css', '.js'].some((ext) => filename.endsWith(ext)))">
