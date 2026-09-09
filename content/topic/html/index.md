@@ -29,11 +29,22 @@ Trying another one with several files!
 
 <figure style="--lines: 16">
 
-[Block example](block/index.html)
+##### [Block example](block/)
 
 <figcaption>
 
 This is a markdown link that we’ll need to transform/process!
+
+</figcaption>
+</figure>
+
+<figure style="--lines: 16">
+
+##### [Picture example](../images/picture/style.css)
+
+<figcaption>
+
+And like this!
 
 </figcaption>
 </figure>
