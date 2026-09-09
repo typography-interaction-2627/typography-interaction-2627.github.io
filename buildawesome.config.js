@@ -275,8 +275,9 @@ export default (config) => {
 			state.src = state.src.replace(/<figure\b[^>]*>[\s\S]*?<\/figure>/gi, (html) => {
 				const figure = parse(html).querySelector('figure')
 				const caption = figure.querySelector(':scope > figcaption')
-				const captionHtml = caption?.outerHTML ?? ''
-				const rendered = parse(markdown.renderInline(figure.innerHTML.replace(captionHtml, '').trim()))
+
+				caption?.remove()
+				const rendered = parse(markdown.renderInline(figure.innerHTML.trim()))
 
 				rendered.querySelectorAll('a[href^="https://youtu.be/"]').forEach((link) => {
 					const videoId = link.getAttribute('href').match(/^https?:\/\/youtu\.be\/([\w-]+)\/?$/)?.[1]
@@ -284,7 +285,8 @@ export default (config) => {
 					videoId && link.querySelector('img') && link.replaceWith(element(`<iframe src="https://www.youtube.com/embed/${videoId}"></iframe>`))
 				})
 
-				figure.innerHTML = rendered.innerHTML + captionHtml
+				figure.innerHTML = rendered.innerHTML
+				caption && figure.appendChild(caption)
 
 				figure.querySelectorAll(':scope > img[src], :scope > iframe').forEach((media) => {
 					const dither = media.localName === 'img'
