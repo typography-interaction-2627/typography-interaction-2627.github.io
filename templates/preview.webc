@@ -15,7 +15,7 @@
 
 	body {
 		display:        grid;
-		min-block-size: 100svh;
+		min-block-size: calc(100svh / var(--zoom, 1));
 	}
 
 	/* No-JS basics. */
