@@ -29,45 +29,20 @@
 		}
 
 		/* Before they are wrapped by JS. */
-		> :where(img, object) { inline-size: fit-content }
+		> :where(img) { inline-size: fit-content }
 		> :where(iframe) { inline-size: 100% }
 
 		/* Container for placing the dithered one. */
-		div {
+		> div {
 			position: relative;
 
-			&:has(img, object) {
+			&:has(img) {
 				inline-size: fit-content;
 
 				@supports (inline-size: calc-size(fit-content, size)) {
+					block-size:  calc-size(fit-content, round(size, var(--1px)));
 					inline-size: calc-size(fit-content, round(size, var(--1px)));
 				}
-			}
-
-
-			/* TODO How to have this always snap to pixel height? Takes “windows” off-pattern! */
-			img,
-			object,
-			iframe {
-				--height--fallback: calc(var(--lines) * 1rlh - 1rcap);
-
-				block-size:      var(--height, var(--height--fallback));
-				filter:          saturate(var(--in-view));
-				max-block-size:  calc(round(80svh, var(--1px)));
-				max-inline-size: 100%;
-
-				@supports (animation-timeline: view()) {
-					animation-fill-mode:       both;
-					animation-name:            in-view;
-					animation-range:           cover;
-					animation-timeline:        view();
-					animation-timing-function: ease-in-out;
-				}
-			}
-
-			iframe {
-				aspect-ratio: var(--aspect-ratio, 16/9);
-				inline-size:  100%;
 			}
 
 			/* Web component that does the Atkinson dithering! */
@@ -90,12 +65,12 @@
 			&:hover {
 				--in-view: 1;
 
-				img, object, iframe, as-dithered-image { animation-name: none }
+				img, iframe, as-dithered-image { animation-name: none }
 			}
 		}
 
 		/* A “border” around these. */
-		&:not(.borderless) div:has(img, object, iframe) {
+		&:not(.borderless) div:has(img, iframe) {
 			background-color: var(--color);
 
 			&::after {
@@ -109,6 +84,30 @@
 
 		/* Looser space. */
 		&.borderless { row-gap: calc(2rlh - 1rcap) }
+
+		/* TODO How to have this always snap to pixel height? Takes “windows” off-pattern! */
+			/* TODO Stretches on mobile! See *Typography*. */
+		> div img, iframe {
+			--height--fallback: calc(var(--lines) * 1rlh - 1rcap);
+
+			block-size:      var(--height, var(--height--fallback));
+			filter:          saturate(var(--in-view));
+			max-block-size:  calc(round(80svh, var(--1px)));
+			max-inline-size: 100%;
+
+			@supports (animation-timeline: view()) {
+				animation-fill-mode:       both;
+				animation-name:            in-view;
+				animation-range:           cover;
+				animation-timeline:        view();
+				animation-timing-function: ease-in-out;
+			}
+		}
+
+		iframe {
+			aspect-ratio: var(--aspect-ratio, 16/9);
+			inline-size:  100%;
+		}
 
 		figcaption {
 			--size: var(--size--note);
@@ -145,7 +144,7 @@
 </style>
 <script type="module">
 	document.querySelectorAll('figure').forEach((figure) => {
-		const media = figure.querySelectorAll('img[src], :scope > iframe')
+		const media = figure.querySelectorAll(':scope > img[src], :scope > iframe')
 		const template = figure.querySelector('div')
 
 		if (!media.length) return template.remove()
