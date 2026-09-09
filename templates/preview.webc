@@ -1,5 +1,18 @@
 <page-pattern></page-pattern>
 <style>
+	/* Prevent double-zooming in `iframe`! */
+	:root.iframe {
+		--vw--parent: var(--vw);
+		--vh--parent: var(--vh);
+
+		body {
+			--vw: calc(var(--vw--parent) / var(--zoom));
+			--vh: calc(var(--vh--parent) / var(--zoom));
+
+			zoom: initial;
+		}
+	}
+
 	body {
 		display:        grid;
 		min-block-size: 100svh;
@@ -53,6 +66,9 @@
 
 	// Get parent page variables!
 	if (window !== window.parent) {
+		// TODO Inverse this so it removes?
+		document.documentElement.classList.add('iframe')
+
 		const root = document.documentElement
 		const parentRoot = parent.document.documentElement
 

@@ -132,8 +132,6 @@
 		--syntax-whitespace-tab:   '';
 		--syntax-whitespace:       color-mix(in srgb, var(--background), transparent 85%);
 		/* TODO Pixel whitespace characters via `background` variables ! */
-
-		/* TODO Figure out in-`iframe` `--scaling`! */
 	}
 </style>
 <template webc:nokeep webc:root="override">

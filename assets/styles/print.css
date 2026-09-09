@@ -13,7 +13,7 @@
 
 /* Resets. */
 :where(:root) {
-	--scaling: 1.5;
+	--scaling: 1.5; /* TODO Try with `zoom` instead? */
 
 	background:         initial;
 	margin-block:       1in;

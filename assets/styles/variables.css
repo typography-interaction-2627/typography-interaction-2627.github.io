@@ -69,7 +69,7 @@
 	}
 
 	@media (width >= 35em) and (orientation: landscape), (width >= 64em) { --columns: 6 }
-	@media (width >= 120em) { --scaling: 3 }
+	@media (width >= 120em) { --zoom: 1.5 }
 	@media (width = 120em) and (height = 67.5em) { --projector: true }
 
 	/* Derived, layout variables. */
@@ -154,6 +154,12 @@
 			--alley:  var(--gutter);
 
 			@media (width >= 75em) { --alley: calc(var(--gutter) * 2) }
+		}
+
+		@container style(--zoom) {
+			--vw: calc(100vw / var(--zoom));
+
+			zoom: var(--zoom);
 		}
 
 		/* TODO Better adjustments for “full width” 1920✕1080 (projector). */
