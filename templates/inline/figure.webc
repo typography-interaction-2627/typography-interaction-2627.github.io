@@ -19,11 +19,7 @@
 			@container style(--columns) { margin-block-start: 2rlh }
 		}
 
-		/* Before they are wrapped by JS. */
-		> :where(img) { inline-size: fit-content }
-		> :where(iframe) { inline-size: 100% }
-
-		/* Container for placing the dithered one. */
+		/* Container for placing the dithered one/effects. */
 		> div {
 			position: relative;
 
@@ -50,8 +46,6 @@
 					animation-timing-function: ease-in-out;
 				}
 			}
-
-			&:has(as-dithered-image:not([src])) { display: none }
 
 			&:hover {
 				--in-view: 1;
@@ -135,27 +129,6 @@
 	}
 </style>
 <script type="module">
-	document.querySelectorAll('figure').forEach((figure) => {
-		const media = figure.querySelectorAll(':scope > img[src], :scope > iframe')
-		const template = figure.querySelector('div')
-
-		if (!media.length) return template.remove()
-
-		const pristine = template.cloneNode(true) // Clone from this so prior media aren't carried along.
-
-		let previous
-
-		media.forEach((element) => {
-			const div = previous ? pristine.cloneNode(true) : template
-			const dither = div.querySelector('as-dithered-image')
-
-			previous?.after(div)
-			div.prepend(element)
-			element.localName === 'img' ? dither.setAttribute('src', element.src) : dither.remove()
-			previous = div
-		})
-	})
-
 	// Match the dithering “pixel” to our scaled pixel.
 	let frame
 
@@ -169,8 +142,5 @@
 	addEventListener('resize', () => (cancelAnimationFrame(frame), frame = requestAnimationFrame(setCrunch)))
 </script>
 <figure webc:root="override">
-	<div>
-		<as-dithered-image crunch="2"></as-dithered-image>
-	</div>
 	<slot></slot>
 </figure>

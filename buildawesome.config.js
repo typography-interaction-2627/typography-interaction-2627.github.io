@@ -267,6 +267,31 @@ export default (config) => {
 			}
 		})
 
+	// Likewise do a dance for GFM `figure` for our dithering/`iframe` needs.
+	const markdownFigures = (md) =>
+		md.core.ruler.after('inline', 'figures', ({ tokens }) => {
+			let inFigure = false
+			let inCaption = false
+
+			for (const token of tokens) {
+				if (token.type !== 'html_block') continue
+
+				token.content = token.content.replace(/<\/?(?:figure|figcaption)\b[^>]*>|<img\b[^>]*>|<iframe\b[^>]*>[\s\S]*?<\/iframe>/gi, (tag) => {
+					if (/^<figure\b/i.test(tag)) { inFigure = true; return tag }
+					if (/^<\/figure\b/i.test(tag)) { inFigure = false; return tag }
+					if (/^<figcaption\b/i.test(tag)) { inCaption = true; return tag }
+					if (/^<\/figcaption\b/i.test(tag)) { inCaption = false; return tag }
+					if (!inFigure || inCaption) return tag
+
+					if (/^<iframe\b/i.test(tag)) return `<div>${tag}</div>`
+
+					const src = tag.match(/\bsrc\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'=<>`]+))/i)?.slice(1).find(Boolean)
+
+					return src ? `<div>${tag}<as-dithered-image crunch="2" src="${md.utils.escapeHtml(src)}"></as-dithered-image></div>` : tag
+				})
+			}
+		})
+
 	const markdown = markdownIt(markdownOptions)
 		// `abbreviations.js` collides with `markdown-it-abbr` internal map.
 		.use(markdown => markdown.core.ruler.before('normalize', 'abbreviationEnv', ({ env }) => delete env.abbreviations))
@@ -281,6 +306,7 @@ export default (config) => {
 		.use(markdownRagging)
 		.use(markdownLocalLinks)
 		.use(markdownAsides)
+		.use(markdownFigures)
 		.use(componentPlugin) //Allows custom inline HTML component names (otherwise made into strings/wrapped in paragraphs).
 
 	// Filter for component use.
