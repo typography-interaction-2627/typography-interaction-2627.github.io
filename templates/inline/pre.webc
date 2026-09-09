@@ -63,6 +63,7 @@
 		--editor-scrollbar-width:      none;
 		--editor-selection-background: color-mix(in srgb, var(--background), transparent 80%);
 		--editor-text-box:             trim-both cap alphabetic;
+		--editor-width:                var(--body);
 
 		--output-background:            var(--background);
 		--output-border:                var(--editor-border-top);
