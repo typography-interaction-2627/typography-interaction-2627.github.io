@@ -10,7 +10,7 @@ const draft = true
 HTML is the standard markup language/format for creating web pages, containing the content and structure of a page as a series of *elements*.
 
 - [<cite>HTML – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML) \
-	When in doubt, refer to the MDN documentation!
+	When in doubt, refer to the MDN documentation!
 
 - [<cite>Basics of HTML</cite>](https://www.youtube.com/watch?v=CkzbI1Tv_rQ)\
 	A very calming introduction by [Laurel Schwulst](https://laurelschwulst.com).
@@ -27,11 +27,13 @@ As we heard in our first class, this format was codified by our pal [Tim Berner
 - HTML 2, 1995
 - HTML 3, 1997
 - HTML 4, 1997 (busy year)
-- HTML 5, 2014
+- HTML 5, 2014 (ongoing)
 
 ## The Basic Document
 
-<figure @source="nesting.svg" class="verso"></figure>
+<figure class="verso center">
+<img src="nesting.svg">
+</figure>
 
 <div class="center recto">
 
@@ -43,14 +45,10 @@ We call these [*semantic* elements](https://developer.mozilla.org/en-US/docs/Glo
 
 </div>
 
-<blockquote
-	@attribution="Tim Berners-Lee, 2001"
-	@citation="https://www.lassila.org/publications/2001/SciAm.pdf"
-	>
-
-<em style="margin-inline-start: -0.55em">The Semantic Web</em> is not a separate Web but an extension of the current one, in which information is given well-defined meaning, better enabling computers and people to work in cooperation.
-
-</blockquote>
+> *The Semantic Web* is not a separate Web but an extension of the current one, in which information is given well-defined meaning, better enabling computers and people to work in cooperation.
+>
+>
+> [<cite>Tim Berners-Lee, 2001</cite>](https://www.lassila.org/publications/2001/SciAm.pdf)
 
 ### What Does That Even Mean
 
@@ -123,7 +121,7 @@ We use semantic elements to help structure and describe our content—but also f
 	MDN will always go deep; this is *all* the elements.
 <!-- .right .start -->
 
-<figure @source="tag.svg"></figure>
+<figure src="tag.svg"></figure>
 
 Some elements do not have any content or children, like `<br>` or `<img>`. These are called [*empty elements*](https://developer.mozilla.org/en-US/docs/Glossary/Empty_element), and do not have a closing tag.
 <!-- .note -->
@@ -215,7 +213,7 @@ All HTML elements can have [attributes](https://developer.mozilla.org/en-US/docs
 	There are a lot of them.
 <!-- .right .start -->
 
-<figure @source="attr.svg"></figure>
+<figure src="attr.svg"></figure>
 
 ### Common Attributes
 
@@ -342,14 +340,9 @@ But obviously, the left one here is much more readable to us humans. We can use
 
 There are a lot of common patterns used—like indenting to indicate hierarchy/nesting. But there are also no wrong ways to do it! In HTML, spaces are code *ergonomics* for you—just like a good chair or desk—that allow you to work more comfortably.
 
-<blockquote
-	@attribution="Guido van Rossum, 2001"
-	@citation="https://peps.python.org/pep-0008/"
-	>
-
-Code is read more often than it is written. Code should always be written in a way that promotes readability.
-
-</blockquote>
+> Code is read more often than it is written. Code should always be written in a way that promotes readability.
+>
+> [<cite>Guido van Rossum, 2001</cite>](https://peps.python.org/pep-0008/)
 
 ## Block Elements
 
@@ -397,7 +390,7 @@ Code is read more often than it is written. Code should always be written in a w
 
 <figure
 	@caption="These are live, *editable* examples!"
-	@source="block/preview"
+	src="block/preview"
 	style="--lines: 16"
 	>
 </figure>
@@ -410,7 +403,7 @@ Code is read more often than it is written. Code should always be written in a w
 <!-- .balance -->
 
 <figure
-	@source="inline/preview"
+	src="inline/preview"
 	style="--lines: 14"
 	>
 </figure>
@@ -442,7 +435,7 @@ You can *comment* part of the code and the browser won’t show it. [Comments](h
 
 <figure
 	@caption="Keep in mind these are still readable in the *source*."
-	@source="comment/preview"
+	src="comment/preview"
 	style="--lines: 12"
 	>
 </figure>
@@ -470,7 +463,7 @@ Commenting is also how you will [add attributions](/syllabus/#attribution) to yo
 Any time you have more than two of something, you probably have [a *list*](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals#lists). These are commonly used for semantic navigation elements, as well—think *“here’s a list of links in this site”*:
 
 <figure
-	@source="list/preview"
+	src="list/preview"
 	style="--lines: 22"
 	>
 </figure>
@@ -481,7 +474,7 @@ There are [specific lists](https://developer.mozilla.org/en-US/docs/Web/HTML/Ele
 
 <figure
 	@caption="These aren’t much to look at without CSS, though. Soon!"
-	@source="description-list/preview"
+	src="description-list/preview"
 	style="--lines: 17"
 	>
 </figure>
@@ -492,7 +485,7 @@ There is even some basic interactivity (way, way ahead of JavaScript) with [*det
 
 <figure
 	@caption="You can do a lot with these, without any JavaScript!"
-	@source="details-summary/preview"
+	src="details-summary/preview"
 	style="--lines: 19"
 	>
 </figure>
@@ -503,7 +496,7 @@ There is even some basic interactivity (way, way ahead of JavaScript) with [*det
 
 <figure
 	@caption="This syntax is pretty verbose, for what you get."
-	@source="table/preview"
+	src="table/preview"
 	style="--lines: 26"
 	>
 </figure>
@@ -519,15 +512,10 @@ We haven’t applied any styles/CSS here yet, so everything we see in these exam
 
 This is what the web was, before CSS! But as a designer, rarely what you want. We’ll get into writing our own styles in the coming weeks.
 
-<blockquote
-	@attribution="W3C, HTML Design Principles, 2007"
-	@citation="https://www.w3.org/TR/html-design-principles/#priority-of-constituencies"
-	>
-
-In case of conflict, consider users over authors over implementors over specifiers over theoretical purity.
-
-•••
-
-Of course, it is preferred to make things better for multiple constituencies at once.
-
-</blockquote>
+> In case of conflict, consider users over authors over implementors over specifiers over theoretical purity.
+>
+> In other words costs or difficulties to the user should be given more weight than costs to authors; which in turn should be given more weight than costs to implementors; which should be given more weight than costs to authors of the spec itself, which should be given more weight than those proposing changes for theoretical reasons alone.
+>
+> Of course, it is preferred to make things better for multiple constituencies at once.
+>
+> [<cite>W3C, HTML Design Principles, 2007</cite>](https://www.w3.org/TR/html-design-principles/#priority-of-constituencies)
