@@ -26,7 +26,7 @@ export default (config) => {
 	// Setup.
 	config.addPlugin(webC, {
 		components: 'templates/*/**/*.webc',
-		before: page => page.setTransform('md', content => markdown.render(content)),
+		before: page => page.setTransform('md', content => markdown.render(content, { page })),
 	})
 	config.setFrontMatterParsingOptions({
 		delimiters: ['```javascript', '```'],
@@ -218,7 +218,8 @@ export default (config) => {
 	// Convert to local links, ex: `../class.md` → `../class/`.
 	const markdownLocalLinks = (md) =>
 		md.core.ruler.after('inline', 'localLinks', (state) => {
-			const isIndex = /(^|\/)index\.md$/.test(state.env.path ?? '')
+			const filePath = state.env.path ?? state.env.page?.inputPath ?? state.env.page?.filePathStem ?? ''
+			const isIndex = /(^|\/)index(\.md)?$/.test(filePath)
 
 			for (const { children } of state.tokens) {
 				for (const child of children ?? []) {
