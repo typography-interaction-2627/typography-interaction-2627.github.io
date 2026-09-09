@@ -277,18 +277,17 @@ export default (config) => {
 				const caption = figure.querySelector(':scope > figcaption')
 
 				caption?.remove()
-				const rendered = parse(markdown.renderInline(figure.innerHTML.trim()))
+				figure.innerHTML = markdown.renderInline(figure.innerHTML.trim())
 
-				rendered.querySelectorAll('a[href^="https://youtu.be/"], a[href^="https://vimeo.com/"]').forEach((link) => {
-					const video = new URL(link.getAttribute('href'))
-					const src = video.hostname === 'youtu.be'
-						? `https://www.youtube.com/embed${video.pathname}`
-						: video.hostname === 'vimeo.com' ? `https://player.vimeo.com/video${video.pathname}` : ''
+				figure.querySelectorAll('a[href^="https://youtu.be/"], a[href^="https://vimeo.com/"]').forEach((link) => {
+					const { hostname, pathname } = new URL(link.getAttribute('href'))
+					const src = hostname === 'youtu.be'
+						? `https://www.youtube.com/embed${pathname}`
+						: `https://player.vimeo.com/video${pathname}`
 
-					src && link.querySelector('img') && link.replaceWith(element(`<iframe src="${src}"></iframe>`))
+					link.querySelector('img') && src && link.replaceWith(element(`<iframe src="${src}"></iframe>`))
 				})
 
-				figure.innerHTML = rendered.innerHTML
 				caption && figure.appendChild(caption)
 
 				figure.querySelectorAll(':scope > img[src], :scope > iframe').forEach((media) => {
