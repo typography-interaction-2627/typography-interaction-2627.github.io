@@ -32,6 +32,31 @@
 				}
 			}
 
+			/* TODO How to have this always snap to pixel height? Takes “windows” off-pattern! */
+			/* TODO Stretches on mobile! See *Typography*. */
+			img, iframe {
+				--height--fallback: calc(var(--lines) * 1rlh - 1rcap);
+
+				block-size:      var(--height, var(--height--fallback));
+				filter:          saturate(var(--in-view)) contrast(calc(2 - var(--in-view))) brightness(calc(2 - var(--in-view)));
+				max-block-size:  calc(round(80svh, var(--1px)));
+				max-inline-size: 100%;
+
+				/* TODO Abstract this pattern! */
+				@supports (animation-timeline: view()) {
+					animation-fill-mode:       both;
+					animation-name:            in-view;
+					animation-range:           cover;
+					animation-timeline:        view();
+					animation-timing-function: ease-in-out;
+				}
+			}
+
+			iframe {
+				aspect-ratio: var(--aspect-ratio, 16/9);
+				inline-size:  100%;
+			}
+
 			/* Web component that does the Atkinson dithering! */
 			as-dithered-image {
 				inset:    0;
@@ -69,31 +94,6 @@
 
 		/* Looser space. */
 		&.borderless { row-gap: calc(2rlh - 1rcap) }
-
-		/* TODO How to have this always snap to pixel height? Takes “windows” off-pattern! */
-		/* TODO Stretches on mobile! See *Typography*. */
-		img, iframe {
-			--height--fallback: calc(var(--lines) * 1rlh - 1rcap);
-
-			block-size:      var(--height, var(--height--fallback));
-			filter:          saturate(var(--in-view)) contrast(calc(2 - var(--in-view))) brightness(calc(2 - var(--in-view)));
-			max-block-size:  calc(round(80svh, var(--1px)));
-			max-inline-size: 100%;
-
-			/* TODO Abstract this pattern! */
-			@supports (animation-timeline: view()) {
-				animation-fill-mode:       both;
-				animation-name:            in-view;
-				animation-range:           cover;
-				animation-timeline:        view();
-				animation-timing-function: ease-in-out;
-			}
-		}
-
-		iframe {
-			aspect-ratio: var(--aspect-ratio, 16/9);
-			inline-size:  100%;
-		}
 
 		figcaption {
 			--size: var(--size--note);
