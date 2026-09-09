@@ -29,7 +29,7 @@ Trying another one with several files!
 
 <figure style="--lines: 16">
 
-##### [Block example](block/)
+***[Block example](block/)***
 
 <figcaption>
 
@@ -40,7 +40,7 @@ This is a markdown link that we’ll need to transform/process!
 
 <figure style="--lines: 16">
 
-##### [Picture example](../images/picture/style.css)
+***[Picture example](block/index.html)***
 
 <figcaption>
 

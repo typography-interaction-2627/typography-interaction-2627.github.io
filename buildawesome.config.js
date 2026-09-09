@@ -218,6 +218,8 @@ export default (config) => {
 	// Convert to local links, ex: `../class.md` → `../class/`.
 	const markdownLocalLinks = (md) =>
 		md.core.ruler.after('inline', 'localLinks', (state) => {
+			if (state.env.figure) return // Not inside our `markdownFigures` dance.
+
 			const filePath = state.env.path ?? state.env.page?.inputPath ?? state.env.page?.filePathStem ?? ''
 			const isIndex = /(^|\/)index(\.md)?$/.test(filePath)
 
@@ -277,8 +279,9 @@ export default (config) => {
 				const caption = figure.querySelector(':scope > figcaption')
 
 				caption?.remove()
-				figure.innerHTML = markdown.renderInline(figure.innerHTML.trim())
+				figure.innerHTML = markdown.renderInline(figure.innerHTML.trim(), { figure: true })
 
+				// Video embeds.
 				figure.querySelectorAll('a[href^="https://youtu.be/"], a[href^="https://vimeo.com/"]').forEach((link) => {
 					const { hostname, pathname } = new URL(link.getAttribute('href'))
 					const src = hostname === 'youtu.be'
@@ -288,9 +291,21 @@ export default (config) => {
 					link.querySelector('img') && src && link.replaceWith(element(`<iframe src="${src}"></iframe>`))
 				})
 
+				// Our example previews.
+				figure.querySelectorAll('em strong a[href]').forEach((link) => {
+					const href = link.getAttribute('href')
+					const [, folder, file] = href.match(/^(.*\/)([^/]*)$/) ?? []
+					const container = link.parentNode.parentNode
+
+					folder && container.replaceWith(element(`<iframe src="${folder}preview/${file && `?active=${file}`}"></iframe>`))
+				})
+
 				caption && figure.appendChild(caption)
 
+				// Nest in a container.
 				figure.querySelectorAll(':scope > img[src], :scope > iframe').forEach((media) => {
+
+					// …adding dithered images when we can.
 					const dither = media.localName === 'img'
 						? `<as-dithered-image crunch="2" src="${markdown.utils.escapeHtml(media.getAttribute('src'))}"></as-dithered-image>`
 						: ''
