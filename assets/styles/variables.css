@@ -31,10 +31,10 @@
 
 @keyframes in-view {
 	0%   { --in-view: 0 }
-	33%  { --in-view: 0 }
+	25%  { --in-view: 0 }
 	40%  { --in-view: 1 }
 	60%  { --in-view: 1 }
-	66%  { --in-view: 0 }
+	75%  { --in-view: 0 }
 	100% { --in-view: 0 }
 }
 
