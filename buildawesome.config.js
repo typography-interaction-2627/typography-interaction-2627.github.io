@@ -279,10 +279,13 @@ export default (config) => {
 				caption?.remove()
 				const rendered = parse(markdown.renderInline(figure.innerHTML.trim()))
 
-				rendered.querySelectorAll('a[href^="https://youtu.be/"]').forEach((link) => {
-					const videoId = link.getAttribute('href').match(/^https?:\/\/youtu\.be\/([\w-]+)\/?$/)?.[1]
+				rendered.querySelectorAll('a[href^="https://youtu.be/"], a[href^="https://vimeo.com/"]').forEach((link) => {
+					const video = new URL(link.getAttribute('href'))
+					const src = video.hostname === 'youtu.be'
+						? `https://www.youtube.com/embed${video.pathname}`
+						: video.hostname === 'vimeo.com' ? `https://player.vimeo.com/video${video.pathname}` : ''
 
-					videoId && link.querySelector('img') && link.replaceWith(element(`<iframe src="https://www.youtube.com/embed/${videoId}"></iframe>`))
+					src && link.querySelector('img') && link.replaceWith(element(`<iframe src="${src}"></iframe>`))
 				})
 
 				figure.innerHTML = rendered.innerHTML
