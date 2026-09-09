@@ -51,25 +51,37 @@
 		--container-font-smooth:           never;
 		--container-text-rendering:        geometricPrecision;
 		--container-webkit-font-smoothing: none;
-		--editor-background:               var(--color);
-		--editor-caret-color:              var(--background);
-		--editor-font-family:              'Monaco', monospace;
-		--editor-font-size:                calc(var(--size--code) * var(--1px));
-		--editor-line-height:              1rlh;
-		--editor-padding:                  1rex;
-		--editor-scrollbar-width:          none;
-		--editor-selection-background:     color-mix(in srgb, var(--background), transparent 80%);
-		--editor-text-box:                 trim-both cap alphabetic;
+
+		--editor-background:           var(--color);
+		--editor-border-right:         var(--1px) solid var(--color);
+		--editor-caret-color:          var(--background);
+		--editor-font-family:          'Monaco', monospace;
+		--editor-font-size:            calc(var(--size--code) * var(--1px));
+		--editor-line-height:          1rlh;
+		--editor-padding:              1rex;
+		--editor-scrollbar-width:      none;
+		--editor-selection-background: color-mix(in srgb, var(--background), transparent 80%);
+		--editor-text-box:             trim-both cap alphabetic;
+
+		--output-background:              var(--background);
+		--output-border:                  initial;
+		--output-dimensions-backdrop:     none;
+		--output-dimensions-background:   var(--background);
+		--output-dimensions-border-right: var(--1px) solid var(--color);
+		--output-dimensions-border-top:   var(--1px) solid var(--color);
+		--output-dimensions-font-size:    calc(9 * var(--1px));
+		--output-dimensions-inset:        auto auto 0 0;
+		--output-dimensions-padding:      1ex;
+		--output-dimensions-text-box:     var(--editor-text-box);
 
 		/* Chrome/Safari `opsz` dance, again; see `typography.css` */
 		@supports (not (-moz-appearance: none)) {
 			--editor-font-family: 'Monaco 9';
 
+			--output-dimensions-font-family: 'Monaco 9';
+
 			@container style(--tablet) { --editor-font-family: 'Monaco 12' }
 		}
-
-		--output-background: var(--background);
-		--output-border:     initial;
 
 		--tab-bar-active-background: var(--background);
 		--tab-bar-active-border:     var(--1px) solid transparent;
@@ -81,9 +93,10 @@
 		--tab-bar-font-size:         var(--editor-font-size);
 		--tab-bar-foreground:        var(--background);
 		--tab-bar-hover-foreground:  var(--background);
-		--tab-bar-margin:            1rex 1rex var(--2px);
+		--tab-bar-justify:           start;
+		--tab-bar-margin:            var(--editor-padding) var(--editor-padding) var(--2px);
 		--tab-bar-nav-background:    transparent;
-		--tab-bar-nav-box-shadow:    var(--shadow--double); /* TODO This needs cinched `inline-size`! 🫠 */
+		--tab-bar-nav-box-shadow:    var(--shadow--single);
 		--tab-bar-padding:           calc(1rex - var(--1px));
 		--tab-bar-text-box:          var(--editor-text-box);
 

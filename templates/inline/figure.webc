@@ -35,7 +35,7 @@
 			/* TODO How to have this always snap to pixel height? Takes “windows” off-pattern! */
 			/* TODO Stretches on mobile! See *Typography*. */
 			img, iframe {
-				--height--fallback: calc((var(--lines)) * 1rlh + 1rcap + var(--3px));
+				--height--fallback: calc((var(--lines)) * 1rlh + 1rcap + var(--4px));
 
 				block-size:      var(--height, var(--height--fallback));
 				filter:          saturate(var(--in-view)) contrast(calc(2 - var(--in-view))) brightness(calc(2 - var(--in-view)));
