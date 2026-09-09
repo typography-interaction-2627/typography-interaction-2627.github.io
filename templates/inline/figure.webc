@@ -159,7 +159,8 @@
 	let frame
 
 	const setCrunch = () => {
-		const crunch = getComputedStyle(document.documentElement).getPropertyValue('--scaling').trim() || '2'
+		const style = getComputedStyle(document.documentElement)
+		const crunch = style.getPropertyValue('--scaling') * (style.getPropertyValue('--zoom') || 1)
 
 		document.querySelectorAll(`as-dithered-image:not([crunch="${crunch}"])`).forEach((dither) => dither.setAttribute('crunch', crunch))
 	}
