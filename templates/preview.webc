@@ -29,7 +29,7 @@
 			display:               grid;
 			grid-template-columns: minmax(0, 1fr);
 			inline-size:           var(--page);
-			margin-inline-start:   round(down, calc((100vw - var(--page)) / 2), var(--1px)); /* Land on-pattern. */
+			margin-inline-start:   round(down, calc((var(--vw) - var(--page)) / 2), var(--1px)); /* Land on-pattern. */
 			row-gap:               var(--gutter);
 
 			figcaption {
