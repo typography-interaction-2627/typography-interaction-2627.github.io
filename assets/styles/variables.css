@@ -26,6 +26,15 @@
 /* Make this animatable for scroll-driven stuff. */
 @property --in-view { inherits: true; initial-value: 1; syntax: '<number>' }
 
+@keyframes in-view {
+	0%   { --in-view: 0 }
+	33%  { --in-view: 0 }
+	40%  { --in-view: 1 }
+	60%  { --in-view: 1 }
+	66%  { --in-view: 0 }
+	100% { --in-view: 0 }
+}
+
 :where(:root) {
 	--size--root: var(--size); /* For resets/overrides. */
 
@@ -127,7 +136,6 @@
 				)
 			bottom / 100% var(--1px)
 			no-repeat;
-
 
 		/* Explicit-sized for rounding. */
 		@container style(--columns) { --column: round(down, calc(((var(--main) - (var(--alley) * (var(--columns) - 1)))) / var(--columns)), var(--1px)) }

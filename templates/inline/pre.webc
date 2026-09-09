@@ -17,12 +17,28 @@
 
 	/* In-page. */
 	main :is(pre, ti-preview) {
+		filter:          saturate(var(--in-view)) contrast(calc(2 - var(--in-view))) brightness(calc(2 - var(--in-view)));
 		inline-size:     fit-content;
 		max-inline-size: 100%;
 
 		@supports (not (font: -apple-system-body)) and (not (-moz-appearance: none)) {
 			border-radius: var(--1px);
 			corner-shape:  notch;
+		}
+
+		/* TODO Abstract this pattern! */
+		@supports (animation-timeline: view()) {
+			animation-fill-mode:       both;
+			animation-name:            in-view;
+			animation-range:           cover;
+			animation-timeline:        view();
+			animation-timing-function: ease-in-out;
+		}
+
+		&:hover {
+			--in-view: 1;
+
+			animation-name: none;
 		}
 
 		&:is(ti-preview) { overflow: clip } /* For the corners; scrolls internally. */

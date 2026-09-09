@@ -1,13 +1,4 @@
 <style>
-	@keyframes in-view {
-		0%   { --in-view: 0 }
-		33%  { --in-view: 0 }
-		40%  { --in-view: 1 }
-		60%  { --in-view: 1 }
-		66%  { --in-view: 0 }
-		100% { --in-view: 0 }
-	}
-
 	figure {
 		align-items: start;
 		display:     grid;
@@ -86,15 +77,16 @@
 		&.borderless { row-gap: calc(2rlh - 1rcap) }
 
 		/* TODO How to have this always snap to pixel height? Takes “windows” off-pattern! */
-			/* TODO Stretches on mobile! See *Typography*. */
-		> div img, iframe {
+		/* TODO Stretches on mobile! See *Typography*. */
+		img, iframe {
 			--height--fallback: calc(var(--lines) * 1rlh - 1rcap);
 
 			block-size:      var(--height, var(--height--fallback));
-			filter:          saturate(var(--in-view));
+			filter:          saturate(var(--in-view)) contrast(calc(2 - var(--in-view))) brightness(calc(2 - var(--in-view)));
 			max-block-size:  calc(round(80svh, var(--1px)));
 			max-inline-size: 100%;
 
+			/* TODO Abstract this pattern! */
 			@supports (animation-timeline: view()) {
 				animation-fill-mode:       both;
 				animation-name:            in-view;
