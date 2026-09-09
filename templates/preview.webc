@@ -51,28 +51,31 @@
 	const width = params.get('width')
 	if (width) document.querySelector('ti-preview').style.setProperty('--editor-width', width)
 
+	// Get parent page variables!
 	if (window !== window.parent) {
-		function syncParentVars() {
-			cancelAnimationFrame(syncParentVars.raf)
+		const root = document.documentElement
+		const parentRoot = parent.document.documentElement
 
-			syncParentVars.raf = requestAnimationFrame(() => {
-				const root = document.documentElement
+		const skip = ['--in-view', '--resolve'] // Animated/locally resolved, so never “inherit” them.
 
-				root.removeAttribute('style')
+		let frame
 
-				const parentStyle = getComputedStyle(parent.document.documentElement)
+		const syncParentVars = () => {
+			cancelAnimationFrame(frame)
+
+			frame = requestAnimationFrame(() => {
+				Array.from(root.style).forEach((name) => root.style.removeProperty(name))
+
+				const parentStyle = getComputedStyle(parentRoot)
 				const rootStyle = getComputedStyle(root)
 
-				for (const name of parentStyle) {
-					if (!name.startsWith('--')) continue
+				// Read everything before writing anything to not cause recalculations.
+				const changes = [...parentStyle]
+					.filter((name) => name.startsWith('--') && !skip.includes(name))
+					.map((name) => [name, parentStyle.getPropertyValue(name).trim(), rootStyle.getPropertyValue(name).trim()])
+					.filter(([, value, current]) => value && value !== current)
 
-					const value = parentStyle.getPropertyValue(name).trim()
-					const current = rootStyle.getPropertyValue(name).trim()
-
-					if (value !== current) {
-						root.style.setProperty(name, value)
-					}
-				}
+				changes.forEach(([name, value]) => root.style.setProperty(name, value))
 			})
 		}
 
