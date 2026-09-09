@@ -159,7 +159,9 @@ Conventions and standards carry on through history! [<cite>↗</cite>](https://c
 ## Technological Evolution
 
 <figure class="aside" style="--aspect-ratio: 4 / 3">
-<iframe src="https://player.vimeo.com/video/127605643?h=3281eeb33f&color=99CC99&title=0&byline=0&portrait=0"></iframe>
+
+[<img src="https://vumbnail.com/127605643.jpg">](https://vimeo.com/127605643)
+
 <figcaption>
 
 *Farewell Etaoin Shrdlu*, a documentary made at the end of the metal type era at *The New York Times*, in 1978. [<cite>↗</cite>](https://archive.nytimes.com/www.nytimes.com/times-insider/2014/11/13/1978-farewell-etaoin-shrdlu/)
