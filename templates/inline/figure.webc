@@ -58,13 +58,28 @@
 
 				/* Code previews. */
 				&:not([src*="https://"])[src*='/preview'] {
-					inline-size: 100%;
-
 					@media (width < 35em) {
 						aspect-ratio:   1 / 2;
 						block-size:     initial;
 						max-block-size: calc(round(75svh, 1rcap));
 					}
+				}
+			}
+
+			&:has(iframe:not([src*="https://"])[src*='/preview']) {
+				background-color: var(--background);
+				isolation:        isolate;
+
+				iframe { z-index: 1 }
+
+				&::after {
+					background:     var(--background--check);
+					box-shadow:     initial;
+					content:        '';
+					inset:          0;
+					mix-blend-mode: multiply;
+					position:       absolute;
+					translate:      var(--2px) var(--2px);
 				}
 			}
 

@@ -53,26 +53,26 @@
 		--container-webkit-font-smoothing: none;
 
 		--editor-background:           var(--color);
-		--editor-border-right:         var(--1px) solid var(--color);
+		--editor-border-bottom:        var(--editor-border-top);
+		--editor-border-top:           var(--1px) solid var(--color);
 		--editor-caret-color:          var(--background);
 		--editor-font-family:          'Monaco', monospace;
 		--editor-font-size:            calc(var(--size--code) * var(--1px));
 		--editor-line-height:          1rlh;
-		--editor-padding:              1rex;
+		--editor-padding:              calc(1rex - var(--1px));
 		--editor-scrollbar-width:      none;
 		--editor-selection-background: color-mix(in srgb, var(--background), transparent 80%);
 		--editor-text-box:             trim-both cap alphabetic;
 
-		--output-background:              var(--background);
-		--output-border:                  initial;
-		--output-dimensions-backdrop:     none;
-		--output-dimensions-background:   var(--background);
-		--output-dimensions-border-right: var(--1px) solid var(--color);
-		--output-dimensions-border-top:   var(--1px) solid var(--color);
-		--output-dimensions-font-size:    calc(9 * var(--1px));
-		--output-dimensions-inset:        auto auto 0 0;
-		--output-dimensions-padding:      1ex;
-		--output-dimensions-text-box:     var(--editor-text-box);
+		--output-background:            var(--background);
+		--output-border:                var(--editor-border-top);
+		--output-dimensions-backdrop:   none;
+		--output-dimensions-background: var(--background);
+		--output-dimensions-box-shadow: var(--shadow--border);
+		--output-dimensions-font-size:  calc(9 * var(--1px));
+		--output-dimensions-inset:      auto auto var(--output-dimensions-padding) var(--output-dimensions-padding);
+		--output-dimensions-padding:    1ex;
+		--output-dimensions-text-box:   var(--editor-text-box);
 
 		/* Chrome/Safari `opsz` dance, again; see `typography.css` */
 		@supports (not (-moz-appearance: none)) {
@@ -94,7 +94,7 @@
 		--tab-bar-foreground:        var(--background);
 		--tab-bar-hover-foreground:  var(--background);
 		--tab-bar-justify:           start;
-		--tab-bar-margin:            var(--editor-padding) var(--editor-padding) var(--2px);
+		--tab-bar-margin:            var(--editor-padding) var(--editor-padding) var(--3px);
 		--tab-bar-nav-background:    transparent;
 		--tab-bar-nav-box-shadow:    var(--shadow--single);
 		--tab-bar-padding:           calc(1rex - var(--1px));
