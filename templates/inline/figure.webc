@@ -85,6 +85,8 @@
 				}
 			}
 
+			&:has(as-dithered-image:not([src])) { display: none }
+
 			&:hover {
 				--in-view: 1;
 
