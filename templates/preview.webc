@@ -50,6 +50,35 @@
 
 	const width = params.get('width')
 	if (width) document.querySelector('ti-preview').style.setProperty('--editor-width', width)
+
+	if (window !== window.parent) {
+		function syncParentVars() {
+			cancelAnimationFrame(syncParentVars.raf)
+
+			syncParentVars.raf = requestAnimationFrame(() => {
+				const root = document.documentElement
+
+				root.removeAttribute('style')
+
+				const parentStyle = getComputedStyle(parent.document.documentElement)
+				const rootStyle = getComputedStyle(root)
+
+				for (const name of parentStyle) {
+					if (!name.startsWith('--')) continue
+
+					const value = parentStyle.getPropertyValue(name).trim()
+					const current = rootStyle.getPropertyValue(name).trim()
+
+					if (value !== current) {
+						root.style.setProperty(name, value)
+					}
+				}
+			})
+		}
+
+		syncParentVars()
+		parent.addEventListener('resize', syncParentVars)
+	}
 </script>
 <ti-preview base="../">
 	<!-- TODO Add link back to the topic page! -->
