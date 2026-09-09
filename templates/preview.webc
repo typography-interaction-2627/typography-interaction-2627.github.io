@@ -1,9 +1,53 @@
-<template><pre webc:nokeep><!-- Gets the `inline` styles! --></pre></template>
+<page-pattern></page-pattern>
+<style>
+	body {
+		display:        grid;
+		min-block-size: 100svh;
+	}
+
+	/* No-JS basics. */
+	body:has(ti-preview:not(:defined)) {
+		align-content:       center;
+		padding-block-end:   calc(2 * var(--gutter));
+		padding-block-start: var(--gutter);
+		row-gap:             calc(2 * var(--gutter));
+
+		&::before {
+			background-color:   white;
+			box-shadow:         var(--shadow--border), var(--shadow--double);
+			content:            'You need JS enabled to see these editable previews!';
+			inline-size:        max-content;
+			inset-inline-start: round(down, 50%, var(--1px));
+			max-inline-size:    var(--main);
+			padding:            1ex;
+			position:           relative;
+			text-box:           trim-both cap alphabetic;
+			translate:          round(-50%, var(--1px)) 0;
+		}
+
+		ti-preview {
+			display:               grid;
+			grid-template-columns: minmax(0, 1fr);
+			inline-size:           var(--page);
+			margin-inline-start:   round(down, calc((100vw - var(--page)) / 2), var(--1px)); /* Land on-pattern. */
+			row-gap:               var(--gutter);
+
+			figcaption {
+				background-color: var(--background);
+				box-shadow:       var(--shadow--border), var(--shadow--single);
+				inline-size:      fit-content;
+				padding:          1ex;
+				text-box:         trim-both cap alphabetic;
+			}
+		}
+	}
+</style>
 <ti-preview base="../">
-	<figure webc:raw webc:for="file of example.files.filter(({ filename }) => ['.html', '.css', '.js'].some((ext) => filename.endsWith(ext)))">
-		<pre>
+	<!-- TODO Add link back to the topic page! -->
+	<figure webc:keep webc:root webc:for="file of example.files.filter(({ filename }) => ['.html', '.css', '.js'].some((ext) => filename.endsWith(ext)))">
+		<figcaption @text="file.filename"></figcaption>
+		<pre @nested="true">
 			<code @text="file.contents"></code>
 		</pre>
-		<figcaption @text="file.filename"></figcaption>
 	</figure>
 </ti-preview>
