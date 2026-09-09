@@ -5,7 +5,7 @@
 		background-color: var(--color);
 		display:          flex;
 		overflow:         auto;
-		padding:          1rcap;
+		padding:          1rex;
 		scrollbar-width:  none;
 
 		code {
@@ -56,7 +56,7 @@
 		--editor-font-family:              'Monaco', monospace;
 		--editor-font-size:                calc(var(--size--code) * var(--1px));
 		--editor-line-height:              1rlh;
-		--editor-padding:                  1rcap;
+		--editor-padding:                  1rex;
 		--editor-scrollbar-width:          none;
 		--editor-selection-background:     color-mix(in srgb, var(--background), transparent 80%);
 		--editor-text-box:                 trim-both cap alphabetic;
@@ -70,6 +70,22 @@
 
 		--output-background: var(--background);
 		--output-border:     initial;
+
+		--tab-bar-active-background: var(--background);
+		--tab-bar-active-border:     var(--1px) solid transparent;
+		--tab-bar-active-foreground: var(--color);
+		--tab-bar-active-highlight:  transparent;
+		--tab-bar-background:        var(--color);
+		--tab-bar-border:            var(--1px) solid var(--background);
+		--tab-bar-font-family:       var(--editor-font-family);
+		--tab-bar-font-size:         var(--editor-font-size);
+		--tab-bar-foreground:        var(--background);
+		--tab-bar-hover-foreground:  var(--background);
+		--tab-bar-margin:            1rex 1rex var(--2px);
+		--tab-bar-nav-background:    transparent;
+		--tab-bar-nav-box-shadow:    var(--shadow--double); /* TODO This needs cinched `inline-size`! 🫠 */
+		--tab-bar-padding:           calc(1rex - var(--1px));
+		--tab-bar-text-box:          var(--editor-text-box);
 
 		--syntax-atom:             var(--background);
 		--syntax-bool:             dodgerblue;
@@ -102,6 +118,8 @@
 		--syntax-whitespace-tab:   '';
 		--syntax-whitespace:       color-mix(in srgb, var(--background), transparent 85%);
 		/* TODO Pixel whitespace characters via `background` variables ! */
+
+		/* TODO Figure out in-`iframe` `--scaling`! */
 	}
 </style>
 <template webc:nokeep webc:root="override">

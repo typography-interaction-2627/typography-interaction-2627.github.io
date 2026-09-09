@@ -35,7 +35,7 @@
 			/* TODO How to have this always snap to pixel height? Takes “windows” off-pattern! */
 			/* TODO Stretches on mobile! See *Typography*. */
 			img, iframe {
-				--height--fallback: calc(var(--lines) * 1rlh - 1rcap);
+				--height--fallback: calc((var(--lines)) * 1rlh + 1rcap + var(--3px));
 
 				block-size:      var(--height, var(--height--fallback));
 				filter:          saturate(var(--in-view)) contrast(calc(2 - var(--in-view))) brightness(calc(2 - var(--in-view)));
@@ -55,6 +55,17 @@
 			iframe {
 				aspect-ratio: var(--aspect-ratio, 16/9);
 				inline-size:  100%;
+
+				/* Code previews. */
+				&:not([src*="https://"])[src*='/preview'] {
+					inline-size: 100%;
+
+					@media (width < 35em) {
+						aspect-ratio:   1 / 2;
+						block-size:     initial;
+						max-block-size: calc(round(75svh, 1rcap));
+					}
+				}
 			}
 
 			/* Web component that does the Atkinson dithering! */
