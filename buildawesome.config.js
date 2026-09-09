@@ -267,38 +267,37 @@ export default (config) => {
 			}
 		})
 
-	// Transform each figure’s media before Markdown parses its caption.
-	const markdownFigures = (markdown) =>
+	// Likewise do a dance for GFM `figure` for our dithering/`iframe` needs.
+	const markdownFigures = (markdown) => {
+		const element = (html) => parse(html).firstChild
+
 		markdown.core.ruler.after('normalize', 'figures', (state) =>
 			state.src = state.src.replace(/<figure\b[^>]*>[\s\S]*?<\/figure>/gi, (html) => {
 				const figure = parse(html).querySelector('figure')
 				const caption = figure.querySelector(':scope > figcaption')
-				const media = parse(markdown.renderInline(figure.innerHTML.replace(caption?.outerHTML ?? '', '').trim()))
+				const captionHtml = caption?.outerHTML ?? ''
+				const rendered = parse(markdown.renderInline(figure.innerHTML.replace(captionHtml, '').trim()))
 
-				media.querySelectorAll('a[href]').forEach((link) => {
+				rendered.querySelectorAll('a[href^="https://youtu.be/"]').forEach((link) => {
 					const videoId = link.getAttribute('href').match(/^https?:\/\/youtu\.be\/([\w-]+)\/?$/)?.[1]
 
-					videoId && link.querySelector('img') && link.replaceWith(parse(`<iframe src="https://www.youtube.com/embed/${videoId}"></iframe>`).firstChild)
+					videoId && link.querySelector('img') && link.replaceWith(element(`<iframe src="https://www.youtube.com/embed/${videoId}"></iframe>`))
 				})
 
-				figure.innerHTML = `${media.innerHTML}${caption?.outerHTML ?? ''}`
+				figure.innerHTML = rendered.innerHTML + captionHtml
 
 				figure.querySelectorAll(':scope > img[src], :scope > iframe').forEach((media) => {
-					const wrapper = parse('<div></div>').firstChild
+					const dither = media.localName === 'img'
+						? `<as-dithered-image crunch="2" src="${markdown.utils.escapeHtml(media.getAttribute('src'))}"></as-dithered-image>`
+						: ''
 
-					media.replaceWith(wrapper)
-					wrapper.appendChild(media)
-
-					if (media.localName !== 'img') return
-
-					const src = media.getAttribute('src')
-
-					wrapper.insertAdjacentHTML('beforeend', `<as-dithered-image crunch="2" src="${markdown.utils.escapeHtml(src)}"></as-dithered-image>`)
+					media.replaceWith(element(`<div>${media.outerHTML}${dither}</div>`))
 				})
 
 				return figure.outerHTML
 			}),
 		)
+	}
 
 	const markdown = markdownIt(markdownOptions)
 		// `abbreviations.js` collides with `markdown-it-abbr` internal map.
