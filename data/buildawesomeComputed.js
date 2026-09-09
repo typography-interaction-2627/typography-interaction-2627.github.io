@@ -68,13 +68,15 @@ export default {
 	sequence:    (data) => data.example
 					? getSequence(data).findIndex(page => page.inputPath.includes(`/topic/${data.example.topic}/`))
 					: getSequence(data).findIndex(page => page.inputPath === data.page.inputPath),
-	title:       (data) => inCollection(data, 'weeks')
-					? `Week ${data.page.fileSlug}`
-					: inCollection(data, 'projects')
-						? (Number.isInteger(+data.page.fileSlug)
-							? `Project ${data.page.fileSlug}: <em>${getH1(data)}</em>`
-							: `Project <em>${getH1(data)}</em>`)
-						: getH1(data),
+	title:       (data) => data.example?.title
+					? data.example.title
+					: inCollection(data, 'weeks')
+						? `Week ${data.page.fileSlug}`
+						: inCollection(data, 'projects')
+							? (Number.isInteger(+data.page.fileSlug)
+								? `Project ${data.page.fileSlug}: <em>${getH1(data)}</em>`
+								: `Project <em>${getH1(data)}</em>`)
+							: getH1(data),
 	unit:        (data) => getWeek(data)?.unit,
 	unitNumber:  (data) => getWeek(data)?.unitNumber,
 	week:        (data) => inCollection(data, 'weeks')
