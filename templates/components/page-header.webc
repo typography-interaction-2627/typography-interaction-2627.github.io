@@ -1,6 +1,6 @@
 <style>
 	header:has(h1) {
-		block-size: round(100svh, var(--1px));
+		block-size: round(var(--svh), var(--1px));
 		overflow:   clip;
 		position:   relative;
 

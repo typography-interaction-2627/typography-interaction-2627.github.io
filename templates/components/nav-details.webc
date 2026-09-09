@@ -74,7 +74,7 @@
 
 		ul {
 			/* Space under the `nav`, less gutters. */
-			--remainder: calc(100dvh - var(--block) - (2 * var(--padding) + 9 * var(--1px)) - 3 * var(--gutter));
+			--remainder: calc(var(--dvh) - var(--block) - (2 * var(--padding) + 9 * var(--1px)) - 3 * var(--gutter));
 
 			background-color:      var(--background);
 			column-gap:            2cap;

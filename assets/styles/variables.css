@@ -19,8 +19,10 @@
 @property --body   { inherits: true; initial-value: 0px; syntax: '<length>' }
 
 /* To resolve and override within `iframe`.  */
-@property --vw { inherits: true; initial-value: 100vw; syntax: '<length>' }
-@property --vh { inherits: true; initial-value: 100vh; syntax: '<length>' }
+@property --vw  { inherits: true; initial-value: 100vw; syntax: '<length>' }
+@property --vh  { inherits: true; initial-value: 100vh; syntax: '<length>' }
+@property --dvh { inherits: true; initial-value: 100dvh; syntax: '<length>' }
+@property --svh { inherits: true; initial-value: 100svh; syntax: '<length>' }
 
 /* Resolve where *declared*, for passing computed type values down! */
 /* https://lea.verou.me/blog/2021/06/inherit-ancestor-font-size-for-fun-and-profit/ */
@@ -157,7 +159,10 @@
 		}
 
 		@container style(--zoom) {
-			--vw: calc(100vw / var(--zoom));
+			--vw:  calc(100vw / var(--zoom));
+			--vh:  calc(100vh / var(--zoom));
+			--dvh: calc(100dvh / var(--zoom));
+			--svh: calc(100svh / var(--zoom));
 
 			zoom: var(--zoom);
 		}

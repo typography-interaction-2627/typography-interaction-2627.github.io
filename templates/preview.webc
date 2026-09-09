@@ -1,56 +1,62 @@
 <page-pattern></page-pattern>
 <style>
-	/* Prevent double-zooming in `iframe`! */
-	:root.iframe {
-		--vw--parent: var(--vw);
-		--vh--parent: var(--vh);
+	:root {
+		block-size:  100%;
+		inline-size: 100%;
 
 		body {
-			--vw: calc(var(--vw--parent) / var(--zoom));
-			--vh: calc(var(--vh--parent) / var(--zoom));
-
-			zoom: initial;
-		}
-	}
-
-	body {
-		display:        grid;
-		min-block-size: calc(100svh / var(--zoom, 1));
-	}
-
-	/* No-JS basics. */
-	body:has(ti-preview:not(:defined)) {
-		align-content:       center;
-		padding-block-end:   calc(2 * var(--gutter));
-		padding-block-start: var(--gutter);
-		row-gap:             calc(2 * var(--gutter));
-
-		&::before {
-			background-color:   white;
-			box-shadow:         var(--shadow--border), var(--shadow--double);
-			content:            'You need JS enabled to see these editable previews!';
-			inline-size:        max-content;
-			inset-inline-start: round(down, 50%, var(--1px));
-			max-inline-size:    var(--main);
-			padding:            1ex;
-			position:           relative;
-			text-box:           trim-both cap alphabetic;
-			translate:          round(-50%, var(--1px)) 0;
+			block-size:  inherit;
+			display:     grid;
+			inline-size: inherit;
 		}
 
-		ti-preview {
-			display:               grid;
-			grid-template-columns: minmax(0, 1fr);
-			inline-size:           var(--page);
-			margin-inline-start:   round(down, calc((var(--vw) - var(--page)) / 2), var(--1px)); /* Land on-pattern. */
-			row-gap:               var(--gutter);
+		/* Prevent double-zooming in `iframe`! */
+		&.iframe {
+			--vw--parent: var(--vw);
+			--vh--parent: var(--vh);
 
-			figcaption {
-				background-color: var(--background);
-				box-shadow:       var(--shadow--border), var(--shadow--single);
-				inline-size:      fit-content;
-				padding:          1ex;
-				text-box:         trim-both cap alphabetic;
+			body {
+				--vw: calc(var(--vw--parent) / var(--zoom, 1));
+				--vw: calc(var(--vw--parent) / var(--zoom, 1));
+
+				zoom: initial;
+			}
+		}
+
+		/* No-JS basics. */
+		&:has(ti-preview:not(:defined)) body {
+			align-content:       center;
+			padding-block-end:   calc(2 * var(--gutter));
+			padding-block-start: var(--gutter);
+			row-gap:             calc(2 * var(--gutter));
+
+			&::before {
+				background-color:   white;
+				box-shadow:         var(--shadow--border), var(--shadow--double);
+				content:            'You need JS enabled to see these editable previews!';
+				inline-size:        max-content;
+				inset-inline-start: round(down, 50%, var(--1px));
+				max-inline-size:    var(--main);
+				padding:            1ex;
+				position:           relative;
+				text-box:           trim-both cap alphabetic;
+				translate:          round(-50%, var(--1px)) 0;
+			}
+
+			ti-preview {
+				display:               grid;
+				grid-template-columns: minmax(0, 1fr);
+				inline-size:           var(--page);
+				margin-inline-start:   round(down, calc((var(--vw) - var(--page)) / 2), var(--1px)); /* Land on-pattern. */
+				row-gap:               var(--gutter);
+
+				figcaption {
+					background-color: var(--background);
+					box-shadow:       var(--shadow--border), var(--shadow--single);
+					inline-size:      fit-content;
+					padding:          1ex;
+					text-box:         trim-both cap alphabetic;
+				}
 			}
 		}
 	}
