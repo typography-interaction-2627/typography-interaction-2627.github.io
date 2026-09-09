@@ -65,7 +65,9 @@ export default {
 					.filter(week => !week.data.draft)
 					.at(-1)?.page.fileSlug,
 	date:        (data) => getWeek(data)?.date,
-	sequence:    (data) => getSequence(data).findIndex(page => page.inputPath === data.page.inputPath),
+	sequence:    (data) => data.example
+					? getSequence(data).findIndex(page => page.inputPath.includes(`/topic/${data.example.topic}/`))
+					: getSequence(data).findIndex(page => page.inputPath === data.page.inputPath),
 	title:       (data) => inCollection(data, 'weeks')
 					? `Week ${data.page.fileSlug}`
 					: inCollection(data, 'projects')
