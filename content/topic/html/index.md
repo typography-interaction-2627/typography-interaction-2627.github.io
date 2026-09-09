@@ -6,3 +6,34 @@ const draft = true
 # An Intro to HTML
 
 *TKTKTK*
+
+<figure style="--lines: 16">No
+<iframe src="block/preview"></iframe>
+<figcaption>
+
+These are live, *editable* examples!
+
+</figcaption>
+</figure>
+
+<figure style="--lines: 16">
+<iframe src="../images/picture/preview"></iframe>
+<figcaption>
+
+Trying another one with several files!
+
+</figcaption>
+</figure>
+
+---
+
+<figure style="--lines: 16">
+
+[Block example](block/index.html)
+
+<figcaption>
+
+This is a markdown link that we’ll need to transform/process!
+
+</figcaption>
+</figure>
