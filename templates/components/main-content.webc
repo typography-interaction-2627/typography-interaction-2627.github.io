@@ -271,6 +271,8 @@
 			}
 
 			+ *:not(section) { margin-block-start: 1rlh }
+
+			&:has(+ .right) { grid-column: body }
 		}
 
 		/* Previously “note.” */
