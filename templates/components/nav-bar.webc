@@ -93,7 +93,7 @@
 			<nav-details @collection="topics"></nav-details>
 		</li>
 		<li>
-			<nav-details></nav-details>
+			<nav-details @collection="channels"></nav-details>
 		</li>
 	</ul>
 </nav>
