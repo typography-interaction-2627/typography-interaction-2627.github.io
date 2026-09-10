@@ -329,13 +329,17 @@
 					}
 
 					&:has(p)::before { text-box: trim-both cap alphabetic } /* Match for “loose” ones. */
+				}
 
-					/* `cite` in lists (“for next week”). */
+				> :where(dd):has(> p:not(:only-child)) {
+					display:               grid;
+					grid-template-columns: minmax(0, 1fr);
+					row-gap:               calc(2rlh - 1rcap); /* Back to `main` spacing. */
 				}
 			}
 
 			/* “Tight” lists. */
-			&:where(:not(:has(li > p))) { row-gap: calc(1rlh - 1rcap) }
+			&:where(:not(:has(li > p, dd > p))) { row-gap: calc(1rlh - 1rcap) }
 
 			/* More vertical space when the items have multiple paragraphs. */
 			&:where(:has(:where(dt, li) > p:not(:only-child))) {
