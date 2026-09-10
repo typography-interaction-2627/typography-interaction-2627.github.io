@@ -6,6 +6,7 @@
 		"@awesome.me/buildawesome": "4.0.0-alpha.10",
 		"@mdit-vue/plugin-component": "^3.0.2",
 		"@parsons/ti-preview": "^0.0.40",
+		"@uncenter/eleventy-plugin-toc": "^2.1.2",
 		"markdown-it": "^15.0.0",
 		"markdown-it-abbr": "^2.0.0",
 		"markdown-it-anchor": "^9.2.1",
