@@ -273,3 +273,8 @@ h1 {
 		.num1 { --kern: -3 }
 	}
 }
+
+/* Alright, sometimes you gotta. */
+.balance { --wrap: balance }
+.pretty  { --wrap: pretty }
+.nowrap  { --wrap: nowrap }
