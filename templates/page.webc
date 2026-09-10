@@ -2,7 +2,7 @@
 <template webc:bucket="components" webc:nokeep>
 	<style>
 		:where(:root) {
-			scroll-behavior:  smooth;
+			/* scroll-behavior:  smooth; */
 			scrollbar-gutter: stable;
 			overflow-y:       scroll;
 
