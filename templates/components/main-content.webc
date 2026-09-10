@@ -319,6 +319,7 @@
 
 					/* ”Markers.” */
 					&::before {
+						font-weight:        initial;
 						content:            '•' / '';
 						inset-inline-start: 0;
 						position:           absolute;
