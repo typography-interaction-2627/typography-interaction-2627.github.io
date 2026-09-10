@@ -1,9 +1,36 @@
 ```javascript
 const week = 3
-const draft = true
 ```
 
 # An Intro to HTML
+
+## First, Why Do We Care?
+
+In 2026, with LLM&NoBreak;s and the world on fire—what does HTML have to offer for us? What can we learn from it?
+
+<details>
+<summary>
+
+Why should a designer care about HTML?
+
+</summary>
+
+- **It helps teach us to structure our thinking into organized *systems.***
+
+- **Separating the *meaning* (semantics) of content from its visual display encourages flexibility and iteration.**
+
+- **Links ([hypermedia](https://en.wikipedia.org/wiki/Hypermedia)) are the very foundation of interactive design.**
+
+- **It is the [underlying fabric](../everything/index.md) of much of our digital lives.**
+
+- **It’s easy to learn, and a gateway to other programming languages.**
+
+- **It’s (probably) older than you, and shows no signs of going anywhere.**
+
+- **Nobody can “acquire” it!**
+<!-- .balance -->
+
+</details>
 
 ## HTML Stands for *HyperText Markup Language*
 
