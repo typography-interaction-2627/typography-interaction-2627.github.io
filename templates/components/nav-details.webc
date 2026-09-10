@@ -29,16 +29,17 @@
 		summary {
 			anchor-name: --nav-details;
 			user-select: none;
+			z-index:     1;
 
 			/* Drop arrow. */
 			svg:last-child:not(:only-of-type) {
 				block-size: var(--3px);
-				rotate:     var(--rotate);
+				rotate:     var(--arrow, 0deg);
 			}
 		}
 
 		&[open] {
-			--rotate: 180deg;
+			--arrow: 180deg;
 
 			/* TODO Propery variable dance for theses! */
 			summary {
@@ -51,7 +52,7 @@
 					background-color: var(--background);
 					block-size:       var(--1px);
 					content:          '';
-					inset-block-end:  var(---1px);
+					inset-block:      var(--divider, auto var(---1px));
 					inset-inline:     var(--1px);
 					mask:             var(--background--check);
 					position:         absolute;
@@ -66,7 +67,7 @@
 		}
 
 		&::details-content {
-			inset-block-start:  anchor(end);
+			inset-block:        var(--anchor, anchor(end) auto);
 			inset-inline-start: anchor(start);
 			position-anchor:    --nav-details;
 			position-try:       flip-inline, --in-page;
