@@ -41,6 +41,7 @@
 			column-gap:       var(--padding);
 			display:          flex;
 			padding:          var(--padding);
+			pointer-events:   auto; /* TODO Unravel this better! See `nav-details` overlap. */
 
 			* { --color: var(--background) }
 
