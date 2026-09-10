@@ -104,12 +104,10 @@ We call these [*semantic* elements](https://developer.mozilla.org/en-US/docs/Glo
 		- `<p></p>`
 
 			Defines a paragraph.
-<!-- .balance -->
 
 </div>
 
 We use semantic elements to help structure and describe our content—but also for accessibility (screen <nobr>readers)—</nobr>where the tag type helps indicate what things *are*.
-<!-- .balance .before--2 -->
 
 ## What Are Elements?
 
@@ -197,7 +195,7 @@ Lists: `ol` / `<ul>` <!-- #paragraphs -->
 	```
 
 	If you have three of something, it is probably [a list](#lists-1)! There are also `ol`.
-<!-- .all .balance -->
+<!-- .all -->
 
 **There are [many, many HTML elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element), all with particular uses. (We’ll unpack some more, later.)**
 
@@ -300,7 +298,7 @@ Class: `class` <!-- #class -->
 	```
 
 	The `class` attribute provides an additional way to select the element in CSS or JS.
-<!-- .all .balance -->
+<!-- .all -->
 
 ## Case, White Space, Tabs, Line Breaks
 
@@ -395,7 +393,6 @@ There are a lot of common patterns used—like indenting to indicate hierarchy/n
 [*Inline elements*](https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements) do *not* start on a new line, and only take up as much width as necessary. You can think of these as the little metal slugs [from printing](<https://en.wikipedia.org/wiki/Slug_(typesetting)>). Other text and inline elements will continue to flow around them, and they can wrap to new lines:
 
 `<abbr>` `<a>` `<cite>` `<code>` `<del>` `<em>` `<img>` `<ins>` `<mark>` `<span>` `<strong>` `<sub>` `<sup>` `<time>`
-<!-- .balance -->
 
 <figure
 	src="inline/preview"
@@ -406,7 +403,7 @@ There are a lot of common patterns used—like indenting to indicate hierarchy/n
 ### Inline Whitespace
 
 Inline elements [are the exception](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Whitespace#spaces_in_between_inline_and_inline-block_elements) to the “white space is generally ignored” rule: extra space between inline elements will always be reduced—*collapsed*—to one space.
-<!-- .balance .verso -->
+<!-- .verso -->
 
 <div class="recto">
 
