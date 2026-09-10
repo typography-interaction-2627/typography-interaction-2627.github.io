@@ -16,6 +16,8 @@ import { componentPlugin } from '@mdit-vue/plugin-component' // Pretend we are V
 
 import abbreviations from './data/abbreviations.js'
 
+import pluginToc from '@uncenter/eleventy-plugin-toc'
+
 import stripTags from 'striptags'
 
 import { parse } from 'node-html-parser'
@@ -355,6 +357,14 @@ export default (config) => {
 
 	// Overall Markdown use.
 	config.setLibrary('md', markdown)
+
+	// Table of contents.
+	config.addPlugin(pluginToc, {
+		tags: ['h2'], // TODO Just to start!
+		ignoredElements: ['a'],
+		ul: true,
+		wrapper: (toc) => toc,
+	})
 
 	// Other filters.
 	config.addFilter('initialCap', (string) => string?.replace(/^./, firstChar => firstChar.toUpperCase()))

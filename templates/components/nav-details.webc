@@ -1,4 +1,6 @@
 <script webc:setup>
+	export const removeUl = (html) => html.replace(/^<ul>([\s\S]*?)<\/ul>$/i, '$1')
+
 	export const getChannels = (data) => {
 		const channels = parseHtml(data.collections.root.find(({ inputPath }) => inputPath.endsWith('content/syllabus.md')).content).querySelector('#channels')
 		channels?.firstElementChild?.remove()
@@ -204,5 +206,5 @@
 		</li>
 	</ul>
 	<ul webc:if="collection == 'channels'" @raw="getChannels($data)"></ul>
-	<menu webc:if="collection == 'contents'"></menu>
+	<menu webc:if="collection == 'contents'" @raw="removeUl(toc($data.content))"></menu>
 </details>

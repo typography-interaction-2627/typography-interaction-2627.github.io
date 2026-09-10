@@ -455,6 +455,7 @@
 </script>
 <template webc:root="override" webc:bucket="default" webc:nokeep>
 	<main :class="syllabusSemester($data)">
+		<nav-toc webc:if="toc($data.content)"></nav-toc>
 		<session-recording webc:if="$data.video"></session-recording>
 		<template webc:nokeep @html="content"></template>
 	</main>
