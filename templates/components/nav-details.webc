@@ -169,10 +169,10 @@
 </script>
 <details name="nav" webc:root="override">
 	<summary :aria-label="initialCap(collection)" webc:keep webc:root="override">
-		<svg webc:nokeep @html="inlineSvg(`assets/icons/nav/${collection?.replace(/s$/, '') || 'channels'}.svg`)"></svg>
+		<svg webc:nokeep @html="inlineSvg(`assets/icons/nav/${collection}.svg`)"></svg>
 		<svg webc:nokeep @html="inlineSvg('assets/icons/nav/drop.svg')"></svg>
 	</summary>
-	<ul webc:if="collection">
+	<ul webc:if="$data.collections[collection]">
 		<li webc:for="item of $data.collections[collection]">
 			<a :aria-current="item.url === $data.page.url && 'page'" :href="item.url">
 				<p @html="item.data.title"></p>
