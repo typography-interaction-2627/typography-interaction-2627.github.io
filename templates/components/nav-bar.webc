@@ -22,7 +22,7 @@
 
 		display:         flex;
 		column-gap:      var(--inline);
-		inline-size:     inherit; /* Rounded on-pattern, from `body`. */
+		inline-size:     round(var(--vw), var(--1px));
 		justify-content: space-between;
 		padding-block:   var(--block);
 		padding-inline:  var(--edge);
@@ -33,24 +33,22 @@
 		> ul {
 			column-gap: var(--inline);
 			display:    flex;
+		}
 
-			> li {
-				> a, summary {
-					align-items:      center;
-					background-color: var(--color);
-					column-gap:       var(--padding);
-					display:          flex;
-					padding:          var(--padding);
+		> ul > li > a, summary {
+			align-items:      center;
+			background-color: var(--color);
+			column-gap:       var(--padding);
+			display:          flex;
+			padding:          var(--padding);
 
-					* { --color: var(--background) }
+			* { --color: var(--background) }
 
-					svg {
-						fill: var(--color);
+			svg {
+				fill: var(--color);
 
-						/* Type icons. */
-						&:first-child { block-size: calc(9 * var(--1px)) }
-					}
-				}
+				/* Type icons. */
+				&:first-child { block-size: calc(9 * var(--1px)) }
 			}
 		}
 
