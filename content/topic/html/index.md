@@ -13,7 +13,7 @@ HTML is the standard markup language/format for creating web pages, containing t
 	When in doubt, refer to the MDN documentation!
 
 - [<cite>Basics of HTML</cite>](https://www.youtube.com/watch?v=CkzbI1Tv_rQ)\
-	A very calming introduction by [Laurel Schwulst](https://laurelschwulst.com).
+	A very calming introduction by [Laurel Schwulst](https://laurelschwulst.com).
 
 - [<cite>Organizing Files for the Web</cite>](https://docs.google.com/presentation/d/101TEdtacOFZhCwebijcJaX0h1BpDwhAm2SJhE3jW89c/edit#slide=id.g331f24f572_4_0)
 	[Sasha Portis](https://sashaportis.com) on (web) file-naming, for when you get to saving.
@@ -72,8 +72,7 @@ We call these [*semantic* elements](https://developer.mozilla.org/en-US/docs/Glo
 
 <div class="recto before--1">
 
-In our example, here is what we’ve told the computer:
-<!-- .intro -->
+**In our example, here is what we’ve told the computer:**
 
 - `<!doctype html>`
 
@@ -114,8 +113,7 @@ We use semantic elements to help structure and describe our content—but also f
 
 ## What Are Elements?
 
-[Elements](https://developer.mozilla.org/en-US/docs/Glossary/Element) are composed of *tags* and their content:
-<!-- .intro .body -->
+**[Elements](https://developer.mozilla.org/en-US/docs/Glossary/Element) are composed of *tags* and their content:**
 
 [<cite>HTML Elements Reference – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
 	MDN will always go deep; this is *all* the elements.
@@ -201,13 +199,11 @@ Lists: `ol` / `<ul>` <!-- #paragraphs -->
 	If you have three of something, it is probably [a list](#lists-1)! There are also `ol`.
 <!-- .all .balance -->
 
-There are [many, many HTML elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element), all with particular uses. (We’ll unpack some more, later.)
-<!-- .intro .before--3 -->
+**There are [many, many HTML elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element), all with particular uses. (We’ll unpack some more, later.)**
 
 ## Attributes
 
-All HTML elements can have [attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes), which provide more information about the element:
-<!-- .intro .body -->
+** All HTML elements can have [attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes), which provide more information about the element:**
 
 [<cite>HTML Attribute Reference – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes)
 	There are a lot of them.
@@ -314,8 +310,7 @@ Generally speaking, HTML doesn’t care about capitalization, extra white space,
 	It depends! It always depends.
 <!-- .right .rows--2 -->
 
-The browser parses both of these in the exact same way:
-<!-- .intro .before--3 .after -->
+**The browser parses both of these in the exact same way:**
 
 ```html <!-- .verso -->
 <body>
@@ -503,8 +498,7 @@ There is even some basic interactivity (way, way ahead of JavaScript) with [*det
 
 They used to be the only way to achieve multi-column or grid layouts, but that has luckily since been replaced by modern CSS techniques like `flexbox`, and `grid`. (Or even `float`.) We’ll talk about those later!
 
-Again, there are [many, many, many, many HTML elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element). Try and find the one that best fits your usage, wherever possible using a *semantic* element that fits your content.
-<!-- .intro -->
+** Again, there are [many, many, many, many HTML elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element). Try and find the one that best fits your usage, wherever possible using a *semantic* element that fits your content.**
 
 ## User-Agent Styles
 
