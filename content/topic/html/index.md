@@ -230,7 +230,7 @@ Inline Text Elements
 
 These wrap around bits of text (within [headings](#headings) or `<p>`) for semantic meaning and to apply specific styles using `<span>`, `<strong>`, `<em>`, `<abbr>`, `<cite>`, `<time>`, `<code>`, `<mark>`, `<del>`, `<ins>`, `<sub>`, and `<sup>`.
 
-<dt id="lists">
+<dt id="list">
 
 Lists: `ol` / `<ul>`
 
@@ -245,7 +245,7 @@ Lists: `ol` / `<ul>`
 </ul>
 ```
 
-If you have three of something, it is probably [a list](#lists-1)! There are also `ol`, when the *order* matters.
+If you have three of something, it is probably [a list](#lists)! There are also `ol`, when the *order* matters.
 
 </dl>
 
@@ -461,6 +461,8 @@ There are a lot of common patterns used—like indenting to indicate hierarchy/n
 
 [*Block-level elements*](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements) always start on a new line, and take up the full width available—stretching out to the left and right of their parent/container. They stack on top of each other. Importantly, block elements can have a top and bottom margin, unlike inline elements.
 
+<section class="nowrap" style="--leading: 1.5rlh">
+
 `<address>`
 `<article>`
 `<aside>`
@@ -479,7 +481,7 @@ There are a lot of common patterns used—like indenting to indicate hierarchy/n
 `<figure>`
 `<footer>`
 `<form>`
-<span class="nowrap">`<h1>` – `<h6>`</span>
+`<h1>`&#x202F;–&#x202F;`<h6>`
 <!-- .three -->
 
 `<header>`
@@ -501,24 +503,33 @@ There are a lot of common patterns used—like indenting to indicate hierarchy/n
 `<ul>`
 <!-- .six -->
 
-<figure
-	@caption="These are live, *editable* examples!"
-	src="block/preview"
-	style="--lines: 16"
-	>
+</section>
+
+<figure style="--lines: 15">
+
+***[Block Example](block/)***
+
+<figcaption>
+
+These are live, *editable* examples! Whatever is on the left is rendered on the right.
+
+</figcaption>
 </figure>
 
 ## Inline Elements
 
-[*Inline elements*](https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements) do *not* start on a new line, and only take up as much width as necessary. You can think of these as the little metal slugs [from printing](<https://en.wikipedia.org/wiki/Slug_(typesetting)>). Other text and inline elements will continue to flow around them, and they can wrap to new lines:
+[*Inline elements*](https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements) do *not* start on a new line, and only take up as much width as necessary. You can think of these as the little metal slugs [from printing](<https://en.wikipedia.org/wiki/Slug_(typesetting)>), within text. Other text and inline elements will continue to flow around them, and they can wrap to new lines:
 
 `<abbr>` `<a>` `<cite>` `<code>` `<del>` `<em>` `<img>` `<ins>` `<mark>` `<span>` `<strong>` `<sub>` `<sup>` `<time>`
+<!-- .balance style="--leading: 1.5rlh" -->
 
-<figure
-	src="inline/preview"
-	style="--lines: 14"
-	>
+<figure style="--lines: 13">
+
+***[Inline Example](inline/)***
+
 </figure>
+
+<!-- TODO more inline examples! -->
 
 ### Inline Whitespace
 
@@ -544,16 +555,22 @@ Inline elements [are the exception](https://developer.mozilla.org/en-US/docs/Web
 
 You can *comment* part of the code and the browser won’t show it. [Comments](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started#html_comments) are often used to explain your thinking, organize your code, “turn off” a bit of code, or temporarily hide whatever you’d like.
 
-<figure
-	@caption="Keep in mind these are still readable in the *source*."
-	src="comment/preview"
-	style="--lines: 12"
-	>
+<!-- TODO Rail links! -->
+
+<figure style="--lines: 11">
+
+***[Comment Example](comment/)***
+
+<figcaption>
+
+Keep in mind these are still readable in the *source*.
+
+</figcaption>
 </figure>
 
 > [!TIP]
 >
-> Commenting is *highly* recommended! If you figure something tricky out, write down why and how you solved it to help you understand and remember—you’ll often come back to these things.
+> Commenting is *highly* encouraged! If you figure something tricky out, write down why and how you solved it to help you understand and remember—you’ll often come back to these things.
 >
 > <sub>Commenting your code is a gift to your future self!</sub>
 
@@ -565,48 +582,60 @@ You can *comment* part of the code and the browser won’t show it. [Comments](h
 
 Any time you have more than two of something, you probably have [a *list*](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals#lists). These are commonly used for semantic navigation elements, as well—think *“here’s a list of links in this site”*:
 
-<figure
-	src="list/preview"
-	style="--lines: 22"
-	>
+<figure style="--lines: 21">
+
+***[List Example](list/)***
+
 </figure>
 
 ### Description Lists
 
 There are [specific lists](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl) for defining things:
 
-<figure
-	@caption="These aren’t much to look at without CSS, though. Soon!"
-	src="description-list/preview"
-	style="--lines: 17"
-	>
+<figure style="--lines: 16">
+
+***[Description List Example](description-list/)***
+
+<figcaption>
+
+These aren’t much to look at without CSS, though. Soon!
+
+</figcaption>
 </figure>
 
-### Details&thinsp;/&thinsp;Summary
+### Details&#x202F;/&thinsp;Summary
 
 There is even some basic interactivity (way, way ahead of JavaScript) with [*details disclosure*](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) elements that open and close:
 
-<figure
-	@caption="You can do a lot with these, without any JavaScript!"
-	src="details-summary/preview"
-	style="--lines: 19"
-	>
+<figure style="--lines: 18">
+
+***[Details/Summary Example](details-summary/)***
+
+<figcaption>
+
+You can do a lot with these, without any JavaScript! Our navigation is built with them! Adding [the `name` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/details#name) can now make these one-at-a-time.
+
+</figcaption>
 </figure>
 
 ### Tables
 
 [*Tables*](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table) can we used to display *tabular* data:
 
-<figure
-	@caption="This syntax is pretty verbose, for what you get."
-	src="table/preview"
-	style="--lines: 26"
-	>
+<figure style="--lines: 25">
+
+***[Table Example](table/)***
+
+<figcaption>
+
+This syntax is pretty verbose, for what you get—only reach for this if it fits the information.
+
+</figcaption>
 </figure>
 
 They used to be the only way to achieve multi-column or grid layouts, but that has luckily since been replaced by modern CSS techniques like `flexbox`, and `grid`. (Or even `float`.) We’ll talk about those later!
 
-** Again, there are [many, many, many, many HTML elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element). Try and find the one that best fits your usage, wherever possible using a *semantic* element that fits your content.**
+**Again, there are [many, many, many, many HTML elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element). Try and find the one that best fits your usage, wherever possible using a *semantic* element that fits your content.**
 
 ## User-Agent Styles
 
