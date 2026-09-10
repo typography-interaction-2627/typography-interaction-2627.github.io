@@ -21,9 +21,11 @@ th {
 em {
 	--italic: 1;
 
-	font-style:          italic;
-	margin-inline-end:   round(0.25em, var(--1px));
-	margin-inline-start: round(-0.125em, var(--1px));
+	-webkit-box-decoration-break: clone;
+	box-decoration-break:         clone;
+	font-style:                   italic;
+	margin-inline-end:            round(0.25em, var(--1px));
+	margin-inline-start:          round(-0.125em, var(--1px));
 
 	/* `font-style` does *not* set `ital` axes! */
 	/* https://arrowtype.github.io/vf-slnt-test/slnt-ital-tests/index.html */
