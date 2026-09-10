@@ -35,8 +35,6 @@
 			display:    flex;
 
 			> li {
-				pointer-events: auto;
-
 				> a, summary {
 					align-items:      center;
 					background-color: var(--color);

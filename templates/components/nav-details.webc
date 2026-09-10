@@ -23,6 +23,7 @@
 	}
 
 	details[name='nav'] {
+		pointer-events: auto;
 		anchor-scope: --nav-details;
 
 		summary {
