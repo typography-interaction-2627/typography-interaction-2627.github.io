@@ -91,6 +91,15 @@ hgroup:has(h4), dt {
 	--size: var(--size--h4);
 
 	font-weight: bold;
+
+	/* Chrome/Safari `opsz` dance, again; see `typography.css` */
+	@supports (not (-moz-appearance: none)) {
+		&:not(:has(p)) {
+			--font: 'Geneva 12';
+
+			@container style(--tablet) { --font: 'Geneva 14' }
+		}
+	}
 }
 
 /* Code stuff! */
@@ -101,7 +110,7 @@ code, kbd, samp {
 
 	@container style(--size: 9) or style(--size: 10) { --size: 9 } /* Notes and such. */
 
-	/* Chrome/Safari `opsz` dance, again; see `typography.css` */
+	/* `opsz` again. */
 	@supports (not (-moz-appearance: none)) {
 		--font: 'Monaco 9';
 
