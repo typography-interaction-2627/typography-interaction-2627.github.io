@@ -62,8 +62,6 @@
 					mask-position: var(--2px) 0;
 				}
 			}
-
-			ul { box-shadow: var(--shadow--border), var(--shadow--single) }
 		}
 
 		&::details-content {
@@ -79,6 +77,7 @@
 			--remainder: calc(var(--dvh) - var(--block) - (2 * var(--padding) + 9 * var(--1px)) - 3 * var(--gutter));
 
 			background-color:      var(--background);
+			box-shadow:            var(--shadow--border), var(--shadow--single);
 			column-gap:            2cap;
 			display:               grid;
 			grid-template-columns: minmax(0, 1fr) max-content;
