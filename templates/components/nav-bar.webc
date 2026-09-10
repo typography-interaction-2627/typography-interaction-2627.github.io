@@ -20,20 +20,23 @@
 		--size:   12;
 		--wrap:   nowrap;
 
-		display:             flex;
-		column-gap:          var(--inline);
-		inline-size:         inherit; /* Rounded on-pattern, from `body`. */
-		justify-content:     space-between;
-		padding-block-start: var(--block);
-		padding-inline:      var(--edge);
-		position:            fixed;
-		z-index:             1;
+		display:         flex;
+		column-gap:      var(--inline);
+		inline-size:     inherit; /* Rounded on-pattern, from `body`. */
+		justify-content: space-between;
+		padding-block:   var(--block);
+		padding-inline:  var(--edge);
+		position:        fixed;
+		z-index:         1;
+		pointer-events:  none;
 
 		> ul {
 			column-gap: var(--inline);
 			display:    flex;
 
 			> li {
+				pointer-events: auto;
+
 				> a, summary {
 					align-items:      center;
 					background-color: var(--color);
