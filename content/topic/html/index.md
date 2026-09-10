@@ -86,8 +86,7 @@ We call these [*semantic* elements](https://developer.mozilla.org/en-US/docs/Glo
 
 		The *meta* information about the HTML page—like its title, default language, and any [scripts](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script) and [stylesheets](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/style) it needs to display the page.
 
-		Nothing in this element is visible on the page itself!
-		<!-- .note -->
+		<sub>Nothing in this element is visible on the page itself!</sub>
 
 		- `<title></title>`
 
@@ -107,22 +106,28 @@ We call these [*semantic* elements](https://developer.mozilla.org/en-US/docs/Glo
 
 </div>
 
-We use semantic elements to help structure and describe our content—but also for accessibility (screen <nobr>readers)—</nobr>where the tag type helps indicate what things *are*.
+We use semantic elements to help structure and describe our content—but also for accessibility (screen readers)—where the tag type helps indicate what things *are*.
+
+And as designers—they also help us to organize our systems, and give us hooks for styling (later, in CSS)!
 
 ## What Are Elements?
 
 **[Elements](https://developer.mozilla.org/en-US/docs/Glossary/Element) are composed of *tags* and their content:**
 
 [<cite>HTML Elements Reference – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
-	MDN will always go deep; this is *all* the elements.
-<!-- .right .start -->
+	MDN will always go deep; this is *all* the elements.
+<!-- .right -->
 
-<figure src="tag.svg"></figure>
+<figure class="borderless">
+<img src="tag.svg">
+</figure>
 
-Some elements do not have any content or children, like `<br>` or `<img>`. These are called [*empty elements*](https://developer.mozilla.org/en-US/docs/Glossary/Empty_element), and do not have a closing tag.
-<!-- .note -->
+<sub>Some elements do not have any content or children, like `<br>` or `<img>`. These are called [*empty elements*](https://developer.mozilla.org/en-US/docs/Glossary/Empty_element), and do not have a closing tag.</sub>
+
+<dl>
 
 Headings: `<h#>` <!-- #headings -->
+
 
 :	```html
 	<h1>There should only be one first-level heading!</h1>
@@ -195,6 +200,8 @@ Lists: `ol` / `<ul>` <!-- #paragraphs -->
 	```
 
 	If you have three of something, it is probably [a list](#lists-1)! There are also `ol`.
+
+</dl>
 <!-- .all -->
 
 **There are [many, many HTML elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element), all with particular uses. (We’ll unpack some more, later.)**
@@ -207,7 +214,9 @@ Lists: `ol` / `<ul>` <!-- #paragraphs -->
 	There are a lot of them.
 <!-- .right .start -->
 
-<figure src="attr.svg"></figure>
+<figure>
+<img src="attr.svg">
+</figure>
 
 ### Common Attributes
 
@@ -235,7 +244,7 @@ Target: `target` <!-- #target -->
 
 	The `target` attribute `_blank` can tell an `<a>` to open in a new window/tab.
 
-	This can be annoying, so use it judiciously! <!-- .note -->
+	<sub>This can be annoying, so use it judiciously!</sub>
 
 Style: `style` <!-- #style -->
 
@@ -245,7 +254,7 @@ Style: `style` <!-- #style -->
 
 	The `style` attribute is used to add styles to an element, such as color, font, size, etc.
 
-	We’ll use CSS for this kind of thing, but know this is how it used to be done and it was brittle and terrible. <!-- .note -->
+	<sub>We’ll use CSS for this kind of thing, but know this is how it used to be done and it was brittle and terrible.</sub>
 
 Source: `src` <!-- #src -->
 
@@ -269,7 +278,7 @@ Dimensions: `width` / `height` <!-- #dimensions -->
 
 	The `width` and `height` attributes of `<img>` provide size information for images.
 
-	Not required, but helps prevent layout “sloshing” as images load. <!-- .note -->
+	<sub>Not required, but helps prevent layout “sloshing” as images load.</sub>
 
 Alternate Text: `alt` <!-- #alt -->
 
@@ -414,8 +423,7 @@ Inline elements [are the exception](https://developer.mozilla.org/en-US/docs/Web
 </p>
 ```
 
-…displays as `Hello World`, not  `HelloWorld`.
-<!-- .note -->
+<sub>…displays as `Hello World`, not  `HelloWorld`.</sub>
 
 </div>
 
