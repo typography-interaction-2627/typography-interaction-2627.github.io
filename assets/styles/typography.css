@@ -278,3 +278,21 @@ h1 {
 .balance { --wrap: balance }
 .pretty  { --wrap: pretty }
 .nowrap  { --wrap: nowrap }
+
+/* Don’t tell Susan! */
+span.rarr,
+span.times,
+span.x2318 {
+	background-position: center;
+	background-repeat:   no-repeat;
+	background-size:     var(--7px);
+	block-size:          var(--7px);
+	color:               transparent;
+	display:             inline-block;
+	inline-size:         var(--7px);
+	vertical-align:      middle;
+}
+
+span.rarr  { background-image: url('/assets/icons/&rarr.svg') }
+span.times { background-image: url('/assets/icons/&times.svg') }
+span.x2318 { background-image: url('/assets/icons/&x2318.svg') }

@@ -739,7 +739,7 @@ These also used to need a fair bit of JS!
 
 <figcaption>
 
-You can also use your <kbd>ESC</kbd> key to dismiss these!
+You can also use your <kbd>Esc</kbd> key to dismiss these!
 
 </figcaption>
 </figure>
