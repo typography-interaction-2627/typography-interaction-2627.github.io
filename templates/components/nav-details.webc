@@ -158,6 +158,18 @@
 				}
 			}
 		}
+
+		/* Table of contents! */
+		main & {
+			--arrow:   180deg;
+			--divider: 0 auto;
+			--anchor: auto calc(var(--block) + var(--padding) + 9 * var(--1px) + var(--padding) - var(--1px));
+
+			/* TODO This is right/simpler but broken in Safari: */
+			/* --anchor: auto calc(anchor(start) - var(--1px)); */
+
+			&[open] { --arrow: initial }
+		}
 	}
 </style>
 <script webc:bucket="default">
