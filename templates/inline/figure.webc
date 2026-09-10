@@ -58,6 +58,8 @@
 
 				/* Code previews. */
 				&:not([src*="https://"])[src*='/preview'] {
+					max-block-size: calc(round(calc(0.8 * var(--svh)), 1rlh) + 1rcap + var(--4px));
+
 					@media (width < 35em) {
 						aspect-ratio:   1 / 2;
 						block-size:     initial;
