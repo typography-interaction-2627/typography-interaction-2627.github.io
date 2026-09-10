@@ -708,7 +708,7 @@ You can do a lot with these, without any JavaScript! Our navigation is built wit
 
 ### Popovers
 
-HTML continues to evolve, very recently adding native (non-JS) support for [*popovers*](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover)—click one thing, display another! You can do this natively now.
+HTML continues to evolve, very recently adding native (non-JS) support for [*popovers*](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover)—click one thing, display another! You can do this natively now:
 
 [<cite>`popover` attribute – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover)
 	Even more flexible interactivity!
@@ -721,6 +721,25 @@ HTML continues to evolve, very recently adding native (non-JS) support for [*pop
 <figcaption>
 
 No JS needed! This opens up a lot of interactive possibilities.
+
+</figcaption>
+</figure>
+
+### Modal Dialogs
+
+There is also a more specific kind of popover that is called a [`dialog` box](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog)—which are often used for [*modal*](https://en.wikipedia.org/wiki/Modal_window) content—which interrupts your view:
+
+[<cite>Dialog element – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog)
+These also used to need a fair bit of JS!
+<!-- .right -->
+
+<figure style="--lines: 18">
+
+***[Dialog Example](dialog/)***
+
+<figcaption>
+
+You can also use your <kbd>ESC</kbd> key to dismiss these!
 
 </figcaption>
 </figure>

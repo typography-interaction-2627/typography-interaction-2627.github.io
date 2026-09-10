@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Modal Dialogs</title>
+	</head>
+	<body>
+		<h1>Modal Dialogs (also pre-JS!)</h1>
+		<button command="show-modal" commandfor="your-dialog">
+			Open the modal
+		</button>
+		<dialog id="your-dialog">
+			<p>These “take over” your view!</p>
+			<button commandfor="your-dialog" command="close">
+				Don’t forget to close!
+			</button>
+		</dialog>
+	</body>
+</html>
