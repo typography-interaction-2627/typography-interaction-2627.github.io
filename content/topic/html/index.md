@@ -554,7 +554,7 @@ There are a lot of common patterns used—like indenting to indicate hierarchy/
 
 ### Let’s Try It Out
 
-<figure style="--lines: 15">
+<figure style="--lines: 17">
 
 ***[Block Example](block/)***
 
@@ -662,6 +662,25 @@ There are [specific lists](https://developer.mozilla.org/en-US/docs/Web/HTML/Ele
 <figcaption>
 
 These aren’t much to look at without CSS, though. Soon!
+
+</figcaption>
+</figure>
+
+### Blockquote
+
+Often (especially in our work), you’ll want to differentiate/indicate some enclosed text with a [`blockquote` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/blockquote):
+
+[<cite>Block quotation element – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/blockquote)
+	In print parlance, also a [*pull quote*](https://en.wikipedia.org/wiki/Pull_quote).
+<!-- .right -->
+
+<figure style="--lines: 15">
+
+***[Blockquote Example](blockquote/)***
+
+<figcaption>
+
+Again, these aren’t much to look at without CSS but they have an important *semantic* meaning!
 
 </figcaption>
 </figure>
