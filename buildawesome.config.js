@@ -274,7 +274,9 @@ export default (config) => {
 		const element = (html) => parse(html).firstChild
 
 		markdown.core.ruler.after('normalize', 'figures', (state) =>
-			state.src = state.src.replace(/<figure\b[^>]*>[\s\S]*?<\/figure>/gi, (html) => {
+			state.src = state.src.replace(/(^ {0,3}(`{3,}|~{3,})[^\n]*\n[\s\S]*?^ {0,3}\2[^\n]*(?:\n|$))|(^<figure\b[^>]*>[\s\S]*?<\/figure>)/gmi, (html, fence) => {
+				if (fence) return fence
+
 				const figure = parse(html).querySelector('figure')
 				const caption = figure.querySelector(':scope > figcaption')
 
