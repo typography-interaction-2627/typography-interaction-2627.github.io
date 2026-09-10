@@ -72,7 +72,7 @@
 			position:           fixed;
 		}
 
-		ul {
+		ul, menu {
 			/* Space under the `nav`, less gutters. */
 			--remainder: calc(var(--dvh) - var(--block) - (2 * var(--padding) + 9 * var(--1px)) - 3 * var(--gutter));
 
@@ -192,5 +192,6 @@
 			</a>
 		</li>
 	</ul>
-	<ul webc:else @raw="getChannels($data)"></ul>
+	<ul webc:if="collection == 'channels'" @raw="getChannels($data)"></ul>
+	<menu webc:if="collection == 'contents'"></menu>
 </details>

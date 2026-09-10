@@ -1,0 +1,10 @@
+<style>
+	/* TODO This builds on `nav-bar`; better organize these? */
+	main > nav {
+		inset-block-end: 0;
+		justify-content: end;
+	}
+</style>
+<nav webc:root="override">
+	<nav-details @collection="contents"></nav-details>
+</nav>
