@@ -364,6 +364,29 @@
 			}
 		}
 
+		:where(ol) {
+			counter-reset: index;
+
+			> li::before {
+				font-weight:       bold;
+				content:           counters(index, '.') '.';
+				counter-increment: index;
+				inline-size:       1ch;
+				inset-inline-end:  100%;
+				white-space:       nowrap;
+				translate:         var(---1px) 0;
+			}
+
+			&:has(:nth-child(10)) {
+				margin-inline-start: 1ex;
+
+				> li::before {
+					inline-size: 2ch;
+					translate:   -1ex 0;
+				}
+			}
+		}
+
 		/* Tables for the grade breakdown. */
 		:where(table) {
 			inline-size: fit-content;
