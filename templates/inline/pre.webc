@@ -41,6 +41,9 @@
 			animation-name: none;
 		}
 
+		/* For poking out as needed. */
+		&.all { max-inline-size: calc(var(--main) - var(--gutter)) }
+
 		&:is(ti-preview) { overflow: clip } /* For the corners; scrolls internally. */
 	}
 
