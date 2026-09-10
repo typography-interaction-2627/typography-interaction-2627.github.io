@@ -9,7 +9,7 @@
 		&:not([class]), &[class="borderless"] { grid-column: all }
 
 		&:where(:not(:first-child)),
-		&:where(:not(:last-child)) + * {
+		&:where(:not(:last-child)) + :where(*:not(section)) {
 			margin-block-start: 1rlh;
 
 			@container style(--columns) { margin-block-start: 3rlh }
