@@ -1,7 +1,6 @@
 :is(li):where(:not(:has(ol, p, svg, ul))), /* “Tight” ones. */
+:is(dd, dt):where(:not(:has(p))),
 cite,
-dd,
-dt,
 h1,
 h2,
 h3,
