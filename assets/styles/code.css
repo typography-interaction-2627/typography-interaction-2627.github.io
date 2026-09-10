@@ -3,6 +3,7 @@ code, kbd, samp { white-space: pre }
 :where(*:not(pre)) > code,
 kbd,
 samp {
+	font-weight:    initial;
 	background:     linear-gradient(var(--background)) padding-box, var(--background--check) border-box;
 	border:         var(--1px) solid transparent;
 	padding-inline: var(--3px);
