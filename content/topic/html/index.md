@@ -107,6 +107,7 @@ We call these [*semantic* elements](https://developer.mozilla.org/en-US/docs/Glo
 </div>
 
 We use semantic elements to help structure and describe our content—but also for accessibility (screen readers)—where the tag type helps indicate what things *are*.
+<!-- .before -->
 
 And as designers—they also help us to organize our systems, and give us hooks for styling (later, in CSS)!
 
@@ -115,7 +116,7 @@ And as designers—they also help us to organize our systems, and give us hooks 
 **[Elements](https://developer.mozilla.org/en-US/docs/Glossary/Element) are composed of *tags* and their content:**
 
 [<cite>HTML Elements Reference – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
-	MDN will always go deep; this is *all* the elements.
+	MDN will always go deep; this is *all* the elements.
 <!-- .right -->
 
 <figure class="borderless">
@@ -155,7 +156,7 @@ Paragraphs: `<p>`
 <p>You should always wrap your text in a paragraph!</p>
 ```
 
-Our basic, default text element.
+Our basic, default text element, whether short or long.
 
 </dd>
 
@@ -176,6 +177,21 @@ The `href=` (*H*ypertext *REF*erence) specifies a URL that the link points to, a
 
 </dd>
 
+<dt id="buttons">
+
+Buttons: `<button>`
+
+</dt>
+<dd>
+
+```html <!-- .all -->
+<button>Close</button>
+```
+
+Differing slightly from links, `<button>` are used for other, non-navigation interactions. These won’t do much for us until JS, though!
+
+</dd>
+
 <dt id="images">
 
 Images: `<img>`
@@ -187,7 +203,7 @@ Images: `<img>`
 <img src="example.jpg" alt="Images should have descriptions!">
 ```
 
-The `src` likewise can point to a local image file or an external URL! `alt` provides a description for accessibility/screen readers. More on these *attributes* in a bit.
+The `src` likewise can point to a local image file or an external URL! `alt` provides a description for accessibility/screen readers. More on these *attributes* in a bit.
 
 </dd>
 
@@ -213,9 +229,9 @@ Containers
 </body>
 ```
 
-Some others are `<nav>`, `<article>`, `<section>`, and `<div>` (when nothing else is more appropriate).
+Some others are `<nav>`, `<article>`, `<section>`, and `<div>` (when nothing else is more appropriate).
 
-These are the structural containers of a website. The names don’t imbue function directly, but help us organize and think about our content structure—and also are helpful for accessibility.
+These are the structural containers of a website. The names don’t imbue function directly, but help us organize and think about our content structure—and also are helpful for accessibility.
 
 <dt id="inline">
 
@@ -293,7 +309,7 @@ HyperText Reference: `href`
 <a href="https://www.example.com">Goes to example.com</a>
 ```
 
-The `href` attribute of `<a>` specifies the URL of the page the link goes to.
+The `href` attribute of `<a>` specifies the URL of the page, email address, or anchor the link goes to.
 
 </dd>
 
@@ -341,7 +357,7 @@ Source: `src`
 <img src="example.jpg">
 ```
 
-The `src` attribute of `<img>` specifies the path to the image to be displayed.
+The `src` attribute of `<img>` specifies the path to the image to be displayed—either relatively or absolutely.
 
 ```html <!-- .all -->
 <iframe src="https://typography-interaction-2526.github.io"></iframe>
@@ -448,10 +464,10 @@ Bulldog</li><li>Poodle</li></ul>
 </body>
 ```
 
-But obviously, the left one here is much more readable to us humans. We can use white space, tabs/indenting, and line breaks to make it easier for us to read the code.
+But obviously, the left one here is much more readable to us humans. We can use white space, tabs/indenting, and line breaks to make it easier for us to read the code.
 <!-- .before -->
 
-There are a lot of common patterns used—like indenting to indicate hierarchy/nesting. But there are also no wrong ways to do it! In HTML, spaces are code *ergonomics* for you—just like a good chair or desk—that allow you to work more comfortably.
+There are a lot of common patterns used—like indenting to indicate hierarchy/nesting. But there are also no wrong ways to do it! In HTML, spaces are code *ergonomics* for you—just like a good chair or desk—that allow you to work more comfortably.
 
 > Code is read more often than it is written. Code should always be written in a way that promotes readability.
 >
@@ -459,7 +475,11 @@ There are a lot of common patterns used—like indenting to indicate hierarchy/n
 
 ## Block Elements
 
-[*Block-level elements*](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements) always start on a new line, and take up the full width available—stretching out to the left and right of their parent/container. They stack on top of each other. Importantly, block elements can have a top and bottom margin, unlike inline elements.
+[*Block-level elements*](https://developer.mozilla.org/en-US/docs/Glossary/Block-level_content) always start on a new line, and take up the full width available—stretching out to the left and right of their parent/container. They stack on top of each other. Importantly, block elements can have a top and bottom margin, unlike inline elements.
+
+[<cite>Block-level content – MDN</cite>](https://developer.mozilla.org/en-US/docs/Glossary/Block-level_content)
+	Our larger elements, stacked up.
+<!-- .right -->
 
 <section class="nowrap" style="--leading: 1.5rlh">
 
@@ -518,7 +538,11 @@ These are live, *editable* examples! Whatever is on the left is rendered on the 
 
 ## Inline Elements
 
-[*Inline elements*](https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements) do *not* start on a new line, and only take up as much width as necessary. You can think of these as the little metal slugs [from printing](<https://en.wikipedia.org/wiki/Slug_(typesetting)>), within text. Other text and inline elements will continue to flow around them, and they can wrap to new lines:
+[*Inline elements*](https://developer.mozilla.org/en-US/docs/Glossary/Inline-level_content) do *not* start on a new line, and only take up as much width as necessary. You can think of these as the little metal slugs [from printing](<https://en.wikipedia.org/wiki/Slug_(typesetting)>), within text. Other text and inline elements will continue to flow around them, and they can wrap to new lines:
+
+[<cite>Inline-level content – MDN</cite>](https://developer.mozilla.org/en-US/docs/Glossary/Inline-level_content)
+	Smaller, moving within our text.
+<!-- .right -->
 
 `<abbr>` `<a>` `<cite>` `<code>` `<del>` `<em>` `<img>` `<ins>` `<mark>` `<span>` `<strong>` `<sub>` `<sup>` `<time>`
 <!-- .balance style="--leading: 1.5rlh" -->
@@ -528,8 +552,6 @@ These are live, *editable* examples! Whatever is on the left is rendered on the 
 ***[Inline Example](inline/)***
 
 </figure>
-
-<!-- TODO more inline examples! -->
 
 ### Inline Whitespace
 
@@ -555,7 +577,9 @@ Inline elements [are the exception](https://developer.mozilla.org/en-US/docs/Web
 
 You can *comment* part of the code and the browser won’t show it. [Comments](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started#html_comments) are often used to explain your thinking, organize your code, “turn off” a bit of code, or temporarily hide whatever you’d like.
 
-<!-- TODO Rail links! -->
+[<cite>Using HTML comments – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Comments)
+	Always. Be. Commenting.
+<!-- .right -->
 
 <figure style="--lines: 11">
 
@@ -580,7 +604,11 @@ Keep in mind these are still readable in the *source*.
 
 ### Lists
 
-Any time you have more than two of something, you probably have [a *list*](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals#lists). These are commonly used for semantic navigation elements, as well—think *“here’s a list of links in this site”*:
+Any time you have more than two of something, you probably have [a *list*](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Lists). These are commonly used for semantic navigation elements, as well—think *“here’s a list of links in this site”*:
+
+[<cite>Lists – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Lists)
+	Lists are everywhere!
+<!-- .right -->
 
 <figure style="--lines: 21">
 
@@ -591,6 +619,10 @@ Any time you have more than two of something, you probably have [a *list*](https
 ### Description Lists
 
 There are [specific lists](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl) for defining things:
+
+[<cite>Description list element – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dl)
+	A more-specific, underused type.
+<!-- .right -->
 
 <figure style="--lines: 16">
 
@@ -605,7 +637,11 @@ These aren’t much to look at without CSS, though. Soon!
 
 ### Details&#x202F;/&thinsp;Summary
 
-There is even some basic interactivity (way, way ahead of JavaScript) with [*details disclosure*](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) elements that open and close:
+There is even some basic interactivity (way, way ahead of JavaScript) with [*details disclosure*](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) elements that open and close:
+
+[<cite>Details disclosure element – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/details)
+	Some basic interactivity!
+<!-- .right -->
 
 <figure style="--lines: 18">
 
@@ -621,6 +657,10 @@ You can do a lot with these, without any JavaScript! Our navigation is built wit
 ### Tables
 
 [*Tables*](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table) can we used to display *tabular* data:
+
+[<cite>Table element – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/table)
+	Before everything was a `div`, it was a `table`.
+<!-- .right -->
 
 <figure style="--lines: 25">
 
