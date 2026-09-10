@@ -101,7 +101,8 @@
 				/* Pass columns down for Weeks/Projects with dates, external channels. */
 				&:has(p:not(:only-child), a[href^="https"]) { grid-template-columns: subgrid }
 
-				a {
+				/* TODO Separate ToC better! */
+				a:not(main a) {
 					align-items:           baseline;
 					display:               inherit;
 					grid-column:           inherit;
@@ -145,6 +146,16 @@
 							sub { display: block }
 						}
 					}
+				}
+
+				/* TODO Select this better! Redundant with top `nav`. */
+				a:where(main a) {
+					text-box:        trim-both cap alphabetic;
+					margin-block:    var(---3px);
+					max-inline-size: 20ch;
+					overflow:        hidden;
+					padding-block:   var(--3px);
+					text-overflow:   ellipsis;
 				}
 
 				/* Drafts. */
