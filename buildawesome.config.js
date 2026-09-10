@@ -360,7 +360,6 @@ export default (config) => {
 
 	// Table of contents.
 	config.addPlugin(pluginToc, {
-		tags: ['h2'], // TODO Just to start!
 		ignoredElements: ['a'],
 		ul: true,
 		wrapper: (toc) => toc,

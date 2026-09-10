@@ -74,7 +74,7 @@
 			position:           fixed;
 		}
 
-		ul, menu {
+		:is(ul, menu):not(li > :is(ul, menu)) {
 			/* Space under the `nav`, less gutters. */
 			--remainder: calc(var(--dvh) - var(--block) - (2 * var(--padding) + 9 * var(--1px)) - 3 * var(--gutter));
 
@@ -97,8 +97,12 @@
 			&:has([aria-current='page']) { padding-inline-start: 3ex }
 
 			li {
+				/* TODO Revisit this spacing! And `max-inline-size`. */
+				--resolve: 1cap;
+
 				display:     inherit;
 				grid-column: span 2;
+				row-gap:     var(--resolve);
 
 				/* Pass columns down for Weeks/Projects with dates, external channels. */
 				&:has(p:not(:only-child), a[href^="https"]) { grid-template-columns: subgrid }
@@ -158,6 +162,22 @@
 					overflow:        hidden;
 					padding-block:   var(--3px);
 					text-overflow:   ellipsis;
+				}
+
+				> ul {
+					--family:  'Geneva';
+					--size:    var(--size--root);
+
+					display:             inherit;
+					margin-inline-start: var(--resolve);
+					row-gap:             var(--resolve);
+
+					ul {
+						--size: var(--size--note);
+
+						margin-inline-start: 1rcap;
+						row-gap:             inherit;
+					}
 				}
 
 				/* Drafts. */
