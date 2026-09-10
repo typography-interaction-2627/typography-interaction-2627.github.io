@@ -24,6 +24,7 @@
 			--size: var(--size--root);
 
 			inline-size:         fit-content;
+			isolation:           isolate;
 			margin-inline-end:   var(--right);
 			margin-inline-start: var(--left);
 
