@@ -175,7 +175,7 @@ export default (config) => {
 	// Do some automatic ragging.
 	const markdownRagging = (markdown) => {
 		const singleLetters = 'a|i'
-		const shortWords = 'an|as|at|be|in|is|it|of|on|or|to|we'
+		const shortWords = 'an|to|as|at|be|in|is|it|of|on|or|we'
 		const wordStarts = '^|\\s|\\(|\\[|“|‘|—|–' // Start of a token, whitespace, or opening/joining punctuation.
 
 		markdown.core.ruler.after('inline', 'ragging', ({ tokens }) =>
@@ -186,7 +186,8 @@ export default (config) => {
 						child.content = child.content.replace(new RegExp(`(${wordStarts})(${singleLetters}) (\\S)`, 'gi'), '$1$2\u00A0$3') // `&nbsp;`
 
 						// …then two-letter words, but not when the next word is already joined to a single-letter one.
-						child.content = child.content.replace(new RegExp(`(${wordStarts})(${shortWords}) (?!\\S*\u00A0)(\\S)`, 'gi'), '$1$2\u00A0$3')
+						// Prefer the later short word when a short word is followed by another short word, e.g. “or an external” → “or an external”.
+						child.content = child.content.replace(new RegExp(`(${wordStarts})(${shortWords}) (?!${shortWords}\\b)(?!\\S*\u00A0)(\\S)`, 'gi'), '$1$2\u00A0$3')
 
 						// Also when the word ends the token and content follows in a node (link, emphasis, etc.)—`nesting` skips closing tags and breaks.
 						children[index + 1]?.nesting >= 0 && !/break$/.test(children[index + 1].type) &&
