@@ -40,7 +40,7 @@ HTML is the standard markup language/format for creating web pages, containing t
 	When in doubt, refer to the MDN documentation!
 
 - [<cite>Basics of HTML</cite>](https://www.youtube.com/watch?v=CkzbI1Tv_rQ)\
-	A very calming introduction by [Laurel Schwulst](https://laurelschwulst.com).
+	A very calming introduction by [Laurel Schwulst](https://laurelschwulst.com).
 
 - [<cite>Organizing Files for the Web</cite>](https://docs.google.com/presentation/d/101TEdtacOFZhCwebijcJaX0h1BpDwhAm2SJhE3jW89c/edit#slide=id.g331f24f572_4_0)
 	[Sasha Portis](https://sashaportis.com) on (web) file-naming, for when you get to saving.
@@ -143,7 +143,7 @@ And as designers—they also help us to organize our systems, and give us hooks 
 **[Elements](https://developer.mozilla.org/en-US/docs/Glossary/Element) are composed of *tags* and their content:**
 
 [<cite>HTML Elements Reference – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
-	MDN will always go deep; this is *all* the elements.
+	MDN will always go deep; this is *all* the elements.
 <!-- .right -->
 
 <figure class="borderless">
@@ -215,7 +215,7 @@ Buttons: `<button>`
 <button>Close</button>
 ```
 
-Differing slightly from links, `<button>` are used for other, non-navigation interactions. These won’t do much for us until JS, though!
+Differing slightly from links, `<button>` are used for other, non-navigation interactions. These won’t do [much](#popovers) for us until JS, though!
 
 </dd>
 
@@ -387,7 +387,7 @@ Source: `src`
 The `src` attribute of `<img>` specifies the path to the image to be displayed—either relatively or absolutely.
 
 ```html <!-- .all -->
-<iframe src="https://typography-interaction-2526.github.io"></iframe>
+<iframe src="https://typography-interaction-2627.github.io"></iframe>
 ```
 
 Same thing for an `<iframe>`, which is [a little window](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe) into another website!
@@ -552,6 +552,8 @@ There are a lot of common patterns used—like indenting to indicate hierarchy/
 
 </section>
 
+### Let’s Try It Out
+
 <figure style="--lines: 15">
 
 ***[Block Example](block/)***
@@ -573,6 +575,8 @@ These are live, *editable* examples! Whatever is on the left is rendered on the 
 
 `<abbr>` `<a>` `<cite>` `<code>` `<del>` `<em>` `<img>` `<ins>` `<mark>` `<span>` `<strong>` `<sub>` `<sup>` `<time>`
 <!-- .balance style="--leading: 1.5rlh" -->
+
+### Let’s Try These Out Too
 
 <figure style="--lines: 13">
 
@@ -662,6 +666,27 @@ These aren’t much to look at without CSS, though. Soon!
 </figcaption>
 </figure>
 
+### Tables
+
+[*Tables*](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table) can we used to display [*tabular*](https://en.wikipedia.org/wiki/Table_(format)) data:
+
+[<cite>Table element – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/table)
+	Before everything was a `div`, it was a `table`.
+<!-- .right -->
+
+<figure style="--lines: 25">
+
+***[Table Example](table/)***
+
+<figcaption>
+
+This syntax is pretty verbose, for what you get—only reach for this if it fits the information.
+
+</figcaption>
+</figure>
+
+They used to be the only way to achieve multi-column or grid layouts, but that has luckily since been replaced by modern CSS techniques like `flexbox`, and `grid`. (Or even `float`.) We’ll talk about those later!
+
 ### Details&#x202F;/&thinsp;Summary
 
 There is even some basic interactivity (way, way ahead of JavaScript) with [*details disclosure*](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) elements that open and close:
@@ -681,26 +706,24 @@ You can do a lot with these, without any JavaScript! Our navigation is built wit
 </figcaption>
 </figure>
 
-### Tables
+### Popovers
 
-[*Tables*](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table) can we used to display *tabular* data:
+HTML continues to evolve, very recently adding native (non-JS) support for [*popovers*](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover)—click one thing, display another! You can do this natively now.
 
-[<cite>Table element – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/table)
-	Before everything was a `div`, it was a `table`.
+[<cite>`popover` attribute – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover)
+	Even more flexible interactivity!
 <!-- .right -->
 
-<figure style="--lines: 25">
+<figure style="--lines: 18">
 
-***[Table Example](table/)***
+***[Popover Example](popover/)***
 
 <figcaption>
 
-This syntax is pretty verbose, for what you get—only reach for this if it fits the information.
+No JS needed! This opens up a lot of interactive possibilities.
 
 </figcaption>
 </figure>
-
-They used to be the only way to achieve multi-column or grid layouts, but that has luckily since been replaced by modern CSS techniques like `flexbox`, and `grid`. (Or even `float`.) We’ll talk about those later!
 
 **Again, there are [many, many, many, many HTML elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element). Try and find the one that best fits your usage, wherever possible using a *semantic* element that fits your content.**
 
