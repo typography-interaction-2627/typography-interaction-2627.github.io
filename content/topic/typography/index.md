@@ -287,28 +287,44 @@ More typeface anatomy! [<cite>↗</cite>](https://material.io/design/typography/
 
 <dl>
 
-<dt style="--family: 'New York'; font-family: 'New York', serif; font-weight: normal">Serifs</dt>
+<dt style="--family: 'New York'; font-weight: normal">
+
+Serifs
+
+</dt>
 <dd>
 
 <sub>These have small lines (*serifs*) attached to the ends of letters</sub>
 
 </dd>
 
-<dt style="--family: 'Geneva'; font-family: 'Geneva', sans-serif; font-weight: normal">Sans Serifs</dt>
+<dt style="--family: 'Geneva'; font-weight: normal">
+
+Sans Serifs
+
+</dt>
 <dd>
 
 <sub>Without these lines (like this text here)</sub>
 
 </dd>
 
-<dt style="--family: 'Monaco'; --size: 12; font-family: 'Monaco', monospace; font-weight: normal">Monospace</dt>
+<dt style="--family: 'Monaco'; --size: 12; font-weight: normal">
+
+Monospace
+
+</dt>
 <dd>
 
 <sub>All characters the same width (as in `code`&#x202F;)</sub>
 
 </dd>
 
-<dt style="--family: 'Venice'; font-family: 'Venice', decorative; font-weight: normal">Decorative</dt>
+<dt style="--family: 'Venice'; font-weight: normal">
+
+Decorative
+
+</dt>
 <dd>
 
 <sub>…everything else (be careful)</sub>
