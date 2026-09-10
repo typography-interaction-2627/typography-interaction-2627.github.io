@@ -305,7 +305,7 @@
 				}
 			}
 			/* For poking out as needed. */
-			> :where(dt, li).all { inline-size: var(--main) }
+			> :where(dt, li).all { inline-size: calc(var(--main) - var(--gutter)) }
 
 			/* Not `cite` lists. */
 			&:where(:not(:has(> li > a > cite, > li > p:only-child > a > cite))) {
