@@ -1,6 +1,6 @@
 <style>
 	:where(main) {
-		:where(details) {
+		:where(details:not(nav details)) {
 			summary {
 				position:         relative;
 				background-color: var(--color);

@@ -294,7 +294,7 @@
 		}
 
 		/* Lists, lists, lists. */
-		:is(dl, ol, ul) {
+		:is(dl, ol, ul):not(nav :is(dl, ol, ul)) {
 			/* Extra spacing around loosies. */
 			&:where(:not([class], :first-child)),
 			&[class="all"] {
