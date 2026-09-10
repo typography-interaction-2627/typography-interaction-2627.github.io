@@ -82,7 +82,10 @@
 			}
 
 			/* Space these out. */
+			.before,
 			:where(details):not(:first-child) { margin-block-start: 1rlh }
+
+			:where(.after) + * { margin-block-start: 1rlh }
 
 			/* Manual column placements. */
 			:where(div, .all, .aside, .body, .middle, .five, .four, .left, .one, .recto, .right, .six, .three, .two, .verso) {
