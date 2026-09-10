@@ -120,194 +120,303 @@ And as designers—they also help us to organize our systems, and give us hooks 
 
 <figure class="borderless">
 <img src="tag.svg">
-</figure>
+<figcaption>
 
-<sub>Some elements do not have any content or children, like `<br>` or `<img>`. These are called [*empty elements*](https://developer.mozilla.org/en-US/docs/Glossary/Empty_element), and do not have a closing tag.</sub>
+Some elements do not have any content or children, like `<br>` or `<img>`. These are called [*empty elements*](https://developer.mozilla.org/en-US/docs/Glossary/Empty_element), and do not have a closing tag.
+
+</figcaption>
+</figure>
 
 <dl>
 
-Headings: `<h#>` <!-- #headings -->
+<dt id="headings">
 
+Headings: `h#`
 
-:	```html
-	<h1>There should only be one first-level heading!</h1>
-	```
+</dt>
+<dd>
 
-	There are also `<h2>` `<h3>` `<h4>` `<h5>` and `<h6>`. These provide semantic organization and hierarchy for your document!
+```html <!-- .all -->
+<h1>There should only be one first-level heading!</h1>
+```
 
-Paragraphs: `<p>` <!-- #paragraphs -->
+There are also `<h2>` `<h3>` `<h4>` `<h5>` and `<h6>`. These provide semantic organization and hierarchy for your document!
 
-:	```html
-	<p>You should always wrap your text in a paragraph!</p>
-	```
+</dd>
 
-	Our basic, default text element.
+<dt id="paragraphs">
 
-Links: `<a>` <!-- #paragraphs -->
+Paragraphs: `<p>`
 
-:	```html
-	<a href="https://www.example.com">Links need attributes!</a>
-	```
+</dt>
+<dd>
 
-	The `<a>` is for [*anchor*](https://www.w3.org/TR/html4/struct/links.html#h-12.1)—one *end* of the link.
+```html <!-- .all -->
+<p>You should always wrap your text in a paragraph!</p>
+```
 
-	The `href` (*H*ypertext *REF*erence) specifies a URL that the link points to, and the tag wraps the visible link text. This *attribute* can point to another, local HTML file (living in the same directory structure) or an external page. They can also point to specific parts of a page.
+Our basic, default text element.
 
-Images: `<img>` <!-- #images -->
+</dd>
 
-:	```html
-	<img src="example.jpg" alt="Images should have descriptions!">
-	```
+<dt id="links">
 
-	The `src` likewise can point to a local image file or an external URL! `alt` provides a description for accessibility/screen readers. More on these *attributes* in a bit.
+Links: `<a>`
 
-Containers <!-- #containers -->
+</dt>
+<dd>
 
-:	```html
-	<body>
-		<header>
-			<!-- A header. -->
-		</header>
-		<main>
-			<!-- Your main content. -->
-		</main>
-		<footer>
-			<!-- The footer. -->
-		</footer>
-	</body>
-	```
+```html <!-- .all -->
+<a href="https://www.example.com">Links need attributes!</a>
+```
 
-	Some others are `<nav>`, `<article>`, `<section>`, and `<div>` (when nothing else is more appropriate).
+The `<a>` is for [*anchor*](https://www.w3.org/TR/html4/struct/links.html#h-12.1)—one *end* of the link.
 
-	These are the structural containers of a website. The names don’t imbue function directly, but help us organize and think about our content structure—and also are helpful for accessibility.
+The `href=` (*H*ypertext *REF*erence) specifies a URL that the link points to, and the tag wraps the visible link text. This *attribute* can point to another, local HTML file (living in the same directory structure) or an external page. They can also point to specific parts of a page.
 
-Inline Text Elements <!-- #inline -->
+</dd>
 
-:	```html
-	<p>You may have noticed I like using<em>emphasis</em>.</p>
-	```
+<dt id="images">
 
-	These wrap around bits of text (within [headings](#headings) or `<p>`) for semantic meaning and to apply specific styles using `<span>`, `<strong>`, `<em>`, `<abbr>`, `<cite>`, `<time>`, `<code>`, `<mark>`, `<del>`, `<ins>`, `<sub>`, and `<sup>`.
+Images: `<img>`
 
-Lists: `ol` / `<ul>` <!-- #paragraphs -->
+</dt>
+<dd>
 
-:	```html
-	<ul>
-		<li><!-- A list item. --></li>
-		<li><!-- Another. --></li>
-		<li><!-- A third. --></li>
-	</ul>
-	```
+```html <!-- .all -->
+<img src="example.jpg" alt="Images should have descriptions!">
+```
 
-	If you have three of something, it is probably [a list](#lists-1)! There are also `ol`.
+The `src` likewise can point to a local image file or an external URL! `alt` provides a description for accessibility/screen readers. More on these *attributes* in a bit.
+
+</dd>
+
+<dt id="containers">
+
+Containers
+
+</dt>
+
+<dd>
+
+```html <!-- .all -->
+<body>
+	<header>
+		<!-- A header. -->
+	</header>
+	<main>
+		<!-- Your main content. -->
+	</main>
+	<footer>
+		<!-- The footer. -->
+	</footer>
+</body>
+```
+
+Some others are `<nav>`, `<article>`, `<section>`, and `<div>` (when nothing else is more appropriate).
+
+These are the structural containers of a website. The names don’t imbue function directly, but help us organize and think about our content structure—and also are helpful for accessibility.
+
+<dt id="inline">
+
+Inline Text Elements
+
+</dt>
+<dd>
+
+```html <!-- .all -->
+<p>You <strong>may</strong> notice I like using<em>emphasis</em>.</p>
+```
+
+These wrap around bits of text (within [headings](#headings) or `<p>`) for semantic meaning and to apply specific styles using `<span>`, `<strong>`, `<em>`, `<abbr>`, `<cite>`, `<time>`, `<code>`, `<mark>`, `<del>`, `<ins>`, `<sub>`, and `<sup>`.
+
+<dt id="lists">
+
+Lists: `ol` / `<ul>`
+
+</dt>
+<dd>
+
+```html <!-- .all -->
+<ul>
+	<li><!-- A list item. --></li>
+	<li><!-- Another. --></li>
+	<li><!-- A third. --></li>
+</ul>
+```
+
+If you have three of something, it is probably [a list](#lists-1)! There are also `ol`, when the *order* matters.
 
 </dl>
-<!-- .all -->
 
 **There are [many, many HTML elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element), all with particular uses. (We’ll unpack some more, later.)**
 
 ## Attributes
 
-** All HTML elements can have [attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes), which provide more information about the element:**
+**All HTML elements can have [attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes), which provide more information about the element:**
 
 [<cite>HTML Attribute Reference – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes)
 	There are a lot of them.
-<!-- .right .start -->
+<!-- .right -->
 
-<figure>
+<figure class="borderless">
 <img src="attr.svg">
 </figure>
 
 ### Common Attributes
 
-Language: `lang` <!-- #language -->
+<dl>
 
-:	```html
-	<html lang="en"></html>
-	```
+<dt id="language">
 
-	The `lang` attribute of the `<html>` tag declares the language of the Web page.
+Language: `lang`
 
-HyperText Reference: `href` <!-- #href -->
+</dt>
+<dd>
 
-:	```html
-	<a href="https://www.example.com">Goes to example.com</a>
-	```
+```html <!-- .all -->
+<html lang="en"></html>
+```
 
-	The `href` attribute of `<a>` specifies the URL of the page the link goes to.
+The `lang` attribute of the `<html>` tag declares the language of the Web page.
 
-Target: `target` <!-- #target -->
+</dd>
 
-:	```html
-	<a href="https://www.example.com" target="_blank">New tab!</a>
-	```
+<dt id="href">
 
-	The `target` attribute `_blank` can tell an `<a>` to open in a new window/tab.
+HyperText Reference: `href`
 
-	<sub>This can be annoying, so use it judiciously!</sub>
+</dt>
+<dd>
 
-Style: `style` <!-- #style -->
+```html <!-- .all -->
+<a href="https://www.example.com">Goes to example.com</a>
+```
 
-:	```html
-	<p style="color: blue;">This is blue text.</p>
-	```
+The `href` attribute of `<a>` specifies the URL of the page the link goes to.
 
-	The `style` attribute is used to add styles to an element, such as color, font, size, etc.
+</dd>
 
-	<sub>We’ll use CSS for this kind of thing, but know this is how it used to be done and it was brittle and terrible.</sub>
+<dt id="target">
 
-Source: `src` <!-- #src -->
+Target: `target`
 
-:	```html
-	<img src="example.jpg">
-	```
+</dt>
+<dd>
 
-	The `src` attribute of `<img>` specifies the path to the image to be displayed.
+```html <!-- .all -->
+<a href="https://www.example.com" target="_blank">New tab!</a>
+```
 
-	```html <!-- .add-before -->
-	<iframe src="https://typography-interaction-2526.github.io"></iframe>
-	```
+The `target` attribute `_blank` can tell an `<a>` to open in a new window/tab.
 
-	Same thing for an `<iframe>`, which is [a little window](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe) into another website.
+<sub>This can be pretty annoying, so use it judiciously!</sub>
 
-Dimensions: `width` / `height` <!-- #dimensions -->
+</dd>
 
-:	```html
-	<img src="example.jpg" width="200" height="200">
-	```
+<dt id="style">
 
-	The `width` and `height` attributes of `<img>` provide size information for images.
+Style: `style`
 
-	<sub>Not required, but helps prevent layout “sloshing” as images load.</sub>
+</dt>
+<dd>
 
-Alternate Text: `alt` <!-- #alt -->
+```html <!-- .all -->
+<p style="color: blue;">This is blue text.</p>
+```
 
-:	```html
-	<img src="example.jpg" alt="A description of the image.">
-	```
+The `style` attribute is used to add styles to an element, such as color, font, size, etc.
 
-	The `alt` attribute of `<img>` provides an alternate text for an image, used by screen readers.
+<sub>We’ll use CSS for this kind of thing, but know this is how it used to be done and it was brittle and terrible!</sub>
+</dd>
 
-Identifier: `id` <!-- #id -->
+<dt id="src">
 
-:	```html
-	<h2 id="a-heading-element">A heading element</h2>
-	```
+Source: `src`
 
-	```html
-	<a href="#a-heading-element">Goes to “a heading element”</a>
-	```
+</dt>
+<dd>
 
-	The `id` specifies a singular, unique element on a page—for CSS targeting and <span id="anchor-links">anchor (*scroll*, *jump*) links</span>, prepended with `#`.
+```html <!-- .all -->
+<img src="example.jpg">
+```
 
-Class: `class` <!-- #class -->
+The `src` attribute of `<img>` specifies the path to the image to be displayed.
 
-:	```html
-	<p class="warning">We’ll get into this soon.</p>
-	```
+```html <!-- .all -->
+<iframe src="https://typography-interaction-2526.github.io"></iframe>
+```
 
-	The `class` attribute provides an additional way to select the element in CSS or JS.
-<!-- .all -->
+Same thing for an `<iframe>`, which is [a little window](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe) into another website!
+
+</dd>
+
+<dt id="dimensions">
+
+Dimensions: `width` / `height`
+
+</dt>
+<dd>
+
+```html <!-- .all -->
+<img src="example.jpg" width="200" height="200">
+```
+
+The `width` and `height` attributes of `<img>` provide (unitless) size information for images.
+
+<sub>Not required, but helps prevent layout “sloshing” as images load.</sub>
+
+</dd>
+
+<dt id="alt">
+
+Alternate Text: `alt`
+
+</dt>
+<dd>
+
+```html <!-- .all -->
+<img src="example.jpg" alt="A description of the image.">
+```
+
+The `alt` attribute of `<img>` provides an alternate text for an image, used by screen readers.
+
+</dd>
+
+<dt id="id">
+
+Identifier: `id`
+
+</dt>
+<dd>
+
+```html <!-- .all -->
+<h2 id="a-heading-element">A heading element</h2>
+```
+
+```html <!-- .all -->
+<a href="#a-heading-element">Goes to “a heading element”</a>
+```
+
+The `id` specifies a singular, unique element on a page—for CSS targeting and <span id="anchor-links">anchor (*scroll*, *jump*) links</span>, prepended with `#`.
+
+</dd>
+
+<dt id="class">
+
+Class: `class`
+
+</dt>
+<dd>
+
+```html <!-- .all -->
+<p class="warning">We’ll get into this soon.</p>
+```
+
+The `class` attribute provides an additional way to select the element in CSS or JS.
+</dd>
+
+</dl>
 
 ## Case, White Space, Tabs, Line Breaks
 
@@ -332,9 +441,11 @@ Generally speaking, HTML doesn’t care about capitalization, extra white space,
 ```
 
 ```html <!-- .recto .center -->
-<body><h1>Dog Breeds</h1><p>There are many k
-ind of dog breeds</p><ul><li>German Shepherd
-</li><li>Bulldog</li><li>Poodle</li></ul></body>
+<body><h1>Dog Breeds</h1><p>There
+are many kind of dog breeds</p>
+<ul><li>German Shepherd</li><li>
+Bulldog</li><li>Poodle</li></ul>
+</body>
 ```
 
 But obviously, the left one here is much more readable to us humans. We can use white space, tabs/indenting, and line breaks to make it easier for us to read the code.
