@@ -70,7 +70,7 @@
 			box-shadow:         var(--shadow--border), var(--shadow--single);
 			inset-block:        var(--anchor, anchor(end) auto);
 			inset-inline-start: anchor(start);
-			max-block-size:     calc(round(down, var(--safe), 2cap) - var(--3px));
+			max-block-size:     calc(round(down, var(--safe), 2cap) - var(--3px)); /* Cut through a line. */
 			max-inline-size:    round(max(79vw, 18ch), var(--1px));
 			overflow-y:         scroll;
 			position-anchor:    --nav-details;
@@ -80,35 +80,39 @@
 		}
 
 		> :is(ol, ul) {
+			--resolve: 1cap;
+
 			column-gap:            2cap;
 			display:               grid;
-			grid-template-columns: minmax(0, 1fr) max-content;
-			inline-size:           max-content;
+			grid-template-columns: minmax(0, 1fr);
 			justify-items:         start;
-			padding-block:         1cap;
+			padding-block:         var(--resolve);
 			padding-inline:        2ex;
-			row-gap:               1cap;
+			row-gap:               var(--resolve);
 
 			/* Room for indicator. */
 			&:has([aria-current='page']) { padding-inline-start: 3ex }
 
+			/* Pass columns down for Weeks/Projects with dates, external channels. */
+			&:has(sub, a[href^="https"]) {
+				grid-template-columns: minmax(0, 1fr) max-content;
+
+				li {
+					grid-column:           span 2;
+					grid-template-columns: subgrid;
+				}
+			}
+
 			li {
-				/* TODO Revisit this spacing! And `max-inline-size`. */
-				--resolve: 1cap;
+				display: inherit;
+				row-gap: var(--resolve);
 
-				display:     inherit;
-				grid-column: span 2;
-				row-gap:     var(--resolve);
-
-				/* Pass columns down for Weeks/Projects with dates, external channels. */
-				&:has(p:not(:only-child), a[href^="https"]) { grid-template-columns: subgrid }
-
-				/* TODO Separate ToC better! */
-				a:not(main a) {
+				a {
 					align-items:           baseline;
 					display:               inherit;
 					grid-column:           inherit;
 					grid-template-columns: inherit;
+					block-size:            var(--resolve);
 
 					/* Indicators. */
 					&[aria-current='page']::before {
@@ -131,39 +135,23 @@
 						order:               1;
 					}
 
-					p {
-						margin-block:    var(---3px);
-						max-inline-size: 20ch;
-						overflow:        hidden;
-						padding-block:   var(--3px);
-						text-overflow:   ellipsis;
+					/* Dates. */
+					p:has(sub) {
+						--family: 'Geneva';
+						--size: var(--size--note);
 
-						/* Dates. */
-						&:has(sub) {
-							--family: 'Geneva';
-							--size: var(--size--note);
+						justify-self: end;
+						text-align:   right;
 
-							justify-self: end;
-
-							sub { display: block }
-						}
+						sub { display: block }
 					}
-				}
-
-				/* TODO Select this better! Redundant with top `nav`. */
-				a:where(main a) {
-					text-box:        trim-both cap alphabetic;
-					margin-block:    var(---3px);
-					max-inline-size: 20ch;
-					overflow:        hidden;
-					padding-block:   var(--3px);
-					text-overflow:   ellipsis;
 				}
 
 				> ol {
 					--family:  'Geneva';
 					--size:    var(--size--root);
 
+					justify-items:       start;
 					display:             inherit;
 					margin-inline-start: var(--resolve);
 					row-gap:             var(--resolve);
@@ -171,8 +159,8 @@
 					ol {
 						--size: var(--size--note);
 
-						margin-inline-start: 1rcap;
-						row-gap:             inherit;
+						margin-inline-start: calc(2 * var(--resolve));
+						row-gap:             var(--resolve);
 					}
 				}
 
