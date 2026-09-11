@@ -37,7 +37,7 @@ summary {
 	p,
 	td,
 	th
-) a:where(:not(:has(cite)):not(nav a)) {
+) a:where(:not(:has(cite))) {
 	/* Instead of `text-decoration`, which rounds to nearest (CSS) pixel! */
 	background:            var(--background--border);
 	background-clip:       content-box;
