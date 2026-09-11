@@ -63,7 +63,7 @@
 
 		@container style(--columns) {
 			/* Split bleed, or align to island. */
-			--edge:   round(max(calc(var(--bleed) / 2), calc(var(--safe) - var(--gutter))), var(--1px));
+			--edge:   round(max(calc(var(--bleed) / 2), calc(var(--notch) - var(--gutter))), var(--1px));
 			--inline: var(--gutter);
 		}
 
