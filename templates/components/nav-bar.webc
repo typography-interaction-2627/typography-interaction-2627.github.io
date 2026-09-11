@@ -15,6 +15,9 @@
 		--inline:  var(--padding);
 		--block:   var(--gutter);
 		--padding: var(--4px);
+		--icon:    calc(9 * var(--1px));
+		--nav:     calc(var(--block) + 2 * var(--padding) + var(--icon)); /* Inside edge of nav. */
+		--safe:    calc(var(--dvh) - var(--nav) - var(--nav--toc, calc( 2 * var(--gutter))));
 
 		--family: 'Chicago';
 		--size:   12;
@@ -49,7 +52,7 @@
 				fill: var(--color);
 
 				/* Type icons. */
-				&:first-child { block-size: calc(9 * var(--1px)) }
+				&:first-child { block-size: var(--icon) }
 			}
 		}
 

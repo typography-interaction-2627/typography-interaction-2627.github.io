@@ -26,7 +26,7 @@
 
 	details[name='nav'] {
 		pointer-events: auto;
-		anchor-scope: --nav-details;
+		anchor-scope:   --nav-details;
 
 		summary {
 			anchor-name: --nav-details;
@@ -67,31 +67,30 @@
 		}
 
 		&::details-content {
+			background-color:   var(--background);
+			block-size:         fit-content;
+			box-shadow:         var(--shadow--border), var(--shadow--single);
 			inset-block:        var(--anchor, anchor(end) auto);
 			inset-inline-start: anchor(start);
+			max-block-size:     calc(round(down, var(--safe), 2cap) - var(--3px));
+			max-inline-size:    round(max(79vw, 18ch), var(--1px));
+			overflow-y:         scroll;
 			position-anchor:    --nav-details;
 			position-try:       flip-inline, --in-page;
 			position:           fixed;
+			scrollbar-width:    none;
 		}
 
 		:is(ul, menu):not(li > :is(ul, menu)) {
-			/* Space under the `nav`, less gutters. */
-			--remainder: calc(var(--dvh) - var(--block) - (2 * var(--padding) + 9 * var(--1px)) - 3 * var(--gutter));
 
-			background-color:      var(--background);
-			box-shadow:            var(--shadow--border), var(--shadow--single);
 			column-gap:            2cap;
 			display:               grid;
 			grid-template-columns: minmax(0, 1fr) max-content;
 			inline-size:           max-content;
 			justify-items:         start;
-			max-block-size:        calc(round(var(--remainder), 2cap) - var(--3px));
-			max-inline-size:       round(max(79vw, 18ch), var(--1px));
-			overflow-y:            scroll;
 			padding-block:         1cap;
 			padding-inline:        2ex;
 			row-gap:               1cap;
-			scrollbar-width:       none;
 
 			/* Room for indicator. */
 			&:has([aria-current='page']) { padding-inline-start: 3ex }
@@ -195,7 +194,7 @@
 		main & {
 			--arrow:   180deg;
 			--divider: 0 auto;
-			--anchor: auto calc(var(--block) + var(--padding) + 9 * var(--1px) + var(--padding) - var(--1px));
+			--anchor: auto calc(var(--nav) - var(--1px));
 
 			/* TODO This is right/simpler but broken in Safari: */
 			/* --anchor: auto calc(anchor(start) - var(--1px)); */
