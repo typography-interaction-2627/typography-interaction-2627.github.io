@@ -11,30 +11,32 @@
 </script>
 <style>
 	nav {
-		--edge:    var(--bleed);
-		--inline:  var(--padding);
 		--block:   var(--gutter);
+		--inline:  var(--bleed);
+		--gap:     var(--padding);
 		--padding: var(--4px);
 		--icon:    calc(9 * var(--1px));
-		--nav:     calc(var(--block) + 2 * var(--padding) + var(--icon)); /* Inside edge of nav. */
-		--safe:    calc(var(--dvh) - var(--nav) - var(--nav--toc, calc( 2 * var(--gutter))));
+
+		--ceiling: calc(var(--block) + 2 * var(--padding) + var(--icon)); /* Inside edge of nav. */
+		--safe:    calc(var(--dvh) - var(--ceiling) - var(--floor, calc( 2 * var(--gutter))));
 
 		--family: 'Chicago';
 		--size:   12;
 		--wrap:   nowrap;
 
+		column-gap:      var(--gap);
 		display:         flex;
-		column-gap:      var(--inline);
 		inline-size:     round(var(--vw), var(--1px));
+		isolation:       isolate;
 		justify-content: space-between;
 		padding-block:   var(--block);
-		padding-inline:  var(--edge);
+		padding-inline:  var(--inline);
+		pointer-events:  none;
 		position:        fixed;
 		z-index:         1;
-		pointer-events:  none;
 
 		> ul {
-			column-gap: var(--inline);
+			column-gap: var(--gap);
 			display:    flex;
 		}
 
@@ -58,20 +60,20 @@
 
 		@media (width > 24.5em ) {
 			/* Split gutter. */
-			--edge: round(down, calc(var(--bleed) + var(--gutter) / 2), var(--1px));
+			--inline: round(down, calc(var(--bleed) + var(--gutter) / 2), var(--1px));
 		}
 
 		@container style(--columns) {
 			/* Split bleed, or align to island. */
-			--edge:   round(max(calc(var(--bleed) / 2), calc(var(--notch) - var(--gutter))), var(--1px));
-			--inline: var(--gutter);
+			--inline: round(max(calc(var(--bleed) / 2), calc(var(--notch) - var(--gutter))), var(--1px));
+			--gap:    var(--gutter);
 		}
 
 		@container style(--tablet) {
-			/* Split bleed, even spacing. */
-			--edge:    round(calc(var(--bleed) / 2), var(--1px));
-			--inline:  var(--edge);
-			--block:   var(--edge);
+			/* Even spacing, split bleed. */
+			--block:   var(--inline);
+			--inline:  round(calc(var(--bleed) / 2), var(--1px));
+			--gap:     var(--inline);
 			--padding: 1ex;
 		}
 	}
