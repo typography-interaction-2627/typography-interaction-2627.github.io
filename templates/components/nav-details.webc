@@ -71,12 +71,22 @@
 			inset-block:        var(--anchor, anchor(end) auto);
 			inset-inline-start: anchor(start);
 			max-block-size:     calc(round(down, var(--safe), 2cap) - var(--3px)); /* Cut through a line. */
-			max-inline-size:    round(max(79vw, 18ch), var(--1px));
+			max-inline-size:    round(min(var(--limit, 100vw), 80vw), var(--1px));
 			overflow-y:         scroll;
 			position-anchor:    --nav-details;
 			position-try:       flip-inline, --in-page;
 			position:           fixed;
 			scrollbar-width:    none;
+		}
+
+		/* Limit Topics, ToC. */
+		&:not(:has(sub, a[href^="https"])) { --limit: 25ch }
+
+		p {
+			margin-block:  var(---3px);
+			overflow:      hidden;
+			padding-block: var(--3px);
+			text-overflow: ellipsis;
 		}
 
 		> :is(ol, ul) {
