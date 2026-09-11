@@ -221,7 +221,11 @@
 	</ol>
 	<ul webc:if="collection == 'channels'" @raw="getChannels($data)"></ul>
 	<ol webc:if="collection == 'contents'">
-		<li webc:if="$data.video"><a href="#session-recording">Session Recording</a></li>
+		<li webc:if="$data.video">
+			<a href="#session-recording">
+				<p>Session Recording</p>
+			</a>
+		</li>
 		<template @raw="toc($data.content)" webc:nokeep></template>
 	</ol>
 </details>

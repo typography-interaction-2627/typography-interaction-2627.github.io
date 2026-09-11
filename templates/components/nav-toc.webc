@@ -1,7 +1,7 @@
 <style>
 	/* Overrides for `nav.webc` */
 	main > nav {
-		inset-block-end:     0;
+		inset-block-start:   round(calc(var(--svh) - var(--block--toc) - var(--nav)), var(--1px)); /* On-pattern. */
 		justify-content:     end;
 		padding-block-end:   var(--block--toc);
 		padding-block-start: initial;
