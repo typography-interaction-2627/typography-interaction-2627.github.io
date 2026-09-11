@@ -10,7 +10,7 @@
 
 		display:            grid;
 		isolation:          isolate; /* Internal `z-index`. */
-		margin-block-start: calc(-1 * var(--gutter)); /* Peek above fold. */
+		margin-block-start: calc(-1 * var(--peek));
 		row-gap:            var(--break); /* Between “windows.“ */
 
 		/* Space above anchor destination. */
