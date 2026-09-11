@@ -104,7 +104,7 @@
 		--column: var(--main);
 		--body:   var(--main);
 
-		--safe: round(env(safe-area-inset-left), var(--1px));
+		--notch: round(env(safe-area-inset-left), var(--1px));
 
 		--max:   calc(720 * var(--1px));
 		--break: round(calc(var(--vh) / 5), var(--1px));
@@ -149,7 +149,7 @@
 			--body:   calc(4 * var(--column) + 3 * var(--alley));
 		}
 
-		@container style(--columns) or style(--tablet) { --bleed: max(calc(2rlh - 1rcap), var(--safe)) }
+		@container style(--columns) or style(--tablet) { --bleed: max(calc(2rlh - 1rcap), var(--notch)) }
 
 		@container style(--tablet) {
 			--gutter: var(--bleed);
