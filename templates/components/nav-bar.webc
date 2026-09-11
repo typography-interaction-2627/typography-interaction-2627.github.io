@@ -11,29 +11,33 @@
 </script>
 <style>
 	nav {
-		--block:   var(--gutter);
-		--inline:  var(--bleed);
-		--gap:     var(--padding);
-		--padding: var(--4px);
-		--icon:    calc(9 * var(--1px));
+		--block:      var(--gutter);
+		--block--toc: calc(var(--gutter) + var(--peek));
+		--inline:     var(--bleed);
+		--gap:        var(--padding);
 
-		--ceiling: calc(var(--block) + 2 * var(--padding) + var(--icon)); /* Inside edge of nav. */
-		--safe:    calc(var(--dvh) - var(--ceiling) - var(--floor, calc( 2 * var(--gutter))));
+		--padding:    var(--4px);
+		--icon:       calc(9 * var(--1px));
+		--nav:        calc(2 * var(--padding) + var(--icon));
+
+		--ceiling: calc(var(--block) + var(--nav)); /* Inside edge of nav. */
+		--floor:   var(--gutter);
+		--safe:    calc(var(--dvh) - var(--ceiling) - var(--floor) - var(--gap));
 
 		--family: 'Chicago';
 		--size:   12;
 		--wrap:   nowrap;
 
-		column-gap:      var(--gap);
-		display:         flex;
-		inline-size:     round(var(--vw), var(--1px));
-		isolation:       isolate;
-		justify-content: space-between;
-		padding-block:   var(--block);
-		padding-inline:  var(--inline);
-		pointer-events:  none;
-		position:        fixed;
-		z-index:         1;
+		column-gap:          var(--gap);
+		display:             flex;
+		inline-size:         round(var(--vw), var(--1px));
+		isolation:           isolate;
+		justify-content:     space-between;
+		padding-block-start: var(--block);
+		padding-inline:      var(--inline);
+		pointer-events:      none;
+		position:            fixed;
+		z-index:             1;
 
 		> ul {
 			column-gap: var(--gap);
@@ -58,6 +62,9 @@
 			}
 		}
 
+		/* Prevent collisions when there is a ToC. */
+		body:has(main > nav) & { --floor: calc(var(--block--toc) + var(--nav)) }
+
 		@media (width > 24.5em ) {
 			/* Split gutter. */
 			--inline: round(down, calc(var(--bleed) + var(--gutter) / 2), var(--1px));
@@ -71,10 +78,11 @@
 
 		@container style(--tablet) {
 			/* Even spacing, split bleed. */
-			--block:   var(--inline);
-			--inline:  round(calc(var(--bleed) / 2), var(--1px));
-			--gap:     var(--inline);
-			--padding: 1ex;
+			--block:      var(--inline);
+			--block--toc: var(--block);
+			--inline:     round(calc(var(--bleed) / 2), var(--1px));
+			--gap:        var(--inline);
+			--padding:    1ex;
 		}
 	}
 </style>

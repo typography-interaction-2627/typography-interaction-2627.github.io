@@ -1,8 +1,10 @@
 <style>
-	/* TODO This builds on `nav-bar`; better organize these? */
+	/* Overrides for `nav.webc` */
 	main > nav {
-		inset-block-end: 0;
-		justify-content: end;
+		inset-block-end:     0;
+		justify-content:     end;
+		padding-block-end:   var(--block--toc);
+		padding-block-start: initial;
 	}
 </style>
 <nav webc:root="override">
