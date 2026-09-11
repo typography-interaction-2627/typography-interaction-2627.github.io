@@ -28,10 +28,25 @@
 
 		summary {
 			anchor-name: --nav-details;
+			box-shadow:  var(--shadow);
 			user-select: none;
 			z-index:     1;
 
-			/* Drop arrow. */
+			/* Dotted line when open. */
+			&::before {
+				background-color: var(--background);
+				block-size:       var(--1px);
+				inset-block:      var(--divider, auto 0);
+				inset-inline:     var(--1px);
+				mask:             var(--background--check);
+				position:         absolute;
+				z-index:          1;
+
+				/* Start pattern on white. */
+				mask-position: var(--2px) 0;
+			}
+
+			/* Dropdown arrow. */
 			svg:last-child:not(:only-of-type) {
 				block-size: var(--3px);
 				rotate:     var(--arrow, 0deg);
@@ -39,35 +54,23 @@
 		}
 
 		&[open] {
-			--arrow: 180deg;
+			--arrow:  180deg;
+			--shadow: var(--shadow--border), var(--shadow--single);
 
-			/* TODO Propery variable dance for theses! */
 			summary {
-				background-color: var(--background);
-				box-shadow:       var(--shadow--border--upper), var(--shadow--single);
+				--color: var(--background);
 
 				* { --color: initial }
 
-				&::before {
-					background-color: var(--background);
-					block-size:       var(--1px);
-					content:          '';
-					inset-block:      var(--divider, auto var(---1px));
-					inset-inline:     var(--1px);
-					mask:             var(--background--check);
-					position:         absolute;
-					z-index:          1;
-
-					/* Start pattern on white. */
-					mask-position: var(--2px) 0;
-				}
+				&::before { content: '' }
 			}
 		}
 
+		/* The “dropdown.” */
 		&::details-content {
 			background-color:   var(--background);
 			block-size:         fit-content;
-			box-shadow:         var(--shadow--border), var(--shadow--single);
+			box-shadow:         var(--shadow);
 			inset-block:        var(--anchor, anchor(end) auto);
 			inset-inline-start: anchor(start);
 			max-block-size:     calc(round(down, var(--safe), 2cap) - var(--3px)); /* Cut through a line. */
