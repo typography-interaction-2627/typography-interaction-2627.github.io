@@ -79,8 +79,7 @@
 			scrollbar-width:    none;
 		}
 
-		:is(ul, menu):not(li > :is(ul, menu)) {
-
+		> :is(ol, ul) {
 			column-gap:            2cap;
 			display:               grid;
 			grid-template-columns: minmax(0, 1fr) max-content;
@@ -161,7 +160,7 @@
 					text-overflow:   ellipsis;
 				}
 
-				> ul {
+				> ol {
 					--family:  'Geneva';
 					--size:    var(--size--root);
 
@@ -169,7 +168,7 @@
 					margin-inline-start: var(--resolve);
 					row-gap:             var(--resolve);
 
-					ul {
+					ol {
 						--size: var(--size--note);
 
 						margin-inline-start: 1rcap;
@@ -214,17 +213,17 @@
 		<svg webc:nokeep @html="inlineSvg(`assets/icons/nav/${collection}.svg`)"></svg>
 		<svg webc:nokeep @html="inlineSvg('assets/icons/nav/drop.svg')"></svg>
 	</summary>
-	<ul webc:if="$data.collections[collection]">
+	<ol webc:if="$data.collections[collection]">
 		<li webc:for="item of $data.collections[collection]">
 			<a :aria-current="item.url === $data.page.url && 'page'" :href="item.url">
 				<p @html="item.data.title"></p>
 				<p webc:if="collection != 'topics'"><sub @text="shortDate(item.data.date)"></sub></p>
 			</a>
 		</li>
-	</ul>
+	</ol>
 	<ul webc:if="collection == 'channels'" @raw="getChannels($data)"></ul>
-	<menu webc:if="collection == 'contents'">
+	<ol webc:if="collection == 'contents'">
 		<li webc:if="$data.video"><a href="#session-recording">Session Recording</a></li>
 		<template @raw="toc($data.content)" webc:nokeep></template>
-	</menu>
+	</ol>
 </details>

@@ -293,8 +293,8 @@
 			--wrap: balance;
 		}
 
-		/* Lists, lists, lists. */
-		:is(dl, ol, ul):where(:not(nav :is(dl, ol, ul))) {
+		/* Lists, lists, lists. (Not `nav` lists.) */
+		:is(dl, ol, ul):where(:not(nav :is(ol, ul))) {
 			/* Extra spacing around loosies. */
 			&:where(:not([class], :first-child)),
 			&[class="all"] {
@@ -364,7 +364,7 @@
 			}
 		}
 
-		:where(ol) {
+		:where(ol:not(nav ol)) {
 			counter-reset: index;
 
 			> li::before {

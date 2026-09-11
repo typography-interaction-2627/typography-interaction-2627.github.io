@@ -361,7 +361,6 @@ export default (config) => {
 	// Table of contents.
 	config.addPlugin(pluginToc, {
 		ignoredElements: ['a'],
-		ul: true,
 		wrapper: (toc) => {
 			const root = parse(toc)
 
@@ -369,7 +368,7 @@ export default (config) => {
 			root.querySelectorAll('a').forEach((link) => link.innerHTML = `<p>${link.innerHTML}</p>`)
 
 			// Drop outer list.
-			return root.querySelector('ul')?.innerHTML
+			return root.querySelector('ol')?.innerHTML
 		},
 	})
 
