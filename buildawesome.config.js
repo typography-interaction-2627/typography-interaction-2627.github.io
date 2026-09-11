@@ -362,7 +362,15 @@ export default (config) => {
 	config.addPlugin(pluginToc, {
 		ignoredElements: ['a'],
 		ul: true,
-		wrapper: (toc) => toc,
+		wrapper: (toc) => {
+			const root = parse(toc)
+
+			// Easier for type styles.
+			root.querySelectorAll('a').forEach((link) => link.innerHTML = `<p>${link.innerHTML}</p>`)
+
+			// Drop outer list.
+			return root.querySelector('ul')?.innerHTML
+		},
 	})
 
 	// Other filters.
