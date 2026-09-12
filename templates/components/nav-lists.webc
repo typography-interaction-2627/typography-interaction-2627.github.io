@@ -120,6 +120,14 @@
 		}
 	}
 </style>
+<script webc:bucket="default">
+	const updateCurrentHash = () => document.querySelectorAll('nav a[href^="#"]').forEach((link) =>
+		link.ariaCurrent = link.hash === window.location.hash ? 'true' : null)
+
+	updateCurrentHash()
+	window.addEventListener('hashchange', updateCurrentHash)
+	window.addEventListener('scrollhashchange', updateCurrentHash)
+</script>
 <template webc:nokeep webc:root="override">
 	<ol webc:if="$data.collections[collection]">
 		<li webc:for="item of $data.collections[collection]">

@@ -430,10 +430,12 @@
 						if (resizeFrame || resizeScrollPosition !== null) return
 
 						(entry.isIntersecting)
-							? history.replaceState(null, '', `#${section.querySelector('[id]')?.id}`)
+							? (history.replaceState(null, '', `#${section.querySelector('[id]')?.id}`),
+								window.dispatchEvent(new Event('scrollhashchange'))) // Custom for the ToC indicator.
 							: ((section === ([...sections][0]) && entry.boundingClientRect.top >= 0)
 								|| (section === ([...sections].at(-1)) && entry.boundingClientRect.top <= 0)) &&
-									history.replaceState(null, '', window.location.pathname + window.location.search)
+								(history.replaceState(null, '', window.location.pathname + window.location.search),
+									window.dispatchEvent(new Event('scrollhashchange')))
 					},
 					{
 						rootMargin:
