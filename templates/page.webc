@@ -3,7 +3,6 @@
 	<style>
 		:where(:root) {
 			/* TODO Measure scrollbar in JS for even `100vw` centering! */
-			scroll-behavior:  smooth;
 			scrollbar-gutter: both;
 			overflow-y:       scroll;
 
@@ -14,6 +13,8 @@
 				color:            var(--background);
 				background-color: var(--color);
 			}
+
+			@media (prefers-reduced-motion: no-preference) { scroll-behavior: smooth }
 		}
 
 		body {
