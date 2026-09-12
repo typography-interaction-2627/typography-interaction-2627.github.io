@@ -29,7 +29,7 @@
 		row-gap:               var(--resolve);
 
 		/* Room for indicator. */
-		&:has([aria-current='page']) { padding-inline-start: 3ex }
+		&:has([aria-current]) { padding-inline-start: 3ex }
 
 		/* Pass columns down for Weeks/Projects with dates, external channels. */
 		&:has(sub, a[href^="https"]) {
@@ -41,6 +41,7 @@
 			}
 		}
 
+		/* … */
 		p {
 			margin-block:  var(---3px);
 			overflow:      hidden;
@@ -49,24 +50,27 @@
 		}
 
 		li {
-			display: inherit;
-			row-gap: var(--resolve);
+			display:  inherit;
+			position: relative;
+			row-gap:  var(--resolve);
+
+			/* Current indicator. */
+			&:has(> a[aria-current])::before {
+				content:            '◆' / '';
+				inset-inline-start: -2ex;
+				position:           absolute;
+				text-box:           trim-both cap alphabetic;
+			}
 
 			a {
 				align-items:           baseline;
+				block-size:            var(--resolve);
 				display:               inherit;
 				grid-column:           inherit;
 				grid-template-columns: inherit;
-				block-size:            var(--resolve);
+				scroll-margin-block:   calc(3 * var(--resolve) + var(--3px));
 
-				/* Indicators. */
-				&[aria-current='page']::before {
-					content:          '◆' / '';
-					inset-inline-end: calc(100% + 1ex);
-					position:         absolute;
-					text-box:         trim-both cap alphabetic;
-				}
-
+				/* Externals. */
 				&[href^="https"]::before {
 					align-self:          end;
 					background-image:    url('/assets/icons/&nearr.svg');
@@ -92,20 +96,27 @@
 				}
 			}
 
+			/* ToC nesting. */
 			> ol {
-				--family:  'Geneva';
-				--size:    var(--size--root);
+				justify-items: start;
+				display:       inherit;
+				row-gap:       var(--resolve);
 
-				justify-items:       start;
-				display:             inherit;
-				margin-inline-start: var(--resolve);
-				row-gap:             var(--resolve);
+				a {
+					--family: 'Geneva';
+					--size:   var(--size--root);
+
+					margin-inline-start: var(--resolve)
+				}
 
 				ol {
-					--size: var(--size--note);
+					row-gap: var(--resolve);
 
-					margin-inline-start: calc(2 * var(--resolve));
-					row-gap:             var(--resolve);
+					a {
+						--size: var(--size--note);
+
+						margin-inline-start: calc(2 * var(--resolve));
+					}
 				}
 			}
 
@@ -125,7 +136,7 @@
 		const current = link.hash === window.location.hash
 
 		link.ariaCurrent = current ? 'true' : null
-		current && link.scrollIntoView({ block: 'start' })
+		current && link.scrollIntoView({ block: 'nearest' })
 	})
 
 	updateCurrentHash()
