@@ -6,13 +6,16 @@
 		--inset:    auto var(---1px);
 		--position: block-start;
 		--stack:    1;
+		--start:    round(calc(var(--svh) - var(--block--toc) - var(--nav)), var(--1px)); /* On-pattern. */
 
-		inset-block-start:   round(calc(var(--svh) - var(--block--toc) - var(--nav)), var(--1px)); /* On-pattern. */
+		inset-block-start:   var(--start);
 		justify-content:     end;
 		padding-block-end:   var(--block--toc);
 		padding-block-start: initial;
 
 		[open] { --arrow: initial }
+
+		@supports (-moz-appearance: none) { --inset: auto calc(var(--svh) - var(--start) - var(--1px)) }
 	}
 </style>
 <nav webc:root="override">

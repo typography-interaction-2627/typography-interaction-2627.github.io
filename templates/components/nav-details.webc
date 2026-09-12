@@ -1,8 +1,8 @@
 <style webc:bucket="components">
 	details[name='nav'] {
-		pointer-events: auto;
 		anchor-scope:   --nav-details;
 		isolation:      isolate;
+		pointer-events: auto;
 
 		summary {
 			anchor-name: --nav-details;
@@ -51,8 +51,6 @@
 			box-shadow:          var(--shadow);
 			inline-size:         max-content;
 			inset-block:         var(--inset, calc(anchor(end) - var(--1px)) auto);
-			inset-inline-end:    anchor(end);
-			inset-inline-start:  var(--inline);
 			margin-inline-start: var(--inline);
 			max-block-size:      calc(round(down, var(--safe), 2cap) - var(--3px)); /* Cut through a line. */
 			max-inline-size:     round(min(var(--limit, 100vw), 80vw), var(--1px));
@@ -61,6 +59,18 @@
 			position-area:       var(--position, block-end) span-inline-start;
 			position:            absolute;
 			scrollbar-width:     none;
+		}
+
+		/* Does not like the `absolute`! */
+		@supports (-moz-appearance: none) {
+			display: grid;
+
+			&::details-content {
+				inset-block:       var(--inset, calc(var(--ceiling) - var(--1px)) auto);
+				justify-self:      end;
+				padding-block-end: var(--3px);
+				position:          fixed;
+			}
 		}
 
 		/* Limit Topics, ToC. */
