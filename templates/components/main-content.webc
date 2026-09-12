@@ -406,6 +406,10 @@
 	const sections = new Set()
 	let resizeFrame
 	let resizeScrollPosition = null
+	let hashNavigation
+
+	window.addEventListener('hashchange', () => (hashNavigation = true))
+	window.addEventListener('scrollend', () => (hashNavigation = false))
 
 	window.addEventListener('resize', () => {
 		resizeScrollPosition = window.scrollY
@@ -428,6 +432,7 @@
 				new IntersectionObserver(
 					([entry]) => {
 						if (resizeFrame || resizeScrollPosition !== null) return
+						if (hashNavigation) return
 
 						(entry.isIntersecting)
 							? (history.replaceState(null, '', `#${section.querySelector('[id]')?.id}`),
@@ -437,14 +442,7 @@
 								(history.replaceState(null, '', window.location.pathname + window.location.search),
 									window.dispatchEvent(new Event('scrollhashchange')))
 					},
-					{
-						rootMargin:
-							section.matches('main > section:first-child')
-								? '0% 0% -33%'
-								: section.matches('main > section:last-child')
-									? '0% 0% -50%'
-									: '-50% 0%',
-					},
+					{ rootMargin: '-50% 0%' },
 				).observe(section)
 			}
 		})
