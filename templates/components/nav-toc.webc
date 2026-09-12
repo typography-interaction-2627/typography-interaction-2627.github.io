@@ -6,7 +6,7 @@
 		--inset:    auto var(---1px);
 		--position: block-start;
 		--stack:    1;
-		--start:    round(calc(var(--svh) - var(--block--toc) - var(--nav)), var(--1px)); /* On-pattern. */
+		--start:    round(calc(var(--dvh) - var(--block--toc) - var(--nav)), var(--1px)); /* On-pattern. */
 
 		inset-block-start:   var(--start);
 		justify-content:     end;
