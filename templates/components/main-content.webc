@@ -9,7 +9,6 @@
 		@media (width > 42em) { --anchor: calc(3 * var(--gutter)) }
 
 		display:            grid;
-		isolation:          isolate; /* Internal `z-index`. */
 		margin-block-start: calc(-1 * var(--peek));
 		row-gap:            var(--break); /* Between “windows.“ */
 
@@ -43,6 +42,7 @@
 			display:             grid;
 			grid-auto-rows:      min-content;
 			inline-size:         var(--page);
+			isolation:           isolate; /* Internal `z-index`. */
 			margin-inline-start: round(down, calc((var(--vw) - var(--page)) / 2), var(--1px)); /* Land on-pattern. */
 			padding-block-end:   calc(2 * var(--gutter) + var(--1px));
 			padding-block-start: calc(var(--gutter) + var(--1px));
