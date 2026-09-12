@@ -23,7 +23,6 @@
 		column-gap:            2cap;
 		display:               grid;
 		grid-template-columns: minmax(0, 1fr);
-		justify-items:         start;
 		padding-block:         var(--resolve);
 		padding-inline:        2ex;
 		row-gap:               var(--resolve);
@@ -38,21 +37,22 @@
 			li {
 				grid-column:           span 2;
 				grid-template-columns: subgrid;
+
+				a {
+					align-items:           baseline;
+					display:               inherit;
+					grid-column:           inherit;
+					grid-template-columns: inherit;
+				}
 			}
 		}
 
-		/* … */
-		p {
-			margin-block:  var(---3px);
-			overflow:      hidden;
-			padding-block: var(--3px);
-			text-overflow: ellipsis;
-		}
-
 		li {
-			display:  inherit;
-			position: relative;
-			row-gap:  var(--resolve);
+			display:               inherit;
+			grid-template-columns: inherit;
+			justify-items:         start;
+			position:              relative;
+			row-gap:               var(--resolve);
 
 			/* Current indicator. */
 			&:has(> a[aria-current])::before {
@@ -63,12 +63,10 @@
 			}
 
 			a {
-				align-items:           baseline;
-				block-size:            var(--resolve);
-				display:               inherit;
-				grid-column:           inherit;
-				grid-template-columns: inherit;
-				scroll-margin-block:   calc(3 * var(--resolve) + var(--3px));
+				block-size:          var(--resolve);
+				inline-size:         max-content;
+				max-inline-size:     100%;
+				scroll-margin-block: calc(3 * var(--resolve) + var(--3px));
 
 				/* Externals. */
 				&[href^="https"]::before {
@@ -84,38 +82,50 @@
 					order:               1;
 				}
 
-				/* Dates. */
-				p:has(sub) {
-					--family: 'Geneva';
-					--size: var(--size--note);
+				/* … */
+				p {
+					margin-block:  var(---3px);
+					overflow:      hidden;
+					padding-block: var(--3px);
+					text-overflow: ellipsis;
 
-					justify-self: end;
-					text-align:   right;
+					/* Dates. */
+					&:has(sub) {
+						--family: 'Geneva';
+						--size: var(--size--note);
 
-					sub { display: block }
+						justify-self: end;
+						text-align:   right;
+
+						sub { display: block }
+					}
 				}
 			}
 
 			/* ToC nesting. */
 			> ol {
-				justify-items: start;
-				display:       inherit;
-				row-gap:       var(--resolve);
+				display:               inherit;
+				grid-template-columns: inherit;
+				row-gap:               var(--resolve);
 
 				a {
 					--family: 'Geneva';
 					--size:   var(--size--root);
 
-					margin-inline-start: var(--resolve)
+					margin-inline-start: var(--resolve);
+					max-inline-size:     calc(100% - var(--resolve));
+					/* TODO Better way to do this? Without Safari always `…` */
 				}
 
 				ol {
-					row-gap: var(--resolve);
+					grid-template-columns: inherit;
+					row-gap:               var(--resolve);
 
 					a {
 						--size: var(--size--note);
 
 						margin-inline-start: calc(2 * var(--resolve));
+						max-inline-size:     calc(100% - 2 * var(--resolve));
 					}
 				}
 			}
