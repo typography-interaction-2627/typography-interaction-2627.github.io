@@ -1,21 +1,3 @@
-<script webc:setup>
-	export const getChannels = (data) => {
-		const channels = parseHtml(data.collections.root.find(({ inputPath }) => inputPath.endsWith('content/syllabus.md')).content).querySelector('#channels')
-		channels?.firstElementChild?.remove()
-
-		channels?.querySelectorAll('li').forEach((item) => {
-			const link = item.querySelector('a')
-			const cite = link?.querySelector('cite')
-
-			cite && (
-				link.set_content(`<p>${cite.innerHTML}</p>`),
-				item.set_content(link.outerHTML)
-			)
-		})
-
-		return channels?.innerHTML ?? ''
-	}
-</script>
 <style webc:bucket="components">
 	details[name='nav'] {
 		pointer-events: auto;
@@ -83,109 +65,6 @@
 
 		/* Limit Topics, ToC. */
 		&:not(:has(sub, a[href^="https"])) { --limit: 25ch }
-
-		p {
-			margin-block:  var(---3px);
-			overflow:      hidden;
-			padding-block: var(--3px);
-			text-overflow: ellipsis;
-		}
-
-		> :is(ol, ul) {
-			--resolve: 1cap;
-
-			column-gap:            2cap;
-			display:               grid;
-			grid-template-columns: minmax(0, 1fr);
-			justify-items:         start;
-			padding-block:         var(--resolve);
-			padding-inline:        2ex;
-			row-gap:               var(--resolve);
-
-			/* Room for indicator. */
-			&:has([aria-current='page']) { padding-inline-start: 3ex }
-
-			/* Pass columns down for Weeks/Projects with dates, external channels. */
-			&:has(sub, a[href^="https"]) {
-				grid-template-columns: minmax(0, 1fr) max-content;
-
-				li {
-					grid-column:           span 2;
-					grid-template-columns: subgrid;
-				}
-			}
-
-			li {
-				display: inherit;
-				row-gap: var(--resolve);
-
-				a {
-					align-items:           baseline;
-					display:               inherit;
-					grid-column:           inherit;
-					grid-template-columns: inherit;
-					block-size:            var(--resolve);
-
-					/* Indicators. */
-					&[aria-current='page']::before {
-						content:          '◆' / '';
-						inset-inline-end: calc(100% + 1ex);
-						position:         absolute;
-						text-box:         trim-both cap alphabetic;
-					}
-
-					&[href^="https"]::before {
-						align-self:          end;
-						background-image:    url('/assets/icons/&nearr.svg');
-						background-position: center;
-						background-repeat:   no-repeat;
-						background-size:     var(--7px);
-						block-size:          var(--7px);
-						color:               transparent;
-						content:             '↗' / '';
-						inline-size:         var(--7px);
-						order:               1;
-					}
-
-					/* Dates. */
-					p:has(sub) {
-						--family: 'Geneva';
-						--size: var(--size--note);
-
-						justify-self: end;
-						text-align:   right;
-
-						sub { display: block }
-					}
-				}
-
-				> ol {
-					--family:  'Geneva';
-					--size:    var(--size--root);
-
-					justify-items:       start;
-					display:             inherit;
-					margin-inline-start: var(--resolve);
-					row-gap:             var(--resolve);
-
-					ol {
-						--size: var(--size--note);
-
-						margin-inline-start: calc(2 * var(--resolve));
-						row-gap:             var(--resolve);
-					}
-				}
-
-				/* Drafts. */
-				&:has(a:not([href])) {
-					margin:         var(---3px);
-					mask:           var(--background--check);
-					padding:        var(--3px);
-					pointer-events: none;
-					user-select:    none;
-				}
-			}
-		}
 	}
 </style>
 <script webc:bucket="default">
@@ -201,21 +80,5 @@
 		<svg webc:nokeep @html="inlineSvg(`assets/icons/nav/${collection}.svg`)"></svg>
 		<svg webc:nokeep @html="inlineSvg('assets/icons/nav/drop.svg')"></svg>
 	</summary>
-	<ol webc:if="$data.collections[collection]">
-		<li webc:for="item of $data.collections[collection]">
-			<a :aria-current="item.url === $data.page.url && 'page'" :href="item.url">
-				<p @html="item.data.title"></p>
-				<p webc:if="collection != 'topics'"><sub @text="shortDate(item.data.date)"></sub></p>
-			</a>
-		</li>
-	</ol>
-	<ul webc:if="collection == 'channels'" @raw="getChannels($data)"></ul>
-	<ol webc:if="collection == 'contents'">
-		<li webc:if="$data.video">
-			<a href="#session-recording">
-				<p>Session Recording</p>
-			</a>
-		</li>
-		<template @raw="toc($data.content)" webc:nokeep></template>
-	</ol>
+	<nav-lists :@collection="collection"></nav-lists>
 </details>
