@@ -183,7 +183,7 @@
 					translate:           0 round(down, calc(-1 * var(--resolve) + var(--8px)), var(--1px));
 
 					/* TODO Unravel this! Shouldn’t need the override. */
-					@supports (not (font: -apple-system-body)) and (not (-moz-appearance: none)) { --font: 'Geneva 14' }
+					@supports (not (-moz-appearance: none)) { --font: 'Geneva 14' }
 
 					&::before {
 						content:    '#';
