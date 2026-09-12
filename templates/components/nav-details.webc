@@ -16,21 +16,17 @@
 		return channels?.innerHTML ?? ''
 	}
 </script>
-<style>
-	@position-try --in-page {
-		inset-inline-end:   var(--inline);
-		inset-inline-start: initial;
-	}
-
+<style webc:bucket="components">
 	details[name='nav'] {
 		pointer-events: auto;
 		anchor-scope:   --nav-details;
+		isolation:      isolate;
 
 		summary {
 			anchor-name: --nav-details;
 			box-shadow:  var(--shadow);
 			user-select: none;
-			z-index:     1;
+			z-index:     var(--stack, initial); /* Over ToC shadow. */
 
 			/* Dotted line when open. */
 			&::before {
@@ -53,7 +49,7 @@
 			}
 		}
 
-		&[open] {
+		&:where([open]) {
 			--arrow:  180deg;
 			--shadow: var(--shadow--border), var(--shadow--single);
 
@@ -68,18 +64,21 @@
 
 		/* The “dropdown.” */
 		&::details-content {
-			background-color:   var(--background);
-			block-size:         fit-content;
-			box-shadow:         var(--shadow);
-			inset-block:        var(--anchor, anchor(end) auto);
-			inset-inline-start: anchor(start);
-			max-block-size:     calc(round(down, var(--safe), 2cap) - var(--3px)); /* Cut through a line. */
-			max-inline-size:    round(min(var(--limit, 100vw), 80vw), var(--1px));
-			overflow-y:         scroll;
-			position-anchor:    --nav-details;
-			position-try:       flip-inline, --in-page;
-			position:           fixed;
-			scrollbar-width:    none;
+			background-color:    var(--background);
+			block-size:          fit-content;
+			box-shadow:          var(--shadow);
+			inline-size:         max-content;
+			inset-block:         var(--inset, calc(anchor(end) - var(--1px)) auto);
+			inset-inline-end:    anchor(end);
+			inset-inline-start:  var(--inline);
+			margin-inline-start: var(--inline);
+			max-block-size:      calc(round(down, var(--safe), 2cap) - var(--3px)); /* Cut through a line. */
+			max-inline-size:     round(min(var(--limit, 100vw), 80vw), var(--1px));
+			overflow-y:          scroll;
+			position-anchor:     --nav-details;
+			position-area:       var(--position, block-end) span-inline-start;
+			position:            absolute;
+			scrollbar-width:     none;
 		}
 
 		/* Limit Topics, ToC. */
@@ -186,18 +185,6 @@
 					user-select:    none;
 				}
 			}
-		}
-
-		/* Table of contents! */
-		main & {
-			--arrow:   180deg;
-			--divider: 0 auto;
-			--anchor:  auto calc(var(--ceiling) - var(--1px));
-
-			/* TODO This is right/simpler but broken in Safari: */
-			/* --anchor: auto calc(anchor(start) - var(--1px)); */
-
-			&[open] { --arrow: initial }
 		}
 	}
 </style>

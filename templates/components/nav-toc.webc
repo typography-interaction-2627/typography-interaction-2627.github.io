@@ -1,10 +1,18 @@
-<style>
-	/* Overrides for `nav.webc` */
+<style webc:bucket="components">
+	/* Overrides for `nav-bar.webc` */
 	main > nav {
+		--arrow:    180deg;
+		--divider:  0 auto;
+		--inset:    auto var(---1px);
+		--position: block-start;
+		--stack:    1;
+
 		inset-block-start:   round(calc(var(--svh) - var(--block--toc) - var(--nav)), var(--1px)); /* On-pattern. */
 		justify-content:     end;
 		padding-block-end:   var(--block--toc);
 		padding-block-start: initial;
+
+		[open] { --arrow: initial }
 	}
 </style>
 <nav webc:root="override">
