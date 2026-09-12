@@ -16,7 +16,7 @@
 		return channels?.innerHTML ?? ''
 	}
 </script>
-<style>
+<style webc:bucket="components">
 	details[name='nav'] > :is(ol, ul) {
 		--resolve: 1cap;
 
