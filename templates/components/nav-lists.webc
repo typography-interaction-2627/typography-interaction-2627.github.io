@@ -121,8 +121,12 @@
 	}
 </style>
 <script webc:bucket="default">
-	const updateCurrentHash = () => document.querySelectorAll('nav a[href^="#"]').forEach((link) =>
-		link.ariaCurrent = link.hash === window.location.hash ? 'true' : null)
+	const updateCurrentHash = () => document.querySelectorAll('nav a[href^="#"]').forEach((link) => {
+		const current = link.hash === window.location.hash
+
+		link.ariaCurrent = current ? 'true' : null
+		current && link.scrollIntoView({ block: 'start' })
+	})
 
 	updateCurrentHash()
 	window.addEventListener('hashchange', updateCurrentHash)
