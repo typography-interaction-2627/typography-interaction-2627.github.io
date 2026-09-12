@@ -59,6 +59,8 @@
 			position-area:       var(--position, block-end) span-inline-start;
 			position:            absolute;
 			scrollbar-width:     none;
+
+			@media (prefers-reduced-motion: no-preference) { scroll-behavior: smooth }
 		}
 
 		/* Does not like the `absolute`! */
