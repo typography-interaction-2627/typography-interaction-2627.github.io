@@ -24,10 +24,6 @@
 		--floor:   var(--gutter);
 		--safe:    calc(var(--dvh) - var(--ceiling) - var(--floor) - var(--gap));
 
-		--family: 'Chicago';
-		--size:   12;
-		--wrap:   nowrap;
-
 		column-gap:          var(--gap);
 		display:             flex;
 		inline-size:         round(var(--vw), var(--1px));
