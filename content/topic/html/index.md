@@ -69,7 +69,7 @@ HTML consists of a [range of elements](https://developer.mozilla.org/en-US/docs/
 
 The `<html>` element contains all elements of the page. In diagram here, the `<head>` element contains the `<title>`, and the `<body>` contains the `<h1>` and `<p>` elements.
 
-We call these [*semantic* elements](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#semantic_elements)—which is saying that they give their contents a *meaning* or a *role*. (Remember [Tim’s diagram](/topic/everything/web.png).) These *roles* are then interpreted by your browser (Chrome, Safari, Firefox, etc.) when it loads the file, to ultimately display the page. We call this *parsing* the document.
+We call these [*semantic* elements](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#semantic_elements)—which is saying that they give their contents a *meaning* or a *role*. (Remember [Tim’s diagram](../everything/web.png).) These *roles* are then interpreted by your browser (Chrome, Safari, Firefox, etc.) when it loads the file, to ultimately display the page. We call this *parsing* the document.
 
 </div>
 
@@ -632,7 +632,7 @@ Keep in mind these are still readable in the *source*.
 
 > [!IMPORTANT]
 >
-> Commenting is also how you will [add attributions](/syllabus/#attribution) to your code!
+> Commenting is also how you will [add attributions](../../syllabus.md#attribution) to your code!
 
 ### Lists
 
