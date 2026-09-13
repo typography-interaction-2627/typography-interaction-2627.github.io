@@ -182,12 +182,19 @@
 	}
 </style>
 <script webc:bucket="default">
-	const updateCurrentHash = () => document.querySelectorAll('nav a[href^="#"]').forEach((link) => {
-		const current = link.hash === window.location.hash
+	const updateCurrentHash = () => {
+		const currentHash = window.location.hash === '#' ? '' : window.location.hash
+		const anchorLinks = [...document.querySelectorAll('nav a[href^="#"]')]
 
-		link.ariaCurrent = current ? 'true' : null
-		current && link.scrollIntoView({ block: 'nearest' })
-	})
+		anchorLinks.forEach((link) => {
+			const current = currentHash && link.hash === currentHash
+
+			link.ariaCurrent = current ? 'true' : null
+			current && link.scrollIntoView({ block: 'nearest' })
+		})
+
+		currentHash || anchorLinks.find(link => link.hash)?.closest('ol')?.scrollIntoView({ block: 'start' })
+	}
 
 	updateCurrentHash()
 	window.addEventListener('hashchange', updateCurrentHash)
