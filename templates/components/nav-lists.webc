@@ -131,9 +131,10 @@
 
 					/* Drafts, `inert` in-page. */
 					&:not([href]) p {
-						mask:           var(--background--check);
-						pointer-events: none;
-						user-select:    none;
+						-webkit-user-select: none;
+						mask:                var(--background--check);
+						pointer-events:      none;
+						user-select:         none;
 					}
 
 					/* Dates. */

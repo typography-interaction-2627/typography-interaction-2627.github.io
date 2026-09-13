@@ -21,6 +21,7 @@
 				p {
 					--color: var(--background);
 
+					-webkit-user-select:  none;
 					padding-inline-start: 2ex;
 					position:             relative;
 					user-select:          none;

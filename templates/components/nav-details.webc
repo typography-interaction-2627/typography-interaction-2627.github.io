@@ -5,10 +5,11 @@
 		pointer-events: auto;
 
 		summary {
-			anchor-name: --nav-details;
-			box-shadow:  var(--shadow);
-			user-select: none;
-			z-index:     var(--stack, initial); /* Over ToC shadow. */
+			-webkit-user-select: none;
+			anchor-name:         --nav-details;
+			box-shadow:          var(--shadow);
+			user-select:         none;
+			z-index:             var(--stack, initial); /* Over ToC shadow. */
 
 			/* Dotted line when open. */
 			&::before {
