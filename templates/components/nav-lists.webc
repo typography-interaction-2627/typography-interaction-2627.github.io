@@ -17,80 +17,120 @@
 	}
 </script>
 <style webc:bucket="components">
-	details[name='nav'] > :is(ol, ul) {
-		--resolve: 1cap;
+	details[name='nav'] {
+		--family: 'Chicago';
+		--size:   12;
+		--wrap:   nowrap;
 
-		column-gap:            2cap;
-		display:               grid;
-		grid-template-columns: minmax(0, 1fr);
-		padding-block:         var(--resolve);
-		padding-inline:        2ex;
-		row-gap:               var(--resolve);
-
-		/* Room for indicator. */
-		&:has([aria-current]) { padding-inline-start: 3ex }
-
-		/* Pass columns down for Weeks/Projects with dates, external channels. */
-		&:has(sub, a[href^="https"]) {
-			grid-template-columns: minmax(0, 1fr) max-content;
-
-			li {
-				grid-column:           span 2;
-				grid-template-columns: subgrid;
-
-				a {
-					align-items:           baseline;
-					display:               inherit;
-					grid-column:           inherit;
-					grid-template-columns: inherit;
-				}
-			}
+		/* … */
+		p {
+			margin-block:  var(---3px);
+			overflow:      hidden;
+			padding-block: var(--3px);
+			text-overflow: ellipsis;
 		}
 
-		li {
-			display:               inherit;
-			grid-template-columns: inherit;
-			justify-items:         start;
-			position:              relative;
-			row-gap:               var(--resolve);
+		/* Page title for ToC. */
+		> header {
+			background-clip:   content-box;
+			background-color:  var(--background);
+			block-size:        2cap;
+			display:           grid;
+			inset-block-start: 0;
+			padding-inline:    var(--1px); /* Room for parent border. */
+			place-items:       center;
+			position:          sticky;
+			z-index:           1;
 
-			/* Current indicator. */
-			&:has(> a[aria-current])::before {
-				content:            '◆' / '';
-				inset-inline-start: -2ex;
-				position:           absolute;
-				text-box:           trim-both cap alphabetic;
+			/* Dotted line under. */
+			&::before {
+				background-color: var(--color);
+				block-size:       var(--1px);
+				content:          '';
+				inset-block-end:  0;
+				inset-inline:     var(--1px);
+				mask:             var(--background--check);
+				position:         absolute;
+				z-index:          1;
 			}
 
 			a {
-				block-size:          var(--resolve);
-				inline-size:         max-content;
-				max-inline-size:     100%;
-				scroll-margin-block: calc(3 * var(--resolve) + var(--3px));
+				--family: 'Geneva';
+				--size:   9;
 
-				/* Externals. */
-				&[href^="https"]::before {
-					align-self:          end;
-					background-image:    url('/assets/icons/&nearr.svg');
-					background-position: center;
-					background-repeat:   no-repeat;
-					background-size:     var(--7px);
-					block-size:          var(--7px);
-					color:               transparent;
-					content:             '↗' / '';
-					inline-size:         var(--7px);
-					order:               1;
+				inline-size:     fit-content;
+				max-inline-size: calc(100% - 2ex);
+			}
+		}
+
+		> :is(ol, ul) {
+			--resolve: 1cap;
+
+			column-gap:                2cap;
+			display:                   grid;
+			grid-template-columns:     minmax(0, 1fr);
+			row-gap:                   var(--resolve);
+			padding-block:             var(--resolve);
+			padding-inline:            2ex;
+			scroll-margin-block-start: calc(2 * var(--resolve));
+
+			/* Room for indicator. */
+			&:has([aria-current], a[href^='#']) { padding-inline-start: 3ex; }
+
+			/* Pass columns down for Weeks/Projects with dates, external channels. */
+			&:has(sub, a[href^="https"]) {
+				grid-template-columns: minmax(0, 1fr) max-content;
+
+				li {
+					grid-column:           span 2;
+					grid-template-columns: subgrid;
+
+					a {
+						align-items:           baseline;
+						display:               inherit;
+						grid-column:           inherit;
+						grid-template-columns: inherit;
+					}
+				}
+			}
+
+			li {
+				display:               inherit;
+				grid-template-columns: inherit;
+				justify-items:         start;
+				position:              relative;
+				row-gap:               var(--resolve);
+
+				/* Current indicator. */
+				&:has(> a[aria-current])::before {
+					content:            '◆' / '';
+					inset-inline-start: -2ex;
+					position:           absolute;
+					text-box:           trim-both cap alphabetic;
 				}
 
-				/* … */
-				p {
-					margin-block:  var(---3px);
-					overflow:      hidden;
-					padding-block: var(--3px);
-					text-overflow: ellipsis;
+				a {
+					block-size:          var(--resolve);
+					inline-size:         max-content;
+					max-inline-size:     100%;
+					scroll-margin-block: calc(3 * var(--resolve) + var(--3px));
+
+					/* Externals. */
+					&[href^="https"]::before {
+						align-self:          end;
+						background-image:    url('/assets/icons/&nearr.svg');
+						background-position: center;
+						background-repeat:   no-repeat;
+						background-size:     var(--7px);
+						block-size:          var(--7px);
+						color:               transparent;
+						content:             '↗' / '';
+						inline-size:         var(--7px);
+						order:               1;
+					}
 
 					/* Dates. */
-					&:has(sub) {
+					p:has(sub) {
 						--family: 'Geneva';
 						--size: var(--size--note);
 
@@ -100,43 +140,43 @@
 						sub { display: block }
 					}
 				}
-			}
 
-			/* ToC nesting. */
-			> ol {
-				display:               inherit;
-				grid-template-columns: inherit;
-				row-gap:               var(--resolve);
-
-				a {
-					--family: 'Geneva';
-					--size:   var(--size--root);
-
-					margin-inline-start: var(--resolve);
-					max-inline-size:     calc(100% - var(--resolve));
-					/* TODO Better way to do this? Without Safari always `…` */
-				}
-
-				ol {
+				/* ToC nesting. */
+				> ol {
+					display:               inherit;
 					grid-template-columns: inherit;
 					row-gap:               var(--resolve);
 
 					a {
-						--size: var(--size--note);
+						--family: 'Geneva';
+						--size:   var(--size--root);
 
-						margin-inline-start: calc(2 * var(--resolve));
-						max-inline-size:     calc(100% - 2 * var(--resolve));
+						margin-inline-start: var(--resolve);
+						max-inline-size:     calc(100% - var(--resolve));
+						/* TODO Better way to do this? Without Safari always `…` */
+					}
+
+					ol {
+						grid-template-columns: inherit;
+						row-gap:               var(--resolve);
+
+						a {
+							--size: var(--size--note);
+
+							margin-inline-start: calc(2 * var(--resolve));
+							max-inline-size:     calc(100% - 2 * var(--resolve));
+						}
 					}
 				}
-			}
 
-			/* Drafts. */
-			&:has(a:not([href])) {
-				margin:         var(---3px);
-				mask:           var(--background--check);
-				padding:        var(--3px);
-				pointer-events: none;
-				user-select:    none;
+				/* Drafts. */
+				&:has(a:not([href])) {
+					margin:         var(---3px);
+					mask:           var(--background--check);
+					padding:        var(--3px);
+					pointer-events: none;
+					user-select:    none;
+				}
 			}
 		}
 	}
@@ -163,12 +203,19 @@
 		</li>
 	</ol>
 	<ul webc:if="collection == 'channels'" @raw="getChannels($data)"></ul>
-	<ol webc:if="collection == 'contents'">
-		<li webc:if="$data.video">
-			<a href="#session-recording">
-				<p>Session Recording</p>
+	<template webc:if="collection == 'contents'" webc:nokeep>
+		<header>
+			<a href="#">
+				<p><em @html="$data.title"></em></p>
 			</a>
-		</li>
-		<template @raw="toc($data.content)" webc:nokeep></template>
-	</ol>
+		</header>
+		<ol>
+			<li webc:if="$data.video">
+				<a href="#session-recording">
+					<p>Session Recording</p>
+				</a>
+			</li>
+			<template @raw="toc($data.content)" webc:nokeep></template>
+		</ol>
+	</template>
 </template>
