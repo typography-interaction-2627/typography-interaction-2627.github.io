@@ -35,7 +35,7 @@
 			}
 
 			/* Our “windows.” */
-			:where(:scope:not(:has(> section)), :scope > section) {
+			&:where(:not(:has(> section))), > :where(section) {
 				align-items:         baseline;
 				background-color:    var(--background);
 				box-shadow:          var(--shadow--border), var(--shadow--single);
