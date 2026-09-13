@@ -267,15 +267,16 @@
 
 				> strong { display: block } /* Fixes `line-height` rounding. 🤷‍♀️ */
 
-				@container style(--columns) {
-					&:where(:not(:has(~ .right))) { grid-column: all-start / five-end }
-
-					:where(li) & { grid-column: initial }
-				}
-
 				+ *:not(section) { margin-block-start: 1rlh }
 
-				&:has(+ .right) { grid-column: body }
+				@container style(--columns) {
+					/* …top level. */
+					:where(main, section) > & {
+						grid-column: all-start / five-end;
+
+						&:has(+ .right) { grid-column: body }
+					}
+				}
 			}
 
 			/* Previously “note.” */
