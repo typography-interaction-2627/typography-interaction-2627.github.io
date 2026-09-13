@@ -360,6 +360,7 @@ export default (config) => {
 
 	// Table of contents.
 	config.addPlugin(pluginToc, {
+		ignoredHeadings: [':is([inert], [inert] *)'],
 		ignoredElements: ['a'],
 		wrapper: (toc) => {
 			const root = parse(toc)
