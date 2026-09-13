@@ -1,10 +1,23 @@
 <page-pattern></page-pattern>
 <script>
-	window.addEventListener('scrollend', () => {
+	let scrollTimeout
+	let previousScrollY = window.scrollY
+	let scrollDirection = 0
+
+	const alignScroll = () => {
 		const style = getComputedStyle(document.documentElement)
 		const scaling = parseFloat(style.getPropertyValue('--scaling')) * (parseFloat(style.getPropertyValue('--zoom')) || 1)
+		const position = window.scrollY / scaling
+		const rounding = scrollDirection > 0 ? Math.ceil : scrollDirection < 0 ? Math.floor : Math.round
 
-		window.scrollTo({ top: Math.round(window.scrollY / scaling) * scaling })
+		window.scrollTo({ top: rounding(position) * scaling })
+	}
+
+	window.addEventListener('scroll', () => {
+		scrollDirection = window.scrollY - previousScrollY
+		previousScrollY = window.scrollY
+		clearTimeout(scrollTimeout)
+		scrollTimeout = setTimeout(alignScroll, 250)
 	})
 </script>
 <template webc:bucket="components" webc:nokeep>
