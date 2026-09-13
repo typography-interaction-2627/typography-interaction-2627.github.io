@@ -90,6 +90,10 @@
 
 	document.addEventListener('keydown', event =>
 		event.key === 'Escape' && document.querySelector('nav details[open]')?.removeAttribute('open'))
+
+	document.addEventListener('toggle', event =>
+		event.target.matches('nav details[open]') && event.target.querySelector('a[aria-current]')?.scrollIntoView({ block: 'nearest', behavior: 'instant' }),
+		true)
 </script>
 <details name="nav" webc:root="override">
 	<summary :aria-label="initialCap(collection)" webc:keep webc:root="override">
