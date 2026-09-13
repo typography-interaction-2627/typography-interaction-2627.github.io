@@ -3,399 +3,401 @@
 		page.url == '/syllabus/' ? (currentWeek < 15 ? 'fall' : 'spring') : ''
 </script>
 <style webc:bucket="components">
-	main {
-		--anchor: calc(9 * var(--gutter)); /* Adjust with the `nav`! */
+	@scope (main) to (nav) {
+		:scope {
+			--anchor: calc(9 * var(--gutter)); /* Adjust with the `nav`! */
 
-		@media (width > 42em) { --anchor: calc(3 * var(--gutter)) }
+			@media (width > 42em) { --anchor: calc(3 * var(--gutter)) }
 
-		display:            grid;
-		margin-block-start: calc(-1 * var(--peek));
-		row-gap:            var(--break); /* Between “windows.“ */
+			display:            grid;
+			margin-block-start: calc(-1 * var(--peek));
+			row-gap:            var(--break); /* Between “windows.“ */
 
-		/* Space above anchor destination. */
-		[id]   { scroll-margin-block: var(--anchor) }
-		h2[id] { scroll-margin-block: calc(var(--anchor) + var(--gutter)) }
+			/* Space above anchor destination. */
+			[id]   { scroll-margin-block: var(--anchor) }
+			h2[id] { scroll-margin-block: calc(var(--anchor) + var(--gutter)) }
 
-		/* Print-only. */
-		.print { display: none }
+			/* Print-only. */
+			.print { display: none }
 
-		/* Spring stuff. */
-		[inert] {
-			mask: var(--background--check);
+			/* Spring stuff. */
+			[inert] {
+				mask: var(--background--check);
 
-			[inert] { mask: initial } /* Don’t double-apply. */
+				[inert] { mask: initial } /* Don’t double-apply. */
 
-			a:empty { visibility: hidden } /* Heading anchor links. */
+				a:empty { visibility: hidden } /* Heading anchor links. */
 
-			@supports (font: -apple-system-body) {
-				/* Fix Safari rounding. 🤷‍♀️ */
-				a, em, strong, abbr { --kerning: 0.0001em }
-			}
-		}
-
-		/* Our “windows.” */
-		&:not(:has(> section)), > section {
-			align-items:         baseline;
-			background-color:    var(--background);
-			box-shadow:          var(--shadow--border), var(--shadow--single);
-			column-gap:          var(--alley);
-			display:             grid;
-			grid-auto-rows:      min-content;
-			inline-size:         var(--page);
-			isolation:           isolate; /* Internal `z-index`. */
-			margin-inline-start: round(down, calc((var(--vw) - var(--page)) / 2), var(--1px)); /* Land on-pattern. */
-			padding-block-end:   calc(2 * var(--gutter) + var(--1px));
-			padding-block-start: calc(var(--gutter) + var(--1px));
-			padding-inline:      calc(var(--gutter) + var(--1px));
-			row-gap:             calc(2rlh - 1rcap);
-
-			grid-template-columns:
-				[ all-start aside-start body-start middle-start five-start four-start left-start one-start recto-start right-start six-start three-start two-start verso-start ]
-				var(--column)
-				[ all-end aside-end body-end middle-end five-end four-end left-end one-end recto-end right-end six-end three-end two-end verso-end ];
-
-			/* Default to body width. */
-			:where(&, details, section) > * { grid-column: body }
-
-			/* Limit paragraphs (inside things), sameish. */
-			:where(p) { max-inline-size: 55ch }
-
-			/* Containers. */
-			:where(details, div, dl, ol, section, ul) {
-				align-items:           inherit;
-				display:               grid;
-				grid-template-columns: minmax(0, 1fr);
-				row-gap:               inherit;
-			}
-
-			/* Subgridded `section`. */
-			:where(details, section) {
-				grid-column:           all;
-				grid-template-columns: subgrid;
-			}
-
-			/* Inserted in Markdown. */
-			:where(section:not(:has(> hgroup))) {
-				margin-block-start: 1rlh;
-
-				+ * { margin-block-start: 1rlh }
-			}
-
-			/* Space these out. */
-			.before,
-			:where(details):not(:first-child) { margin-block-start: 1rlh }
-
-			:where(.after) + * { margin-block-start: 1rlh }
-
-			/* Manual column placements. */
-			:where(div, .all, .aside, .body, .middle, .five, .four, .left, .one, .recto, .right, .six, .three, .two, .verso) {
-				grid-row: span var(--rows, 1);
-
-				* { grid-column: initial }
-			}
-
-			/* Some `--rows` shorthands. */
-			.rows--2 { --rows: 2 }
-			.rows--3 { --rows: 3 }
-			.rows--4 { --rows: 4 }
-			.rows--5 { --rows: 5 }
-			.rows--6 { --rows: 6 }
-
-			/* TODO Organize these! */
-			.start  { align-self: start }
-			.stack  { figure { margin: initial } }
-			.center { align-self: center }
-			.end    { align-self: end }
-
-			*:has(> .sticky) {
-				align-self: stretch;
-
-				.sticky {
-					inset-block-start: 4rlh;
-					position:          sticky;
+				@supports (font: -apple-system-body) {
+					/* Fix Safari rounding. 🤷‍♀️ */
+					a, em, strong, abbr { --kerning: 0.0001em }
 				}
 			}
 
-			/* TODO Probably a better way to do this? (On Projects.)*/
-			.body + .right { margin-block-start: 1rlh }
+			/* Our “windows.” */
+			:where(:scope:not(:has(> section)), :scope > section) {
+				align-items:         baseline;
+				background-color:    var(--background);
+				box-shadow:          var(--shadow--border), var(--shadow--single);
+				column-gap:          var(--alley);
+				display:             grid;
+				grid-auto-rows:      min-content;
+				inline-size:         var(--page);
+				isolation:           isolate; /* Internal `z-index`. */
+				margin-inline-start: round(down, calc((var(--vw) - var(--page)) / 2), var(--1px)); /* Land on-pattern. */
+				padding-block-end:   calc(2 * var(--gutter) + var(--1px));
+				padding-block-start: calc(var(--gutter) + var(--1px));
+				padding-inline:      calc(var(--gutter) + var(--1px));
+				row-gap:             calc(2rlh - 1rcap);
 
-			/* Only when on The Grid. */
-			:where(&, section) {
-				> .all    { grid-column: all }
-				> .aside  { grid-column: aside }
-				> .body   { grid-column: body }
-				> .five   { grid-column: five }
-				> .four   { grid-column: four }
-				> .left   { grid-column: left }
-				> .middle { grid-column: middle }
-				> .one    { grid-column: one }
-				> .recto  { grid-column: recto }
-				> .right  { grid-column: right }
-				> .six    { grid-column: six }
-				> .three  { grid-column: three }
-				> .two    { grid-column: two }
-				> .verso  { grid-column: verso }
-			}
-
-			/* The actual columns. */
-			@container style(--columns) {
 				grid-template-columns:
-					[ all-start body-start left-start one-start verso-start ]
+					[ all-start aside-start body-start middle-start five-start four-start left-start one-start recto-start right-start six-start three-start two-start verso-start ]
 					var(--column)
-					[ aside-start one-end two-start]
-					var(--column)
-					[ middle-start left-end three-start two-end ]
-					var(--column)
-					[four-start recto-start three-end verso-end]
-					var(--column)
-					[ body-end middle-end five-start four-end right-start ]
-					var(--column)
-					[ aside-end five-end six-start]
-					var(--column)
-					[ all-end recto-end right-end six-end];
-			}
-		}
+					[ all-end aside-end body-end middle-end five-end four-end left-end one-end recto-end right-end six-end three-end two-end verso-end ];
 
-		/* TODO Could make a separate `.webc` for this? */
-		/* TODO Move these to select the parent `section`! */
-		/* Headings */
-		:where(hgroup) {
-			:where(h2, h3, h4) {
-				--resolve: 1cap; /* Pass this down. */
+				/* Default to body width. */
+				:where(&, details, section) > * { grid-column: body }
 
-				inline-size:     fit-content;
-				max-inline-size: 100%; /* Retain wrapping! */
+				/* Limit paragraphs (inside things), sameish. */
+				:where(p) { max-inline-size: 55ch }
 
-				/* Anchor links. */
-				/* TODO These wrap to next line! At least after `em`. */
-				a:empty {
-					--family: 'Geneva';
-					--size:   14;
-
-					block-size:          var(--8px);
-					display:             inline-grid;
-					font-weight:         normal;
-					inline-size:         var(--8px);
-					margin-inline-start: round(calc(var(--resolve) / 3), var(--1px));
-					opacity:             var(--opacity);
-					text-box:            trim-both cap alphabetic;
-					transition-delay:    var(--delay, 1s); /* “Coyote time.” */
-					translate:           0 round(down, calc(-1 * var(--resolve) + var(--8px)), var(--1px));
-
-					/* TODO Unravel this! Shouldn’t need the override. */
-					@supports (not (-moz-appearance: none)) { --font: 'Geneva 14' }
-
-					&::before {
-						content:    '#';
-						place-self: end;
-						position:   absolute;
-						text-box:   trim-both cap alphabetic;
-						translate:  0 var(--3px); /* The hash glyph is weirdly high/small! */
-					}
-				}
-			}
-
-			/* Dividers. */
-			&:has(h2, h3, h4) { grid-column: all }
-
-			&:has(h2) {
-				background:        var(--background--border);
-				inline-size:       var(--page); /* Override rounded grid. */
-				margin-inline:     calc(-1 * var(--gutter));
-				padding-block-end: calc(var(--gutter) + var(--1px));
-				padding-inline:    var(--gutter);
-				position:          relative;
-
-				+ * { margin-block-start: 1rlh }
-			}
-
-			&:has(h3) {
-				inline-size: var(--main); /* Override rounded grid. */
-
-				/* Not right after `h2`. */
-				section section:not(hgroup + section) > & {
-					background:         var(--background--dashed);
-					margin-block-start: 2rlh;
-
-					/* Override default bottom-edge. */
-					background-position-y: top;
-
-					h3 { margin-block-start: 1cap }
+				/* Containers. */
+				:where(details, div, dl, ol, section, ul) {
+					align-items:           inherit;
+					display:               grid;
+					grid-template-columns: minmax(0, 1fr);
+					row-gap:               inherit;
 				}
 
-				+ * { margin-block-start: 1rlh }
-			}
-
-			&:has(h4) { margin-block-start:  1rlh }
-		}
-
-		/* Toggle anchor links. */
-		@media (any-hover: hover) {
-			section {
-				:is(h2, h3, h4) { --opacity: 0 }
-
-				/* Only show when its own/immediate content is hovered. */
-				:is(h2, h3, h4):hover,
-				&:has(> :hover:not(section, hgroup)) > hgroup > :is(h2, h3, h4),
-				a:empty:focus:focus-visible {
-					--opacity: 1;
-					--delay:   0;
+				/* Subgridded `section`. */
+				:where(details, section) {
+					grid-column:           all;
+					grid-template-columns: subgrid;
 				}
-			}
-		}
 
-		/* Space after loose ones. */
-		:where(section > p:has(a > cite)) + * { margin-block-start: 1rlh }
-
-		:where(hr) {
-			background:        var(--background--border);
-			grid-column:       all;
-			inline-size:       var(--page); /* Override rounded grid. */
-			margin-block:      var(--gutter);
-			margin-inline:     calc(-1 * var(--gutter));
-			padding-block-end: var(--1px);
-		}
-
-		/* Née ”intro.” */
-		:where(p:has(> strong:only-child)) {
-			--size:    var(--size--h4);
-			--leading: 1rlh;
-			--wrap:    balance;
-
-			*:not(hgroup) + & { margin-block-start: 1rlh }
-
-			> strong { display: block } /* Fixes `line-height` rounding. 🤷‍♀️ */
-
-			@container style(--columns) {
-				&:where(:not(:has(~ .right))) { grid-column: all-start / five-end }
-
-				:where(li) & { grid-column: initial }
-			}
-
-			+ *:not(section) { margin-block-start: 1rlh }
-
-			&:has(+ .right) { grid-column: body }
-		}
-
-		/* Previously “note.” */
-		:where(p:has(> sub:only-child)) {
-			--family: 'Geneva';
-			--size:   var(--size--note);
-			--wrap:   balance;
-
-			> sub { display: block }
-		}
-
-		/* Some automatic balancin’. */
-		:where(section, li) > p:only-of-type,
-		:where(section, li) > p:first-of-type:has(+ p:last-child > a > cite),
-		:where(section, li) > *:not(p) + p:has(+ *:not(p)) {
-			--wrap: balance;
-		}
-
-		/* Lists, lists, lists. (Not `nav` lists.) */
-		:is(dl, ol, ul):where(:not(nav :is(ol, ul))) {
-			/* Extra spacing around loosies. */
-			&:where(:not([class], :first-child)),
-			&[class="all"] {
-				margin-block-start: 1rlh;
-
-				&:where(:not(:last-child)) + * {
+				/* Inserted in Markdown. */
+				:where(section:not(:has(> hgroup))) {
 					margin-block-start: 1rlh;
 
-					@container style(--columns) { + *:where(.recto, .right) { margin-block-start: 1rlh } }
+					+ * { margin-block-start: 1rlh }
+				}
+
+				/* Space these out. */
+				.before,
+				:where(details):not(:first-child) { margin-block-start: 1rlh }
+
+				:where(.after) + * { margin-block-start: 1rlh }
+
+				/* Manual column placements. */
+				:where(div, .all, .aside, .body, .middle, .five, .four, .left, .one, .recto, .right, .six, .three, .two, .verso) {
+					grid-row: span var(--rows, 1);
+
+					* { grid-column: initial }
+				}
+
+				/* Some `--rows` shorthands. */
+				.rows--2 { --rows: 2 }
+				.rows--3 { --rows: 3 }
+				.rows--4 { --rows: 4 }
+				.rows--5 { --rows: 5 }
+				.rows--6 { --rows: 6 }
+
+				/* TODO Organize these! */
+				.start  { align-self: start }
+				.stack  { figure { margin: initial } }
+				.center { align-self: center }
+				.end    { align-self: end }
+
+				*:has(> .sticky) {
+					align-self: stretch;
+
+					.sticky {
+						inset-block-start: 4rlh;
+						position:          sticky;
+					}
+				}
+
+				/* TODO Probably a better way to do this? (On Projects.)*/
+				.body + .right { margin-block-start: 1rlh }
+
+				/* Only when on The Grid. */
+				:where(&, section) {
+					> .all    { grid-column: all }
+					> .aside  { grid-column: aside }
+					> .body   { grid-column: body }
+					> .five   { grid-column: five }
+					> .four   { grid-column: four }
+					> .left   { grid-column: left }
+					> .middle { grid-column: middle }
+					> .one    { grid-column: one }
+					> .recto  { grid-column: recto }
+					> .right  { grid-column: right }
+					> .six    { grid-column: six }
+					> .three  { grid-column: three }
+					> .two    { grid-column: two }
+					> .verso  { grid-column: verso }
+				}
+
+				/* The actual columns. */
+				@container style(--columns) {
+					grid-template-columns:
+						[ all-start body-start left-start one-start verso-start ]
+						var(--column)
+						[ aside-start one-end two-start]
+						var(--column)
+						[ middle-start left-end three-start two-end ]
+						var(--column)
+						[four-start recto-start three-end verso-end]
+						var(--column)
+						[ body-end middle-end five-start four-end right-start ]
+						var(--column)
+						[ aside-end five-end six-start]
+						var(--column)
+						[ all-end recto-end right-end six-end];
 				}
 			}
-			/* For poking out as needed. */
-			> :where(dt, li).all { inline-size: calc(var(--main) - var(--gutter)) }
 
-			/* Not `cite` lists. */
-			&:where(:not(:has(> li > a > cite, > li > p:only-child > a > cite))) {
-			/* TODO There still has to be a simpler way to check for these! */
+			/* TODO Could make a separate `.webc` for this? */
+			/* TODO Move these to select the parent `section`! */
+			/* Headings */
+			:where(hgroup) {
+				:where(h2, h3, h4) {
+					--resolve: 1cap; /* Pass this down. */
 
-				/* Item inset. */
-				> :where(dd, dt, li) { padding-inline-start: calc(2rlh - 1rcap) }
+					inline-size:     fit-content;
+					max-inline-size: 100%; /* Retain wrapping! */
 
-				> :where(dt, li) {
-					position: relative;
+					/* Anchor links. */
+					/* TODO These wrap to next line! At least after `em`. */
+					a:empty {
+						--family: 'Geneva';
+						--size:   14;
 
-					/* ”Markers.” */
-					&::before {
-						font-weight:        initial;
-						content:            '•' / '';
-						inset-inline-start: 0;
-						position:           absolute;
+						block-size:          var(--8px);
+						display:             inline-grid;
+						font-weight:         normal;
+						inline-size:         var(--8px);
+						margin-inline-start: round(calc(var(--resolve) / 3), var(--1px));
+						opacity:             var(--opacity);
+						text-box:            trim-both cap alphabetic;
+						transition-delay:    var(--delay, 1s); /* “Coyote time.” */
+						translate:           0 round(down, calc(-1 * var(--resolve) + var(--8px)), var(--1px));
 
-						/* Bill did not draw us a decorative bullet! */
-						@container style(--family: 'Venice') { font-family: 'Geneva', serif }
+						/* TODO Unravel this! Shouldn’t need the override. */
+						@supports (not (-moz-appearance: none)) { --font: 'Geneva 14' }
+
+						&::before {
+							content:    '#';
+							place-self: end;
+							position:   absolute;
+							text-box:   trim-both cap alphabetic;
+							translate:  0 var(--3px); /* The hash glyph is weirdly high/small! */
+						}
+					}
+				}
+
+				/* Dividers. */
+				&:has(h2, h3, h4) { grid-column: all }
+
+				&:has(h2) {
+					background:        var(--background--border);
+					inline-size:       var(--page); /* Override rounded grid. */
+					margin-inline:     calc(-1 * var(--gutter));
+					padding-block-end: calc(var(--gutter) + var(--1px));
+					padding-inline:    var(--gutter);
+					position:          relative;
+
+					+ * { margin-block-start: 1rlh }
+				}
+
+				&:has(h3) {
+					inline-size: var(--main); /* Override rounded grid. */
+
+					/* Not right after `h2`. */
+					section section:not(hgroup + section) > & {
+						background:         var(--background--dashed);
+						margin-block-start: 2rlh;
+
+						/* Override default bottom-edge. */
+						background-position-y: top;
+
+						h3 { margin-block-start: 1cap }
 					}
 
-					&:has(p)::before { text-box: trim-both cap alphabetic } /* Match for “loose” ones. */
+					+ * { margin-block-start: 1rlh }
 				}
 
-				> :where(dd):has(> p:not(:only-child)) {
-					display:               grid;
-					grid-template-columns: minmax(0, 1fr);
-					row-gap:               calc(2rlh - 1rcap); /* Back to `main` spacing. */
+				&:has(h4) { margin-block-start:  1rlh }
+			}
+
+			/* Toggle anchor links. */
+			@media (any-hover: hover) {
+				section {
+					:is(h2, h3, h4) { --opacity: 0 }
+
+					/* Only show when its own/immediate content is hovered. */
+					:is(h2, h3, h4):hover,
+					&:has(> :hover:not(section, hgroup)) > hgroup > :is(h2, h3, h4),
+					a:empty:focus:focus-visible {
+						--opacity: 1;
+						--delay:   0;
+					}
 				}
 			}
 
-			/* “Tight” lists. */
-			&:where(:not(:has(li > p, dd > p))) { row-gap: calc(1rlh - 1rcap) }
+			/* Space after loose ones. */
+			:where(section > p:has(a > cite)) + * { margin-block-start: 1rlh }
 
-			/* More vertical space when the items have multiple paragraphs. */
-			&:where(:has(:where(dt, li) > p:not(:only-child))) {
-				margin-block-start: 1rlh;
-				row-gap:            calc(3rlh - 1rcap);
+			:where(hr) {
+				background:        var(--background--border);
+				grid-column:       all;
+				inline-size:       var(--page); /* Override rounded grid. */
+				margin-block:      var(--gutter);
+				margin-inline:     calc(-1 * var(--gutter));
+				padding-block-end: var(--1px);
+			}
 
-				> :where(dt, li):where(:has(p:not(:only-child))) {
-					display:               grid;
-					grid-template-columns: minmax(0, 1fr);
-					row-gap:               calc(2rlh - 1rcap); /* Back to `main` spacing. */
+			/* Née ”intro.” */
+			:where(p:has(> strong:only-child)) {
+				--size:    var(--size--h4);
+				--leading: 1rlh;
+				--wrap:    balance;
+
+				*:not(hgroup) + & { margin-block-start: 1rlh }
+
+				> strong { display: block } /* Fixes `line-height` rounding. 🤷‍♀️ */
+
+				@container style(--columns) {
+					&:where(:not(:has(~ .right))) { grid-column: all-start / five-end }
+
+					:where(li) & { grid-column: initial }
+				}
+
+				+ *:not(section) { margin-block-start: 1rlh }
+
+				&:has(+ .right) { grid-column: body }
+			}
+
+			/* Previously “note.” */
+			:where(p:has(> sub:only-child)) {
+				--family: 'Geneva';
+				--size:   var(--size--note);
+				--wrap:   balance;
+
+				> sub { display: block }
+			}
+
+			/* Some automatic balancin’. */
+			:where(section, li) > p:only-of-type,
+			:where(section, li) > p:first-of-type:has(+ p:last-child > a > cite),
+			:where(section, li) > *:not(p) + p:has(+ *:not(p)) {
+				--wrap: balance;
+			}
+
+			/* Lists, lists, lists. (Not `nav` lists.) */
+			:where(dl, ol, ul) {
+				/* Extra spacing around loosies. */
+				&:where(:not([class], :first-child)),
+				&[class="all"] {
+					margin-block-start: 1rlh;
+
+					&:where(:not(:last-child)) + * {
+						margin-block-start: 1rlh;
+
+						@container style(--columns) { + *:where(.recto, .right) { margin-block-start: 1rlh } }
+					}
+				}
+				/* For poking out as needed. */
+				> :where(dt, li).all { inline-size: calc(var(--main) - var(--gutter)) }
+
+				/* Not `cite` lists. */
+				&:where(:not(:has(> li > a > cite, > li > p:only-child > a > cite))) {
+				/* TODO There still has to be a simpler way to check for these! */
+
+					/* Item inset. */
+					> :where(dd, dt, li) { padding-inline-start: calc(2rlh - 1rcap) }
+
+					> :where(dt, li) {
+						position: relative;
+
+						/* ”Markers.” */
+						&::before {
+							font-weight:        initial;
+							content:            '•' / '';
+							inset-inline-start: 0;
+							position:           absolute;
+
+							/* Bill did not draw us a decorative bullet! */
+							@container style(--family: 'Venice') { font-family: 'Geneva', serif }
+						}
+
+						&:has(p)::before { text-box: trim-both cap alphabetic } /* Match for “loose” ones. */
+					}
+
+					> :where(dd):has(> p:not(:only-child)) {
+						display:               grid;
+						grid-template-columns: minmax(0, 1fr);
+						row-gap:               calc(2rlh - 1rcap); /* Back to `main` spacing. */
+					}
+				}
+
+				/* “Tight” lists. */
+				&:where(:not(:has(li > p, dd > p))) { row-gap: calc(1rlh - 1rcap) }
+
+				/* More vertical space when the items have multiple paragraphs. */
+				&:where(:has(:where(dt, li) > p:not(:only-child))) {
+					margin-block-start: 1rlh;
+					row-gap:            calc(3rlh - 1rcap);
+
+					> :where(dt, li):where(:has(p:not(:only-child))) {
+						display:               grid;
+						grid-template-columns: minmax(0, 1fr);
+						row-gap:               calc(2rlh - 1rcap); /* Back to `main` spacing. */
+					}
 				}
 			}
-		}
 
-		:where(dl) {
-			row-gap: inherit;
+			:where(dl) {
+				row-gap: inherit;
 
-			> dt {
-				&:where(:not(:first-of-type)) { margin-block-start: 1rlh }
-			}
-		}
-
-		:where(ol:not(nav ol)) {
-			counter-reset: index;
-
-			> li::before {
-				font-weight:       bold;
-				content:           counters(index, '.') '.';
-				counter-increment: index;
-				inline-size:       1ch;
-				inset-inline-end:  100%;
-				white-space:       nowrap;
-				translate:         var(---1px) 0;
+				> dt {
+					&:where(:not(:first-of-type)) { margin-block-start: 1rlh }
+				}
 			}
 
-			&:has(:nth-child(10)) {
-				margin-inline-start: 1ex;
+			:where(ol) {
+				counter-reset: index;
 
 				> li::before {
-					inline-size: 2ch;
-					translate:   -1ex 0;
+					font-weight:       bold;
+					content:           counters(index, '.') '.';
+					counter-increment: index;
+					inline-size:       1ch;
+					inset-inline-end:  100%;
+					white-space:       nowrap;
+					translate:         var(---1px) 0;
+				}
+
+				&:has(:nth-child(10)) {
+					margin-inline-start: 1ex;
+
+					> li::before {
+						inline-size: 2ch;
+						translate:   -1ex 0;
+					}
 				}
 			}
-		}
 
-		/* Tables for the grade breakdown. */
-		:where(table) {
-			inline-size: fit-content;
+			/* Tables for the grade breakdown. */
+			:where(table) {
+				inline-size: fit-content;
 
-			td:not(:first-child), th:not(:first-child) {
-				border-inline-start: calc(2rlh - 1rcap - var(--left) - var(--right)) solid transparent;
+				td:not(:first-child), th:not(:first-child) {
+					border-inline-start: calc(2rlh - 1rcap - var(--left) - var(--right)) solid transparent;
+				}
+
+				tr:not(:first-child) td, tr:not(:first-child) th { border-block-start: 1cap solid transparent }
 			}
-
-			tr:not(:first-child) td, tr:not(:first-child) th { border-block-start: 1cap solid transparent }
 		}
 	}
 </style>
