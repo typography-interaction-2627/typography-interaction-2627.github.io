@@ -1,4 +1,12 @@
 <page-pattern></page-pattern>
+<script>
+	window.addEventListener('scrollend', () => {
+		const style = getComputedStyle(document.documentElement)
+		const scaling = parseFloat(style.getPropertyValue('--scaling')) * (parseFloat(style.getPropertyValue('--zoom')) || 1)
+
+		window.scrollTo({ top: Math.round(window.scrollY / scaling) * scaling })
+	})
+</script>
 <template webc:bucket="components" webc:nokeep>
 	<style>
 		:where(:root) {
@@ -18,7 +26,7 @@
 		}
 
 		body {
-			inline-size:    round(down, 100%, var(--1px));
+			inline-size:    round(down, 100%, var(--1px)); /* On-pattern. */
 			padding-bottom: var(--break);
 		}
 	</style>
