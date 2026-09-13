@@ -129,6 +129,13 @@
 						order:               1;
 					}
 
+					/* Drafts, `inert` in-page. */
+					&:not([href]) p {
+						mask:           var(--background--check);
+						pointer-events: none;
+						user-select:    none;
+					}
+
 					/* Dates. */
 					p:has(sub) {
 						--family: 'Geneva';
@@ -167,15 +174,6 @@
 							max-inline-size:     calc(100% - 2 * var(--resolve));
 						}
 					}
-				}
-
-				/* Drafts. */
-				&:has(a:not([href])) {
-					margin:         var(---3px);
-					mask:           var(--background--check);
-					padding:        var(--3px);
-					pointer-events: none;
-					user-select:    none;
 				}
 			}
 		}

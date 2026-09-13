@@ -360,10 +360,17 @@ export default (config) => {
 
 	// Table of contents.
 	config.addPlugin(pluginToc, {
-		ignoredHeadings: [':is([inert], [inert] *)'],
 		ignoredElements: ['a'],
+		inheritAttributes: ['inert'],
 		wrapper: (toc) => {
 			const root = parse(toc)
+
+			// Remove links from the inert ones/their descendents.
+			root.querySelectorAll('a[inert]').forEach((link) =>
+				[link, ...(link.parentNode?.querySelectorAll('a') ?? [])].forEach((childLink) => {
+					childLink.removeAttribute('href')
+					childLink.removeAttribute('inert')
+				}))
 
 			// Easier for type styles.
 			root.querySelectorAll('a').forEach((link) => link.innerHTML = `<p>${link.innerHTML}</p>`)
