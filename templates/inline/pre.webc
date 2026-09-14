@@ -42,7 +42,8 @@
 		}
 
 		/* For poking out as needed. */
-		&.all { max-inline-size: calc(var(--main) - var(--gutter)) }
+		&.all { max-inline-size: var(--main) }
+		:where(dd, dt, li) &.all { max-inline-size: calc(var(--main) - 1rlh - 1rcap) }
 
 		&:is(ti-preview) { overflow: clip } /* For the corners; scrolls internally. */
 	}
