@@ -309,7 +309,7 @@
 					}
 				}
 				/* For poking out as needed. */
-				> :where(dt, li).all { inline-size: calc(var(--main) - var(--gutter)) }
+				> :where(dd, dt, li).all { inline-size: var(--main) }
 
 				/* Not `cite` lists. */
 				&:where(:not(:has(> li > a > cite, > li > p:only-child > a > cite))) {
@@ -323,16 +323,15 @@
 
 						/* ”Markers.” */
 						&::before {
-							font-weight:        initial;
 							content:            '•' / '';
+							font-weight:        initial;
 							inset-inline-start: 0;
 							position:           absolute;
+							text-box:           trim-both cap alphabetic;
 
 							/* Bill did not draw us a decorative bullet! */
 							@container style(--family: 'Venice') { font-family: 'Geneva', serif }
 						}
-
-						&:has(p)::before { text-box: trim-both cap alphabetic } /* Match for “loose” ones. */
 					}
 
 					> :where(dd):has(> p:not(:only-child)) {
