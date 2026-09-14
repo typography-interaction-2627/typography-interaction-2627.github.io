@@ -1,6 +1,6 @@
 <style>
-	:where(main) {
-		:where(details:not(nav details)) {
+	@scope (main) to (nav) {
+		details {
 			summary {
 				position:         relative;
 				background-color: var(--color);
