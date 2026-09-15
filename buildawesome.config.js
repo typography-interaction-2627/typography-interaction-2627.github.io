@@ -177,13 +177,17 @@ export default (config) => {
 	// Keep our `inline-block` `code`, `kbd`, and `samp` from losing adjacent punctuation.
 	const markdownNobrCode = (markdown) => {
 		const render = markdown.render.bind(markdown)
-		const punctuationAfter = ']}),;!?.’”:—/…'
+
+		const punctuationBefore = '(“‘—…/'
+		const punctuationAfter = '),;!?.’”:—/…'
+		const hairSpace = '\u200A'
 
 		// `pre`/`nobr` blocks are matched whole (skipping anything already inside them) so only bare, unwrapped tags get one added.
-		// A directly following punctuation mark is swept in too, so it can’t be orphaned onto the next line.
+		// Directly touching punctuation is swept in too—with a hair space so it doesn’t crowd the tag—so it can’t be orphaned across a line break.
 		markdown.render = (...args) => render(...args).replace(
-			new RegExp(`<pre\\b[^>]*>[\\s\\S]*?<\\/pre>|<nobr>[\\s\\S]*?<\\/nobr>|<(code|kbd|samp)\\b[^>]*>[\\s\\S]*?<\\/\\1>[${punctuationAfter}]?`, 'g'),
-			(match, tag) => tag ? `<nobr>${match}</nobr>` : match,
+			new RegExp(`<pre\\b[^>]*>[\\s\\S]*?<\\/pre>|<nobr>[\\s\\S]*?<\\/nobr>|([${punctuationBefore}])?(<(code|kbd|samp)\\b[^>]*>[\\s\\S]*?<\\/\\3>)([${punctuationAfter}])?`, 'g'),
+			(match, before, element, tag, after) =>
+				element ? `<nobr>${before ? before + hairSpace : ''}${element}${after ? hairSpace + after : ''}</nobr>` : match,
 		)
 	}
 
