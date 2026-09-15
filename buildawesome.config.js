@@ -362,7 +362,7 @@ export default (config) => {
 		.use(markdownLocalLinks)
 		.use(markdownAsides)
 		.use(markdownFigures)
-		.use(componentPlugin) //Allows custom inline HTML component names (otherwise made into strings/wrapped in paragraphs).
+		.use(componentPlugin) // Allows custom inline HTML component names (otherwise made into strings/wrapped in paragraphs).
 
 	// Filter for component use.
 	// TODO We don’t use this anymore?
