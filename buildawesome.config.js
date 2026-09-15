@@ -280,6 +280,8 @@ export default (config) => {
 			state.src = state.src.replace(/(^ {0,3}(`{3,}|~{3,})[^\n]*\n[\s\S]*?^ {0,3}\2[^\n]*(?:\n|$))|(^<figure\b[^>]*>[\s\S]*?<\/figure>)/gmi, (html, fence) => {
 				if (fence) return fence
 
+				let id
+
 				const figure = parse(html).querySelector('figure')
 				const caption = figure.querySelector(':scope > figcaption')
 
@@ -293,6 +295,10 @@ export default (config) => {
 						? `https://www.youtube.com/embed${pathname}`
 						: `https://player.vimeo.com/video${pathname}`
 
+					id = link.getAttribute('href')
+						.replace('https://', '')
+						.replace('.com', '')
+
 					link.querySelector('img') && src && link.replaceWith(element(`<iframe src="${src}"></iframe>`))
 				})
 
@@ -302,6 +308,8 @@ export default (config) => {
 					const [, folder, file] = href.match(/^(.*\/)([^/]*)$/) ?? []
 					const container = link.parentNode.parentNode
 
+					id = href + '-example'
+
 					folder && container.replaceWith(element(`<iframe src="${folder}preview/${file && `?active=${file}`}"></iframe>`))
 				})
 
@@ -309,14 +317,17 @@ export default (config) => {
 
 				// Nest in a container.
 				figure.querySelectorAll(':scope > img[src], :scope > iframe').forEach((media) => {
-
 					// …adding dithered images when we can.
 					const dither = media.localName === 'img'
-						? `<as-dithered-image crunch="2" src="${markdown.utils.escapeHtml(media.getAttribute('src'))}"></as-dithered-image>`
-						: ''
+					? `<as-dithered-image crunch="2" src="${markdown.utils.escapeHtml(media.getAttribute('src'))}"></as-dithered-image>`
+					: ''
+
+					id ||= media.getAttribute('src')?.split('.')[0]
 
 					media.replaceWith(element(`<div>${media.outerHTML}${dither}</div>`))
 				})
+
+				id && figure.setAttribute('id', config.getFilter('slugify')(id))
 
 				return figure.outerHTML
 			}),
