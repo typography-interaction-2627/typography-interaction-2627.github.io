@@ -79,6 +79,7 @@
 
 			> a:focus:focus-visible,
 			> menu:has(a:focus:focus-visible),
+			> :where(a, menu):hover,
 			&:has(div:hover) > :where(a, menu) {
 				--opacity: 1;
 				--delay:   0;
