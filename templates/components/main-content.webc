@@ -56,7 +56,7 @@
 					[ all-end aside-end body-end middle-end five-end four-end left-end one-end recto-end right-end six-end three-end two-end verso-end ];
 
 				/* Default to body width. */
-				> *, :where(details, section) > * { grid-column: body }
+				:where(&, details, section) > * { grid-column: body }
 
 				/* Limit paragraphs (inside things), sameish. */
 				:where(p) { max-inline-size: 55ch }
@@ -271,7 +271,7 @@
 
 				@container style(--columns) {
 					/* …top level. */
-					:where(main, section) > & {
+					:where(main, section) > :where(&) {
 						grid-column: all-start / five-end;
 
 						&:has(+ .right) { grid-column: body }
