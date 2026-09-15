@@ -2,10 +2,11 @@
 	figure {
 		--gap: 1rlh;
 
-		align-items: start;
-		display:     grid;
-		position:    relative;
-		row-gap:     var(--gap);
+		align-items:  start;
+		anchor-scope: --figure-container;
+		display:      grid;
+		position:     relative;
+		row-gap:      var(--gap);
 
 		/* Default full-width. */
 		&:not([class]), &[class="borderless"] { grid-column: all }
@@ -45,6 +46,9 @@
 			display:          inline-block;
 			inline-size:      var(--7px);
 			opacity:          var(--opacity);
+			position-anchor:  --figure-container;
+			position-area:    block-start span-inline-start;
+			position:         absolute;
 			text-box:         trim-both cap alphabetic;
 			transition-delay: var(--delay, 1s); /* “Coyote time.” */
 
@@ -75,9 +79,9 @@
 		@media (any-hover: hover) {
 			> :where(a, menu) { --opacity: 0 }
 
-			&:hover > :where(a, menu),
 			> a:focus:focus-visible,
-			> menu:has(a:focus:focus-visible) {
+			> menu:has(a:focus:focus-visible),
+			&:has(div:hover) > :where(a, menu) {
 				--opacity: 1;
 				--delay:   0;
 			}
@@ -85,7 +89,8 @@
 
 		/* Container for placing the dithered one/effects. */
 		> div {
-			position: relative;
+			anchor-name: --figure-container;
+			position:    relative;
 
 			&:has(img) {
 				inline-size: fit-content;
