@@ -184,11 +184,21 @@ export default (config) => {
 
 		// `pre`/`nobr` blocks are matched whole (skipping anything already inside them) so only bare, unwrapped tags get one added.
 		// Directly touching punctuation is swept in too—with a hair space so it doesn’t crowd the tag—so it can’t be orphaned across a line break.
-		markdown.render = (...args) => render(...args).replace(
-			new RegExp(`<pre\\b[^>]*>[\\s\\S]*?<\\/pre>|<nobr>[\\s\\S]*?<\\/nobr>|([${punctuationBefore}])?(<(code|kbd|samp)\\b[^>]*>[\\s\\S]*?<\\/\\3>)([${punctuationAfter}])?`, 'g'),
-			(match, before, element, tag, after) =>
-				element ? `<nobr>${before ? before + hairSpace : ''}${element}${after ? hairSpace + after : ''}</nobr>` : match,
-		)
+		// A hair space is also dropped in when a tag sits flush against another tag, so the two don’t visually run together.
+		// Ragging already drops a `&ZeroWidthSpace;` after slashes—swallow it here since the hair space takes over that job.
+		markdown.render = (...args) => render(...args)
+			.replace(
+				new RegExp(
+					`<pre\\b[^>]*>[\\s\\S]*?<\\/pre>|<nobr>[\\s\\S]*?<\\/nobr>|(?:(?<=(>)))?([${punctuationBefore}])?\\u200B?(<(code|kbd|samp)\\b[^>]*>[\\s\\S]*?<\\/\\4>)([${punctuationAfter}])?\\u200B?(?:(?=(<)))?`,
+					'g',
+				),
+				(match, beforeTag, before, element, tag, after, afterTag) =>
+					element
+						? `${beforeTag ? hairSpace : ''}<nobr>${before ? before + hairSpace : ''}${element}${after ? hairSpace + after : ''}</nobr>${afterTag ? hairSpace : ''}`
+						: match,
+			)
+			// Two of our `nobr`s can end up flush against each other (ex: the swept punctuation ate the gap)—add a hair space between them.
+			.replace(/<\/nobr>(?=<nobr>)/g, `</nobr>${hairSpace}`)
 	}
 
 	// Do some automatic ragging.
