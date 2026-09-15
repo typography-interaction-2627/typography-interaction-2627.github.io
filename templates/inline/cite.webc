@@ -16,8 +16,8 @@
 
 			> a:has(> cite) { margin-block-end: calc(var(---4px)) }
 
-			/* TODO Unravel this! Shouldn’t need the override. */
-			@supports (not (font: -apple-system-body)) and (not (-moz-appearance: none)) { --font: 'Geneva 9' }
+			/* `opsz` dance. */
+			@supports (not (-moz-appearance: none)) { --font: 'Geneva 9' }
 		}
 
 		> a:has(> cite) {
