@@ -12,7 +12,7 @@
 
 		scrollTimeout = setTimeout(() => {
 			const style = getComputedStyle(document.documentElement)
-			const scaling = parseFloat(style.getPropertyValue('--scaling')) * (parseFloat(style.getPropertyValue('--zoom')) || 1)
+			const scaling = parseFloat(style.getPropertyValue('--scaling'))
 			const rounding = scrollDirection > 0 ? Math.ceil : Math.floor
 
 			scrollTo({ top: rounding(scrollY / scaling) * scaling })

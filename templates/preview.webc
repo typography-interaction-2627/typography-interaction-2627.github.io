@@ -10,18 +10,8 @@
 			inline-size: inherit;
 		}
 
-		/* Prevent double-zooming in `iframe`! */
-		&.iframe {
-			--vw--parent: var(--vw);
-			--vh--parent: var(--vh);
-
-			body {
-				--vw: calc(var(--vw--parent) / var(--zoom, 1));
-				--vw: calc(var(--vw--parent) / var(--zoom, 1));
-
-				zoom: initial;
-			}
-		}
+		/* Use `zoom` inside `ti-preview`, to keep “viewport” measurements at parent scale. */
+		@container style(--scaling: 3) { ti-preview { --output-iframe-zoom: 1.5 } }
 
 		/* No-JS basics. */
 		&:has(ti-preview:not(:defined)) body {
@@ -72,9 +62,6 @@
 
 	// Get parent page variables!
 	if (window !== window.parent) {
-		// TODO Inverse this so it removes?
-		document.documentElement.classList.add('iframe')
-
 		const root = document.documentElement
 		const parentRoot = parent.document.documentElement
 

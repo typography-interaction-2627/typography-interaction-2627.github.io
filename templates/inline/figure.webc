@@ -226,7 +226,7 @@
 
 	const setCrunch = () => {
 		const style = getComputedStyle(document.documentElement)
-		const scaling = style.getPropertyValue('--scaling') * (style.getPropertyValue('--zoom') || 1)
+		const scaling = style.getPropertyValue('--scaling')
 
 		document.querySelectorAll(`as-dithered-image:not([crunch="${scaling}"])`).forEach((dither) => dither.setAttribute('crunch', scaling))
 	}
