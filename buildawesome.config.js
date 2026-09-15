@@ -174,6 +174,19 @@ export default (config) => {
 			<code class="language-${tokens[index].info.trim()}">${markdown.utils.escapeHtml(tokens[index].content)}</code>
 		</pre>`
 
+	// Keep our `inline-block` `code`, `kbd`, and `samp` from losing adjacent punctuation.
+	const markdownNobrCode = (markdown) => {
+		const render = markdown.render.bind(markdown)
+		const punctuationAfter = ']}),;!?.’”:—/…'
+
+		// `pre`/`nobr` blocks are matched whole (skipping anything already inside them) so only bare, unwrapped tags get one added.
+		// A directly following punctuation mark is swept in too, so it can’t be orphaned onto the next line.
+		markdown.render = (...args) => render(...args).replace(
+			new RegExp(`<pre\\b[^>]*>[\\s\\S]*?<\\/pre>|<nobr>[\\s\\S]*?<\\/nobr>|<(code|kbd|samp)\\b[^>]*>[\\s\\S]*?<\\/\\1>[${punctuationAfter}]?`, 'g'),
+			(match, tag) => tag ? `<nobr>${match}</nobr>` : match,
+		)
+	}
+
 	// Do some automatic ragging.
 	const markdownRagging = (markdown) => {
 		const singleLetters = 'a|i'
@@ -358,6 +371,7 @@ export default (config) => {
 		.use(markdownAnchors)
 		.use(markdownItAttrs)
 		.use(markdownPreCode)
+		.use(markdownNobrCode)
 		.use(markdownRagging)
 		.use(markdownLocalLinks)
 		.use(markdownAsides)
