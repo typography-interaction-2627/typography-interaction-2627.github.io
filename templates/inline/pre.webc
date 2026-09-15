@@ -17,6 +17,7 @@
 
 	/* In-page. */
 	main :is(pre, ti-preview) {
+		clip-path:       var(--clip--corner);
 		filter:          saturate(var(--in-view)) contrast(calc(2 - var(--in-view))) brightness(calc(2 - var(--in-view)));
 		inline-size:     fit-content;
 		max-inline-size: 100%;
