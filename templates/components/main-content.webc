@@ -235,7 +235,7 @@
 					/* Only show when its own/immediate content is hovered. */
 					:is(h2, h3, h4):hover,
 					&:has(> :hover:not(section, hgroup)) > hgroup > :is(h2, h3, h4),
-					a:focus:focus-visible {
+					:is(h2, h3, h4) a:focus:focus-visible {
 						--opacity: 1;
 						--delay:   0;
 					}
