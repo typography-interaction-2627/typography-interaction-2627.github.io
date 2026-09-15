@@ -168,30 +168,26 @@
 					max-inline-size: 100%; /* Retain wrapping! */
 
 					/* Anchor links. */
-					/* TODO These wrap to next line! At least after `em`. */
-					a:empty {
-						--family: 'Geneva';
-						--size:   14;
+					nobr {
+						/* `&ZeroWidthSpace;` to trigger the `white-space` property (keeps with previous word). */
+						&::before { content: '\200B' }
 
-						block-size:          var(--8px);
-						display:             inline-grid;
-						font-weight:         normal;
-						inline-size:         var(--8px);
-						margin-inline-start: round(calc(var(--resolve) / 3), var(--1px));
-						opacity:             var(--opacity);
-						text-box:            trim-both cap alphabetic;
-						transition-delay:    var(--delay, 1s); /* “Coyote time.” */
-						translate:           0 round(down, calc(-1 * var(--resolve) + var(--8px)), var(--1px));
+						a {
+							--family: 'Geneva';
+							--size:   14;
 
-						/* TODO Unravel this! Shouldn’t need the override. */
-						@supports (not (-moz-appearance: none)) { --font: 'Geneva 14' }
+							block-size:          var(--8px);
+							display:             inline-block;
+							font-weight:         normal;
+							inline-size:         var(--8px);
+							margin-inline-start: round(calc(var(--resolve) / 3), var(--1px));
+							opacity:             var(--opacity);
+							text-box:            trim-both cap alphabetic;
+							transition-delay:    var(--delay, 1s); /* “Coyote time.” */
+							translate:           0 round(up, calc(-1 * var(--resolve) / 3), var(--1px)); /* The hash glyph is weirdly high/small! */
 
-						&::before {
-							content:    '#';
-							place-self: end;
-							position:   absolute;
-							text-box:   trim-both cap alphabetic;
-							translate:  0 var(--3px); /* The hash glyph is weirdly high/small! */
+							/* TODO Unravel this! Shouldn’t need the override. */
+							@supports (not (-moz-appearance: none)) { --font: 'Geneva 14' }
 						}
 					}
 				}

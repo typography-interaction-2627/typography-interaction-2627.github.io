@@ -159,7 +159,7 @@ export default (config) => {
 			token.content =
 				`
 				<hgroup>
-					${headingOpen}${headingHtml}<a href="#${headingId}"></a>${headingClose}
+					${headingOpen}${headingHtml}<nobr><a title="Link to this heading" href="#${headingId}">#</a></nobr>${headingClose}
 				</hgroup>
 				`
 
