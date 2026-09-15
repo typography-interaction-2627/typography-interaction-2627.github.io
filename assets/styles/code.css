@@ -15,12 +15,12 @@ code, kbd, samp {
 :where(*:not(pre)) > code,
 kbd,
 samp {
-	background:     linear-gradient(var(--background)) padding-box, var(--background--check) border-box;
-	border:         var(--1px) solid transparent;
-	font-weight:    initial;
-	margin-block:   var(---3px);
-	padding-block:  var(--3px);
-	padding-inline: var(--3px);
+	background:    linear-gradient(var(--background)) padding-box, var(--background--check) border-box;
+	border:        var(--1px) solid transparent;
+	font-weight:   initial;
+	isolation:     isolate;
+	margin-block:  var(---3px);
+	padding-block: var(--3px);
 
 	/* Don’t overshoot link underlines. */
 	a:not(:has(cite)) & {
@@ -31,6 +31,22 @@ samp {
 	@container style(--size: 9) {
 		margin-block:   var(---2px);
 		padding-block:  var(--2px);
-		padding-inline: var(--2px);
 	}
+
+	/* “Fade” overflow edges. */
+	&::before,
+	&::after {
+		background-color: var(--background);
+		block-size:       2em;
+		content:          '';
+		display:          inline-block;
+		inline-size:      var(--3px);
+		margin-block-end: var(---4px);
+		mask:             var(--background--check);
+		position:         sticky;
+		vertical-align:   baseline;
+	}
+
+	&::before { inset-inline-start: 0 }
+	&::after  { inset-inline-end: 0 }
 }
