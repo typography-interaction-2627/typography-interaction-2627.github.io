@@ -333,11 +333,10 @@ export default (config) => {
 				figure.querySelectorAll('em strong a[href]').forEach((link) => {
 					const href = link.getAttribute('href')
 					const [, folder, file] = href.match(/^(.*\/)([^/]*)$/) ?? []
-					const container = link.parentNode.parentNode
 
 					id = href + '-example'
 
-					folder && container.replaceWith(element(`<iframe loading="lazy" src="${folder}preview/${file && `?active=${file}`}"></iframe>`))
+					folder && link.parentNode.parentNode.replaceWith(element(`<iframe loading="lazy" src="${folder}preview/${file && `?active=${file}`}\"></iframe>`))
 				})
 
 				caption && figure.appendChild(caption)
@@ -366,7 +365,7 @@ export default (config) => {
 								<li><a title="Open example itself" href="${id.replace('-example', '')}" target="_blank"><span>↗</span></a></li>
 							</menu>
 						`))
-						: figure.prepend(element(`<a title="Link to this figure" href="#${id}">#</a>`))
+						: figure.prepend(element(`<a title="Link to this figure" href="#${id}"><span>#</span></a>`))
 				}
 
 				return figure.outerHTML
