@@ -11,7 +11,7 @@ const order = 1
 Thursdays, 4–6:40 pm**
 <!-- .verso #logistics -->
 
-<div class="recto rows--3">
+<div class="recto rows--3" style="margin-block-start: initial">
 
 *Typography & Interaction* is a year-long, two-semester course in the [MPS Communication Design](https://mpscd.parsons.edu) program at [Parsons](https://www.newschool.edu/parsons/) / [The New School](https://www.newschool.edu). The class will provide a rigorous foundation of typographic and interaction principles in the context of digital design.
 <!-- data-description -->
