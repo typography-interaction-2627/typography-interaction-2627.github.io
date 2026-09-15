@@ -121,7 +121,7 @@
 				.body + .right { margin-block-start: 1rlh }
 
 				/* Only when on The Grid. */
-				:where(&, section) {
+				:where(&, details, section) {
 					> .all    { grid-column: all }
 					> .aside  { grid-column: aside }
 					> .body   { grid-column: body }
@@ -232,7 +232,7 @@
 
 			/* Toggle anchor links. */
 			@media (any-hover: hover) {
-				section {
+				:where(section) {
 					:is(h2, h3, h4) { --opacity: 0 }
 
 					/* Only show when its own/immediate content is hovered. */
@@ -399,6 +399,63 @@
 
 				tr:not(:first-child) td, tr:not(:first-child) th { border-block-start: 1cap solid transparent }
 			}
+		}
+	}
+
+	/* Safari < 27 breaks `@scope` for `ti-preview`, so dupe these column-adjustments out for a while: */
+	/* https://github.com/WebKit/WebKit/commit/00497eb486c0c28266aa0f53c0057cdc548e1a11 */
+	@supports (font: -apple-system-body) and (not (block-size: stretch)) {
+		:where(main, section, details) {
+			.before, :where(details):not(:first-child) { margin-block-start: 1rlh }
+
+			:where(.after) + * { margin-block-start: 1rlh }
+
+			:where(div, .all, .aside, .body, .middle, .five, .four, .left, .one, .recto, .right, .six, .three, .two, .verso) {
+				grid-row: span var(--rows, 1);
+
+				* { grid-column: initial }
+			}
+
+			.rows--2 { --rows: 2 }
+			.rows--3 { --rows: 3 }
+			.rows--4 { --rows: 4 }
+			.rows--5 { --rows: 5 }
+			.rows--6 { --rows: 6 }
+
+			.start  { align-self: start }
+			.stack  { figure { margin: initial } }
+			.center { align-self: center }
+			.end    { align-self: end }
+
+			*:has(> .sticky) {
+				align-self: stretch;
+
+				.sticky {
+					inset-block-start: 4rlh;
+					position:          sticky;
+				}
+			}
+
+			.body + .right { margin-block-start: 1rlh }
+
+			:where(&, details, section) {
+				> .all    { grid-column: all }
+				> .aside  { grid-column: aside }
+				> .body   { grid-column: body }
+				> .five   { grid-column: five }
+				> .four   { grid-column: four }
+				> .left   { grid-column: left }
+				> .middle { grid-column: middle }
+				> .one    { grid-column: one }
+				> .recto  { grid-column: recto }
+				> .right  { grid-column: right }
+				> .six    { grid-column: six }
+				> .three  { grid-column: three }
+				> .two    { grid-column: two }
+				> .verso  { grid-column: verso }
+			}
+
+			:where(p:has(> strong:only-child)) + *:not(section) { margin-block-start: 1rlh }
 		}
 	}
 </style>
