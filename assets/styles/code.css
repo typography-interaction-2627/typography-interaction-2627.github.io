@@ -1,7 +1,7 @@
 code, kbd, samp {
 	-webkit-user-select: all;
 	line-height:         1;
-	max-inline-size:     calc(100% - var(--3px));
+	max-inline-size:     calc(100% - 1ch);
 	text-box:            trim-both cap alphabetic;
 	user-select:         all;
 	white-space:         pre;
@@ -27,6 +27,12 @@ samp {
 	@supports (inline-size: calc-size(auto, size)) {
 		clip-path:   initial;
 		inline-size: calc-size(auto, round(up, size, var(--2px)) - var(--1px));
+	}
+
+	/* Something with the `overflow`! */
+	@supports (-moz-appearance: none) {
+		margin-block-end: var(---4px);
+		padding-block:    var(--2px);
 	}
 
 	/* Don’t overshoot link underlines. */
