@@ -137,6 +137,21 @@
 			bottom / 100% var(--1px)
 			no-repeat;
 
+		--clip--corner: polygon(
+			var(--1px) 0,
+			calc(100% - var(--1px)) 0,
+			calc(100% - var(--1px)) var(--1px),
+			100% var(--1px),
+			100% calc(100% - var(--1px)),
+			calc(100% - var(--1px)) calc(100% - var(--1px)),
+			calc(100% - var(--1px)) 100%,
+			var(--1px) 100%,
+			var(--1px) calc(100% - var(--1px)),
+			0 calc(100% - var(--1px)),
+			0 var(--1px),
+			var(--1px) var(--1px)
+		);
+
 		/* Explicit-sized for rounding. */
 		@container style(--columns) {
 			--column: round(down, calc(((var(--main) - (var(--alley) * (var(--columns) - 1)))) / var(--columns)), var(--1px));

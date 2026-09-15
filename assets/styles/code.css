@@ -1,26 +1,33 @@
 code, kbd, samp {
-	/* TODO fix wrapping without `inline-block`? */
 	-webkit-user-select: all;
-	display:             inline-block;
 	line-height:         1;
-	max-inline-size:     100%;
-	overflow-x:          auto;
-	overflow-y:          clip;
-	scrollbar-width:     none;
+	max-inline-size:     calc(100% - var(--3px));
 	text-box:            trim-both cap alphabetic;
 	user-select:         all;
 	white-space:         pre;
 }
 
+/* TODO fix wrapping without `inline-block`? */
 :where(*:not(pre)) > code,
 kbd,
 samp {
-	background:    linear-gradient(var(--background)) padding-box, var(--background--check) border-box;
-	border:        var(--1px) solid transparent;
-	font-weight:   initial;
-	isolation:     isolate;
-	margin-block:  var(---3px);
-	padding-block: var(--3px);
+	background:      linear-gradient(var(--background)) padding-box, var(--background--check) border-box;
+	border:          var(--1px) solid transparent;
+	clip-path:       var(--clip--corner);
+	display:         inline-block;
+	font-weight:     initial;
+	isolation:       isolate;
+	margin-block:    var(---3px);
+	overflow-x:      auto;
+	overflow-y:      clip;
+	padding-block:   var(--3px);
+	scrollbar-width: none;
+
+	/* Land pattern with “chipped” corners. */
+	@supports (inline-size: calc-size(auto, size)) {
+		clip-path:   initial;
+		inline-size: calc-size(auto, round(up, size, var(--2px)) - var(--1px));
+	}
 
 	/* Don’t overshoot link underlines. */
 	a:not(:has(cite)) & {
@@ -36,15 +43,17 @@ samp {
 	/* “Fade” overflow edges. */
 	&::before,
 	&::after {
-		background-color: var(--background);
-		block-size:       2em;
-		content:          '';
-		display:          inline-block;
-		inline-size:      var(--3px);
-		margin-block-end: var(---4px);
-		mask:             var(--background--check);
-		position:         sticky;
-		vertical-align:   baseline;
+		background-color:   var(--background);
+		block-size:         2em;
+		content:            '';
+		display:            inline-block;
+		inline-size:        var(--3px);
+		margin-block-end:   var(---4px);
+		margin-block-start: -100%;
+		mask:               var(--background--check);
+		position:           sticky;
+		text-box:           trim-both cap alphabetic;
+		vertical-align:     baseline;
 	}
 
 	&::before { inset-inline-start: 0 }
