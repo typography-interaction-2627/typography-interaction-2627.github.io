@@ -4,6 +4,6 @@ const order = 2
 const draft = true
 ```
 
-# DevTools / Web Inspector
+# DevTools&#x202F;/&thinsp;Web Inspector
 
 *TKTKTK*
