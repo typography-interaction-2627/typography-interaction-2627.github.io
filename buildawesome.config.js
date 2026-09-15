@@ -337,7 +337,7 @@ export default (config) => {
 
 					id = href + '-example'
 
-					folder && container.replaceWith(element(`<iframe src="${folder}preview/${file && `?active=${file}`}"></iframe>`))
+					folder && container.replaceWith(element(`<iframe loading="lazy" src="${folder}preview/${file && `?active=${file}`}"></iframe>`))
 				})
 
 				caption && figure.appendChild(caption)
