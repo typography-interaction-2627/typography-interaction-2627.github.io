@@ -97,13 +97,11 @@
 			}
 
 			/* TODO How to have this always snap to pixel height? Takes “windows” off-pattern! */
-			/* TODO Stretches on mobile! See *Typography*. */
 			img, iframe {
-				--height--fallback: calc((var(--lines)) * 1rlh + 1rcap + var(--4px));
+				--height--lines: calc((var(--lines)) * 1rlh + 1rcap + var(--4px));
+				--height--max:   calc(0.75 * var(--svh));
 
-				block-size:      var(--height, var(--height--fallback));
 				filter:          saturate(var(--in-view)) contrast(calc(2 - var(--in-view))) brightness(calc(2 - var(--in-view)));
-				max-block-size:  calc(round(calc(0.8 * var(--svh)), var(--1px)));
 				max-inline-size: 100%;
 
 				/* TODO Abstract this pattern! */
@@ -116,18 +114,27 @@
 				}
 			}
 
+			img {
+				block-size:     calc(var(--height) / var(--zoom, 1));
+				max-block-size: round(calc(min(var(--height--max), var(--height--lines, var(--height--max))) / var(--zoom, 1)), var(--1px));
+				zoom:           var(--zoom); /* So they aren’t as limited by intrinsic resolution. */
+
+				@container style(--scaling: 3) { --zoom: 1.5 }
+			}
+
 			iframe {
 				aspect-ratio: var(--aspect-ratio, 16/9);
 				inline-size:  100%;
 
 				/* Code previews. */
 				&:not([src*="https://"])[src*='/preview'] {
-					max-block-size: calc(round(calc(0.8 * var(--svh)), 1rlh) + 1rcap + var(--4px));
+					block-size:     var(--height--lines);
+					max-block-size: calc(round(var(--height--max), 1rlh) + 1rcap + var(--4px));
 
 					@media (width < 35em) {
 						aspect-ratio:   1 / 2;
 						block-size:     initial;
-						max-block-size: calc(round(calc(0.75 * var(--svh)), 1rcap));
+						max-block-size: round(var(--height--max), 1rcap);
 					}
 				}
 			}
