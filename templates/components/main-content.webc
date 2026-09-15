@@ -167,29 +167,23 @@
 					inline-size:     fit-content;
 					max-inline-size: 100%; /* Retain wrapping! */
 
-					/* Anchor links. */
-					nobr {
-						/* `&ZeroWidthSpace;` to trigger the `white-space` property (keeps with previous word). */
-						&::before { content: '\200B' }
+					a {
+						--family:  'Geneva';
+						--generic: initial;
+						--size:    14;
 
-						a {
-							--family:  'Geneva';
-							--generic: initial;
-							--size:    14;
+						block-size:          var(--8px);
+						display:             inline-block;
+						font-weight:         normal;
+						inline-size:         var(--8px);
+						margin-inline-start: round(calc(var(--resolve) / 3), var(--1px));
+						opacity:             var(--opacity);
+						text-box:            trim-both cap alphabetic;
+						transition-delay:    var(--delay, 1s); /* “Coyote time.” */
+						translate:           0 round(up, calc(-1 * var(--resolve) / 3), var(--1px)); /* The hash glyph is weirdly high/small! */
 
-							block-size:          var(--8px);
-							display:             inline-block;
-							font-weight:         normal;
-							inline-size:         var(--8px);
-							margin-inline-start: round(calc(var(--resolve) / 3), var(--1px));
-							opacity:             var(--opacity);
-							text-box:            trim-both cap alphabetic;
-							transition-delay:    var(--delay, 1s); /* “Coyote time.” */
-							translate:           0 round(up, calc(-1 * var(--resolve) / 3), var(--1px)); /* The hash glyph is weirdly high/small! */
-
-							/* `opsz` dance. */
-							@supports (not (-moz-appearance: none)) { --font: 'Geneva 14' }
-						}
+						/* `opsz` dance. */
+						@supports (not (-moz-appearance: none)) { --font: 'Geneva 14' }
 					}
 				}
 
