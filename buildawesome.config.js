@@ -334,7 +334,9 @@ export default (config) => {
 					id.includes('-example')
 						? figure.prepend(element(`
 							<menu>
-								<li><a title="Link to this example href="#${id}">#</a></li>
+								<li><a title="Link to this example" href="#${id}"><span>#</span></a></li>
+								<li><a title="Open example editor" href="${id.replace('-example', '/preview')}" target="_blank"><span>&lt;&gt;</span></a></li>
+								<li><a title="Open example itself" href="${id.replace('-example', '')}" target="_blank"><span>↗</span></a></li>
 							</menu>
 						`))
 						: figure.prepend(element(`<a title="Link to this figure" href="#${id}">#</a>`))

@@ -29,19 +29,46 @@
 			position:         absolute;
 		}
 
-		> :where(a, menu a) {
+		> menu {
+			display: flex;
+			gap:     var(--gap);
+
+			> li { display: flex }
+		}
+
+		> a,
+		> menu a {
 			--family:  'Geneva';
 			--size:    14;
 
-			block-size:          var(--8px);
-			display:             inline-block;
-			inline-size:         var(--8px);
-			opacity:             var(--opacity);
-			text-box:            trim-both cap alphabetic;
-			transition-delay:    var(--delay, 1s); /* “Coyote time.” */
+			block-size:       var(--7px);
+			display:          inline-block;
+			inline-size:      var(--7px);
+			opacity:          var(--opacity);
+			text-box:         trim-both cap alphabetic;
+			transition-delay: var(--delay, 1s); /* “Coyote time.” */
 
 			/* `opsz` dance. */
 			@supports (not (-moz-appearance: none)) { --font: 'Geneva 14' }
+
+			span { display: inline-block }
+
+			&[href^='#'] span { translate: var(---1px) var(---1px) }
+
+			&[href$='/preview'] {
+				inline-size: calc(11 * var(--1px));
+
+				span { translate: var(---1px) var(---2px) }
+			}
+
+			&:not([href^='#']):not([href$='/preview']) {
+				background-image:    url('/assets/icons/&nearr.svg');
+				background-position: bottom left;
+				background-repeat:   no-repeat;
+				background-size:     var(--7px);
+
+				span { color: transparent } /* Hide actual arrow. */
+			}
 		}
 
 		/* Toggle anchor/example links. */
@@ -49,7 +76,8 @@
 			> :where(a, menu) { --opacity: 0 }
 
 			&:hover > :where(a, menu),
-			> :where(a, menu):focus:focus-visible {
+			> a:focus:focus-visible,
+			> menu:has(a:focus:focus-visible) {
 				--opacity: 1;
 				--delay:   0;
 			}
