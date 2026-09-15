@@ -1,9 +1,11 @@
 <style>
 	figure {
+		--gap: 1rlh;
+
 		align-items: start;
 		display:     grid;
 		position:    relative;
-		row-gap:     1rlh;
+		row-gap:     var(--gap);
 
 		/* Default full-width. */
 		&:not([class]), &[class="borderless"] { grid-column: all }
@@ -121,7 +123,7 @@
 		}
 
 		/* Looser space. */
-		&.borderless { row-gap: calc(2rlh - 1rcap) }
+		&.borderless { --gap: calc(2rlh - 1rcap) }
 
 		figcaption {
 			--size: var(--size--note);
