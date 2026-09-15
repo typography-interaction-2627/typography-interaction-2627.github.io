@@ -9,7 +9,7 @@
 
 /* Toggle stuff. */
 .print  { display: block }
-.screen, hgroup a, body > :where(nav, footer) { display: none }
+.screen, hgroup a, body > footer, nav { display: none }
 
 /* Resets. */
 :where(:root) {
