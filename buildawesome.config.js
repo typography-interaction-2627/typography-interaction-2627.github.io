@@ -313,7 +313,7 @@ export default (config) => {
 				const caption = figure.querySelector(':scope > figcaption')
 
 				caption?.remove()
-				figure.innerHTML = markdown.renderInline(figure.innerHTML.trim(), { figure: true })
+				figure.innerHTML = markdown.renderInline(figure.innerHTML.trim().replaceAll('\n', ''), { figure: true })
 
 				// Video embeds.
 				figure.querySelectorAll('a[href^="https://youtu.be/"], a[href^="https://vimeo.com/"]').forEach((link) => {
