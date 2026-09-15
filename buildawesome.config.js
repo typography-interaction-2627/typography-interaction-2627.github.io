@@ -274,7 +274,7 @@ export default (config) => {
 
 	// Likewise do a dance for GFM `figure` for our dithering/`iframe` needs.
 	const markdownFigures = (markdown) => {
-		const element = (html) => parse(html).firstChild
+		const element = (html) => parse(html.trim()).firstChild
 
 		markdown.core.ruler.after('normalize', 'figures', (state) =>
 			state.src = state.src.replace(/(^ {0,3}(`{3,}|~{3,})[^\n]*\n[\s\S]*?^ {0,3}\2[^\n]*(?:\n|$))|(^<figure\b[^>]*>[\s\S]*?<\/figure>)/gmi, (html, fence) => {
@@ -319,15 +319,26 @@ export default (config) => {
 				figure.querySelectorAll(':scope > img[src], :scope > iframe').forEach((media) => {
 					// …adding dithered images when we can.
 					const dither = media.localName === 'img'
-					? `<as-dithered-image crunch="2" src="${markdown.utils.escapeHtml(media.getAttribute('src'))}"></as-dithered-image>`
-					: ''
+						? `<as-dithered-image crunch="2" src="${markdown.utils.escapeHtml(media.getAttribute('src'))}"></as-dithered-image>`
+						: ''
 
 					id ||= media.getAttribute('src')?.split('.')[0]
 
 					media.replaceWith(element(`<div>${media.outerHTML}${dither}</div>`))
 				})
 
-				id && figure.setAttribute('id', config.getFilter('slugify')(id))
+				if (id) {
+					id = config.getFilter('slugify')(id)
+					figure.setAttribute('id', id)
+
+					id.includes('-example')
+						? figure.prepend(element(`
+							<menu>
+								<li><a title="Link to this example href="#${id}">#</a></li>
+							</menu>
+						`))
+						: figure.prepend(element(`<a title="Link to this figure" href="#${id}">#</a>`))
+				}
 
 				return figure.outerHTML
 			}),

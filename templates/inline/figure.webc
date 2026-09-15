@@ -21,6 +21,40 @@
 			@container style(--columns) { margin-block-start: 2rlh }
 		}
 
+		/* Anchor/example links. */
+		> :where(a, menu) {
+			inset-block-end:  100%;
+			inset-inline-end: 0;
+			margin-block-end: calc(var(--gap) / 2);
+			position:         absolute;
+		}
+
+		> :where(a, menu a) {
+			--family:  'Geneva';
+			--size:    14;
+
+			block-size:          var(--8px);
+			display:             inline-block;
+			inline-size:         var(--8px);
+			opacity:             var(--opacity);
+			text-box:            trim-both cap alphabetic;
+			transition-delay:    var(--delay, 1s); /* “Coyote time.” */
+
+			/* `opsz` dance. */
+			@supports (not (-moz-appearance: none)) { --font: 'Geneva 14' }
+		}
+
+		/* Toggle anchor/example links. */
+		@media (any-hover: hover) {
+			> :where(a, menu) { --opacity: 0 }
+
+			&:hover > :where(a, menu),
+			> :where(a, menu):focus:focus-visible {
+				--opacity: 1;
+				--delay:   0;
+			}
+		}
+
 		/* Container for placing the dithered one/effects. */
 		> div {
 			position: relative;
