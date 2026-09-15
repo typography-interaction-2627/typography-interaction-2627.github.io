@@ -325,6 +325,7 @@
 						&::before {
 							content:            '•' / '';
 							font-weight:        initial;
+							inset-block-start:  0;
 							inset-inline-start: 0;
 							position:           absolute;
 							text-box:           trim-both cap alphabetic;
