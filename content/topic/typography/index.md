@@ -145,9 +145,9 @@ Anatomy of metal type. [<cite>↗</cite>](https://www.flickr.com/photos/depressi
 </figure>
 
 Type was stored in drawers where the *lower* case held the uncapitalized forms, and the *upper* case held the capital forms. Sound familiar?
-<!-- .center .verso -->
+<!-- .center .body -->
 
-<figure class="recto">
+<figure class="right">
 <img src="type-case.jpg">
 <figcaption>
 

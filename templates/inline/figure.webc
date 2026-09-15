@@ -24,9 +24,10 @@
 
 		/* Anchor/example links. */
 		> :where(a, menu) {
-			inset-block-end:  100%;
-			inset-inline-end: 0;
+			inset-block-end:  anchor(start);
+			inset-inline-end: anchor(end);
 			margin-block-end: calc(var(--gap) / 2);
+			position-anchor:  --figure-container;
 			position:         absolute;
 		}
 
@@ -46,9 +47,6 @@
 			display:          inline-block;
 			inline-size:      var(--7px);
 			opacity:          var(--opacity);
-			position-anchor:  --figure-container;
-			position-area:    block-start span-inline-start;
-			position:         absolute;
 			text-box:         trim-both cap alphabetic;
 			transition-delay: var(--delay, 1s); /* “Coyote time.” */
 
