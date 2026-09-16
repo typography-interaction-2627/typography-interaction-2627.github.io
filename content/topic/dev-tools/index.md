@@ -32,8 +32,7 @@ You’ll often hear people (Michael) call it the *Web Inspector*, or just *The 
 
 In Chrome, you can bring them up by right-clicking on any element/part of a page and clicking <samp>Inspect</samp>&#x202F;:
 
-You can also hit <nobr><kbd>⌘</kbd> <kbd>⌥</kbd> <kbd>I</kbd></nobr>&#x202F;.
-<!-- .note -->
+<sub>You can also hit <nobr><kbd>⌘</kbd> <kbd>⌥</kbd> <kbd>I</kbd></nobr>&#x202F;.</sub>
 
 </div>
 
@@ -183,8 +182,7 @@ The console is used to help you work with [JavaScript](/topic/javascript), by *
 
 If your tools are already open, you can show the <samp>Console</samp> (as a drawer, below) with the Customize <samp>⋮</samp> button, or as a whole panel to the right of <samp>Elements</samp>.
 
-You can also hit <nobr><kbd>⌘</kbd> <kbd>⌥</kbd> <kbd>J</kbd></nobr> to go right there!
-<!-- .note -->
+<sub>You can also hit <nobr><kbd>⌘</kbd> <kbd>⌥</kbd> <kbd>J</kbd></nobr> to go right there!</sub>
 
 </div>
 

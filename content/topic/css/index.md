@@ -38,8 +38,7 @@ CSS came after HTML, first proposed by [H<span class="a-ring">å</span>kon Wium 
 - CSS 2, 1998
 - CSS 3, 1999
 
-For the past decade or so, features have been added incrementally by browsers “within” the CSS 3 “standard” (as it was/is with HTML). That’s how it goes, these days.
-<!-- .note -->
+<sub>For the past decade or so, features have been added incrementally by browsers “within” the CSS 3 “standard” (as it was/is with HTML). That’s how it goes, these days.</sub>
 
 <blockquote
 	@attribution="James D. Mason, 1994"
@@ -282,8 +281,7 @@ The *value* here is our class name, which we write in CSS by prefixing with a `.
 
 You can use these over and over, on any kind of element. And individual elements can have *multiple* classes, too. Class names can be whatever you want—there are whole methodologies about what to call these things! (And many an argument.) They are the most common way to target things in CSS, especially at scale.
 
-We’ll talk about how conflicting rules are handled, below.
-<!-- .note -->
+<sub>We’ll talk about how conflicting rules are handled, below.</sub>
 
 ### 3. With an Identifier: `#some-id` <!-- #id .all -->
 
@@ -413,8 +411,7 @@ CSS has [finally added](https://webkit.org/blog/13096/css-has-pseudo-class/) the
 div:has(p) { background-color: red; }
 ```
 
-“All `div`&thinsp;s with a paragraph inside.”
-<!-- .note -->
+<sub>“All `div`&thinsp;s with a paragraph inside.”</sub>
 
 </div>
 
@@ -424,8 +421,7 @@ div:has(p) { background-color: red; }
 div:has(+ ul) { background-color: gold; }
 ```
 
-“All `div`&thinsp;s that have `ul` right after”—lets you look “backwards”!
-<!-- .note -->
+<sub>“All `div`&thinsp;s that have `ul` right after”—lets you look “backwards”!</sub>
 
 </div>
 
@@ -509,8 +505,7 @@ footer {
 }
 ```
 
-Note the `&` [*nesting selector*](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Nesting_selector) which stands in for “parent element.”
-<!-- .note -->
+<sub>Note the `&` [*nesting selector*](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Nesting_selector) which stands in for “parent element.”</sub>
 
 </div>
 
@@ -626,8 +621,7 @@ Besides the basic examples above, [*color*](https://developer.mozilla.org/en-US/
 Named colors are quick to work with when you know a few, but [`hsla`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hsl) (and recently, [`color-mix`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix)) offer a much more intuitive/human way to adjust and work with colors and transparency.
 <!-- .balance -->
 
-These can also all be applied to `background-color` (and `border`, but we’ll talk about that next week).
-<!-- .note -->
+<sub>These can also all be applied to `background-color` (and `border`, but we’ll talk about that next week).</sub>
 
 ### Fonts
 
@@ -681,8 +675,7 @@ Here is a [simple, modern one](/assets/reset.css) for your `<head>`:
 <link href="https://typography-interaction-2526.github.io/assets/reset.css" rel="stylesheet">
 ```
 
-This is what we use here for our course site!
-<!-- .note -->
+<sub>This is what we use here for our course site!</sub>
 
 <blockquote
 	@attribution="H<span class='a-ring cap'>å</span>kon Wium Lie, 1994"
