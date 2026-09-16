@@ -11,7 +11,17 @@
 		}
 
 		/* Use `zoom` inside `ti-preview`, to keep “viewport” measurements at parent scale. */
-		@container style(--scaling: 3) { ti-preview { --output-iframe-zoom: 1.5 } }
+		@container style(--scaling: 3) {
+			ti-preview {
+				--output-zoom: 1.5;
+
+				/* Safari needs `zoom` inside the `iframe` itself. 🫩 */
+				@supports (font: -apple-system-body) {
+					--output-iframe-zoom: 1.5;
+					--output-zoom:        initial;
+				}
+			}
+		}
 
 		/* No-JS basics. */
 		&:has(ti-preview:not(:defined)) body {

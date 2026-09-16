@@ -24,8 +24,8 @@ importers:
         specifier: ^3.0.2
         version: 3.0.2
       '@parsons/ti-preview':
-        specifier: ^0.0.41
-        version: 0.0.41
+        specifier: ^0.0.44
+        version: 0.0.44
       '@uncenter/eleventy-plugin-toc':
         specifier: ^2.1.2
         version: 2.1.2
@@ -395,8 +395,8 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@parsons/ti-preview@0.0.41':
-    resolution: {integrity: sha512-dmZzQmaQ5YghEVq7QV640ce0xU66Q600C7Qj5lYS0uA7mn1h/yMRpSFwYdfafC8xIbPMcad3Il+Empg5dD8xlQ==}
+  '@parsons/ti-preview@0.0.44':
+    resolution: {integrity: sha512-chunY6s1EDwNzQj7Ew/nlLMUmmwHg0+an15TxQEDbHjsGeP8KzWgZjwjgu2+OSb4AFliuLEgvaIaRjTF4ZDS0Q==}
 
   '@puppeteer/browsers@3.2.1':
     resolution: {integrity: sha512-KDz+3qDRdBAlRlMjmKyj6dEs33YHTk/xRHEENSXq6TNnhgoU15ruSHtEBeVF6OZ9tBDY55Se4P0nFMNsipzU9A==}
@@ -1724,7 +1724,7 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.20.1
 
-  '@parsons/ti-preview@0.0.41':
+  '@parsons/ti-preview@0.0.44':
     dependencies:
       '@codemirror/lang-html': 6.4.11
       '@codemirror/lang-javascript': 6.2.4
