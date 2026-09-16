@@ -126,8 +126,21 @@ code, kbd, samp {
 	--size:    var(--size--code);
 	--family:  'Monaco';
 	--generic: monospace; /* Redeclared, as these usually don’t have a container for the query. */
+	--kerning: 0;
 
 	@container style(--size: 9) or style(--size: 10) { --size: 9 } /* Notes and such. */
+
+	/* TODO less redundant way out of this? */
+	@container (not style(--size: 9)) and (not style(--size: 10)) {
+		strong & { --kerning: var(---1px) }
+	}
+
+	:is(h2, h3, h4) & {
+		--size:    12;
+		--kerning: var(---1px);
+	}
+
+	:is(h2, h3, h4, strong) & { font-weight: bold }
 
 	/* `opsz` again. */
 	@supports (not (-moz-appearance: none)) {
@@ -136,6 +149,8 @@ code, kbd, samp {
 		@container style(--tablet) { --font: 'Monaco 12' }
 
 		@container style(--size: 9) or style(--size: 10) { --font: 'Monaco 9' }
+
+		:is(h2, h3, h4) & { --font: 'Monaco 12' }
 	}
 }
 
