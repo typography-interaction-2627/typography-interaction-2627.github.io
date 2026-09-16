@@ -30,6 +30,9 @@
 			text-overflow: ellipsis;
 		}
 
+		/* `code` in headings! */
+		nobr:has(code) { --size: 9 }
+
 		/* Page title for ToC. */
 		> header {
 			background-clip:   content-box;

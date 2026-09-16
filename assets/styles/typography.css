@@ -45,7 +45,7 @@ strong {
 
 nobr { --wrap: nowrap }
 
-abbr {
+abbr:where(:not(nav abbr)) {
 	background:            var(--background--dashed);
 	background-clip:       content-box;
 	background-position-y: var(--underline);
