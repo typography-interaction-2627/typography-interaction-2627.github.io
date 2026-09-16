@@ -690,7 +690,7 @@ This means you have to write everything yourself, but you have more control and 
 Here is a [simple, modern one](/assets/reset.css) for your `<head>`:
 
 ```html <!-- .all -->
-<link href="https://typography-interaction-2526.github.io/assets/reset.css" rel="stylesheet">
+<link href="https://typography-interaction-2627.github.io/assets/reset.css" rel="stylesheet">
 ```
 
 <sub>This is what we use here for our course site!</sub>
