@@ -435,6 +435,7 @@
 			.body + .right { margin-block-start: 1rlh }
 
 			:where(&, details, section) {
+				> *       { grid-column: body }
 				> .all    { grid-column: all }
 				> .aside  { grid-column: aside }
 				> .body   { grid-column: body }
