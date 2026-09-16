@@ -34,7 +34,7 @@ Why should a designer care about HTML?
 
 ## HTML Stands for *HyperText Markup Language*
 
-HTML is the standard markup language/format for creating web pages, containing the content and structure of a page as a series of *elements*.
+**HTML is the standard markup language/format for creating web pages, containing the content and structure of a page as a series of *elements*.**
 <!-- data-description -->
 
 - [<cite>HTML – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML) \
