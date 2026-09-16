@@ -414,7 +414,10 @@ export default (config) => {
 		ignoredElements: ['a'],
 		inheritAttributes: ['inert'],
 		wrapper: (toc) => {
-			const root = parse(toc)
+			const escapedToc = toc.replace(/(<a\b[^>]*>)([\s\S]*?)(<\/a>)/g, (_, openingTag, text, closingTag) =>
+				openingTag + text.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;') + closingTag,
+			)
+			const root = parse(escapedToc)
 
 			// Remove links from the inert ones/their descendents.
 			root.querySelectorAll('a[inert]').forEach((link) =>
