@@ -369,9 +369,11 @@ Style: `style`
 <p style="color: blue;">This is blue text.</p>
 ```
 
-The `style` attribute is used to add styles to an element, such as color, font, size, etc.
+The `style` attribute **~~is~~** *was* used to add styles to an element, such as color, font, size, etc.
 
-<sub>We’ll use CSS for this kind of thing, but know this is how it used to be done and it was brittle and terrible!</sub>
+Nowadays, this is brittle and wrong for reasons to be explained next week—we’ll use proper CSS!
+
+<sub>But know this is how it used to be done and it was *terrible*!</sub>
 </dd>
 
 <dt id="src">
