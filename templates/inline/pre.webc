@@ -100,10 +100,10 @@
 		--tab-bar-foreground:        var(--background);
 		--tab-bar-hover-foreground:  var(--background);
 		--tab-bar-justify:           start;
-		--tab-bar-margin:            var(--editor-padding) var(--editor-padding) var(--3px);
+		--tab-bar-margin:            var(--editor-padding) var(--editor-padding) calc(var(--editor-padding) + var(--3px));
 		--tab-bar-nav-background:    transparent;
 		--tab-bar-nav-box-shadow:    var(--shadow--single);
-		--tab-bar-padding:           calc(1rex - var(--1px));
+		--tab-bar-padding:           var(--2px) var(--3px) var(--4px);
 		--tab-bar-text-box:          var(--editor-text-box);
 
 		--syntax-atom:             var(--background);
