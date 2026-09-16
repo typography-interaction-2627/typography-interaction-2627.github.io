@@ -1,22 +1,34 @@
 ```javascript
 const week = 4
 const order = 1
-const draft = true
 ```
 
 # An Intro to CSS
 
-## First, Why Is This Important?
+## First Again, Why Is This Important?
 
-Beyond just “making it look good,” what does learning CSS do for us? What can we take away from it?
+Beyond just “making it look good,” what does learning CSS do for us? What can we take away from it? Many things will be in common [with HTML](../html/index.md#first-why-do-we-care)—but what else?
 
-<details>
+<details open>
 <summary>
 
 Why should a designer care about CSS?
 
 </summary>
 
+- **You’ll be working with a developer who (probably) does *not*&#x202F;!**
+
+- **The patterns of CSS—relationships, rules, types, classes, exceptions—are useful models/tools for *any* design work, even non-digital things.**
+
+- **In particular, its “large to small” specificity/cascade paradigm helps structure robust, resilient design thinking.**
+
+- **Unpacking our design intuition in code makes us better at understanding and then verbalizing our rationale, IRL.**
+
+- **It offers many novel forms of expression, which can broaden our aesthetic horizons.**
+
+- **Within *one* language, we can tackle (international) typesetting, (all kinds of software) interaction, and (even) motion.**
+
+- **It is flexible, powerful, and *evolving*&#x202F;! Gets better every day.**
 <!-- .balance -->
 
 </details>
