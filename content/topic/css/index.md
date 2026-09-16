@@ -75,13 +75,13 @@ Before we get into the CSS syntax itself, let’s talk about how it is incorpo
 
 ### 1.<span class="cap"> </span>Inline with `style=`
 
-This is original and maybe most straightforward way to add styles, directly as [*attributes*](../html/index.md#attributes) in HTML tags:
+This is the original and most straightforward way to add styles, directly as [*attributes*](../html/index.md#attributes) in HTML tags:
 
 ```html
 <p style="color: red;">This text will be red!</p>
 ```
 
-Seems obvious. However this has some downsides—imagine you want to style all of your paragraphs in the same way, and with multiple properties:
+Seems obvious. However this has some big downsides—imagine you want to style all of your paragraphs in the same way, and with multiple properties:
 <!-- .before -->
 
 ```html <!-- .all -->
@@ -189,7 +189,7 @@ We’ll talk more about [*specificity*](https://developer.mozilla.org/en-US/docs
 
 CSS more recently added [*cascade layers*](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Cascade_layers#creating_cascade_layers) to help manage this. These are most easily used in a `<style>` tag, using [`@import`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@import) to reference an external file and [`layer()`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@import/layer_function) to assign it priority.
 
-Each lower/subsequent layer takes precedent over the previous!
+Each lower/subsequent layer takes precedent over the previous—no matter the selectors/specificity inside!
 
 </div>
 
@@ -227,7 +227,7 @@ It's *much* easier to understand how it all comes together if you keep the code 
 
 > [!WARNING]
 >
-> We’ll use [external](#3external-with-link) [styles](#4using-import-to-assign-layer), only! You might see [inline](#1inline-with-style) or [in-HTML](#2style-in-html) styles elsewhere. But we should *not* see them in your code.
+> So we’ll use [external](#3external-with-link) [styles](#4using-import-to-assign-layer), only! You might see [inline](#1inline-with-style) or [in-HTML](#2style-in-html) styles elsewhere. But we should not see them in your code.
 >
 > <sub>They are generally a sign something has gone wrong—and that you (or your [resource](../../syllabus.md#attribution)) don’t understand why.</sub>
 
@@ -237,10 +237,10 @@ It's *much* easier to understand how it all comes together if you keep the code 
 Even though it is used to style HTML elements, [the syntax of CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/Syntax) is very different. CSS *rules* are made up of *selectors*—used to target certain elements—and then the *declarations* that you want to apply to them. *For this thing, do this!*
 
 - [<cite>CSS Syntax – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Syntax) \
-	They really need to update their diagrams.
+	They really need to update their diagrams.
 
 - [<cite>CSS Reference – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference) \
-	Their exhaustive list goes into the hundreds.
+	Their exhaustive list goes into the hundreds.
 <!-- .right .rows--2 -->
 
 The [curly brackets](https://en.wikipedia.org/wiki/Bracket#Curly_brackets) <nobr>`{` `}`</nobr> (also known as *mustaches* or *handlebars*, for their shape) enclose all the declarations you want to apply to a given selector. These *declarations* are in turn made up of *properties* and *values*.
@@ -251,45 +251,46 @@ Properties are always separated from their corresponding values by a colon `:`, 
 <img src="rule.svg">
 </figure>
 
-**There are [many, many, many CSS properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference). We’ll go over some in our exercises, but look through these to become more familiar.**
-
 ### Ergonomics
 
 <div class="verso">
 
 Just [like HTML](../html/index.md#case-whitespace-tabs-line-breaks), CSS *usually* does not care about capitalization, extra white space, or line breaks. Folks generally use tabs/indenting to indicate hierarchy, but again it is just whatever makes it easier for you!
 
-Capitalization <em>does</em> matter when using `id` or classes as selectors, which have to match the HTML to target correctly.
+Capitalization <em>does</em> matter when using `id` or classes as selectors, which have to match the HTML to target exactly.
 
 Like with HTML, it’s easiest just to be consistent and stick to lowercase (and no spaces)!
 
 </div>
 
-<div class="recto" style="align-self: center">
+<div class="recto center">
 
 ```css
 p {
 	color: red;
-	font-family: 'Gorton', sans-serif;
+	font-family: 'Geneva', sans-serif;
 }
 
 /* Is the same as… */
 
-P{COLOR:RED;FONT-FAMILY:'GORTON',SANS-SERIF;}
+P{COLOR:RED;FONT-FAMILY:'GENEVA',SANS-SERIF;}
 ```
 
 </div>
 
+**Know that there are [many, many, *many* CSS properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference). We’ll go over some in our exercises, but look through these to become more familiar.**
+<!-- .before -->
+
 ## Basic Selectors
 
-Selectors are used to *target* certain HTML elements within the page. These can get pretty complicated, but we’ll look at the three simplest and most common targeting methods to start:
+CSS [selectors](https://web.dev/learn/css/selectors) are used to *target* certain HTML elements within the page. These can get pretty complicated, but we’ll look at the three simplest and most common targeting methods to start:
 
 - [<cite>Type, Class, and ID Selectors – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Type_Class_and_ID_Selectors) \
 	MDN again, as we do.
 
 - [<cite>Selectors – web.dev</cite>](https://web.dev/learn/css/selectors) \
 	Google, too.
-<!-- .right -->
+<!-- .right .rows--3 -->
 
 1. [**Elements**](#1-element-type-p-a-main-etc) like <nobr>`p` `a` `main`</nobr>, etc.
 1. [**Classes**](#2-a-class-class-name) via `.class-name`
@@ -298,7 +299,7 @@ Selectors are used to *target* certain HTML elements within the page. These can 
 
 ### 1.<span class="cap"> </span>Element Type: `p` `a` `main`, etc.
 
-If you want to change the styles for all instances of a given HTML element, you drop the <nobr>`<` `>`</nobr> from the tag for an element selector. These are called [*type selectors*](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors):
+If you want to change the styles for all instances of a given HTML element, you drop the <nobr>`<` `>`</nobr> from the tag for an element selector. These are called [*type selectors*](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors), and are a good way to “paint with broad strokes” and define some basics:
 
 - [<cite>Type selectors – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors) \
 	Match by node name.
@@ -317,7 +318,7 @@ Note that CSS has different `/* comment syntax */` too."
 
 ### 2.<span class="cap"> </span>A Class: `.class-name`
 
-But maybe you don’t want to style all of the paragraphs. You can then use a `class` to [target specific instances](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors). They are  added as an *[attribute](../html/index.md#attributes)* on the element you want to target:
+But maybe you don’t want to style *all* of the paragraphs. You can then use a `.class` to [target specific instances](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors). They are added in your HTML as an [*attribute*](../html/index.md#attributes) on the element you want to target, and can be applied specifically where you want:
 <!-- .balance -->
 
 - [<cite>Class selectors – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors) \
@@ -328,17 +329,22 @@ But maybe you don’t want to style all of the paragraphs. You can then use a `
 
 ***[Class Example](class/)***
 
+<figcaption>
+
+Be sure to flip between the HTML and CSS!
+
+</figcaption>
 </figure>
 
-The *value* here is our class name, which we write in CSS by prefixing with a `.` as with `.highlight` and `.faded`.
+The *value* here is our class name, which we write in CSS by prefixing with a `.` as with `.highlight` and `.faded`. You can use these over and over, on any kind of HTML element.
 
-You can use these over and over, on any kind of element. And individual elements can have *multiple* classes, too. Class names can be whatever you want—there are whole methodologies about what to call these things! (And many an argument.) They are the most common way to target things in CSS, especially at scale.
+ And individual elements can have *multiple* classes, too. Class names are usually qualitative/descriptive but can be whatever you want—there are [whole](https://css-tricks.com/bem-101/) [methodologies](https://css-tricks.com/lets-define-exactly-atomic-css/) about what to call these things! (And many an argument.) They are the one of the most common way to target things in CSS, especially at scale.
 
-<sub>We’ll talk about how conflicting rules are handled, below.</sub>
+<sub>We’ll talk about how [conflicting](#specificity) [rules](#oh-right-the-cascade) are handled, below!</sub>
 
 ### 3.<span class="cap"> </span>An Identifier: `#some-id`
 
-You can also use an `id`, which is a kind of [special attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id) that can only be used *once* in an HTML document. These are useful thus useful for targeting singular things—like your navigation, the document title, specific headings, etc:
+You can also use an `#id`, which is a kind of [special attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id) that can only be used *once* in an HTML document. These are useful thus useful for targeting singular, unique things in your document—like your navigation, the document title, specific headings, etc:
 <!-- .balance -->
 
 - [<cite>ID selectors – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/ID_selectors) \
@@ -351,7 +357,9 @@ You can also use an `id`, which is a kind of [special attribute](https://develop
 
 </figure>
 
-These are prefixed by `#` in CSS, as with `#title` and `#introduction`. If you remember, they can also be used as [link destinations](../html/index.md#id)!
+These are prefixed by `#` in your CSS, as with <nobr>`#title`/`#introduction`</nobr>—but *not* when they are in the HTML attributes, like <nobr>`id="title"`/`id="introduction"`</nobr>. This will catch you up; it still gets us sometimes!
+
+<sub>If you remember, identifiers can also be used as [link destinations](../html/index.md#id)! Which *do* keep the `#` at the start. Computers!</sub>
 
 ## Fancy Selectors
 
@@ -472,7 +480,7 @@ CSS has [finally added](https://webkit.org/blog/13096/css-has-pseudo-class/) the
 div:has(p) { background-color: red; }
 ```
 
-<sub>“All `div`&thinsp;s with a paragraph inside.”</sub>
+<sub>“All `div`&#x202F;s with a paragraph inside.”</sub>
 
 </div>
 
@@ -482,7 +490,7 @@ div:has(p) { background-color: red; }
 div:has(+ ul) { background-color: gold; }
 ```
 
-<sub>“All `div`&thinsp;s that have `ul` right after”—lets you look “backwards”!</sub>
+<sub>“All `div`&#x202F;s that have `ul` right after”—lets you look “backwards”!</sub>
 
 </div>
 
@@ -614,7 +622,7 @@ You could write a *long* book (and many people have) about CSS specificity—the
 
 ## Oh Right, the Cascade
 
-Yikes, we haven’t even talked about that first *C&thinsp;*! Remember, it stands for [*cascading*](https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade).
+Yikes, we haven’t even talked about that first *C*! Remember, it stands for [*cascading*](https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade).
 
 - [<cite>Introducing the CSS Cascade – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade) \
 	MDN is particularly *dry* on this one.
