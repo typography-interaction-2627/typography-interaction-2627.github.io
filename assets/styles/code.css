@@ -26,7 +26,7 @@ samp {
 	/* Land pattern with “chipped” corners. */
 	@supports (inline-size: calc-size(auto, size)) {
 		clip-path:   initial;
-		inline-size: calc-size(auto, round(up, size, var(--2px)) - var(--1px));
+		inline-size: calc-size(auto, round(up, calc(size + -1 * var(--kerning)), var(--2px)) - var(--1px));
 	}
 
 	/* Something with the `overflow`! */
@@ -63,5 +63,9 @@ samp {
 	}
 
 	&::before { inset-inline-start: 0 }
-	&::after  { inset-inline-end: 0 }
+
+	&::after  {
+		inset-inline-end:    0;
+		margin-inline-start: calc(-1 * var(--kerning));
+	}
 }
