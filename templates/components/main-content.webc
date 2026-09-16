@@ -102,11 +102,13 @@
 				.rows--5 { --rows: 5 }
 				.rows--6 { --rows: 6 }
 
-				/* TODO Organize these! */
 				.start  { align-self: start }
-				.stack  { figure { margin: initial } }
 				.center { align-self: center }
 				.end    { align-self: end }
+
+				.justify-start  { justify-self: start }
+				.justify-center { justify-self: center }
+				.justify-end    { justify-self: end }
 
 				*:has(> .sticky) {
 					align-self: stretch;
@@ -414,9 +416,12 @@
 			.rows--6 { --rows: 6 }
 
 			.start  { align-self: start }
-			.stack  { figure { margin: initial } }
 			.center { align-self: center }
 			.end    { align-self: end }
+
+			.justify-start  { justify-self: start }
+			.justify-center { justify-self: center }
+			.justify-end    { justify-self: end }
 
 			*:has(> .sticky) {
 				align-self: stretch;

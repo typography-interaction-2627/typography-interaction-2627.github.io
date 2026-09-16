@@ -147,7 +147,7 @@ And as designers—they also help us to organize our systems, and give us hooks 
 	MDN will always go deep; this is *all* the elements.
 <!-- .right -->
 
-<figure class="borderless">
+<figure class="borderless all justify-center">
 <img src="tag.svg">
 <figcaption>
 
@@ -303,7 +303,7 @@ If you have three of something, it is probably [a list](#lists)! There are also 
 	There are a lot of them.
 <!-- .right -->
 
-<figure class="borderless">
+<figure class="borderless all justify-center">
 <img src="attr.svg">
 </figure>
 

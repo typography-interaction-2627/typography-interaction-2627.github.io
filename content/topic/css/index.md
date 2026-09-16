@@ -247,7 +247,7 @@ The [curly brackets](https://en.wikipedia.org/wiki/Bracket#Curly_brackets) <nobr
 
 Properties are always separated from their corresponding values by a colon `:`, and each declaration line has to end in a semicolon `;`. (It’s just how it is!) Also, there are no spaces between values and their units (like `2rem`)! You will get used to it.
 
-<figure class="borderless">
+<figure class="borderless all justify-center">
 <img src="rule.svg">
 </figure>
 
