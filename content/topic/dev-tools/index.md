@@ -6,8 +6,7 @@ const draft = true
 
 # DevTools&#x202F;/&thinsp;Web Inspector
 
-There is no single *best* browser; they are all kind of differently bad, in [different ways](https://en.wikipedia.org/wiki/Anna_Karenina_principle).
-<!-- .intro .body -->
+**There is no single *best* browser; they are all kind of differently bad, in [different ways](https://en.wikipedia.org/wiki/Anna_Karenina_principle).**
 
 - [<cite>Chrome DevTools</cite>](https://developer.chrome.com/docs/devtools/) \
 We’ll be using these.
@@ -112,11 +111,9 @@ On the right, you can see the sum *Computed* (or *rendered*) values of all the 
 You can type specific CSS properties/values into both <samp>Filter</samp> boxes to quickly narrow things down!
 <!-- .note .recto .before--0 style="text-align: right" -->
 
-You can make changes in Elements or Styles, and the edits will be immediately visible on the page *as if you had edited the source files*!
-<!-- .intro .before--3 -->
+**You can make changes in Elements or Styles, and the edits will be immediately visible on the page *as if you had edited the source files*!**
 
-It’s useful to try things out quickly—and diagnose where problems/conflicts arise.
-<!-- .intro .before--0 -->
+**It’s useful to try things out quickly—and diagnose where problems/conflicts arise.**
 
 <aside>
 
@@ -163,8 +160,7 @@ The *Preview Zoom* also allows you to approximate views *larger* than your curre
 	>
 </figure>
 
-Remember that you are not targeting specific devices; you are looking for when your design/content *breaks*!
-<!-- .intro -->
+**Remember that you are not targeting specific devices; you are looking for when your design/content *breaks*!**
 
 <aside>
 
@@ -200,8 +196,7 @@ If your tools are already open, you can show the <samp>Console</samp> (as a dra
 	>
 </figure>
 
-This area will show any [messages logged](https://developer.mozilla.org/en-US/docs/Web/API/console#outputting_text_to_the_console) from your JavaScript with `console.log()`.
-<!-- .intro -->
+**This area will show any [messages logged](https://developer.mozilla.org/en-US/docs/Web/API/console#outputting_text_to_the_console) from your JavaScript with `console.log()`.**
 
 <div class="balance verso">
 

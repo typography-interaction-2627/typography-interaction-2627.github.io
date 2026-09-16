@@ -57,8 +57,7 @@ I'll comment that style sheets constitute a wormhole into unspeakable universes.
 
 Before we get into the CSS syntax itself, let’s talk about how it is incorporated with your HTML.
 
-There are three ways it can be added:
-<!-- .intro-->
+**There are three ways it can be added:**
 
 1. *Inline* on HTML tags themselves
 1. Via `<style>` elements in HTML documents
@@ -167,8 +166,7 @@ p {
 
 </div>
 
-We’ll talk more about *[specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity)* later, but know that the *inline* approach takes precedent over other methods—under the “closest, then lowest” logic.
-<!-- .intro .before--2 -->
+**We’ll talk more about *[specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity)* later, but know that the *inline* approach takes precedent over other methods—under the “closest, then lowest” logic.**
 
 ## Separation of Concerns
 
@@ -201,8 +199,7 @@ Properties are always separated from their corresponding values by a colon `:`, 
 
 <figure @source="rule.svg"></figure>
 
-There are [many, many, many CSS properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference). We’ll go over some in our exercises, but look through these to become more familiar.
-<!-- .intro -->
+**There are [many, many, many CSS properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference). We’ll go over some in our exercises, but look through these to become more familiar.**
 
 ### Ergonomics
 
@@ -512,8 +509,7 @@ footer {
 …to make the hierarchical relationship self-evident, less redundant, and easier to change—especially as your stylesheets inevitably grow! Each level (generation?) can be any CSS selector.
 <!-- .before--2 -->
 
-These can dramatically improve your editing experience!
-<!-- .intro -->
+**These can dramatically improve your editing experience!**
 
 <aside>
 
