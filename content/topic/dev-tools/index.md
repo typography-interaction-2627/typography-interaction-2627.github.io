@@ -84,7 +84,7 @@ Handy tip: <nobr><kbd>⌘</kbd> <kbd>F</kbd></nobr> in here will let you search 
 
 The area below is for the styles. It shows whatever *CSS properties* apply to the element you have selected above, in the DOM/Elements panel.
 
-These are ordered (somewhat unintuitively) in a *more*-[specific](/topic/css/#specificity), *reverse*-[cascade](/topic/css/#oh-right-the-cascade) sequence—inline styles at the top, external and internal stylesheets, then *user-agent* styles at the bottom—with any cascading/conflicting rules crossed out, as you go down.
+These are ordered (somewhat unintuitively) in a *more*-[specific](../css/index.md#specificity), *reverse*-[cascade](../css/index.md#oh-right-the-cascade) sequence—inline styles at the top, external and internal stylesheets, then *user-agent* styles at the bottom—with any cascading/conflicting rules crossed out, as you go down.
 
 On the right, you can see the sum *Computed* (or *rendered*) values of all the rules that apply—regardless of where they come from. These represent *exactly* what the browser is showing to you for the selected element.
 
@@ -163,7 +163,7 @@ The <samp>More Options</samp> menu here has some handy tricks!
 
 <div class="verso pretty" style="align-self: start">
 
-The console is used to help you work with [JavaScript](/topic/javascript), by *logging* messages, warnings, and any errors from your code as it runs. It can also evaluate written/pasted JS, live.
+The console is used to help you work with [JavaScript](../javascript/index.md), by *logging* messages, warnings, and any errors from your code as it runs. It can also evaluate written/pasted JS, live.
 
 If your tools are already open, you can show the <samp>Console</samp> (as a drawer, below) with the Customize <samp>⋮</samp> button, or as a whole panel to the right of <samp>Elements</samp>.
 
