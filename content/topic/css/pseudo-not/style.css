@@ -1,0 +1,12 @@
+/* “Invert” other pseudos/counts: all non-first `p`: */
+p:not(:first-child) { color: red }
+
+/* Or check elements: any child that isn’t `p`: */
+section *:not(p) { color: blue }
+
+/* “Flip” a `.class`: `section` that aren’t `.warning`: */
+section:not(.warning) { background-color: lightgray; }
+
+/* But often best to just target things themselves! */
+section:first-child { background-color: lightgray }
+.warning { background-color: yellow}

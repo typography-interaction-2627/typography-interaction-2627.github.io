@@ -9,6 +9,3 @@ p:last-child { color: fuchsia; }
 
 /* Only one. */
 p:only-child { color: red; }
-
-/* You can invert these too with `:not`. */
-div:not(:first-child) { background-color: lightgray; }

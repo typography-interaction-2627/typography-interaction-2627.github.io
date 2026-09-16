@@ -432,7 +432,7 @@ Other common pseudo-class examples have to do with [counts and positions](https:
 	Another for selecting the container.
 <!-- .right -->
 
-<figure style="--lines: 16">
+<figure style="--lines: 13">
 
 ***[Pseudo-Child Example](pseudo-child/style.css)***
 
@@ -443,7 +443,27 @@ Many designs treat the first or last (top or bottom) instances differently—thi
 </figcaption>
 </figure>
 
-<!-- TODO Add separate `:not()` example -->
+#### Negation / `:not`
+
+There is also a special [`:not` pseudo-class](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:not) that flips the logic and selects what does *not* match the given selector(s):
+
+- [<cite>`:not()` pseudo-class – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:not) \
+	Invert/negate the selector(s) inside the `()`.
+<!-- .right -->
+
+<figure style="--lines: 14">
+
+***[Pseudo-Negation Example](pseudo-not/style.css)***
+
+<figcaption>
+
+It’s pretty easy to over-select with `:not`—but *can* be quicker than selecting a bunch of other things.
+
+</figcaption>
+</figure>
+
+
+It can be [tricky](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:not#description) and confusing to use, though—so consider flipping your mental model, instead of the logic! Selectors are already hard enough.
 
 ### Pseudo-Elements: `selector::pseudo`
 
