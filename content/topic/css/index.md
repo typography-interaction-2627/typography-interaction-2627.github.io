@@ -68,12 +68,12 @@ Before we get into the CSS syntax itself, let’s talk about how it is incorpo
 
 **There are ~~three~~ *four* ways CSS can be added to your page:**
 
-1. *Inline* on individual HTML tags themselves
-1. Via `<style>` elements in HTML documents
-1. As separate/external `.css` files, via `<link>` elements
-1. Using `@import` to assign `layer()`
+1. [**Inline**](#1-inline-with-style) on individual HTML tags themselves
+1. [**In-HTML**](#2-in-html-with-style) blocks via `<style>` elements
+1. [**External**](#3-external-with-link), separate `.css` files via `<link>` elements
+1. [**External (layered)**](#4external-with-import-to-assign-layer) using `@import`/`layer()`
 
-### 1.&ensp;Inline with `style=`
+### 1.<span class="cap"> </span>Inline with `style=`
 
 This is original and maybe most straightforward way to add styles, directly as [*attributes*](../html/index.md#attributes) in HTML tags:
 
@@ -95,7 +95,7 @@ Seems obvious. However this has some downsides—imagine you want to style all o
 It makes it hard to read, and hard to change and maintain—you’d have to update every single instance. (In software, we’d refer to this as [*brittle*](https://en.wikipedia.org/wiki/Software_brittleness)—meaning it is easy to break.)
 <!-- .before -->
 
-### 2.&ensp;`<style>` in HTML
+### 2.<span class="cap"> </span>In-HTML with `<style>`
 
 <div class="center verso">
 
@@ -130,7 +130,7 @@ The rules are written written with selectors—more on those, below. But import
 
 </div>
 
-### 3.&ensp;External with `<link>`
+### 3.<span class="cap"> </span>External with `<link>`
 
 <div class="verso center">
 
@@ -181,7 +181,7 @@ p {
 
 </div>
 
-### 4.&ensp;Using `@import` to assign `layer()`
+### 4.<span class="cap"> </span>External with `@import` to assign `layer()`
 
 <div class="verso center">
 
@@ -291,12 +291,12 @@ Selectors are used to *target* certain HTML elements within the page. These can 
 	Google, too.
 <!-- .right -->
 
-1. Elements (like <nobr>`p` `a` `main`</nobr> etc.)
-1. Classes (written `.class-name`&thinsp;)
-1. Identifiers (and `#some-id`&thinsp;)
-<!-- .after--4 -->
+1. [**Elements**](#1-element-type-p-a-main-etc) like <nobr>`p` `a` `main`</nobr>, etc.
+1. [**Classes**](#2-a-class-class-name) via `.class-name`
+1. [**Identifiers**](#3-an-identifier-some-id) with `#some-id`
+<!-- .after -->
 
-### 1.&ensp;By Element Type: `p` `a` `main` etc.
+### 1.<span class="cap"> </span>Element Type: `p` `a` `main`, etc.
 
 If you want to change the styles for all instances of a given HTML element, you drop the <nobr>`<` `>`</nobr> from the tag for an element selector. These are called [*type selectors*](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors):
 
@@ -315,7 +315,7 @@ Note that CSS has different `/* comment syntax */` too."
 </figcaption>
 </figure>
 
-### 2.&ensp;With a Class: `.class-name`
+### 2.<span class="cap"> </span>A Class: `.class-name`
 
 But maybe you don’t want to style all of the paragraphs. You can then use a `class` to [target specific instances](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors). They are  added as an *[attribute](../html/index.md#attributes)* on the element you want to target:
 <!-- .balance -->
@@ -336,7 +336,7 @@ You can use these over and over, on any kind of element. And individual elements
 
 <sub>We’ll talk about how conflicting rules are handled, below.</sub>
 
-### 3.&ensp;With an Identifier: `#some-id`
+### 3.<span class="cap"> </span>An Identifier: `#some-id`
 
 You can also use an `id`, which is a kind of [special attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id) that can only be used *once* in an HTML document. These are useful thus useful for targeting singular things—like your navigation, the document title, specific headings, etc:
 <!-- .balance -->

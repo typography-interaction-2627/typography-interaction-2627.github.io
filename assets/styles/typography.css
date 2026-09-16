@@ -318,6 +318,11 @@ h1 {
 .pretty  { --wrap: pretty }
 .nowrap  { --wrap: nowrap }
 
+span.cap {
+	inline-size: 1cap;
+	display:     inline-block;
+}
+
 /* Don’t tell Susan! */
 span.rarr,
 span.times,
