@@ -54,6 +54,25 @@ abbr:where(:not(nav abbr)) {
 	margin-inline-start:   calc(-1 * var(--left));
 	padding-inline-end:    var(--right);
 	padding-inline-start:  var(--left);
+
+s {
+	background: var(--background--check);
+	color:      transparent;
+	position:   relative;
+
+	/* Override pattern. */
+	background-clip: text;
+
+	@supports (font: -apple-system-body) { background-position-x: 0.2em } /* 🤷‍♀️ */
+
+	&::before {
+		background:        var(--background--border);
+		block-size:        var(--1px);
+		content:           '';
+		inset-block-start: round(50%, var(--1px));
+		inset-inline:      0;
+		position:          absolute;
+	}
 }
 
 /* On parent for `@container`. */
