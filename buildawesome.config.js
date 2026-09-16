@@ -141,6 +141,19 @@ export default (config) => {
 		state.src = state.src.replace(/<!--\s*(\.(?:[\s\S]*?)|#(?:[\s\S]*?)|data(?:[\s\S]*?)|style(?:[\s\S]*?)|inert)\s*-->$/gm, '{ $1 }'),
 	)
 
+	// Overrides (and anchors) back on the heading itself.
+	const markdownFixHeadingIds = (markdown) => markdown.core.ruler.after('header_sections', 'restoreHeadingIds', ({ tokens }) =>
+		tokens.forEach((token, index) => {
+			if (token.type !== 'section_open') return
+
+			const id = token.attrGet('id')
+			if (!id) return
+
+			tokens[index + 1].attrSet('id', id)
+			token.attrs = token.attrs.filter(([name]) => name !== 'id')
+		}),
+	)
+
 	// Heading wrapping/links.
 	const markdownAnchors = (markdown) => markdown.use(markdownItAnchor, {
 		// TODO Apostrophes! And `&shy;`
@@ -378,6 +391,7 @@ export default (config) => {
 		.use(markdownCommentsToCurlies)
 		.use(markdownItAbbr) // TODO can we have this run after ragging?
 		.use(markdownItHeaderSections)
+		.use(markdownFixHeadingIds)
 		.use(markdownAnchors)
 		.use(markdownItAttrs)
 		.use(markdownPreCode)
