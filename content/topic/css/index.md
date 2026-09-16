@@ -30,7 +30,7 @@ CSS is the standard language/format for styling web pages, which specifies what 
 	“What can my font do?”
 <!-- .right .rows--6 -->
 
-In our ongoing analogy, CSS is the *skin* of the web. [Just like HTML](/topic/html), at its most basic it is still just text, in a file, on a computer. It can live inside HTML documents themselves, but is more commonly seen on its own with the extension `.css`
+In our ongoing analogy, CSS is the *skin* of the web. [Just like HTML](../html/index.md), at its most basic it is still just text, in a file, on a computer. It can live inside HTML documents themselves, but is more commonly seen on its own with the extension `.css`
 
 CSS came after HTML, first proposed by [H<span class="a-ring">å</span>kon Wium Lie](https://www.w3.org/Style/CSS20/history.html) in 1994—who was working with our friend Tim at CERN and wanted more control over the presentation of web pages. (Tim was *against* the idea, thinking it should be up to each user—he lost.) It’s had three major revisions that have grown the vocabulary:
 
@@ -60,7 +60,7 @@ Before we get into the CSS syntax itself, let’s talk about how it is incorpo
 
 ### 1.&emsp;Inline with `style=` <!-- #inline -->
 
-This is the most straightforward way to add styles, directly as [*attributes*](/topic/html/#attributes) in HTML tags:
+This is the most straightforward way to add styles, directly as [*attributes*](../html/index.md#attributes) in HTML tags:
 <!-- .balance -->
 
 ```html
@@ -81,7 +81,7 @@ It makes it hard to read, and hard to change and maintain—you’d have to upda
 
 <div class="center verso">
 
-So the next way that was added to the standard was using a special HTML element, `<style>`, that wraps blocks of CSS that then apply to an entire document. They go up in the `<head>` of our [HTML documents](/topic/html/#the-basic-document).
+So the next way that was added to the standard was using a special HTML element, `<style>`, that wraps blocks of CSS that then apply to an entire document. They go up in the `<head>` of our [HTML documents](../html/index.md#the-basic-document).
 
 The rules are written written with selectors—more on those, below. But importantly, we can now control styling of all the paragraphs easily, at once.
 
@@ -173,7 +173,7 @@ It's *much* easier to understand how it all comes together if you keep the code 
 >
 > External styles, only! You might see inline or in-HTML styles elsewhere. But we shouldn’t see them in your code!
 >
-> <sub>They are generally a sign something has gone wrong—and that you (or your [resource](/syllabus/#code-plagiarism)) don’t understand.</sub>
+> <sub>They are generally a sign something has gone wrong—and that you (or your [resource](../../syllabus.md/#attribution)) don’t understand.</sub>
 
 
 ## CSS Rules
@@ -201,7 +201,7 @@ Properties are always separated from their corresponding values by a colon `:`, 
 
 <div class="verso">
 
-Just [like HTML](/topic/html/#case-whitespace-tabs-line-breaks), CSS *usually* does not care about capitalization, extra white space, or line breaks. Folks generally use tabs/indenting to indicate hierarchy, but again it is just whatever makes it easier for you!
+Just [like HTML](../html/index.md#case-whitespace-tabs-line-breaks), CSS *usually* does not care about capitalization, extra white space, or line breaks. Folks generally use tabs/indenting to indicate hierarchy, but again it is just whatever makes it easier for you!
 
 Capitalization <em>does</em> matter when using `id` or classes as selectors, which have to match the HTML to target correctly.
 
@@ -261,7 +261,7 @@ Note that CSS has different `/* comment syntax */` too."
 
 ### 2. With a Class: `.class-name` <!-- #class .all -->
 
-But maybe you don’t want to style all of the paragraphs. You can then use a `class` to [target specific instances](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors). They are  added as an *[attribute](/topic/html/#attributes)* on the element you want to target:
+But maybe you don’t want to style all of the paragraphs. You can then use a `class` to [target specific instances](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors). They are  added as an *[attribute](../html/index.md#attributes)* on the element you want to target:
 <!-- .balance -->
 
 - [<cite>Class selectors – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors)
@@ -295,7 +295,7 @@ You can also use an `id`, which is a kind of [special attribute](https://develop
 
 </figure>
 
-These are prefixed by `#` in CSS, as with `#title` and `#introduction`. If you remember, they can also be used as [link destinations](/topic/html/#id)!
+These are prefixed by `#` in CSS, as with `#title` and `#introduction`. If you remember, they can also be used as [link destinations](../html/index.md#id)!
 
 ## Fancy Selectors
 
@@ -320,7 +320,7 @@ More commonly, you might apply declarations to multiple selectors, sometimes cal
 
 ### With Specific Attributes: `selector[attribute]` <!-- .all -->
 
-You can use the various [attributes](/topic/html/#attributes) as selectors too, using square brackets <nobr>`[` `]`</nobr>. These are usually very similar to using *classes*, but can help you [differentiate things](https://css-tricks.com/attribute-selectors/) like internal and external links, for example:
+You can use the various [attributes](../html/index.md#attributes) as selectors too, using square brackets <nobr>`[` `]`</nobr>. These are usually very similar to using *classes*, but can help you [differentiate things](https://css-tricks.com/attribute-selectors/) like internal and external links, for example:
 <!-- .balance -->
 
 - [<cite>Attribute selectors – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Attribute_selectors)
@@ -678,7 +678,7 @@ For now, just eyeball your units in `rem`, focusing on relationships. We’ll t
 
 ## Resets
 
-As we talked about [last week](/topic/html/#user-agent-styles), browsers have their own, built-in way that they display HTML elements. These *<nobr>user-agent</nobr> styles* are specific, somewhat, to each platform and each browser.
+As we talked about [last week](../html/index.md#user-agent-styles), browsers have their own, built-in way that they display HTML elements. These *<nobr>user-agent</nobr> styles* are specific, somewhat, to each platform and each browser.
 
 This is [the “look” we have been seeing](http://contemporary-home-computing.org/prof-dr-style/) when we write plain HTML without any CSS—usually *Times New Roman*, with blue links, and small spacing between elements.
 
@@ -687,7 +687,7 @@ Often, when you are working towards your own design, you will find yourself figh
 This means you have to write everything yourself, but you have more control and aren’t building on unknown foundations. And things should be (more) consistent, across browsers and platforms.
 <!-- .after--2 -->
 
-Here is a [simple, modern one](/assets/reset.css) for your `<head>`:
+Here is a [simple, modern one](../../../assets/reset.css) for your `<head>`:
 
 ```html <!-- .all -->
 <link href="https://typography-interaction-2627.github.io/assets/reset.css" rel="stylesheet">
