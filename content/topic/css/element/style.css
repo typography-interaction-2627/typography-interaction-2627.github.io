@@ -1,0 +1,8 @@
+/* This is a “wildcard,” targeting any element. */
+* { color: gray; }
+
+p { color: red; }
+
+blockquote { color: blue; }
+
+footer { background-color: lightgray; }

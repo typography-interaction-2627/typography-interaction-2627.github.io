@@ -1,0 +1,15 @@
+/* The “descendant” combinator. */
+/* Only paragraphs inside the header. */
+header p { color: blue; }
+
+/* The “child” combinator. */
+/* Only immediate children paragraphs of `body`. */
+body > p { color: gray; }
+
+/* “Adjacent sibling” combinator. */
+/* Only immediately preceded by another paragraph. */
+p + p { color: teal; }
+
+/* “General sibling” combinator. */
+/* Only paragraphs following `h2`. */
+h2 ~ p { color: green; }

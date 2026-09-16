@@ -1,0 +1,8 @@
+/* Links that start with `https://` are external. */
+a[href^='https://'] { color: teal; }
+
+/* Links with `.pdf` anywhere in them. */
+a[href*='.pdf'] { color: green; }
+
+/* The `open` attribute is added when you toggle. */
+details[open] { color: gray; }

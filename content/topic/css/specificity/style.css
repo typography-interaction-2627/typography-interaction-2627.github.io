@@ -1,0 +1,9 @@
+p { color: red; }
+
+/* Will “win” over an element selector. */
+.maroon { color: maroon; }
+
+/* But IDs will supersede classes. */
+#intro { color: blue; }
+
+#warning { color: teal; }

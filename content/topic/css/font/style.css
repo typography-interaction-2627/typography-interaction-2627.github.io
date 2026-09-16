@@ -1,0 +1,39 @@
+/* Importing a typeface with a bunch of weights. */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Apply this family to everything. */
+body { font-family: 'Work Sans', sans-serif; }
+
+/* Size is the first thing you’ll want to adjust. */
+li:nth-child(1) { font-size: 3rem; }
+li:nth-child(2) { font-size: 0.75rem; }
+/* Browsers usually default to 1rem = 16px. */
+
+/* Then the space between your lines, relative to your font-size. */
+li:nth-child(3) { line-height: 200%; }
+/* This could also be written as “2em”, or just “2”. */
+
+/* You can specify different weights. */
+li:nth-child(4) { font-weight: 100; }
+li:nth-child(5) { font-weight: 900; }
+/* These go from 100–900, depending on what your family has. */
+/* Default is 400, and you’ll see “bold”—which maps to 700. */
+
+li:nth-child(6) { font-style: italic; } /* Default is “normal”. */
+
+li:nth-child(7) { text-transform: uppercase; } /* YOU CAN YELL */
+
+/* This uses a relative unit, based on the font-size. */
+li:nth-child(8) { letter-spacing: 0.1em; }
+li:nth-child(9) { letter-spacing: -0.1em; } /* Negative values. */
+
+/* Keep in mind these don’t apply semantic meaning… */
+li:nth-child(10) { text-decoration: underline; } /* Even non-links. */
+li:nth-child(11) { text-decoration: line-through; }
+/* Decoration should be paired with a tag, like <em> or <del>. */
+
+li:nth-child(12) { text-align: center; } /* Default is “start”. */
+li:nth-child(13) { text-align: justify; } /* Careful here… */
+li:nth-child(14) { text-align: end; } /* Only sparingly! */
+
+li + li { margin-block-start: 2em }

@@ -1,0 +1,31 @@
+/* There are a bunch of named colors. */
+li:nth-child(1) { color: dodgerblue; }
+
+/* Or you can specify a hex value. Brands love these. */
+li:nth-child(2) { color: #1e90ff; }
+
+/* Or RGB for Red, Green, Blue, if you think like a screen. */
+li:nth-child(3) { color: rgb(30, 144, 255); }
+
+/* Or Hue, Saturation, Lightness, which is more human. */
+li:nth-child(4) { color: hsl(210, 100%, 56%); }
+
+/* RGB and HSL have a fourth value, for Alpha (transparency). */
+li:nth-child(5) { color: rgba(30, 144, 255, 50%); }
+li:nth-child(6) { color: hsla(210, 100%, 56%, 0.5); }
+/* Alpha as a percentage, 0–100%, or a decimal, 0–1. */
+
+/* Nowadays you can “mix” colors. */
+li:nth-child(7) { color: color-mix(in srgb, dodgerblue, tomato); }
+
+li:nth-child(8) {
+	color: dodgerblue;
+	opacity: 0.5; /* This will affect everything, not just text! */
+}
+
+li:nth-child(9) {
+	color: white;
+	background-color: dodgerblue; /* Same for backgrounds! */
+}
+
+li + li { margin-block-start: 2em } /* Just for the demo. */

@@ -1,0 +1,15 @@
+/* 404 for the font. */
+@font-face {
+	font-family: 'Some Cool Font';
+	src:         url('/fonts/some-cool-font.woff2') format('woff2');
+}
+
+
+/* Triggers overflow warning on image. 🤷‍♀️ */
+section img {
+	object-fit: cover;
+	object-position: center;
+	overflow: clip;
+}
+
+p { font-family: 'Some Cool Font' }

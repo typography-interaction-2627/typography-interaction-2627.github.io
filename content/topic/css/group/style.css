@@ -1,0 +1,12 @@
+/* Paragraphs with the class `warning`. */
+p.warning { color: red; }
+
+/* The `h2` isn’t really necessary here… */
+/* Since the `id` is already unique! */
+h2#second-heading { color: blue; }
+
+/* This applies to both selectors! D.R.Y. */
+blockquote,
+footer {
+	background-color: lightgray;
+}

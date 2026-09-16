@@ -1,0 +1,17 @@
+/* These are inserted before and after the heading. */
+h1::before,
+h1::after {
+	color: red;
+	content: ' ••• ';
+}
+
+p::first-letter {
+	color: red;
+	font-size: 3em;
+	font-weight: bold;
+}
+
+p::first-line { color: maroon; }
+
+/* After external links. */
+a[href^='https://']::after { content: ' ↗'; }

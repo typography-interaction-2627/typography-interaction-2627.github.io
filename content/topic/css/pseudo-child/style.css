@@ -1,0 +1,14 @@
+/* The paragraph is the first descendent of its parent. */
+p:first-child { color: blue; }
+
+/* Paragraphs that are the 4th children. */
+p:nth-child(4) { color: purple; }
+
+/* Last one. */
+p:last-child { color: fuchsia; }
+
+/* Only one. */
+p:only-child { color: red; }
+
+/* You can invert these, too. */
+div:not(:first-child) { background-color: lightgray; }

@@ -1,0 +1,10 @@
+body {
+	color: gray;
+	font-family: sans-serif;
+}
+
+span {
+	color: blue;
+	font-style: italic;
+	font-weight: bold;
+}
