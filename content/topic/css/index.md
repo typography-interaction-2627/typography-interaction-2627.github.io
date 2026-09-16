@@ -9,7 +9,7 @@ const order = 1
 
 Beyond just “making it look good,” what does learning CSS do for us? What can we take away from it? Many things will be in common [with HTML](../html/index.md#first-why-do-we-care)—but what else?
 
-<details open>
+<details>
 <summary>
 
 Why should a designer care about CSS?
