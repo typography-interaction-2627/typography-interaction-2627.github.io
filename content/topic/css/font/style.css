@@ -10,8 +10,8 @@ li:nth-child(2) { font-size: 0.75rem; }
 /* Browsers usually default to 1rem = 16px. */
 
 /* Then the space between your lines, relative to your font-size. */
-li:nth-child(3) { line-height: 200%; }
-/* This could also be written as “2em”, or just “2”. */
+li:nth-child(3) { line-height: 2; }
+/* This could also be written as “2em”, or “200%”. */
 
 /* You can specify different weights. */
 li:nth-child(4) { font-weight: 100; }

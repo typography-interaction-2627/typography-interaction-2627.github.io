@@ -1,5 +1,5 @@
 /* Importing from Google Fonts. These have to be at the top! */
-@import url('https://fonts.googleapis.com/css2?family=National+Park:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handjet:ELSH@2&display=swap');
 
 /* These will depend on your user’s platform and browser. */
 li:nth-child(1) { font-family: serif; }
@@ -14,7 +14,7 @@ li:nth-child(6) { font-family: 'Futura', 'Verdana', sans-serif; }
 /* Otherwise it will “fall back” to the next/right value. */
 
 /* The `@import` above lets you use the font on any computer.  */
-li:nth-child(7) { font-family: 'National Park', sans-serif; }
+li:nth-child(7) { font-family: 'Handjet', sans-serif; }
 
 /* You can also host fonts along with your site files. */
 @font-face {

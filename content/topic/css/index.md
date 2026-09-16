@@ -401,7 +401,7 @@ You can use various other HTML [attributes](../html/index.md#attributes) as sele
 
 ### Pseudo-Classes: `selector:state` `selector:instance`
 
-#### States/Instances
+#### States / Instances
 
 These are [special selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes), added to `element`, `.class`, or `#id`, separated with `:`, which target unique *states* or *instances* of HTML elements. For example, you’ll often see these used to target [link states](https://web.dev/learn/css/pseudo-classes/#historic-states):
 
@@ -420,7 +420,7 @@ Note that `:hover` [can apply](https://developer.mozilla.org/en-US/docs/Web/CSS/
 </figcaption>
 </figure>
 
-#### Counts/Positions
+#### Counts / Positions
 
 Other common pseudo-class examples have to do with [counts and positions](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes#tree-structural_pseudo-classes). The [syntax for these](https://css-tricks.com/useful-nth-child-recipies/) can be pretty complicated, but they are very powerful—for targeting specific children, often as within [lists](../html/index.md#lists):
 <!-- .center -->
@@ -484,8 +484,6 @@ These can get tricky, but also let you express some specific design intent!
 </figure>
 
 Importantly, combinators can only target elements top-down, meaning that it can only “see” elements *before* and *above* themselves—meaning their *previous <em>(older?)</em> siblings* or their *parents*. This directionality somewhat corresponds with the [*cascade*](#oh-right-the-cascade), which we’ll talk about shortly.
-
-<!-- TODO :is/:where? -->
 
 ## The Golden Age of CSS
 
@@ -716,7 +714,7 @@ All the children inherit the `body` styles. Ah, finally, `sans-serif`.
 > <sub>Try aiming your work to taking advantage of it, versus fighting it. Like all these annoyances, they’re avoided with *systematic*, *structured* design/thinking.</sub>
 
 
-### Avoiding These Things
+### Avoiding These “Problems”
 
 It is easiest—both in visuals, and in code—to think about your design reasoning, rules, and relationships from “large to small” (or “broad to narrow,” or “general to specific”). Decide first on what is *always* true, then move to *subsets*, and finally any *one-offs*.
 
@@ -765,14 +763,14 @@ header {
 
 ## Color and Type Properties
 
-Alright, so all this has been about *targeting* elements—what about actually styling them? Let’s introduce a few quick *properties* to get us started.
+**Alright, so all this has been about *targeting* elements—what about actually styling them? Let’s introduce a few quick *properties* to get us started:**
 
 ### Color
 
-Besides the basic examples above, [*color*](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value) can be specified in a few different ways:
+Besides the basic examples above, [*color*](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value) can be specified in a handful of different ways. What works best for you will depend on your project (and mindset); here are some of the approaches:
 
 [<cite>CSS Colors – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_colors) \
-	Come for the picker, stay for all the info.
+	Come for the picker, stay for all the info.
 <!-- .right -->
 
 <figure style="--lines: 31">
@@ -781,22 +779,25 @@ Besides the basic examples above, [*color*](https://developer.mozilla.org/en-US/
 
 <figcaption>
 
-There are [147 <em>named</em>](https://htmlcolorcodes.com/color-names/) CSS colors! `tomato` is a favorite.
+Note the [`:nth-child` counting](#counts-positions) selectors. There are [147 <em>named</em>](https://htmlcolorcodes.com/color-names/) CSS colors! `tomato` is a favorite.
 
 </figcaption>
 </figure>
 
-Named colors are quick to work with when you know a few, but [`hsla`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hsl) (and recently, [`color-mix`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix)) offer a much more intuitive/human way to adjust and work with colors and transparency.
+Named colors are quick to work with when you know a few, but [`hsla`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hsl) (and recently, [`color-mix`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix)) offer a much more intuitive/human way to adjust and work with colors and transparency—more how our designer brains think of these things.
 
-<sub>These can also all be applied to `background-color` (and `border`, but we’ll talk about that next week).</sub>
+<sub>These can also all be applied to `background-color` and `border`, but we’ll talk about those next week!</sub>
 
 ### Fonts
 
-Then perhaps most importantly, you’ll always be customizing your [typography](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals)—starting with the [`font-family` property](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family). Remember, the web is text *all the way down*:
+Remember, the web is text [*all the way down*](../everything/index.md#so-what-are-web-pages)&#x202F;! Much of your design vocabulary will come from your type and its decisions—especially when starting out. Everything you work on will start here.
 
 [<cite>Fundamental Text and Font Styling – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals) \
 	All your properties.
-<!-- .right -->
+<!-- .right .rows--2 -->
+
+So most importantly for us, you’ll always be customizing your [typography](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals)—starting with the [`font-family` property](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family):
+<!-- .before -->
 
 <figure style="--lines: 28">
 
@@ -804,16 +805,20 @@ Then perhaps most importantly, you’ll always be customizing your [typography](
 
 <figcaption>
 
-With great power comes great responsibility.
+With great power comes great responsibility!
 
 </figcaption>
 </figure>
 
-Web font licensing is a *Whole Big Thing*—so let’s start out by making use of [Google Fonts](https://fonts.google.com), which offers many *open-source* typefaces nicely packaged for web use. You can select *families* and *weights* there to easily include in your pages, as in the example above.
+Web font licensing is a *Whole Big Thing*—so we’ll start out by making use of [Google Fonts](https://fonts.google.com) (though you can use another [free option](../typography/index.md#type-foundries)), which offers many *open-source* typefaces nicely packaged for web use. You can select *families* and *weights* there to easily include in your pages, as in the example above.
+
+- [<cite>Google Fonts</cite>](https://fonts.google.com/)
+	Easy to start with!
+<!-- .right -->
 
 ### Other Type Properties
 
-Once you’ve got a `font-family` in, there are many additional properties to control the typography:
+Once you’ve got a `font-family` in, there are many additional properties to control the typography—you’ll want to investigate all of these to make your type your own:
 
 [<cite>Web Typography –<br>Interneting Is Hard</cite>](https://internetingishard.netlify.app/html-and-css/web-typography) \
 	A more qualitative take.
@@ -825,29 +830,35 @@ Once you’ve got a `font-family` in, there are many additional properties to co
 
 <figcaption>
 
-For now, just eyeball your units in `rem`, focusing on relationships. We’ll talk about other *absolute* and *relative* units soon.
+For now, just eyeball your units in `rem`, focusing on size *relationships*. We’ll talk about other *absolute* and *relative* units soon!
 
 </figcaption>
 </figure>
 
 ## Resets
 
-As we talked about [last week](../html/index.md#user-agent-styles), browsers have their own, built-in way that they display HTML elements. These *<nobr>user-agent</nobr> styles* are specific, somewhat, to each platform and each browser.
+**As we talked about [last week](../html/index.md#user-agent-styles), browsers have their own, built-in way that they display HTML elements. These *<nobr>user-agent</nobr> styles* are specific, somewhat, to each platform and each browser.**
 
 This is [the “look” we have been seeing](http://contemporary-home-computing.org/prof-dr-style/) when we write plain HTML without any CSS—usually *Times New Roman*, with blue links, and small spacing between elements.
 
-Often, when you are working towards your own design, you will find yourself fighting against these built-in styles. So many designers/front-end folk instead start with [*resets*](https://meyerweb.com/eric/tools/css/reset/)—a semi-standard collection of CSS rules that “zero out” the browser’s built-in styles.
+Often, when you are working towards your own design, you will find yourself working *against* these built-in styles. So many designers/front-end folk instead start with [*resets*](https://meyerweb.com/eric/tools/css/reset/)—a semi-standard collection of CSS rules that “zero out” the browser’s built-in look for a “clean slate.”
 
 This means you have to write everything yourself, but you have more control and aren’t building on unknown foundations. And things should be (more) consistent, across browsers and platforms.
 <!-- .after -->
 
-**Here is a [simple, modern one](../../../assets/reset.css) for your `<head>`:**
+**This is the clean base we’ll be working from! Here is a [simple, modern reset](../../../assets/reset.css) for your `<head>`:**
 
 ```html <!-- .all -->
 <link href="https://typography-interaction-2627.github.io/assets/reset.css" rel="stylesheet">
 ```
 
 <sub>This is what we use here for our course site!</sub>
+
+> [!TIP]
+>
+> Be sure to put the reset *before* your [own stylesheet](#3-external-with-link), lest you [override](#oh-right-the-cascade) your own work!
+
+---
 
 > The author of HTML documents has no influence over the presentation. Indeed, if conflicts arise the user should have the last word, but one should also allow the author to attach style hints.
 > …
