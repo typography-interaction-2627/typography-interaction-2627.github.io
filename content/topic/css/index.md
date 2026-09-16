@@ -507,6 +507,8 @@ Importantly, combinators can only target elements top-down, meaning that it can 
 
 ## The Golden Age of CSS
 
+**CSS is a living standard, and new features are shipping in browsers all the time—often making our (front-end) lives easier. Here are a few:**
+
 ### `:has()` Has Changed Things!
 
 For many, *many* years folks have wanted a “parent selector” in CSS—meaning a way to apply a style to a parent/container based on one of its children or siblings. This has not been possible before, as mentioned above.
@@ -543,18 +545,57 @@ Importantly, the property is applied on the *parent* (here, the `section`)—no
 
 **All CSS expresses [*rules*](#css-rules), but think about `:has()` for matching/explaining your intuition: “this thing is a certain way because it *has* this other thing inside.”**
 
+### Simpler `:is()` / `:where()`
+
+There are also the recent [`:is()`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:is) and [`:where()`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:where) pseudo-classes—which can often be used to replace (or simplify) other [compound/list](#compound-and-lists-selectorselector-selector-selector) selectors:
+
+- [<cite>Meet `:is()` and `:where()`– web.dev</cite>](https://web.dev/articles/css-is-and-where) \
+	Simpler grouping of styles.
+<!-- .right -->
+
+<div class="verso before">
+
+**This kind of mess:**
+
+```css
+main > h2, main > h3, main > h4,
+aside > h2, aside > h3, aside > h4 {
+	color: tomato;
+}
+```
+
+</div>
+
+<div class="recto">
+
+**Can become this:**
+
+```css
+:is(main, aside) > :is(h2, h3, h4) {
+	color: tomato;
+}
+```
+
+</div>
+
+<sub>Also `:where()` [can be used](https://css-tricks.com/quick-reminder-that-is-and-where-are-basically-the-same-with-one-key-difference/) to zero-out/prevent [specificity](#specificity) increases!</sub>
+
+Sometimes adding `.classes` would work better for this kind of thing—but `:is()`/`:where()` can often more easily express the *intent* behind the relationships! And with many fewer HTML round-trips.
+<!-- .before -->
+
+**Remember, code is going to be *read* [more often](../html/index.md#case-white-space-tabs-line-breaks) than *written*&#x202F;! Make it easier to understand.**
+
 ### Also, (Native) Nesting?!
 
-While we’re on the subject of more cutting-edge additions to CSS—[even more recently](https://caniuse.com/css-nesting) browsers have added support [for *nesting*](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting/Using_CSS_nesting) selectors—a way to easily “scope” them hierarchically.
+While we’re on the subject of more cutting-edge additions to CSS—[even more recently](https://caniuse.com/css-nesting) browsers have added support [for *nesting*](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting/Using_CSS_nesting) selectors—a way to easily “scope” them hierarchically, even more intuitively/flexibly than `:is()`/`:where()`.
 
 - [<cite>Using CSS nesting – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Nesting/Using) \
 	Simplify and make your style relationships more evident!
 <!-- .right .rows--2 -->
 
 This more straightforward style of writing [descendent/child selectors](#and-combinators---) was popularized by the ubiquitous [SASS extension](https://sass-lang.com)—which improved the ergonomics of CSS ahead of the language incorporating new features.
-<!-- .after -->
 
-<div class="verso add-before">
+<div class="verso before">
 
 **Instead of writing like this:**
 
@@ -624,17 +665,16 @@ footer {
 …to make the actual/HTML hierarchical relationship self-evident, less redundant, and easier to change—especially as your stylesheets inevitably grow! Each level (generation?) can be any CSS selector.
 <!-- .before -->
 
-**These can dramatically improve your editing experience! Write your styles to match your design *intent*—the reasoning, in code.**
+**These all can dramatically improve your editing experience! Write your styles to match your design *intent*—the reasoning, in code.**
+<!-- .before -->
 
 > [!NOTE]
 >
 > Embrace new developments when you can!
 >
-> In the experimental realm of this course, we encourage you to explore all recent developments! Our course site makes *heavy* use of `:has` / nesting, for example.
+> In the experimental realm of this course, we encourage you to explore all recent developments! Our course site makes *heavy* use of `:has` / nesting, for example.
 >
 > <sub>Out in the “Real World,” you might work on projects that have to support older browsers—and so you won’t be able to always use such new, modern developments. But it is getting better!</sub>
-
-<!-- TODO :is/:where? -->
 
 ## Pitfalls, Gotchas, Frustrations
 
