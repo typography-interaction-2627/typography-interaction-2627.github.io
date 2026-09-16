@@ -6,10 +6,25 @@ const draft = true
 
 # An Intro to CSS
 
+## First, Why Is This Important?
+
+Beyond just “making it look good,” what does learning CSS do for us? What can we take away from it?
+
+<details>
+<summary>
+
+Why should a designer care about CSS?
+
+</summary>
+
+<!-- .balance -->
+
+</details>
+
 ## CSS stands for *Cascading Style Sheets*
 
-CSS is the standard language/format for styling web pages, which specifies what the page’s HTML will look like in the browser.
-<!-- .balance -->
+**CSS is the standard language/format for styling web pages, which specifies what the page’s HTML will look like in the browser.**
+<!-- data-description -->
 
 - [<cite>CSS – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS) \
 	MDN, as is custom.
@@ -51,7 +66,7 @@ CSS came after HTML, first proposed by [H<span class="a-ring">å</span>kon Wium 
 
 Before we get into the CSS syntax itself, let’s talk about how it is incorporated with your HTML.
 
-**There are three ways it can be added:**
+**There are three ways CSS can be added to your page:**
 
 1. *Inline* on HTML tags themselves
 1. Via `<style>` elements in HTML documents
@@ -59,30 +74,33 @@ Before we get into the CSS syntax itself, let’s talk about how it is incorpo
 
 ### 1.&emsp;Inline with `style=`
 
-This is the most straightforward way to add styles, directly as [*attributes*](../html/index.md#attributes) in HTML tags:
-<!-- .balance -->
+This is original and maybe most straightforward way to add styles, directly as [*attributes*](../html/index.md#attributes) in HTML tags:
 
 ```html
 <p style="color: red;">This text will be red!</p>
 ```
 
 Seems obvious. However this has some downsides—imagine you want to style all of your paragraphs in the same way, and with multiple properties:
+<!-- .before -->
 
 ```html <!-- .all -->
 <p style="color: red; font-family: sans-serif;">This text will be red!</p>
 <p style="color: red; font-family: sans-serif;">I’d also like this to be red.</p>
 <p style="color: red; font-family: sans-serif;">And they are all sans-serif, too.</p>
+<p style="color: red; font-family: sans-serif;">Awful lot of repetition, here.</p>
+<p style="color: red; font-family: sans-serif;">You get the idea, this is bad.</p>
 ```
 
 It makes it hard to read, and hard to change and maintain—you’d have to update every single instance. (In software, we’d refer to this as [*brittle*](https://en.wikipedia.org/wiki/Software_brittleness)—meaning it is easy to break.)
+<!-- .before -->
 
 ### 2.&emsp;`<style>` in HTML
 
 <div class="center verso">
 
-So the next way that was added to the standard was using a special HTML element, `<style>`, that wraps blocks of CSS that then apply to an entire document. They go up in the `<head>` of our [HTML documents](../html/index.md#the-basic-document).
+The next way that was added to the standard was using a special HTML element, `<style>`, that wraps blocks of CSS that then apply to an entire document. They go up in the `<head>` of our [HTML documents](../html/index.md#the-basic-document).
 
-The rules are written written with selectors—more on those, below. But importantly, we can now control styling of all the paragraphs easily, at once.
+The rules are written written with selectors—more on those, below. But importantly, we can now control styling of all the paragraphs easily, at once.
 
 </div>
 
@@ -104,6 +122,7 @@ The rules are written written with selectors—more on those, below. But importa
 		<p>This is a paragraph.</p>
 		<p>This is another paragraph.</p>
 		<p>This is third paragraph.</p>
+		<p>They would all be red!</p>
 	</body>
 </html>
 ```
@@ -112,15 +131,15 @@ The rules are written written with selectors—more on those, below. But importa
 
 ### 3.&emsp;External with `<link>`
 
-<div class="verso">
+<div class="verso center">
 
-So this is already much better, allowing us to style whole pages easily and consistently. But what about when we have *multiple* pages?
+Things are getting much better, allowing us to style whole pages easily and consistently. But what about when we have *multiple* pages?
 
 If you wanted a whole site to use the same styles, you’d have to duplicate the `<style>` tag over and over, updating it everywhere whenever it changes. Still brittle. So along comes the `<link>` element.
 
 </div>
 
-<div class="after--2 recto">
+<div class="after recto">
 
 ```html
 <!-- `index.html` -->
@@ -134,6 +153,7 @@ If you wanted a whole site to use the same styles, you’d have to duplicate the
 		<p>This is a paragraph.</p>
 		<p>This is another paragraph.</p>
 		<p>This is third paragraph.</p>
+		<p>It would still be red!</p>
 	</body>
 </html>
 ```
@@ -148,7 +168,7 @@ This will apply to any page that we add the `<link>` to, and updating the styles
 
 </div>
 
-<div class="recto">
+<div class="recto center">
 
 ```css
 /* `style.css` */
@@ -160,19 +180,23 @@ p {
 
 </div>
 
-**We’ll talk more about *[specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity)* later, but know that the *inline* approach takes precedent over other methods—under the “closest, then lowest” logic.**
+**We’ll talk more about *[specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity)* later, but know that the [*inline* approach](#1-inline-with-style) takes precedent over other methods—under the “closest, then lowest” logic. It’s another reason why we avoid it!**
 
 ## Separation of Concerns
 
 [*Separation of Concerns*](https://en.wikipedia.org/wiki/Separation_of_concerns) is an ideology that code should be split up into sections that are responsible for a single behavior—the smaller, the better. In the case of websites—our HTML, CSS, and JS map to the different behaviors of *content*, *form*, and *function*. (Or in our anatomical analogy: *skeleton*, *skin*, and *muscles*.) These are different *concerns*.
 
+- [<cite>Separation of Concerns - Wikipedia</cite>](https://en.wikipedia.org/wiki/Separation_of_concerns) \
+	Divide your big problems into smaller ones!
+<!-- .right -->
+
 It's *much* easier to understand how it all comes together if you keep the code for these three behaviors in separate files. Your IDE will be easier to use; your diffs more sensical; you’ll know where to start looking to figure something out.
 
 > [!WARNING]
 >
-> External styles, only! You might see inline or in-HTML styles elsewhere. But we shouldn’t see them in your code!
+> We’ll use external styles, only! You might see inline or in-HTML styles elsewhere. But we shouldn’t see them in your code!
 >
-> <sub>They are generally a sign something has gone wrong—and that you (or your [resource](../../syllabus.md/#attribution)) don’t understand.</sub>
+> <sub>They are generally a sign something has gone wrong—and that you (or your [resource](../../syllabus.md#attribution)) don’t understand.</sub>
 
 
 ## CSS Rules
@@ -190,7 +214,7 @@ The [curly brackets](https://en.wikipedia.org/wiki/Bracket#Curly_brackets) <nobr
 
 Properties are always separated from their corresponding values by a colon `:`, and each declaration line has to end in a semicolon `;`. (It’s just how it is!) Also, there are no spaces between values and their units (like `2rem`)! You will get used to it.
 
-<figure>
+<figure class="borderless">
 <img src="rule.svg">
 </figure>
 
@@ -239,7 +263,7 @@ Selectors are used to *target* certain HTML elements within the page. These can 
 1. Identifiers (and `#some-id`&thinsp;)
 <!-- .after--4 -->
 
-### 1. By Element Type: `p` `a` `main` etc.
+### 1.&emsp;By Element Type: `p` `a` `main` etc.
 
 If you want to change the styles for all instances of a given HTML element, you drop the <nobr>`<` `>`</nobr> from the tag for an element selector. These are called [*type selectors*](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors):
 
@@ -258,7 +282,7 @@ Note that CSS has different `/* comment syntax */` too."
 </figcaption>
 </figure>
 
-### 2. With a Class: `.class-name`
+### 2.&emsp;With a Class: `.class-name`
 
 But maybe you don’t want to style all of the paragraphs. You can then use a `class` to [target specific instances](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors). They are  added as an *[attribute](../html/index.md#attributes)* on the element you want to target:
 <!-- .balance -->
@@ -279,7 +303,7 @@ You can use these over and over, on any kind of element. And individual elements
 
 <sub>We’ll talk about how conflicting rules are handled, below.</sub>
 
-### 3. With an Identifier: `#some-id`
+### 3.&emsp;With an Identifier: `#some-id`
 
 You can also use an `id`, which is a kind of [special attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id) that can only be used *once* in an HTML document. These are useful thus useful for targeting singular things—like your navigation, the document title, specific headings, etc:
 <!-- .balance -->
@@ -686,7 +710,7 @@ Often, when you are working towards your own design, you will find yourself figh
 This means you have to write everything yourself, but you have more control and aren’t building on unknown foundations. And things should be (more) consistent, across browsers and platforms.
 <!-- .after--2 -->
 
-Here is a [simple, modern one](../../../assets/reset.css) for your `<head>`:
+**Here is a [simple, modern one](../../../assets/reset.css) for your `<head>`:**
 
 ```html <!-- .all -->
 <link href="https://typography-interaction-2627.github.io/assets/reset.css" rel="stylesheet">
@@ -695,9 +719,8 @@ Here is a [simple, modern one](../../../assets/reset.css) for your `<head>`:
 <sub>This is what we use here for our course site!</sub>
 
 > The author of HTML documents has no influence over the presentation. Indeed, if conflicts arise the user should have the last word, but one should also allow the author to attach style hints.
+> …
 >
-> The last point has especially been a source of much frustration among professions that are used to being in control of paper-based publishing.
->
-> This proposal tries to soften the tension between the author and the reader.
+> The last point has especially been a source of much frustration among professions that are used to being in control of paper-based publishing. This proposal tries to soften the tension between the author and the reader.
 >
 > [<cite>Håkon Wium Lie, 1994</cite>](https://www.w3.org/People/howcome/p/cascade.html)
