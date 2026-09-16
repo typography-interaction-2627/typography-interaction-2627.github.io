@@ -409,50 +409,37 @@ export default (config) => {
 
 	// Table of contents.
 	config.addFilter('toc', (content) => {
-		const document = parse(content ?? '')
-		const items = []
-		const stack = [{ level: 0, children: items }]
+		const root = { level: 0, inert: false, children: [] }
+		const stack = [root]
 
 		// Build a nested tree from heading levels.
-		for (const heading of document.querySelectorAll('h2, h3, h4')) {
+		for (const heading of parse(content ?? '').querySelectorAll('h2, h3, h4')) {
 			if (!heading.id) continue
 
 			// Drop permalink anchors from labels.
 			heading.querySelectorAll('a').forEach(link => link.remove())
 
+			const level = +heading.tagName[1]
+			while (stack.at(-1).level >= level) stack.pop()
+
+			const inert = stack.at(-1).inert || heading.hasAttribute('inert')
 			const item = {
-				content: heading.innerHTML.trim(),
-				attributes: ` href="#${heading.id}"${heading.hasAttribute('inert') ? ' inert' : ''}`,
-				level: +heading.tagName[1],
+				html: `<a${inert ? '' : ` href="#${heading.id}"`}><p>${heading.innerHTML.trim()}</p></a>`,
+				level,
+				inert,
 				children: [],
 			}
 
-			while (stack.at(-1).level >= item.level) stack.pop()
 			const parent = stack.at(-1)
 			parent.children.push(item)
 			stack.push(item)
 		}
 
-		const renderItems = items => items.map(({ attributes, content, children }) => {
-			const childrenMarkup = children.length ? `<ol>${renderItems(children)}</ol>` : ''
+		const renderItems = items => items.map(({ html, children }) =>
+			`<li>${html}${children.length ? `<ol>${renderItems(children)}</ol>` : ''}</li>`,
+		).join('\n')
 
-			return `<li><a${attributes}>${content}</a>${childrenMarkup}</li>`
-		}).join('\n')
-
-		// Keep inline markup, then adjust the generated links.
-		const root = parse(renderItems(items))
-
-		// Remove links from the inert ones/their descendants.
-		root.querySelectorAll('a[inert]').forEach((link) =>
-			[link, ...(link.parentNode?.querySelectorAll('a') ?? [])].forEach((childLink) => {
-				childLink.removeAttribute('href')
-				childLink.removeAttribute('inert')
-			}))
-
-		// Rewrap easier for type styles.
-		root.querySelectorAll('a').forEach((link) => link.innerHTML = `<p>${link.innerHTML}</p>`)
-
-		return root.innerHTML
+		return renderItems(root.children)
 	})
 
 	// Other filters.
