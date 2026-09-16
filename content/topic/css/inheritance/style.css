@@ -1,10 +1,10 @@
 body {
-	color: gray;
+	color: gray; /* Everything within `body` will be gray… */
 	font-family: sans-serif;
 }
 
 span {
-	color: blue;
+	color: blue; /* Until you say otherwise! */
 	font-style: italic;
 	font-weight: bold;
 }

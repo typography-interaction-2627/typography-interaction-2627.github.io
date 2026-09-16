@@ -527,7 +527,7 @@ Importantly, the property is applied on the *parent* (here, the `section`)—no
 
 ### Also, (Native) Nesting?!
 
-While we’re on the subject of more cutting-edge additions to CSS—[even more recently](https://caniuse.com/css-nesting) browsers have added support [for *nesting*](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting/Using_CSS_nesting) selectors.
+While we’re on the subject of more cutting-edge additions to CSS—[even more recently](https://caniuse.com/css-nesting) browsers have added support [for *nesting*](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting/Using_CSS_nesting) selectors—a way to easily “scope” them hierarchically.
 
 - [<cite>Using CSS nesting – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Nesting/Using) \
 	Simplify and make your style relationships more evident!
@@ -603,7 +603,7 @@ footer {
 
 </div>
 
-…to make the hierarchical relationship self-evident, less redundant, and easier to change—especially as your stylesheets inevitably grow! Each level (generation?) can be any CSS selector.
+…to make the actual/HTML hierarchical relationship self-evident, less redundant, and easier to change—especially as your stylesheets inevitably grow! Each level (generation?) can be any CSS selector.
 <!-- .before -->
 
 **These can dramatically improve your editing experience! Write your styles to match your design *intent*—the reasoning, in code.**
@@ -618,45 +618,58 @@ footer {
 
 <!-- TODO :is/:where? -->
 
-## Specificity
+## Pitfalls, Gotchas, Frustrations
 
-We can’t talk about CSS without talking about *specificity*—bane of many a front-end developer.
+**CSS has a *lot* of these—where you will find yourself asking “where is this style coming from?!” But it’s often one of these:**
+
+### Specificity
+
+We can’t talk about CSS without talking about *specificity*—bane of many a front-end developer. This is one way of determining what style will be applied, when there are multiple/conflicting rules.
 
 - [<cite>Specifics on CSS Specificity – CSS Tricks</cite>](https://css-tricks.com/specifics-on-css-specificity/) \
-	A brief overview of a very complicated thing.
+	A *brief* overview of a very complicated thing.
 
 - [<cite>Specificity Calculator</cite>](https://specificity.keegan.st) \
-	Compare selector values and see who wins.
+	Compare selector values and see who wins.
 <!-- .right .rows--3 -->
 
-The first three targeting methods (`element`, `.class`, `#id`) are listed in increasing order of [*specificity*](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity), meaning that a class trumps an element rule, and an `#id` trumps a class. Identifiers are thus *more specific* than classes, which are *more specific* than element selectors. (And you shouldn’t really use them, but inline styles beat them all.) Take this example:
+The first three [targeting methods](#basic-selectors) (`element`, `.class`, `#id`) are listed in increasing order of [*specificity*](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity), meaning that a class beats an element rule, and an `#id` beats a class.
+
+Said another way: identifiers are thus *more specific* than classes, which are *more specific* than element selectors. (And you shouldn’t really use them, but [inline styles](#1-inline-with-style) beat them all.) Take this example:
 
 <figure style="--lines: 11">
 
 ***[Specificity Example](specificity/style.css)***
 
+<figcaption>
+
+The *specificity* “decides” what style is applied here.
+
+</figcaption>
 </figure>
 
 You could write a *long* book (and many people have) about CSS specificity—the myriad of ways that some CSS rules take precedent over others. It is often one the more frustrating parts (especially when working with legacy code that is poorly considered).
 
 > [!TIP]
 >
-> Suffice it to say *it’s complicated.* We generally recommend `.class` use, to start!
+> The easiest way to deal with specificity problems are to avoid them—going from “large to small” in your stylesheets, top-to-bottom!
 >
-> <sub>The easiest way to avoid specificity problems is generally to stay at the same level throughout your HTML, usually by just using classes throughout. Then “lowest” wins!</sub>
+> Also avoid really [complicated selectors](#fancy-selectors), which can compound specificity.
+>
+> <sub>And then use [`@layer`](#4-external-with-import-to-assign-layer) for larger projects with more structure!</sub>
 
-## Oh Right, the Cascade
+### Oh Right, the Cascade
 
-Yikes, we haven’t even talked about that first *C*! Remember, it stands for [*cascading*](https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade).
+Yikes, we haven’t even talked about that first *C*&#x202F;! Remember, it stands for [*cascading*](https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade)—the other way of deciding what gets applied.
 
 - [<cite>Introducing the CSS Cascade – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade) \
-	MDN is particularly *dry* on this one.
+	MDN is pretty dry on this one.
 
 - [<cite>The CSS Cascade</cite>](https://2019.wattenberger.com/blog/css-cascade) \
 	A much nicer interactive explanation from [Amelia Wattenberger](https://wattenberger.com/).
-<!-- .right .rows--3 -->
+<!-- .right .rows--2 -->
 
-This means that when there is a tie (like two classes applying the same property), the *lowest* rule wins—literally the one further down within a CSS document, or within a style tag. If you have multiple CSS documents with `<link>` element, the lower linked document will take precedence:
+This means that when there is a tie of the same specificity (like two `.class` applying the same property), the *lowest* rule wins—literally the one further down within a CSS document, or within a style tag. If you have multiple CSS documents with `<link>` element, the lower linked document will take precedence:
 
 <figure style="--lines: 14">
 
@@ -664,22 +677,26 @@ This means that when there is a tie (like two classes applying the same property
 
 <figcaption>
 
-Try to avoid relying on this or even having it come up! This is one of the reasons people are frustrated by CSS.
+Move the `.warning` above `.note` to see the change.
 
 </figcaption>
 </figure>
 
-<!-- TODO Add note about cascade layers? -->
+> [!TIP]
+>
+> Again, think “large to small” within your stylesheets! Knowing that, generally, lower things with “win” and be applied.
+>
+> <sub>Cascade will *not* best [specificity](#specificity) problems, but both work better with this top-to-bottom organizing principle.</sub>
 
-## And Inheritance
+### And Inheritance
 
-To add even more confusion, [some CSS properties](https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance) set on a parent also apply to their children—such as `color` or `font-family`. Most spacing/layout properties, like `width` and `margin` do not. (More on those, next week.)
+To add some even more confusion, [some CSS properties](https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance) set on a parent also apply to their children—such as `color` or `font-family` (and most other type styles). Most spacing/layout properties, like `size` and `margin` do not. (More on those, next week!)
 
 [<cite>Inheritance – web.dev</cite>](https://web.dev/learn/css/inheritance) \
 	Google is better on this one.
 <!-- .right -->
 
-This allows you to quickly set some properties globally, without having many brittle/redundant rules, as we did before:
+Inheritance allows you to quickly set some properties globally, without having many brittle/redundant rules, as we did before—often the fastest way to approach your design:
 
 <figure style="--lines: 12">
 
@@ -691,6 +708,60 @@ All the children inherit the `body` styles. Ah, finally, `sans-serif`.
 
 </figcaption>
 </figure>
+
+> [!TIP]
+>
+> Inheritance can be annoying, but is also a *superpower* of CSS!
+>
+> <sub>Try aiming your work to taking advantage of it, versus fighting it. Like all these annoyances, they’re avoided with *systematic*, *structured* design/thinking.</sub>
+
+
+### Avoiding These Things
+
+It is easiest—both in visuals, and in code—to think about your design reasoning, rules, and relationships from “large to small” (or “broad to narrow,” or “general to specific”). Decide first on what is *always* true, then move to *subsets*, and finally any *one-offs*.
+
+In CSS, this manifests as styling [`element`](#1-element-type-p-a-main-etc) first for broad, global decisions, then some [`.class`](#2-a-class-class-name) for certain sets of things, and only use [`#id`](#3-an-identifier-some-id) when you *know* it’s a unique, singular scenario. Your stylesheet should (broadly) resemble this:
+<!-- .before -->
+
+```css <!-- .all #top-to-bottom -->
+body {
+	/* Things that are true of everything! */
+}
+
+main {
+	/* Then moving to smaller pieces… */
+}
+
+header {
+	/* …going down your page. */
+
+	p {
+		/* Maybe with some “scoped” nesting. */
+	}
+}
+
+.featured {
+	/* Then into more granular groups of things… */
+}
+
+.warning {
+	/* …that you manually specify in your HTML. */
+
+	p {
+		/* These might also have some nesting relationships. */
+	}
+}
+
+#navigation {
+	/* Last, _maybe_ a couple one-offs! */
+}
+```
+
+**We think this methodology will help *both* your design thinking *and* your CSS implementation!**
+
+> [!WARNING]
+>
+> We should *never* see an [`!important` keyword](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/important) in your stylesheet, to “fix” these problems—it tells us you do not understand!
 
 ## Color and Type Properties
 
@@ -768,7 +839,7 @@ This is [the “look” we have been seeing](http://contemporary-home-computing.
 Often, when you are working towards your own design, you will find yourself fighting against these built-in styles. So many designers/front-end folk instead start with [*resets*](https://meyerweb.com/eric/tools/css/reset/)—a semi-standard collection of CSS rules that “zero out” the browser’s built-in styles.
 
 This means you have to write everything yourself, but you have more control and aren’t building on unknown foundations. And things should be (more) consistent, across browsers and platforms.
-<!-- .after--2 -->
+<!-- .after -->
 
 **Here is a [simple, modern one](../../../assets/reset.css) for your `<head>`:**
 
