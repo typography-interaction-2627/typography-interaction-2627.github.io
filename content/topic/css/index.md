@@ -213,7 +213,9 @@ Each lower/subsequent layer takes precedent over the previous!
 
 **We’ll touch on [specificity](#specificity) below, but keep in mind that [*inline* styles](#1-inline-with-style) takes over all other methods—under the “closest, then lowest” logic. It’s another reason why we avoid it! And why `layer()` gives us more intuitive control.**
 
-## Separation of Concerns
+---
+
+#### Separation of Concerns
 
 [*Separation of Concerns*](https://en.wikipedia.org/wiki/Separation_of_concerns) is an ideology that code should be split up into sections that are responsible for a single behavior—the smaller, the better. In the case of websites—our HTML, CSS, and JS map to the different behaviors of *content*, *form*, and *function*. (Or in our anatomical analogy: *skeleton*, *skin*, and *muscles*.) These are different *concerns*.
 
@@ -225,9 +227,9 @@ It's *much* easier to understand how it all comes together if you keep the code 
 
 > [!WARNING]
 >
-> We’ll use external styles, only! You might see inline or in-HTML styles elsewhere. But we shouldn’t see them in your code!
+> We’ll use [external](#3external-with-link) [styles](#4using-import-to-assign-layer), only! You might see [inline](#1inline-with-style) or [in-HTML](#2style-in-html) styles elsewhere. But we should *not* see them in your code.
 >
-> <sub>They are generally a sign something has gone wrong—and that you (or your [resource](../../syllabus.md#attribution)) don’t understand.</sub>
+> <sub>They are generally a sign something has gone wrong—and that you (or your [resource](../../syllabus.md#attribution)) don’t understand why.</sub>
 
 
 ## CSS Rules
