@@ -101,13 +101,11 @@ You can type specific CSS properties/values into both <samp>Filter</samp> boxes 
 
 **It’s useful to try things out quickly—and diagnose where problems/conflicts arise.**
 
-<aside>
-
-<mark>Warning: DevTools edits are ephemeral</mark>
-
-Keep in mind that these changes are only *temporary*—any edits in the DevTools will be lost when you leave or reload the page! They are just for you.
-
-</aside>
+> [!WARNING]
+>
+> DevTool edits are temporary! Keep in mind that these changes are only in your browser session.
+>
+> <sub>Any edits in the DevTools will be lost when you leave or reload the page! They are just for you.</sub>
 
 ## Device Mode
 
@@ -154,13 +152,12 @@ The <samp>More Options</samp> menu here has some handy tricks!
 
 **Remember that you are not targeting specific devices; you are looking for when your design/content *breaks*!**
 
-<aside>
 
-<mark>Always check your work on the *real thing*</mark>
-
-This is just a quicker preview, but isn’t always perfectly accurate—and also won’t reflect any platform-specific behaviors around scrolling or rotating. (We’re looking at you, [<small>i</small>OS Safari](https://developer.apple.com/forums/thread/800125).)
-
-</aside>
+> [!IMPORTANT]
+>
+> Always check your work on the *real thing*. DevTools are only an approximation!
+>
+> <sub>This is just a quicker preview, but isn’t always perfectly accurate—and also won’t reflect any platform-specific behaviors around scrolling or rotating. (We’re looking at you, [<small>i</small>OS Safari](https://developer.apple.com/forums/thread/800125).)</sub>
 
 ## The Console
 
@@ -207,24 +204,8 @@ You can use this to test out parts of your code right away, like `document.query
 
 </div>
 
-<aside>
-
-<mark>Open Console in case of JavaScript emergency</mark>
-
-You can check your variables by printing them out with `console.log('Variable: ' + variableName)`, or even just make sure that part of your code ran with `console.log('Made it here!')`.
-
-</aside>
-
-<style>
-	@container style(--columns: 6) {
-		div.center.left,
-		div.verso.pretty {
-			margin-inline-end: calc(-1 * var(--alley));
-		}
-
-		object[data^="console"] {
-			max-inline-size: calc(100% + var(--alley));
-			justify-self: end;
-		}
-	}
-</style>
+> [!TIP]
+>
+> The Console has many uses! And not *just* when things go wrong.
+>
+> <sub>You can check your variables by printing them out with `console.log('Variable: ' + variableName)`, or even just make sure that part of your code ran with `console.log('Made it here!')`.</sub>

@@ -169,13 +169,12 @@ p {
 
 It's *much* easier to understand how it all comes together if you keep the code for these three behaviors in separate files. Your IDE will be easier to use; your diffs more sensical; you’ll know where to start looking to figure something out.
 
-<aside>
+> [!WARNING]
+>
+> External styles, only! You might see inline or in-HTML styles elsewhere. But we shouldn’t see them in your code!
+>
+> <sub>They are generally a sign something has gone wrong—and that you (or your [resource](/syllabus/#code-plagiarism)) don’t understand.</sub>
 
-<mark>In this house, our styles are external</mark>
-
-You might see inline or in-HTML styles elsewhere. But we shouldn’t see them in your code! They are a sign something has gone wrong—and that you (or your [resource](/syllabus/#code-plagiarism)) don’t understand.
-
-</aside>
 
 ## CSS Rules
 
@@ -255,7 +254,7 @@ If you want to change the styles for all instances of a given HTML element, you 
 
 <figcaption>
 
-Note that CSS has different `/* comment syntax */` too.
+Note that CSS has different `/* comment syntax */` too."
 
 </figcaption>
 </figure>
@@ -348,7 +347,7 @@ These are [special selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/P
 
 <figcaption>
 
-Note that `:hover` works on any element, not just links!
+Note that `:hover` works on any element, not just links!"
 
 </figcaption>
 </figure>
@@ -376,7 +375,7 @@ Slightly different the various [pseudo-*elements*](https://developer.mozilla.org
 
 <figcaption>
 
-Note the difference in `:` for pseudo-selectors and `::` for pseudo-elements.
+Note the difference in `:` for pseudo-selectors and `::` for pseudo-elements."
 
 </figcaption>
 </figure>
@@ -520,17 +519,13 @@ footer {
 
 **These can dramatically improve your editing experience!**
 
-<aside>
-
-<mark>Embrace new developments when possible</mark>
-
-Our course site makes *heavy* use of `:has` / nesting, for example!
-
-Out in the “Real World,” you might work on projects that have to support older browsers—and so you won’t be able to always use such new, modern developments.
-
-But in the experimental realm of this course, we encourage you to explore all recent developments!
-
-</aside>
+> [!NOTE]
+>
+> Embrace these new developments when you can!
+>
+> In the experimental realm of this course, we encourage you to explore all recent developments! Our course site makes *heavy* use of `:has` / nesting, for example.
+>
+> <sub>Out in the “Real World,” you might work on projects that have to support older browsers—and so you won’t be able to always use such new, modern developments.</sub>
 
 ## Specificity
 
@@ -555,13 +550,11 @@ The first three targeting methods (`element`, `.class`, `#id`) are listed in inc
 You could write a *long* book (and many people have) about CSS specificity—the myriad of ways that some CSS rules take precedent over others. It is often one the more frustrating parts (especially when working with legacy code that is poorly considered).
 <!-- .balance -->
 
-<aside>
-
-<mark>Management recommends `.class` use</mark>
-
-Suffice it to say *it’s complicated.* The easiest way to avoid specificity problems is generally to stay at the same level throughout your HTML, usually by just using classes throughout.
-
-</aside>
+> [!TIP]
+>
+> Suffice it to say *it’s complicated.* We generally recommend `.class` use, to start!
+>
+> <sub>The easiest way to avoid specificity problems is generally to stay at the same level throughout your HTML, usually by just using classes throughout. Then “lowest” wins!</sub>
 
 ## Oh Right, the Cascade
 
@@ -582,7 +575,7 @@ This means that when there is a tie (like two classes applying the same property
 
 <figcaption>
 
-Try to avoid relying on this or even having it come up! This is one of the reasons people are frustrated by CSS.
+Try to avoid relying on this or even having it come up! This is one of the reasons people are frustrated by CSS."
 
 </figcaption>
 </figure>
@@ -606,7 +599,7 @@ This allows you to quickly set some properties globally, without having many bri
 
 <figcaption>
 
-All the children inherit the `body` styles. Ah, finally, `sans-serif`.
+All the children inherit the `body` styles. Ah, finally, `sans-serif`."
 
 </figcaption>
 </figure>
@@ -630,7 +623,7 @@ Besides the basic examples above, [*color*](https://developer.mozilla.org/en-US/
 
 <figcaption>
 
-There are [147 <em>named</em>](https://htmlcolorcodes.com/color-names/) CSS colors! `tomato` is a favorite.
+There are [147 <em>named</em>](https://htmlcolorcodes.com/color-names/) CSS colors! `tomato` is a favorite."
 
 </figcaption>
 </figure>
@@ -655,7 +648,7 @@ Then perhaps most importantly, you’ll always be customizing your [typography](
 
 <figcaption>
 
-With great power comes great responsibility.
+With great power comes great responsibility."
 
 </figcaption>
 </figure>
@@ -678,7 +671,7 @@ Once you’ve got a `font-family` in, there are many additional properties to co
 
 <figcaption>
 
-For now, just eyeball your units in `rem`, focusing on relationships. We’ll talk about other *absolute* and *relative* units soon.
+For now, just eyeball your units in `rem`, focusing on relationships. We’ll talk about other *absolute* and *relative* units soon."
 
 </figcaption>
 </figure>
