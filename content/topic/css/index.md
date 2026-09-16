@@ -66,13 +66,14 @@ CSS came after HTML, first proposed by [H<span class="a-ring">å</span>kon Wium 
 
 Before we get into the CSS syntax itself, let’s talk about how it is incorporated with your HTML.
 
-**There are three ways CSS can be added to your page:**
+**There are ~~three~~ *four* ways CSS can be added to your page:**
 
-1. *Inline* on HTML tags themselves
+1. *Inline* on individual HTML tags themselves
 1. Via `<style>` elements in HTML documents
 1. As separate/external `.css` files, via `<link>` elements
+1. Using `@import` to assign `layer()`
 
-### 1.&emsp;Inline with `style=`
+### 1.&ensp;Inline with `style=`
 
 This is original and maybe most straightforward way to add styles, directly as [*attributes*](../html/index.md#attributes) in HTML tags:
 
@@ -94,7 +95,7 @@ Seems obvious. However this has some downsides—imagine you want to style all o
 It makes it hard to read, and hard to change and maintain—you’d have to update every single instance. (In software, we’d refer to this as [*brittle*](https://en.wikipedia.org/wiki/Software_brittleness)—meaning it is easy to break.)
 <!-- .before -->
 
-### 2.&emsp;`<style>` in HTML
+### 2.&ensp;`<style>` in HTML
 
 <div class="center verso">
 
@@ -129,7 +130,7 @@ The rules are written written with selectors—more on those, below. But import
 
 </div>
 
-### 3.&emsp;External with `<link>`
+### 3.&ensp;External with `<link>`
 
 <div class="verso center">
 
@@ -180,7 +181,37 @@ p {
 
 </div>
 
-**We’ll talk more about *[specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity)* later, but know that the [*inline* approach](#1-inline-with-style) takes precedent over other methods—under the “closest, then lowest” logic. It’s another reason why we avoid it!**
+### 4.&ensp;Using `@import` to assign `layer()`
+
+<div class="verso center">
+
+We’ll talk more about [*specificity*](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) later, but as your projects grow you’ll often want to organize your styles further to avoid “collisions” of multiple applied styles.
+
+CSS more recently added [*cascade layers*](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Cascade_layers#creating_cascade_layers) to help manage this. These are most easily used in a `<style>` tag, using [`@import`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@import) to reference an external file and [`layer()`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@import/layer_function) to assign it priority.
+
+Each lower/subsequent layer takes precedent over the previous!
+
+</div>
+
+```html <!-- .recto -->
+<!doctype html>
+<html>
+	<head>
+		<title>Page title</title>
+		<style>
+			@import 'reset.css' layer(reset);
+			@import 'base.css' layer(base);
+			@import 'page.css' layer(page);
+		</style>
+	</head>
+	<body>
+		<p>…your complicated project!</p>
+	</body>
+</html>
+```
+
+
+**We’ll touch on [specificity](#specificity) below, but keep in mind that [*inline* styles](#1-inline-with-style) takes over all other methods—under the “closest, then lowest” logic. It’s another reason why we avoid it! And why `layer()` gives us more intuitive control.**
 
 ## Separation of Concerns
 
@@ -263,7 +294,7 @@ Selectors are used to *target* certain HTML elements within the page. These can 
 1. Identifiers (and `#some-id`&thinsp;)
 <!-- .after--4 -->
 
-### 1.&emsp;By Element Type: `p` `a` `main` etc.
+### 1.&ensp;By Element Type: `p` `a` `main` etc.
 
 If you want to change the styles for all instances of a given HTML element, you drop the <nobr>`<` `>`</nobr> from the tag for an element selector. These are called [*type selectors*](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors):
 
@@ -282,7 +313,7 @@ Note that CSS has different `/* comment syntax */` too."
 </figcaption>
 </figure>
 
-### 2.&emsp;With a Class: `.class-name`
+### 2.&ensp;With a Class: `.class-name`
 
 But maybe you don’t want to style all of the paragraphs. You can then use a `class` to [target specific instances](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors). They are  added as an *[attribute](../html/index.md#attributes)* on the element you want to target:
 <!-- .balance -->
@@ -303,7 +334,7 @@ You can use these over and over, on any kind of element. And individual elements
 
 <sub>We’ll talk about how conflicting rules are handled, below.</sub>
 
-### 3.&emsp;With an Identifier: `#some-id`
+### 3.&ensp;With an Identifier: `#some-id`
 
 You can also use an `id`, which is a kind of [special attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id) that can only be used *once* in an HTML document. These are useful thus useful for targeting singular things—like your navigation, the document title, specific headings, etc:
 <!-- .balance -->
