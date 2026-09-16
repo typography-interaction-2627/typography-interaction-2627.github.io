@@ -11,10 +11,10 @@ const draft = true
 - [<cite>Chrome DevTools</cite>](https://developer.chrome.com/docs/devtools/) \
 We’ll be using these.
 
-- [<cite>Safari Web Development Tools</cite>](https://developer.apple.com/safari/tools/)
+- [<cite>Safari Web Development Tools</cite>](https://developer.apple.com/safari/tools/) \
 Got some long-overdue love back in [*Sonoma*](https://developer.apple.com/videos/play/wwdc2023/10118), but [little](https://webkit.org/blog/15865/webkit-features-in-safari-18-0/#web-inspector) [since](https://webkit.org/blog/17333/webkit-features-in-safari-26-0/#web-inspector).
 
-- [<cite>Firefox DevTools User Docs</cite>](https://developer.mozilla.org/en-US/docs/Tools)
+- [<cite>Firefox DevTools User Docs</cite>](https://developer.mozilla.org/en-US/docs/Tools) \
 Spiritual successor to [*Firebug*](https://thehistoryoftheweb.com/checking-under-the-hood-of-code/), the first suite.
 <!-- .right .rows--4 -->
 

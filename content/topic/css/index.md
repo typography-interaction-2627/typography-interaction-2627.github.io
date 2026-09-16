@@ -11,22 +11,22 @@ const draft = true
 CSS is the standard language/format for styling web pages, which specifies what the page’s HTML will look like in the browser.
 <!-- .balance -->
 
-- [<cite>CSS – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [<cite>CSS – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS) \
 	MDN, as is custom.
 
-- [<cite>Basics of CSS</cite>](https://www.youtube.com/watch?v=BUZIaTHm_oE)
+- [<cite>Basics of CSS</cite>](https://www.youtube.com/watch?v=BUZIaTHm_oE) \
 	Another ASMR introduction from Laurel.
 
-- [<cite>Google’s *web.dev* CSS Course</cite>](https://web.dev/learn/css/)
-	Different order from ours, but pretty good.
+- [<cite>Google’s *web.dev* CSS Course</cite>](https://web.dev/learn/css/) \
+	Different order from ours, but pretty good.
 
-- [<cite>HTML Color Codes</cite>](https://htmlcolorcodes.com/)
+- [<cite>HTML Color Codes</cite>](https://htmlcolorcodes.com/) \
 	Too many ads, but some nice tools for color.
 
-- [<cite>Google Fonts</cite>](https://fonts.google.com)
+- [<cite>Google Fonts</cite>](https://fonts.google.com) \
 	We’ll use this for free font families.
 
-- [<cite>Wakamai Fondue</cite>](https://wakamaifondue.com)
+- [<cite>Wakamai Fondue</cite>](https://wakamaifondue.com) \
 	“What can my font do?”
 <!-- .right .rows--6 -->
 
@@ -40,8 +40,7 @@ CSS came after HTML, first proposed by [H<span class="a-ring">å</span>kon Wium 
 
 <sub>For the past decade or so, features have been added incrementally by browsers “within” the CSS 3 “standard” (as it was/is with HTML). That’s how it goes, these days.</sub>
 
-> The change in relationship between generator and consumer of information is going to take some getting used to.
->
+> The change in relationship between generator and consumer of information is going to take some getting used to. \
 > …
 >
 > I'll comment that style sheets constitute a wormhole into unspeakable universes. People start thinking they'll just set up a little file […] and soon it grows uncontrollable.
@@ -180,10 +179,10 @@ It's *much* easier to understand how it all comes together if you keep the code 
 
 Even though it is used to style HTML elements, [the syntax of CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/Syntax) is very different. CSS *rules* are made up of *selectors*—used to target certain elements—and then the *declarations* that you want to apply to them. *For this thing, do this!*
 
-- [<cite>CSS Syntax – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Syntax)
+- [<cite>CSS Syntax – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Syntax) \
 	They really need to update their diagrams.
 
-- [<cite>CSS Reference – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
+- [<cite>CSS Reference – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference) \
 	Their exhaustive list goes into the hundreds.
 <!-- .right .rows--2 -->
 
@@ -228,10 +227,10 @@ P{COLOR:RED;FONT-FAMILY:'GORTON',SANS-SERIF;}
 
 Selectors are used to *target* certain HTML elements within the page. These can get pretty complicated, but we’ll look at the three simplest and most common targeting methods to start:
 
-- [<cite>Type, Class, and ID Selectors – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Type_Class_and_ID_Selectors)
+- [<cite>Type, Class, and ID Selectors – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Type_Class_and_ID_Selectors) \
 	MDN again, as we do.
 
-- [<cite>Selectors – web.dev</cite>](https://web.dev/learn/css/selectors)
+- [<cite>Selectors – web.dev</cite>](https://web.dev/learn/css/selectors) \
 	Google, too.
 <!-- .right -->
 
@@ -244,7 +243,7 @@ Selectors are used to *target* certain HTML elements within the page. These can 
 
 If you want to change the styles for all instances of a given HTML element, you drop the <nobr>`<` `>`</nobr> from the tag for an element selector. These are called [*type selectors*](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors):
 
-- [<cite>Type selectors – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors)
+- [<cite>Type selectors – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors) \
 	Match by node name.
 <!-- .right -->
 
@@ -264,7 +263,7 @@ Note that CSS has different `/* comment syntax */` too."
 But maybe you don’t want to style all of the paragraphs. You can then use a `class` to [target specific instances](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors). They are  added as an *[attribute](../html/index.md#attributes)* on the element you want to target:
 <!-- .balance -->
 
-- [<cite>Class selectors – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors)
+- [<cite>Class selectors – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors) \
 	Specify/match things that are alike.
 <!-- .right -->
 
@@ -285,7 +284,7 @@ You can use these over and over, on any kind of element. And individual elements
 You can also use an `id`, which is a kind of [special attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id) that can only be used *once* in an HTML document. These are useful thus useful for targeting singular things—like your navigation, the document title, specific headings, etc:
 <!-- .balance -->
 
-- [<cite>ID selectors – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/ID_selectors)
+- [<cite>ID selectors – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/ID_selectors) \
 	Specify/match singular elements.
 <!-- .right -->
 
@@ -303,10 +302,10 @@ These are prefixed by `#` in CSS, as with `#title` and `#introduction`. If you 
 
 You can use [compound/combinations](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Selectors/Selector_structure#compound_selector) of the above *elements*, *classes*, and *identifiers* to be even more specific—however, this likely means you just need to rethink your HTML structure. (We’ll unpack *specificity*, below.)
 
-- [<cite>Compound selector – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Selectors/Selector_structure#compound_selector)
+- [<cite>Compound selector – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Selectors/Selector_structure#compound_selector) \
 	Combine simple selectors to be more specific.
 
-- [<cite>Selector list – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Selector_list)
+- [<cite>Selector list – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Selector_list) \
 	This, that, the other.
 <!-- .right .rows--3 -->
 
@@ -323,7 +322,7 @@ More commonly, you might apply declarations to multiple selectors, sometimes cal
 You can use the various [attributes](../html/index.md#attributes) as selectors too, using square brackets <nobr>`[` `]`</nobr>. These are usually very similar to using *classes*, but can help you [differentiate things](https://css-tricks.com/attribute-selectors/) like internal and external links, for example:
 <!-- .balance -->
 
-- [<cite>Attribute selectors – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Attribute_selectors)
+- [<cite>Attribute selectors – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Attribute_selectors) \
 	Select with other non-`.class`, non-`#id` HTML attributes.
 <!-- .right -->
 
@@ -337,7 +336,7 @@ You can use the various [attributes](../html/index.md#attributes) as selectors t
 
 These are [special selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes), added to `element`, `class`, or `id`, separated with `:`, which target unique *states* or *instances* of HTML elements. You’ll often see these used to target [link states](https://web.dev/learn/css/pseudo-classes/#historic-states):
 
-- [<cite>Pseudo-classes – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
+- [<cite>Pseudo-classes – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes) \
 	Select elements in a particular *state*.
 <!-- .right -->
 
@@ -365,7 +364,7 @@ Other common pseudo-Class examples have to do with [counts and positions](https:
 Slightly different the various [pseudo-*elements*](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements), which let you style a particular *part* of an element. You’ll most often see these as `::before` and `::after`, which let us insert things around text—or targeting first letters/lines:
 <!-- .balance -->
 
-- [<cite>Pseudo-elements – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements)
+- [<cite>Pseudo-elements – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements) \
 	Not *quite* elements!
 <!-- .right -->
 
@@ -385,7 +384,7 @@ Note the difference in `:` for pseudo-selectors and `::` for pseudo-elements."
 Last, you will often want to target something based on its relationship to other elements—its *siblings* or its *parents*. For this, CSS has [*combinators*](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Combinators), which let you relate all the various selectors we’ve learned about here together:
 <!-- .balance -->
 
-- [<cite>CSS combinators – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Combinators)
+- [<cite>CSS combinators – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Combinators) \
 	Based on HTML relationships.
 <!-- .right -->
 
@@ -403,7 +402,7 @@ Importantly, combinators can only target elements top-down, meaning that it can 
 
 For many, *many* years folks have wanted a “parent selector” in CSS—meaning a way to apply a style to a parent/container based on one of its children or siblings. This has not been possible before, as we mentioned above.
 
-- [<cite>`:has()` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has)
+- [<cite>`:has()` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:has) \
 	This can *completely* transform and simplify style systems!
 <!-- .right .rows--2 -->
 
@@ -438,7 +437,7 @@ Importantly, the property is applied on the *parent* (here, the `div`)—not the
 While we’re on the subject of cutting-edge additions to CSS—[even more recently](https://caniuse.com/css-nesting) browsers have added support [for *nesting*](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting/Using_CSS_nesting) selectors.
 <!-- .balance -->
 
-- [<cite>Using CSS nesting – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Nesting/Using)
+- [<cite>Using CSS nesting – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Nesting/Using) \
 	Simplify and make your style relationships more evident!
 <!-- .right .rows--2 -->
 
@@ -532,10 +531,10 @@ footer {
 We can’t talk about CSS without talking about *specificity*—bane of many a front-end developer.
 <!-- .balance -->
 
-- [<cite>Specifics on CSS Specificity – CSS Tricks</cite>](https://css-tricks.com/specifics-on-css-specificity/)
+- [<cite>Specifics on CSS Specificity – CSS Tricks</cite>](https://css-tricks.com/specifics-on-css-specificity/) \
 	A brief overview of a very complicated thing.
 
-- [<cite>Specificity Calculator</cite>](https://specificity.keegan.st)
+- [<cite>Specificity Calculator</cite>](https://specificity.keegan.st) \
 	Compare selector values and see who wins.
 <!-- .right .rows--3 -->
 
@@ -560,10 +559,10 @@ You could write a *long* book (and many people have) about CSS specificity—the
 
 Yikes, we haven’t even talked about that first *C&thinsp;*! Remember, it stands for [*cascading*](https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade).
 
-- [<cite>Introducing the CSS Cascade – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade)
+- [<cite>Introducing the CSS Cascade – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade) \
 	MDN is particularly *dry* on this one.
 
-- [<cite>The CSS Cascade</cite>](https://2019.wattenberger.com/blog/css-cascade)
+- [<cite>The CSS Cascade</cite>](https://2019.wattenberger.com/blog/css-cascade) \
 	A much nicer interactive explanation from [Amelia Wattenberger](https://wattenberger.com/).
 <!-- .right .rows--3 -->
 
@@ -586,7 +585,7 @@ Try to avoid relying on this or even having it come up! This is one of the reaso
 
 To add even more confusion, [some CSS properties](https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance) set on a parent also apply to their children—such as `color` or `font-family`. Most spacing/layout properties, like `width` and `margin` do not. (More on those, next week.)
 
-[<cite>Inheritance – web.dev</cite>](https://web.dev/learn/css/inheritance)
+[<cite>Inheritance – web.dev</cite>](https://web.dev/learn/css/inheritance) \
 	Google is better on this one.
 <!-- .right -->
 
@@ -613,7 +612,7 @@ Alright, so all this has been about *targeting* elements—what about actually s
 Besides the basic examples above, [*color*](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value) can be specified in a few different ways:
 <!-- .balance -->
 
-[<cite>CSS Colors – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_colors)
+[<cite>CSS Colors – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_colors) \
 	Come for the picker, stay for all the info.
 <!-- .right -->
 
@@ -638,7 +637,7 @@ Named colors are quick to work with when you know a few, but [`hsla`](https://d
 Then perhaps most importantly, you’ll always be customizing your [typography](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals)—starting with the [`font-family` property](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family). Remember, the web is text *all the way down*:
 <!-- .balance -->
 
-[<cite>Fundamental Text and Font Styling – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals)
+[<cite>Fundamental Text and Font Styling – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals) \
 	All your properties.
 <!-- .right -->
 
@@ -661,7 +660,7 @@ Web font licensing is a *Whole Big Thing*—so let’s start out by making use o
 Once you’ve got a `font-family` in, there are many additional properties to control the typography:
 <!-- .balance -->
 
-[<cite>Web Typography –<br>Interneting Is Hard</cite>](https://internetingishard.netlify.app/html-and-css/web-typography)
+[<cite>Web Typography –<br>Interneting Is Hard</cite>](https://internetingishard.netlify.app/html-and-css/web-typography) \
 	A more qualitative take.
 <!-- .right -->
 
