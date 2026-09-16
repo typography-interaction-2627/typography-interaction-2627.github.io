@@ -16,8 +16,6 @@ import { componentPlugin } from '@mdit-vue/plugin-component' // Pretend we are V
 
 import abbreviations from './data/abbreviations.js'
 
-import pluginToc from '@uncenter/eleventy-plugin-toc'
-
 import stripTags from 'striptags'
 
 import { parse } from 'node-html-parser'
@@ -410,28 +408,51 @@ export default (config) => {
 	config.setLibrary('md', markdown)
 
 	// Table of contents.
-	config.addPlugin(pluginToc, {
-		ignoredElements: ['a'],
-		inheritAttributes: ['inert'],
-		wrapper: (toc) => {
-			const escapedToc = toc.replace(/(<a\b[^>]*>)([\s\S]*?)(<\/a>)/g, (_, openingTag, text, closingTag) =>
-				openingTag + text.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;') + closingTag,
-			)
-			const root = parse(escapedToc)
+	config.addFilter('toc', (content) => {
+		const document = parse(content ?? '')
+		const items = []
+		const stack = [{ level: 0, children: items }]
 
-			// Remove links from the inert ones/their descendents.
-			root.querySelectorAll('a[inert]').forEach((link) =>
-				[link, ...(link.parentNode?.querySelectorAll('a') ?? [])].forEach((childLink) => {
-					childLink.removeAttribute('href')
-					childLink.removeAttribute('inert')
-				}))
+		// Build a nested tree from heading levels.
+		for (const heading of document.querySelectorAll('h2, h3, h4')) {
+			if (!heading.id) continue
 
-			// Easier for type styles.
-			root.querySelectorAll('a').forEach((link) => link.innerHTML = `<p>${link.innerHTML}</p>`)
+			// Drop permalink anchors from labels.
+			heading.querySelectorAll('a').forEach(link => link.remove())
 
-			// Drop outer list.
-			return root.querySelector('ol')?.innerHTML
-		},
+			const item = {
+				content: heading.innerHTML.trim(),
+				attributes: ` href="#${heading.id}"${heading.hasAttribute('inert') ? ' inert' : ''}`,
+				level: +heading.tagName[1],
+				children: [],
+			}
+
+			while (stack.at(-1).level >= item.level) stack.pop()
+			const parent = stack.at(-1)
+			parent.children.push(item)
+			stack.push(item)
+		}
+
+		const renderItems = items => items.map(({ attributes, content, children }) => {
+			const childrenMarkup = children.length ? `<ol>${renderItems(children)}</ol>` : ''
+
+			return `<li><a${attributes}>${content}</a>${childrenMarkup}</li>`
+		}).join('\n')
+
+		// Keep inline markup, then adjust the generated links.
+		const root = parse(renderItems(items))
+
+		// Remove links from the inert ones/their descendants.
+		root.querySelectorAll('a[inert]').forEach((link) =>
+			[link, ...(link.parentNode?.querySelectorAll('a') ?? [])].forEach((childLink) => {
+				childLink.removeAttribute('href')
+				childLink.removeAttribute('inert')
+			}))
+
+		// Rewrap easier for type styles.
+		root.querySelectorAll('a').forEach((link) => link.innerHTML = `<p>${link.innerHTML}</p>`)
+
+		return root.innerHTML
 	})
 
 	// Other filters.
