@@ -40,18 +40,13 @@ CSS came after HTML, first proposed by [H<span class="a-ring">å</span>kon Wium 
 
 <sub>For the past decade or so, features have been added incrementally by browsers “within” the CSS 3 “standard” (as it was/is with HTML). That’s how it goes, these days.</sub>
 
-<blockquote
-	@attribution="James D. Mason, 1994"
-	@citation="http://ksi.cpsc.ucalgary.ca/archives/HTML-WG/html-wg-94q4.messages/0279.html"
-	>
-
-The change in relationship between generator and consumer of information is going to take some getting used to.
-
-•••
-
-I'll comment that style sheets constitute a wormhole into unspeakable universes. People start thinking they'll just set up a little file […] and soon it grows uncontrollable.
-
-</blockquote>
+> The change in relationship between generator and consumer of information is going to take some getting used to.
+>
+> …
+>
+> I'll comment that style sheets constitute a wormhole into unspeakable universes. People start thinking they'll just set up a little file […] and soon it grows uncontrollable.
+>
+> [<cite>James D. Mason, 1994</cite>](http://ksi.cpsc.ucalgary.ca/archives/HTML-WG/html-wg-94q4.messages/0279.html)
 
 ## Where CSS Lives
 
@@ -673,36 +668,10 @@ Here is a [simple, modern one](/assets/reset.css) for your `<head>`:
 
 <sub>This is what we use here for our course site!</sub>
 
-<blockquote
-	@attribution="H<span class='a-ring cap'>å</span>kon Wium Lie, 1994"
-	@citation="https://www.w3.org/People/howcome/p/cascade.html"
-	>
-
-The author of HTML documents has no influence over the presentation. Indeed, if conflicts arise the user should have the last word, but one should also allow the author to attach style hints.
-
-The last point has especially been a source of much frustration among professions that are used to being in control of paper-based publishing.
-
-This proposal tries to soften the tension between the author and the reader.
-
-</blockquote>
-
-<style>
-	.a-ring {
-		position: relative;
-
-		&::before {
-			-webkit-text-stroke-width: 0.03em;
-			content:                   '°' / '';
-			font-size:                 66%;
-			inset-block-start:         -0.45em;
-			inset-inline-start:        0.1em;
-			position:                  absolute;
-		}
-
-		&.cap::before {
-			font-size:          75%;
-			inset-block-start:  -0.9em;
-			inset-inline-start: 0.24em;
-		}
-	}
-</style>
+> The author of HTML documents has no influence over the presentation. Indeed, if conflicts arise the user should have the last word, but one should also allow the author to attach style hints.
+>
+> The last point has especially been a source of much frustration among professions that are used to being in control of paper-based publishing.
+>
+> This proposal tries to soften the tension between the author and the reader.
+>
+> [<cite>Håkon Wium Lie, 1994</cite>](https://www.w3.org/People/howcome/p/cascade.html)
