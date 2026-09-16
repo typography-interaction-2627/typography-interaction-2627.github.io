@@ -192,7 +192,9 @@ The [curly brackets](https://en.wikipedia.org/wiki/Bracket#Curly_brackets) <nobr
 
 Properties are always separated from their corresponding values by a colon `:`, and each declaration line has to end in a semicolon `;`. (It’s just how it is!) Also, there are no spaces between values and their units (like `2rem`)! You will get used to it.
 
-<figure @source="rule.svg"></figure>
+<figure>
+<img src="rule.svg">
+</figure>
 
 **There are [many, many, many CSS properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference). We’ll go over some in our exercises, but look through these to become more familiar.**
 
@@ -247,11 +249,15 @@ If you want to change the styles for all instances of a given HTML element, you 
 	Match by node name.
 <!-- .right -->
 
-<figure
-	@caption="Note that CSS has different `/* comment syntax */` too."
-	@source="element/preview/?active=style.css"
-	style="--lines: 12"
-	>
+<figure style="--lines: 10">
+
+***[Element Example](element/style.css)***
+
+<figcaption>
+
+Note that CSS has different `/* comment syntax */` too.
+
+</figcaption>
 </figure>
 
 ### 2. With a Class: `.class-name` <!-- #class .all -->
@@ -263,10 +269,10 @@ But maybe you don’t want to style all of the paragraphs. You can then use a `
 	Specify/match things that are alike.
 <!-- .right -->
 
-<figure
-	@source="class/preview"
-	style="--lines: 18"
-	>
+<figure style="--lines: 16">
+
+***[Class Example](class/)***
+
 </figure>
 
 The *value* here is our class name, which we write in CSS by prefixing with a `.` as with `.highlight` and `.faded`.
@@ -284,10 +290,10 @@ You can also use an `id`, which is a kind of [special attribute](https://develop
 	Specify/match singular elements.
 <!-- .right -->
 
-<figure
-	@source="id/preview"
-	style="--lines: 16"
-	>
+<figure style="--lines: 14">
+
+***[ID Example](id/)***
+
 </figure>
 
 These are prefixed by `#` in CSS, as with `#title` and `#introduction`. If you remember, they can also be used as [link destinations](/topic/html/#id)!
@@ -307,10 +313,10 @@ You can use [compound/combinations](https://developer.mozilla.org/en-US/docs/Web
 
 More commonly, you might apply declarations to multiple selectors, sometimes called *group selectors*, with a <nobr>comma-delineated</nobr> [selector list](https://developer.mozilla.org/en-US/docs/Web/CSS/Selector_list):
 
-<figure
-	@source="group/preview/?active=style.css"
-	style="--lines: 16"
-	>
+<figure style="--lines: 14">
+
+***[Group Example](group/style.css)***
+
 </figure>
 
 ### With Specific Attributes: `selector[attribute]` <!-- .all -->
@@ -322,10 +328,10 @@ You can use the various [attributes](/topic/html/#attributes) as selectors too, 
 	Select with other non-`.class`, non-`#id` HTML attributes.
 <!-- .right -->
 
-<figure
-	@source="attribute/preview/?active=style.css"
-	style="--lines: 12"
-	>
+<figure style="--lines: 10">
+
+***[Attribute Example](attribute/style.css)***
+
 </figure>
 
 ### Pseudo-Classes: `selector:state` `selector:instance` <!-- .all -->
@@ -336,19 +342,23 @@ These are [special selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/P
 	Select elements in a particular *state*.
 <!-- .right -->
 
-<figure
-	@caption="Note that `:hover` works on any element, not just links!"
-	@source="pseudo-link/preview/?active=style.css"
-	style="--lines: 15"
-	>
+<figure style="--lines: 13">
+
+***[Pseudo-Class Example](pseudo-link/style.css)***
+
+<figcaption>
+
+Note that `:hover` works on any element, not just links!
+
+</figcaption>
 </figure>
 
 Other common pseudo-Class examples have to do with [counts and positions](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes#tree-structural_pseudo-classes). The [syntax for these](https://css-tip.com/quantity-queries/) can be complicated, but they are very powerful:
 
-<figure
-	@source="pseudo-child/preview/?active=style.css"
-	style="--lines: 18"
-	>
+<figure style="--lines: 16">
+
+***[Pseudo-Child Example](pseudo-child/style.css)***
+
 </figure>
 
 ### Pseudo-Elements: `selector::pseudo` <!-- .all -->
@@ -360,11 +370,15 @@ Slightly different the various [pseudo-*elements*](https://developer.mozilla.org
 	Not *quite* elements!
 <!-- .right -->
 
-<figure
-	@caption="Note the difference in `:` for pseudo-selectors and `::` for pseudo-elements."
-	@source="pseudo-element/preview/?active=style.css"
-	style="--lines: 21"
-	>
+<figure style="--lines: 19">
+
+***[Pseudo-Element Example](pseudo-element/style.css)***
+
+<figcaption>
+
+Note the difference in `:` for pseudo-selectors and `::` for pseudo-elements.
+
+</figcaption>
 </figure>
 
 ### Finally, Combinators: `>` `+` `~` <!-- .all -->
@@ -376,10 +390,10 @@ Last, you will often want to target something based on its relationship to other
 	Based on HTML relationships.
 <!-- .right -->
 
-<figure
-	@source="combinator/preview/?active=style.css"
-	style="--lines: 19"
-	>
+<figure style="--lines: 17">
+
+***[Combinator Example](combinator/style.css)***
+
 </figure>
 
 Importantly, combinators can only target elements top-down, meaning that it can only “see” elements *before* and *above* themselves—meaning their *previous <em>(older?)</em> siblings* or their *parents*. This directionality somewhat corresponds with the *cascade*, which we’ll talk about shortly.
@@ -532,10 +546,10 @@ We can’t talk about CSS without talking about *specificity*—bane of many a f
 
 The first three targeting methods (`element`, `.class`, `#id`) are listed in increasing order of [*specificity*](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity), meaning that a class trumps an element rule, and an `id` trumps a class. Identifiers are thus *more specific* than classes, which are *more specific* than element selectors. (And you shouldn’t really use them, but inline styles beat them all.) Take this example:
 
-<figure
-	@source="specificity/preview/?active=style.css"
-	style="--lines: 13"
-	>
+<figure style="--lines: 11">
+
+***[Specificity Example](specificity/style.css)***
+
 </figure>
 
 You could write a *long* book (and many people have) about CSS specificity—the myriad of ways that some CSS rules take precedent over others. It is often one the more frustrating parts (especially when working with legacy code that is poorly considered).
@@ -562,11 +576,15 @@ Yikes, we haven’t even talked about that first *C&thinsp;*! Remember, it stand
 
 This means that when there is a tie (like two classes applying the same property), the *lowest* rule wins—literally the one further down within a CSS document, or within a style tag. If you have multiple CSS documents with `<link>` element, the lower linked document will take precedence:
 
-<figure
-	@caption="Try to avoid relying on this or even having it come up! This is one of the reasons people are frustrated by CSS."
-	@source="cascade/preview/"
-	style="--lines: 16"
-	>
+<figure style="--lines: 14">
+
+***[Cascade Example](cascade/)***
+
+<figcaption>
+
+Try to avoid relying on this or even having it come up! This is one of the reasons people are frustrated by CSS.
+
+</figcaption>
 </figure>
 
 <!-- TODO Add note about cascade layers? -->
@@ -582,11 +600,15 @@ To add even more confusion, [some CSS properties](https://developer.mozilla.org/
 This allows you to quickly set some properties globally, without having many brittle/redundant rules, as we did before:
 <!-- .balance -->
 
-<figure
-	@caption="All the children inherit the `body` styles. Ah, finally, `sans-serif`."
-	@source="inheritance/preview/?active=style.css"
-	style="--lines: 14"
-	>
+<figure style="--lines: 12">
+
+***[Inheritance Example](inheritance/style.css)***
+
+<figcaption>
+
+All the children inherit the `body` styles. Ah, finally, `sans-serif`.
+
+</figcaption>
 </figure>
 
 ## Color and Type Properties
@@ -602,11 +624,15 @@ Besides the basic examples above, [*color*](https://developer.mozilla.org/en-US/
 	Come for the picker, stay for all the info.
 <!-- .right -->
 
-<figure
-	@caption="There are [147 <em>named</em>](https://htmlcolorcodes.com/color-names/) CSS colors! `tomato` is a favorite."
-	@source="color/preview/?active=style.css"
-	style="--lines: 31"
-	>
+<figure style="--lines: 31">
+
+***[Color Example](color/style.css)***
+
+<figcaption>
+
+There are [147 <em>named</em>](https://htmlcolorcodes.com/color-names/) CSS colors! `tomato` is a favorite.
+
+</figcaption>
 </figure>
 
 Named colors are quick to work with when you know a few, but [`hsla`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hsl) (and recently, [`color-mix`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix)) offer a much more intuitive/human way to adjust and work with colors and transparency.
@@ -623,11 +649,15 @@ Then perhaps most importantly, you’ll always be customizing your [typography](
 	All your properties.
 <!-- .right -->
 
-<figure
-	@caption="With great power comes great responsibility."
-	@source="font-family/preview/?active=style.css"
-	style="--lines: 30"
-	>
+<figure style="--lines: 28">
+
+***[Font-Family Example](font-family/style.css)***
+
+<figcaption>
+
+With great power comes great responsibility.
+
+</figcaption>
 </figure>
 
 Web font licensing is a *Whole Big Thing*—so let’s start out by making use of [Google Fonts](https://fonts.google.com), which offers many *open-source* typefaces nicely packaged for web use. You can select *families* and *weights* there to easily include in your pages, as in the example above.
@@ -642,11 +672,15 @@ Once you’ve got a `font-family` in, there are many additional properties to co
 	A more qualitative take.
 <!-- .right -->
 
-<figure
-	@caption="For now, just eyeball your units in `rem`, focusing on relationships. We’ll talk about other *absolute* and *relative* units soon."
-	@source="font/preview/?active=style.css"
-	style="--lines: 31"
-	>
+<figure style="--lines: 39">
+
+***[Font Example](font/style.css)***
+
+<figcaption>
+
+For now, just eyeball your units in `rem`, focusing on relationships. We’ll talk about other *absolute* and *relative* units soon.
+
+</figcaption>
 </figure>
 
 ## Resets

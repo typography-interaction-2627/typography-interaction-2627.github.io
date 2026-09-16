@@ -35,20 +35,15 @@ In Chrome, you can bring them up by right-clicking on any element/part of a page
 
 </div>
 
-<figure
-	@source="right-click.png"
-	class="right shadow"
-	style="--height: 273px"
-	>
+<figure class="right shadow" style="--height: 273px">
+<img src="right-click.png">
 </figure>
 
 By default, you’ll see the tools open on the right side of the page. Depending on how big your screen is, they might be laid out a bit differently—but the basics are usually the same:
 <!-- .add-before--3 .balance -->
 
-<figure
-	@source="dev-tools.png"
-	class="shadow"
-	>
+<figure class="shadow">
+<img src="dev-tools.png">
 </figure>
 
 <div class="before--3 center verso">
@@ -58,11 +53,8 @@ The Customize <samp style="-webkit-text-stroke-width: 0.05rem">⋮</samp> button
 
 </div>
 
-<figure
-	@source="customize.svg"
-	class="recto"
-	style="justify-content: end"
-	>
+<figure class="recto" style="justify-content: end">
+<img src="customize.svg">
 </figure>
 
 ## Elements Panel
@@ -79,11 +71,8 @@ The <samp>flex</samp>&#x202F;/<samp>grid</samp> badges (pills?) toggle their lay
 
 </div>
 
-<figure
-	@source="elements.svg"
-	class="center recto"
-	style="justify-content: end; margin-inline-start: -1em"
-	>
+<figure class="center recto" style="justify-content: end; margin-inline-start: -1em">
+<img src="elements.svg">
 </figure>
 
 Handy tip: <nobr><kbd>⌘</kbd> <kbd>F</kbd></nobr> in here will let you search for elements or text by name/class/contents!
@@ -101,11 +90,8 @@ On the right, you can see the sum *Computed* (or *rendered*) values of all the 
 
 </div>
 
-<figure
-	@source="styles.svg"
-	class="center recto"
-	style="justify-content: end; margin-inline-start: -1em"
-	>
+<figure class="center recto" style="justify-content: end; margin-inline-start: -1em">
+<img src="styles.svg">
 </figure>
 
 You can type specific CSS properties/values into both <samp>Filter</samp> boxes to quickly narrow things down!
@@ -127,14 +113,18 @@ Keep in mind that these changes are only *temporary*—any edits in the DevTools
 
 Enter *device mode* with the little phone/laptop <samp style="-webkit-text-stroke-width: 0.05rem">⿸</samp> button, <br>in the upper left of the DevTools:
 
-<figure
-	@caption="Be sure to <em>hard-refresh</em> with <nobr><kbd>⌘</kbd> <kbd>⇧</kbd> <kbd>R</kbd></nobr> (to clear the cache) if the page doesn’t rescale correctly when you enter this mode! They sometimes don’t, depending on how they are built—especially with JS shenanigans."
-	@source="device.png"
-	class="shadow"
-	>
+<figure class="shadow">
+<img src="device.png">
+<figcaption>
+
+Be sure to *hard-refresh* with <nobr><kbd>⌘</kbd> <kbd>⇧</kbd> <kbd>R</kbd></nobr> (to clear the cache) if the page doesn’t rescale correctly when you enter this mode! They sometimes don’t, depending on how they are built—especially with JS shenanigans.
+
+</figcaption>
 </figure>
 
-<figure @source="device-bar.svg"></figure>
+<figure>
+<img src="device-bar.svg">
+</figure>
 
 <div class="center left">
 
@@ -144,20 +134,22 @@ The *Preview Zoom* also allows you to approximate views *larger* than your curre
 
 </div>
 
-<figure
-	@caption="The <samp>Device List</samp> is… *ancient* and inaccurate—they don’t account for the browser’s own interface, so they are all too tall!"
-	@source="responsive.png"
-	class="start middle shadow"
-	style="--height: 489px; position: relative; inset-inline-start: calc( 2 * var(--alley))"
-	>
+<figure class="start middle shadow" style="--height: 489px; position: relative; inset-inline-start: calc( 2 * var(--alley))">
+<img src="responsive.png">
+<figcaption>
+
+The <samp>Device List</samp> is… *ancient* and inaccurate—they don’t account for the browser’s own interface, so they are all too tall!
+
+</figcaption>
 </figure>
 
-<figure
-	@caption="The <samp>More Options</samp> menu here has some handy tricks!"
-	@source="options.png"
-	class="right shadow"
-	style="--height: 260px; position: relative; inset-inline-start: var(--alley)"
-	>
+<figure class="right shadow" style="--height: 260px; position: relative; inset-inline-start: var(--alley)">
+<img src="options.png">
+<figcaption>
+
+The <samp>More Options</samp> menu here has some handy tricks!
+
+</figcaption>
 </figure>
 
 **Remember that you are not targeting specific devices; you are looking for when your design/content *breaks*!**
@@ -182,18 +174,17 @@ If your tools are already open, you can show the <samp>Console</samp> (as a dra
 
 </div>
 
-<figure
-	@source="panel-drawer.svg"
-	class="recto"
-	style="justify-content: end"
-	>
+<figure class="recto" style="justify-content: end">
+<img src="panel-drawer.svg">
 </figure>
 
-<figure
-	@caption="The Console opened under Elements/Styles."
-	@source="console-panel.png"
-	class="shadow before--3 after--3"
-	>
+<figure class="shadow before--3 after--3">
+<img src="console-panel.png">
+<figcaption>
+
+The Console opened under Elements/Styles.
+
+</figcaption>
 </figure>
 
 **This area will show any [messages logged](https://developer.mozilla.org/en-US/docs/Web/API/console#outputting_text_to_the_console) from your JavaScript with `console.log()`.**
@@ -210,7 +201,9 @@ You can use this to test out parts of your code right away, like `document.query
 
 <div class="center recto">
 
-<figure @source="console.svg"></figure>
+<figure>
+<img src="console.svg">
+</figure>
 
 </div>
 
