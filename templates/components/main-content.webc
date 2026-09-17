@@ -267,7 +267,8 @@
 
 				> strong { display: block } /* Fixes `line-height` rounding. 🤷‍♀️ */
 
-				+ *:not(&, section) { margin-block-start: 1rlh }
+				/* Space after. */
+				:where(:not(li)) > & + *:where(:not(&, section)) { margin-block-start: 1rlh }
 
 				@container style(--columns) {
 					/* …top level. */
