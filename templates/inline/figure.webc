@@ -126,7 +126,7 @@
 			}
 
 			img {
-				block-size:     calc(var(--height) / var(--zoom, 1));
+				block-size:     var(--height);
 				max-block-size: round(calc(min(var(--height--max), var(--height--lines, var(--height--max))) / var(--zoom, 1)), var(--1px));
 				zoom:           var(--zoom); /* So they aren’t as limited by intrinsic resolution. */
 
