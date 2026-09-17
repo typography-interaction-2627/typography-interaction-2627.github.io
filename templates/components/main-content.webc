@@ -256,11 +256,11 @@
 				--leading: 1rlh;
 				--wrap:    balance;
 
-				*:not(hgroup) + & { margin-block-start: 1rlh }
+				*:not(&, hgroup) + & { margin-block-start: 1rlh }
 
 				> strong { display: block } /* Fixes `line-height` rounding. 🤷‍♀️ */
 
-				+ *:not(section) { margin-block-start: 1rlh }
+				+ *:not(&, section) { margin-block-start: 1rlh }
 
 				@container style(--columns) {
 					/* …top level. */
