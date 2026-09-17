@@ -108,7 +108,7 @@ On the right, you can see the sum *Computed* (or *rendered*) values of all the 
 >
 > <sub>Any edits in the DevTools will be lost when you leave or reload the page! They are just for you.</sub>
 
-## Device Mode
+## Device Mode <!-- inert -->
 
 Enter *device mode* with the little phone/laptop <samp><span class="x2ff8">⿸</span></samp> button, in the upper left of the DevTools:
 
@@ -160,7 +160,7 @@ The <samp>More Options <span class="x22ee">⋮</span></samp> menu here has some 
 >
 > <sub>This is just a quicker preview, but isn’t always perfectly accurate—and also won’t reflect any platform-specific behaviors around scrolling or rotating. (We’re looking at you, [<small>i</small>OS Safari](https://developer.apple.com/forums/thread/800125).)</sub>
 
-## The Console
+## The Console <!-- inert -->
 
 <div class="verso start">
 
