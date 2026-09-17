@@ -132,7 +132,7 @@ The *Preview Zoom* also allows you to approximate views *larger* than your curre
 
 </div>
 
-<figure class="start middle borderless" style="--height: 489px; position: relative; inset-inline-start: calc( 2 * var(--alley))">
+<figure class="start middle borderless" style="--height: 489px">
 <img src="responsive.png">
 <figcaption>
 
@@ -141,7 +141,7 @@ The <samp>Device List <span class="x25be">▾</span></samp> is… *ancient* and�
 </figcaption>
 </figure>
 
-<figure class="right borderless" style="--height: 260px; position: relative; inset-inline-start: var(--alley)">
+<figure class="right borderless" style="--height: 260px">
 <img src="options.png">
 <figcaption>
 
