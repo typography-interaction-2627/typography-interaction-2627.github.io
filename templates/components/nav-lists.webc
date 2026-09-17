@@ -142,9 +142,6 @@
 
 					/* Dates. */
 					p:has(sub) {
-						--family: 'Geneva';
-						--size: var(--size--note);
-
 						justify-self: end;
 						text-align:   right;
 
