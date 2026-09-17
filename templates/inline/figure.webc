@@ -187,6 +187,18 @@
 
 				img, iframe, as-dithered-image { animation-name: none }
 			}
+
+			[inert] & {
+				img {
+					filter:    initial;
+					animation: initial;
+				}
+
+				as-dithered-image {
+					opacity:   initial;
+					animation: initial;
+				}
+			}
 		}
 
 		/* A “border” around these. */
