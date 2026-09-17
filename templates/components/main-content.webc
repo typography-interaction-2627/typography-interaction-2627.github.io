@@ -28,6 +28,13 @@
 
 				:is(h2, h3, h4) a { visibility: hidden } /* Anchor links. */
 
+				/* On “windows” (DevTools) */
+				main > & {
+					mask: initial;
+
+					> * { mask: var(--background--check) }
+				}
+
 				@supports (font: -apple-system-body) {
 					/* Fix Safari rounding. 🤷‍♀️ */
 					a, em, strong, abbr { --kerning: 0.0001em }
