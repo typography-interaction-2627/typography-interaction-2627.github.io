@@ -341,7 +341,10 @@ span.cap {
 }
 
 /* Don’t tell Susan! */
+span.darr,
+span.larr,
 span.rarr,
+span.uarr,
 span.times,
 span.x2318,
 span.x2325,
@@ -367,7 +370,20 @@ span.x2298 {
 	:where(code, kbd, samp) & { translate: 0 var(---1px) }
 }
 
+span.darr  {
+	background-image: url('/assets/icons/&rarr.svg');
+	rotate:           90deg;
+}
+span.larr  {
+	background-image: url('/assets/icons/&rarr.svg');
+	rotate:           180deg;
+}
 span.rarr  { background-image: url('/assets/icons/&rarr.svg') }
+span.uarr  {
+	background-image: url('/assets/icons/&rarr.svg');
+	rotate:           -90deg;
+}
+
 span.times { background-image: url('/assets/icons/&times.svg') }
 span.x2318 { background-image: url('/assets/icons/&x2318.svg') }
 span.x2325 { background-image: url('/assets/icons/&x2325.svg') }
