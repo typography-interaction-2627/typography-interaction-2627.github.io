@@ -188,15 +188,16 @@
 				img, iframe, as-dithered-image { animation-name: none }
 			}
 
+			/* Leave them “dithered.” */
 			[inert] & {
 				img {
-					filter:    initial;
 					animation: initial;
+					filter:    initial;
 				}
 
 				as-dithered-image {
-					opacity:   initial;
 					animation: initial;
+					opacity:   initial;
 				}
 			}
 		}
