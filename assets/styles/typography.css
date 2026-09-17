@@ -44,6 +44,21 @@ strong {
 	}
 }
 
+sup, sub {
+	--family: 'Geneva';
+	--size:   var(--size--note);
+
+	/* Chrome/Safari `opsz` dance, again; see `typography.css` */
+	@supports (not (-moz-appearance: none)) {
+		--font: 'Geneva 9';
+	}
+}
+
+sup {
+	inset-block-end: round(0.5ex, var(--1px));
+	position:        relative;
+}
+
 nobr { --wrap: nowrap }
 
 abbr:where(:not(nav abbr)) {
@@ -114,7 +129,7 @@ hgroup:has(h4), dt {
 
 	font-weight: bold;
 
-	/* Chrome/Safari `opsz` dance, again; see `typography.css` */
+	/* `opsz` again. */
 	@supports (not (-moz-appearance: none)) {
 		&:not(:has(p)) {
 			--font: 'Geneva 12';

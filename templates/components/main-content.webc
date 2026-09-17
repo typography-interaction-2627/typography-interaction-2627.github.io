@@ -281,9 +281,7 @@
 
 			/* Previously “note.” */
 			:where(p:has(> sub:only-child)) {
-				--family: 'Geneva';
-				--size:   var(--size--note);
-				--wrap:   balance;
+				--wrap: balance;
 
 				> sub { display: block }
 			}
