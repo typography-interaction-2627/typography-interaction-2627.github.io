@@ -6,16 +6,18 @@ const draft = true
 
 # DevTools&#x202F;/&thinsp;Web Inspector
 
+## Browsers Are Our Imperfect Venue
+
 **There is no single *best* browser; they are all kind of differently bad, in [different ways](https://en.wikipedia.org/wiki/Anna_Karenina_principle).**
 
 - [<cite>Chrome DevTools</cite>](https://developer.chrome.com/docs/devtools/) \
 We’ll be using these.
 
 - [<cite>Safari Web Development Tools</cite>](https://developer.apple.com/safari/tools/) \
-Got some long-overdue love back in [*Sonoma*](https://developer.apple.com/videos/play/wwdc2023/10118), but [little](https://webkit.org/blog/15865/webkit-features-in-safari-18-0/#web-inspector) [since](https://webkit.org/blog/17333/webkit-features-in-safari-26-0/#web-inspector).
+Got some long-overdue love way back in [*Sonoma*](https://developer.apple.com/videos/play/wwdc2023/10118), but [little](https://webkit.org/blog/15865/webkit-features-in-safari-18-0/#web-inspector) [since](https://webkit.org/blog/17333/webkit-features-in-safari-26-0/#web-inspector) [then](https://webkit.org/blog/17967/news-from-wwdc26-webkit-in-safari-27-beta/#web-inspector).
 
 - [<cite>Firefox DevTools User Docs</cite>](https://developer.mozilla.org/en-US/docs/Tools) \
-Spiritual successor to [*Firebug*](https://thehistoryoftheweb.com/checking-under-the-hood-of-code/), the first suite.
+Spiritual successor to [*Firebug*](https://thehistoryoftheweb.com/checking-under-the-hood-of-code/), the first suite.
 <!-- .right .rows--4 -->
 
 Many developers use [Chrome](https://www.google.com/chrome) for [its popularity/hegemony](https://gs.statcounter.com/browser-market-share), before testing in other browsers. It also arguably has the most robust set of *DevTools*—though [Safari](https://www.apple.com/safari/) and [Firefox](https://developer.mozilla.org/en-US/docs/Tools) have their own versions, too. Much of this is just preference, but ultimately you’ll want to see what your visitors are seeing.
@@ -27,33 +29,32 @@ You’ll often hear people (Michael) call it the *Web Inspector*, or just *The 
 
 ## Inspecting Pages
 
-<div class="after--3 center verso">
+<div class="center verso">
 
-In Chrome, you can bring them up by right-clicking on any element/part of a page and clicking <samp>Inspect</samp>&#x202F;:
+In Chrome, you can bring them up by right-clicking on any element/part of a page and clicking <samp>Inspect</samp>:
 
-<sub>You can also hit <nobr><kbd>⌘</kbd> <kbd>⌥</kbd> <kbd>I</kbd></nobr>&#x202F;.</sub>
+By default, you’ll see the tools open on the right side of the page. Depending on how big your screen is, they might be laid out a bit differently—but the basics are usually the same:
+
+You can also hit <nobr><kbd><span class="x2318">⌘</span>/Ctrl</kbd>+<kbd><span class="x2325">⌥</span>/Alt</kbd>+<kbd>I</kbd></nobr>.
 
 </div>
 
-<figure class="right shadow" style="--height: 273px">
+<figure class="recto justify-center borderless center" style="--height: 273px">
 <img src="right-click.png">
 </figure>
 
-By default, you’ll see the tools open on the right side of the page. Depending on how big your screen is, they might be laid out a bit differently—but the basics are usually the same:
-<!-- .add-before--3 .balance -->
 
-<figure class="shadow">
+<figure class="all justify-center borderless">
 <img src="dev-tools.png">
 </figure>
 
-<div class="before--3 center verso">
+<div class="before center verso balance">
 
-The Customize <samp style="-webkit-text-stroke-width: 0.05rem">⋮</samp> button will let you change the side they appear on, or undock the tools out entirely into a separate window—sometimes easier on a laptop/small screen:
-<!-- .balance -->
+The Customize <samp>⋮</samp> button will let you change the side they appear on, or undock the tools out entirely into a separate window—sometimes easier on a laptop/small screen:
 
 </div>
 
-<figure class="recto" style="justify-content: end">
+<figure class="recto borderless justify-end">
 <img src="customize.svg">
 </figure>
 
@@ -65,18 +66,18 @@ The top part of the tools is [*the DOM*](https://developer.mozilla.org/en-US/do
 
 The first <samp>↖</samp> button in the upper-left lets you mouse over on the page, and will then show you that element nested/hierarchically within the DOM.
 
-The second <samp style="-webkit-text-stroke-width: 0.05rem">⿸</samp> button (more about this [below](#device-mode)) toggles the *Device Toolbar*, a.k.a. “responsive mode.”
+The second <samp>⿸</samp> button (more about this [below](#device-mode)) toggles the *Device Toolbar*, a.k.a. “responsive mode.”
 
 The <samp>flex</samp>&#x202F;/<samp>grid</samp> badges (pills?) toggle their layout overlays on the page.
 
 </div>
 
-<figure class="center recto" style="justify-content: end; margin-inline-start: -1em">
+<figure class="center recto borderless justify-end">
 <img src="elements.svg">
 </figure>
 
-Handy tip: <nobr><kbd>⌘</kbd> <kbd>F</kbd></nobr> in here will let you search for elements or text by name/class/contents!
-<!-- .note .recto .before--0 style="text-align: right"-->
+<sub>Handy tip: <nobr><kbd><span class="x2318">⌘</span>/Ctrl</kbd>+<kbd>F</kbd></nobr> in here will let you search for elements or text by name/class/contents!</sub>
+<!-- .right style="margin-block-start: initial" -->
 
 ## Styles Tab
 
@@ -90,12 +91,12 @@ On the right, you can see the sum *Computed* (or *rendered*) values of all the 
 
 </div>
 
-<figure class="center recto" style="justify-content: end; margin-inline-start: -1em">
+<figure class="center recto borderless justify-end">
 <img src="styles.svg">
 </figure>
 
-You can type specific CSS properties/values into both <samp>Filter</samp> boxes to quickly narrow things down!
-<!-- .note .recto .before--0 style="text-align: right" -->
+<sub>You can type specific CSS properties/values into both <samp>Filter</samp> boxes to quickly narrow things down!</sub>
+<!-- .right style="margin-block-start: initial" -->
 
 **You can make changes in Elements or Styles, and the edits will be immediately visible on the page *as if you had edited the source files*!**
 
@@ -109,9 +110,9 @@ You can type specific CSS properties/values into both <samp>Filter</samp> boxes 
 
 ## Device Mode
 
-Enter *device mode* with the little phone/laptop <samp style="-webkit-text-stroke-width: 0.05rem">⿸</samp> button, <br>in the upper left of the DevTools:
+Enter *device mode* with the little phone/laptop <samp>⿸</samp> button, in the upper left of the DevTools:
 
-<figure class="shadow">
+<figure class="all justify-center borderless">
 <img src="device.png">
 <figcaption>
 
@@ -120,7 +121,7 @@ Be sure to *hard-refresh* with <nobr><kbd>⌘</kbd> <kbd>⇧</kbd> <kbd>R</kbd><
 </figcaption>
 </figure>
 
-<figure>
+<figure class="all borderless">
 <img src="device-bar.svg">
 </figure>
 
@@ -132,7 +133,7 @@ The *Preview Zoom* also allows you to approximate views *larger* than your curre
 
 </div>
 
-<figure class="start middle shadow" style="--height: 489px; position: relative; inset-inline-start: calc( 2 * var(--alley))">
+<figure class="start middle borderless" style="--height: 489px; position: relative; inset-inline-start: calc( 2 * var(--alley))">
 <img src="responsive.png">
 <figcaption>
 
@@ -141,7 +142,7 @@ The <samp>Device List</samp> is… *ancient* and inaccurate—they don’t acco
 </figcaption>
 </figure>
 
-<figure class="right shadow" style="--height: 260px; position: relative; inset-inline-start: var(--alley)">
+<figure class="right borderless" style="--height: 260px; position: relative; inset-inline-start: var(--alley)">
 <img src="options.png">
 <figcaption>
 
@@ -161,7 +162,7 @@ The <samp>More Options</samp> menu here has some handy tricks!
 
 ## The Console
 
-<div class="verso pretty" style="align-self: start">
+<div class="verso start">
 
 The console is used to help you work with [JavaScript](../javascript/index.md), by *logging* messages, warnings, and any errors from your code as it runs. It can also evaluate written/pasted JS, live.
 
@@ -171,11 +172,11 @@ If your tools are already open, you can show the <samp>Console</samp> (as a dra
 
 </div>
 
-<figure class="recto" style="justify-content: end">
+<figure class="recto justify-end borderless">
 <img src="panel-drawer.svg">
 </figure>
 
-<figure class="shadow before--3 after--3">
+<figure class="all justify-center borderless">
 <img src="console-panel.png">
 <figcaption>
 
@@ -188,7 +189,7 @@ The Console opened under Elements/Styles.
 
 <div class="balance verso">
 
-**<span style="color: gold">Warnings</span>** and **<span style="color: tomato">errors</span>** (like missing files, or bad JS syntax) will also be shown here—usually with clickable <samp>script.js:##</samp> line-numbers to the right, to take you directly to the problem. You can clear the *buffer* (what is showing) with the little crossed circle <samp>⊘︎</samp> when it gets cluttered.
+**<span>Warnings</span>** and **<span>errors</span>** (like missing files, or bad JS syntax) will also be shown here—usually with clickable <samp>script.js:##</samp> line-numbers to the right, to take you directly to the problem. You can clear the *buffer* (what is showing) with the little crossed circle <samp>⊘︎</samp> when it gets cluttered.
 
 You can also evaluate and try your JavaScript here *directly*, by typing (with some nice auto-completion) into the bottom of the console—like `console.log('Hello, world!')` (note the quotes for [a *string*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)).
 
@@ -198,7 +199,7 @@ You can use this to test out parts of your code right away, like `document.query
 
 <div class="center recto">
 
-<figure>
+<figure class="borderless">
 <img src="console.svg">
 </figure>
 
@@ -208,4 +209,4 @@ You can use this to test out parts of your code right away, like `document.query
 >
 > The Console has many uses! And not *just* when things go wrong.
 >
-> <sub>You can check your variables by printing them out with `console.log('Variable: ' + variableName)`, or even just make sure that part of your code ran with `console.log('Made it here!')`.</sub>
+> <sub>Check your variables by printing them out with `console.log('Variable: ' + variableName)`, <br>or just make sure that part of your code ran with `console.log('Made it here!')`.</sub>
