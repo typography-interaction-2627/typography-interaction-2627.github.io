@@ -1,7 +1,6 @@
 ```javascript
 const week = 4
 const order = 2
-const draft = true
 ```
 
 # DevTools&#x202F;/&thinsp;Web Inspector
