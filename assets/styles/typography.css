@@ -330,7 +330,14 @@ span.rarr,
 span.times,
 span.x2318,
 span.x2325,
-span.x2699 {
+span.x2699,
+span.x22ee,
+span.x21f1,
+span.x2ff8,
+span.x25bd,
+span.x21e7,
+span.x25be,
+span.x2298 {
 	background-position: center;
 	background-repeat:   no-repeat;
 	background-size:     var(--7px);
@@ -350,3 +357,10 @@ span.times { background-image: url('/assets/icons/&times.svg') }
 span.x2318 { background-image: url('/assets/icons/&x2318.svg') }
 span.x2325 { background-image: url('/assets/icons/&x2325.svg') }
 span.x2699 { background-image: url('/assets/icons/&x2699.svg') }
+span.x22ee { background-image: url('/assets/icons/&x22ee.svg') }
+span.x21f1 { background-image: url('/assets/icons/&x21f1.svg') }
+span.x2ff8 { background-image: url('/assets/icons/&x2ff8.svg') }
+span.x25bd { background-image: url('/assets/icons/&x25bd.svg') }
+span.x21e7 { background-image: url('/assets/icons/&x21e7.svg') }
+span.x25be { background-image: url('/assets/icons/&x25be.svg') }
+span.x2298 { background-image: url('/assets/icons/&x2298.svg') }
