@@ -23,7 +23,7 @@ Spiritual successor to [*Firebug*](https://thehistoryoftheweb.com/checking-under
 Many developers use [Chrome](https://www.google.com/chrome) for [its popularity/hegemony](https://gs.statcounter.com/browser-market-share), before testing in other browsers. It also arguably has the most robust set of *DevTools*—though [Safari](https://www.apple.com/safari/) and [Firefox](https://developer.mozilla.org/en-US/docs/Tools) have their own versions, too. Much of this is just preference, but ultimately you’ll want to see what your visitors are seeing.
 <!-- .before -->
 
-You have always [been able to](https://blog.jim-nielsen.com/2020/the-spirit-of-view-source/#how-browsers-do-view-source-today-on-mac) <samp>View Source</samp>, from [the earliest days/browsers](https://thehistoryoftheweb.com/checking-under-the-hood-of-code/)—remember that the open web has *always* trafficked in source code. But we’ll use DevTools for the same reason we use an IDE—more comfortable ergonomics, specifically around building for the web.
+You have always [been able to](https://blog.jim-nielsen.com/2020/the-spirit-of-view-source/#how-browsers-do-view-source-today-on-mac) <samp>View Source…</samp>, from [the earliest days/browsers](https://thehistoryoftheweb.com/checking-under-the-hood-of-code/)—remember that the open web has *always* trafficked in source code. But we’ll use DevTools for the same reason we use an IDE—more comfortable ergonomics, specifically around building for the web.
 
 You’ll often hear people (Michael) call it the *Web Inspector*, or just *The Inspector*. It’s going to be your best (Web) friend, showing you everything that the browser has *parsed* to display your pages.
 
@@ -50,7 +50,7 @@ You can also hit <nobr><kbd><span class="x2318">⌘</span>/Ctrl</kbd>+<kbd><span
 
 <div class="before center verso balance">
 
-The Customize <samp>⋮</samp> button will let you change the side they appear on, or undock the tools out entirely into a separate window—sometimes easier on a laptop/small screen:
+The Customize <samp><span class="x22ee">⋮</span></samp> button will let you change the side they appear on, or undock the tools out entirely into a separate window—sometimes easier on a laptop/small screen:
 
 </div>
 
@@ -62,13 +62,13 @@ The Customize <samp>⋮</samp> button will let you change the side they appear o
 
 <div class="verso">
 
-The top part of the tools is [*the DOM*](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)&NoBreak;—you can expand/collapse all the nested HTML *elements* on the opened page.
+The top part of the tools is [*the DOM*](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)—you can expand/collapse all the nested HTML *elements* on the opened page.
 
-The first <samp>↖</samp> button in the upper-left lets you mouse over on the page, and will then show you that element nested/hierarchically within the DOM.
+The first <samp><span class="x21f1">⇱</span></samp> button in the upper-left lets you mouse over on the page, and will then show you that element nested/hierarchically within the DOM.
 
-The second <samp>⿸</samp> button (more about this [below](#device-mode)) toggles the *Device Toolbar*, a.k.a. “responsive mode.”
+The second <samp><span class="x2ff8">⿸</span></samp> button (more about this [below](#device-mode)) toggles the *Device Toolbar*, a.k.a. “responsive mode.”
 
-The <samp>flex</samp>&#x202F;/<samp>grid</samp> badges (pills?) toggle their layout overlays on the page.
+The <samp>flex</samp>/<samp>grid</samp> badges (pills?) toggle their layout overlays on the page.
 
 </div>
 
@@ -95,7 +95,7 @@ On the right, you can see the sum *Computed* (or *rendered*) values of all the 
 <img src="styles.svg">
 </figure>
 
-<sub>You can type specific CSS properties/values into both <samp>Filter</samp> boxes to quickly narrow things down!</sub>
+<sub>You can type specific CSS properties/values into both <samp><span class="x25bd">▽</span> Filter</samp> boxes to quickly narrow things down!</sub>
 <!-- .right style="margin-block-start: initial" -->
 
 **You can make changes in Elements or Styles, and the edits will be immediately visible on the page *as if you had edited the source files*!**
@@ -110,13 +110,13 @@ On the right, you can see the sum *Computed* (or *rendered*) values of all the 
 
 ## Device Mode
 
-Enter *device mode* with the little phone/laptop <samp>⿸</samp> button, in the upper left of the DevTools:
+Enter *device mode* with the little phone/laptop <samp><span class="x2ff8">⿸</span></samp> button, in the upper left of the DevTools:
 
 <figure class="all justify-center borderless">
 <img src="device.png">
 <figcaption>
 
-Be sure to *hard-refresh* with <nobr><kbd>⌘</kbd> <kbd>⇧</kbd> <kbd>R</kbd></nobr> (to clear the cache) if the page doesn’t rescale correctly when you enter this mode! They sometimes don’t, depending on how they are built—especially with JS shenanigans.
+Be sure to *hard-refresh* with <nobr><kbd><span class="x2318">⌘</span>/Ctrl</kbd>+<kbd><span class="x21e7">⇧</span>/Shift</kbd>+<kbd>R</kbd></nobr> (to clear the cache) if the page doesn’t rescale correctly when you enter this mode! They sometimes don’t, depending on how they are built—especially with JS shenanigans.
 
 </figcaption>
 </figure>
@@ -127,7 +127,7 @@ Be sure to *hard-refresh* with <nobr><kbd>⌘</kbd> <kbd>⇧</kbd> <kbd>R</kbd><
 
 <div class="center left">
 
-Generally, use the <samp>Responsive</samp> mode that lets you type in specific pixel dimensions for width/height. Or you can use the divided bar underneath to quickly jump through common/ballpark widths.
+Generally, use the <samp>Responsive <span class="x25be">▾</span></samp> mode that lets you type in specific pixel dimensions for width/height. Or you can use the divided bar underneath to quickly jump through common/ballpark widths.
 
 The *Preview Zoom* also allows you to approximate views *larger* than your current screen! You can specify larger dimensions, and it will scale down to show the entire viewport. This is great for developing on a laptop—it won’t be precise, but it’ll give you some idea of big screens.
 
@@ -137,7 +137,7 @@ The *Preview Zoom* also allows you to approximate views *larger* than your curre
 <img src="responsive.png">
 <figcaption>
 
-The <samp>Device List</samp> is… *ancient* and inaccurate—they don’t account for the browser’s own interface, so they are all too tall!
+The <samp>Device List <span class="x25be">▾</span></samp> is… *ancient* and inaccurate—they don’t account for the browser’s own interface, so they are all too tall!
 
 </figcaption>
 </figure>
@@ -146,7 +146,7 @@ The <samp>Device List</samp> is… *ancient* and inaccurate—they don’t acco
 <img src="options.png">
 <figcaption>
 
-The <samp>More Options</samp> menu here has some handy tricks!
+The <samp>More Options <span class="x22ee">⋮</span></samp> menu here has some handy tricks!
 
 </figcaption>
 </figure>
@@ -166,9 +166,9 @@ The <samp>More Options</samp> menu here has some handy tricks!
 
 The console is used to help you work with [JavaScript](../javascript/index.md), by *logging* messages, warnings, and any errors from your code as it runs. It can also evaluate written/pasted JS, live.
 
-If your tools are already open, you can show the <samp>Console</samp> (as a drawer, below) with the Customize <samp>⋮</samp> button, or as a whole panel to the right of <samp>Elements</samp>.
+If your tools are already open, you can show the <samp>Console</samp> (as a drawer, below) with the Customize <samp><span class="x22ee">⋮</span></samp> button, or as a whole panel to the right of <samp>Elements</samp>.
 
-<sub>You can also hit <nobr><kbd>⌘</kbd> <kbd>⌥</kbd> <kbd>J</kbd></nobr> to go right there!</sub>
+<sub>You can also hit <nobr><kbd><span class="x2318">⌘</span>/Ctrl</kbd>+<kbd><span class="x2325">⌥</span>/Alt</kbd>+<kbd>J</kbd></nobr> to go right there!</sub>
 
 </div>
 
@@ -189,7 +189,7 @@ The Console opened under Elements/Styles.
 
 <div class="balance verso">
 
-**<span>Warnings</span>** and **<span>errors</span>** (like missing files, or bad JS syntax) will also be shown here—usually with clickable <samp>script.js:##</samp> line-numbers to the right, to take you directly to the problem. You can clear the *buffer* (what is showing) with the little crossed circle <samp>⊘︎</samp> when it gets cluttered.
+**<span>Warnings</span>** and **<span>errors</span>** (like missing files, or bad JS syntax) will also be shown here—usually with clickable <samp>script.js:##</samp> line-numbers to the right, to take you directly to the problem. You can clear the *buffer* (what is showing) with the little crossed circle <samp><span class="x2298">⊘︎</span></samp> when it gets cluttered.
 
 You can also evaluate and try your JavaScript here *directly*, by typing (with some nice auto-completion) into the bottom of the console—like `console.log('Hello, world!')` (note the quotes for [a *string*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)).
 
