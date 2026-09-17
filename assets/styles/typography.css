@@ -129,7 +129,7 @@ code, kbd, samp {
 	--size:    var(--size--code);
 	--family:  'Monaco';
 	--generic: monospace; /* Redeclared, as these usually don’t have a container for the query. */
-	--kerning: 0;
+	--kerning: initial;
 
 	@container style(--size: 9) or style(--size: 10) { --size: 9 } /* Notes and such. */
 
