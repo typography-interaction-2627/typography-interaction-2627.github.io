@@ -1,6 +1,8 @@
 <style>
 	figure {
-		--gap: 1rlh;
+		--gap:   1rlh;
+		--max:   round(calc(0.75 * var(--svh)), 1rlh);
+		--ratio: 16 / 9;
 
 		align-items:  start;
 		anchor-scope: --figure-container;
@@ -107,10 +109,18 @@
 				}
 			}
 
+			/* Video embeds. */
+			&:has(iframe[src*="https://"]) {
+				inline-size: min(100%, calc(var(--max) * var(--ratio)));
+
+				+ figcaption {
+					inline-size: min(100%, calc(var(--max) * var(--ratio)));
+				}
+			}
+
 			/* TODO How to have this always snap to pixel height? Takes “windows” off-pattern! */
 			img, iframe {
-				--height--lines: calc((var(--lines)) * 1rlh + 1rcap + var(--4px));
-				--height--max:   calc(0.75 * var(--svh));
+				--lines--adjusted: calc((var(--lines)) * 1rlh + 1rcap + var(--4px));
 
 				filter:          saturate(var(--in-view)) contrast(calc(2 - var(--in-view))) brightness(calc(2 - var(--in-view)));
 				max-inline-size: 100%;
@@ -127,25 +137,27 @@
 
 			img {
 				block-size:     var(--height);
-				max-block-size: round(calc(min(var(--height--max), var(--height--lines, var(--height--max))) / var(--zoom, 1)), var(--1px));
+				max-block-size: round(calc(min(var(--max), var(--lines--adjusted, var(--max))) / var(--zoom, 1)), var(--1px));
 				zoom:           var(--zoom); /* So they aren’t as limited by intrinsic resolution. */
 
 				@container style(--scaling: 3) { --zoom: 1.5 }
 			}
 
 			iframe {
-				aspect-ratio: var(--aspect-ratio, 16/9);
-				inline-size:  100%;
+				aspect-ratio:   var(--ratio);
+				inline-size:    100%;
+				max-block-size: var(--max);
 
 				/* Code previews. */
 				&:not([src*="https://"])[src*='/preview'] {
-					block-size:     var(--height--lines);
-					max-block-size: calc(round(var(--height--max), 1rlh) + 1rcap + var(--4px));
+					aspect-ratio:   initial;
+					block-size:     var(--lines--adjusted);
+					max-block-size: calc(round(var(--max), 1rlh) + 1rcap + var(--4px));
 
 					@media (width < 35em) {
 						aspect-ratio:   1 / 2;
 						block-size:     initial;
-						max-block-size: round(var(--height--max), 1rcap);
+						max-block-size: var(--max);
 					}
 				}
 			}

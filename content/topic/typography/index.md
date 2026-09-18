@@ -158,7 +158,7 @@ Conventions and standards carry on through history! [<cite>↗</cite>](https://c
 
 ## Technological Evolution
 
-<figure class="aside" style="--aspect-ratio: 4 / 3">
+<figure class="aside" style="--ratio: 4 / 3">
 
 [<img src="https://vumbnail.com/127605643.jpg">](https://vimeo.com/127605643)
 
