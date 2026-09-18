@@ -95,6 +95,9 @@
 			}
 		}
 
+		/* Video embeds. */
+		&:has(iframe[src*="https://"]) { inline-size: min(100%, calc(var(--max) * var(--ratio))) }
+
 		/* Container for placing the dithered one/effects. */
 		> div {
 			anchor-name: --figure-container;
@@ -106,15 +109,6 @@
 				@supports (inline-size: calc-size(fit-content, size)) {
 					block-size:  calc-size(fit-content, round(size, var(--1px)));
 					inline-size: calc-size(fit-content, round(size, var(--1px)));
-				}
-			}
-
-			/* Video embeds. */
-			&:has(iframe[src*="https://"]) {
-				inline-size: min(100%, calc(var(--max) * var(--ratio)));
-
-				+ figcaption {
-					inline-size: min(100%, calc(var(--max) * var(--ratio)));
 				}
 			}
 
