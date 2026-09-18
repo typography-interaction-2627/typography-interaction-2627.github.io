@@ -1,5 +1,5 @@
 <style>
-	hgroup:has(h2[id="session-recording"]) ~ figure {
+	hgroup:has(h2[id^="session-recording"]) ~ figure {
 		margin-block-start: calc(var(--gutter) - 1rlh);
 
 		p > span:last-of-type { display: none }
@@ -11,19 +11,24 @@
 		}
 	}
 </style>
+<script webc:setup>
+	export const videos = (video) => Array.isArray(video) ? video : [video]
+	export const label = (video) => `Session Recording${videos(video).length > 1 ? 's' : ''}`
+	export const id = (video) => slugify(label(video))
+</script>
 <section webc:root="override">
 	<hgroup>
-		<h2 id="session-recording" tabindex="-1">Session Recording<a href="#session-recording"></a></h2>
+		<h2 :id="id($data.video)" tabindex="-1"><span webc:nokeep @text="label($data.video)"></span><a :href="`#${id($data.video)}`">#</a></h2>
 	</hgroup>
-	<figure>
+	<figure webc:for="video of videos($data.video)">
 		<div>
-			<iframe :src="`https://drive.google.com/file/d/${$data.video}/preview`"></iframe>
+			<iframe :src="`https://drive.google.com/file/d/${video}/preview`"></iframe>
 		</div>
 		<figcaption>
 			<p>
 				<span>You’ll need to be <a href="https://accounts.google.com/AccountChooser">signed in</a> to your New School account to see these in-page!</span>
-				<span>Safari prevents Google Drive <nobr>embeds—</nobr>so you’ll need to go to <a :href="`https://drive.google.com/file/d/${$data.video}`">the originals</a>!</span>
-				<a :href="`https://drive.google.com/file/d/${$data.video}`"><cite>↗</cite></a>
+				<span>Safari prevents Google Drive <nobr>embeds—</nobr>so you’ll need to go to <a :href="`https://drive.google.com/file/d/${video}`">the originals</a>!</span>
+				<a :href="`https://drive.google.com/file/d/${video}`"><cite>↗</cite></a>
 			</p>
 		</figcaption>
 	</figure>
