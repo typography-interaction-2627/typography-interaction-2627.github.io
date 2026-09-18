@@ -344,7 +344,7 @@ export default (config) => {
 					const href = link.getAttribute('href')
 					const [, folder, file] = href.match(/^(.*\/)([^/]*)$/) ?? []
 
-					id = href + '-example'
+					id = folder + '-example'
 
 					folder && link.parentNode.parentNode.replaceWith(element(`<iframe loading="lazy" src="${folder}preview/${file && `?active=${file}`}\"></iframe>`))
 				})
