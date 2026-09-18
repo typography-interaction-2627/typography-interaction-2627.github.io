@@ -19,7 +19,7 @@
 	<hgroup>
 		<h2 :id="recordingId($data.video)" tabindex="-1"><span webc:nokeep @text="recordingLabel($data.video)"></span><a :href="`#${recordingId($data.video)}`">#</a></h2>
 	</hgroup>
-	<figure webc:for="video of toArray($data.video)">
+	<figure class="all justify-center" webc:for="video of toArray($data.video)">
 		<div>
 			<iframe :src="`https://drive.google.com/file/d/${video}/preview`"></iframe>
 		</div>
