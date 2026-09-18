@@ -464,6 +464,8 @@ export default (config) => {
 	config.addFilter('stripTags', (content) => stripTags(String(content)))
 	config.addFilter('parseHtml', (content) => parse(content))
 	config.addFilter('inlineSvg', async (svg) => (await image(svg, { dryRun: true, formats: ['svg'] }))?.svg?.[0]?.buffer?.toString())
+	config.addFilter('toArray', value => Array.isArray(value) ? value : [value])
+	config.addFilter('pluralize', (word, count) => `${word}${count > 1 ? 's' : ''}`)
 
 	// Spans for “kerning.”
 	const span = (name, character) => `<span aria-hidden="true" class="${name}">${character}</span>`

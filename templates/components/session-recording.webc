@@ -12,15 +12,14 @@
 	}
 </style>
 <script webc:setup>
-	export const videos = (video) => Array.isArray(video) ? video : [video]
-	export const label = (video) => `Session Recording${videos(video).length > 1 ? 's' : ''}`
-	export const id = (video) => slugify(label(video))
+	export const recordingLabel = video => pluralize('Session Recording', toArray(video).length)
+	export const recordingId = video => slugify(recordingLabel(video))
 </script>
 <section webc:root="override">
 	<hgroup>
-		<h2 :id="id($data.video)" tabindex="-1"><span webc:nokeep @text="label($data.video)"></span><a :href="`#${id($data.video)}`">#</a></h2>
+		<h2 :id="recordingId($data.video)" tabindex="-1"><span webc:nokeep @text="recordingLabel($data.video)"></span><a :href="`#${recordingId($data.video)}`">#</a></h2>
 	</hgroup>
-	<figure webc:for="video of videos($data.video)">
+	<figure webc:for="video of toArray($data.video)">
 		<div>
 			<iframe :src="`https://drive.google.com/file/d/${video}/preview`"></iframe>
 		</div>

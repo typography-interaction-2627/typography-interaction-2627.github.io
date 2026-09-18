@@ -1,4 +1,7 @@
 <script webc:setup>
+	export const recordingLabel = video => pluralize('Session Recording', toArray(video).length)
+	export const recordingId = video => slugify(recordingLabel(video))
+
 	export const getChannels = (data) => {
 		const channels = parseHtml(data.collections.root.find(({ inputPath }) => inputPath.endsWith('content/syllabus.md')).content).querySelector('#channels')
 		channels?.firstElementChild?.remove()
@@ -217,8 +220,8 @@
 		</header>
 		<ol>
 			<li webc:if="$data.video">
-				<a href="#session-recording">
-					<p>Session Recording</p>
+				<a :href="`#${recordingId($data.video)}`">
+					<p @text="recordingLabel($data.video)"></p>
 				</a>
 			</li>
 			<template @raw="toc($data.content)" webc:nokeep></template>
