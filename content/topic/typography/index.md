@@ -13,7 +13,7 @@ const week = 2
 **Typography is the form and structure into which words are manifested into our world. It has a long and storied history, and it’s our job to both understand this history and, from it, how to apply type effectively.**
 <!-- data-description -->
 
-<figure class="aside">
+<figure class="all justify-center">
 <img src="asian-type.jpg">
 <figcaption>
 
@@ -62,7 +62,7 @@ An early example of blackletter script—a style that reflected the thick nibbed
 
 ## The First “Typefaces”
 
-<figure class="aside">
+<figure class="all justify-center">
 <img src="cuneiform.jpg">
 <figcaption>
 
@@ -145,7 +145,7 @@ Anatomy of metal type. [<cite>↗</cite>](https://www.flickr.com/photos/depressi
 </figure>
 
 Type was stored in drawers where the *lower* case held the uncapitalized forms, and the *upper* case held the capital forms. Sound familiar?
-<!-- .center .body -->
+<!-- .center -->
 
 <figure class="right">
 <img src="type-case.jpg">
@@ -158,7 +158,7 @@ Conventions and standards carry on through history! [<cite>↗</cite>](https://c
 
 ## Technological Evolution
 
-<figure class="aside" style="--ratio: 4 / 3">
+<figure class="all justify-center" style="--ratio: 4 / 3">
 
 [<img src="https://vumbnail.com/127605643.jpg">](https://vimeo.com/127605643)
 
@@ -213,7 +213,7 @@ Some typefaces that came with the original Macintosh. Look familiar? [<cite>↗<
 >
 > <sub>Your medium, its limitations, and its typography are always intertwined! As with this site, they can both constrain and enrich your work.</sub>
 
-<figure class="aside">
+<figure class="all justify-center">
 
 [<img src="https://img.youtube.com/vi/ZmWOtf4Ziso/maxresdefault.jpg">](https://youtu.be/ZmWOtf4Ziso)
 
@@ -235,7 +235,7 @@ Physical type had to be converted to digital formats in order to be presented on
 
 With the transition to digital screens, the representation of fonts also evolved over time. Today, almost all digital fonts are presented as vectors—the basic mathematical instructions for recreating the letterforms.
 
-<figure class="aside" style="--lines: 8" >
+<figure class="all justify-center" style="--lines: 8" >
 <img src="pixels.jpg">
 <figcaption>
 
@@ -250,7 +250,7 @@ This is how we get artifacts such as [*aliasing*](https://en.wikipedia.org/wiki/
 
 ## So What Is a Typeface?
 
-<figure class="borderless middle">
+<figure class="all borderless justify-center middle">
 <img src="anatomy.png">
 <figcaption>
 
@@ -274,7 +274,7 @@ What Is the Difference Between a Typeface and a Font?
 
 </details>
 
-<figure class="aside borderless" style="--lines: 13">
+<figure class="all justify-center borderless" style="--lines: 13">
 <img src="material-typeface.png">
 <figcaption>
 
@@ -388,7 +388,7 @@ As you typeset it is also important to treat things consistently—headings shou
 
 <!-- TODO `object` instead of `img`? -->
 
-<figure class="aside">
+<figure class="all justify-center">
 <img src="type-size.svg">
 <figcaption>
 
@@ -399,7 +399,7 @@ An example of how type *size* informs hierarchy.
 
 We can use differing *type sizes* to distinguish between headings and body text. Generally, we aim to create a visual type hierarchy where the most important parts of a document have the largest size (headings), scaling down through our main, body text to the least important (captions or footnotes) as the smallest.
 
-<figure class="aside">
+<figure class="all justify-center">
 <img src="type-weight.svg">
 <figcaption>
 
@@ -410,7 +410,7 @@ An example of how type *weight* informs hierarchy. Did your eyes skip over the f
 
 But the literal size is not our only tool. Another way we can distinguish copy within a document is by making use of *weights*—varying the thickness of the stroke. Good typefaces usually come in a range of weights to facilitate our designs—at the very least a *regular* (or *roman*), *bold*, and *italic* weight. Nowadays, [variable typefaces](https://v-fonts.com) allow us to pick and choose the exact weight combinations that we need.
 
-<figure class="aside">
+<figure class="all justify-center">
 <img src="type-color.svg">
 <figcaption>
 
@@ -429,7 +429,7 @@ We can also use *color* as a visual element to distinguish our content. Above, w
 
 ### Leading
 
-<figure class="aside">
+<figure class="all justify-center">
 <img src="type-leading.svg">
 <figcaption>
 
@@ -444,7 +444,7 @@ We can tolerate close lines for short texts; we struggle with them over longer p
 
 ### Ragging
 
-<figure class="aside">
+<figure class="all justify-center">
 <img src="type-rag.svg">
 <figcaption>
 
@@ -461,7 +461,7 @@ To avoid *bad rags*, we can make sure that the type size of a container is not t
 
 ### Widows and Orphans
 
-<figure class="aside">
+<figure class="all justify-center">
 <img src="type-widows-orphans.svg">
 <figcaption>
 

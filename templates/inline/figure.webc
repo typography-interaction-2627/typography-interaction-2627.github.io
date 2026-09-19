@@ -11,7 +11,7 @@
 		row-gap:      var(--gap);
 
 		/* Default full-width. */
-		&:not([class]), &[class="borderless"] { grid-column: all }
+		&:not([class]) { grid-column: all }
 
 		&:where(:not(:first-child)),
 		&:where(:not(:last-child)) + * {

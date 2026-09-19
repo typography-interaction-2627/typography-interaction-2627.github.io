@@ -1,6 +1,6 @@
 <style>
 	@scope (main) to (nav) {
-		details {
+		:where(details) {
 			summary {
 				position:         relative;
 				background-color: var(--color);

@@ -776,9 +776,9 @@ All the children inherit the `body` styles. Ah, finally, `sans-serif`.
 It is easiest—both in visuals, and in code—to think about your design reasoning, rules, and relationships from “large to small” (or “broad to narrow,” or “general to specific”). Decide first on what is *always* true, then move to *subsets*, and finally any *one-offs*.
 
 In CSS, this manifests as styling [`element`](#1-element-type-p-a-main-etc) first for broad, global decisions, then some [`.class`](#2-a-class-class-name) for certain sets of things, and only use [`#id`](#3-an-identifier-some-id) when you *know* it’s a unique, singular scenario. Your stylesheet should (broadly) resemble this:
-<!-- .before -->
+<!-- .before .after -->
 
-```css #top-to-bottom -->
+```css <!-- .all .justify-center #top-to-bottom -->
 body {
 	/* Things that are true of everything! */
 }

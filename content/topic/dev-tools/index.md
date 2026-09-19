@@ -197,13 +197,9 @@ You can use this to test out parts of your code right away, like `document.query
 
 </div>
 
-<div class="center recto">
-
-<figure class="borderless">
+<figure class="center recto borderless">
 <img src="console.svg">
 </figure>
-
-</div>
 
 > [!TIP]
 >

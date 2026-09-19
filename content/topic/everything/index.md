@@ -21,7 +21,7 @@ const week = 1
 
 Before this time, the term *computer* usually referred to a person, not a machine—someone who would *compute* (solve) math problems by hand!
 
-<figure>
+<figure class="all justify-center">
 <img src="harvard.jpg">
 <figcaption>
 
@@ -38,7 +38,7 @@ The [*Harvard Computers*](https://en.wikipedia.org/wiki/Harvard_Computers) in th
 
 By the 1960s, computers were [room-sized, institutional electronic machines](https://en.wikipedia.org/wiki/History_of_computing_hardware_(1960s%E2%80%93present)) owned by governments (the military), businesses, and universities. They were used to solve complex math problems and sort data, but were still very slow and didn’t communicate with one another.
 
-<figure>
+<figure class="all justify-center">
 <img src="univac.jpg">
 <figcaption>
 
@@ -49,7 +49,7 @@ Univac, the first commercial computer in the US. [<cite>↗</cite>](https://time
 
 A catalyst in the formation of the internet was the [Cold War](https://en.wikipedia.org/wiki/Cold_War). The threat of nuclear conflict spurred the US Defense Department to consider decentralized and distributed communication networks—to disseminate orders and information in the event of an attack (and ultimately, for retaliation).
 
-<figure class="aside borderless">
+<figure class="all justify-center borderless">
 <img src="networks.png">
 <figcaption>
 
@@ -66,7 +66,7 @@ Different network topologies. [<cite>↗</cite>](https://www.rand.org/content/da
 >
 > [<cite>Paul Baran, 2008</cite>](https://www.vanityfair.com/news/2008/07/internet200807)
 
-<figure class="borderless" style="--lines: 16">
+<figure class="verso borderless" style="--lines: 16">
 <img src="arpanet.png">
 <figcaption>
 
@@ -79,7 +79,7 @@ By 1969, computer nodes [connected](https://en.wikipedia.org/wiki/History_of_the
 
 Over the following decade, [ARPANET](https://www.britannica.com/topic/ARPANET) would grow to include other networks and reach more cities in the US. It had its first expansion outside the States in 1973, with connections to the UK and Norway. Slowly, similar commercial and academic networks were developing alongside, each with their own communication protocols.
 
-<figure class="borderless">
+<figure class="borderless all justify-center">
 <img src="arpanet.gif">
 <figcaption>
 
@@ -114,7 +114,7 @@ The core of TCP/IP is routing bundles of data called *packets.* [<cite>↗</cite
 
 </details>
 
-<figure>
+<figure class="all justify-center">
 <img src="tim.jpg">
 <figcaption>
 
@@ -142,7 +142,7 @@ Tim Berners-Lee, a British academic and scientist, invented the *World Wide Web*
 
 1. Software that gives access to the documents: the *server*
 
-<figure class="aside borderless">
+<figure class="all justify-center borderless">
 <img src="web.png">
 <figcaption>
 
@@ -170,7 +170,7 @@ How it looks for us, now. [<cite>↗</cite>](http://info.cern.ch/hypertext/WWW/T
 
 **By 1991, the [first web page](http://info.cern.ch/hypertext/WWW/TheProject.html) was up and running and the web began to take off.**
 
-<figure class="aside">
+<figure class="all justify-center">
 <img src="mosaic.png">
 <figcaption>
 
@@ -179,7 +179,7 @@ Mosaic was one of the first widely-available browsers. It introduced support for
 </figcaption>
 </figure>
 
-<figure>
+<figure class="all justify-center">
 <img src="netscape.png">
 <figcaption>
 
@@ -192,7 +192,7 @@ The 1990s then saw more-affordable home computers bring internet access to many 
 
 **And the web exploded from there.**
 
-<figure class="aside">
+<figure class="all justify-center">
 <img src="yahoo.png">
 <figcaption>
 
@@ -219,7 +219,7 @@ The 1990s then saw more-affordable home computers bring internet access to many 
 </figcaption>
 </figure>
 
-<figure class="aside">
+<figure class="all justify-center">
 <img src="google.png">
 <figcaption>
 
@@ -288,7 +288,7 @@ And in that latter role, we’ll need to learn how to swim. Our path into *desig
 
 ### These Days, Apps Are Often Web Pages Too
 
-<figure class="borderless">
+<figure class="all borderless">
 <img src="electron.png">
 <figcaption>
 
@@ -301,7 +301,7 @@ All these desktop “apps” are built in [Electron](https://www.electronjs.org)
 
 The core application only has to be written once, instead of rewritten for each platform. And why design it all again? (Designers are expensive!) Why hire Windows and Mac devs when you can just hire web devs? …then why hire i&NoBreak;OS or Android devs, either? (Developers are even more expensive!) So many companies take approach, for cross-platform development.
 
-<figure class="borderless">
+<figure class="all borderless">
 <img src="mobile.png">
 <figcaption>
 

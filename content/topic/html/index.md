@@ -486,7 +486,7 @@ Generally speaking, HTML doesn’t care about capitalization, extra white space,
 </body>
 ```
 
-```html <!-- .recto .center -->
+```html <!-- .recto .center .justify-center -->
 <body><h1>Dog Breeds</h1><p>There
 are many kind of dog breeds</p>
 <ul><li>German Shepherd</li><li>
@@ -592,7 +592,7 @@ These are live, *editable* examples! Whatever is on the left is rendered on the 
 Inline elements [are the exception](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Whitespace#spaces_in_between_inline_and_inline-block_elements) to the “white space is generally ignored” rule: extra space between inline elements will always be reduced—*collapsed*—to one space.
 <!-- .verso -->
 
-<div class="recto">
+<div class="recto justify-center">
 
 ```html
 <p>
