@@ -173,6 +173,13 @@ code, kbd, samp {
 	}
 }
 
+/* More space for these on mobile. */
+:is(h2, h3, h4):has(code, kbd, samp) {
+	--leading: 125%;
+
+	@container style(--tablet) { --leading: 100% }
+}
+
 /* “Kerning” on top of overall adjustment above. */
 h1 {
 	--resolve: var(--kerning); /* Pass down. */
