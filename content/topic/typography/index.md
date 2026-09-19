@@ -73,7 +73,7 @@ Cuneiform tablet: administrative account concerning the distribution of barley a
 
 <section>
 
-<div class="verso">
+<div class="verso start">
 
 <div class="sticky">
 

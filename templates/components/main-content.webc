@@ -82,6 +82,16 @@
 					grid-template-columns: subgrid;
 				}
 
+				/* Spacing per heading levels. */
+				:where(section):has(> hgroup h3) {
+					/* Not right after `h2`. */
+					:where(:not(hgroup:has(h2))) + & { margin-block-start: 2rlh }
+
+					+ *:where(:not(section)) { margin-block-start: 1rlh }
+				}
+
+				:where(section):has(> hgroup h4) { margin-block-start: 1rlh }
+
 				/* Inserted in Markdown. */
 				:where(section:not(:has(> hgroup))) {
 					margin-block-start: 1rlh;
@@ -89,9 +99,12 @@
 					+ * { margin-block-start: 1rlh }
 				}
 
-				/* Space these out. */
-				.before,
-				:where(details):not(:first-child) { margin-block-start: 1rlh }
+				/* Space after loose ones. */
+				:where(.before),
+				:where(details):not(:first-child),
+				:where(section > p:has(a > cite)) + * {
+					margin-block-start: 1rlh
+				}
 
 				:where(.after) + * { margin-block-start: 1rlh }
 
@@ -116,18 +129,6 @@
 				.justify-start  { justify-self: start }
 				.justify-center { justify-self: center }
 				.justify-end    { justify-self: end }
-
-				*:has(> .sticky) {
-					align-self: stretch;
-
-					.sticky {
-						inset-block-start: 4rlh;
-						position:          sticky;
-					}
-				}
-
-				/* TODO Probably a better way to do this? (On Projects.)*/
-				.body + .right { margin-block-start: 1rlh }
 
 				/* Only when on The Grid. */
 				:where(&, details, section) {
@@ -163,11 +164,19 @@
 						[ aside-end five-end six-start]
 						var(--column)
 						[ all-end recto-end right-end six-end];
+
+					.sticky {
+						inset-block-start: 4rlh;
+						position:          sticky;
+					}
+
+					*:where(:not(section)):has(> .sticky) { block-size: 100% }
+
+					.body + .right { margin-block-start: initial }
 				}
 			}
 
 			/* TODO Could make a separate `.webc` for this? */
-			/* TODO Move these to select the parent `section`! */
 			/* Headings */
 			:where(hgroup) {
 				:where(h2, h3, h4) {
@@ -176,6 +185,7 @@
 					inline-size:     fit-content;
 					max-inline-size: 100%; /* Retain wrapping! */
 
+					/* Anchor. */
 					a {
 						--family:  'Geneva';
 						--generic: initial;
@@ -206,17 +216,14 @@
 					padding-block-end: calc(var(--gutter) + var(--1px));
 					padding-inline:    var(--gutter);
 					position:          relative;
-
-					+ * { margin-block-start: 1rlh }
+					margin-block-end:  1rlh;
 				}
 
 				&:has(h3) {
-					inline-size: var(--main); /* Override rounded grid. */
-
 					/* Not right after `h2`. */
-					section section:not(hgroup + section) > & {
-						background:         var(--background--dashed);
-						margin-block-start: 2rlh;
+					:where(:not(hgroup:has(h2))) + section > & {
+						background:  var(--background--dashed);
+						inline-size: var(--main); /* Override rounded grid. */
 
 						/* Override default bottom-edge. */
 						background-position-y: top;
@@ -226,8 +233,6 @@
 
 					+ * { margin-block-start: 1rlh }
 				}
-
-				&:has(h4) { margin-block-start:  1rlh }
 			}
 
 			/* Toggle anchor links. */
@@ -244,9 +249,6 @@
 					}
 				}
 			}
-
-			/* Space after loose ones. */
-			:where(section > p:has(a > cite)) + * { margin-block-start: 1rlh }
 
 			:where(hr) {
 				background:        var(--background--border);
@@ -404,40 +406,9 @@
 	/* https://github.com/WebKit/WebKit/commit/00497eb486c0c28266aa0f53c0057cdc548e1a11 */
 	@supports (font: -apple-system-body) and (not (block-size: stretch)) {
 		:where(main, section, details) {
-			.before, :where(details):not(:first-child) { margin-block-start: 1rlh }
-
-			:where(.after) + * { margin-block-start: 1rlh }
-
-			:where(div, .all, .aside, .body, .middle, .five, .four, .left, .one, .recto, .right, .six, .three, .two, .verso) {
-				grid-row: span var(--rows, 1);
-
-				* { grid-column: initial }
-			}
-
-			.rows--2 { --rows: 2 }
-			.rows--3 { --rows: 3 }
-			.rows--4 { --rows: 4 }
-			.rows--5 { --rows: 5 }
-			.rows--6 { --rows: 6 }
-
 			.start  { align-self: start }
 			.center { align-self: center }
 			.end    { align-self: end }
-
-			.justify-start  { justify-self: start }
-			.justify-center { justify-self: center }
-			.justify-end    { justify-self: end }
-
-			*:has(> .sticky) {
-				align-self: stretch;
-
-				.sticky {
-					inset-block-start: 4rlh;
-					position:          sticky;
-				}
-			}
-
-			.body + .right { margin-block-start: 1rlh }
 
 			:where(&, details, section) {
 				> *       { grid-column: body }
@@ -456,6 +427,10 @@
 				> .two    { grid-column: two }
 				> .verso  { grid-column: verso }
 			}
+
+			:where(.before), :where(section > p:has(a > cite)) + * { margin-block-start: 1rlh }
+
+			:where(.after) + * { margin-block-start: 1rlh }
 
 			:where(p:has(> strong:only-child)) + *:not(section) { margin-block-start: 1rlh }
 		}

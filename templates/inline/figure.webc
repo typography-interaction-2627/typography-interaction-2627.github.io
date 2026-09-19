@@ -14,18 +14,19 @@
 		&:not([class]), &[class="borderless"] { grid-column: all }
 
 		&:where(:not(:first-child)),
-		&:where(:not(:last-child)) + :where(*:not(section)) {
+		&:where(:not(:last-child)) + * {
 			margin-block-start: 1rlh;
 
 			@container style(--columns) { margin-block-start: 3rlh }
 		}
 
-		hgroup + & {
-			@container style(--columns) { margin-block-start: 2rlh }
+		@container style(--columns) {
+			hgroup + & { margin-block-start: 2rlh }
+
+			.body + &.right { margin-block-start: initial }
 		}
 
-		/* TODO Come back to this after moving heading spacing to `section`! */
-		section:where(:has(&:last-child)) + section:has(> hgroup > h4) {
+		section:where(:has(&:last-child)) + section:has(> hgroup :is(h3, h4)) {
 			margin-block-start: 1rlh;
 
 			@container style(--columns) { margin-block-start: 2rlh }
@@ -223,6 +224,14 @@
 
 		/* Looser space. */
 		&.borderless { --gap: calc(2rlh - 1rcap) }
+
+		/* &.shadow img {
+			filter:
+				saturate(var(--in-view))
+				contrast(calc(2 - var(--in-view)))
+				brightness(calc(2 - var(--in-view)))
+			;
+		} */
 
 		figcaption {
 			--size: var(--size--note);

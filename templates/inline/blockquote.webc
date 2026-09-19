@@ -22,6 +22,12 @@
 			@container style(--columns) { margin-block-start: 3rlh }
 		}
 
+		hgroup:has(h2) + & {
+			margin-block-start: 1rlh;
+
+			@container style(--columns) { margin-block-start: 2rlh }
+		}
+
 		/* Go big. */
 		@media (width >= 86em) { &:not(:has(> p:nth-of-type(4))) { --size: var(--size--h1) } }
 
