@@ -165,7 +165,7 @@ Headings: `h#`
 </dt>
 <dd>
 
-```html <!-- .all -->
+```html
 <h1>There should only be one first-level heading!</h1>
 ```
 
@@ -180,7 +180,7 @@ Paragraphs: `<p>`
 </dt>
 <dd>
 
-```html <!-- .all -->
+```html
 <p>You should always wrap your text in a paragraph!</p>
 ```
 
@@ -195,7 +195,7 @@ Links: `<a>`
 </dt>
 <dd>
 
-```html <!-- .all -->
+```html
 <a href="https://www.example.com">Links need attributes!</a>
 ```
 
@@ -212,7 +212,7 @@ Buttons: `<button>`
 </dt>
 <dd>
 
-```html <!-- .all -->
+```html
 <button>Close</button>
 ```
 
@@ -227,7 +227,7 @@ Images: `<img>`
 </dt>
 <dd>
 
-```html <!-- .all -->
+```html
 <img src="example.jpg" alt="Images should have descriptions!">
 ```
 
@@ -243,7 +243,7 @@ Containers
 
 <dd>
 
-```html <!-- .all -->
+```html
 <body>
 	<header>
 		<!-- A header. -->
@@ -268,7 +268,7 @@ Inline Text Elements
 </dt>
 <dd>
 
-```html <!-- .all -->
+```html
 <p>You <strong>may</strong> notice I like using<em>emphasis</em>.</p>
 ```
 
@@ -281,7 +281,7 @@ Lists: `ol` / `<ul>`
 </dt>
 <dd>
 
-```html <!-- .all -->
+```html
 <ul>
 	<li><!-- A list item. --></li>
 	<li><!-- Another. --></li>
@@ -318,7 +318,7 @@ Language: `lang`
 </dt>
 <dd>
 
-```html <!-- .all -->
+```html
 <html lang="en"></html>
 ```
 
@@ -333,7 +333,7 @@ HyperText Reference: `href`
 </dt>
 <dd>
 
-```html <!-- .all -->
+```html
 <a href="https://www.example.com">Goes to example.com</a>
 ```
 
@@ -348,7 +348,7 @@ Target: `target`
 </dt>
 <dd>
 
-```html <!-- .all -->
+```html
 <a href="https://www.example.com" target="_blank">New tab!</a>
 ```
 
@@ -365,7 +365,7 @@ Style: `style`
 </dt>
 <dd>
 
-```html <!-- .all -->
+```html
 <p style="color: blue;">This is blue text.</p>
 ```
 
@@ -383,13 +383,13 @@ Source: `src`
 </dt>
 <dd>
 
-```html <!-- .all -->
+```html
 <img src="example.jpg">
 ```
 
 The `src` attribute of `<img>` specifies the path to the image to be displayed—either relatively or absolutely.
 
-```html <!-- .all -->
+```html
 <iframe src="https://typography-interaction-2627.github.io"></iframe>
 ```
 
@@ -404,7 +404,7 @@ Dimensions: `width` / `height`
 </dt>
 <dd>
 
-```html <!-- .all -->
+```html
 <img src="example.jpg" width="200" height="200">
 ```
 
@@ -421,7 +421,7 @@ Alternate Text: `alt`
 </dt>
 <dd>
 
-```html <!-- .all -->
+```html
 <img src="example.jpg" alt="A description of the image.">
 ```
 
@@ -436,11 +436,11 @@ Identifier: `id`
 </dt>
 <dd>
 
-```html <!-- .all -->
+```html
 <h2 id="a-heading-element">A heading element</h2>
 ```
 
-```html <!-- .all -->
+```html
 <a href="#a-heading-element">Goes to “a heading element”</a>
 ```
 
@@ -455,7 +455,7 @@ Class: `class`
 </dt>
 <dd>
 
-```html <!-- .all -->
+```html
 <p class="warning">We’ll get into this soon.</p>
 ```
 

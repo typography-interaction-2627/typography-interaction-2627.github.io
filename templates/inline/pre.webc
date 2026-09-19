@@ -42,9 +42,11 @@
 			animation-name: none;
 		}
 
-		/* For poking out as needed. */
-		&.all { max-inline-size: var(--main) }
-		:where(dd, dt, li) &.all { max-inline-size: calc(var(--main) - 1rlh - 1rcap) }
+		/* Fill width when there is not class on it, or above it. */
+		&:where(:not([class])):not(:where([class]) > &) { max-inline-size: var(--main) }
+
+		/* And in lists. */
+		:where(dd, dt, li) & { max-inline-size: calc(var(--main) - var(--list)) }
 
 		&:is(ti-preview) { overflow: clip } /* For the corners; scrolls internally. */
 	}

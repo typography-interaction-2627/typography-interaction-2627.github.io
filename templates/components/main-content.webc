@@ -314,8 +314,10 @@
 				&:where(:not(:has(> li > a > cite, > li > p:only-child > a > cite))) {
 				/* TODO There still has to be a simpler way to check for these! */
 
+				--list: calc(2rlh - 1rcap);
+
 					/* Item inset. */
-					> :where(dd, dt, li) { padding-inline-start: calc(2rlh - 1rcap) }
+					> :where(dd, dt, li) { padding-inline-start: var(--list) }
 
 					> :where(dt, li) {
 						position: relative;
@@ -378,13 +380,10 @@
 					translate:         var(---1px) 0;
 				}
 
-				&:has(:nth-child(10)) {
-					margin-inline-start: 1ex;
+				&:has(li:nth-child(10)) {
+					--list: calc(2rlh - 1rcap + 1ex);
 
-					> li::before {
-						inline-size: 2ch;
-						translate:   -1ex 0;
-					}
+					> li::before { inline-size: 2ch }
 				}
 			}
 

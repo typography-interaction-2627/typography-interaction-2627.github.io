@@ -96,7 +96,7 @@ This is the original and most straightforward way to add styles, directly as [*a
 Seems obvious. However this has some big downsides—imagine you want to style all of your paragraphs in the same way, and with multiple properties:
 <!-- .before -->
 
-```html <!-- .all -->
+```html
 <p style="color: red; font-family: sans-serif;">This text will be red!</p>
 <p style="color: red; font-family: sans-serif;">I’d also like this to be red.</p>
 <p style="color: red; font-family: sans-serif;">And they are all sans-serif, too.</p>
@@ -117,9 +117,7 @@ The rules are written written with selectors—more on those, below. But import
 
 </div>
 
-<div class="recto">
-
-```html
+```html <!-- .recto -->
 <!doctype html>
 <html>
 	<head>
@@ -140,8 +138,6 @@ The rules are written written with selectors—more on those, below. But import
 </html>
 ```
 
-</div>
-
 ### 3.<span class="cap"> </span>External with `<link>`
 
 <div class="verso center">
@@ -152,9 +148,7 @@ If you wanted a whole site to use the same styles, you’d have to duplicate the
 
 </div>
 
-<div class="after recto">
-
-```html
+```html <!-- .after .recto -->
 <!-- `index.html` -->
 <!doctype html>
 <html>
@@ -171,8 +165,6 @@ If you wanted a whole site to use the same styles, you’d have to duplicate the
 </html>
 ```
 
-</div>
-
 <div class="verso">
 
 And then in a separate `style.css` file (in this case, in the same directory as our HTML file), we can have the same rules as before—no need for the outside wrapping `<style>` tag.
@@ -181,17 +173,14 @@ This will apply to any page that we add the `<link>` to, and updating the styles
 
 </div>
 
-<div class="recto center">
 
-```css
+```css <!-- .recto .center -->
 /* `style.css` */
 p {
 	color: red;
 	font-family: sans-serif;
 }
 ```
-
-</div>
 
 ### 4.<span class="cap"> </span>External with `@import` to assign `layer()`
 
@@ -275,9 +264,7 @@ Like with HTML, it’s easiest just to be consistent and stick to lowercase (and
 
 </div>
 
-<div class="recto center">
-
-```css
+```css <!-- .recto .center -->
 p {
 	color: red;
 	font-family: 'Geneva', sans-serif;
@@ -287,8 +274,6 @@ p {
 
 P{COLOR:RED;FONT-FAMILY:'GENEVA',SANS-SERIF;}
 ```
-
-</div>
 
 **Know that there are [many, many, *many* CSS properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference). We’ll go over some in our exercises, but look through these to become more familiar.**
 <!-- .before -->
@@ -793,7 +778,7 @@ It is easiest—both in visuals, and in code—to think about your design reason
 In CSS, this manifests as styling [`element`](#1-element-type-p-a-main-etc) first for broad, global decisions, then some [`.class`](#2-a-class-class-name) for certain sets of things, and only use [`#id`](#3-an-identifier-some-id) when you *know* it’s a unique, singular scenario. Your stylesheet should (broadly) resemble this:
 <!-- .before -->
 
-```css <!-- .all #top-to-bottom -->
+```css #top-to-bottom -->
 body {
 	/* Things that are true of everything! */
 }
@@ -920,7 +905,7 @@ This means you have to write everything yourself, but you have more control and 
 
 **This is the clean base we’ll be working from! Here is a [simple, modern reset](../../../assets/reset.css) for your `<head>`:**
 
-```html <!-- .all -->
+```html
 <link href="https://typography-interaction-2627.github.io/assets/reset.css" rel="stylesheet">
 ```
 
