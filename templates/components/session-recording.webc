@@ -19,14 +19,15 @@
 	<hgroup>
 		<h2 :id="recordingId($data.video)" tabindex="-1"><span webc:nokeep @text="recordingLabel($data.video)"></span><a :href="`#${recordingId($data.video)}`">#</a></h2>
 	</hgroup>
-	<figure class="all justify-center" webc:for="video of toArray($data.video)">
+	<figure class="all justify-center" webc:for="video, index of toArray($data.video)">
 		<div>
 			<iframe :src="`https://drive.google.com/file/d/${video}/preview`"></iframe>
 		</div>
 		<figcaption>
 			<p>
-				<span>You’ll need to be <a href="https://accounts.google.com/AccountChooser">signed in</a> to your New School account to see these in-page!</span>
-				<span>Safari prevents Google Drive <nobr>embeds—</nobr>so you’ll need to go to <a :href="`https://drive.google.com/file/d/${video}`">the originals</a>!</span>
+				<span webc:if="index === 0">You’ll need to be <a href="https://accounts.google.com/AccountChooser">signed in</a> to your New School account to see <a :href="`https://drive.google.com/file/d/${video}`"></a>this</a> in-page!</span>
+				<span webc:if="index === 0">Safari prevents Google Drive <nobr>embeds—</nobr>so you’ll need to go to <a :href="`https://drive.google.com/file/d/${video}`">the original</a>!</span>
+				<span webc:if="index > 0"><a :href="`https://drive.google.com/file/d/${video}`">The original</a> for this one!</span>
 				<a :href="`https://drive.google.com/file/d/${video}`"><cite>↗</cite></a>
 			</p>
 		</figcaption>
