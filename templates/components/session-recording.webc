@@ -1,12 +1,19 @@
 <style>
 	hgroup:has(h2[id^="session-recording"]) ~ figure {
-		margin-block-start: calc(var(--gutter) - 1rlh);
+		&:first-of-type { margin-block-start: calc(var(--gutter) - 2rlh - 1rcap + var(--1px)) }
+
+		@container style(--columns) { &:not(:first-of-type) { margin-block-start: 1rlh }
+
+		p { min-block-size: 1cap }
 
 		p > span:last-of-type { display: none }
 
 		/* Hide for Safari, toggle note. */
 		@supports (font: -apple-system-body) {
+			&:first-of-type { margin-block-start: initial }
+
 			div, p > span:first-of-type { display: none }
+
 			p > span:last-of-type  { display: initial }
 		}
 	}
