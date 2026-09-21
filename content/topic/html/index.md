@@ -259,7 +259,7 @@ Containers
 
 Some others are `<nav>`, `<article>`, `<section>`, and `<div>` (when nothing else is more appropriate).
 
-These are the structural containers of a website. The names don’t imbue function directly, but help us organize and think about our content structure—and also are helpful for accessibility.
+These are the [semantic](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#semantic_elements), [structural](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Structuring_documents) [containers](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements#content_sectioning) of a website. The names don’t imbue function directly, but help us organize and think about our content structure—and also are helpful for accessibility.
 
 <dt id="inline">
 
