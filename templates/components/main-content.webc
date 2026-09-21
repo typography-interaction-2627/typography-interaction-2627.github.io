@@ -216,7 +216,8 @@
 					padding-block-end: calc(var(--gutter) + var(--1px));
 					padding-inline:    var(--gutter);
 					position:          relative;
-					margin-block-end:  1rlh;
+
+					@container style(--columns) { margin-block-end: 1rlh }
 				}
 
 				&:has(h3) {

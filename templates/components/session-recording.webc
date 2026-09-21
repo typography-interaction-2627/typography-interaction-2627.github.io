@@ -1,16 +1,17 @@
 <style>
 	hgroup:has(h2[id^="session-recording"]) ~ figure {
-		&:first-of-type { margin-block-start: calc(var(--gutter) - 2rlh - 1rcap + var(--1px)) }
+		margin-block-start: initial;
 
-		@container style(--columns) { &:not(:first-of-type) { margin-block-start: 1rlh }
+		@container style(--columns) { &:not(:first-of-type) { margin-block-start: 1rlh } }
 
 		p { min-block-size: 1cap }
 
-		p > span:last-of-type { display: none }
+		p > span:nth-child(2) { display: none }
 
 		/* Hide for Safari, toggle note. */
 		@supports (font: -apple-system-body) {
-			&:first-of-type { margin-block-start: initial }
+			justify-self:       start;
+			margin-block-start: initial;
 
 			div, p > span:first-of-type { display: none }
 
@@ -32,9 +33,9 @@
 		</div>
 		<figcaption>
 			<p>
-				<span webc:if="index === 0">You’ll need to be <a href="https://accounts.google.com/AccountChooser">signed in</a> to your New School account to see <a :href="`https://drive.google.com/file/d/${video}`"></a>this</a> in-page!</span>
+				<span webc:if="index === 0">You’ll need to be <a href="https://accounts.google.com/AccountChooser">signed in</a> to your New School account to see <a :href="`https://drive.google.com/file/d/${video}`">this recording</a> in-page!</span>
 				<span webc:if="index === 0">Safari prevents Google Drive <nobr>embeds—</nobr>so you’ll need to go to <a :href="`https://drive.google.com/file/d/${video}`">the original</a>!</span>
-				<span webc:if="index > 0"><a :href="`https://drive.google.com/file/d/${video}`">The original</a> for this one!</span>
+				<span webc:if="index > 0">And <a :href="`https://drive.google.com/file/d/${video}`">the original</a> for this one!</span>
 				<a :href="`https://drive.google.com/file/d/${video}`"><cite>↗</cite></a>
 			</p>
 		</figcaption>
