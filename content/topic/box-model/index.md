@@ -28,7 +28,7 @@ const draft = true
 By default, all browsers’ *user-agent styles* have an unfortunate default—`box-sizing: content-box;`—which means that the `padding` (and `border`) exists *outside* the content `inline-size`/`width` or `block-size`/`height`—so `padding` (and `border`) is then an *outset.*
 
 - [<cite>`box-sizing` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/box-sizing) \
-	We’ll usually flip the default for this!
+	We’ll usually flip the default for this!
 <!-- .right -->
 
 <figure class="borderless verso">
@@ -44,7 +44,7 @@ With `box-sizing: content-box;` per the spec.
 <img src="box-model-border.svg">
 <figcaption>
 
-With `box-sizing: border-box;` the defacto standard. Most [CSS resets](/topic/css#resets) will do this for you! Like we said, very common.
+With `box-sizing: border-box;` the defacto standard. Most [CSS resets](../css/index.md#resets) will do this for you! Like we said, very common.
 
 </figcaption>
 </figure>
@@ -617,7 +617,7 @@ No amount of internal `z-index` adjustments can “break” something out of tha
 
 ## Display
 
-In our [HTML introduction](/topic/html#block-elements) we briefly talked about `block` and `inline` elements—as set by the user-agent styles. These are the first two examples of [the `display` property](https://developer.mozilla.org/en-US/docs/Web/CSS/display).
+In our [HTML introduction](../html/index.md) we briefly talked about `block` and `inline` elements—as set by the user-agent styles. These are the first two examples of [the `display` property](https://developer.mozilla.org/en-US/docs/Web/CSS/display).
 <!-- .balance -->
 
 [<cite>Display – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/display)
@@ -626,7 +626,7 @@ In our [HTML introduction](/topic/html#block-elements) we briefly talked about `
 
 ### Block
 
-As we discussed, most HTML elements are *block-level* by default. But you can also set `display: block;` manually on an `inline` element, too. This would mean that it starts on a new line, takes up the full width available, and you can specify a `block-size`, `inline-size`, and use `margin` above and below:
+As we discussed, many HTML elements are [*block-level*](../html/index.md#block-elements) by default. But you can also set `display: block;` manually on an `inline` element, too. This would mean that it starts on a new line, takes up the full width available, and you can specify a `block-size`, `inline-size`, and use `margin` above and below:
 <!-- .balance -->
 
 <figure style="--lines: 13">
@@ -642,7 +642,7 @@ Whenever you are linking a whole area (like an image and text together), safe be
 
 ### Inline
 
-And then going the other way, you can make `block` elements switch to `inline` with `display: inline;`. They will no longer start on their own lines, will only take up as much space as their content/children, and *don’t* accept `block-size` or `inline-size` (or any `-block-start`/`-block-end`) properties:
+And then going the other way, you can force *block* elements to be [*inline*](../html/index.md#inline-elements) with `display: inline;`. They will no longer start on their own lines, will only take up as much space as their content/children, and *don’t* accept `block-size` or `inline-size` (or any `-block-start`/`-block-end`) properties:
 <!-- .balance -->
 
 <figure style="--lines: 11">
