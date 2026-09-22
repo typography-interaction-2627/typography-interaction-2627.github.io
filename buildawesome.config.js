@@ -137,8 +137,8 @@ export default (config) => {
 
 	// Convert HTML comments to curly brackets for `markdownItAttrs` to pick up.
 	const markdownCommentsToCurlies = (markdown) => markdown.core.ruler.after('abbreviations', 'commentsToCurlies', (state) =>
-		// Only match `.class`…, `#id`…, `data`…, `style`… so example/other comments aren’t transformed.
-		state.src = state.src.replace(/<!--\s*(\.(?:[\s\S]*?)|#(?:[\s\S]*?)|data(?:[\s\S]*?)|style(?:[\s\S]*?)|inert)\s*-->$/gm, '{ $1 }'),
+		// Only match `.class`…, `#id`…, `data`…, `style`…, `@attribute`…, or `:attribute`… so example/other comments aren’t transformed.
+		state.src = state.src.replace(/<!--\s*(\.(?:[\s\S]*?)|#(?:[\s\S]*?)|data(?:[\s\S]*?)|style(?:[\s\S]*?)|@(?:[\s\S]*?)|:(?:[\s\S]*?)|inert)\s*-->$/gm, '{ $1 }'),
 	)
 
 	// Overrides (and anchors) back on the heading itself.
