@@ -13,7 +13,7 @@ const draft = true
 	As usual.
 
 - [<cite>Layout – web.dev</cite>](https://web.dev/learn/css/layout/)
-	This gets into `grid` and `flex`; we’ll talk about those next unit.
+	This gets into `grid` and `flex`; we’ll talk about those [next unit](../../syllabus.md#unit-2-there-is-no-perfect-layout).
 
 - [<cite>Learn CSS Layout</cite>](https://learnlayout.com)
 	An old-but-still-good run-through.
@@ -795,7 +795,7 @@ Much better. `:after` is a pseudo-element—which acts here as a last child that
 
 ## What about *flex* and *grid*?
 
-**We’ll cover these next unit! They’ll make your (layout) life easier.**
+**We’ll cover these [next unit](../../syllabus.md#unit-2-there-is-no-perfect-layout)! They’ll make your (layout) life easier. But again, you’ll always be using the *box-model* concepts here.**
 
 > ``` <!-- @nested="true" -->
 > E.g.:
