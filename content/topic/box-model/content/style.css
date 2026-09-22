@@ -1,0 +1,7 @@
+body {
+	font-family: sans-serif;
+}
+
+section:nth-child(1) { background-color: deepskyblue; }
+section:nth-child(2) { background-color: gold; }
+section:nth-child(3) { background-color: tomato; }

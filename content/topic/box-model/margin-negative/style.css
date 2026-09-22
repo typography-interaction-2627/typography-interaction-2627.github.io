@@ -1,0 +1,9 @@
+/* This applies to 2 and 3, as before. */
+section:not(:first-child) { margin-block-start: 4rem; }
+
+/* But this negates/subtracts some of it. */
+section:first-child { margin-block-end: -2rem; }
+
+/* You can even pull things *out* from their bounds. */
+section:nth-child(3) { margin-inline: -1rem; }
+/* Note the logical shorthand! */

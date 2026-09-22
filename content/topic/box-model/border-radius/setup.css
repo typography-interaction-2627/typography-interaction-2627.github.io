@@ -1,0 +1,10 @@
+/* Same as before. */
+body {
+	font-family: sans-serif;
+	padding: 1rem;
+}
+
+section { padding: 1rem; }
+
+/* Every one but the first one. */
+section:not(:first-child) { margin-block-start: 1rem; }

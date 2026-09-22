@@ -1,0 +1,5 @@
+/* Lower two, again. */
+section:not(:first-child) { margin-block-start: 4rem; }
+
+/* On the bottom of the first one. */
+section:first-child { margin-block-end: 8rem; }

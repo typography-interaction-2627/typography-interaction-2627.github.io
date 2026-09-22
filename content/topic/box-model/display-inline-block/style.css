@@ -1,0 +1,13 @@
+p:not(:first-child) {
+	background-color: gold;
+	margin-block-start: 1rem;
+}
+
+section:nth-child(2) p:not(:first-child) {
+	display: inline-block;
+	inline-size: 12rem;
+	margin-block-start: 1rem;
+	padding: 0.5rem;
+	text-align: center;
+	white-space: pre;
+}

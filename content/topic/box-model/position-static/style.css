@@ -1,0 +1,5 @@
+section:nth-child(3) {
+	background-color: gold;
+	inline-size: 66%;
+	position: static;
+}

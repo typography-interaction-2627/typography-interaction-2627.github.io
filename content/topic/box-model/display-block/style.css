@@ -1,0 +1,11 @@
+a {
+	background-color: gold;
+	text-decoration: underline;
+}
+
+section:nth-child(2) a {
+	display: block;
+	margin-block-end: 1rem;
+	padding: 1rem;
+	text-decoration: none;
+}

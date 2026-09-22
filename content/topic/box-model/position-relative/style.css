@@ -1,0 +1,7 @@
+section:nth-child(3) {
+	background-color: gold;
+	inline-size: 66%;
+	inset-block-start: 3rem;
+	inset-inline-start: 3rem;
+	position: relative;
+}

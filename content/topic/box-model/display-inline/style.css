@@ -1,0 +1,9 @@
+p:not(:first-child) {
+	background-color: gold;
+	margin-block-start: 1rem;
+}
+
+section:nth-child(2) p:not(:first-child) {
+	display: inline;
+	white-space: pre;
+}

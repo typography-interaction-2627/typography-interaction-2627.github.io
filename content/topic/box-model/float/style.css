@@ -1,0 +1,13 @@
+aside {
+	background-color: gold;
+	float: inline-start;
+	inline-size: 12rem;
+	margin-inline-end: 1rem;
+	padding: 1rem;
+}
+
+section:nth-child(2) aside {
+	float: inline-end;
+	margin-inline-end: initial;
+	margin-inline-start: 1rem;
+}
