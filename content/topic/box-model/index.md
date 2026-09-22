@@ -105,7 +105,7 @@ Know that `padding`—and many other properties, including `border` and <nobr>`m
 	Be wary of the siren call of shorthand properties!
 <!-- .right -->
 
-<div class="verso before--2">
+<div class="verso before">
 
 |     |     |
 | --- | --- |
@@ -116,7 +116,7 @@ Know that `padding`—and many other properties, including `border` and <nobr>`m
 
 </div>
 
-<div class="recto before--2 center">
+<div class="recto before center">
 
 ```css
 section { padding: 1rem; }
@@ -127,13 +127,13 @@ section { padding: 1rem 2rem 4rem 2rem; }
 
 </div>
 
-<div class="balance verso before--2 center">
+<div class="balance verso before center">
 
 These three- and four-value rules are often harder to read and quickly understand though, so we tend to avoid them. You can *always* write the individual directions out, for clarity! (And cleaner diffs, with whole-line changes.)
 
 </div>
 
-<div class="recto before--2">
+<div class="recto before">
 
 ```css
 section {
@@ -146,7 +146,7 @@ section {
 
 </div>
 
-#### …and *Logical* Properties <!-- .before--4 -->
+#### …and *Logical* Properties
 
 You can also now define all your box model properties using [*logical* directions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values)—meaning instead of *physical* (`top`/`bottom`, `left`/`right`) orientations, you can [map your rules](https://adrianroselli.com/2019/11/css-logical-properties.html) to the *flow* of the text (`block-start`/`block-end`, `inline-start`/`inline-end`).
 <!-- .balance -->
@@ -156,7 +156,7 @@ You can also now define all your box model properties using [*logical* directio
 <!-- .right -->
 
 In horizontal, left-to-right writing modes (as in English):
-<!-- .before--2 -->
+<!-- .before -->
 
 ```css <!-- .verso -->
 /* These horizontal physical directions: */
@@ -199,7 +199,7 @@ block-size: 20rem;
 <sub>This `start` / `end` terminology will come up later with `flexbox` and `grid`, so it is a good habit/mindset to get into!</sub>
 
 This allows your design/styles to behave in a *logically* (if not *physically*) consistent way across languages with varied [writing modes](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode) and different [text directions](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir). You can write styles that work even when your site is translated! (And the two-direction shorthand is nice, here.)
-<!-- .before--2 -->
+<!-- .before -->
 
 > [!WARNING]
 >
@@ -329,7 +329,7 @@ Maybe the easiest ones to understand, these are fixed to physical (well, sort of
 
 </div>
 
-<div class="before--3 recto">
+<div class="before recto">
 
 ```css
 .pixels {
@@ -359,7 +359,7 @@ Maybe the easiest ones to understand, these are fixed to physical (well, sort of
 
 <div class="balance verso">
 
-<div class="before--2 sticky" style="inset-block-start: 45vh; margin-block-end: 2rlh">
+<div class="before sticky" style="inset-block-start: 45vh; margin-block-end: 2rlh">
 
 Most of the time we want to use `relative` units, which depend on and respond to their context—particularly as we think ahead to *responsive* design.
 
@@ -437,7 +437,7 @@ Often you will want to use different units together! Mixing types or otherwise d
 
 ### Constrained by `min-`/`max-`
 
-<div class="balance start before--2 verso">
+<div class="balance start before verso">
 
 <div class="before sticky" style="inset-block-start: 45vh; margin-block-end: 2rlh">
 
@@ -597,7 +597,7 @@ Okay, `z-index` is not strictly *positioning*—it is a separate property. You c
 <!-- .right -->
 
 By default, items that are lower in the HTML (coming *after* each other) are in front of higher, earlier elements:
-<!-- .balance .before--2 -->
+<!-- .balance .before -->
 
 <figure style="--lines: 13">
 

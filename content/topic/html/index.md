@@ -98,7 +98,7 @@ We call these [*semantic* elements](https://developer.mozilla.org/en-US/docs/Glo
 
 </div>
 
-<div class="recto before--1">
+<div class="recto before">
 
 **In our example, here is what we’ve told the computer:**
 
