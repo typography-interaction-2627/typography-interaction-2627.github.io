@@ -4,5 +4,3 @@ const draft = true
 ```
 
 # The Box Model
-
-*TKTKTK*
