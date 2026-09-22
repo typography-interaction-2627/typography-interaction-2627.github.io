@@ -428,6 +428,7 @@ You can usually set [*minimums*](https://developer.mozilla.org/en-US/docs/Web/CS
 p {
 	max-inline-size: 65ch; /* 65ish letters. */
 }
+```
 
 </div>
 
