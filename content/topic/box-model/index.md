@@ -526,6 +526,7 @@ In your CSS, you *declare* (set) these with a `--` prefix in front of a subjecti
 <div class="recto before">
 
 ```css <!-- .sticky -->
+/* Special “entire document” selector, akin to `html`. */
 :root {
 	/* Declare them: */
 	--brand-color: #e42a1d;
@@ -544,6 +545,17 @@ main {
 
 </div>
 </section>
+
+<figure style="--lines: 23">
+
+***[Variable Example](css-variable/setup.css)***
+
+<figcaption>
+
+The convention is to declare “global” variables on `:root`—but you can override within other rules, as in the `style.css` here.
+
+</figcaption>
+</figure>
 
 
 > [!NOTE]

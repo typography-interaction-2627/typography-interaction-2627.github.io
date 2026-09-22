@@ -1,0 +1,4 @@
+section:nth-child(2) {
+	/* Overries our `:root` one, within this selector. */
+	--padding: 3rem;
+}
