@@ -90,7 +90,7 @@ In this class, students will learn to give form to and then work at these inters
 
 **The course is structured into thematic units, each bookended by readings on the subject and a project that will demonstrate the material:**
 
-### Unit 1: *Type and the Web* <!-- .fall -->
+### Unit 1: *Type and the Web* <!-- .fall -->
 
 #### Weeks 1–6
 
@@ -114,7 +114,7 @@ We will focus on reviewing the core principles of typography, and introduce the 
 	J.R. Carpenter, 2015
 <!-- .all -->
 
-#### Project 1: *Manuscript*
+#### Project 1: *Manuscript*
 
 **The unit ends with Project 1, *Manuscript*, which students will present for critique on October 1.**
 
@@ -122,7 +122,7 @@ Students will choose a seminal design text from [readings.design](https://readin
 
 <sub>We’ll be looking at the quality of the responses, appropriate type selection and hierarchy, semantic HTML, and basic CSS.</sub>
 
-### Unit 2: *There Is No Perfect Layout* <!-- .fall -->
+### Unit 2: *There Is No Perfect Layout* <!-- .fall -->
 
 #### Weeks 7–10
 
@@ -146,7 +146,7 @@ Students will learn how to design and implement more complex, flexible layouts, 
 	Toby Shorin, 2017
 <!-- .all -->
 
-#### Project 2: *Spread*
+#### Project 2: *Spread*
 
 **This unit concludes with Project 2, *Spread*, which students will present together on October 29.**
 
@@ -154,7 +154,7 @@ Students will work in pairs, with the texts they selected in *Manuscript*. Each 
 
 <sub>Here we’re looking for successful design and development collaboration, box-model layout design, and the use of responsive media queries.</sub>
 
-### Unit 3: *Typography as Interface* <!-- .fall -->
+### Unit 3: *Typography as Interface* <!-- .fall -->
 
 #### Weeks 11–15
 
@@ -178,7 +178,7 @@ In our final Fall unit, we will focus on creating advanced, multi-page layouts w
 	Laurel Schwulst, 2018
 <!-- .all -->
 
-#### Project 3: *Binding*
+#### Project 3: *Binding*
 
 **This unit, and the first semester, will culminate with Project 3, *Binding*, which will be presented in class on December 3.**
 
@@ -186,7 +186,7 @@ Students will assemble a collection of texts from *Spread*, combined with their 
 
 <sub>Here we want to see effective multi-page design and site navigation, advanced layouts (flexbox, grid), consistency and expression across the pages and content, and overall polish/nuance.</sub>
 
-### Unit 4: *Interface as Interface* <!-- .spring inert -->
+### Unit 4: *Interface as Interface* <!-- .spring inert -->
 
 #### Weeks 16–21
 
@@ -210,7 +210,7 @@ We will expand on our first-semester foundations in design, typography, HTML, an
 	Maggie Appleton, 2022
 <!-- .all -->
 
-#### Project 4: *Links*
+#### Project 4: *Links*
 
 **The unit ends with Project 4, *Links*, which students will present on February 24.**
 
@@ -218,7 +218,7 @@ Students will collaboratively assemble, connect, and present a collection using 
 
 <sub>In addition to our previous project requirements, here we’ll be looking for the effective use of images/media, meaningful interactive interface functionality, and your use of JavaScript.</sub>
 
-### Unit 5: *If All You Have Is a Hammer, Everything Looks Like a Nail* <!-- .spring inert -->
+### Unit 5: *If All You Have Is a Hammer, Everything Looks Like a Nail* <!-- .spring inert -->
 
 #### Weeks 22–30
 
@@ -277,7 +277,7 @@ To wrap up the semester (and course), we’ll round out our knowledge of the web
 	Microsoft, 2023 (*ongoing*)
 <!-- .all -->
 
-#### Project 5: *Functions*
+#### Project 5: *Functions*
 
 **This unit will culminate with Project 5, *Functions*, which will be presented in class on April 21.**
 
