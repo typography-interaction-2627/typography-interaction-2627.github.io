@@ -29,9 +29,11 @@
 
 					&::before {
 						content:            var(--icon, '+') / '';
+						inset-block-start:  0;
 						inset-inline-start: 0;
 						margin-inline-end:  calc(1lh - 1cap);
 						position:           absolute;
+						text-box:           trim-both cap alphabetic;
 					}
 				}
 
