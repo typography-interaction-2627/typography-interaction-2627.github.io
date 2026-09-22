@@ -37,6 +37,19 @@
 
 			margin-block-start: 1rlh;
 		}
+
+		/* That damn Håkon quote. */
+		pre {
+			background:     linear-gradient(var(--background)) padding-box, var(--background--check) border-box;
+			border:         var(--1px) solid transparent;
+			clip-path:      var(--clip--corner);
+			letter-spacing: initial;
+			text-align:     left;
+
+			code { color: var(--color) }
+
+			&::before, &::after { background-color: var(--background) }
+		}
 	}
 </style>
 <blockquote webc:root="override">

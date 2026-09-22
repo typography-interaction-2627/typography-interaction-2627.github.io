@@ -20,14 +20,9 @@ For real layout, the we first need to understand how CSS sizes elements—and ho
 	An old-but-still-good run-through.
 <!-- .right .rows--2 -->
 
-<blockquote
-	@attribution="Jan Tschichold, 1928"
-	@citation="https://readings.design/PDF/ThePrinciplesoftheNewTypography.pdf"
+> …Use the effectiveness of the former “background” quite deliberately, and consider the blank white spaces on the paper as formal elements just as much as the areas of black type.
 >
-
-…Use the effectiveness of the former “background” quite deliberately, and consider the blank white spaces on the paper as formal elements just as much as the areas of black type.
-
-</blockquote>
+> [<cite>Jan Tschichold, 1928</cite>](https://readings.design/PDF/ThePrinciplesoftheNewTypography.pdf)
 
 <figure
 	@caption="With `box-sizing: content-box;` per the spec."
@@ -703,55 +698,30 @@ They require you to know how long your content is and also how big your viewport
 
 **We’ll cover these next unit! They’ll make your (layout) life easier.**
 
-<blockquote
-	@attribution="H<span class='a-ring cap'>å</span>kon Wium Lie, 1995"
-	@citation="https://lists.w3.org/Archives/Public/www-style/1995Jun/0003.html"
-	>
-
-<div webc:raw>
-<code style="font-size: 50%; font-weight: normal; inline-size: fit-content;">E.g.:
-____________
- 
-H1 has a 1 character margin
- 
-So does H2
- 
-	P starts here and could
-	go on forever. Wow, a 5
-	character left margin
-	sure looks great!
-	_____
-	| + + | Wow, you can do
-	|  @  | images as well?
-	| --- | Then you'll
-	|_____| want a 1 character
-	margin on the left side.
-	Until, you're below the
-	image that is.
- 
-This is where we [find] the simple
-stacked box model is a bit too simple.</code>
-</div>
-
-</blockquote>
-
-<style>
-	.a-ring {
-		position: relative;
-
-		&::before {
-			-webkit-text-stroke-width: 0.03em;
-			content:                   '°' / '';
-			font-size:                 66%;
-			inset-block-start:         -0.45em;
-			inset-inline-start:        0.1em;
-			position:                  absolute;
-		}
-
-		&.cap::before {
-			font-size:          75%;
-			inset-block-start:  -0.9em;
-			inset-inline-start: 0.24em;
-		}
-	}
-</style>
+> ``` <!-- @nested="true" -->
+> E.g.:
+> ____________
+>
+>  H1 has a 1 character left margin
+>
+>  So does H2
+>
+>       P starts here and could
+>       go on forever. Wow, a 5
+>       character left margin
+>       sure looks great!
+>        _____
+>       | + + | Wow, you can do
+>       |  @  | images as well?
+>       | --- | Then you'll
+>       |_____| want a 1 character
+>       margin on the left side.
+>       Until, you're below the
+>       image that is.
+> _____________
+>
+> This is where we the simple stacked
+> box model is a bit too simple.
+> ```
+>
+> [<cite>Håkon Wium Lie, 1995</cite>](https://lists.w3.org/Archives/Public/www-style/1995Jun/0003.html)
