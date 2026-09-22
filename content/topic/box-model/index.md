@@ -23,6 +23,14 @@ const draft = true
 >
 > [<cite>Jan Tschichold, 1928</cite>](https://readings.design/PDF/ThePrinciplesoftheNewTypography.pdf)
 
+### `box-sizing` Confusion
+
+By default, all browsers’ *user-agent styles* have an unfortunate default—`box-sizing: content-box;`—which means that the `padding` (and `border`) exists *outside* the content `inline-size`/`width` or `block-size`/`height`—so `padding` (and `border`) is then an *outset.*
+
+- [<cite>`box-sizing` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/box-sizing) \
+	We’ll usually flip the default for this!
+<!-- .right -->
+
 <figure class="borderless verso">
 <img src="box-model.svg">
 <figcaption>
@@ -41,11 +49,13 @@ With `box-sizing: border-box;` the defacto standard. Most [CSS resets](/topic/cs
 </figcaption>
 </figure>
 
-By default, all browsers’ *user-agent styles* have an unfortunate default—`box-sizing: content-box;`—which means that the `padding` (and `border`) exists *outside* the content `inline-size`/`width` or `block-size`/`height`—so `padding` (and `border`) is then an *outset.*
 
-But this is often unintuitive for designers and doesn’t fit with most web design patterns—so it is very, *very* common (nearly universal) to instead override this to `box-sizing: border-box;`—which makes `padding` and `border` exist *inside* the content dimensions. Then `padding` (and `border`) is easier to think of as an *inset*. [W3C](https://www.w3.org/TR/css-box-3/) might have got this default wrong. Good ol’ CSS!
+This is often unintuitive for designers and doesn’t fit with most web design patterns—so it is very, *very* common (nearly universal) to instead override this to `box-sizing: border-box;`—which makes `padding` and `border` exist *inside* the content dimensions. Then `padding` (and `border`) is easier to think of as an *inset*.
 
-**Let’s take a look at this box, going *inside-to-outside.***
+<sub>[W3C](https://www.w3.org/TR/css-box-3/) might have got this default wrong. Good ol’ CSS!</sub>
+
+**Let’s take a look at this box, going *inside-to-outside!***
+<!-- .before -->
 
 ## Content
 
