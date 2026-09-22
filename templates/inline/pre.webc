@@ -108,15 +108,6 @@
 		--output-dimensions-padding:    1ex;
 		--output-dimensions-text-box:   var(--editor-text-box);
 
-		/* Chrome/Safari `opsz` dance, again; see `typography.css` */
-		@supports (not (-moz-appearance: none)) {
-			--editor-font-family: 'Monaco 9';
-
-			--output-dimensions-font-family: 'Monaco 9';
-
-			@container style(--tablet) { --editor-font-family: 'Monaco 12' }
-		}
-
 		--tab-bar-active-background: var(--background);
 		--tab-bar-active-border:     var(--1px) solid transparent;
 		--tab-bar-active-foreground: var(--color);
@@ -165,6 +156,26 @@
 		--syntax-whitespace-tab:   '';
 		--syntax-whitespace:       color-mix(in srgb, var(--background), transparent 85%);
 		/* TODO Pixel whitespace characters via `background` variables ! */
+
+		/* Tighten `code` on the big screen. */
+		@container style(--projector) {
+			--editor-font-size:  calc(var(--size--note) * var(--1px));
+			--tab-bar-font-size: calc(var(--size--code) * var(--1px));
+		}
+
+		/* Chrome/Safari `opsz` dance, again; see `typography.css` */
+		@supports (not (-moz-appearance: none)) {
+			--editor-font-family: 'Monaco 9';
+
+			--output-dimensions-font-family: 'Monaco 9';
+
+			@container style(--tablet) { --editor-font-family: 'Monaco 12' }
+
+			@container style(--projector) {
+				--editor-font-family:  'Monaco 9';
+				--tab-bar-font-family: 'Monaco 12';
+			}
+		}
 	}
 </style>
 <template webc:nokeep webc:root="override">
