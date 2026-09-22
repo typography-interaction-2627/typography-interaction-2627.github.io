@@ -75,13 +75,11 @@ Be sure to look at the HTML here! It’s a similar structure throughout.
 </figcaption>
 </figure>
 
-<aside>
-
-<mark>Note: all styles shown are explicit</mark>
-
-We’ve pulled our standard [CSS reset](/topic/css#resets) into the `<head>` for all of these examples, so we are only seeing the styles that are expressly written out here—no defaults!
-
-</aside>
+> [!NOTE]
+>
+> All styles shown are now explicit! We’ve pulled our standard [CSS reset](../css/index.md#resets) into the `<head>` for all the examples, going forward.
+>
+> <sub>So now we are only seeing the styles that are expressly written out here—no user-agent defaults!</sub>
 
 ### Padding
 
@@ -203,11 +201,12 @@ block-size: 20rem;
 This allows your design/styles to behave in a *logically* (if not *physically*) consistent way across languages with varied [writing modes](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode) and different [text directions](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir). You can write styles that work even when your site is translated! (And the two-direction shorthand is nice, here.)
 <!-- .before--2 -->
 
-<aside>
-
-<mark>Logical properties make sense</mark>
-
-This is a real mental model shift—for your instructors, too! We’re going to try using/referencing logical properties exclusively this year. It is the correct and modern way!
+> [!WARNING]
+>
+> We’ll only be using logical properties—they are the correct and modern way! Be thinking in `block` and `inline`.
+>
+> <sub>You might see them in other [resources](../../syllabus.md#attribution), but we should *not* see any directions—`top`/`right`/`bottom`/`left`—in your code!</sub>
+<!-- #logical -->
 
 </aside>
 
@@ -284,7 +283,7 @@ Margin has a couple tricks up its sleeve. First, it can have *negative* values�
 
 <figure style="--lines: 11">
 
-***[Margin-negative Example](margin-negative/style.css)***
+***[Negative Margin Example](margin-negative/style.css)***
 
 <figcaption>
 
@@ -301,7 +300,7 @@ Also [margins *collapse*](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_B
 
 <figure style="--lines: 13">
 
-***[Margin-collapse Example](margin-collapse/style.css)***
+***[Margin Collapse Example](margin-collapse/style.css)***
 
 <figcaption>
 
@@ -477,6 +476,8 @@ p {
 
 **And no matter how complex it gets, it really always comes back to these basics.**
 
+### TODO CSS Variables?
+
 ## Positioning
 
 With an idea of how elements take up space, now we’ll look at how they exist and move together in the [*document flow*](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Normal_Flow). The CSS property `position` [sets this relationship](https://developer.mozilla.org/en-US/docs/Web/CSS/position).
@@ -495,7 +496,7 @@ By default, every element is `static`—just meaning its normal, stacked positio
 
 <figure style="--lines: 13">
 
-***[position-static Example](position-static/style.css)***
+***[Static Example](position-static/style.css)***
 
 <figcaption>
 
@@ -514,7 +515,7 @@ Once you have set `position: relative;` you can use the logical `inset-block-sta
 
 <figure style="--lines: 13">
 
-***[Position-relative Example](position-relative/style.css)***
+***[Relative Example](position-relative/style.css)***
 
 <figcaption>
 
@@ -538,7 +539,7 @@ Importantly, `position: absolute;` also *removes* the element from the normal do
 
 <figure style="--lines: 22">
 
-***[Position-absolute Example](position-absolute/style.css)***
+***[Absolute Example](position-absolute/style.css)***
 
 <figcaption>
 
@@ -559,7 +560,7 @@ So `position: fixed;` brings the element *completely* out of the page’s normal
 
 <figure style="--lines: 13">
 
-***[Position-fixed Example](position-fixed/style.css)***
+***[Fixed Example](position-fixed/style.css)***
 
 <figcaption>
 
@@ -577,7 +578,7 @@ The most recent addition to the *position* party, `position: sticky;` elements a
 
 <figure style="--lines: 12">
 
-***[Position-sticky Example](position-sticky/style.css)***
+***[Sticky Example](position-sticky/style.css)***
 
 <figcaption>
 
@@ -631,7 +632,7 @@ As we discussed, many HTML elements are [*block-level*](../html/index.md#block-e
 
 <figure style="--lines: 13">
 
-***[Display-block Example](display-block/style.css)***
+***[Display Block Example](display-block/style.css)***
 
 <figcaption>
 
@@ -647,7 +648,7 @@ And then going the other way, you can force *block* elements to be [*inline*](..
 
 <figure style="--lines: 11">
 
-***[Display-inline Example](display-inline/style.css)***
+***[Display Inline Example](display-inline/style.css)***
 
 <figcaption>
 
@@ -663,7 +664,7 @@ You can also combine the qualities of `block` and `inline` with `display: inline
 
 <figure style="--lines: 15">
 
-***[display-inline-block Example](display-inline-block/style.css)***
+***[Display Inline-Block Example](display-inline-block/style.css)***
 
 </figure>
 
@@ -677,7 +678,7 @@ This is a common way to hide/show (by setting another `display` property) elemen
 
 <figure style="--lines: 7">
 
-***[Display-none Example](display-none/style.css)***
+***[Display None Example](display-none/style.css)***
 
 <figcaption>
 
@@ -700,7 +701,7 @@ Setting `visibility: hidden;` keeps the space an element had before, but makes i
 
 <figure style="--lines: 7">
 
-***[visibility Example](visibility/style.css)***
+***[Visibility Example](visibility/style.css)***
 
 </figure>
 
@@ -733,8 +734,14 @@ Oh right, floats. Sometimes you’ll want to have an image or block flow within 
 <!-- .balance -->
 
 [<cite>Floats – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Floats)
-	You don’t see these used as much, anymore!
+	You don’t see these used as much anymore!
 <!-- .right -->
+
+> [!NOTE]
+>
+> Generally, folks try and avoid floats—they aren’t common in modern design patterns and have been giving people headaches for decades now.
+>
+> <sub>They require you to know how long your content is and also how big your viewport/page will be—*both* things that you don’t always have control over in responsive/mobile 2026. But *occasionally* they are still the only thing that can do what you need!</sub>
 
 ### Left and Right
 
@@ -746,7 +753,7 @@ Any text *siblings* will then flow around the element—like a *text wrap*—fil
 
 <figure style="--lines: 15">
 
-***[float Example](float/style.css)***
+***[Float Example](float/style.css)***
 
 </figure>
 
@@ -785,11 +792,6 @@ Much better. `:after` is a pseudo-element—which acts here as a last child that
 
 </figcaption>
 </figure>
-
-**Generally, folks try and avoid floats—they aren’t common in modern design patterns and have been giving people headaches for… decades now.**
-
-They require you to know how long your content is and also how big your viewport/page will be—*both* things that you don’t always have control over in responsive/mobile 2025. But sometimes they are still the only thing that can do what you need!
-<!-- .balance -->
 
 ## What about *flex* and *grid*?
 

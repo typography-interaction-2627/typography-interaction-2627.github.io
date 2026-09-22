@@ -817,6 +817,7 @@ header {
 > [!WARNING]
 >
 > We should *never* see an [`!important` keyword](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/important) in your stylesheet, to “fix” these problems—it tells us you do not understand!
+<!-- #important -->
 
 ## Color and Type Properties
 
