@@ -154,12 +154,12 @@ code, kbd, samp {
 		strong & { --kerning: var(---1px) }
 	}
 
-	:is(h2, h3, h4) & {
+	:is(h2, h3, h4, aside p:not(:has(> sub))) & {
 		--size:    12;
 		--kerning: var(---1px);
 	}
 
-	:is(h2, h3, h4, strong) & { font-weight: bold }
+	:is(h2, h3, h4, strong, aside p:not(:has(> sub))) & { font-weight: bold }
 
 	/* `opsz` again. */
 	@supports (not (-moz-appearance: none)) {
@@ -169,7 +169,7 @@ code, kbd, samp {
 
 		@container style(--size: 9) or style(--size: 10) { --font: 'Monaco 9' }
 
-		:is(h2, h3, h4) & { --font: 'Monaco 12' }
+		:is(h2, h3, h4, aside p:not(:has(> sub))) & { --font: 'Monaco 12' }
 	}
 }
 
