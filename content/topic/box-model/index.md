@@ -54,10 +54,12 @@ This is often unintuitive for designers and doesn’t fit with most web design p
 
 <sub>[W3C](https://www.w3.org/TR/css-box-3/) might have got this default wrong. Good ol’ CSS!</sub>
 
-**Let’s take a look at this box, going *inside-to-outside!***
-<!-- .before -->
 
-## Content
+## What’s in *The Box*?
+
+**Let’s take a look at this box, going *inside-to-outside.***
+
+### Content
 
 The *content area* is the guts of the element, usually text or an image. Its dimensions are defined by that content, but also can be specified directly via `width` or `height`—or `inline-size` and `block-size`. (More on those soon.)
 <!-- .balance -->
@@ -81,7 +83,7 @@ We’ve pulled our standard [CSS reset](/topic/css#resets) into the `<head>` for
 
 </aside>
 
-## Padding
+### Padding
 
 Next comes [`padding`](https://developer.mozilla.org/en-US/docs/Web/CSS/padding), which extends the element’s area around the content. It’s easiest to think of this as an *inset* (if we’ve made our `box-sizing` the more-intuitive `border-box`, above):
 <!-- .balance -->
@@ -96,7 +98,7 @@ Next comes [`padding`](https://developer.mozilla.org/en-US/docs/Web/CSS/padding)
 
 </figure>
 
-### A Sidebar About *Shorthand*
+#### A Sidebar About *Shorthand*
 
 Know that `padding`—and many other properties, including `border` and <nobr>`margin`—</nobr>can be specified with a [*shorthand* property](https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties) to make it easier to use the same spacing all around, or shared top/bottom and left/right.
 <!-- .balance -->
@@ -146,7 +148,7 @@ section {
 
 </div>
 
-### …and *Logical* Properties <!-- .before--4 -->
+#### …and *Logical* Properties <!-- .before--4 -->
 
 You can also now define all your box model properties using [*logical* directions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values)—meaning instead of *physical* (`top`/`bottom`, `left`/`right`) orientations, you can [map your rules](https://adrianroselli.com/2019/11/css-logical-properties.html) to the *flow* of the text (`block-start`/`block-end`, `inline-start`/`inline-end`).
 <!-- .balance -->
@@ -209,7 +211,7 @@ This is a real mental model shift—for your instructors, too! We’re going to
 
 </aside>
 
-## Border
+### Border
 
 Back to our box model, moving outwards, with [`border`](https://developer.mozilla.org/en-US/docs/Web/CSS/border). Border is… the border around an element. It has its own `border-width`, `border-color`, and also `border-style`:
 <!-- .balance -->
@@ -229,6 +231,8 @@ The shorthand `border-block-start` property value order here doesn’t matter! I
 </figcaption>
 </figure>
 
+#### Different `border-style` Options
+
 The various `border-style` options:
 
 <figure style="--lines: 17">
@@ -242,6 +246,8 @@ Look at all those borders.
 </figcaption>
 </figure>
 
+#### Rounded Corners with `border-radius`
+
 And fun with `border-radius`:
 
 <figure style="--lines: 18">
@@ -250,7 +256,7 @@ And fun with `border-radius`:
 
 </figure>
 
-## Margin
+### Margin
 
 The last part of our box is [`margin`](https://developer.mozilla.org/en-US/docs/Web/CSS/margin)—the space *around* an element, empty/white-space area that is used to separate an element from its *siblings*. Like `padding` and `border`, you can specify it all around or on individual sides:
 <!-- .balance -->
@@ -270,6 +276,9 @@ This is away to *suggest* a multi-column feeling while keeping your reading flow
 </figcaption>
 </figure>
 
+
+#### *Negative* Margin?
+
 Margin has a couple tricks up its sleeve. First, it can have *negative* values—which will eat up/remove space between elements. (`padding` and `border` only take up space.) Just add a minus before the value and watch it bring things closer together:
 <!-- .balance -->
 
@@ -283,6 +292,9 @@ The first element pulls the second element closer with a *negative* margin.
 
 </figcaption>
 </figure>
+
+
+#### Margin *Collapse*?
 
 Also [margins *collapse*](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing), meaning that they are sometimes combined into a single value (whichever is largest) between two elements. This happens most often on adjacent siblings, and is both useful and an absolute pain:
 <!-- .balance -->
@@ -298,7 +310,7 @@ You might expect the margin between the first two `section` to be `10rem`, but i
 </figcaption>
 </figure>
 
-## And Their Units
+## CSS Units
 
 Okay, so now we have all these box properties—but how do we specify the dimensions? CSS has many [*length units*](https://developer.mozilla.org/en-US/docs/Web/CSS/length), used for `inline-size`, `block-size`, and also  `padding`, `border`, `margin`, and even `font-size`. (Picas, anyone?) We’ll look at some common ones.
 <!-- .balance -->
@@ -307,9 +319,10 @@ Okay, so now we have all these box properties—but how do we specify the dimens
 	*Length* is used by many properties!
 <!-- .right -->
 
-<div class="balance body center">
 
-### Absolute Units
+### Absolute
+
+<div class="balance verso center">
 
 Maybe the easiest ones to understand, these are fixed to physical (well, sort of) sizes. In general, we try and avoid these as they are necessarily *brittle*. Remember: the web is not a “physical” medium!
 
@@ -317,7 +330,7 @@ Maybe the easiest ones to understand, these are fixed to physical (well, sort of
 
 </div>
 
-<div class="before--3 right">
+<div class="before--3 recto">
 
 ```css
 .pixels {
@@ -343,7 +356,7 @@ Maybe the easiest ones to understand, these are fixed to physical (well, sort of
 
 </div>
 
-### Relative Units
+### Relative
 
 <div class="balance verso">
 
@@ -401,7 +414,7 @@ Most of the time we want to use `relative` units, which depend on and respond to
 
 </div>
 
-### Combine Them With a `calc()` <!-- .before--3 -->
+### Combined via `calc()`
 
 <div class="balance center verso">
 
@@ -423,7 +436,7 @@ Often you will want to use different units together! Mixing types or otherwise d
 
 </div>
 
-### Limit/Constrain Them
+### Constrained by `min-`/`max-`
 
 <div class="balance start before--2 verso">
 
@@ -460,12 +473,11 @@ p {
 
 </div>
 
-**CSS is big and massive and overwhelming and sometimes indefensibly nonsensical—but remember that you can do a surprising amount with just these basic properties!**
-/* .before */
+**CSS is big and massive and overwhelming and sometimes indefensibly nonsensical—but remember that you can do a surprising amount with *just* these basic properties!**
 
-**No matter how complex it gets, it really always comes back to these basics.**
+**And no matter how complex it gets, it really always comes back to these basics.**
 
-## Position
+## Positioning
 
 With an idea of how elements take up space, now we’ll look at how they exist and move together in the [*document flow*](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Normal_Flow). The CSS property `position` [sets this relationship](https://developer.mozilla.org/en-US/docs/Web/CSS/position).
 <!-- .balance -->
@@ -574,7 +586,7 @@ You’ll hear Michael say this a lot: this always feels very *web*-y.
 </figcaption>
 </figure>
 
-### “Depth”
+### “Depth” with `z-index`
 
 Okay, `z-index` is not strictly *positioning*—it is a separate property. You can see that all these `position` properties have given us ways to make things overlap, and `z-index` is how we can decide the *front-to-back* ordering (think [*<nobr>z-axis</nobr>*](https://en.wikipedia.org/wiki/Cartesian_coordinate_system#Three_dimensions)).
 <!-- .balance -->
@@ -674,7 +686,7 @@ Poof. Like it wasn’t even there.
 </figcaption>
 </figure>
 
-### …vs. Visibility?
+#### …vs. Visibility?
 
 You can also hide something visually *without* taking it out of the document *flow,* which is useful when you don’t want the page to jump/*reflow* when something appears/disappears.
 <!-- .balance -->
@@ -692,7 +704,7 @@ Setting `visibility: hidden;` keeps the space an element had before, but makes i
 
 </figure>
 
-### …vs. Opacity?
+#### …vs. Opacity?
 
 Another way to hide an element visually is to adjust `opacity`, which uses values on a scale from `0`&NoBreak;–&NoBreak;`1` or `0%`&NoBreak;–&NoBreak;`100%`. This differs from `visibility` because elements with no (or partial) opacity can still be interacted with:
 <!-- .balance -->
@@ -779,7 +791,7 @@ Much better. `:after` is a pseudo-element—which acts here as a last child that
 They require you to know how long your content is and also how big your viewport/page will be—*both* things that you don’t always have control over in responsive/mobile 2025. But sometimes they are still the only thing that can do what you need!
 <!-- .balance -->
 
-### What about `flex` and `grid`?
+## What about *flex* and *grid*?
 
 **We’ll cover these next unit! They’ll make your (layout) life easier.**
 
