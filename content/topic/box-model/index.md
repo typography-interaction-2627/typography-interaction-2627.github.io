@@ -62,11 +62,15 @@ This is often unintuitive for designers and doesn’t fit with most web design p
 The *content area* is the guts of the element, usually text or an image. Its dimensions are defined by that content, but also can be specified directly via `width` or `height`—or `inline-size` and `block-size`. (More on those soon.)
 <!-- .balance -->
 
-<figure
-	@caption="Be sure to look at the HTML here! It’s a similar structure throughout."
-	@source="content/preview/?active=style.css"
-	style="--lines: 11"
-	>
+<figure style="--lines: 9">
+
+***[Content Example](content/style.css)***
+
+<figcaption>
+
+Be sure to look at the HTML here! It’s a similar structure throughout.
+
+</figcaption>
 </figure>
 
 <aside>
@@ -86,10 +90,10 @@ Next comes [`padding`](https://developer.mozilla.org/en-US/docs/Web/CSS/padding)
 	There will be many of these.
 <!-- .right -->
 
-<figure
-	@source="padding/preview/?active=style.css"
-	style="--lines: 14"
-	>
+<figure style="--lines: 12">
+
+***[Padding Example](padding/style.css)***
+
 </figure>
 
 ### A Sidebar About *Shorthand*
@@ -214,28 +218,36 @@ Back to our box model, moving outwards, with [`border`](https://developer.mozill
 	Our first non-text design element! You are allowed.
 <!-- .right -->
 
-<figure
-	@caption="The shorthand `border-block-start` property value order here doesn’t matter! Isn’t CSS *…logical*."
-	@source="border/preview/?active=style.css"
-	style="--lines: 13"
-	>
+<figure style="--lines: 11">
+
+***[Border Example](border/style.css)***
+
+<figcaption>
+
+The shorthand `border-block-start` property value order here doesn’t matter! Isn’t CSS *…logical*.
+
+</figcaption>
 </figure>
 
 The various `border-style` options:
 
-<figure
-	@caption="Look at all those borders."
-	@source="border-style/preview/?active=style.css"
-	style="--lines: 23"
-	>
+<figure style="--lines: 17">
+
+***[Border-style Example](border-style/style.css)***
+
+<figcaption>
+
+Look at all those borders.
+
+</figcaption>
 </figure>
 
 And fun with `border-radius`:
 
-<figure
-	@source="border-radius/preview/?active=style.css"
-	style="--lines: 20"
-	>
+<figure style="--lines: 18">
+
+***[Border-radius Example](border-radius/style.css)***
+
 </figure>
 
 ## Margin
@@ -247,31 +259,43 @@ The last part of our box is [`margin`](https://developer.mozilla.org/en-US/docs/
 	The space between things.
 <!-- .right -->
 
-<figure
-	@caption="This is away to *suggest* a multi-column feeling while keeping your reading flow clear."
-	@source="margin/preview/?active=style.css"
-	style="--lines: 11"
-	>
+<figure style="--lines: 11">
+
+***[Margin Example](margin/style.css)***
+
+<figcaption>
+
+This is away to *suggest* a multi-column feeling while keeping your reading flow clear.
+
+</figcaption>
 </figure>
 
 Margin has a couple tricks up its sleeve. First, it can have *negative* values—which will eat up/remove space between elements. (`padding` and `border` only take up space.) Just add a minus before the value and watch it bring things closer together:
 <!-- .balance -->
 
-<figure
-	@caption="The first element pulls the second element closer with a *negative* margin."
-	@source="margin-negative/preview/?active=style.css"
-	style="--lines: 13"
-	>
+<figure style="--lines: 11">
+
+***[Margin-negative Example](margin-negative/style.css)***
+
+<figcaption>
+
+The first element pulls the second element closer with a *negative* margin.
+
+</figcaption>
 </figure>
 
 Also [margins *collapse*](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing), meaning that they are sometimes combined into a single value (whichever is largest) between two elements. This happens most often on adjacent siblings, and is both useful and an absolute pain:
 <!-- .balance -->
 
-<figure
-	@caption="You might expect the margin between the first two `section` to be `10rem`, but it is only `6rem`! They have *collapsed* to the larger value."
-	@source="margin-collapse/preview/?active=style.css"
-	style="--lines: 13"
-	>
+<figure style="--lines: 13">
+
+***[Margin-collapse Example](margin-collapse/style.css)***
+
+<figcaption>
+
+You might expect the margin between the first two `section` to be `10rem`, but it is only `6rem`! They have *collapsed* to the larger value.
+
+</figcaption>
 </figure>
 
 ## And Their Units
@@ -457,11 +481,15 @@ By default, every element is `static`—just meaning its normal, stacked positio
 
 <sub>You’ll rarely, if ever, actually set this yourself—it’s the default!</sub>
 
-<figure
-	@caption="Nothing changes here—`static` is the default. Be sure to scroll these examples!"
-	@source="position-static/preview/?active=style.css"
-	style="--lines: 13"
-	>
+<figure style="--lines: 13">
+
+***[position-static Example](position-static/style.css)***
+
+<figcaption>
+
+Nothing changes here—`static` is the default. Be sure to scroll these examples!
+
+</figcaption>
 </figure>
 
 ### Relative
@@ -472,11 +500,15 @@ The first thing we might want to do is adjust an element *from* that normal `sta
 Once you have set `position: relative;` you can use the logical `inset-block-start`, `inset-inline-end`, `inset-block-end`, and `inset-inline-start` values (with any of [the units](#and-their-units), above) to move the element away from its default, normal position in the flow:
 <!-- .balance -->
 
-<figure
-	@caption="Note the space—the element still exists/takes up space in the *flow*."
-	@source="position-relative/preview/?active=style.css"
-	style="--lines: 13"
-	>
+<figure style="--lines: 13">
+
+***[Position-relative Example](position-relative/style.css)***
+
+<figcaption>
+
+Note the space—the element still exists/takes up space in the *flow*.
+
+</figcaption>
 </figure>
 
 ### Absolute
@@ -492,11 +524,15 @@ Importantly, `position: absolute;` also *removes* the element from the normal do
 
 <sub>This is often used for exacting, specific design element placement. But it is inherently *brittle*&NoBreak;!</sub>
 
-<figure
-	@caption="The element is out of the *flow*, and placed according to the `relative` parent."
-	@source="position-absolute/preview/?active=style.css"
-	style="--lines: 22"
-	>
+<figure style="--lines: 22">
+
+***[Position-absolute Example](position-absolute/style.css)***
+
+<figcaption>
+
+The element is out of the *flow*, and placed according to the `relative` parent.
+
+</figcaption>
 </figure>
 
 ### Fixed
@@ -509,11 +545,15 @@ So `position: fixed;` brings the element *completely* out of the page’s normal
 
 <sub>This is often used for things like navigation elements.</sub>
 
-<figure
-	@caption="Try doing this in print."
-	@source="position-fixed/preview/?active=style.css"
-	style="--lines: 13"
-	>
+<figure style="--lines: 13">
+
+***[Position-fixed Example](position-fixed/style.css)***
+
+<figcaption>
+
+Try doing this in print.
+
+</figcaption>
 </figure>
 
 ### Sticky
@@ -523,11 +563,15 @@ The most recent addition to the *position* party, `position: sticky;` elements a
 
 <sub>This is often used for headers on tables and lists.</sub>
 
-<figure
-	@caption="You’ll hear Michael say this a lot: this always feels very *web*-y."
-	@source="position-sticky/preview/?active=style.css"
-	style="--lines: 12"
-	>
+<figure style="--lines: 12">
+
+***[Position-sticky Example](position-sticky/style.css)***
+
+<figcaption>
+
+You’ll hear Michael say this a lot: this always feels very *web*-y.
+
+</figcaption>
 </figure>
 
 ### “Depth”
@@ -542,11 +586,15 @@ Okay, `z-index` is not strictly *positioning*—it is a separate property. You c
 By default, items that are lower in the HTML (coming *after* each other) are in front of higher, earlier elements:
 <!-- .balance .before--2 -->
 
-<figure
-	@caption="The two `position` properties both create new stacking contexts, `z-index: 1;` moves even elements in front."
-	@source="z-index/preview/?active=style.css"
-	style="--lines: 16"
-	>
+<figure style="--lines: 13">
+
+***[Z-index Example](z-index/style.css)***
+
+<figcaption>
+
+The two `position` properties both create new stacking contexts, `z-index: 1;` moves even elements in front.
+
+</figcaption>
 </figure>
 
 A whole lot of things make a new [*stacking context*](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context) (including most `position` changes) which is kind of like a *group* (or a Figma *frame*) that has its own internal depth/overlap order.
@@ -569,11 +617,15 @@ In our [HTML introduction](/topic/html#block-elements) we briefly talked about `
 As we discussed, most HTML elements are *block-level* by default. But you can also set `display: block;` manually on an `inline` element, too. This would mean that it starts on a new line, takes up the full width available, and you can specify a `block-size`, `inline-size`, and use `margin` above and below:
 <!-- .balance -->
 
-<figure
-	@caption="Whenever you are linking a whole area (like an image and text together), safe bet that you want `block`."
-	@source="display-block/preview/?active=style.css"
-	style="--lines: 15"
-	>
+<figure style="--lines: 13">
+
+***[Display-block Example](display-block/style.css)***
+
+<figcaption>
+
+Whenever you are linking a whole area (like an image and text together), safe bet that you want `block`.
+
+</figcaption>
 </figure>
 
 ### Inline
@@ -581,11 +633,15 @@ As we discussed, most HTML elements are *block-level* by default. But you can al
 And then going the other way, you can make `block` elements switch to `inline` with `display: inline;`. They will no longer start on their own lines, will only take up as much space as their content/children, and *don’t* accept `block-size` or `inline-size` (or any `-block-start`/`-block-end`) properties:
 <!-- .balance -->
 
-<figure
-	@caption="The [`white-space` property `pre`](https://developer.mozilla.org/en-US/docs/Web/CSS/white-space)-vents the spaces in the paragraphs from collapsing!"
-	@source="display-inline/preview/?active=style.css"
-	style="--lines: 13"
-	>
+<figure style="--lines: 11">
+
+***[Display-inline Example](display-inline/style.css)***
+
+<figcaption>
+
+The [`white-space` property `pre`](https://developer.mozilla.org/en-US/docs/Web/CSS/white-space)-vents the spaces in the paragraphs from collapsing!
+
+</figcaption>
 </figure>
 
 ### But Also `inline-block`
@@ -593,10 +649,10 @@ And then going the other way, you can make `block` elements switch to `inline` 
 You can also combine the qualities of `block` and `inline` with `display: inline-block;`. These elements take `block-size` and `inline-size` (and vertical `margin`) like *block-level* elements, but do not start on their own line:
 <!-- .balance -->
 
-<figure
-	@source="display-inline-block/preview/?active=style.css"
-	style="--lines: 17"
-	>
+<figure style="--lines: 15">
+
+***[display-inline-block Example](display-inline-block/style.css)***
+
 </figure>
 
 ### And Sometimes `none`
@@ -607,11 +663,15 @@ Setting `display: none;` hides an element visually (and from screen readers) in 
 This is a common way to hide/show (by setting another `display` property) elements on the page, but it will *reflow* the document when applied—as if the element is actually added/removed from the HTML:
 <!-- .balance -->
 
-<figure
-	@caption="Poof. Like it wasn’t even there."
-	@source="display-none/preview/?active=style.css"
-	style="--lines: 8"
-	>
+<figure style="--lines: 7">
+
+***[Display-none Example](display-none/style.css)***
+
+<figcaption>
+
+Poof. Like it wasn’t even there.
+
+</figcaption>
 </figure>
 
 ### …vs. Visibility?
@@ -626,10 +686,10 @@ You can also hide something visually *without* taking it out of the document *fl
 Setting `visibility: hidden;` keeps the space an element had before, but makes it invisible and unable to be interacted with. The value `visible` is the default:
 <!-- .balance -->
 
-<figure
-	@source="visibility/preview/?active=style.css"
-	style="--lines: 8"
-	>
+<figure style="--lines: 7">
+
+***[visibility Example](visibility/style.css)***
+
 </figure>
 
 ### …vs. Opacity?
@@ -641,11 +701,15 @@ Another way to hide an element visually is to adjust `opacity`, which uses value
 	The entire element *and* its descendents are adjusted, as one.
 <!-- .right  -->
 
-<figure
-	@caption="You can still select the text (or click links) of not-fully-opaque elements."
-	@source="opacity/preview/?active=style.css"
-	style="--lines: 8"
-	>
+<figure style="--lines: 7">
+
+***[Opacity Example](opacity/style.css)***
+
+<figcaption>
+
+You can still select the text (or click links) of not-fully-opaque elements.
+
+</figcaption>
 </figure>
 
 Keep in mind that `display: none;`, `visibility: hidden;`, and `opacity: 0;` only hide things in the *rendered* browser view. The HTML is always still visible in the source code!
@@ -668,10 +732,10 @@ The declarations `float: inline-start;` and `float: inline-end;` take an element
 Any text *siblings* will then flow around the element—like a *text wrap*—filling up any available space to its side. They will go as far up as the top of the *floated element*:
 <!-- .balance -->
 
-<figure
-	@source="float/preview/?active=style.css"
-	style="--lines: 17"
-	>
+<figure style="--lines: 15">
+
+***[float Example](float/style.css)***
+
 </figure>
 
 ### Don’t Forget to `clear`
@@ -682,11 +746,15 @@ Since this takes the floated element out of the *flow*, if we want the followin
 Applied on the following element, it will make it stay entirely below (clear of) the *floated* element:
 <!-- .balance -->
 
-<figure
-	@caption="Uh oh, classic `float` problem on the second one."
-	@source="float-clear/preview/?active=style.css"
-	style="--lines: 19"
-	>
+<figure style="--lines: 17">
+
+***[Float/Clear Example](float-clear/style.css)***
+
+<figcaption>
+
+Uh oh, classic `float` problem on the second one.
+
+</figcaption>
 </figure>
 
 If you have a parent wrapper and no following element, there won’t be anything there to *clear* the float—meaning the parent will collapse down to the size of the text content. Almost never what you want.
@@ -695,11 +763,15 @@ If you have a parent wrapper and no following element, there won’t be anything
 You can solve this broken look with a [*clearfix hack*](https://developer.mozilla.org/en-US/docs/Web/CSS/clear#sect1), which uses a pseudo-element as an ersatz `last-child` to clear the container.
 <!-- .balance -->
 
-<figure
-	@caption="Much better. `:after` is a pseudo-element—which acts here as a last child that clears the `div`."
-	@source="float-clearfix/preview/?active=style.css"
-	style="--lines: 23"
-	>
+<figure style="--lines: 21">
+
+***[Float Clearfix Example](float-clearfix/style.css)***
+
+<figcaption>
+
+Much better. `:after` is a pseudo-element—which acts here as a last child that clears the `div`.
+
+</figcaption>
 </figure>
 
 **Generally, folks try and avoid floats—they aren’t common in modern design patterns and have been giving people headaches for… decades now.**
