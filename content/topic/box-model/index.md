@@ -338,9 +338,15 @@ Okay, so now we have all these box properties—but how do we specify the dimens
 
 <div class="balance verso center">
 
-Maybe the easiest ones to understand, these are fixed to physical (well, sort of) sizes. In general, we try and avoid these as they are necessarily *brittle*. Remember: the web is not a “physical” medium!
+<div class="before sticky" style="inset-block-start: 33vh; margin-block-end: 2rlh">
+
+Maybe the easiest ones to understand, these are fixed to physical (well… sort of) sizes.
+
+In general, we try and avoid these in modern development as they are necessarily *brittle*. Remember: the web is not a “physical” medium!
 
 <sub>With the many vagaries of screen size and density, the physical/ruler lengths will only be correct when you print. And maybe not even then!</sub>
+
+</div>
 
 </div>
 
@@ -374,9 +380,11 @@ Maybe the easiest ones to understand, these are fixed to physical (well, sort of
 
 <div class="balance verso">
 
-<div class="before sticky" style="inset-block-start: 45vh; margin-block-end: 2rlh">
+<div class="before sticky" style="inset-block-start: 33vh; margin-block-end: 2rlh">
 
 Most of the time we want to use `relative` units, which depend on and respond to their context—particularly as we think ahead to *responsive* design.
+
+These are based on our layout, viewport, or typography dimensions! And are much more resilient because of this systematic/relationship-based approach.
 
 <sub>These are distinctly and intrinsically *web* measurements.</sub>
 
@@ -428,11 +436,17 @@ Most of the time we want to use `relative` units, which depend on and respond to
 
 </div>
 
+> [!WARNING]
+>
+> Always default to relative units! Much like [logical properties](#and-logical-properties), these are the more correct and modern way.
+>
+> <sub>We should *not* see the absolute `px` in your code, despite whatever other [resources](../../syllabus.md#attribution) say.</sub>
+
 ### Combined via `calc()`
 
 <div class="balance center verso">
 
-Often you will want to use different units together! Mixing types or otherwise doing some maths. For this we have the [`calc()` function](https://developer.mozilla.org/en-US/docs/Web/CSS/calc()).
+Extending the idea of systematic/relationship-based dimensions, often you will want to use different units together! Mixing types or otherwise doing some maths. For this we have the [`calc()` function](https://developer.mozilla.org/en-US/docs/Web/CSS/calc()).
 
 </div>
 
@@ -486,6 +500,8 @@ p {
 ```
 
 </div>
+
+---
 
 **CSS is big and massive and overwhelming and sometimes indefensibly nonsensical—but remember that you can do a surprising amount with *just* these basic properties!**
 
@@ -605,12 +621,12 @@ You’ll hear Michael say this a lot: this always feels very *web*-y.
 Okay, `z-index` is not strictly *positioning*—it is a separate property. You can see that all these `position` properties have given us ways to make things overlap, and `z-index` is how we can decide the *front-to-back* ordering (think [*<nobr>z-axis</nobr>*](https://en.wikipedia.org/wiki/Cartesian_coordinate_system#Three_dimensions)).
 <!-- .balance -->
 
-[<cite>Z-Index – MDN</cite>]((https://developer.mozilla.org/en-US/docs/Web/CSS/z-index))
+- [<cite>`z-index` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index)
 	This can be tricky to work with!
 <!-- .right -->
 
 By default, items that are lower in the HTML (coming *after* each other) are in front of higher, earlier elements:
-<!-- .balance .before -->
+<!-- .balance -->
 
 <figure style="--lines: 13">
 
