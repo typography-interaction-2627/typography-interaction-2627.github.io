@@ -6,12 +6,38 @@
 		display:          flex;
 		overflow:         auto;
 		padding:          1rex;
+		position:         relative;
 		scrollbar-width:  none;
+		tab-size:         4;
 
-		code {
-			tab-size: 4;
-			color:    var(--background);
-			text-box: trim-both cap alphabetic;
+		/* Invert back. */
+		::selection {
+			color:            var(--color);
+			background-color: var(--background);
+		}
+
+		code { color: var(--background) }
+
+		/* “Fade” overflow edges. */
+		&::before,
+		&::after {
+			background-color: var(--color);
+			content:          '';
+			flex-shrink:      0;
+			inline-size:      1rex;
+			margin-block:     -1rex;
+			mask:             var(--background--check);
+			position:         sticky;
+		}
+
+		&::before {
+			inset-inline-start:  -1rex;
+			margin-inline-start: -1rex;
+		}
+
+		&::after  {
+			inset-inline-end:  -1rex;
+			margin-inline-end: -1rex;
 		}
 	}
 
