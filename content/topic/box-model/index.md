@@ -7,8 +7,7 @@ const draft = true
 
 ## Boxes Within Boxes Within Boxes Within Boxes
 
-For real layout, the we first need to understand how CSS sizes elements—and how we can add space between them. This is called the [*the box model*](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model), as everything on the web begins as a rectangle.
-<!-- .start style="min-block-size: calc(7rlh - 1rcap)" -->
+**For real layout, we first need to understand how CSS sizes elements—and then how we can add space between them. This is called the [*the box model*](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model), as everything on the web begins as a rectangle.**
 
 - [<cite>Introduction to CSS Layout – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Introduction)
 	As usual.
@@ -18,24 +17,28 @@ For real layout, the we first need to understand how CSS sizes elements—and ho
 
 - [<cite>Learn CSS Layout</cite>](https://learnlayout.com)
 	An old-but-still-good run-through.
-<!-- .right .rows--2 -->
+<!-- .right .rows--3 -->
 
 > …Use the effectiveness of the former “background” quite deliberately, and consider the blank white spaces on the paper as formal elements just as much as the areas of black type.
 >
 > [<cite>Jan Tschichold, 1928</cite>](https://readings.design/PDF/ThePrinciplesoftheNewTypography.pdf)
 
-<figure
-	@caption="With `box-sizing: content-box;` per the spec."
-	@source="box-model.svg"
-	class="before--4 verso"
-	>
+<figure class="borderless verso">
+<img src="box-model.svg">
+<figcaption>
+
+With `box-sizing: content-box;` per the spec.
+
+</figcaption>
 </figure>
 
-<figure
-	@caption="With `box-sizing: border-box;` the defacto standard. Most [CSS resets](/topic/css#resets) will do this for you! Like we said, very common."
-	@source="box-model-border.svg"
-	class="before--4 recto"
-	>
+<figure class="borderless recto">
+<img src="box-model-border.svg">
+<figcaption>
+
+With `box-sizing: border-box;` the defacto standard. Most [CSS resets](/topic/css#resets) will do this for you! Like we said, very common.
+
+</figcaption>
 </figure>
 
 By default, all browsers’ *user-agent styles* have an unfortunate default—`box-sizing: content-box;`—which means that the `padding` (and `border`) exists *outside* the content `inline-size`/`width` or `block-size`/`height`—so `padding` (and `border`) is then an *outset.*
