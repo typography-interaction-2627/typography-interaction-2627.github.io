@@ -16,7 +16,7 @@ samp {
 	display:         inline-block;
 	font-weight:     initial;
 	isolation:       isolate;
-	margin-block:    var(---3px);
+	margin-block:    var(---4px);
 	max-inline-size: calc(100% - 1ch);
 	overflow-x:      auto;
 	overflow-y:      clip;
