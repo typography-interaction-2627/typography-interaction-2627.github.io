@@ -47,8 +47,7 @@ By default, all browsers’ *user-agent styles* have an unfortunate default—`b
 
 But this is often unintuitive for designers and doesn’t fit with most web design patterns—so it is very, *very* common (nearly universal) to instead override this to `box-sizing: border-box;`—which makes `padding` and `border` exist *inside* the content dimensions. Then `padding` (and `border`) is easier to think of as an *inset*. [W3C](https://www.w3.org/TR/css-box-3/) might have got this default wrong. Good ol’ CSS!
 
-Let’s take a look at this box, going *inside-to-outside.*
-<!-- .intro -->
+**Let’s take a look at this box, going *inside-to-outside.***
 
 ## Content
 
@@ -185,8 +184,7 @@ height: 20rem;
 block-size: 20rem;
 ```
 
-This `start` / `end` terminology will come up later with `flexbox` and `grid`, so it is a good habit/mindset to get into!
-<!-- .balance .note -->
+<sub>This `start` / `end` terminology will come up later with `flexbox` and `grid`, so it is a good habit/mindset to get into!</sub>
 
 This allows your design/styles to behave in a *logically* (if not *physically*) consistent way across languages with varied [writing modes](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode) and different [text directions](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir). You can write styles that work even when your site is translated! (And the two-direction shorthand is nice, here.)
 <!-- .before--2 -->
@@ -283,8 +281,7 @@ Okay, so now we have all these box properties—but how do we specify the dimens
 
 Maybe the easiest ones to understand, these are fixed to physical (well, sort of) sizes. In general, we try and avoid these as they are necessarily *brittle*. Remember: the web is not a “physical” medium!
 
-With the many vagaries of screen size and density, the physical/ruler lengths will only be correct when you print. And maybe not even then!
-<!-- .note -->
+<sub>With the many vagaries of screen size and density, the physical/ruler lengths will only be correct when you print. And maybe not even then!</sub>
 
 </div>
 
@@ -322,8 +319,7 @@ With the many vagaries of screen size and density, the physical/ruler lengths wi
 
 Most of the time we want to use `relative` units, which depend on and respond to their context—particularly as we think ahead to *responsive* design.
 
-These are distinctly and intrinsically *web* measurements.
-<!-- .note -->
+<sub>These are distinctly and intrinsically *web* measurements.</sub>
 
 </div>
 
@@ -432,11 +428,10 @@ p {
 
 </div>
 
-CSS is big and massive and overwhelming and sometimes indefensibly nonsensical—but remember that you can do a surprising amount with just these basic properties!
-<!-- .intro .before--4 -->
+**CSS is big and massive and overwhelming and sometimes indefensibly nonsensical—but remember that you can do a surprising amount with just these basic properties!**
+/* .before */
 
-No matter how complex it gets, it really always comes back to these basics.
-<!-- .intro -->
+**No matter how complex it gets, it really always comes back to these basics.**
 
 ## Position
 
@@ -452,8 +447,7 @@ With an idea of how elements take up space, now we’ll look at how they exist a
 By default, every element is `static`—just meaning its normal, stacked position in the document.
 <!-- .balance -->
 
-You’ll rarely, if ever, actually set this yourself—it’s the default!
-<!-- .note -->
+<sub>You’ll rarely, if ever, actually set this yourself—it’s the default!</sub>
 
 <figure
 	@caption="Nothing changes here—`static` is the default. Be sure to scroll these examples!"
@@ -488,8 +482,7 @@ So `absolute` elements will go “up the tree” of parents and wrapper elements
 Importantly, `position: absolute;` also *removes* the element from the normal document flow—meaning it takes up *no space* in the page layout.
 <!-- .balance -->
 
-This is often used for exacting, specific design element placement. But it is inherently *brittle*&NoBreak;!
-<!-- .note -->
+<sub>This is often used for exacting, specific design element placement. But it is inherently *brittle*&NoBreak;!</sub>
 
 <figure
 	@caption="The element is out of the *flow*, and placed according to the `relative` parent."
@@ -506,8 +499,7 @@ This is often used for exacting, specific design element placement. But it is in
 So `position: fixed;` brings the element *completely* out of the page’s normal flow, like it is sitting on its own separate layer.
 <!-- .balance -->
 
-This is often used for things like navigation elements.
-<!-- .note -->
+<sub>This is often used for things like navigation elements.</sub>
 
 <figure
 	@caption="Try doing this in print."
@@ -521,8 +513,7 @@ This is often used for things like navigation elements.
 The most recent addition to the *position* party, `position: sticky;` elements are placed according to the normal flow of the document, like `static`, until their nearest *scrolling ancestor* (usually the viewport) moves past them. The element is then *stuck* in relation to this element.
 <!-- .balance -->
 
-This is often used for headers on tables and lists.
-<!-- .note -->
+<sub>This is often used for headers on tables and lists.</sub>
 
 <figure
 	@caption="You’ll hear Michael say this a lot: this always feels very *web*-y."
@@ -703,16 +694,14 @@ You can solve this broken look with a [*clearfix hack*](https://developer.mozill
 	>
 </figure>
 
-Generally, folks try and avoid floats—they aren’t common in modern design patterns and have been giving people headaches for… decades now.
-<!-- .intro -->
+**Generally, folks try and avoid floats—they aren’t common in modern design patterns and have been giving people headaches for… decades now.**
 
 They require you to know how long your content is and also how big your viewport/page will be—*both* things that you don’t always have control over in responsive/mobile 2025. But sometimes they are still the only thing that can do what you need!
 <!-- .balance -->
 
 ### What about `flex` and `grid`?
 
-We’ll cover these next unit! They’ll make your (layout) life easier.
-<!-- .intro -->
+**We’ll cover these next unit! They’ll make your (layout) life easier.**
 
 <blockquote
 	@attribution="H<span class='a-ring cap'>å</span>kon Wium Lie, 1995"
