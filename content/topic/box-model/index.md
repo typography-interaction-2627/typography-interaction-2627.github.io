@@ -7,27 +7,27 @@ const draft = true
 
 ## Boxes Within Boxes Within Boxes Within Boxes
 
-**For real layout, we first need to understand how CSS sizes elements—and then how we can add space between them. This is called the [*the box model*](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model), as everything on the web begins as a rectangle.**
+**For layout, we first need to understand how CSS sizes elements—and then how we can add space between them. This is called the [*the box model*](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model), as everything on the web begins as a rectangle.**
 
-- [<cite>Introduction to CSS Layout – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Introduction)
-	As usual.
+- [<cite>Introduction to CSS Layout – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Introduction) \
+	As usual!
 
-- [<cite>Layout – web.dev</cite>](https://web.dev/learn/css/layout/)
+- [<cite>Layout – web.dev</cite>](https://web.dev/learn/css/layout/) \
 	This gets into `grid` and `flex`; we’ll talk about those [next unit](../../syllabus.md#unit-2-there-is-no-perfect-layout).
 
-- [<cite>Learn CSS Layout</cite>](https://learnlayout.com)
+- [<cite>Learn CSS Layout</cite>](https://learnlayout.com) \
 	An old-but-still-good run-through.
 <!-- .right .rows--3 -->
 
-> …Use the effectiveness of the former “background” quite deliberately, and consider the blank white spaces on the paper as formal elements just as much as the areas of black type.
+> …use the effectiveness of the former “background” quite deliberately, and consider the blank white spaces on the paper as formal elements just as much as the areas of black type.
 >
 > [<cite>Jan Tschichold, 1928</cite>](https://readings.design/PDF/ThePrinciplesoftheNewTypography.pdf)
 
 ### `box-sizing` Confusion
 
-By default, all browsers’ *user-agent styles* have an unfortunate default—`box-sizing: content-box;`—which means that the `padding` (and `border`) exists *outside* the content `inline-size`/`width` or `block-size`/`height`—so `padding` (and `border`) is then an *outset.*
+By default, all browsers’ *user-agent styles* have an unfortunate default—`box-sizing: content-box;`—which means that the `padding` (and `border`) exists *outside* the content `inline-size`/`width` or `block-size`/`height`—so `padding` (and `border`) is then an *outset.*
 
-- [<cite>`box-sizing` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/box-sizing) \
+[<cite>`box-sizing` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/box-sizing) \
 	We’ll usually flip the default for this!
 <!-- .right -->
 
@@ -61,8 +61,11 @@ This is often unintuitive for designers and doesn’t fit with most web design p
 
 ### Content
 
-The *content area* is the guts of the element, usually text or an image. Its dimensions are defined by that content, but also can be specified directly via `width` or `height`—or `inline-size` and `block-size`. (More on those soon.)
-<!-- .balance -->
+The [*content area*](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/Introduction#content_area) is the guts of the element, usually text or an image. Its dimensions are usually defined by the [intrinsic size](https://developer.mozilla.org/en-US/docs/Glossary/Intrinsic_Size) of that content, but also can be specified directly via `width` or `height`—or `inline-size` and `block-size`. (More on those soon.)
+
+[<cite>Introduction to the CSS box model - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/Introduction#content_area) \
+	Going inside-to-outside, the very inside.
+<!-- .right -->
 
 <figure style="--lines: 9">
 
@@ -83,11 +86,11 @@ Be sure to look at the HTML here! It’s a similar structure throughout.
 
 ### Padding
 
-Next comes [`padding`](https://developer.mozilla.org/en-US/docs/Web/CSS/padding), which extends the element’s area around the content. It’s easiest to think of this as an *inset* (if we’ve made our `box-sizing` the more-intuitive `border-box`, above):
+Next comes [`padding`](https://developer.mozilla.org/en-US/docs/Web/CSS/padding), which adds space to the element’s area *around* the [content](#content). It’s easiest to think of this as an *inset* (if we’ve made our `box-sizing` the more-intuitive `border-box`, [above](#box-sizing-confusion)):
 <!-- .balance -->
 
-[<cite>Padding – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/padding)
-	There will be many of these.
+[<cite>Padding – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/padding) \
+	There will be many of these links!
 <!-- .right -->
 
 <figure style="--lines: 12">
@@ -98,21 +101,21 @@ Next comes [`padding`](https://developer.mozilla.org/en-US/docs/Web/CSS/padding)
 
 #### A Sidebar About *Shorthand*
 
-Know that `padding`—and many other properties, including `border` and <nobr>`margin`—</nobr>can be specified with a [*shorthand* property](https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties) to make it easier to use the same spacing all around, or shared top/bottom and left/right.
-<!-- .balance -->
+Know that `padding`—and many other CSS properties, including `border` and <nobr>`margin`—</nobr>can be specified with a [*shorthand* property](https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties) to make it “easier” to use the same spacing all around, or shared top/bottom and left/right.
 
-[<cite>Shorthand Properties – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties)
-	Be wary of the siren call of shorthand properties!
+[<cite>Shorthand Properties – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties) \
+	Be wary of the siren call of shorthands!
 <!-- .right -->
 
+<section>
 <div class="verso before">
 
 |     |     |
 | --- | --- |
-|1 value:<br><br>  | All Directions/Sides           |
-|2 values:<br><br> | `top/bottom` `left/right`      |
-|3 values:<br><br> | `top` `left/right` `bottom`    |
-|4 values:<br><br> | `top` `right` `bottom`  `left` |
+|**1 value:**  | All Directions/sides           |
+|**2 values:** | `top/bottom` `left/right`      |
+|**3 values:** | `top` `left/right` `bottom`    |
+|**4 values:** | `top` `right` `bottom`  `left` |
 
 </div>
 
@@ -126,10 +129,12 @@ section { padding: 1rem 2rem 4rem 2rem; }
 ```
 
 </div>
+</section>
 
+<section style="margin-block-end: 2rlh">
 <div class="balance verso before center">
 
-These three- and four-value rules are often harder to read and quickly understand though, so we tend to avoid them. You can *always* write the individual directions out, for clarity! (And cleaner diffs, with whole-line changes.)
+These three- and four-value rules are often harder to read and quickly understand though, so we tend to avoid them. You can *always* write the individual directions out, for clarity! (And cleaner diffs, with separate/whole-line changes.)
 
 </div>
 
@@ -145,13 +150,14 @@ section {
 ```
 
 </div>
+</section>
 
 #### …and *Logical* Properties
 
 You can also now define all your box model properties using [*logical* directions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values)—meaning instead of *physical* (`top`/`bottom`, `left`/`right`) orientations, you can [map your rules](https://adrianroselli.com/2019/11/css-logical-properties.html) to the *flow* of the text (`block-start`/`block-end`, `inline-start`/`inline-end`).
 <!-- .balance -->
 
-[<cite>CSS Logical Properties</cite>](https://adrianroselli.com/2019/11/css-logical-properties.html)
+[<cite>CSS Logical Properties</cite>](https://adrianroselli.com/2019/11/css-logical-properties.html) \
 	[Adrian Roselli](https://adrianroselli.com/) has a very thorough explanation.
 <!-- .right -->
 
@@ -159,60 +165,54 @@ In horizontal, left-to-right writing modes (as in English):
 <!-- .before -->
 
 ```css <!-- .verso -->
-/* These horizontal physical directions: */
-padding-left: 1rem;
+/* These physical directions: */
+padding-top: 1rem;
 padding-right: 1rem;
+padding-bottom: 1rem;
+padding-left: 1rem;
 
-/* Map to these logical directions: */
-padding-inline-start: 1rem;
-padding-inline-end: 1rem;
 
-/* And this combined property: */
-padding-inline: 1rem;
 
-/* Also this physical dimension: */
+
+
+/* Also these physical sizes: */
+height: 20rem;
 width: 20rem;
-
-/* Becomes this logical one: */
-inline-size: 20rem;
 ```
 
 ```css <!-- .recto -->
-/* Same for the vertical directions: */
-padding-top: 1rem;
-padding-bottom: 1rem;
-
-/* Mapping to these: */
+/* Map to these logical directions: */
 padding-block-start: 1rem;
+padding-inline-end: 1rem;
 padding-block-end: 1rem;
+padding-inline-start: 1rem;
 
-/* And this shorthand for both: */
+/* And these shorthand for both: */
 padding-block: 1rem;
+padding-inline: 1rem;
 
-/* This physical size: */
-height: 20rem;
-
-/* Becomes this logical one: */
+/* Become these logical sizes: */
 block-size: 20rem;
+inline-size: 20rem;
 ```
 
 <sub>This `start` / `end` terminology will come up later with `flexbox` and `grid`, so it is a good habit/mindset to get into!</sub>
 
-This allows your design/styles to behave in a *logically* (if not *physically*) consistent way across languages with varied [writing modes](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode) and different [text directions](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir). You can write styles that work even when your site is translated! (And the two-direction shorthand is nice, here.)
+This allows your design/styles to behave in a *logically* (if not *physically*) consistent way across languages with varied [writing modes](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode) and different [text directions](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir). You can write styles that work even when your site is translated! (And the two-direction shorthand is nice, here.)
 <!-- .before -->
 
 > [!WARNING]
 >
-> We’ll only be using logical properties—they are the correct and modern way! Be thinking in `block` and `inline`.
+> We will *only* be using logical properties—they are the correct and modern way! Always be thinking in `block`/`inline`.
 >
-> <sub>You might see them in other [resources](../../syllabus.md#attribution), but we should *not* see any directions—`top`/`right`/`bottom`/`left`—in your code!</sub>
+> <sub>You’ll see directions in other [resources](../../syllabus.md#attribution), but we should *not* see any `top`/`right`/`bottom`/`left` in your code!</sub>
 <!-- #logical -->
 
 </aside>
 
 ### Border
 
-Back to our box model, moving outwards, with [`border`](https://developer.mozilla.org/en-US/docs/Web/CSS/border). Border is… the border around an element. It has its own `border-width`, `border-color`, and also `border-style`:
+Back to our box model, moving outwards, with [`border`](https://developer.mozilla.org/en-US/docs/Web/CSS/border). Border is… the border around an element! It has its own `border-color`, `border-width`:
 <!-- .balance -->
 
 [<cite>Border – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/border)
@@ -232,7 +232,11 @@ The shorthand `border-block-start` property value order here doesn’t matter! I
 
 #### Different `border-style` Options
 
-The various `border-style` options:
+There are also various [`border-style`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border-style) options to change the… style of border. You’ll most often see this for `dotted` lines, and as a *shorthand* for all sides—but we don’t get much control over them beyond `-color` and `-width`:
+
+[<cite>`border-style` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border-style)
+	Some of these are good; some of these are bad.
+<!-- .right -->
 
 <figure style="--lines: 17">
 
@@ -247,7 +251,11 @@ Look at all those borders.
 
 #### Rounded Corners with `border-radius`
 
-And fun with `border-radius`:
+It’s much more common these days to see the [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border-radius) property, to give an element rounded corners. This is also how you can make simple ovals/circles—which are just rounded rectangles:
+
+[<cite>`border-radius` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border-radius)
+	“Sand down” your sharp edges.
+<!-- .right -->
 
 <figure style="--lines: 18">
 
@@ -260,7 +268,7 @@ And fun with `border-radius`:
 The last part of our box is [`margin`](https://developer.mozilla.org/en-US/docs/Web/CSS/margin)—the space *around* an element, empty/white-space area that is used to separate an element from its *siblings*. Like `padding` and `border`, you can specify it all around or on individual sides:
 <!-- .balance -->
 
-[<cite>Margin – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/margin)
+[<cite>Margin – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/margin) \
 	The space between things.
 <!-- .right -->
 
@@ -278,8 +286,12 @@ This is away to *suggest* a multi-column feeling while keeping your reading flow
 
 #### *Negative* Margin?
 
-Margin has a couple tricks up its sleeve. First, it can have *negative* values—which will eat up/remove space between elements. (`padding` and `border` only take up space.) Just add a minus before the value and watch it bring things closer together:
+Margin has a couple tricks up its sleeve. First, it can have *negative* values—which will eat up/cinch/remove space between elements—where `padding` and `border` can only add/take up space. Just add a minus before the value and  it will bring things closer together:
 <!-- .balance -->
+
+[<cite>Are negative CSS margins bad practice? – dev.to</cite>](https://dev.to/itstrueintheory/are-negative-css-margins-bad-practice-lh7) \
+	Some example uses. “It depends!”
+<!-- .right -->
 
 <figure style="--lines: 11">
 
@@ -295,8 +307,11 @@ The first element pulls the second element closer with a *negative* margin.
 
 #### Margin *Collapse*?
 
-Also [margins *collapse*](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing), meaning that they are sometimes combined into a single value (whichever is largest) between two elements. This happens most often on adjacent siblings, and is both useful and an absolute pain:
-<!-- .balance -->
+Also `margin` can [*collapse*](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/Margin_collapsing), meaning that they are sometimes combined (*collapsed*) into a single value—whichever is largest—between two elements. This happens most often on adjacent siblings, and is both useful *and* an absolute pain, sometimes:
+
+[<cite>Mastering margin collapsing – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/Margin_collapsing) \
+	Brilliant *or* annoying!
+<!-- .right -->
 
 <figure style="--lines: 13">
 
@@ -304,7 +319,7 @@ Also [margins *collapse*](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_B
 
 <figcaption>
 
-You might expect the margin between the first two `section` to be `10rem`, but it is only `6rem`! They have *collapsed* to the larger value.
+You might expect the margin between the first two `section` to be `12rem`, but it is only `8rem`! They have *collapsed* to the larger value.
 
 </figcaption>
 </figure>
@@ -475,8 +490,6 @@ p {
 **CSS is big and massive and overwhelming and sometimes indefensibly nonsensical—but remember that you can do a surprising amount with *just* these basic properties!**
 
 **And no matter how complex it gets, it really always comes back to these basics.**
-
-### TODO CSS Variables?
 
 ## Positioning
 
