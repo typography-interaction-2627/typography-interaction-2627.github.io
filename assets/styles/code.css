@@ -42,7 +42,7 @@ samp {
 	}
 
 	@container style(--size: 9) {
-		margin-block:   var(---2px);
+		margin-block:   var(---3px);
 		padding-block:  var(--2px);
 	}
 
