@@ -353,11 +353,13 @@ In general, we try and avoid these in modern development as they are necessarily
 <div class="before recto">
 
 ```css
+/* An old/outdated length measurement. */
 .pixels {
 	block-size: 360px;
 	inline-size: 720px;
 }
 
+/* These only make sense in print! */
 .inches {
 	block-size: 5in;
 	inline-size: 10in;
@@ -440,13 +442,13 @@ These are based on our layout, viewport, or typography dimensions! And are much 
 >
 > Always default to relative units! Much like [logical properties](#and-logical-properties), these are the more correct and modern way.
 >
-> <sub>We should *not* see the absolute `px` in your code, despite whatever other [resources](../../syllabus.md#attribution) say.</sub>
+> <sub>We should *not* see the absolute `px` in your code, despite whatever other [resources](../../syllabus.md#attribution) have!</sub>
 
 ### Combined via `calc()`
 
 <div class="balance center verso">
 
-Extending the idea of systematic/relationship-based dimensions, often you will want to use different units together! Mixing types or otherwise doing some maths. For this we have the [`calc()` function](https://developer.mozilla.org/en-US/docs/Web/CSS/calc()).
+Extending the idea of systematic/relationship-based dimensions, often you will want to use different units together! Mixing types or otherwise doing some maths, to express your design intent. For this we have the [`calc()` function](https://developer.mozilla.org/en-US/docs/Web/CSS/calc()).
 
 </div>
 
@@ -500,6 +502,57 @@ p {
 ```
 
 </div>
+
+### Defined as `--variable`
+
+[Custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) (folks almost always say *CSS variables*) aren’t strictly *units*, per se—but they’re used in conjunction with them. They allow you to *codify* the relationships in your design!
+<!-- .balance -->
+
+[<cite>CSS Custom Properties Guide – CSS Tricks</cite>](https://css-tricks.com/a-complete-guide-to-custom-properties/)
+	Web guru [Chris Coyier’s](https://chriscoyier.net/) robust overview.
+<!-- .right -->
+
+<section class="before">
+<div class="before balance verso">
+
+These bring another programming concept of [*variables*](https://en.wikipedia.org/wiki/Variable_(computer_science)) into CSS. These are shorthand entities for *any* values (not just lengths) we want to reuse throughout a document.
+
+Changing the value of a *variable* changes it everywhere it is referenced—no copy/pasting or find/replacing. You could think of a color *swatch*, if you are in an Adobe mindset; other tech folks call these *tokens*. Again, these are just for you—it is all the same to the computer. More ergonomics!
+
+In your CSS, you *declare* (set) these with a `--` prefix in front of a subjective name you make up, akin to a class name. And you *reference* (use) them by wrapping that variable name in `var()`.
+
+</div>
+
+<div class="recto before">
+
+```css <!-- .sticky -->
+:root {
+	/* Declare them: */
+	--brand-color: #e42a1d;
+	--base-spacing: 2rem;
+}
+
+main {
+	/* Reference them: */
+	color: var(--brand-color);
+	padding: var(--base-spacing);
+
+	/* Or build from them: */
+	margin-block: calc(2 * var(--base-spacing));
+}
+```
+
+</div>
+</section>
+
+
+> [!NOTE]
+>
+> We should always be thinking about our work as *design systems*!
+>
+> Using [relative units](#relative), [`calc()`](#combined-via-calc), [`min-`/`max-`](#constrained-by-min-max), and (particularly) [`--variable`](#defined-as-variable) are ways to establish and enforce these relationships.
+>
+> <sub>We should see lots of `calc()` and `--variable` use in your code! It shows us systematic thinking and your design *intent*.</sub>
 
 ---
 
