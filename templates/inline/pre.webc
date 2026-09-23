@@ -73,6 +73,7 @@
 
 		/* And in lists. */
 		:where(dd, dt, li) & { max-inline-size: calc(var(--main) - var(--list)) }
+		:where(dd, dt, li) :where(dd, dt, li) & { max-inline-size: calc(var(--main) - 2 * var(--list)) }
 
 		&:is(ti-preview) { overflow: clip } /* For the corners; scrolls internally. */
 	}
