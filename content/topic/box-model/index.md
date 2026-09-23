@@ -5,9 +5,15 @@ const draft = true
 
 # The Box Model
 
-## Boxes Within Boxes Within Boxes Within Boxes
+## Boxes, Within Boxes, Within Boxes, Within Boxes
 
-**For layout, we first need to understand how CSS sizes elements—and then how we can add space between them. This is called the [*the box model*](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model), as everything on the web begins as a rectangle.**
+<div class="body center">
+
+**For proper layout, we first need to understand how CSS sizes elements—and then how we can add space between them.**
+
+**This is called the [*the box model*](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model), as everything on the web begins as a rectangle.**
+
+</div>
 
 - [<cite>Introduction to CSS Layout – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Introduction) \
 	As usual!
@@ -17,7 +23,9 @@ const draft = true
 
 - [<cite>Learn CSS Layout</cite>](https://learnlayout.com) \
 	An old-but-still-good run-through.
-<!-- .right .rows--3 -->
+<!-- .right -->
+
+
 
 > …use the effectiveness of the former “background” quite deliberately, and consider the blank white spaces on the paper as formal elements just as much as the areas of black type.
 >
@@ -338,7 +346,7 @@ Okay, so now we have all these box properties—but how do we specify the dimens
 
 <div class="balance verso center">
 
-<div class="before sticky" style="inset-block-start: 33vh; margin-block-end: 2rlh">
+<div class="before sticky" style="margin-block-end: 2rlh">
 
 Maybe the easiest ones to understand, these are fixed to physical (well… sort of) sizes.
 
@@ -382,7 +390,7 @@ In general, we try and avoid these in modern development as they are necessarily
 
 <div class="balance verso">
 
-<div class="before sticky" style="inset-block-start: 33vh; margin-block-end: 2rlh">
+<div class="before sticky" style="margin-block-end: 2rlh">
 
 Most of the time we want to use `relative` units, which depend on and respond to their context—particularly as we think ahead to *responsive* design.
 
@@ -470,7 +478,7 @@ Extending the idea of systematic/relationship-based dimensions, often you will w
 
 <div class="balance start before verso">
 
-<div class="before sticky" style="inset-block-start: 45vh; margin-block-end: 2rlh">
+<div class="before sticky" style="margin-block-end: 2rlh">
 
 You’ll often want to set limits/constraints on values—particularly with flexible, `relative` units (and *responsive design*, which we’ll talk about soon.)
 
