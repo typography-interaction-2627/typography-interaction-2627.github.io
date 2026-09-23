@@ -108,22 +108,34 @@
 		--output-dimensions-padding:    1ex;
 		--output-dimensions-text-box:   var(--editor-text-box);
 
-		--tab-bar-active-background: var(--background);
-		--tab-bar-active-border:     var(--1px) solid transparent;
-		--tab-bar-active-foreground: var(--color);
-		--tab-bar-active-highlight:  transparent;
-		--tab-bar-background:        var(--color);
-		--tab-bar-border:            var(--1px) solid var(--background);
-		--tab-bar-font-family:       var(--editor-font-family);
-		--tab-bar-font-size:         var(--editor-font-size);
-		--tab-bar-foreground:        var(--background);
-		--tab-bar-hover-foreground:  var(--background);
-		--tab-bar-justify:           start;
-		--tab-bar-margin:            var(--editor-padding) var(--editor-padding) calc(var(--editor-padding) + var(--3px));
-		--tab-bar-nav-background:    transparent;
-		--tab-bar-nav-box-shadow:    var(--shadow--single);
-		--tab-bar-padding:           var(--2px) var(--3px) var(--4px);
-		--tab-bar-text-box:          var(--editor-text-box);
+		/* For per-side shenanigans. */
+		--border:         var(--1px) solid var(--background);
+		--border--spacer: var(--1px) solid transparent;
+
+		--tab-bar-nav-border-left: var(--border);
+
+		--tab-bar-active-background:    var(--background);
+		--tab-bar-active-border-bottom: var(--border--spacer);
+		--tab-bar-active-border-left:   initial;
+		--tab-bar-active-border-right:  var(--border--spacer);
+		--tab-bar-active-border-top:    var(--border--spacer);
+		--tab-bar-active-foreground:    var(--color);
+		--tab-bar-active-highlight:     transparent;
+		--tab-bar-background:           var(--color);
+		--tab-bar-border-bottom:        var(--border);
+		--tab-bar-border-left:          initial;
+		--tab-bar-border-right:         var(--border);
+		--tab-bar-border-top:           var(--border);
+		--tab-bar-font-family:          var(--editor-font-family);
+		--tab-bar-font-size:            var(--editor-font-size);
+		--tab-bar-foreground:           var(--background);
+		--tab-bar-hover-foreground:     var(--background);
+		--tab-bar-justify:              start;
+		--tab-bar-margin:               var(--editor-padding) var(--editor-padding) calc(var(--editor-padding) + var(--3px));
+		--tab-bar-nav-background:       transparent;
+		--tab-bar-nav-box-shadow:       var(--shadow--single);
+		--tab-bar-padding:              var(--2px) var(--3px) var(--4px);
+		--tab-bar-text-box:             var(--editor-text-box);
 
 		--syntax-atom:             var(--background);
 		--syntax-bool:             dodgerblue;
