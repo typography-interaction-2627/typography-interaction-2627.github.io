@@ -1,15 +1,15 @@
 aside {
 	background-color: gold;
 	float: inline-start;
-	inline-size: 12rem;
-	margin-inline-end: 1rem;
-	padding: 1rem;
+	inline-size: calc(10 * var(--spacing));
+	margin-inline-end: var(--spacing);
+	padding: var(--spacing);
 }
 
 section:nth-child(2) aside {
 	float: inline-end;
 	margin-inline-end: initial;
-	margin-inline-start: 1rem;
+	margin-inline-start: var(--spacing);
 }
 
 section::after { /* This is the “clearfix”. */

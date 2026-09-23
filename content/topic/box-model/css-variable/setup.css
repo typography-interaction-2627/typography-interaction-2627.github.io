@@ -11,12 +11,13 @@ body {
 }
 
 section {
-	/* The second value here is a “fallback”. */
-	/* It’s used if a variable hasn’t been declared. */
+	/* Second value here is a “fallback,” used if a variable hasn’t been declared. */
 	background-color: var(--background, deepskyblue);
 	border-block-start: var(--border);
 	padding: var(--spacing);
-}
 
-section:nth-child(2) { --background: gold; }
-section:nth-child(3) { --background: tomato; }
+	&:nth-child(2) { --background: gold; }
+	&:nth-child(3) { --background: tomato; }
+
+	&:not(:first-child) { margin-block-start: var(--spacing); }
+}

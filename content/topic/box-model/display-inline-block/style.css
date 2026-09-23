@@ -1,13 +1,13 @@
 p:not(:first-child) {
 	background-color: gold;
-	margin-block-start: 1rem;
+	margin-block-start: var(--spacing);
 }
 
 section:nth-child(2) p:not(:first-child) {
 	display: inline-block;
-	inline-size: 12rem;
-	margin-block-start: 1rem;
-	padding: 0.5rem;
+	inline-size: calc(10 * var(--spacing));
+	margin-block-start: var(--spacing);
+	padding: calc(var(--spacing) / 2);
 	text-align: center;
 	white-space: pre;
 }

@@ -1,6 +1,6 @@
 p:not(:first-child) {
 	background-color: gold;
-	margin-block-start: 1rem;
+	margin-block-start: var(--spacing);
 }
 
 section:nth-child(2) p:not(:first-child) {

@@ -10,6 +10,6 @@ section {
 	background-color: var(--background, deepskyblue);
 	border-block-start: solid black calc(var(--spacing) / 5);
 	padding: var(--spacing);
-}
 
-section:not(:first-child) { margin-block-start: var(--spacing); }
+	&:not(:first-child) { margin-block-start: var(--spacing); }
+}

@@ -3,8 +3,11 @@ body {
 	padding: 1rem; /* An “inset” on the whole page. */
 }
 
-section { padding: 1rem; } /* And again inside each of these. */
+section {
+	padding: 1rem; /* And again inside each of these. */
 
-section:nth-child(1) { background-color: deepskyblue; }
-section:nth-child(2) { background-color: gold; }
-section:nth-child(3) { background-color: tomato; }
+	/* Nesting with the `&` “parent” selector. */
+	&:nth-child(1) { background-color: deepskyblue; }
+	&:nth-child(2) { background-color: gold; }
+	&:nth-child(3) { background-color: tomato; }
+}

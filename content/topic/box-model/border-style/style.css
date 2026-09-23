@@ -1,15 +1,17 @@
-section { border-width: 0.5rem; } /* All of them; easier to see! */
+section {
+	border-width: 0.5rem; /* All of them; easier to see! */
 
-section:nth-child(1) { border-style: none; }
-section:nth-child(2) { border-style: hidden; }
-section:nth-child(3) { border-style: dotted; }
-section:nth-child(4) { border-style: dashed; }
-section:nth-child(5) { border-style: solid; }
-section:nth-child(6) { border-style: double; }
-section:nth-child(7) { border-style: groove; }
-section:nth-child(8) { border-style: ridge; }
-section:nth-child(9) { border-style: inset; }
-section:nth-child(10) { border-style: outset; }
+	&:nth-child(1) { border-style: none; }
+	&:nth-child(2) { border-style: hidden; }
+	&:nth-child(3) { border-style: dotted; }
+	&:nth-child(4) { border-style: dashed; }
+	&:nth-child(5) { border-style: solid; }
+	&:nth-child(6) { border-style: double; }
+	&:nth-child(7) { border-style: groove; }
+	&:nth-child(8) { border-style: ridge; }
+	&:nth-child(9) { border-style: inset; }
+	&:nth-child(10) { border-style: outset; }
 
-/* Every one but the first one. */
-section:not(:first-child) { margin-block-start: 1rem; }
+	/* Every one but the first one. */
+	&:not(:first-child) { margin-block-start: 1rem; }
+}

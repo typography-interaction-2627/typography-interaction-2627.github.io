@@ -1,3 +1,5 @@
+/* “See through.” */
 section:nth-child(2) { opacity: 0%; }
 
+/* “Semi-transparent.” */
 section:nth-child(3) { opacity: 50%; }

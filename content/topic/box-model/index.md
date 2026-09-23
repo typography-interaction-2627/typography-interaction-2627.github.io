@@ -93,7 +93,7 @@ Next comes [`padding`](https://developer.mozilla.org/en-US/docs/Web/CSS/padding)
 	There will be many of these links!
 <!-- .right -->
 
-<figure style="--lines: 12">
+<figure style="--lines: 15">
 
 ***[Padding Example](padding/style.css)***
 
@@ -238,7 +238,7 @@ There are also various [`border-style`](https://developer.mozilla.org/en-US/docs
 	Some of these are good; some of these are bad.
 <!-- .right -->
 
-<figure style="--lines: 17">
+<figure style="--lines: 19">
 
 ***[Border-style Example](border-style/style.css)***
 
@@ -548,7 +548,7 @@ main {
 </div>
 </section>
 
-<figure style="--lines: 23">
+<figure style="--lines: 25">
 
 ***[Variable Example](css-variable/setup.css)***
 
