@@ -26,5 +26,5 @@
 	}
 </style>
 <footer webc:root="override" id="license">
-	<p><a :href="license.repo + '#use-and-re-use'">Licensed</a> under <a :href="license.url" rel="license"><nobr @text="license.name"></nobr></a> for personal and educational, non-commercial use. The <a :href="`${license.repo}/blob/main/${$data.page.inputPath.replace('./', '')}`">source code</a> is also available!</p>
+	<p><a :href="license.repo + '#use-and-re-use'">Licensed</a> under <a :href="license.url" rel="license"><nobr @text="license.name"></nobr></a> for personal/educational, non-commercial use. The <a :href="`${license.repo}/blob/main/${$data.page.inputPath.replace('./', '')}`">source code</a> is also available!</p>
 </footer>
