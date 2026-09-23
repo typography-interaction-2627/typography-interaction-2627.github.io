@@ -116,7 +116,6 @@ Know that `padding`—and many other CSS properties, including `border` and <nob
 <!-- .right -->
 
 <section>
-<div class="verso before">
 
 |     |     |
 | --- | --- |
@@ -125,18 +124,15 @@ Know that `padding`—and many other CSS properties, including `border` and <nob
 |**3 values:** | `top` `left/right` `bottom`    |
 |**4 values:** | `top` `right` `bottom`  `left` |
 
-</div>
+<!-- .verso .before style="padding-block-start: 1rex" -->
 
-<div class="recto before center">
-
-```css
+```css <!-- .recto .before .start style="inline-size: initial" -->
 section { padding: 1rem; }
 section { padding: 1rem 2rem; }
 section { padding: 1rem 2rem 4rem; }
 section { padding: 1rem 2rem 4rem 2rem; }
 ```
 
-</div>
 </section>
 
 <section style="margin-block-end: 2rlh">
@@ -148,7 +144,7 @@ These three- and four-value rules are often harder to read and quickly understan
 
 <div class="recto before">
 
-```css
+```css <!-- style="inline-size: initial" -->
 section {
 	padding-top: 1rem;
 	padding-bottom: 4rem;
@@ -172,7 +168,7 @@ You can also now define all your box model properties using [*logical* directio
 In horizontal, left-to-right writing modes (as in English):
 <!-- .before -->
 
-```css <!-- .verso -->
+```css <!-- .verso style="inline-size: initial" -->
 /* These physical directions: */
 padding-top: 1rem;
 padding-right: 1rem;
@@ -188,7 +184,7 @@ height: 20rem;
 width: 20rem;
 ```
 
-```css <!-- .recto -->
+```css <!-- .recto style="inline-size: initial" -->
 /* Map to these logical directions: */
 padding-block-start: 1rem;
 padding-inline-end: 1rem;
@@ -354,13 +350,15 @@ In general, we try and avoid these in modern development as they are necessarily
 
 <sub>With the many vagaries of screen size and density, the physical/ruler lengths will only be correct when you print. And maybe not even then!</sub>
 
+**You’re saying <span style="margin-inline-end: var(---2px)">“</span>*exactly* this size.”**
+
 </div>
 
 </div>
 
 <div class="before recto">
 
-```css
+```css <!-- style="inline-size: initial" -->
 /* An old/outdated length measurement. */
 .pixels {
 	block-size: 360px;
@@ -398,13 +396,13 @@ These are based on our layout, viewport, or typography dimensions! And are much 
 
 <sub>These are distinctly and intrinsically *web* measurements.</sub>
 
-</div>
+**You’re saying “in *relation* to this other size.”**
 
 </div>
 
-<div class="add-before recto">
+</div>
 
-```css
+```css <!-- .recto .before style="inline-size: initial" -->
 /* Relative to nearest “sized” ancestor. */
 .percentage {
 	block-size: 90%;
@@ -444,8 +442,6 @@ These are based on our layout, viewport, or typography dimensions! And are much 
 /* `rch` `rcap` `rex` `rlh` */
 ```
 
-</div>
-
 > [!WARNING]
 >
 > Always default to relative units! Much like [logical properties](#and-logical-properties), these are the more correct and modern way.
@@ -458,11 +454,13 @@ These are based on our layout, viewport, or typography dimensions! And are much 
 
 Extending the idea of systematic/relationship-based dimensions, often you will want to use different units together! Mixing types or otherwise doing some maths, to express your design intent. For this we have the [`calc()` function](https://developer.mozilla.org/en-US/docs/Web/CSS/calc()).
 
+**You’re saying <span style="margin-inline-end: var(---2px)">“</span>*calculate* the size from these others.”**
+
 </div>
 
-<div class="add-before recto">
+<div class="recto before">
 
-```css
+```css <!-- .sticky style="inline-size: initial" -->
 .flexible-and-fixed {
 	inline-size: calc(50% - 2rem);
 }
@@ -484,20 +482,20 @@ You’ll often want to set limits/constraints on values—particularly with flex
 
 You can usually set [*minimums*](https://developer.mozilla.org/en-US/docs/Web/CSS/min-inline-size) and [*maximums*](https://developer.mozilla.org/en-US/docs/Web/CSS/max-block-size) by using the prefixes `min-` and `max-`.
 
-</div>
+**You’re saying “but not *too* big, and not *too* small.”**
 
 </div>
 
-<div class="recto">
+</div>
 
-```css
-.constrained-width {
+```css <!-- .recto .before style="inline-size: initial" -->
+.constrained-inline {
 	min-inline-size: 12rem;
 	inline-size: 50%;
 	max-inline-size: 24rem;
 }
 
-.constrained-height {
+.constrained-block {
 	min-block-size: 6rem;
 	block-size: 100%;
 	max-block-size: 12rem;
@@ -508,8 +506,6 @@ p {
 	max-inline-size: 65ch; /* 65ish letters. */
 }
 ```
-
-</div>
 
 ### Defined as `--variable`
 
