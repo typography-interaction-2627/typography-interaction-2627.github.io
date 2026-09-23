@@ -1,7 +1,9 @@
 section:nth-child(3) {
-	background-color: gold;
-	inline-size: 66%;
-	inset-block-start: 3rem;
-	inset-inline-start: 3rem;
+	--background: gold;
+	--inset: calc(3 * var(--spacing));
+
+	inline-size: calc(100% - var(--inset));
+	inset-block-start: var(--inset);
+	inset-inline-start: var(--inset);
 	position: sticky;
 }

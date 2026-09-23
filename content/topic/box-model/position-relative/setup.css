@@ -1,13 +1,15 @@
 /* Same as before. */
+:root { --spacing: 1rem; }
+
 body {
 	font-family: sans-serif;
-	padding: 1rem;
+	padding: var(--spacing);
 }
 
 section {
-	background-color: deepskyblue;
-	border-block-start: solid black 0.2rem;
-	padding: 1rem;
+	background-color: var(--background, deepskyblue);
+	border-block-start: solid black calc(var(--spacing) / 5);
+	padding: var(--spacing);
 }
 
-section:not(:first-child) { margin-block-start: 1rem; }
+section:not(:first-child) { margin-block-start: var(--spacing); }

@@ -324,7 +324,7 @@ You might expect the margin between the first two `section` to be `12rem`, but i
 </figcaption>
 </figure>
 
-## CSS Units
+## CSS Lengths
 
 Okay, so now we have all these box properties—but how do we specify the dimensions? CSS has many [*length units*](https://developer.mozilla.org/en-US/docs/Web/CSS/length), used for `inline-size`, `block-size`, and also  `padding`, `border`, `margin`, and even `font-size`. (Picas, anyone?) We’ll look at some common ones.
 <!-- .balance -->
@@ -334,7 +334,7 @@ Okay, so now we have all these box properties—but how do we specify the dimens
 <!-- .right -->
 
 
-### Absolute
+### Absolute Units
 
 <div class="balance verso center">
 
@@ -378,7 +378,7 @@ In general, we try and avoid these in modern development as they are necessarily
 
 </div>
 
-### Relative
+### Relative Units
 
 <div class="balance verso">
 
@@ -512,7 +512,7 @@ p {
 	Web guru [Chris Coyier’s](https://chriscoyier.net/) robust overview.
 <!-- .right -->
 
-<section class="before">
+<section class="before" style="margin-block-end: 1rlh">
 <div class="before balance verso">
 
 These bring another programming concept of [*variables*](https://en.wikipedia.org/wiki/Variable_(computer_science)) into CSS. These are shorthand entities for *any* values (not just lengths) we want to reuse throughout a document.
@@ -520,6 +520,8 @@ These bring another programming concept of [*variables*](https://en.wikipedia.o
 Changing the value of a *variable* changes it everywhere it is referenced—no copy/pasting or find/replacing. You could think of a color *swatch*, if you are in an Adobe mindset; other tech folks call these *tokens*. Again, these are just for you—it is all the same to the computer. More ergonomics!
 
 In your CSS, you *declare* (set) these with a `--` prefix in front of a subjective name you make up, akin to a class name. And you *reference* (use) them by wrapping that variable name in `var()`.
+
+**You’re saying “these things are *meant* to be the same.”**
 
 </div>
 
@@ -562,7 +564,7 @@ The convention is to declare “global” variables on `:root`—but you can ove
 >
 > We should always be thinking about our work as *design systems*!
 >
-> Using [relative units](#relative), [`calc()`](#combined-via-calc), [`min-`/`max-`](#constrained-by-min-max), and (particularly) [`--variable`](#defined-as-variable) are ways to establish and enforce these relationships.
+> Using [relative units](#relative-units), [`calc()`](#combined-via-calc), [`min-`/`max-`](#constrained-by-min-max), and (particularly) [`--variable`](#defined-as-variable) are ways to establish and enforce these relationships.
 >
 > <sub>We should see lots of `calc()` and `--variable` use in your code! It shows us systematic thinking and your design *intent*.</sub>
 
@@ -626,12 +628,12 @@ Note the space—the element still exists/takes up space in the *flow*.
 So `absolute` elements will go “up the tree” of parents and wrapper elements until they find one set to anything other than default/<nobr>`static`—</nobr>then the same offset properties the element around from there.
 <!-- .balance -->
 
-Importantly, `position: absolute;` also *removes* the element from the normal document flow—meaning it takes up *no space* in the page layout.
+Importantly, `position: absolute;` also *removes* the element from the normal document flow—meaning it no longer takes up *any space* in the page layout!
 <!-- .balance -->
 
 <sub>This is often used for exacting, specific design element placement. But it is inherently *brittle*&NoBreak;!</sub>
 
-<figure style="--lines: 22">
+<figure style="--lines: 24">
 
 ***[Absolute Example](position-absolute/style.css)***
 
@@ -670,7 +672,7 @@ The most recent addition to the *position* party, `position: sticky;` elements a
 
 <sub>This is often used for headers on tables and lists.</sub>
 
-<figure style="--lines: 12">
+<figure style="--lines: 13">
 
 ***[Sticky Example](position-sticky/style.css)***
 
@@ -693,7 +695,7 @@ Okay, `z-index` is not strictly *positioning*—it is a separate property. You c
 By default, items that are lower in the HTML (coming *after* each other) are in front of higher, earlier elements:
 <!-- .balance -->
 
-<figure style="--lines: 13">
+<figure style="--lines: 16">
 
 ***[Z-index Example](z-index/style.css)***
 

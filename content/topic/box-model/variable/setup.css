@@ -1,20 +1,20 @@
 /* Special “entire document” selector, akin to `html`. */
 :root {
-	--padding: 1rem; /* So we can reuse, below. */
-	--border: solid black calc(var(--padding) / 5); /* Any value, including `calc()`. */
+	--spacing: 1rem; /* So we can reuse, below. */
+	--border: solid black calc(var(--spacing) / 5); /* Any value, including `calc()`. */
 }
 
 /* Same as before, but now using the `var()`. */
 body {
 	font-family: sans-serif;
-	padding: var(--padding);
+	padding: var(--spacing);
 }
 
 section {
 	/* Second value here is a “fallback,” used if a variable hasn’t been declared. */
 	background-color: var(--background, deepskyblue);
 	border-block-start: var(--border);
-	padding: var(--padding);
+	padding: var(--spacing);
 }
 
 section:nth-child(2) { --background: gold; }
