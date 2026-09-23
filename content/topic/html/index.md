@@ -513,44 +513,44 @@ There are a lot of common patterns used—like indenting to indicate hierarchy/
 
 <section class="nowrap" style="--leading: 1.5rlh">
 
-`<address>`
-`<article>`
-`<aside>`
-`<blockquote>`
-`<canvas>`
+[`<address>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/address)
+[`<article>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article)
+[`<aside>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside)
+[`<blockquote>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote)
+[`<canvas>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas)
 <!-- .one -->
 
-`<dd>`
-`<div>`
-`<dl>`
-`<dt>`
-`<fieldset>`
+[`<dd>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dd)
+[`<div>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div)
+[`<dl>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl)
+[`<dt>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dt)
+[`<fieldset>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset)
 <!-- .two -->
 
-`<figcaption>`
-`<figure>`
-`<footer>`
-`<form>`
-`<h1>`&#x202F;–&#x202F;`<h6>`
+[`<figcaption>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figcaption)
+[`<figure>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure)
+[`<footer>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer)
+[`<form>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
+[`<h1>`&#x202F;–&#x202F;`<h6>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/heading_elements)
 <!-- .three -->
 
-`<header>`
-`<hr>`
-`<li>`
-`<main>`
-`<nav>`
+[`<header>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header)
+[`<hr>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr)
+[`<li>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li)
+[`<main>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main)
+[`<nav>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav)
 <!-- .four -->
 
-`<noscript>`
-`<ol>`
-`<p>`
-`<pre>`
-`<section>`
+[`<noscript>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript)
+[`<ol>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol)
+[`<p>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p)
+[`<pre>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/pre)
+[`<section>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/section)
 <!-- .five -->
 
-`<table>`
-`<tfoot>`
-`<ul>`
+[`<table>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table)
+[`<tfoot>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tfoot)
+[`<ul>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul)
 <!-- .six -->
 
 </section>
@@ -576,7 +576,7 @@ These are live, *editable* examples! Whatever is on the left is rendered on the 
 	Smaller, moving within our text.
 <!-- .right -->
 
-`<abbr>` `<a>` `<cite>` `<code>` `<del>` `<em>` `<img>` `<ins>` `<mark>` `<span>` `<strong>` `<sub>` `<sup>` `<time>`
+[`<abbr>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr) [`<a>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a) [`<cite>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/cite) [`<code>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/code) [`<del>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/del) [`<em>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/em) [`<img>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) [`<ins>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ins) [`<mark>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/mark) [`<span>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/span) [`<strong>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong) [`<sub>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sub) [`<sup>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sup) [`<time>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time)
 <!-- .balance style="--leading: 1.5rlh" -->
 
 ### Let’s Try These Out Too
