@@ -16,11 +16,11 @@ samp {
 	display:         inline-block;
 	font-weight:     initial;
 	isolation:       isolate;
-	margin-block:    var(---4px);
+	margin-block:    var(---3px);
 	max-inline-size: calc(100% - 1ch);
 	overflow-x:      auto;
 	overflow-y:      clip;
-	padding-block:   var(--3px);
+	padding-block:   var(--2px);
 	scrollbar-width: none;
 
 	/* Land pattern with “chipped” corners. */
@@ -29,21 +29,34 @@ samp {
 		inline-size: calc-size(auto, round(up, calc(size + -1 * var(--kerning, 0em)), var(--2px)) - var(--1px));
 	}
 
-	/* Something with the `overflow`! */
-	@supports (-moz-appearance: none) {
-		margin-block-end: var(---4px);
-		padding-block:    var(--2px);
+	@container style(--size: 12) {
+		margin-block:  var(---4px);
+		padding-block: var(--3px);
+
+		/* Something with the `overflow`! */
+		@supports (-moz-appearance: none) {
+			background-position-x: var(--1px);
+			margin-block:          calc(4.5 * var(---1px));
+			padding-block:         var(--2px);
+		}
 	}
 
 	/* Don’t overshoot link underlines. */
 	a:not(:has(cite)) & {
-		border-block-end: initial;
-		mix-blend-mode:   multiply;
-	}
+		background-position-x: var(--1px);
+		border-block-end:      initial;
+		margin-block-end:      var(---2px); /* Shift pattern, for reasons. */
+		mix-blend-mode:        multiply;
 
-	@container style(--size: 9) {
-		margin-block:   var(---3px);
-		padding-block:  var(--2px);
+		@container style(--size: 12) {
+			margin-block-end: var(---3px);
+
+			@supports (-moz-appearance: none) {
+				margin-block-end:      calc(3.5 * var(---1px));
+				padding-block-start:   var(--1px);
+			}
+		}
+
 	}
 
 	/* “Fade” overflow edges. */
