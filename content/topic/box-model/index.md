@@ -709,6 +709,10 @@ The two `position` properties both create new stacking contexts, `z-index: 1;` m
 A whole lot of things make a new [*stacking context*](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context) (including most `position` changes) which is kind of like a *group* (or a Figma *frame*) that has its own internal depth/overlap order.
 <!-- .balance -->
 
+- [<cite>The stacking context – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context)
+	Each of these is a stacking “group.”
+<!-- .right -->
+
 No amount of internal `z-index` adjustments can “break” something out of that group—which is one of the reasons why *z* can be really difficult to understand and tricky to use. But you can always adjust the `z-index` of the group, as we do here!
 <!-- .balance -->
 
@@ -718,7 +722,7 @@ In our [HTML introduction](../html/index.md) we briefly talked about `block` and
 <!-- .balance -->
 
 [<cite>Display – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/display)
-	Our `block` and `inline` elements (and later, `grid` and `flex`).
+	Our `block` and `inline` elements (and later, `grid` and `flex`).
 <!-- .right -->
 
 ### Block
@@ -762,6 +766,11 @@ You can also combine the qualities of `block` and `inline` with `display: inline
 
 ***[Display Inline-Block Example](display-inline-block/style.css)***
 
+<figcaption>
+
+Keep in mind these will have [a space between them](../html/index.md#inline-whitespace), like they are words!
+
+</figcaption>
 </figure>
 
 ### And Sometimes `none`
@@ -821,12 +830,11 @@ You can still select the text (or click links) of not-fully-opaque elements.
 </figcaption>
 </figure>
 
-Keep in mind that `display: none;`, `visibility: hidden;`, and `opacity: 0;` only hide things in the *rendered* browser view. The HTML is always still visible in the source code!
-<!-- .balance -->
+**Keep in mind that `display: none;`, `visibility: hidden;`, and `opacity: 0;` only hide things in the *rendered* browser view. The HTML is always still visible in the source code!**
 
 ## What About Floats?
 
-Oh right, floats. Sometimes you’ll want to have an image or block flow within a block of text. There are a lot of ways to do this now, but the oldest (and sometimes still the trickiest) is a [`float`](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Floats).
+Oh right, floats. Sometimes you’ll want to have an image or block flow *within* a block of text. There are a lot of ways to do this now, but the oldest (and sometimes still the trickiest) is a [`float`](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Floats).
 <!-- .balance -->
 
 [<cite>Floats – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Floats)
@@ -835,7 +843,7 @@ Oh right, floats. Sometimes you’ll want to have an image or block flow within 
 
 > [!NOTE]
 >
-> Generally, folks try and avoid floats—they aren’t common in modern design patterns and have been giving people headaches for decades now.
+> Generally, folks try and avoid floats—they aren’t common in modern design patterns and have been giving people headaches for decades now!
 >
 > <sub>They require you to know how long your content is and also how big your viewport/page will be—*both* things that you don’t always have control over in responsive/mobile 2026. But *occasionally* they are still the only thing that can do what you need!</sub>
 
