@@ -1,17 +1,19 @@
 ```javascript
 const week = 5
-const draft = true
 ```
 
 # The Box Model
 
 ## Boxes, Within Boxes, Within Boxes, Within Boxes
 
-<div class="body center">
 
-**For proper layout, we first need to understand how CSS sizes elements—and then how we can add space between them.**
+<div class="body">
+
+**For proper layout on the web, we first need to understand how CSS sizes elements—and then how we can add space between them.**
 
 **This is called the [*the box model*](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model), as everything on the web begins as a rectangle.**
+
+Beyond the basic [color and type properties](../css/index.md#color-and-type-properties) from last week, understanding and using the *box-model* is how we start to bring our designs to life. While there are more advanced techniques (that we’ll get to [later](../../syllabus.md#unit-2-there-is-no-perfect-layout)), these fundamentals are still used in *every* site on the web.
 
 </div>
 
@@ -24,8 +26,6 @@ const draft = true
 - [<cite>Learn CSS Layout</cite>](https://learnlayout.com) \
 	An old-but-still-good run-through.
 <!-- .right -->
-
-
 
 > …use the effectiveness of the former “background” quite deliberately, and consider the blank white spaces on the paper as formal elements just as much as the areas of black type.
 >
