@@ -337,6 +337,16 @@
 							/* Bill did not draw us a decorative bullet! */
 							@container style(--family: 'Venice') { font-family: 'Geneva', serif }
 						}
+
+						/* `cite` in lists (“for next week”). */
+						> :where(p:has(> a > cite)) + *:where(:not(:has(> sub))) { margin-block-start: 1rlh }
+
+						/* Nested lists. */
+						> :where(dl, ol, ul) {
+							margin-block-start: initial;
+
+							&:where(:not(:last-child)) + * { margin-block-start: initial }
+						}
 					}
 
 					> :where(dd):has(> p:not(:only-child)) {
@@ -350,7 +360,7 @@
 				&:where(:not(:has(li > p, dd > p))) { row-gap: 2rcap }
 
 				/* More vertical space when the items have multiple paragraphs. */
-				&:where(:has(:where(dt, li) > p:not(:only-child))) {
+				&:where(:has(> :where(dt, li) > p:not(:only-child))) {
 					margin-block-start: 1rlh;
 					row-gap:            calc(3rlh - 1rcap);
 
