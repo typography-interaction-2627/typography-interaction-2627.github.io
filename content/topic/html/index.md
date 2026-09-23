@@ -505,7 +505,7 @@ There are a lot of common patterns used—like indenting to indicate hierarchy/
 
 ## Block Elements
 
-[*Block-level elements*](https://developer.mozilla.org/en-US/docs/Glossary/Block-level_content) always start on a new line, and take up the full width available—stretching out to the left and right of their parent/container. They stack on top of each other. Importantly, block elements can have a top and bottom margin, unlike inline elements.
+[*Block-level elements*](https://developer.mozilla.org/en-US/docs/Glossary/Block-level_content) always start on a new line, and take up the full width available—stretching out to the left and right of their parent/container. They stack on top of each other. Importantly, block elements can have a top and bottom margin, unlike inline elements:
 
 [<cite>Block-level content – MDN</cite>](https://developer.mozilla.org/en-US/docs/Glossary/Block-level_content) \
 	Our larger elements, stacked up.
@@ -517,42 +517,30 @@ There are a lot of common patterns used—like indenting to indicate hierarchy/
 [`<article>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article)
 [`<aside>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside)
 [`<blockquote>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote)
-[`<canvas>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas)
-<!-- .one -->
-
-[`<dd>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dd)
+[`<details>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)&#x202F;/&#x202F;[`<summary>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary)
+[`<dialog>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)
 [`<div>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div)
-[`<dl>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl)
-[`<dt>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dt)
-[`<fieldset>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset)
-<!-- .two -->
+[`<dl>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl)&#x202F;/&#x202F;[`<dd>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dd)&#x202F;/&#x202F;[`<dt>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dt)
+<!-- .left -->
 
-[`<figcaption>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figcaption)
-[`<figure>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure)
+[`<figure>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure)&#x202F;/&#x202F;[`<figcaption>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figcaption)
 [`<footer>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer)
-[`<form>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
+[`<form>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)&#x202F;/&#x202F;[`<fieldset>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset)
 [`<h1>`&#x202F;–&#x202F;`<h6>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/heading_elements)
-<!-- .three -->
-
 [`<header>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header)
 [`<hr>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr)
-[`<li>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li)
+[`<iframe>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe)
 [`<main>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main)
-[`<nav>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav)
-<!-- .four -->
+<!-- .middle -->
 
+[`<nav>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav)
 [`<noscript>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript)
-[`<ol>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol)
+[`<ol>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol)&#x202F;/&#x202F;[`<ul>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul)&#x202F;/&#x202F;[`<li>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li)
 [`<p>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p)
 [`<pre>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/pre)
 [`<section>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/section)
-<!-- .five -->
-
-[`<table>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table)
-[`<tfoot>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tfoot)
-[`<ul>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul)
-<!-- .six -->
-
+[`<table>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table)&#x202F;/&#x202F;[`<thead>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead)&#x202F;/&#x202F;<br>[`<tbody>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tbody)&#x202F;/&#x202F;[`<tfoot>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tfoot)
+<!-- .right -->
 </section>
 
 ### Let’s Try It Out
@@ -576,7 +564,7 @@ These are live, *editable* examples! Whatever is on the left is rendered on the 
 	Smaller, moving within our text.
 <!-- .right -->
 
-[`<abbr>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr) [`<a>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a) [`<cite>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/cite) [`<code>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/code) [`<del>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/del) [`<em>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/em) [`<img>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) [`<ins>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ins) [`<mark>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/mark) [`<span>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/span) [`<strong>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong) [`<sub>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sub) [`<sup>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sup) [`<time>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time)
+[`<abbr>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr) [`<a>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a) [`<br>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br) [`<button>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) [`<cite>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/cite) [`<code>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/code) [`<del>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/del) [`<em>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/em) [`<img>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) [`<ins>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ins) [`<kbd>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/kbd) [`<mark>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/mark) [`<q>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q) [`<samp>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/samp) [`<small>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/small) [`<span>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/span) [`<strong>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong) [`<sub>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sub) [`<sup>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sup) [`<time>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time) [`<var>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/var) [`<wbr>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/wbr)
 <!-- .balance style="--leading: 1.5rlh" -->
 
 ### Let’s Try These Out Too
