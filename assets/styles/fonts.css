@@ -24,9 +24,12 @@
 		font-family:             var(--family), var(--generic, sans-serif);
 		font-size:               calc(var(--size) * var(--1px));
 		font-variation-settings: 'opsz' var(--size), 'ital' var(--italic, 0);
-		letter-spacing:          var(--kerning); /* TODO Move rounding here too? */
+		letter-spacing:          var(--kerning, 0em); /* TODO Move rounding here too? */
 		line-height:             round(up, var(--leading), var(--1px));
 		text-wrap:               var(--wrap, pretty);
+
+		/* Fix Safari rounding. 🤷‍♀️ */
+		@supports (font: -apple-system-body) { letter-spacing: calc(var(--kerning, 0em) + 0.0001em) }
 
 		/* Insets baked into font. Varies, but going from an M. */
 		/* Safari doesn’t support range comparisons in style queries! */

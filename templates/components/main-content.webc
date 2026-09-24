@@ -34,11 +34,6 @@
 
 					> * { mask: var(--background--check) }
 				}
-
-				@supports (font: -apple-system-body) {
-					/* Fix Safari rounding. 🤷‍♀️ */
-					a, em, strong, abbr { --kerning: 0.0001em }
-				}
 			}
 
 			/* Our “windows.” */
