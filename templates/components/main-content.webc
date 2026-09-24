@@ -305,6 +305,9 @@
 						@container style(--columns) { + *:where(.recto, .right) { margin-block-start: 1rlh } }
 					}
 				}
+
+				hgroup + & { margin-block-start: initial }
+
 				/* For poking out as needed. */
 				> :where(dd, dt, li).all { inline-size: var(--main) }
 
