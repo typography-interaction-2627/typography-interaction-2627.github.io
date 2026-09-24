@@ -16,7 +16,7 @@
 			const rounding = scrollDirection > 0 ? Math.ceil : Math.floor
 
 			scrollTo({ top: rounding(scrollY / scaling) * scaling })
-		}, 333)
+		}, 500)
 	})
 </script>
 <template webc:bucket="components" webc:nokeep>
