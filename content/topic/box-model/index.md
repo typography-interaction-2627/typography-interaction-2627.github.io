@@ -10,8 +10,10 @@ const week = 5
 <div class="body">
 
 **For proper layout on the web, we first need to understand how CSS sizes elements—and then how we can add space between them.**
+<!-- data-description -->
 
 **This is called the [*the box model*](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model), as everything on the web begins as a rectangle.**
+<!-- data-description -->
 
 Beyond the basic [color and type properties](../css/index.md#color-and-type-properties) from last week, understanding and using the *box-model* is how we start to bring our designs to life. While there are more advanced techniques (that we’ll get to [later](../../syllabus.md#unit-2-there-is-no-perfect-layout)), these fundamentals are still used in *every* site on the web.
 
