@@ -54,8 +54,9 @@
 	/* Fix for separate cut files, see `typography.css` */
 	@supports (not (-moz-appearance: none)) { --family: 'Geneva 10' }
 
-	/* “Not a phone.” */
-	@media (width >= 28em) and (height >= 60em), (width >= 60em) and (height >= 28em) {
+	/* “Not a phone.” (And `meta.webc`!) */
+	@media (width >= 28em) and (height >= 60em), (width >= 60em) and (height >= 28em),
+	(width = 720px) and (height = 540px) {
 		--size: 12;
 
 		--size--h1: 36;
