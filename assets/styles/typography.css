@@ -184,7 +184,7 @@ code, kbd, samp {
 h1 {
 	--resolve: var(--kerning); /* Pass down. */
 
-	span[aria-hidden] { --kerning: calc(var(--resolve) + var(--kern) * var(--1px)) }
+	span[aria-hidden] { --kerning: calc(var(--resolve) + var(--kern, 0) * var(--1px)) }
 
 	/* Relative `---1px`. */
 	@container style(--size: 24) {
