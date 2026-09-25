@@ -141,6 +141,9 @@
 						mask:                var(--background--check);
 						pointer-events:      none;
 						user-select:         none;
+
+						/* Shrug emoji. */
+						@supports (font: -apple-system-body) { padding-inline: 0.01em }
 					}
 
 					/* Dates. */
