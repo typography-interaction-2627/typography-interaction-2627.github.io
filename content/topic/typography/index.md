@@ -533,16 +533,16 @@ Where does one find typefaces? From *foundries*, again referencing the days whe
 
 **Free**
 
-- [<cite>Google Fonts</cite>](https://fonts.google.com/)
+- [<cite>Google Fonts</cite>](https://fonts.google.com/) \
 	Free! And popular/huge.
 
-- [<cite>Fontshare</cite>](https://www.fontshare.com/)
+- [<cite>Fontshare</cite>](https://www.fontshare.com/) \
 	Free! From *Indian Type Foundry*, left.
 
-- [<cite>Matthew Hinders-Anderson</cite>](https://wehtt.am/fonts/)
+- [<cite>Matthew Hinders-Anderson</cite>](https://wehtt.am/fonts/) \
 	Free for non-commercial!
 
-- [<cite>Typographer</cite>](https://typographer.com)
+- [<cite>Typographer</cite>](https://typographer.com) \
 	Free for students!
 
 <sub>While not a type foundry itself, we include (and will use) *Google Fonts* resource because of its vast array of open-source typefaces. *Adobe Fonts* is similar, but requires a paid subscription.</sub>

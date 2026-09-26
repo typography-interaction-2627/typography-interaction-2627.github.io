@@ -46,7 +46,7 @@ In this class, students will learn to give form to and then work at these inters
 
 </div>
 
-<!-- - [<cite>Submitted Version</cite>](../assets/PMCD_5002_S27.pdf) -->
+- [<cite>Submitted Version</cite>](../assets/PMCD_5002_S27.pdf) <!-- .screen -->
 - [<cite>Course Catalog</cite>](https://courses.newschool.edu/courses/PMCD5002)
 <!-- .right -->
 

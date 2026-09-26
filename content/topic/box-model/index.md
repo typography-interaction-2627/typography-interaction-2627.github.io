@@ -221,7 +221,7 @@ This allows your design/styles to behave in a *logically* (if not *physically*)
 Back to our box model, moving outwards, with [`border`](https://developer.mozilla.org/en-US/docs/Web/CSS/border). Border is… the border around an element! It has its own `border-color`, `border-width`:
 <!-- .balance -->
 
-[<cite>Border – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/border)
+[<cite>Border – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/border) \
 	Our first non-text design element! You are allowed.
 <!-- .right -->
 
@@ -240,7 +240,7 @@ The shorthand `border-block-start` property value order here doesn’t matter! I
 
 There are also various [`border-style`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border-style) options to change the… style of border. You’ll most often see this for `dotted` lines, and as a *shorthand* for all sides—but we don’t get much control over them beyond `-color` and `-width`:
 
-[<cite>`border-style` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border-style)
+[<cite>`border-style` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border-style) \
 	Some of these are good; some of these are bad.
 <!-- .right -->
 
@@ -259,7 +259,7 @@ Look at all those borders.
 
 It’s much more common these days to see the [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border-radius) property, to give an element rounded corners. This is also how you can make simple ovals/circles—which are just rounded rectangles:
 
-[<cite>`border-radius` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border-radius)
+[<cite>`border-radius` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border-radius) \
 	“Sand down” your sharp edges.
 <!-- .right -->
 
@@ -335,7 +335,7 @@ You might expect the margin between the first two `section` to be `12rem`, but i
 Okay, so now we have all these box properties—but how do we specify the dimensions? CSS has many [*length units*](https://developer.mozilla.org/en-US/docs/Web/CSS/length), used for `inline-size`, `block-size`, and also  `padding`, `border`, `margin`, and even `font-size`. (Picas, anyone?) We’ll look at some common ones.
 <!-- .balance -->
 
-[<cite>`<length>` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/length)
+[<cite>`<length>` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/length) \
 	*Length* is used by many properties!
 <!-- .right -->
 
@@ -514,7 +514,7 @@ p {
 [Custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) (folks almost always say *CSS variables*) aren’t strictly *units*, per se—but they’re used in conjunction with them. They allow you to *codify* the relationships in your design!
 <!-- .balance -->
 
-[<cite>CSS Custom Properties Guide – CSS Tricks</cite>](https://css-tricks.com/a-complete-guide-to-custom-properties/)
+[<cite>CSS Custom Properties Guide – CSS Tricks</cite>](https://css-tricks.com/a-complete-guide-to-custom-properties/) \
 	Web guru [Chris Coyier’s](https://chriscoyier.net/) robust overview.
 <!-- .right -->
 
@@ -585,7 +585,7 @@ The convention is to declare “global” variables on `:root`—but you can ove
 With an idea of how elements take up space, now we’ll look at how they exist and move together in the [*document flow*](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Normal_Flow). The CSS property `position` [sets this relationship](https://developer.mozilla.org/en-US/docs/Web/CSS/position).
 <!-- .balance -->
 
-[<cite>Position – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
+[<cite>Position – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/position) \
 	Interesting web work often uses `position`.
 <!-- .right -->
 
@@ -694,7 +694,7 @@ You’ll hear Michael say this a lot: this always feels very *web*-y.
 Okay, `z-index` is not strictly *positioning*—it is a separate property. You can see that all these `position` properties have given us ways to make things overlap, and `z-index` is how we can decide the *front-to-back* ordering (think [*<nobr>z-axis</nobr>*](https://en.wikipedia.org/wiki/Cartesian_coordinate_system#Three_dimensions)).
 <!-- .balance -->
 
-- [<cite>`z-index` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index)
+- [<cite>`z-index` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index) \
 	This can be tricky to work with!
 <!-- .right -->
 
@@ -715,7 +715,7 @@ The two `position` properties both create new stacking contexts, `z-index: 1;` m
 A whole lot of things make a new [*stacking context*](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context) (including most `position` changes) which is kind of like a *group* (or a Figma *frame*) that has its own internal depth/overlap order.
 <!-- .balance -->
 
-- [<cite>The stacking context – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context)
+- [<cite>The stacking context – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context) \
 	Each of these is a stacking “group.”
 <!-- .right -->
 
@@ -727,8 +727,8 @@ No amount of internal `z-index` adjustments can “break” something out of tha
 In our [HTML introduction](../html/index.md) we briefly talked about `block` and `inline` elements—as set by the user-agent styles. These are the first two examples of [the `display` property](https://developer.mozilla.org/en-US/docs/Web/CSS/display).
 <!-- .balance -->
 
-[<cite>Display – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/display)
-	Our `block` and `inline` elements (and later, `grid` and `flex`).
+[<cite>Display – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/display) \
+	Our `block` and `inline` elements (and later, `grid` and `flex`). \
 <!-- .right -->
 
 ### Block
@@ -803,7 +803,7 @@ Poof. Like it wasn’t even there.
 You can also hide something visually *without* taking it out of the document *flow,* which is useful when you don’t want the page to jump/*reflow* when something appears/disappears.
 <!-- .balance -->
 
-[<cite>Visibility – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility)
+[<cite>Visibility – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility) \
 	This also hides elements from assistive technologies (screen readers).
 <!-- .right .rows--2 -->
 
@@ -821,7 +821,7 @@ Setting `visibility: hidden;` keeps the space an element had before, but makes i
 Another way to hide an element visually is to adjust `opacity`, which uses values on a scale from `0`&NoBreak;–&NoBreak;`1` or `0%`&NoBreak;–&NoBreak;`100%`. This differs from `visibility` because elements with no (or partial) opacity can still be interacted with:
 <!-- .balance -->
 
-[<cite>Opacity – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity)
+[<cite>Opacity – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity) \
 	The entire element *and* its descendents are adjusted, as one.
 <!-- .right  -->
 
@@ -843,7 +843,7 @@ You can still select the text (or click links) of not-fully-opaque elements.
 Oh right, floats. Sometimes you’ll want to have an image or block flow *within* a block of text. There are a lot of ways to do this now, but the oldest (and sometimes still the trickiest) is a [`float`](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Floats).
 <!-- .balance -->
 
-[<cite>Floats – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Floats)
+[<cite>Floats – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Floats) \
 	You don’t see these used as much anymore!
 <!-- .right -->
 

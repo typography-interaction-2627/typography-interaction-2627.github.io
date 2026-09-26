@@ -870,7 +870,7 @@ With great power comes great responsibility!
 
 Web font licensing is a *Whole Big Thing*—so we’ll start out by making use of [Google Fonts](https://fonts.google.com) (though you can use another [free option](../typography/index.md#type-foundries)), which offers many *open-source* typefaces nicely packaged for web use. You can select *families* and *weights* there to easily include in your pages, as in the example above.
 
-- [<cite>Google Fonts</cite>](https://fonts.google.com/)
+- [<cite>Google Fonts</cite>](https://fonts.google.com/) \
 	Easy to start with!
 <!-- .right -->
 
