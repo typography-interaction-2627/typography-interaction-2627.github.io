@@ -195,12 +195,10 @@ export default (config) => {
 		const punctuationBefore = '(“‘…'
 		const punctuationAfter = '),;!?.’”:—/…' + noBreak
 
-		// Skip elements inside `pre`, `nobr`, or another code-like element.
-		// Directly touching punctuation is swept in too—with a hair space so it doesn’t crowd the tag—so it can’t be orphaned across a line break.
-		// A hair space is also dropped in when a tag sits flush against another tag, so the two don’t visually run together.
-		// Ragging already drops a `&ZeroWidthSpace;` after slashes—swallow it here since the hair space takes over that job.
 		markdown.render = (...args) => {
 			const html = render(...args)
+
+			// Keep only outermost code-like elements, outside `pre` and existing `nobr` blocks.
 			const elements = parse(html)
 				.querySelectorAll('code, kbd, samp')
 				.filter((element) => {
@@ -216,26 +214,34 @@ export default (config) => {
 
 			for (const { range: [elementStart, elementEnd] } of elements) {
 				let beforeStart = elementStart
+
+				// Pull in directly adjacent punctuation, but never reclaim characters consumed by the previous element.
 				if (beforeStart > cursor && html[beforeStart - 1] === zeroWidthSpace) beforeStart--
-				const before = beforeStart > cursor && punctuationBefore.includes(html[beforeStart - 1]) ? html[--beforeStart] : ''
+				let before = ''
+				if (beforeStart > cursor && punctuationBefore.includes(html[beforeStart - 1])) before = html[--beforeStart]
 				const beforeTag = html[beforeStart - 1] === '>'
 
 				const element = html.slice(elementStart, elementEnd)
 				let afterIndex = elementEnd
-				const after = html.startsWith(noBreakDash, afterIndex)
-					? noBreakDash
-					: punctuationAfter.includes(html[afterIndex]) ? html[afterIndex] : ''
+
+				// Keep the word-joined em dash together; otherwise include one trailing punctuation character.
+				let after = ''
+				if (html.startsWith(noBreakDash, afterIndex)) after = noBreakDash
+				else if (punctuationAfter.includes(html[afterIndex])) after = html[afterIndex]
 				afterIndex += after.length
+
+				// Ragging inserts a zero-width space after slashes; the hair space replaces it here.
 				if (html[afterIndex] === zeroWidthSpace) afterIndex++
 				const afterTag = html[afterIndex] === '<'
 
+				// Add hair spaces where a code-like element touches an adjacent tag.
 				output += html.slice(cursor, beforeStart)
 					+ `${beforeTag ? hairSpace : ''}<nobr>${before ? before + hairSpace : ''}${element}${after ? hairSpace + after : ''}</nobr>${afterTag ? hairSpace : ''}`
 				cursor = afterIndex
 			}
 
 			return (output + html.slice(cursor))
-				// Two of our `nobr`s can end up flush against each other (ex: the swept punctuation ate the gap)—add a hair space between them.
+				// Keep adjacent wrappers visually separate.
 				.replace(/<\/nobr>(?=<nobr>)/g, `</nobr>${hairSpace}`)
 		}
 	}
