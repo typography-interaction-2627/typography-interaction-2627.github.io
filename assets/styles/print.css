@@ -141,7 +141,7 @@ p:has(> strong:only-child) + * { margin-block-start: calc(3rlh - 1rcap) }
 /* Breaks. */
 hgroup, p:has(> strong:only-child):has(+ p, + ul) { break-after: avoid }
 :where(p, li):has(a > cite):has(br) { break-inside: avoid }
-:where(p:has(> sub:only-child)) { break-before: avoid }
+:where(p:has(> small:only-child)) { break-before: avoid }
 
 /* 🍝 */
 hgroup:has(#course-outline) + p + section { margin-block: 1in }

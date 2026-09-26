@@ -40,7 +40,7 @@
 
 		& + & { margin-block-start: 1rlh } /* Sequential. */
 
-		sub { --leading: initial }
+		small { --leading: initial }
 	}
 </style>
 <aside webc:root="override">

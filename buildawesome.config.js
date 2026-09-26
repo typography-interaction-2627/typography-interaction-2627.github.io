@@ -422,6 +422,11 @@ export default (config) => {
 		)
 	}
 
+	// Convert standalone `<sub>…</sub>` source to `<small>…</small>` for “notes” from GFM.
+	const markdownSupSmall = (markdown) => markdown.core.ruler.before('normalize', 'supSmall', (state) =>
+		state.src = state.src.replace(/^((?: {0,3}>[ \t]*)+)?<sub(\s[^>]*)?>([\s\S]*?)<\/sub>$/gim, '$1<small$2>$3</small>'),
+	)
+
 	const markdown = markdownIt(markdownOptions)
 		// `abbreviations.js` collides with `markdown-it-abbr` internal map.
 		.use(markdown => markdown.core.ruler.before('normalize', 'abbreviationEnv', ({ env }) => delete env.abbreviations))
@@ -438,6 +443,7 @@ export default (config) => {
 		.use(markdownRagging)
 		.use(markdownLocalLinks)
 		.use(markdownAsides)
+		.use(markdownSupSmall)
 		.use(markdownFigures)
 		.use(componentPlugin) // Allows custom inline HTML component names (otherwise made into strings/wrapped in paragraphs).
 

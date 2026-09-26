@@ -78,7 +78,7 @@
 		}
 
 		/* Limit Topics, ToC. */
-		&:not(:has(sub, a[href^="https"])) { --limit: 25ch }
+		&:not(:has(small, a[href^="https"])) { --limit: 25ch }
 
 		/* For opaque `header` to scroll “under.” */
 		&:has(a[href^='#']) { --border: var(--1px) solid var(--color) }

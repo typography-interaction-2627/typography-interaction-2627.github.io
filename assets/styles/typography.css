@@ -32,7 +32,6 @@ em {
 	/* https://arrowtype.github.io/vf-slnt-test/slnt-ital-tests/index.html */
 }
 
-/* TODO `markdown-it` process solo `strong`/`sub` out to something more semantic? */
 strong {
 	font-weight: bold;
 
@@ -44,14 +43,12 @@ strong {
 	}
 }
 
-sup, sub {
+small, sup, sub {
 	--family: 'Geneva';
 	--size:   var(--size--note);
 
 	/* Chrome/Safari `opsz` dance, again; see `typography.css` */
-	@supports (not (-moz-appearance: none)) {
-		--font: 'Geneva 9';
-	}
+	@supports (not (-moz-appearance: none)) { --font: 'Geneva 9' }
 }
 
 sup {
@@ -154,12 +151,12 @@ code, kbd, samp {
 		strong & { --kerning: var(---1px) }
 	}
 
-	:is(h2, h3, h4, aside p:not(:has(> sub))) & {
+	:is(h2, h3, h4, aside p:not(:has(> small))) & {
 		--size:    12;
 		--kerning: var(---1px);
 	}
 
-	:is(h2, h3, h4, strong, aside p:not(:has(> sub))) & { font-weight: bold }
+	:is(h2, h3, h4, strong, aside p:not(:has(> small))) & { font-weight: bold }
 
 	/* `opsz` again. */
 	@supports (not (-moz-appearance: none)) {
@@ -169,7 +166,7 @@ code, kbd, samp {
 
 		@container style(--size: 9) or style(--size: 10) { --font: 'Monaco 9' }
 
-		:is(h2, h3, h4, aside p:not(:has(> sub))) & { --font: 'Monaco 12' }
+		:is(h2, h3, h4, aside p:not(:has(> small))) & { --font: 'Monaco 12' }
 	}
 }
 

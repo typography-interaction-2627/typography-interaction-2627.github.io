@@ -7,7 +7,7 @@
 		max-inline-size: initial;
 
 		/* With a note after. */
-		/* TODO Use `sub` for this? Adjusting Markdown. */
+		/* TODO Use `small` for this? Adjusting Markdown. */
 		&:has(br) {
 			/* TODO Bobble with/without this—type inset? */
 			--size: var(--size--note);

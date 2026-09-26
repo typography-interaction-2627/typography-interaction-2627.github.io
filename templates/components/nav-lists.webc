@@ -84,7 +84,7 @@
 			&:has([aria-current], a[href^='#']) { padding-inline-start: 3ex; }
 
 			/* Pass columns down for Weeks/Projects with dates, external channels. */
-			&:has(sub, a[href^="https"]) {
+			&:has(small, a[href^="https"]) {
 				grid-template-columns: minmax(0, 1fr) max-content;
 
 				li {
@@ -147,11 +147,11 @@
 					}
 
 					/* Dates. */
-					p:has(sub) {
+					p:has(small) {
 						justify-self: end;
 						text-align:   right;
 
-						sub { display: block }
+						small { display: block }
 					}
 				}
 
@@ -210,7 +210,7 @@
 		<li webc:for="item of $data.collections[collection]">
 			<a :aria-current="item.url === $data.page.url && 'page'" :href="item.url">
 				<p @html="item.data.title"></p>
-				<p webc:if="collection != 'topics'"><sub @text="shortDate(item.data.date)"></sub></p>
+				<p webc:if="collection != 'topics'"><small @text="shortDate(item.data.date)"></small></p>
 			</a>
 		</li>
 	</ol>

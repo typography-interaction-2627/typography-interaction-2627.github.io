@@ -279,10 +279,10 @@
 			}
 
 			/* Previously “note.” */
-			:where(p:has(> sub:only-child)) {
+			:where(p:has(> small:only-child)) {
 				--wrap: balance;
 
-				> sub { display: block }
+				> small { display: block }
 			}
 
 			/* Some automatic balancin’. */
@@ -337,7 +337,7 @@
 						}
 
 						/* `cite` in lists (“for next week”). */
-						> :where(p:has(> a > cite)) + *:where(:not(:has(> sub))) { margin-block-start: 1rlh }
+						> :where(p:has(> a > cite)) + *:where(:not(:has(> small))) { margin-block-start: 1rlh }
 
 						/* Nested lists. */
 						> :where(dl, ol, ul) {
