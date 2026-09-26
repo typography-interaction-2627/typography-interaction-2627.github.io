@@ -188,52 +188,50 @@ export default (config) => {
 	const markdownNobrCode = (markdown) => {
 		const render = markdown.render.bind(markdown)
 
-		const punctuationBefore = '(“‘…/'
-		const punctuationAfter = '),;!?.’”:—/…'
+		const zeroWidthSpace = '\u200B'
 		const hairSpace = '\u200A'
+		const noBreak = '\u2060'
+		const noBreakDash = noBreak + '—'
+		const punctuationBefore = '(“‘…'
+		const punctuationAfter = '),;!?.’”:—/…' + noBreak
 
-		// `pre`/`nobr` blocks are matched whole (skipping anything already inside them) so only bare, unwrapped tags get one added.
+		// Skip elements inside `pre`, `nobr`, or another code-like element.
 		// Directly touching punctuation is swept in too—with a hair space so it doesn’t crowd the tag—so it can’t be orphaned across a line break.
 		// A hair space is also dropped in when a tag sits flush against another tag, so the two don’t visually run together.
 		// Ragging already drops a `&ZeroWidthSpace;` after slashes—swallow it here since the hair space takes over that job.
 		markdown.render = (...args) => {
 			const html = render(...args)
-			const elementEnds = new Map(parse(html)
+			const elements = parse(html)
 				.querySelectorAll('code, kbd, samp')
-				.map(({ range: [start, end] }) => [start, end]),
-			)
-			const pattern = new RegExp(
-				`<pre\\b[^>]*>[\\s\\S]*?<\\/pre>|<nobr>[\\s\\S]*?<\\/nobr>|(?:(?<=(>)))?([${punctuationBefore}])?\\u200B?(<(code|kbd|samp)\\b[^>]*>)`,
-				'g',
-			)
+				.filter((element) => {
+					let parent = element.parentNode
+					while (parent) {
+						if (['code', 'kbd', 'samp', 'pre', 'nobr'].includes(parent.rawTagName?.toLowerCase())) return false
+						parent = parent.parentNode
+					}
+					return true
+				})
 			let output = ''
 			let cursor = 0
-			let match
 
-			while (match = pattern.exec(html)) {
-				const [, beforeTag, before, opening] = match
-				if (!opening) continue
-
-				const elementStart = match.index + match[0].length - opening.length
-				const elementEnd = elementEnds.get(elementStart)
-				if (!elementEnd) {
-					pattern.lastIndex = html.length
-					break
-				}
+			for (const { range: [elementStart, elementEnd] } of elements) {
+				let beforeStart = elementStart
+				if (beforeStart > cursor && html[beforeStart - 1] === zeroWidthSpace) beforeStart--
+				const before = beforeStart > cursor && punctuationBefore.includes(html[beforeStart - 1]) ? html[--beforeStart] : ''
+				const beforeTag = html[beforeStart - 1] === '>'
 
 				const element = html.slice(elementStart, elementEnd)
 				let afterIndex = elementEnd
-				const after = html.startsWith('\u2060—', afterIndex)
-					? '\u2060—'
+				const after = html.startsWith(noBreakDash, afterIndex)
+					? noBreakDash
 					: punctuationAfter.includes(html[afterIndex]) ? html[afterIndex] : ''
 				afterIndex += after.length
-				if (html[afterIndex] === '\u200B') afterIndex++
+				if (html[afterIndex] === zeroWidthSpace) afterIndex++
 				const afterTag = html[afterIndex] === '<'
 
-				output += html.slice(cursor, match.index)
+				output += html.slice(cursor, beforeStart)
 					+ `${beforeTag ? hairSpace : ''}<nobr>${before ? before + hairSpace : ''}${element}${after ? hairSpace + after : ''}</nobr>${afterTag ? hairSpace : ''}`
 				cursor = afterIndex
-				pattern.lastIndex = cursor
 			}
 
 			return (output + html.slice(cursor))
