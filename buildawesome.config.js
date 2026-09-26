@@ -188,7 +188,7 @@ export default (config) => {
 	const markdownNobrCode = (markdown) => {
 		const render = markdown.render.bind(markdown)
 
-		const punctuationBefore = '(“‘—…/'
+		const punctuationBefore = '(“‘…/'
 		const punctuationAfter = '),;!?.’”:—/…'
 		const hairSpace = '\u200A'
 
@@ -196,19 +196,50 @@ export default (config) => {
 		// Directly touching punctuation is swept in too—with a hair space so it doesn’t crowd the tag—so it can’t be orphaned across a line break.
 		// A hair space is also dropped in when a tag sits flush against another tag, so the two don’t visually run together.
 		// Ragging already drops a `&ZeroWidthSpace;` after slashes—swallow it here since the hair space takes over that job.
-		markdown.render = (...args) => render(...args)
-			.replace(
-				new RegExp(
-					`<pre\\b[^>]*>[\\s\\S]*?<\\/pre>|<nobr>[\\s\\S]*?<\\/nobr>|(?:(?<=(>)))?([${punctuationBefore}])?\\u200B?(<(code|kbd|samp)\\b[^>]*>[\\s\\S]*?<\\/\\4>)([${punctuationAfter}])?\\u200B?(?:(?=(<)))?`,
-					'g',
-				),
-				(match, beforeTag, before, element, tag, after, afterTag) =>
-					element
-						? `${beforeTag ? hairSpace : ''}<nobr>${before ? before + hairSpace : ''}${element}${after ? hairSpace + after : ''}</nobr>${afterTag ? hairSpace : ''}`
-						: match,
+		markdown.render = (...args) => {
+			const html = render(...args)
+			const elementEnds = new Map(parse(html)
+				.querySelectorAll('code, kbd, samp')
+				.map(({ range: [start, end] }) => [start, end]),
 			)
-			// Two of our `nobr`s can end up flush against each other (ex: the swept punctuation ate the gap)—add a hair space between them.
-			.replace(/<\/nobr>(?=<nobr>)/g, `</nobr>${hairSpace}`)
+			const pattern = new RegExp(
+				`<pre\\b[^>]*>[\\s\\S]*?<\\/pre>|<nobr>[\\s\\S]*?<\\/nobr>|(?:(?<=(>)))?([${punctuationBefore}])?\\u200B?(<(code|kbd|samp)\\b[^>]*>)`,
+				'g',
+			)
+			let output = ''
+			let cursor = 0
+			let match
+
+			while (match = pattern.exec(html)) {
+				const [, beforeTag, before, opening] = match
+				if (!opening) continue
+
+				const elementStart = match.index + match[0].length - opening.length
+				const elementEnd = elementEnds.get(elementStart)
+				if (!elementEnd) {
+					pattern.lastIndex = html.length
+					break
+				}
+
+				const element = html.slice(elementStart, elementEnd)
+				let afterIndex = elementEnd
+				const after = html.startsWith('\u2060—', afterIndex)
+					? '\u2060—'
+					: punctuationAfter.includes(html[afterIndex]) ? html[afterIndex] : ''
+				afterIndex += after.length
+				if (html[afterIndex] === '\u200B') afterIndex++
+				const afterTag = html[afterIndex] === '<'
+
+				output += html.slice(cursor, match.index)
+					+ `${beforeTag ? hairSpace : ''}<nobr>${before ? before + hairSpace : ''}${element}${after ? hairSpace + after : ''}</nobr>${afterTag ? hairSpace : ''}`
+				cursor = afterIndex
+				pattern.lastIndex = cursor
+			}
+
+			return (output + html.slice(cursor))
+				// Two of our `nobr`s can end up flush against each other (ex: the swept punctuation ate the gap)—add a hair space between them.
+				.replace(/<\/nobr>(?=<nobr>)/g, `</nobr>${hairSpace}`)
+		}
 	}
 
 	// Do some automatic ragging.
