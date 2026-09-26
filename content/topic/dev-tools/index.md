@@ -35,7 +35,7 @@ In Chrome, you can bring them up by right-clicking on any element/part of a page
 
 By default, you’ll see the tools open on the right side of the page. Depending on how big your screen is, they might be laid out a bit differently—but the basics are usually the same:
 
-You can also hit <nobr><kbd><span class="x2318">⌘</span>/Ctrl</kbd>+<kbd><span class="x2325">⌥</span>/Alt</kbd>+<kbd>I</kbd></nobr>.
+You can also hit <kbd><kbd><span class="x2318">⌘</span>/Ctrl</kbd>+<kbd><span class="x2325">⌥</span>/Alt</kbd>+<kbd>I</kbd></kbd>.
 
 </div>
 
@@ -76,7 +76,7 @@ The <samp>flex</samp>/<samp>grid</samp> badges (pills?) toggle their layout over
 <img src="elements.svg">
 </figure>
 
-<sub>Handy tip: <nobr><kbd><span class="x2318">⌘</span>/Ctrl</kbd>+<kbd>F</kbd></nobr> in here will let you search for elements or text by name/class/contents!</sub>
+<sub>Handy tip: <kbd><kbd><span class="x2318">⌘</span>/Ctrl</kbd>+<kbd>F</kbd></kbd> in here will let you search for elements or text by name/class/contents!</sub>
 <!-- .right style="margin-block-start: initial" -->
 
 ## Styles Tab
@@ -116,7 +116,7 @@ Enter *device mode* with the little phone/laptop <samp><span class="x2ff8">⿸<
 <img src="device.png">
 <figcaption>
 
-Be sure to *hard-refresh* with <nobr><kbd><span class="x2318">⌘</span>/Ctrl</kbd>+<kbd><span class="x21e7">⇧</span>/Shift</kbd>+<kbd>R</kbd></nobr> (to clear the cache) if the page doesn’t rescale correctly when you enter this mode! They sometimes don’t, depending on how they are built—especially with JS shenanigans.
+Be sure to *hard-refresh* with <kbd><kbd><span class="x2318">⌘</span>/Ctrl</kbd>+<kbd><span class="x21e7">⇧</span>/Shift</kbd>+<kbd>R</kbd></kbd> (to clear the cache) if the page doesn’t rescale correctly when you enter this mode! They sometimes don’t, depending on how they are built—especially with JS shenanigans.
 
 </figcaption>
 </figure>
@@ -168,7 +168,7 @@ The console is used to help you work with [JavaScript](../javascript/index.md), 
 
 If your tools are already open, you can show the <samp>Console</samp> (as a drawer, below) with the Customize <samp><span class="x22ee">⋮</span></samp> button, or as a whole panel to the right of <samp>Elements</samp>.
 
-<sub>You can also hit <nobr><kbd><span class="x2318">⌘</span>/Ctrl</kbd>+<kbd><span class="x2325">⌥</span>/Alt</kbd>+<kbd>J</kbd></nobr> to go right there!</sub>
+<sub>You can also hit <kbd><kbd><span class="x2318">⌘</span>/Ctrl</kbd>+<kbd><span class="x2325">⌥</span>/Alt</kbd>+<kbd>J</kbd></kbd> to go right there!</sub>
 
 </div>
 

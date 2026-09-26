@@ -8,7 +8,7 @@
 
 /* TODO fix wrapping without `inline-block`? */
 :where(*:not(pre)) > code:where(:not(nav code)),
-kbd,
+:where(*:not(kbd)) > kbd,
 samp {
 	background:      linear-gradient(var(--background)) padding-box, var(--background--check) border-box;
 	border:          var(--1px) solid transparent;
