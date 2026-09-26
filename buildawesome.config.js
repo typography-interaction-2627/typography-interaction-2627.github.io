@@ -209,30 +209,33 @@ export default (config) => {
 					}
 					return true
 				})
+
 			let output = ''
 			let cursor = 0
 
 			for (const { range: [elementStart, elementEnd] } of elements) {
+				const element = html.slice(elementStart, elementEnd)
+
 				let beforeStart = elementStart
+				let before = ''
+				let beforeTag
+				let afterIndex = elementEnd
+				let after = ''
+				let afterTag
 
 				// Pull in directly adjacent punctuation, but never reclaim characters consumed by the previous element.
 				if (beforeStart > cursor && html[beforeStart - 1] === zeroWidthSpace) beforeStart--
-				let before = ''
 				if (beforeStart > cursor && punctuationBefore.includes(html[beforeStart - 1])) before = html[--beforeStart]
-				const beforeTag = html[beforeStart - 1] === '>'
-
-				const element = html.slice(elementStart, elementEnd)
-				let afterIndex = elementEnd
+				beforeTag = html[beforeStart - 1] === '>'
 
 				// Keep the word-joined em dash together; otherwise include one trailing punctuation character.
-				let after = ''
 				if (html.startsWith(noBreakDash, afterIndex)) after = noBreakDash
 				else if (punctuationAfter.includes(html[afterIndex])) after = html[afterIndex]
 				afterIndex += after.length
 
 				// Ragging inserts a zero-width space after slashes; the hair space replaces it here.
 				if (html[afterIndex] === zeroWidthSpace) afterIndex++
-				const afterTag = html[afterIndex] === '<'
+				afterTag = html[afterIndex] === '<'
 
 				// Add hair spaces where a code-like element touches an adjacent tag.
 				output += html.slice(cursor, beforeStart)
