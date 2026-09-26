@@ -193,7 +193,8 @@ export default (config) => {
 		const noBreak = '\u2060'
 		const noBreakDash = noBreak + '—'
 		const punctuationBefore = '(“‘…'
-		const punctuationAfter = '),;!?.’”:—/…' + noBreak
+		const punctuationAfter = '),;!?.’”:—/…'
+		const ignoredAncestors = new Set(['code', 'kbd', 'samp', 'pre', 'nobr'])
 
 		markdown.render = (...args) => {
 			const html = render(...args)
@@ -204,7 +205,7 @@ export default (config) => {
 				.filter((element) => {
 					let parent = element.parentNode
 					while (parent) {
-						if (['code', 'kbd', 'samp', 'pre', 'nobr'].includes(parent.rawTagName?.toLowerCase())) return false
+						if (ignoredAncestors.has(parent.rawTagName?.toLowerCase())) return false
 						parent = parent.parentNode
 					}
 					return true
