@@ -1,4 +1,4 @@
- <script webc:setup>
+<script webc:setup>
 	const landing = ({ collections }) => collections.root.find(({ inputPath }) => inputPath.endsWith('content/index.md'))
 
 	// Pull the heading and `#logistics` block from the landing.

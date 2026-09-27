@@ -1,19 +1,19 @@
 <script webc:setup>
 	export const instructors = [
 		{
+			email: 'mfehrenbach@newschool.edu',
 			name:  'Michael Fehrenbach',
 			url:   'https://michaelfehrenbach.com',
-			email: 'mfehrenbach@newschool.edu',
 		},
 		{
+			email: 'rijk@newschool.edu',
 			name:  'Rijk van Zanten',
 			url:   'https://rijks.website',
-			email: 'rijk@newschool.edu',
 		},
 		{
+			email: 'lie@newschool.edu',
 			name:  'Eric Li',
 			url:   'https://eric.young.li/',
-			email: 'lie@newschool.edu',
 		},
 	]
 </script>

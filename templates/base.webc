@@ -28,7 +28,7 @@
 			}
 
 			export const removeDescriptionAttr = (content, document = parseHtml(content)) =>
-				(document.querySelectorAll('[data-description]').forEach(n => n.removeAttribute('data-description')), document.toString())
+				(document.querySelectorAll('[data-description]').forEach((n) => n.removeAttribute('data-description')), document.toString())
 		</script>
 		<template webc:if="!buildawesomeExcludeFromCollections" webc:nokeep>
 			<!-- TODO Generate /preview metadata? -->

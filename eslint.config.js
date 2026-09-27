@@ -1,3 +1,4 @@
+import html from 'eslint-plugin-html'
 import jsonc from 'eslint-plugin-jsonc'
 import perfectionist from 'eslint-plugin-perfectionist'
 
@@ -38,6 +39,15 @@ export default [
 			'prefer-const': 'error',
 			'quotes': ['error', 'single'],
 			'semi': ['error', 'never'],
+		},
+	},
+	{
+		files: ['**/*.html', '**/*.md', '**/*.webc'],
+		plugins: { html },
+		settings: {
+			'html/html-extensions': ['.html', '.md', '.webc'],
+			'html/indent': '+tab',
+			'html/report-bad-indent': 'warn',
 		},
 	},
 	{

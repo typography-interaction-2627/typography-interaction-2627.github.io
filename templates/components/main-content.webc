@@ -1,5 +1,5 @@
 <script webc:setup>
-	export const syllabusSemester = ({ page, currentWeek }) =>
+	export const syllabusSemester = ({ currentWeek, page }) =>
 		page.url == '/syllabus/' ? (currentWeek < 15 ? 'fall' : 'spring') : ''
 </script>
 <style webc:bucket="components">
@@ -482,11 +482,11 @@
 
 						(entry.isIntersecting)
 							? (history.replaceState(null, '', `#${section.querySelector('[id]')?.id}`),
-								window.dispatchEvent(new Event('scrollhashchange'))) // Custom for the ToC indicator.
+							window.dispatchEvent(new Event('scrollhashchange'))) // Custom for the ToC indicator.
 							: ((section === ([...sections][0]) && entry.boundingClientRect.top >= 0)
 								|| (section === ([...sections].at(-1)) && entry.boundingClientRect.top <= 0)) &&
 								(history.replaceState(null, '', window.location.pathname + window.location.search),
-									window.dispatchEvent(new Event('scrollhashchange')))
+								window.dispatchEvent(new Event('scrollhashchange')))
 					},
 					{ rootMargin: '-50% 0% -33%' },
 				).observe(section)

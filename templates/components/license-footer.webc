@@ -1,8 +1,8 @@
 <script webc:setup>
 	export const license = {
 		name:  'CC BY-NC-SA 4.0',
-		url:   'https://creativecommons.org/licenses/by-nc-sa/4.0/',
 		repo:  'https://github.com/typography-interaction-2627/typography-interaction-2627.github.io',
+		url:   'https://creativecommons.org/licenses/by-nc-sa/4.0/',
 	}
 </script>
 <style webc:bucket="components">

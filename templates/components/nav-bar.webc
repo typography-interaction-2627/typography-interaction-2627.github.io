@@ -1,9 +1,9 @@
 <script webc:setup>
 	export const rootLinks = [
 		{
+			icon:  'ampersand',
 			label: 'Home',
 			url:   '/',
-			icon:  'ampersand',
 		},
 		{ url: '/syllabus/' },
 		{ url: '/class/' },

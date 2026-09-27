@@ -1,6 +1,6 @@
 <script webc:setup>
-	export const recordingLabel = video => pluralize('Session Recording', toArray(video).length)
-	export const recordingId = video => slugify(recordingLabel(video))
+	export const recordingLabel = (video) => pluralize('Session Recording', toArray(video).length)
+	export const recordingId = (video) => slugify(recordingLabel(video))
 
 	export const getChannels = (data) => {
 		const channels = parseHtml(data.collections.root.find(({ inputPath }) => inputPath.endsWith('content/syllabus.md')).content).querySelector('#channels')
@@ -198,7 +198,7 @@
 			current && link.scrollIntoView({ block: 'nearest' })
 		})
 
-		currentHash || anchorLinks.find(link => link.hash)?.closest('ol')?.scrollIntoView({ block: 'start' })
+		currentHash || anchorLinks.find((link) => link.hash)?.closest('ol')?.scrollIntoView({ block: 'start' })
 	}
 
 	updateCurrentHash()
