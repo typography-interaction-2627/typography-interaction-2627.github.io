@@ -44,15 +44,15 @@ const getWeek = (data) => {
 }
 
 const types = ['week', 'topic', 'project']
-const getType = page => types.find(type => page.inputPath.includes(`/${type}/`))
+const getType = (page) => types.find((type) => page.inputPath.includes(`/${type}/`))
 
-const getSequence = data => [
+const getSequence = (data) => [
 	...data.collections.root,
-	...types.flatMap(type => data.collections[`${type}s`]).sort((a, b) =>
+	...types.flatMap((type) => data.collections[`${type}s`]).sort((a, b) =>
 		(a.data.week || Infinity) - (b.data.week || Infinity)
 		|| types.indexOf(getType(a)) - types.indexOf(getType(b))
-		|| a.data.order - b.data.order
-	)
+		|| a.data.order - b.data.order,
+	),
 ]
 
 const inCollection = (data, name) => data.collections[name]?.some((item) => item.inputPath === data.page.inputPath)
@@ -62,24 +62,24 @@ const getH1 = (data) => (data.page.rawInput.match(/^# (.+)/m)?.[1].trim() || dat
 
 export default {
 	currentWeek: (data) => data.collections.weeks
-					.filter(week => !week.data.draft)
-					.at(-1)?.page.fileSlug,
+		.filter((week) => !week.data.draft)
+		.at(-1)?.page.fileSlug,
 	date:        (data) => getWeek(data)?.date,
 	sequence:    (data) => data.example
-					? getSequence(data).findIndex(page => page.inputPath.includes(`/topic/${data.example.topic}/`))
-					: getSequence(data).findIndex(page => page.inputPath === data.page.inputPath),
+		? getSequence(data).findIndex((page) => page.inputPath.includes(`/topic/${data.example.topic}/`))
+		: getSequence(data).findIndex((page) => page.inputPath === data.page.inputPath),
 	title:       (data) => data.example
-					? (data.example.title || data.example.example)
-					: inCollection(data, 'weeks')
-						? `Week ${data.page.fileSlug}`
-						: inCollection(data, 'projects')
-							? (Number.isInteger(+data.page.fileSlug)
-								? `Project ${data.page.fileSlug}: <em>${getH1(data)}</em>`
-								: `Project <em>${getH1(data)}</em>`)
-							: getH1(data),
+		? (data.example.title || data.example.example)
+		: inCollection(data, 'weeks')
+			? `Week ${data.page.fileSlug}`
+			: inCollection(data, 'projects')
+				? (Number.isInteger(+data.page.fileSlug)
+					? `Project ${data.page.fileSlug}: <em>${getH1(data)}</em>`
+					: `Project <em>${getH1(data)}</em>`)
+				: getH1(data),
 	unit:        (data) => getWeek(data)?.unit,
 	unitNumber:  (data) => getWeek(data)?.unitNumber,
 	week:        (data) => inCollection(data, 'weeks')
-					? Number(data.page.fileSlug)
-					: data.week,
+		? Number(data.page.fileSlug)
+		: data.week,
 }

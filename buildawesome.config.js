@@ -25,8 +25,8 @@ import puppeteer from 'puppeteer'
 export default (config) => {
 	// Setup.
 	config.addPlugin(webC, {
+		before: (page) => page.setTransform('md', (content) => markdown.render(content, { page })),
 		components: 'templates/*/**/*.webc',
-		before: page => page.setTransform('md', content => markdown.render(content, { page })),
 	})
 	config.setFrontMatterParsingOptions({
 		delimiters: ['```javascript', '```'],
@@ -66,8 +66,8 @@ export default (config) => {
 
 	// Previews for examples.
 	config.addTemplate('templates/preview.webc', readFileSync('templates/preview.webc'), {
-		layout: 'base',
 		buildawesomeExcludeFromCollections: true,
+		layout: 'base',
 		pagination: {
 			alias: 'example',
 			data: 'examples',
@@ -82,15 +82,15 @@ export default (config) => {
 		const isIncremental = process.argv.includes('--incremental')
 
 		config.on('buildawesomeComputed.beforeWatch', (changed = []) =>
-			changedFiles = new Set(changed.map(f => path.resolve(f)))
+			changedFiles = new Set(changed.map((f) => path.resolve(f))),
 		)
 
 		config.addTemplate('templates/meta.webc', readFileSync('templates/meta.webc'), {
 			buildawesomeExcludeFromCollections: true,
 			pagination: {
 				alias: 'meta',
-				before: items => items.filter(({ url, inputPath }) =>
-					url && (!isIncremental || !changedFiles.size || changedFiles.has(path.resolve(inputPath)))
+				before: (items) => items.filter(({ inputPath, url }) =>
+					url && (!isIncremental || !changedFiles.size || changedFiles.has(path.resolve(inputPath))),
 				),
 				data: 'collections.all',
 				size: 1,
@@ -101,13 +101,13 @@ export default (config) => {
 
 	// Set up sorted page collections.
 	for (const directory of ['', 'week', 'project', 'topic'])
-		config.addCollection(directory ? `${directory}s` : 'root', collection => collection
+		config.addCollection(directory ? `${directory}s` : 'root', (collection) => collection
 			.getFilteredByGlob(`content/${directory ? `${directory}/{*.md,*/index.md}` : '*.md'}`)
 			.sort((a, b) =>
 				(a.data.week || Infinity) - (b.data.week || Infinity)
 				|| a.data.order - b.data.order
-				|| a.inputPath.localeCompare(b.inputPath, undefined, { numeric: true })
-			)
+				|| a.inputPath.localeCompare(b.inputPath, undefined, { numeric: true }),
+			),
 		)
 
 	// Don’t render out drafts—but this leaves them in the collections for date calculations.
@@ -429,7 +429,7 @@ export default (config) => {
 
 	const markdown = markdownIt(markdownOptions)
 		// `abbreviations.js` collides with `markdown-it-abbr` internal map.
-		.use(markdown => markdown.core.ruler.before('normalize', 'abbreviationEnv', ({ env }) => delete env.abbreviations))
+		.use((markdown) => markdown.core.ruler.before('normalize', 'abbreviationEnv', ({ env }) => delete env.abbreviations))
 		.use(markdownRemoveH1)
 		.use(mardownAddAbbreviations)
 		.use(markdownCommentsToCurlies)
@@ -467,7 +467,7 @@ export default (config) => {
 
 	// Table of contents.
 	config.addFilter('toc', (content) => {
-		const root = { level: 0, inert: false, children: [] }
+		const root = { children: [], inert: false, level: 0 }
 		const stack = [root]
 
 		// Build a nested tree from heading levels.
@@ -475,17 +475,17 @@ export default (config) => {
 			if (!heading.id) continue
 
 			// Drop permalink anchors from labels.
-			heading.querySelectorAll('a').forEach(link => link.remove())
+			heading.querySelectorAll('a').forEach((link) => link.remove())
 
 			const level = +heading.tagName[1]
 			while (stack.at(-1).level >= level) stack.pop()
 
 			const inert = stack.at(-1).inert || heading.hasAttribute('inert')
 			const item = {
-				html: `<a${inert ? '' : ` href="#${heading.id}"`}><p>${heading.innerHTML.trim()}</p></a>`,
-				level,
-				inert,
 				children: [],
+				html: `<a${inert ? '' : ` href="#${heading.id}"`}><p>${heading.innerHTML.trim()}</p></a>`,
+				inert,
+				level,
 			}
 
 			const parent = stack.at(-1)
@@ -493,7 +493,7 @@ export default (config) => {
 			stack.push(item)
 		}
 
-		const renderItems = items => items.map(({ html, children }) =>
+		const renderItems = (items) => items.map(({ children, html }) =>
 			`<li>${html}${children.length ? `<ol>${renderItems(children)}</ol>` : ''}</li>`,
 		).join('\n')
 
@@ -501,7 +501,7 @@ export default (config) => {
 	})
 
 	// Other filters.
-	config.addFilter('initialCap', (string) => string?.replace(/^./, firstChar => firstChar.toUpperCase()))
+	config.addFilter('initialCap', (string) => string?.replace(/^./, (firstChar) => firstChar.toUpperCase()))
 	config.addFilter('displayDate', (date) => new Date(date)
 		.toLocaleDateString('en-US', { day: 'numeric', month: 'long', timeZone: 'UTC' }))
 	config.addFilter('shortDate', (date) => new Date(date)
@@ -509,7 +509,7 @@ export default (config) => {
 	config.addFilter('stripTags', (content) => stripTags(String(content)))
 	config.addFilter('parseHtml', (content) => parse(content))
 	config.addFilter('inlineSvg', async (svg) => (await image(svg, { dryRun: true, formats: ['svg'] }))?.svg?.[0]?.buffer?.toString())
-	config.addFilter('toArray', value => Array.isArray(value) ? value : [value])
+	config.addFilter('toArray', (value) => Array.isArray(value) ? value : [value])
 	config.addFilter('pluralize', (word, count) => `${word}${count > 1 ? 's' : ''}`)
 
 	// Spans for “kerning.”
@@ -603,7 +603,7 @@ export default (config) => {
 			data: '../data',
 			layouts: '../templates',
 		},
-		markdownTemplateEngine: false, // Turn off `liquid` parsing.
 		htmlTemplateEngine: 'webc',
+		markdownTemplateEngine: false, // Turn off `liquid` parsing.
 	}
 }
