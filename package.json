@@ -28,10 +28,16 @@
 		"clean": "node -e \"require('fs').rmSync('_site', { recursive: true, force: true })\"",
 		"fonts": "node fetch-fonts.js",
 		"build": "pnpm fonts && pnpm clean && buildawesome",
-		"serve": "pnpm clean && buildawesome --serve --port=80 --incremental"
+		"serve": "pnpm clean && buildawesome --serve --port=80 --incremental",
+		"lint": "eslint . --fix"
 	},
 	"type": "module",
 	"devDependencies": {
-		"dotenv": "^17.4.2"
+		"dotenv": "^17.4.2",
+		"eslint": "^10.11.0",
+		"eslint-plugin-html": "^8.2.1",
+		"eslint-plugin-jsonc": "^3.4.2",
+		"eslint-plugin-perfectionist": "^5.12.1",
+		"jsonc-eslint-parser": "^3.3.0"
 	}
 }
