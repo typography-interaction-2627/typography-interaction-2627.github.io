@@ -1,9 +1,12 @@
 :where(code, kbd, samp) {
+	line-height: 1;
+	text-box:    trim-both cap alphabetic;
+	white-space: pre;
+}
+
+:where(code, kbd:where(:not(:has(kbd))), samp) {
 	-webkit-user-select: all;
-	line-height:         1;
-	text-box:            trim-both cap alphabetic;
 	user-select:         all;
-	white-space:         pre;
 }
 
 /* TODO fix wrapping without `inline-block`? */
