@@ -145,7 +145,7 @@ These blocks are like any other CSS—if there are multiple conditions that are 
 
 </div>
 
-## Width-Based Breakpoints
+### Width-Based Breakpoints
 
 <div class="verso">
 
@@ -210,7 +210,7 @@ This width rule/test/criteria uses math [comparison operators](https://css-trick
 >
 > <sub>You’ll see lots of material out there referencing `min-width` or `max-width` media queries—but we should *not* see these in [*your*](../../syllabus.md#attribution) code!</sub>
 
-## Height-Based, Too
+### Height-Based, Too
 
 <div class="center verso">
 
@@ -235,7 +235,7 @@ This example is the same *breakpoint* of `550px` as before, but now using `heigh
 
 </div>
 
-## Orientation
+### Orientation
 
 You can also be less specific about your `width`/`height` and instead use `orientation`—like when you rotate your phone. The queries use the wonderfully tenacious names/values of `portrait` or `landscape`:
 
@@ -246,7 +246,7 @@ You can also be less specific about your `width`/`height` and instead use `orien
 	>
 </figure>
 
-## And/Or Combinations
+### And/Or Combinations
 
 And speaking of *conditional statements*—you can also merge multiple media queries into one test/check, using `and`. This is often used for a range (to apply something *between* two breakpoints) or to combine `width` and `height` checks, together:
 <!-- .balance -->
@@ -310,7 +310,7 @@ This goes “[with the grain](../../week/7.md#reading-discussion),” following 
 
 **Mobile can be the majority of your traffic—[especially internationally](https://gs.statcounter.com/platform-market-share/desktop-mobile/worldwide)! We’d like you to think of *mobile-first* design as a form of accessibility, in this light. Not everyone has your MacBook Pro.**
 
-## Briefly, CSS Variables
+### Using CSS Variables
 
 [Custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) (folks almost always say *CSS variables*) aren’t strictly a part of *responsive design* or *media queries*, per se—but they come up very often in modern, mobile-first practice and we’ll introduce them briefly, here. They allow you codify the relationships in your design.
 
