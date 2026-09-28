@@ -127,9 +127,9 @@ Responsive design could only really flourish when CSS (and browsers) added the `
 
 These are colloquially called *media queries*, and they allow us to check if screen is a certain width or resolution (or other features, which we’ll get to)—and then apply selective CSS only in that scenario/situation. These let site layouts *respond* intentionally to different devices, for the first time.
 
-Practically, these are blocks of CSS—a little bit like [*selectors*](/topic/css/#basic-selectors) that contain other selectors—but which only apply conditionally when the test/criteria is met.
+Practically, these are blocks of CSS—a little bit like [*selectors*](../css/index.md#basic-selectors) that contain other selectors—but which only apply conditionally when the test/criteria is met.
 
-These blocks are like any other CSS—if there are multiple conditions that are met, or there is a tie between properties—the rules [*cascade*](/topic/css/#oh-right-the-cascade) down and the lowest/last one takes precedent.
+These blocks are like any other CSS—if there are multiple conditions that are met, or there is a tie between properties—the rules [*cascade*](../css/index.md#oh-right-the-cascade) down and the lowest/last one takes precedent.
 
 </div>
 
@@ -166,9 +166,9 @@ Width tends to vary the most across devices—from the `375px`–`428px` of your
 
 > [!NOTE]
 >
-> Note that we still use `width` here—not the [logical property](/topic/box-model/#and-logical-properties) `inline-size`—because we are referencing the *physical* device characteristics, agnostic of the language being displayed.
+> Note that we still use `width` here—not the [logical property](../box-model/index.md#and-logical-properties) `inline-size`—because we are referencing the *physical* device characteristics, agnostic of the language being displayed.
 >
-> <sub>We’ll also continue to use `px` here, for ease of understanding: while `em`/`rem` are [technically *correct*](https://keithjgrant.com/posts/2023/05/px-vs-em-in-media-queries/) for media queries, we’ve decided [the tooling](/topic/dev-tools/#device-mode) around this is unclear.</sub>
+> <sub>We’ll also continue to use `px` here, for ease of understanding: while `em`/`rem` are [technically *correct*](https://keithjgrant.com/posts/2023/05/px-vs-em-in-media-queries/) for media queries, we’ve decided [the tooling](../dev-tools/index.md#device-mode) around this is unclear.</sub>
 
 Since this `width` is usually our primary design constraint (`height` being handled through scrolling), we need *width-based* media queries to adjust our layouts across this wide range, lest our designs fall.
 
@@ -240,7 +240,7 @@ This example is the same *breakpoint* of `550px` as before, but now using `heigh
 You can also be less specific about your `width`/`height` and instead use `orientation`—like when you rotate your phone. The queries use the wonderfully tenacious names/values of `portrait` or `landscape`:
 
 <figure
-	@caption="Everything was a painting before it was a photograph or a [web page](/topic/everything)."
+	@caption="Everything was a painting before it was a photograph or a [web page](../everything/index.md)."
 	@source="media-orientation/preview/?active=style.css"
 	style="--lines: 13"
 	>
@@ -258,7 +258,7 @@ And speaking of *conditional statements*—you can also merge multiple media que
 	>
 </figure>
 
-You can also use comma-separated queries (similar to [*selector lists*](/topic/css/#fancy-selectors)) to apply *or* logic—setting the same styles for different scenarios:
+You can also use comma-separated queries (similar to [*selector lists*](../css/index.md#compound-and-lists-selectorselector-selector-selector)) to apply *or* logic—setting the same styles for different scenarios:
 
 <figure
 	@caption="Note that you could do this with `and`, as in the example above, by just swapping the colors. Code logic!"
@@ -306,7 +306,7 @@ Your design constraints will be tighter and more challenging, by tackling your s
 	>
 </figure>
 
-This goes “[with the grain](/week/7/#reading-discussion),” following the general CSS pattern/paradigm of the cascade—and is much, much, *much* easier than adjusting desktop front-end after the fact. (Trust us.) Always think *mobile-first*&#x202F;!
+This goes “[with the grain](../../week/7.md#reading-discussion),” following the general CSS pattern/paradigm of the cascade—and is much, much, *much* easier than adjusting desktop front-end after the fact. (Trust us.) Always think *mobile-first*&#x202F;!
 
 **Mobile can be the majority of your traffic—[especially internationally](https://gs.statcounter.com/platform-market-share/desktop-mobile/worldwide)! We’d like you to think of *mobile-first* design as a form of accessibility, in this light. Not everyone has your MacBook Pro.**
 
@@ -342,7 +342,7 @@ In your CSS, you *declare* (set) these with a `--` prefix in front of a subjecti
 
 </div>
 
-You can use these as values for *any* [CSS property](/topic/css/#css-rules)—colors, spacing, etc.—anything you use multiple times and want to be consistent, give a memorable name to, or easily change all together:
+You can use these as values for *any* [CSS property](../css/index.md#css-rules)—colors, spacing, etc.—anything you use multiple times and want to be consistent, give a memorable name to, or easily change all together:
 <!-- .before--3 -->
 
 <figure
@@ -387,7 +387,7 @@ In all of our above examples, there is an implied *[media type](https://develope
 >
 > <sub>When you get [a PDF](https://pagedjs.org) [ticket](https://weasyprint.org)/[receipt](https://www.princexml.com) or [even read](https://www.w3.org/2012/12/global-publisher/slides/Day2/P1-w3c-paris-hachette.pdf) [a book](https://www.xml.com/articles/2017/02/20/beyond-xml-making-books-html/), it’s likely styled HTML! Your Kindle’s [`EPUB` files](https://en.wikipedia.org/wiki/EPUB) are just HTML/CSS, too!</sub>
 >
-> Remember: [Everything is a webpage](/topic/everything/#an-ever-present-visual-medium)!</sub>
+> Remember: [Everything is a webpage](../everything/index.md#an-ever-present-visual-medium)!</sub>
 
 ### `hover`
 
