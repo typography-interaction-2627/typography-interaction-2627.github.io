@@ -443,6 +443,7 @@ These are based on our layout, viewport, or typography dimensions! And are much 
 > Always default to relative units! Much like [logical properties](#and-logical-properties), these are the more correct and modern way.
 >
 > <sub>We should *not* see the absolute `px` in your code, despite whatever other [resources](../../syllabus.md#attribution) have!</sub>
+<!-- #no-px -->
 
 ### Combined via `calc()`
 
@@ -566,6 +567,7 @@ The convention is to declare “global” variables on `:root`—but you can ove
 > Using [relative units](#relative-units), [`calc()`](#combined-via-calc), [`min-`/`max-`](#constrained-by-min-max), and (particularly) [`--variable`](#defined-as---variable) are ways to establish and enforce these relationships.
 >
 > <sub>We should see lots of `calc()` and `--variable` use in your code! It shows us systematic thinking and your design *intent*.</sub>
+<!-- #design-systems -->
 
 ---
 

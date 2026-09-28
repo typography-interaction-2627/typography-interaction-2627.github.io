@@ -164,23 +164,11 @@ Width tends to vary the most across devices—from the `375px`–`428px` of your
 	>
 </figure>
 
-<aside>
-
-<mark>Physical directions remain in use</mark>
-
-Note that we still use `width` here—not the [logical property](/topic/box-model/#and-logical-properties) `inline-size`—because we are referencing the *physical* device characteristics, agnostic of the language being displayed.
-
-</aside>
-
-<aside class="reverse" id="px-queries">
-
-<mark>Management will accept `px` in queries</mark>
-
-We’ve changed our mind on this, since we went through initially: while `em`/`rem` are [technically *correct*](https://keithjgrant.com/posts/2023/05/px-vs-em-in-media-queries/) for media queries, we’ve decided [the tooling](/topic/dev-tools/#device-mode) around this is unclear.
-
-We will now allow `px`, for ease of understanding.
-
-</aside>
+> [!NOTE]
+>
+> Note that we still use `width` here—not the [logical property](/topic/box-model/#and-logical-properties) `inline-size`—because we are referencing the *physical* device characteristics, agnostic of the language being displayed.
+>
+> <sub>We’ll also continue to use `px` here, for ease of understanding: while `em`/`rem` are [technically *correct*](https://keithjgrant.com/posts/2023/05/px-vs-em-in-media-queries/) for media queries, we’ve decided [the tooling](/topic/dev-tools/#device-mode) around this is unclear.</sub>
 
 Since this `width` is usually our primary design constraint (`height` being handled through scrolling), we need *width-based* media queries to adjust our layouts across this wide range, lest our designs fall.
 
@@ -216,13 +204,11 @@ This width rule/test/criteria uses math [comparison operators](https://css-trick
 	>
 </figure>
 
-<aside>
-
-<mark>Use modern syntax when possible</mark>
-
-You’ll see lots of material out there referencing `min-width` or `max-width` media queries—but we will be using the modern (and much more intuitive) [range operator syntax](https://web.dev/articles/media-query-range-syntax) shown here.
-
-</aside>
+> [!WARNING]
+>
+> We’ll only be using the modern (and more intuitive) [range operator syntax](https://web.dev/articles/media-query-range-syntax) shown here.
+>
+> <sub>You’ll see lots of material out there referencing `min-width` or `max-width` media queries—but we should *not* see these in [*your*](../../syllabus.md#attribution) code!</sub>
 
 ## Height-Based, Too
 
@@ -395,13 +381,13 @@ In all of our above examples, there is an implied *[media type](https://develope
 	>
 </figure>
 
-<aside>
-
-<mark>Remember: [Everything is a webpage](/topic/everything/#an-ever-present-visual-medium)</mark>
-
-Increasingly, this is how many “print” documents are created—starting as webpages with `print` styles. When you get [a PDF](https://pagedjs.org) [ticket](https://weasyprint.org)/[receipt](https://www.princexml.com) or [even read](https://www.w3.org/2012/12/global-publisher/slides/Day2/P1-w3c-paris-hachette.pdf) [a book](https://www.xml.com/articles/2017/02/20/beyond-xml-making-books-html/), it’s likely styled HTML! Your Kindle’s [`EPUB` files](https://en.wikipedia.org/wiki/EPUB) are just HTML/CSS, too!
-
-</aside>
+> [!TIP]
+>
+> Increasingly, this is how many “print” documents are created—starting as webpages with `print` styles!
+>
+> <sub>When you get [a PDF](https://pagedjs.org) [ticket](https://weasyprint.org)/[receipt](https://www.princexml.com) or [even read](https://www.w3.org/2012/12/global-publisher/slides/Day2/P1-w3c-paris-hachette.pdf) [a book](https://www.xml.com/articles/2017/02/20/beyond-xml-making-books-html/), it’s likely styled HTML! Your Kindle’s [`EPUB` files](https://en.wikipedia.org/wiki/EPUB) are just HTML/CSS, too!</sub>
+>
+> Remember: [Everything is a webpage](/topic/everything/#an-ever-present-visual-medium)!</sub>
 
 ### `hover`
 
