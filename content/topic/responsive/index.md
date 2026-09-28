@@ -366,7 +366,7 @@ By far, the most common media queries will be *width*/*height*/*orientation*—f
 	There are many of these! Meet your users where they are.
 <!-- .right -->
 
-### `screen` <small>vs.</small> `print`
+### `screen` vs. `print`
 
 In all of our above examples, there is an implied *[media type](https://developer.mozilla.org/en-US/docs/Web/CSS/@media#media_types)* of `screen`—since that is usually what we are concerned with, on the web. But there is also one for <nobr>`print`&#x202F;!</nobr> You can use these to segment styles to one medium or the other:
 
