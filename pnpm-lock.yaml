@@ -24,8 +24,8 @@ importers:
         specifier: ^3.0.2
         version: 3.0.2
       '@parsons/ti-preview':
-        specifier: ^0.0.44
-        version: 0.0.44
+        specifier: ^0.0.45
+        version: 0.0.45
       github-slugger:
         specifier: ^2.0.0
         version: 2.0.0
@@ -183,9 +183,6 @@ packages:
 
   '@codemirror/lang-javascript@6.2.4':
     resolution: {integrity: sha512-0WVmhp1QOqZ4Rt6GlVGwKJN3KW7Xh4H2q8ZZNGZaP6lRdxXJzmjm4FqvmOojVj6khWJHIb9sp7U/72W7xQgqAA==}
-
-  '@codemirror/lang-sass@6.0.2':
-    resolution: {integrity: sha512-l/bdzIABvnTo1nzdY6U+kPAC51czYQcOErfzQ9zSm9D8GmNPD0WTW8st/CJwBTPLO8jlrbyvlSEcN20dc4iL0Q==}
 
   '@codemirror/language@6.11.3':
     resolution: {integrity: sha512-9HBM2XnwDj7fnu0551HkGdrUrrqmYq/WC5iv6nbY2WdicXdGbhR/gfbZOH73Aqj4351alY1+aoG9rCNfiwS1RA==}
@@ -483,9 +480,6 @@ packages:
   '@lezer/lr@1.4.10':
     resolution: {integrity: sha512-rnCpTIBafOx4mRp43xOxDJbFipJm/c0cia/V5TiGlhmMa+wsSdoGmUN3w5Bqrks/09Q/D4tNAmWaT8p6NRi77A==}
 
-  '@lezer/sass@1.1.0':
-    resolution: {integrity: sha512-3mMGdCTUZ/84ArHOuXWQr37pnf7f+Nw9ycPUeKX+wu19b7pSMcZGLbaXwvD2APMBDOGxPmpK/O6S1v1EvLoqgQ==}
-
   '@lit-labs/ssr-dom-shim@1.6.0':
     resolution: {integrity: sha512-VHb0ALPMTlgKjM6yIxxoQNnpKyUKLD04VzeQdsiXkMqkvYlAHxq9glGLmgbb889/1GsohSOAjvQYoiBppXFqrQ==}
 
@@ -515,8 +509,8 @@ packages:
     resolution: {integrity: sha512-XRO0zi2NIUKq2lUk3T1ecFSld1fMWRKE6naRFGkgkdeosx7IslyUKNv5Dcb5PJTja9tHJoFu0v/7yEpAkrkrTg==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24}
 
-  '@parsons/ti-preview@0.0.44':
-    resolution: {integrity: sha512-chunY6s1EDwNzQj7Ew/nlLMUmmwHg0+an15TxQEDbHjsGeP8KzWgZjwjgu2+OSb4AFliuLEgvaIaRjTF4ZDS0Q==}
+  '@parsons/ti-preview@0.0.45':
+    resolution: {integrity: sha512-3Sb8vbHS0HAkFQpyuXiyEyeg+FEC0vDfUO/M5PpkdOnY9zea43j7R5+0kq/TRzcDZ0naqFAJXVGks6/6CRIYow==}
 
   '@pkgr/core@0.3.6':
     resolution: {integrity: sha512-SEeaJLb3qBNF/OaXnaR1NmmBbFYk1zC0ZH/52fATcRPLFg/p791YrcyFFy44Bo9sLaGuSuLp5Q6axbb/O+v/RA==}
@@ -1903,14 +1897,6 @@ snapshots:
       '@lezer/common': 1.5.2
       '@lezer/javascript': 1.5.4
 
-  '@codemirror/lang-sass@6.0.2':
-    dependencies:
-      '@codemirror/lang-css': 6.3.1
-      '@codemirror/language': 6.11.3
-      '@codemirror/state': 6.7.0
-      '@lezer/common': 1.5.2
-      '@lezer/sass': 1.1.0
-
   '@codemirror/language@6.11.3':
     dependencies:
       '@codemirror/state': 6.7.0
@@ -2202,12 +2188,6 @@ snapshots:
     dependencies:
       '@lezer/common': 1.5.2
 
-  '@lezer/sass@1.1.0':
-    dependencies:
-      '@lezer/common': 1.5.2
-      '@lezer/highlight': 1.2.1
-      '@lezer/lr': 1.4.10
-
   '@lit-labs/ssr-dom-shim@1.6.0': {}
 
   '@lit/reactive-element@2.1.2':
@@ -2235,11 +2215,11 @@ snapshots:
 
   '@ota-meshi/ast-token-store@0.3.0': {}
 
-  '@parsons/ti-preview@0.0.44':
+  '@parsons/ti-preview@0.0.45':
     dependencies:
+      '@codemirror/lang-css': 6.3.1
       '@codemirror/lang-html': 6.4.11
       '@codemirror/lang-javascript': 6.2.4
-      '@codemirror/lang-sass': 6.0.2
       '@codemirror/language': 6.11.3
       '@codemirror/state': 6.5.2
       '@codemirror/theme-one-dark': 6.1.3
