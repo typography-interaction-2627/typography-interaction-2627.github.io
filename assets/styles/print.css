@@ -24,6 +24,7 @@
 }
 
 body {
+	--bleed:  1in;
 	--gutter: initial;
 
 	background:  initial;
@@ -53,10 +54,11 @@ main {
 }
 
 header:has(h1) {
-	block-size:       initial;
-	margin-block-end: 1in;
-	overflow:         initial;
-	padding:          initial;
+	block-size:         initial;
+	margin-block-end:   1in;
+	margin-block-start: initial;
+	overflow:           initial;
+	padding:            initial;
 
 	hgroup {
 		inset:     initial;
@@ -83,6 +85,8 @@ section:has(> hgroup > h2) {
 		+ * { margin-block-start: calc(3rlh - 1rcap) }
 	}
 }
+
+hgroup { max-inline-size: var(--main) }
 
 /* Get around CSS-pixel rounding for the pattern. 🫠 */
 hgroup:has(h2),
