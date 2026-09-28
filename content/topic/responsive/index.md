@@ -8,7 +8,8 @@ const draft = true
 
 ## What’s all this about *Responsive Design*?
 
-This term was coined in 2010 or so [by Ethan Marcotte](https://alistapart.com/article/responsive-web-design/)—wrapping a name around a [*progressive enhancement*](https://alistapart.com/article/understandingprogressiveenhancement/) and [*mobile-first*](https://www.lukew.com/ff/entry.asp?933) web design approach/philosophy that had been growing in the mid-2000s (sometimes called *liquid, flexible, fluid,* or *elastic* design).
+**Instead of designing, implementing, and serving separate sites for different devices and specific scenarios—we can adapt just one to work across them all. This is *responsive design*.**
+<!-- .body data-description -->
 
 - [<cite>Responsive Design – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design) \
 	A pretty nice overview.
@@ -18,26 +19,27 @@ This term was coined in 2010 or so [by Ethan Marcotte](https://alistapart.com/a
 
 - [<cite>Using Media Queries – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#media_features) \
 	Okay, that’s probably enough MDN.
+<!-- .right .rows--3 -->
 
-- [<cite>Using CSS Custom Properties – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
-	Sorry, last one! For now.
-<!-- .right .rows--4 -->
+This term was coined in 2010 or so [by Ethan Marcotte](https://alistapart.com/article/responsive-web-design/)—wrapping a name around a [*progressive enhancement*](https://alistapart.com/article/understandingprogressiveenhancement/) and [*mobile-first*](https://www.lukew.com/ff/entry.asp?933) web design approach/philosophy that had been growing in the mid-2000s (sometimes called *liquid, flexible, fluid,* or *elastic* design).
+<!-- .before -->
 
-Instead of building, designing, and serving a desktop site and a separate, minimal mobile version (if you even did at all)—you could instead adapt *one* site to work across devices. This is responsive design.
+There was a confluence of events that allowed this: modern, <nobr>self-updating</nobr> browsers, and then the explosion of *the mobile web*—precipitated, in no small part, by the *iPhone* in 2007.
 
-There was a confluence of events that allowed this: modern, <nobr>self-updating</nobr> browsers, and then the explosion of *the mobile web*—precipitated, in no small part, by the *iPhone* in 2007. It ran a desktop-class browser (in terms of functionality), which hadn’t been available in a small screen before. And with its crazy success—and the subsequent proliferation of its paradigm in *Android*—the web, and then world, scrambled to *respond*.
+The iPhone was the first mobile device that ran a desktop-class browser (in terms of functionality), which hadn’t been available in a small screen before. And with its [crazy success](https://asymco.com/2026/09/28/the-best-selling-product-of-all-time/)—and the subsequent proliferation of its paradigm in *Android*—the web, and then world, scrambled to *respond*.
+<!-- .before -->
 
-<figure
-	@caption="A typical/example *responsive* layout, adjusting the content to reflow based on the device width."
-	@source="responsive-1.svg"
-	class="before--3 shadow verso"
-	>
+<figure class="borderless shadow verso" style="--max: initial">
+<img src="responsive-1.svg">
+<figcaption>
+
+A typical/example *responsive* layout, adjusting the content to reflow based on the device width.
+
+</figcaption>
 </figure>
 
-<figure
-	@source="responsive-2.svg"
-	class="before--3 recto shadow start"
-	>
+<figure class="borderless recto shadow start">
+<img src="responsive-2.svg">
 </figure>
 
 > Empty your mind. Be formless, shapeless, like water.

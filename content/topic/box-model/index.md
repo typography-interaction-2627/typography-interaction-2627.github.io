@@ -509,14 +509,16 @@ p {
 [Custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) (folks almost always say *CSS variables*) aren’t strictly *units*, per se—but they’re used in conjunction with them. They allow you to *codify* the relationships in your design!
 <!-- .balance -->
 
-[<cite>CSS Custom Properties Guide – CSS Tricks</cite>](https://css-tricks.com/a-complete-guide-to-custom-properties/) \
+- [<cite>Using CSS Custom Properties – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
+
+- [<cite>CSS Custom Properties Guide – CSS Tricks</cite>](https://css-tricks.com/a-complete-guide-to-custom-properties/) \
 	Web guru [Chris Coyier’s](https://chriscoyier.net/) robust overview.
-<!-- .right -->
+<!-- .right .rows--3 -->
+
+These bring another programming concept of [*variables*](https://en.wikipedia.org/wiki/Variable_(computer_science)) into CSS. These are shorthand entities for *any* values (not just lengths) we want to reuse throughout a document.
 
 <section class="before" style="margin-block-end: 1rlh">
 <div class="balance before verso">
-
-These bring another programming concept of [*variables*](https://en.wikipedia.org/wiki/Variable_(computer_science)) into CSS. These are shorthand entities for *any* values (not just lengths) we want to reuse throughout a document.
 
 Changing the value of a *variable* changes it everywhere it is referenced—no copy/pasting or find/replacing. You could think of a color *swatch*, if you are in an Adobe mindset; other tech folks call these *tokens*. Again, these are just for you—it is all the same to the computer. More ergonomics!
 
