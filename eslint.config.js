@@ -96,7 +96,6 @@ export default [
 		languageOptions: { parser: htmlParser },
 		plugins: { '@html-eslint': htmlPlugin },
 		rules: {
-			'@html-eslint/attrs-newline': ['error', { 'closeStyle': 'newline', 'ifAttrsMoreThan': 3 }],
 			'@html-eslint/sort-attrs': ['error', {
 				'priority': [
 					{ 'pattern': 'webc:*' },
