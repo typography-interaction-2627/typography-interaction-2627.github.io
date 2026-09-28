@@ -3,6 +3,61 @@ import htmlParser from '@html-eslint/parser'
 import html from 'eslint-plugin-html'
 import jsonc from 'eslint-plugin-jsonc'
 import perfectionist from 'eslint-plugin-perfectionist'
+import MarkdownIt from 'markdown-it'
+
+const markdown = new MarkdownIt()
+
+// Code samples are content, not markup to lint — `map` is a `[start, end)` pair of zero-based lines.
+const codeBlocks = (text) => markdown.parse(text, {})
+	.filter(({ map, type }) => map && (type === 'code_block' || type === 'fence'))
+	.map(({ map }) => map)
+
+const reportedLine = ({ loc, node }) => (loc?.start ?? loc ?? node.loc.start).line
+
+// Every `@html-eslint` rule, made blind to Markdown code blocks.
+const markdownPlugin = {
+	rules: Object.fromEntries(Object.entries(htmlPlugin.rules).map(([name, rule]) => [name, {
+		...rule,
+		create: (context) => {
+			const blocks = codeBlocks(context.sourceCode.text)
+
+			return rule.create(Object.create(context, {
+				report: {
+					value: (descriptor) => blocks.some(([start, end]) => reportedLine(descriptor) > start && reportedLine(descriptor) <= end) || context.report(descriptor),
+				},
+			}))
+		},
+	}])),
+}
+
+const prefixed = (plugin, rules) => Object.fromEntries(Object.entries(rules).map(([rule, setting]) => [`${plugin}/${rule}`, setting]))
+
+const anyMarkupRules = { // Wherever markup appears: `.html`, `.md`, `.webc`.
+	'id-naming-convention': ['error', 'kebab-case'],
+	'lowercase': 'error',
+	'no-duplicate-attrs': 'error',
+	'no-duplicate-class': 'error',
+	'no-duplicate-id': 'error',
+	'no-extra-spacing-attrs': ['error', { 'enforceBeforeSelfClose': true }],
+	'no-invalid-entity': 'error',
+	'no-multiple-empty-lines': ['error', { max: 1 }],
+	'no-script-style-type': 'error',
+	'no-trailing-spaces': 'error',
+	'quotes': ['error', 'double'],
+	'sort-attrs': ['error', {
+		'priority': [
+			{ 'pattern': 'webc:*' },
+		],
+	}],
+}
+
+const wholeDocumentRules = { // Only where we author the whole document, not fragments in prose.
+	'element-newline': ['error', { 'inline': ['$inline', 'img', 'nobr', 'slot'] }],
+	'indent': ['error', 'tab'],
+	'no-nested-interactive': 'error',
+	'prefer-https': 'error',
+	'require-closing-tags': ['error', { 'selfClosing': 'never'}],
+}
 
 export default [
 	{
@@ -61,54 +116,23 @@ export default [
 		},
 	},
 	{
-		files: ['**/*.html', '**/*.md', '**/*.webc'], // Common rules.
+		files: ['**/*.html', '**/*.md', '**/*.webc'], // Common rules — `markdown/*` is `@html-eslint/*`, minus code blocks.
 		languageOptions: { parser: htmlParser },
-		plugins: { '@html-eslint': htmlPlugin },
+		plugins: { '@html-eslint': htmlPlugin, markdown: markdownPlugin },
 		rules: {
-			'@html-eslint/id-naming-convention': ['error', 'kebab-case'],
-			'@html-eslint/lowercase': 'error',
-			'@html-eslint/no-duplicate-attrs': 'error',
-			'@html-eslint/no-duplicate-class': 'error',
-			'@html-eslint/no-duplicate-id': 'error',
-			'@html-eslint/no-extra-spacing-attrs': ['error', { 'enforceBeforeSelfClose': true }],
-			'@html-eslint/no-invalid-entity': 'error',
-			'@html-eslint/no-multiple-empty-lines': ['error', { max: 1 }],
-			'@html-eslint/no-script-style-type': 'error',
-			'@html-eslint/no-trailing-spaces': 'error',
-			'@html-eslint/quotes': ['error', 'double'],
 			'indent': 'off', // Core `indent` throws on the HTML AST; `@html-eslint/indent` covers markup, `html/indent` covers scripts.
 		},
 	},
 	{
 		files: ['**/*.html', '**/*.webc'], // Examples and template/component-only.
-		languageOptions: { parser: htmlParser },
-		plugins: { '@html-eslint': htmlPlugin },
-		rules: {
-			'@html-eslint/element-newline': ['error', { 'inline': ['$inline', 'img', 'nobr', 'slot'] }],
-			'@html-eslint/indent': ['error', 'tab'],
-			'@html-eslint/no-nested-interactive': 'error',
-			'@html-eslint/prefer-https': 'error',
-			'@html-eslint/require-closing-tags': ['error', { 'selfClosing': 'never'}],
-		},
-	},
-	{
-		files: ['**/*.webc'], // Template/component-only.
-		languageOptions: { parser: htmlParser },
-		plugins: { '@html-eslint': htmlPlugin },
-		rules: {
-			'@html-eslint/sort-attrs': ['error', {
-				'priority': [
-					{ 'pattern': 'webc:*' },
-				],
-			}],
-		},
+		rules: prefixed('@html-eslint', { ...anyMarkupRules, ...wholeDocumentRules }),
 	},
 	{
 		files: ['**/*.md'], // Just Markdown.
-		languageOptions: { parser: htmlParser },
-		plugins: { '@html-eslint': htmlPlugin },
-		rules: {
-			'@html-eslint/prefer-https': 'warn',
-		},
+		rules: prefixed('markdown', { ...anyMarkupRules, 'prefer-https': 'warn' }),
+	},
+	{
+		files: ['**/*.html'], // Examples read better in conventional attribute order.
+		rules: { '@html-eslint/sort-attrs': 'off' },
 	},
 ]
