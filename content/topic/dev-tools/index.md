@@ -43,7 +43,6 @@ You can also hit <kbd><kbd><span class="x2318">⌘</span>/Ctrl</kbd>+<kbd><span 
 <img src="right-click.png">
 </figure>
 
-
 <figure class="all justify-center borderless shadow">
 <img src="dev-tools.png">
 </figure>
@@ -152,7 +151,6 @@ The <samp>More Options <span class="x22ee">⋮</span></samp> menu here has some 
 </figure>
 
 **Remember that you are not targeting specific devices; you are looking for when your design/content *breaks*!**
-
 
 > [!IMPORTANT]
 >

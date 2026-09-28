@@ -173,7 +173,6 @@ This will apply to any page that we add the `<link>` to, and updating the styles
 
 </div>
 
-
 ```css <!-- .recto .center -->
 /* `style.css` */
 p {
@@ -211,7 +210,6 @@ Each lower/subsequent layer takes precedent over the previous—no matter the se
 </html>
 ```
 
-
 **We’ll touch on [specificity](#specificity) below, but keep in mind that [*inline* styles](#1-inline-with-style) takes over all other methods—under the “closest, then lowest” logic. It’s another reason why we avoid it! And why `layer()` gives us more intuitive control.**
 
 ---
@@ -231,7 +229,6 @@ It's *much* easier to understand how it all comes together if you keep the code 
 > So we’ll use [external](#3external-with-link) [styles](#4using-import-to-assign-layer), only! You might see [inline](#1inline-with-style) or [in-HTML](#2style-in-html) styles elsewhere. But we should not see them in your code.
 >
 > <sub>They are generally a sign something has gone wrong—and that you (or your [resource](../../syllabus.md#attribution)) don’t understand why.</sub>
-
 
 ## CSS Rules
 
@@ -458,7 +455,6 @@ It’s pretty easy to over-select with `:not`—but *can* be quicker than select
 
 </figcaption>
 </figure>
-
 
 It can be [tricky](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:not#description) and confusing to use, though—so consider flipping your mental model, instead of the logic! Selectors are already hard enough.
 
@@ -769,7 +765,6 @@ All the children inherit the `body` styles. Ah, finally, `sans-serif`.
 > Inheritance can be annoying, but is also a *superpower* of CSS!
 >
 > <sub>Try aiming your work to taking advantage of it, versus fighting it. Like all these annoyances, they’re avoided with *systematic*, *structured* design/thinking.</sub>
-
 
 ### Avoiding These “Problems”
 

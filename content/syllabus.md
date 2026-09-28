@@ -16,7 +16,6 @@ const order = 2
 
 <div>
 
-
 Typography is the infrastructure of communication in nearly any visual medium. It provides the very first shape and form to written content, and as designers, it is our responsibility to practice this with intention and care. Whether towards goals of expression itself or in the service of ideas, the designer must understand type to use it successfully. In this way, we are stewards of meaning.
 
 Digital design, the web in particular, is inextricably linked with typography—from the very letters of code at its base to the words in arrangement we see on a screen. Type, thus, is the scaffolding in which all interaction design first rises. The very shape of the web, in its layouts, systems, and patterns—and its various technologies—all exist in the service of type, at their root. They provide the tools with which we can breathe a form and different, digital life into that meaning.
@@ -370,7 +369,6 @@ In class, we will demonstrate using [Figma](http://figma.com) for visual design 
 - [<cite>Figma Team</cite>](https://www.figma.com/files/team/1670950360853186233/all-projects) \
 	For visual sketching and collaboration.
 <!-- #channels -->
-
 
 ## Class Policies
 

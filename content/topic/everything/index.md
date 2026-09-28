@@ -131,7 +131,6 @@ Tim Berners-Lee, a British academic and scientist, invented the *World Wide Web*
 >
 > <sub>[Bill Atkinson](https://en.wikipedia.org/wiki/Bill_Atkinson) was the developer of *HyperCard*, while working on the original Macintosh. He also made the [*MacPaint*](https://en.wikipedia.org/wiki/MacPaint) patterns and [dithering](https://en.wikipedia.org/wiki/Atkinson_dithering) we’re using here, and worked with [Susan Kare](https://en.wikipedia.org/wiki/Susan_Kare) on the fonts! [RIP](https://www.nytimes.com/2025/06/07/technology/bill-atkinson-dead.html), Bill.</sub>
 
-
 **Their proposal had four components, defining a paradigm still in use today:**
 
 1. A text file format to represent the documents: the *HyperText Markup Language* (HTML)

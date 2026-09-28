@@ -32,7 +32,7 @@ Dürer examined Roman letterforms and attempted to create a rational *system* fo
 
 </div>
 
-<figure class="right borderless" style="--lines: 12" >
+<figure class="right borderless" style="--lines: 12">
 <img src="durer.jpg">
 <figcaption>
 
@@ -40,8 +40,6 @@ Image from Dürer’s *Directions for the Construction of the Text.* [<cite>↗
 
 </figcaption>
 </figure>
-
-
 
 <figure style="--lines: 15">
 <img src="fraktur.jpg">
@@ -95,7 +93,7 @@ Brush and pen strokes defining typeforms. [<cite>↗</cite>](https://www.thing.n
 </figcaption>
 </figure>
 
-<figure class="recto start borderless" style="--lines: 15" >
+<figure class="recto start borderless" style="--lines: 15">
 <img src="letter-styles.jpg">
 <figcaption>
 
@@ -132,8 +130,6 @@ A “lockup” of metal type, describing the frame holding forms together. We st
 
 </figcaption>
 </figure>
-
-
 
 <figure class="recto">
 <img src="atf.jpg">
@@ -179,7 +175,7 @@ In fact, some of the first computer programs for digital typesetting, such as [`
 
 </div>
 
-<figure class="right start" style="--lines: 15" >
+<figure class="right start" style="--lines: 15">
 <img src="photo-typesetting.jpg">
 <figcaption>
 
@@ -235,7 +231,7 @@ Physical type had to be converted to digital formats in order to be presented on
 
 With the transition to digital screens, the representation of fonts also evolved over time. Today, almost all digital fonts are presented as vectors—the basic mathematical instructions for recreating the letterforms.
 
-<figure class="all justify-center" style="--lines: 8" >
+<figure class="all justify-center" style="--lines: 8">
 <img src="pixels.jpg">
 <figcaption>
 
@@ -502,7 +498,6 @@ A third mistake is to use characters rather than [mathematical symbols](https://
 
 - 9/5&ensp;<span class="rarr">→</span>&ensp;9÷5
 
-
 **When in doubt, [*The Elements of Typographic Style*](https://readings.design/PDF/the_elements_of_typographic_style.pdf) probably has the answers you need. It is among the best single references for typographic minutia.**
 
 ## Type Foundries
@@ -550,7 +545,6 @@ Where does one find typefaces? From *foundries*, again referencing the days whe
 </div>
 
 </section>
-
 
 > [!IMPORTANT]
 >

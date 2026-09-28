@@ -6,7 +6,6 @@ const week = 5
 
 ## Boxes, Within Boxes, Within Boxes, Within Boxes
 
-
 <div class="body">
 
 **For proper layout on the web, we first need to understand how CSS sizes elements—and then how we can add space between them.**
@@ -59,11 +58,9 @@ With `box-sizing: border-box;` the defacto standard. Most [CSS resets](../css/in
 </figcaption>
 </figure>
 
-
 This is often unintuitive for designers and doesn’t fit with most web design patterns—so it is very, *very* common (nearly universal) to instead override this to `box-sizing: border-box;`—which makes `padding` and `border` exist *inside* the content dimensions. Then `padding` (and `border`) is easier to think of as an *inset*.
 
 <sub>[W3C](https://www.w3.org/TR/css-box-3/) might have got this default wrong. Good ol’ CSS!</sub>
-
 
 ## What’s in *The Box*?
 
@@ -289,7 +286,6 @@ This is away to *suggest* a multi-column feeling while keeping your reading flow
 </figcaption>
 </figure>
 
-
 #### *Negative* Margin?
 
 Margin has a couple tricks up its sleeve. First, it can have *negative* values—which will eat up/cinch/remove space between elements—where `padding` and `border` can only add/take up space. Just add a minus before the value and  it will bring things closer together:
@@ -309,7 +305,6 @@ The first element pulls the second element closer with a *negative* margin.
 
 </figcaption>
 </figure>
-
 
 #### Margin *Collapse*?
 
@@ -338,7 +333,6 @@ Okay, so now we have all these box properties—but how do we specify the dimens
 [<cite>`<length>` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/length) \
 	*Length* is used by many properties!
 <!-- .right -->
-
 
 ### Absolute Units
 
@@ -564,7 +558,6 @@ The convention is to declare “global” variables on `:root`—but you can ove
 
 </figcaption>
 </figure>
-
 
 > [!NOTE]
 >

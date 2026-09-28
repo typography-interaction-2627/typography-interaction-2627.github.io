@@ -1,9 +1,9 @@
 <template webc:bucket="base" webc:nokeep>
-	<link href="../../assets/styles/variables.css"  rel="stylesheet">
-	<link href="../../assets/styles/fonts.css"      rel="stylesheet">
+	<link href="../../assets/styles/variables.css" rel="stylesheet">
+	<link href="../../assets/styles/fonts.css" rel="stylesheet">
 	<link href="../../assets/styles/typography.css" rel="stylesheet">
-	<link href="../../assets/styles/links.css"      rel="stylesheet">
-	<link href="../../assets/styles/code.css"       rel="stylesheet">
+	<link href="../../assets/styles/links.css" rel="stylesheet">
+	<link href="../../assets/styles/code.css" rel="stylesheet">
 </template>
 <link webc:bucket="print" href="../../assets/styles/print.css" rel="stylesheet">
 <style webc:keep

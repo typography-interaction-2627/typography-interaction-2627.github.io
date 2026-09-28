@@ -96,8 +96,8 @@
 		event.target.matches('nav details[open]') && event.target.querySelector('a[aria-current]')?.scrollIntoView({ behavior: 'instant', block: 'nearest' }),
 	true)
 </script>
-<details name="nav" webc:root="override">
-	<summary :aria-label="initialCap(collection)" webc:keep webc:root="override">
+<details webc:root="override" name="nav">
+	<summary webc:keep webc:root="override" :aria-label="initialCap(collection)">
 		<svg webc:nokeep @html="inlineSvg(`assets/icons/nav/${collection}.svg`)"></svg>
 		<svg webc:nokeep @html="inlineSvg('assets/icons/nav/drop.svg')"></svg>
 	</summary>

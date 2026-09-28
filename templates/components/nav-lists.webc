@@ -227,7 +227,7 @@
 					<p @text="recordingLabel($data.video)"></p>
 				</a>
 			</li>
-			<template @raw="toc($data.content)" webc:nokeep></template>
+			<template webc:nokeep @raw="toc($data.content)"></template>
 		</ol>
 	</template>
 </template>
