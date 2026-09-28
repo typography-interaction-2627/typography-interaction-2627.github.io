@@ -111,15 +111,13 @@ You’ll [see this `meta` element](https://developer.mozilla.org/en-US/docs/Web/
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
-This `meta` element tells the browser *not* to do this scaling. It says, *“I have a responsive design! Render me at my actual size. My content can reflow.”*
-<!-- .note -->
+<sub>This `meta` element tells the browser *not* to do this scaling. It says, *“I have a responsive design! Render me at my actual size. My content can reflow.”*</sub>
 
 <div class="end verso">
 
 The `width=device-width` tells the browser to use whatever the screen’s *actual* pixel dimension is, and the `initial-scale=1` sets the starting zoom for the page to 100%. This is how the browser knows how to make the page respond, and how our CSS rules know what `width` to use.
 
-We call the portion of the page visible at one time [*the viewport*](https://developer.mozilla.org/en-US/docs/Web/CSS/Viewport_concepts).
-<!-- .intro -->
+**We call the portion of the page visible at one time [*the viewport*](https://developer.mozilla.org/en-US/docs/Web/CSS/Viewport_concepts).**
 
 </div>
 
@@ -196,8 +194,7 @@ We will now allow `px`, for ease of understanding.
 
 Since this `width` is usually our primary design constraint (`height` being handled through scrolling), we need *width-based* media queries to adjust our layouts across this wide range, lest our designs fall.
 
-This is done in steps, at different widths, that we call *breakpoints*—the window/device/viewport sizes where the content *starts to break,* if it is not adjusted.
-<!-- .intro -->
+**This is done in steps, at different widths, that we call *breakpoints*—the window/device/viewport sizes where the content *starts to break,* if it is not adjusted.**
 
 <blockquote
 	@attribution="Josh Brewer, 2012"
@@ -212,8 +209,7 @@ You might add a breakpoint because lines of text get too short or too long, beco
 
 You can add as many *breakpoints* as you need to make your page/design work across devices. Don’t think of these as written *for* specific devices; write *for* your design and for your content!
 
-There are very, *very* few layouts that won’t need some amount of horizontal responsiveness/breakpoints!
-<!-- .intro -->
+**There are very, *very* few layouts that won’t need some amount of horizontal responsiveness/breakpoints!**
 
 In this example, we would refer to ~~`35rem`~~ `550px` as our *breakpoint*:
 <!-- .before--3 -->
@@ -262,11 +258,9 @@ This example is the same *breakpoint* of `550px` as before, but now using `heigh
 	>
 </figure>
 
-In a broader code and programming context, it can be helpful to think of media queries as [conditional *if* statements](https://en.wikipedia.org/wiki/Conditional_(computer_programming)).
-<!-- .intro -->
+**In a broader code and programming context, it can be helpful to think of media queries as [conditional *if* statements](https://en.wikipedia.org/wiki/Conditional_(computer_programming)).**
 
-We’ll talk about this in detail later [with JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else), where conditionals are ubiquitous and powerful. You may have also heard of [*If This Then That*](https://ifttt.com), which takes its name from this kind of logic.
-<!-- .note -->
+<sub>We’ll talk about this in detail later [with JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else), where conditionals are ubiquitous and powerful. You may have also heard of [*If This Then That*](https://ifttt.com), which takes its name from this kind of logic.</sub>
 
 </div>
 
@@ -305,8 +299,7 @@ You can also use comma-separated queries (similar to [*selector lists*](/topic/c
 There is also a `not` [logic operator](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries#not_logic_in_media_queries)—which will reverse the meaning of the media query. But this syntax gets confusing fast—especially with things like `>`/`<` rules making for double-negatives. So it is easier to avoid!
 <!-- .balance -->
 
-Why say `not` `portrait` when you can just say `landscape`?
-<!-- .note -->
+<sub>Why say `not` `portrait` when you can just say `landscape`?</sub>
 
 ## *Mobile-First* Design
 
@@ -323,8 +316,8 @@ One of the easiest methodologies to keep things understandable is practicing [*m
 
 Your design constraints will be tighter and more challenging, by tackling your smallest layout first—but it is almost always easier to scale things *up* than scale them *down*. A mobile design can always work as a passable desktop one; the reverse is rarely true. Another way to think of it:
 
-If it doesn’t work on mobile, it doesn’t work.
-<!-- .after--3 .intro -->
+**If it doesn’t work on mobile, it doesn’t work.**
+<!-- .after -->
 
 - **In Design:**
 
@@ -344,8 +337,7 @@ If it doesn’t work on mobile, it doesn’t work.
 
 This goes “[with the grain](/week/7/#reading-discussion),” following the general CSS pattern/paradigm of the cascade—and is much, much, *much* easier than adjusting desktop front-end after the fact. (Trust us.) Always think *mobile-first*&#x202F;!
 
-Mobile can be the majority of your traffic—[especially internationally](https://gs.statcounter.com/platform-market-share/desktop-mobile/worldwide)! We’d like you to think of *mobile-first* design as a form of accessibility, in this light. Not everyone has your MacBook Pro.
-<!-- .intro -->
+**Mobile can be the majority of your traffic—[especially internationally](https://gs.statcounter.com/platform-market-share/desktop-mobile/worldwide)! We’d like you to think of *mobile-first* design as a form of accessibility, in this light. Not everyone has your MacBook Pro.**
 
 ## Briefly, CSS Variables
 
@@ -393,8 +385,7 @@ You’ll often declare a set of variables for mobile—type sizes, spacing, and�
 
 They’ll help you avoid unwanted cascade (applying the same property), especially across breakpoints. But they also help to facilitate *design system* thinking—focusing your design on the relative *relationships* of things.
 
-Variables are how you build *design systems.* Like relative type scaling, they help to identify, catalyze, and maintain relationships in your work.
-<!-- .intro -->
+**Variables are how you build *design systems.* Like relative type scaling, they help to identify, catalyze, and maintain relationships in your work.**
 
 ## Other Media Features
 
@@ -472,8 +463,7 @@ These last two are primarily concerned with [accessiblity](https://developer.moz
 	You can think of both subtlety and motion as progressive enhancements.
 <!-- .right .rows--2 -->
 
-Or these are just their preference! None of your business.
-<!-- .note -->
+<sub>Or these are just their preference! None of your business.</sub>
 
 ```css <!-- .center .verso -->
 :root {
