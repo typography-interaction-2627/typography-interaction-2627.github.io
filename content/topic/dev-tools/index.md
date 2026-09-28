@@ -39,12 +39,12 @@ You can also hit <kbd><kbd><span class="x2318">⌘</span>/Ctrl</kbd>+<kbd><span 
 
 </div>
 
-<figure class="recto justify-center borderless center" style="--height: 273px">
+<figure class="recto justify-center borderless shadow center" style="--height: 273px">
 <img src="right-click.png">
 </figure>
 
 
-<figure class="all justify-center borderless">
+<figure class="all justify-center borderless shadow">
 <img src="dev-tools.png">
 </figure>
 
@@ -112,7 +112,7 @@ On the right, you can see the sum *Computed* (or *rendered*) values of all the 
 
 Enter *device mode* with the little phone/laptop <samp><span class="x2ff8">⿸</span></samp> button, in the upper left of the DevTools:
 
-<figure class="all justify-center borderless">
+<figure class="all justify-center borderless shadow">
 <img src="device.png">
 <figcaption>
 
@@ -133,7 +133,7 @@ The *Preview Zoom* also allows you to approximate views *larger* than your curre
 
 </div>
 
-<figure class="start middle borderless" style="--height: 489px">
+<figure class="start middle borderless shadow" style="--height: 489px">
 <img src="responsive.png">
 <figcaption>
 
@@ -142,7 +142,7 @@ The <samp>Device List <span class="x25be">▾</span></samp> is… *ancient* and�
 </figcaption>
 </figure>
 
-<figure class="right borderless" style="--height: 260px">
+<figure class="right borderless shadow" style="--height: 260px">
 <img src="options.png">
 <figcaption>
 
@@ -176,7 +176,7 @@ If your tools are already open, you can show the <samp>Console</samp> (as a dra
 <img src="panel-drawer.svg">
 </figure>
 
-<figure class="all justify-center borderless">
+<figure class="all justify-center borderless shadow">
 <img src="console-panel.png">
 <figcaption>
 

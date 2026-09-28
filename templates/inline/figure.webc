@@ -226,13 +226,8 @@
 		/* Looser space. */
 		&.borderless { --gap: calc(2rlh - 1rcap) }
 
-		/* &.shadow img {
-			filter:
-				saturate(var(--in-view))
-				contrast(calc(2 - var(--in-view)))
-				brightness(calc(2 - var(--in-view)))
-			;
-		} */
+		/* Mac OS-y shadow when in view. */
+		&.shadow img { filter: drop-shadow(0 1rcap 1rcap color-mix(in srgb, black calc(25% * var(--in-view)), transparent)) }
 
 		figcaption {
 			--size: var(--size--note);
