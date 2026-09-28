@@ -1,0 +1,24 @@
+:root { --background: aquamarine; }
+
+section { background-color: var(--background); }
+
+a { text-decoration: underline; }
+
+/* We usually can leave `screen` off, as the default. */
+@media screen and (width > 550px) {
+	:root { --background: coral; }
+}
+
+@media print {
+	:root {
+		--background: initial; /* Resets this. */
+
+		font-size: 18pt; /* Absolute units! */
+	}
+
+	section {
+		border: 4pt solid black;
+		font-family: serif;
+		padding: 0.5in;
+	}
+}

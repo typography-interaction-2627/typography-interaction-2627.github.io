@@ -1,0 +1,9 @@
+section { background-color: aquamarine; }
+
+@media (orientation: portrait) {
+	section:first-child { background-color: gold; }
+}
+
+@media (orientation: landscape) {
+	section:last-child { background-color: orange; }
+}

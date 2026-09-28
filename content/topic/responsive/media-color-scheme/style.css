@@ -1,0 +1,20 @@
+:root {
+	--accent: aquamarine;
+	--background: white;
+	--foreground: black;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--accent: teal;
+		--background: black;
+		--foreground: white;
+	}
+}
+
+body {
+	background-color: var(--background);
+	color: var(--foreground);
+}
+
+section { background-color: var(--accent); }

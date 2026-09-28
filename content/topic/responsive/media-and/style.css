@@ -1,0 +1,9 @@
+section { background-color: aquamarine; }
+
+@media (width > 550px) and (width < 700px) {
+	section:first-child { background-color: gold; }
+}
+
+@media (width > 700px) and (height > 300px) {
+	section:last-child { background-color: orange; }
+}

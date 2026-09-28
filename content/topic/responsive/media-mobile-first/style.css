@@ -1,0 +1,21 @@
+main {
+	display: flex; /* We’ll talk about flex soon! */
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+section { background-color: aquamarine; }
+
+@media (width > 550px) {
+	section {
+		background-color: gold;
+		inline-size: calc((100% - 1rem) / 2);
+	}
+}
+
+@media (width > 700px) {
+	section {
+		background-color: orange;
+		inline-size: calc((100% - 3rem) / 4);
+	}
+}

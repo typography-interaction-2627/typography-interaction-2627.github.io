@@ -1,0 +1,15 @@
+body {
+	font-family: sans-serif;
+	padding: 1rem;
+}
+
+aside,
+section {
+	padding: 1rem;
+}
+
+aside,
+section:not(:first-child),
+p:not(:first-child) {
+	margin-block-start: 1rem;
+}
