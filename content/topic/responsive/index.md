@@ -10,13 +10,13 @@ const draft = true
 
 This term was coined in 2010 or so [by Ethan Marcotte](https://alistapart.com/article/responsive-web-design/)—wrapping a name around a [*progressive enhancement*](https://alistapart.com/article/understandingprogressiveenhancement/) and [*mobile-first*](https://www.lukew.com/ff/entry.asp?933) web design approach/philosophy that had been growing in the mid-2000s (sometimes called *liquid, flexible, fluid,* or *elastic* design).
 
-- [<cite>Responsive Design – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design)
+- [<cite>Responsive Design – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design) \
 	A pretty nice overview.
 
-- [<cite>Beginner's Guide to Media Queries – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries)
+- [<cite>Beginner's Guide to Media Queries – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries) \
 	Slightly overlapping, but also good.
 
-- [<cite>Using Media Queries – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#media_features)
+- [<cite>Using Media Queries – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#media_features) \
 	Okay, that’s probably enough MDN.
 
 - [<cite>Using CSS Custom Properties – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
@@ -276,10 +276,10 @@ There is also a `not` [logic operator](https://developer.mozilla.org/en-US/docs/
 
 So this can all get very complicated, very quickly—especially with complex designs, overlapping rules, and the wide ranges of devices to consider.
 
-- [<cite>Mobile First – A Book Apart</cite>](http://www.ferrispark.com/audio/DOCUMENTS/mobile-first.pdf)
+- [<cite>Mobile First – A Book Apart</cite>](http://www.ferrispark.com/audio/DOCUMENTS/mobile-first.pdf) \
 	[Luke Wroblewski](https://lukew.com/) wrote the book (and [the deck](https://static.lukew.com/MobileFirst_LukeW.pdf)).
 
-- [<cite>Progressive Enhancement – Wikipedia</cite>](https://en.wikipedia.org/wiki/Progressive_enhancement)
+- [<cite>Progressive Enhancement – Wikipedia</cite>](https://en.wikipedia.org/wiki/Progressive_enhancement) \
 	The term coined by [Steve Champeon](https://www.webstandards.org/about/members/schampeo/index.html) and [Nick Finck](https://nickfinck.com/) in [2003](https://hesketh.com/publications/inclusive_web_design_for_the_future/).
 <!-- .right .rows--3 -->
 
@@ -314,7 +314,7 @@ This goes “[with the grain](../../week/7.md#reading-discussion),” following 
 
 [Custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) (folks almost always say *CSS variables*) aren’t strictly a part of *responsive design* or *media queries*, per se—but they come up very often in modern, mobile-first practice and we’ll introduce them briefly, here. They allow you codify the relationships in your design.
 
-[<cite>CSS Custom Properties Guide – CSS Tricks</cite>](https://css-tricks.com/a-complete-guide-to-custom-properties/)
+[<cite>CSS Custom Properties Guide – CSS Tricks</cite>](https://css-tricks.com/a-complete-guide-to-custom-properties/) \
 	Web guru [Chris Coyier’s](https://chriscoyier.net/) robust overview.
 <!-- .right -->
 
@@ -362,7 +362,7 @@ They’ll help you avoid unwanted cascade (applying the same property), especial
 
 By far, the most common media queries will be *width*/*height*/*orientation*—for adjusting your layouts across devices. But `@media` has some more tricks up its sleeve in testing for other browser features. We’ll look at some of the handy/common ones.
 
-[<cite>`@media` types/features - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/@media#media_features)
+[<cite>`@media` types/features - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/@media#media_features) \
 	There are many of these! Meet your users where they are.
 <!-- .right -->
 
@@ -370,7 +370,7 @@ By far, the most common media queries will be *width*/*height*/*orientation*—f
 
 In all of our above examples, there is an implied *[media type](https://developer.mozilla.org/en-US/docs/Web/CSS/@media#media_types)* of `screen`—since that is usually what we are concerned with, on the web. But there is also one for <nobr>`print`&#x202F;!</nobr> You can use these to segment styles to one medium or the other:
 
-[<cite>CSS paged media - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_paged_media)
+[<cite>CSS paged media - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_paged_media) \
 	There are also some print-specific properties available.
 <!-- .right -->
 
@@ -393,7 +393,7 @@ In all of our above examples, there is an implied *[media type](https://develope
 
 Another common feature is `hover`, used to detect whether a browser has an input device that supports *hovering*—which really just means a mouse, usually on laptop/desktop computers.
 
-[<cite>`hover` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover)
+[<cite>`hover` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover) \
 	Mobile devices don’t have this!
 <!-- .right -->
 
@@ -412,7 +412,7 @@ Hover states are a good feature for *progressive-enhancement*, as we did here—
 
 You see this one more and more these days—`prefers-color-scheme` for switching up a site’s styles based on whether the user is in *light* or *dark mode*, popularized by the ol’ iPhone again:
 
-[<cite>`prefers-color-scheme` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)
+[<cite>`prefers-color-scheme` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) \
 	Michael prefers `dark`; Rijk prefers `light`.
 <!-- .right -->
 
@@ -429,8 +429,8 @@ Sometimes this feels appropriate—especially in products/applications, like may
 
 These last two are primarily concerned with [accessiblity](https://developer.mozilla.org/en-US/docs/Web/Accessibility)—`prefers-contrast` for folks who run their device/browser in a high-contrast mode to help with their vision, or `prefers-reduced-motion` for those who have animations turned off for vestibular reasons.
 
-- [<cite>`prefers-contrast` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast)
-- [<cite>`prefers-reduced-motion` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion)
+- [<cite>`prefers-contrast` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast) \
+- [<cite>`prefers-reduced-motion` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) \
 	You can think of both subtlety and motion as progressive enhancements.
 <!-- .right .rows--2 -->
 
