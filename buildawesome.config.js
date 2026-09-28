@@ -156,7 +156,6 @@ export default (config) => {
 
 	// Heading wrapping/links.
 	const markdownAnchors = (markdown) => markdown.use(markdownItAnchor, {
-		// TODO Apostrophes! And `&shy;`
 		// TODO Could this be moved to a `.webc` Same for `markdownAsides`?
 		permalink: (slug, opts, state, idx) => {
 			const headingId = state.tokens[idx].attrs.find(([id]) => id === 'id')[1]
@@ -175,7 +174,8 @@ export default (config) => {
 
 			state.tokens.splice(idx, 3, token)
 		},
-		slugify: config.getFilter('slugify'),
+		// By this point `&shy;`/`&NoBreak;` are already decoded to soft hyphen/word joiner chars, so drop those instead of their entity names.
+		slugify: (str) => config.getFilter('slugify')(str, { customReplacements: [['\u00AD', ''], ['\u2060', '']] }),
 	})
 
 	// Nice `pre` blocks.

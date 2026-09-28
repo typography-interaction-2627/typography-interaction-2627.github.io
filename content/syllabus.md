@@ -262,7 +262,7 @@ To wrap up the semester (and course), we’ll round out our knowledge of the web
 * [<cite>*Material Design 1*</cite>](https://m1.material.io/) \
 	Google, 2014
 
-* [<cite>*<small>i</small>OS Human Interface Guidelines*</cite>](https://www.evl.uic.edu/datsoupi/420_14/docs/MobileHIG.pdf) \
+* [<cite>*i&NoBreak;OS Human Interface Guidelines*</cite>](https://www.evl.uic.edu/datsoupi/420_14/docs/MobileHIG.pdf) \
 	Apple, 2014
 <!-- .all -->
 
@@ -466,7 +466,7 @@ These attributions should explain *why* they were brought in, *what* was referen
 > Copying/pasting, autocompleting, or LLM&NoBreak;-ing work in the absence of an attribution and explanation is [plagiarism](#plagiarism-and-derivative-work).
 <!-- .screen -->
 
-### LLM<small>s</small> and “Artificial Intelligence”
+### LLM&NoBreak;s and “Artificial Intelligence”
 
 There has been much discussion and development in our field (and others) around [*large language models*](https://en.wikipedia.org/wiki/Large_language_model), a.k.a. “artificial intelligence.” Tools like the conspicuous [Chat&NoBreak;GPT](https://openai.com/blog/chatgpt), [Claude Code](https://claude.com/product/claude-code), [Cursor’s IDE](https://cursor.com/en), [Google Gemini](https://gemini.google.com), and [GitHub Copilot](https://github.com/features/copilot) are upending the industry and changing how we work. But aside from (the many) other concerns, their use in the classroom remains fraught, at best.
 
