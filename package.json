@@ -7,6 +7,7 @@
 		"@mdit-vue/plugin-component": "^3.0.2",
 		"@parsons/ti-preview": "^0.0.45",
 		"github-slugger": "^2.0.0",
+		"js-beautify": "^2.0.3",
 		"markdown-it": "^15.0.0",
 		"markdown-it-abbr": "^2.0.0",
 		"markdown-it-anchor": "^9.2.1",
@@ -28,7 +29,7 @@
 		"prepare": "git config core.hooksPath .githooks && pnpm fonts",
 		"clean": "node -e \"require('fs').rmSync('_site', { recursive: true, force: true })\"",
 		"fonts": "node fetch-fonts.js",
-		"build": "pnpm fonts && pnpm clean && buildawesome",
+		"build": "pnpm fonts && pnpm clean && buildawesome && node beautify.config.js",
 		"serve": "pnpm clean && buildawesome --serve --port=80 --incremental",
 		"lint": "eslint . --fix"
 	},
