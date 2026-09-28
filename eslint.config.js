@@ -3,6 +3,7 @@ import htmlParser from '@html-eslint/parser'
 import html from 'eslint-plugin-html'
 import jsonc from 'eslint-plugin-jsonc'
 import perfectionist from 'eslint-plugin-perfectionist'
+import * as jsoncParser from 'jsonc-eslint-parser'
 import MarkdownIt from 'markdown-it'
 
 const markdown = new MarkdownIt()
@@ -168,8 +169,8 @@ export default [
 		},
 	},
 	{
-		files: ['**/*.json'],
-		languageOptions: { parser: (await import('jsonc-eslint-parser')).default },
+		files: ['**/*.json', '.vscode/*.json'],
+		languageOptions: { parser: jsoncParser },
 		plugins: { jsonc },
 		rules: {
 			'jsonc/sort-keys': ['error', 'asc', { 'natural': true }],
