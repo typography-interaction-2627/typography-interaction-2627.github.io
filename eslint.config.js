@@ -33,6 +33,7 @@ const markdownPlugin = {
 const prefixed = (plugin, rules) => Object.fromEntries(Object.entries(rules).map(([rule, setting]) => [`${plugin}/${rule}`, setting]))
 
 const anyMarkupRules = { // Wherever markup appears: `.html`, `.md`, `.webc`.
+	'class-spacing': 'error',
 	'id-naming-convention': ['error', 'kebab-case'],
 	'lowercase': 'error',
 	'no-duplicate-attrs': 'error',
