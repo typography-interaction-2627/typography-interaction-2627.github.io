@@ -40,29 +40,19 @@ There was a confluence of events that allowed this: modern, <nobr>self-updating<
 	>
 </figure>
 
-<blockquote
-	@attribution="Bruce Lee, 1971"
-	@citation="https://www.youtube.com/watch?v=UE8QBufrxCA"
-	>
+> Empty your mind. Be formless, shapeless, like water.
+>
+> You put water into a cup, it becomes the cup. You put water into a bottle, it becomes the bottle. You put it into a teapot, it becomes the teapot.
+>
+> Now water can flow or it can crash. Be water, my friend.
+>
+> [<cite>Bruce Lee, 1971</cite>](https://www.youtube.com/watch?v=UE8QBufrxCA)
 
-	Empty your mind. Be formless, shapeless, like water.
-
-	You put water into a cup, it becomes the cup. You put water into a bottle, it becomes the bottle. You put it into a teapot, it becomes the teapot.
-
-	Now water can flow or it can crash. Be water, my friend.
-
-</blockquote>
-
-<blockquote
-	@attribution="Josh Clark, 2012"
-	@citation="https://bigmedium.com/jhc/prez/mobile-myths.pdf"
-	>
-
-	Content is like water.
-
-	Content’s going to take many forms, flow into many different containers, many of which we haven’t even imagined yet. Build from content out, not container in.
-
-</blockquote>
+>	Content is like water.
+>
+>	Content’s going to take many forms, flow into many different containers, many of which we haven’t even imagined yet. Build from content out, not container in.
+>
+> [<cite>Josh Clark, 2012</cite>](https://bigmedium.com/jhc/prez/mobile-myths.pdf)
 
 ## The Viewport
 
@@ -196,14 +186,9 @@ Since this `width` is usually our primary design constraint (`height` being hand
 
 **This is done in steps, at different widths, that we call *breakpoints*—the window/device/viewport sizes where the content *starts to break,* if it is not adjusted.**
 
-<blockquote
-	@attribution="Josh Brewer, 2012"
-	@citation="https://twitter.com/jbrewer/status/178528003402379265"
-	>
-
-	If you think responsive's simple, I feel bad for you son. We got 99 viewports, but the iPhone’s just one.
-
-</blockquote>
+> If you think responsive's simple, I feel bad for you son. We got 99 viewports, but the iPhone’s just one.
+>
+> [<cite>Josh Brewer, 2012</cite>](https://web.archive.org/web/20120925123125/https://twitter.com/jbrewer/status/178528003402379265)
 
 You might add a breakpoint because lines of text get too short or too long, becoming hard to read. It might be to prevent a grid of images from becoming too small on a phone—while you can have many columns on desktop, often you can only have one (or two) on mobile.
 
@@ -511,13 +496,8 @@ p {
 	>
 </figure>
 
-<blockquote
-	@attribution="Tim Berners-Lee, 1997"
-	@citation="https://www.w3.org/Press/IPO-announce"
-	>
-
-The power of the Web is in its universality.
-
-Access by everyone regardless of disability is an essential aspect.
-
-</blockquote>
+> The power of the Web is in its universality.
+>
+> Access by everyone regardless of disability is an essential aspect.
+>
+> [<cite>Tim Berners-Lee, 1997</cite>](https://www.w3.org/Press/IPO-announce)
