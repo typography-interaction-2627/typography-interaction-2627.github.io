@@ -581,6 +581,9 @@ export default (config) => {
 					// Override metadata.
 					await page.evaluate(() => document.title = 'Typography & Interaction, Fall 2026')
 
+					// `fonts.ready` only tracks fonts layout has already requested, so force *every* cut to load instead.
+					await page.evaluate(() => Promise.all([...document.fonts].map((font) => font.load())))
+
 					// Output to the original folder (not `_site`), to be checked in!
 					// TODO Edit class/name for Spring!
 					await page.pdf({ path: resolve('assets', 'PMCD_5001_F26.pdf'), preferCSSPageSize: true })
