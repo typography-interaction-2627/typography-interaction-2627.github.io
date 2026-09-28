@@ -28,16 +28,26 @@
 		<h2 :id="recordingId($data.video)" tabindex="-1"><span webc:nokeep @text="recordingLabel($data.video)"></span><a :href="`#${recordingId($data.video)}`">#</a></h2>
 	</hgroup>
 	<figure webc:for="video, index of toArray($data.video)" class="all justify-center">
-		<div>
-			<iframe :src="`https://drive.google.com/file/d/${video}/preview`"></iframe>
-		</div>
-		<figcaption>
-			<p>
-				<span webc:if="index === 0">You’ll need to be <a href="https://accounts.google.com/AccountChooser">signed in</a> to your New School account to see <a :href="`https://drive.google.com/file/d/${video}`">this recording</a> in-page!</span>
-				<span webc:if="index === 0">Safari prevents Google Drive <nobr>embeds—</nobr>so you’ll need to go to <a :href="`https://drive.google.com/file/d/${video}`">the original</a>!</span>
-				<span webc:if="index > 0">And <a :href="`https://drive.google.com/file/d/${video}`">the original</a> for this one!</span>
-				<a :href="`https://drive.google.com/file/d/${video}`"><cite>↗</cite></a>
-			</p>
-		</figcaption>
+		<template webc:if="video.length !== 11" webc:nokeep>
+			<div>
+				<iframe :src="`https://drive.google.com/file/d/${video}/preview`"></iframe>
+			</div>
+			<figcaption>
+				<p>
+					<span webc:if="index === 0">You’ll need to be <a href="https://accounts.google.com/AccountChooser">signed in</a> to your New School account to see <a :href="`https://drive.google.com/file/d/${video}`">this recording</a> in-page!</span>
+					<span webc:if="index === 0">Safari prevents Google Drive <nobr>embeds—</nobr>so you’ll need to go to <a :href="`https://drive.google.com/file/d/${video}`">the original</a>!</span>
+					<span webc:if="index > 0">And <a :href="`https://drive.google.com/file/d/${video}`">the original</a> for this one!</span>
+					<a :href="`https://drive.google.com/file/d/${video}`"><cite>↗</cite></a>
+				</p>
+			</figcaption>
+		</template>
+		<template webc:else webc:nokeep>
+			<div>
+				<iframe :src="`https://www.youtube.com/embed/${video}`"></iframe>
+			</div>
+			<figcaption>
+				<p>Watch this recording <a :href="`https://www.youtube.com/watch?v=${video}`">on YouTube</a>! <a :href="`https://www.youtube.com/watch?v=${video}`"><cite>↗</cite></a></p>
+			</figcaption>
+		</template>
 	</figure>
 </section>
