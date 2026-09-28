@@ -29,7 +29,7 @@
 		}
 
 		/* Go big. */
-		@media (width >= 86em) { &:not(:has(> p:nth-of-type(4))) { --size: var(--size--h1) } }
+		@media (width >= 86em) { &:not(:has(> p:nth-of-type(5))) { --size: var(--size--h1) } }
 
 		p:has(a > cite) {
 			--family: 'Geneva';
