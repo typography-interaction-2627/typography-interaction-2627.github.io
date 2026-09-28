@@ -54,6 +54,7 @@
 		}
 
 		/* TODO Abstract this pattern! */
+		/* TODO Prevent flickering/HDR with different `filter`! */
 		@supports (animation-timeline: view()) {
 			animation-fill-mode:       both;
 			animation-name:            in-view;

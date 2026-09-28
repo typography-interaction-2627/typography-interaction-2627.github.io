@@ -68,6 +68,7 @@ abbr:where(:not(nav abbr)) {
 	padding-inline-end:    var(--right);
 	padding-inline-start:  var(--left);
 
+	/* TODO JS trickery for “only show one in view”! So many HTML/CSS, for ex. */
 }
 
 s {
