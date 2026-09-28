@@ -7,12 +7,17 @@ import MarkdownIt from 'markdown-it'
 
 const markdown = new MarkdownIt()
 
-// Code samples are content, not markup to lint — `map` is a `[start, end)` pair of zero-based lines.
+// Code samples are content, not markup to lint — but a fence’s own first line carries our attribute comments.
 const codeBlocks = (text) => markdown.parse(text, {})
 	.filter(({ map, type }) => map && (type === 'code_block' || type === 'fence'))
-	.map(({ map }) => map)
+	.map(({ map: [start, end], type }) => type === 'fence' ? [start + 2, end - 1] : [start + 1, end])
 
 const reportedLine = ({ loc, node }) => (loc?.start ?? loc ?? node.loc.start).line
+
+// Ranked so `#id` leads, then `.class`, then attributes — each alphabetical.
+const attrRank = (token) => token.startsWith('#') ? 0 : token.startsWith('.') ? 1 : 2
+
+const sortTokens = (tokens) => [...tokens].sort((a, b) => attrRank(a) - attrRank(b) || a.localeCompare(b))
 
 // No upstream rule sorts class *values*, only attribute names.
 const sortClasses = {
@@ -38,9 +43,35 @@ const sortClasses = {
 	},
 }
 
-const markupRules = { ...htmlPlugin.rules, 'sort-classes': sortClasses }
+// Matches the shapes `commentsToCurlies` hands to `markdown-it-attrs` in `buildawesome.config.js`.
+const sortAttrComments = {
+	create: (context) => ({
+		Comment: (node) => {
+			const content = node.value.value
 
-const localPlugin = { rules: { 'sort-classes': sortClasses } }
+			if (!/^\s*([.#@:]|data|style|inert)/.test(content)) return
+
+			const tokens = content.match(/(?:[^\s"]+|"[^"]*")+/g) ?? []
+			const sorted = ` ${sortTokens(tokens).join(' ')} `
+
+			if (content !== sorted) context.report({
+				fix: (fixer) => fixer.replaceText(node.value, sorted),
+				loc: node.value.loc,
+				messageId: 'unsorted',
+			})
+		},
+	}),
+	meta: {
+		fixable: 'code',
+		messages: { unsorted: 'Attribute comment should be sorted, with single spaces.' },
+		schema: [],
+		type: 'code',
+	},
+}
+
+const markupRules = { ...htmlPlugin.rules, 'sort-attr-comments': sortAttrComments, 'sort-classes': sortClasses }
+
+const localPlugin = { rules: { 'sort-attr-comments': sortAttrComments, 'sort-classes': sortClasses } }
 
 // The same rules, made blind to Markdown code blocks.
 const markdownPlugin = {
@@ -51,7 +82,7 @@ const markdownPlugin = {
 
 			return rule.create(Object.create(context, {
 				report: {
-					value: (descriptor) => blocks.some(([start, end]) => reportedLine(descriptor) > start && reportedLine(descriptor) <= end) || context.report(descriptor),
+					value: (descriptor) => blocks.some(([first, last]) => reportedLine(descriptor) >= first && reportedLine(descriptor) <= last) || context.report(descriptor),
 				},
 			}))
 		},
@@ -158,7 +189,7 @@ export default [
 	},
 	{
 		files: ['**/*.md'], // Just Markdown.
-		rules: prefixed('markdown', { ...anyMarkupRules, 'prefer-https': 'warn', 'sort-classes': 'error' }),
+		rules: prefixed('markdown', { ...anyMarkupRules, 'prefer-https': 'warn', 'sort-attr-comments': 'error', 'sort-classes': 'error' }),
 	},
 	{
 		files: ['**/*.html'], // Examples read better in conventional attribute order.

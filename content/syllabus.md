@@ -452,7 +452,7 @@ These attributions should explain *why* they were brought in, *what* was referen
 
 **Practically, these will take the form of [code](topic/html/index.md#comments) [comments](topic/css/index.md#element-example). An example:** <!-- .screen -->
 
-```css <!-- .screen .all -->
+```css <!-- .all .screen -->
 /* I wanted to treat large grids differently in my design! */
 /* I found this tool: https://css-tip.com/quantity-queries/ */
 /* The selector matches when the container has a sixth child. */

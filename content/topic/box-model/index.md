@@ -123,9 +123,9 @@ Know that `padding`—and many other CSS properties, including `border` and <nob
 |**3 values:** | `top` `left/right` `bottom`    |
 |**4 values:** | `top` `right` `bottom`  `left` |
 
-<!-- .verso .before style="padding-block-start: 1rex" -->
+<!-- .before .verso style="padding-block-start: 1rex" -->
 
-```css <!-- .recto .before .start style="inline-size: initial" -->
+```css <!-- .before .recto .start style="inline-size: initial" -->
 section { padding: 1rem; }
 section { padding: 1rem 2rem; }
 section { padding: 1rem 2rem 4rem; }
@@ -398,7 +398,7 @@ These are based on our layout, viewport, or typography dimensions! And are much 
 
 </div>
 
-```css <!-- .recto .before style="inline-size: initial" -->
+```css <!-- .before .recto style="inline-size: initial" -->
 /* Relative to nearest “sized” ancestor. */
 .percentage {
 	block-size: 90%;
@@ -484,7 +484,7 @@ You can usually set [*minimums*](https://developer.mozilla.org/en-US/docs/Web/CS
 
 </div>
 
-```css <!-- .recto .before style="inline-size: initial" -->
+```css <!-- .before .recto style="inline-size: initial" -->
 .constrained-inline {
 	min-inline-size: 12rem;
 	inline-size: 50%;
@@ -816,7 +816,7 @@ Another way to hide an element visually is to adjust `opacity`, which uses value
 
 [<cite>Opacity – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity) \
 	The entire element *and* its descendents are adjusted, as one.
-<!-- .right  -->
+<!-- .right -->
 
 <figure style="--lines: 7">
 

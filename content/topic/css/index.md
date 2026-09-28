@@ -261,7 +261,7 @@ Like with HTML, it’s easiest just to be consistent and stick to lowercase (and
 
 </div>
 
-```css <!-- .recto .center -->
+```css <!-- .center .recto -->
 p {
 	color: red;
 	font-family: 'Geneva', sans-serif;
@@ -511,7 +511,7 @@ For many, *many* years folks have wanted a “parent selector” in CSS—meanin
 <!-- .right .rows--2 -->
 
 CSS has [finally added](https://webkit.org/blog/13096/css-has-pseudo-class/) the [`:has()` pseudo-class](https://developer.mozilla.org/en-US/docs/Web/CSS/:has), just in the past couple years. It allows us to write much simpler, logical styles:
-<!-- .before .after -->
+<!-- .after .before -->
 
 <div class="verso">
 
@@ -771,9 +771,9 @@ All the children inherit the `body` styles. Ah, finally, `sans-serif`.
 It is easiest—both in visuals, and in code—to think about your design reasoning, rules, and relationships from “large to small” (or “broad to narrow,” or “general to specific”). Decide first on what is *always* true, then move to *subsets*, and finally any *one-offs*.
 
 In CSS, this manifests as styling [`element`](#1-element-type-p-a-main-etc) first for broad, global decisions, then some [`.class`](#2-a-class-class-name) for certain sets of things, and only use [`#id`](#3-an-identifier-some-id) when you *know* it’s a unique, singular scenario. Your stylesheet should (broadly) resemble this:
-<!-- .before .after -->
+<!-- .after .before -->
 
-```css <!-- .all .justify-center #top-to-bottom -->
+```css <!-- #top-to-bottom .all .justify-center -->
 body {
 	/* Things that are true of everything! */
 }

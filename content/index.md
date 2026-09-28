@@ -9,7 +9,7 @@ const order = 1
 <span class="spring">PMCD 5002, <nobr>CRN 3992/9589</nobr></span> \
 2 W 13th St., Room 1201 \
 Thursdays, 4–6:40 pm**
-<!-- .verso #logistics -->
+<!-- #logistics .verso -->
 
 <div class="recto rows--3" style="margin-block-start: initial">
 

@@ -486,7 +486,7 @@ Generally speaking, HTML doesn’t care about capitalization, extra white space,
 </body>
 ```
 
-```html <!-- .recto .center .justify-center -->
+```html <!-- .center .justify-center .recto -->
 <body><h1>Dog Breeds</h1><p>There
 are many kind of dog breeds</p>
 <ul><li>German Shepherd</li><li>
