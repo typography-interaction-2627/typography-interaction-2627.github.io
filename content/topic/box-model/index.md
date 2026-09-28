@@ -135,13 +135,13 @@ section { padding: 1rem 2rem 4rem 2rem; }
 </section>
 
 <section style="margin-block-end: 2rlh">
-<div class="balance verso before center">
+<div class="balance before center verso">
 
 These three- and four-value rules are often harder to read and quickly understand though, so we tend to avoid them. You can *always* write the individual directions out, for clarity! (And cleaner diffs, with separate/whole-line changes.)
 
 </div>
 
-<div class="recto before">
+<div class="before recto">
 
 ```css <!-- style="inline-size: initial" -->
 section {
@@ -336,7 +336,7 @@ Okay, so now we have all these box properties—but how do we specify the dimens
 
 ### Absolute Units
 
-<div class="balance verso center">
+<div class="balance center verso">
 
 <div class="before sticky" style="margin-block-end: 2rlh">
 
@@ -454,7 +454,7 @@ Extending the idea of systematic/relationship-based dimensions, often you will w
 
 </div>
 
-<div class="recto before">
+<div class="before recto">
 
 ```css <!-- .sticky style="inline-size: initial" -->
 .flexible-and-fixed {
@@ -470,7 +470,7 @@ Extending the idea of systematic/relationship-based dimensions, often you will w
 
 ### Constrained by `min-`/`max-`
 
-<div class="balance start before verso">
+<div class="balance before start verso">
 
 <div class="before sticky" style="margin-block-end: 2rlh">
 
@@ -513,7 +513,7 @@ p {
 <!-- .right -->
 
 <section class="before" style="margin-block-end: 1rlh">
-<div class="before balance verso">
+<div class="balance before verso">
 
 These bring another programming concept of [*variables*](https://en.wikipedia.org/wiki/Variable_(computer_science)) into CSS. These are shorthand entities for *any* values (not just lengths) we want to reuse throughout a document.
 
@@ -525,7 +525,7 @@ In your CSS, you *declare* (set) these with a `--` prefix in front of a subjecti
 
 </div>
 
-<div class="recto before">
+<div class="before recto">
 
 ```css <!-- .sticky -->
 /* Special “entire document” selector, akin to `html`. */

@@ -14,9 +14,37 @@ const codeBlocks = (text) => markdown.parse(text, {})
 
 const reportedLine = ({ loc, node }) => (loc?.start ?? loc ?? node.loc.start).line
 
-// Every `@html-eslint` rule, made blind to Markdown code blocks.
+// No upstream rule sorts class *values*, only attribute names.
+const sortClasses = {
+	create: (context) => ({
+		Attribute: (node) => {
+			if (node.key.value.toLowerCase() !== 'class' || !node.value || node.value.parts?.length) return
+
+			const classes = node.value.value.split(/\s+/).filter(Boolean)
+			const sorted = [...classes].sort((a, b) => a.localeCompare(b))
+
+			if (classes.join(' ') !== sorted.join(' ')) context.report({
+				fix: (fixer) => fixer.replaceText(node.value, sorted.join(' ')),
+				loc: node.value.loc,
+				messageId: 'unsorted',
+			})
+		},
+	}),
+	meta: {
+		fixable: 'code',
+		messages: { unsorted: 'Class names should be sorted alphabetically.' },
+		schema: [],
+		type: 'code',
+	},
+}
+
+const markupRules = { ...htmlPlugin.rules, 'sort-classes': sortClasses }
+
+const localPlugin = { rules: { 'sort-classes': sortClasses } }
+
+// The same rules, made blind to Markdown code blocks.
 const markdownPlugin = {
-	rules: Object.fromEntries(Object.entries(htmlPlugin.rules).map(([name, rule]) => [name, {
+	rules: Object.fromEntries(Object.entries(markupRules).map(([name, rule]) => [name, {
 		...rule,
 		create: (context) => {
 			const blocks = codeBlocks(context.sourceCode.text)
@@ -119,18 +147,18 @@ export default [
 	{
 		files: ['**/*.html', '**/*.md', '**/*.webc'], // Common rules — `markdown/*` is `@html-eslint/*`, minus code blocks.
 		languageOptions: { parser: htmlParser },
-		plugins: { '@html-eslint': htmlPlugin, markdown: markdownPlugin },
+		plugins: { '@html-eslint': htmlPlugin, local: localPlugin, markdown: markdownPlugin }, // `eslint-plugin-html` finds `@html-eslint` by identity, so it has to stay registered.
 		rules: {
 			'indent': 'off', // Core `indent` throws on the HTML AST; `@html-eslint/indent` covers markup, `html/indent` covers scripts.
 		},
 	},
 	{
 		files: ['**/*.html', '**/*.webc'], // Examples and template/component-only.
-		rules: prefixed('@html-eslint', { ...anyMarkupRules, ...wholeDocumentRules }),
+		rules: { ...prefixed('@html-eslint', { ...anyMarkupRules, ...wholeDocumentRules }), 'local/sort-classes': 'error' },
 	},
 	{
 		files: ['**/*.md'], // Just Markdown.
-		rules: prefixed('markdown', { ...anyMarkupRules, 'prefer-https': 'warn' }),
+		rules: prefixed('markdown', { ...anyMarkupRules, 'prefer-https': 'warn', 'sort-classes': 'error' }),
 	},
 	{
 		files: ['**/*.html'], // Examples read better in conventional attribute order.

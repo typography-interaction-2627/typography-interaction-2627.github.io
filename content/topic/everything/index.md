@@ -49,7 +49,7 @@ Univac, the first commercial computer in the US. [<cite>↗</cite>](https://time
 
 A catalyst in the formation of the internet was the [Cold War](https://en.wikipedia.org/wiki/Cold_War). The threat of nuclear conflict spurred the US Defense Department to consider decentralized and distributed communication networks—to disseminate orders and information in the event of an attack (and ultimately, for retaliation).
 
-<figure class="all justify-center borderless">
+<figure class="all borderless justify-center">
 <img src="networks.png">
 <figcaption>
 
@@ -66,7 +66,7 @@ Different network topologies. [<cite>↗</cite>](https://www.rand.org/content/da
 >
 > [<cite>Paul Baran, 2008</cite>](https://www.vanityfair.com/news/2008/07/internet200807)
 
-<figure class="verso borderless" style="--lines: 16">
+<figure class="borderless verso" style="--lines: 16">
 <img src="arpanet.png">
 <figcaption>
 
@@ -79,7 +79,7 @@ By 1969, computer nodes [connected](https://en.wikipedia.org/wiki/History_of_the
 
 Over the following decade, [ARPANET](https://www.britannica.com/topic/ARPANET) would grow to include other networks and reach more cities in the US. It had its first expansion outside the States in 1973, with connections to the UK and Norway. Slowly, similar commercial and academic networks were developing alongside, each with their own communication protocols.
 
-<figure class="borderless all justify-center">
+<figure class="all borderless justify-center">
 <img src="arpanet.gif">
 <figcaption>
 
@@ -90,7 +90,7 @@ The growth of ARPANET into the 1970s. [<cite>↗</cite>](https://medium.com/synt
 
 In 1974, Robert Kahn and Vinton Cerf (two ARPA scientists) developed the *Transmission Control Protocol* and the *Internet Protocol* (TCP/IP) for computers to talk to each other. By the 80s, it became the standard network communication format—and still underpins the internet we all use today.
 
-<figure class="recto borderless">
+<figure class="borderless recto">
 <img src="tcpip.png">
 <figcaption>
 
@@ -141,7 +141,7 @@ Tim Berners-Lee, a British academic and scientist, invented the *World Wide Web*
 
 1. Software that gives access to the documents: the *server*
 
-<figure class="all justify-center borderless">
+<figure class="all borderless justify-center">
 <img src="web.png">
 <figcaption>
 
@@ -158,7 +158,7 @@ How it looked for Tim, back then. [<cite>↗</cite>](https://worldwideweb.cern.c
 </figcaption>
 </figure>
 
-<figure class="recto borderless">
+<figure class="borderless recto">
 <img src="chrome.png">
 <figcaption>
 

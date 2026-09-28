@@ -32,7 +32,7 @@ Dürer examined Roman letterforms and attempted to create a rational *system* fo
 
 </div>
 
-<figure class="right borderless" style="--lines: 12">
+<figure class="borderless right" style="--lines: 12">
 <img src="durer.jpg">
 <figcaption>
 
@@ -71,7 +71,7 @@ Cuneiform tablet: administrative account concerning the distribution of barley a
 
 <section>
 
-<div class="verso start">
+<div class="start verso">
 
 <div class="sticky">
 
@@ -84,7 +84,7 @@ Often, words and forms were expressed into a particular physical medium with wha
 
 <div class="recto">
 
-<figure class="recto start borderless" style="--lines: 7">
+<figure class="borderless recto start" style="--lines: 7">
 <img src="pen.jpg">
 <figcaption>
 
@@ -93,7 +93,7 @@ Brush and pen strokes defining typeforms. [<cite>↗</cite>](https://www.thing.n
 </figcaption>
 </figure>
 
-<figure class="recto start borderless" style="--lines: 15">
+<figure class="borderless recto start" style="--lines: 15">
 <img src="letter-styles.jpg">
 <figcaption>
 
@@ -111,7 +111,7 @@ Type forms which came from chisel on marble *(a)*, stubby pen or metal stylus *(
 The first typefaces created with movable type attempted to emulate handwritten scripts. A typeface designer would create a *punch* which would function as the source from which a metal form would be created.
 <!-- .center .verso -->
 
-<figure class="recto borderless" style="--lines: 15">
+<figure class="borderless recto" style="--lines: 15">
 <img src="punch-cut.jpg">
 <figcaption>
 
@@ -220,7 +220,7 @@ Susan explains how to use the Macintosh interface, in 1984. [<cite>↗</cite>](h
 </figcaption>
 </figure>
 
-<figure class="borderless aside">
+<figure class="aside borderless">
 <img src="bit-to-line.jpg">
 <figcaption>
 
@@ -270,7 +270,7 @@ What Is the Difference Between a Typeface and a Font?
 
 </details>
 
-<figure class="all justify-center borderless" style="--lines: 13">
+<figure class="all borderless justify-center" style="--lines: 13">
 <img src="material-typeface.png">
 <figcaption>
 

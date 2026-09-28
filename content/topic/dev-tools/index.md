@@ -39,21 +39,21 @@ You can also hit <kbd><kbd><span class="x2318">⌘</span>/Ctrl</kbd>+<kbd><span 
 
 </div>
 
-<figure class="recto justify-center borderless shadow center" style="--height: 273px">
+<figure class="borderless center justify-center recto shadow" style="--height: 273px">
 <img src="right-click.png">
 </figure>
 
-<figure class="all justify-center borderless shadow">
+<figure class="all borderless justify-center shadow">
 <img src="dev-tools.png">
 </figure>
 
-<div class="before center verso balance">
+<div class="balance before center verso">
 
 The Customize <samp><span class="x22ee">⋮</span></samp> button will let you change the side they appear on, or undock the tools out entirely into a separate window—sometimes easier on a laptop/small screen:
 
 </div>
 
-<figure class="recto borderless justify-end">
+<figure class="borderless justify-end recto">
 <img src="customize.svg">
 </figure>
 
@@ -71,7 +71,7 @@ The <samp>flex</samp>/<samp>grid</samp> badges (pills?) toggle their layout over
 
 </div>
 
-<figure class="center recto borderless justify-end">
+<figure class="borderless center justify-end recto">
 <img src="elements.svg">
 </figure>
 
@@ -90,7 +90,7 @@ On the right, you can see the sum *Computed* (or *rendered*) values of all the 
 
 </div>
 
-<figure class="center recto borderless justify-end">
+<figure class="borderless center justify-end recto">
 <img src="styles.svg">
 </figure>
 
@@ -111,7 +111,7 @@ On the right, you can see the sum *Computed* (or *rendered*) values of all the 
 
 Enter *device mode* with the little phone/laptop <samp><span class="x2ff8">⿸</span></samp> button, in the upper left of the DevTools:
 
-<figure class="all justify-center borderless shadow">
+<figure class="all borderless justify-center shadow">
 <img src="device.png">
 <figcaption>
 
@@ -132,7 +132,7 @@ The *Preview Zoom* also allows you to approximate views *larger* than your curre
 
 </div>
 
-<figure class="start middle borderless shadow" style="--height: 489px">
+<figure class="borderless middle shadow start" style="--height: 489px">
 <img src="responsive.png">
 <figcaption>
 
@@ -141,7 +141,7 @@ The <samp>Device List <span class="x25be">▾</span></samp> is… *ancient* and�
 </figcaption>
 </figure>
 
-<figure class="right borderless shadow" style="--height: 260px">
+<figure class="borderless right shadow" style="--height: 260px">
 <img src="options.png">
 <figcaption>
 
@@ -160,7 +160,7 @@ The <samp>More Options <span class="x22ee">⋮</span></samp> menu here has some 
 
 ## The Console <!-- inert -->
 
-<div class="verso start">
+<div class="start verso">
 
 The console is used to help you work with [JavaScript](../javascript/index.md), by *logging* messages, warnings, and any errors from your code as it runs. It can also evaluate written/pasted JS, live.
 
@@ -170,11 +170,11 @@ If your tools are already open, you can show the <samp>Console</samp> (as a dra
 
 </div>
 
-<figure class="recto justify-end borderless">
+<figure class="borderless justify-end recto">
 <img src="panel-drawer.svg">
 </figure>
 
-<figure class="all justify-center borderless shadow">
+<figure class="all borderless justify-center shadow">
 <img src="console-panel.png">
 <figcaption>
 
@@ -195,7 +195,7 @@ You can use this to test out parts of your code right away, like `document.query
 
 </div>
 
-<figure class="center recto borderless">
+<figure class="borderless center recto">
 <img src="console.svg">
 </figure>
 

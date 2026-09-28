@@ -59,7 +59,7 @@ As we heard in our first class, this format was codified by our pal [Tim Berner
 
 ## The Basic Document
 
-<figure class="verso center">
+<figure class="center verso">
 <img src="nesting.svg">
 </figure>
 
@@ -98,7 +98,7 @@ We call these [*semantic* elements](https://developer.mozilla.org/en-US/docs/Glo
 
 </div>
 
-<div class="recto before">
+<div class="before recto">
 
 **In our example, here is what we’ve told the computer:**
 
@@ -147,7 +147,7 @@ And as designers—they also help us to organize our systems, and give us hooks 
 	MDN will always go deep; this is *all* the elements.
 <!-- .right -->
 
-<figure class="borderless all justify-center">
+<figure class="all borderless justify-center">
 <img src="tag.svg">
 <figcaption>
 
@@ -303,7 +303,7 @@ If you have three of something, it is probably [a list](#lists)! There are also 
 	There are a lot of them.
 <!-- .right -->
 
-<figure class="borderless all justify-center">
+<figure class="all borderless justify-center">
 <img src="attr.svg">
 </figure>
 
@@ -580,7 +580,7 @@ These are live, *editable* examples! Whatever is on the left is rendered on the 
 Inline elements [are the exception](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Whitespace#spaces_in_between_inline_and_inline-block_elements) to the “white space is generally ignored” rule: extra space between inline elements will always be reduced—*collapsed*—to one space.
 <!-- .verso -->
 
-<div class="recto justify-center">
+<div class="justify-center recto">
 
 ```html
 <p>

@@ -140,7 +140,7 @@ The rules are written written with selectors—more on those, below. But import
 
 ### 3.<span class="cap"> </span>External with `<link>`
 
-<div class="verso center">
+<div class="center verso">
 
 Things are getting much better, allowing us to style whole pages easily and consistently. But what about when we have *multiple* pages?
 
@@ -245,7 +245,7 @@ The [curly brackets](https://en.wikipedia.org/wiki/Bracket#Curly_brackets) <nobr
 
 Properties are always separated from their corresponding values by a colon `:`, and each declaration line has to end in a semicolon `;`. (It’s just how it is!) Also, there are no spaces between values and their units (like `2rem`)! You will get used to it.
 
-<figure class="borderless all justify-center">
+<figure class="all borderless justify-center">
 <img src="rule.svg">
 </figure>
 
@@ -546,7 +546,7 @@ There are also the recent [`:is()`](https://developer.mozilla.org/en-US/docs/Web
 	Simpler grouping of styles.
 <!-- .right -->
 
-<div class="verso before">
+<div class="before verso">
 
 **This kind of mess:**
 
@@ -588,7 +588,7 @@ While we’re on the subject of more cutting-edge additions to CSS—[even more 
 
 This more straightforward style of writing [descendent/child selectors](#and-combinators---) was popularized by the ubiquitous [SASS extension](https://sass-lang.com)—which improved the ergonomics of CSS ahead of the language incorporating new features.
 
-<div class="verso before">
+<div class="before verso">
 
 **Instead of writing like this:**
 
