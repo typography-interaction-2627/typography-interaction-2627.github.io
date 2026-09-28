@@ -222,7 +222,7 @@ class ASDitheredImage extends HTMLElement {
 			this.requestUpdate()
 		}).bind(this))
 			.catch(((decodeError) => {
-				console.log('Error decoding image: ', decodeError)
+				console.log('Error decoding image: ', decodeError) // eslint-disable-line no-console
 				this.original_image_ = undefined
 			}).bind(this))
 			.finally((() => {

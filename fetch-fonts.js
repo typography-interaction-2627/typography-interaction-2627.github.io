@@ -19,7 +19,7 @@ const fetchFont = async (path, destination) => {
 
 	const { content } = await res.json()
 	await writeFile(destination, Buffer.from(content, 'base64'))
-	console.log(`✓ ${destination}`)
+	console.log(`✓ ${destination}`) // eslint-disable-line no-console
 }
 
 await mkdir('assets/fonts/cuts', { recursive: true })
