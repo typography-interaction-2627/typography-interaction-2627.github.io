@@ -464,7 +464,7 @@ The `class` attribute provides an additional way to select the element in CSS or
 
 </dl>
 
-## Case, White Space, Tabs, Line Breaks
+## Case, Whitespace, Tabs, Line Breaks
 
 Generally speaking, HTML doesn’t care about capitalization, extra white space, or line breaks (one exception, [below](#inline-whitespace)). The browser will just read everything from left to right, as if it is one long, running sentence. So the shouty `<html>` and quieter `<html>` are interpreted the same.
 

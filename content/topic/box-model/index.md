@@ -563,7 +563,7 @@ The convention is to declare “global” variables on `:root`—but you can ove
 >
 > We should always be thinking about our work as *design systems*!
 >
-> Using [relative units](#relative-units), [`calc()`](#combined-via-calc), [`min-`/`max-`](#constrained-by-min-max), and (particularly) [`--variable`](#defined-as-variable) are ways to establish and enforce these relationships.
+> Using [relative units](#relative-units), [`calc()`](#combined-via-calc), [`min-`/`max-`](#constrained-by-min-max), and (particularly) [`--variable`](#defined-as---variable) are ways to establish and enforce these relationships.
 >
 > <sub>We should see lots of `calc()` and `--variable` use in your code! It shows us systematic thinking and your design *intent*.</sub>
 

@@ -450,7 +450,7 @@ When referencing or incorporating materials outside of our course-provided ones 
 
 These attributions should explain *why* they were brought in, *what* was referenced, and an overall understanding of *how* it works. (This includes anything from LLM&NoBreak;s<span class="screen">, [more below](#llms-and-artificial-intelligence)</span>.) This will both help us gauge what students are getting out of it, and also where we can expand and guide our learning together as a class.
 
-**Practically, these will take the form of [code](topic/html/index.md#comments) [comments](topic/css/index.md#element-preview). An example:** <!-- .screen -->
+**Practically, these will take the form of [code](topic/html/index.md#comments) [comments](topic/css/index.md#element-example). An example:** <!-- .screen -->
 
 ```css <!-- .screen .all -->
 /* I wanted to treat large grids differently in my design! */

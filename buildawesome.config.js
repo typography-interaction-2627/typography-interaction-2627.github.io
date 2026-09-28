@@ -18,6 +18,8 @@ import abbreviations from './data/abbreviations.js'
 
 import stripTags from 'striptags'
 
+import { slug } from 'github-slugger'
+
 import { parse } from 'node-html-parser'
 
 import puppeteer from 'puppeteer'
@@ -113,6 +115,10 @@ export default (config) => {
 	// Don’t render out drafts—but this leaves them in the collections for date calculations.
 	process.env.BUILDAWESOME_RUN_MODE === 'build' && config.addGlobalData('buildawesomeComputed.permalink', () => (data) => data.draft ? false : data.permalink)
 
+	// Override the built-in `@sindresorhus/slugify`-backed filter to match GFM `id` exactly.
+	// Our own ragging swaps some spaces for `&nbsp;` which `slug()` strips instead of hyphenating, so undo that first.
+	config.addFilter('slugify', (str) => slug(String(str).replace(/\u00A0/g, ' ')))
+
 	// Markdown stuff.
 	const markdownOptions = {
 		breaks: true,
@@ -174,8 +180,7 @@ export default (config) => {
 
 			state.tokens.splice(idx, 3, token)
 		},
-		// By this point `&shy;`/`&NoBreak;` are already decoded to soft hyphen/word joiner chars, so drop those instead of their entity names.
-		slugify: (str) => config.getFilter('slugify')(str, { customReplacements: [['\u00AD', ''], ['\u2060', '']] }),
+		slugify: config.getFilter('slugify'),
 	})
 
 	// Nice `pre` blocks.
