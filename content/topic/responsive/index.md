@@ -59,89 +59,106 @@ A typical/example *responsive* layout, adjusting the content to reflow based on 
 ## The Viewport
 
 There wasn’t much of a *mobile web*, prior to the iPhone. *Some* sites had barebones [WAP](https://en.wikipedia.org/wiki/Wireless_Application_Protocol) mobile versions, designed for the tiny screens and limited hardware of the era.
-<!-- .balance .center -->
+<!-- .before .center -->
 
-<figure
-	@caption="This is how the *Times* looked on your [Razr](https://en.wikipedia.org/wiki/Motorola_Razr)."
-	@citation="https://wapreview.com/164/"
-	@source="wap.jpg"
-	class="before--3 right"
-	style="--lines: 6"
-	>
+<figure class="right" style="margin-block-start: initial">
+<figcaption>
+
+This is how the *Times* looked on your [Razr](https://en.wikipedia.org/wiki/Motorola_Razr). [<cite>↗</cite>](https://wapreview.com/164/)
+
+</figcaption>
+<img src="wap.jpg">
+</figure>
+
+<figure class="left" style="margin-block-start: initial">
+<figcaption>
+
+The iPhone’s introduction is worth a watch. Safari! [<cite>↗</cite>](https://youtube.com/watch?v=VQKMoT-6XSg&t=2474)
+
+</figcaption>
+<img src="intro.png">
 </figure>
 
 When the iPhone came on the scene, most desktop websites still didn’t have narrow/smaller (let alone flexible) layouts—so the phone would instead [*scale* or *zoom out*](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/UsingtheViewport/UsingtheViewport.html) a desktop site design down to fit.
-<!-- .balance .center -->
+<!-- .antibody .balance .center style="margin-block-start: initial" -->
 
-<figure
-	@caption="The iPhone’s introduction is worth a watch. Safari!"
-	@citation="https://youtube.com/watch?v=VQKMoT-6XSg&t=2474"
-	@source="intro.png"
-	class="before--2 right"
-	style="--lines: 6"
-	>
-</figure>
+Websites at the time were often designed to a [standard width](https://960.gs) (usually `960px`), which the phone shrank down to its `320px` screen—and then the user could zoom in or out, scrolling around to view the whole page. It somewhat worked—and all the content was there, unlike most mobile sites—but it was obviously less than ideal!
+<!-- .center style="margin-block-start: initial" -->
 
-Websites at the time were often designed to a [standard width](https://960.gs) (usually `960px`), which the phone shrank down to its `320px` screen—and then the user could zoom in or out, scrolling around to view the whole page. It somewhat worked—and all the content was there, unlike most mobile sites—but it was less than ideal.
-<!-- .balance .center -->
+<figure class="right" style="margin-block-start: initial">
+<img src="nytimes.png">
+<figcaption>
 
-<figure
-	@caption="Their full desktop site scaled down, on an iPhone. Simpler times, those."
-	@citation="https://web.archive.org/web/20070111094339/http://www.apple.com/iphone/internet/"
-	@source="nytimes.png"
-	class="before--2 right"
-	>
+Their full desktop site back then, scaled down, on an iPhone. [<cite>↗</cite>](https://web.archive.org/web/20070111094339/http://www.apple.com/iphone/internet/)
+
+</figcaption>
 </figure>
 
 </div>
 
 ### Viewport `<meta>` Tag
 
-You’ll [see this `meta` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) in the `head` of most websites, now:
+<div class="balance body">
 
-```html
-<meta name="viewport" content="width=device-width, initial-scale=1">
-```
+So the web had to evolve for this new class of devices.
 
-<sub>This `meta` element tells the browser *not* to do this scaling. It says, *“I have a responsive design! Render me at my actual size. My content can reflow.”*</sub>
-
-<div class="end verso">
-
-The `width=device-width` tells the browser to use whatever the screen’s *actual* pixel dimension is, and the `initial-scale=1` sets the starting zoom for the page to 100%. This is how the browser knows how to make the page respond, and how our CSS rules know what `width` to use.
-
-**We call the portion of the page visible at one time [*the viewport*](https://developer.mozilla.org/en-US/docs/Web/CSS/Viewport_concepts).**
+You’ll see [this `<meta>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) in the `<head>` of pretty much every website, nowadays—which tells the browser *not* to do this scaling down:
 
 </div>
 
-<figure
-	@caption="The *Times* wasn’t fully responsive until 2018! They still maintained a separate mobile site and apps."
-	@citation="https://open.nytimes.com/a-faster-and-more-flexible-home-page-that-delivers-the-news-readers-want-1522ff64aa86"
-	@source="redesign.png"
-	class="recto"
-	>
+- [<cite>Viewport concepts – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Viewport_concepts)
+We *usually* mean “the browser window.”
+
+- [<cite>`viewport` value – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) \
+	How the page should be sized!
+<!-- .right -->
+
+```html <!-- .all .before -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+```
+
+**You’re saying “this page has a *responsive* design! Render it at its actual size. The content can reflow.”**
+
+The `width=device-width` tells the browser to use whatever the screen’s *actual* pixel dimension is, and the `initial-scale=1` sets the starting zoom for the page to 100%. This is how the browser knows how to make the page respond, and how our CSS rules know what `width` to use.
+<!-- .center .verso style="margin-inline-end: 1rlh" -->
+
+<figure class="borderless recto">
+<figcaption>
+
+The *Times* wasn’t fully responsive until *2018*! They still maintained a separate mobile site and apps. [<cite>↗</cite>](https://open.nytimes.com/a-faster-and-more-flexible-home-page-that-delivers-the-news-readers-want-1522ff64aa86)
+
+</figcaption>
+<img src="redesign.png">
 </figure>
+
+**We call the portion of the page visible at one time [*the viewport*](https://developer.mozilla.org/en-US/docs/Web/CSS/Viewport_concepts).**
 
 ## Media Queries
 
-<div class="balance verso">
+Responsive design could really only flourish when CSS (and browsers) added the `@media` [<nobr>*at-rule*</nobr>](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries) to work with this new device information.
 
-Responsive design could only really flourish when CSS (and browsers) added the `@media` [*at-rule*](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries) around the same time.
+- [<cite>CSS media queries – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries) \
+	Checking for viewport values.
+<!-- .right -->
 
-These are colloquially called *media queries*, and they allow us to check if screen is a certain width or resolution (or other features, which we’ll get to)—and then apply selective CSS only in that scenario/situation. These let site layouts *respond* intentionally to different devices, for the first time.
+<div class="balance before verso">
 
-Practically, these are blocks of CSS—a little bit like [*selectors*](../css/index.md#basic-selectors) that contain other selectors—but which only apply conditionally when the test/criteria is met.
+These are colloquially called *media queries*, and they allow us to check if our reader’s screen is a certain width or resolution (or other features, which we’ll [get to](#other-media-features))—and then apply selective CSS only in that scenario/situation. These let site layouts *respond* intentionally to different devices.
 
-These blocks are like any other CSS—if there are multiple conditions that are met, or there is a tie between properties—the rules [*cascade*](../css/index.md#oh-right-the-cascade) down and the lowest/last one takes precedent.
+Practically, these are blocks of CSS—a little bit like [*selectors*](../css/index.md#basic-selectors) that contain other selectors—but which only apply *conditionally* when the test/criteria is met.
+<!-- .before -->
+
+Like any other CSS—if there are multiple conditions that are met, or there is a tie between properties—the rules [*cascade*](../css/index.md#oh-right-the-cascade) down and the lowest/last one takes precedent.
 
 </div>
 
 <div class="recto">
 
-```css <!-- .sticky style="top: 40vh" -->
+```css <!-- .sticky style="top: 33vh" -->
 /* Our CSS has all been out here! */
 
 @media some-criteria-or-rule {
-	/* CSS that only applies if a test passes. */
+	/* CSS that only applies when true. */
 }
 ```
 
@@ -149,45 +166,56 @@ These blocks are like any other CSS—if there are multiple conditions that are 
 
 ### Width-Based Breakpoints
 
-<div class="verso">
-
-There are many media queries we can use, but we’ll start with *width*—which is by far the most commonly-used and really the core of *responsive design*. Usually when folks are talking about a page or site being *responsive*, they mean with regards to its  `width`.
-
-Width tends to vary the most across devices—from the `375px`–`428px` of your phones, through to the ~`1440px`–`1680px` of your laptops, and then on up to the ~`2560px`–`3440px` you might see with large, desktop displays.
-
-</div>
-
-<figure
-	@caption="This is from more than a dozen years ago, now. It’s really only gotten worse!"
-	@citation="https://www.flickr.com/photos/brad_frost/7387824246"
-	@source="devices.jpg"
-	class="recto start"
-	style="--lines: 11"
-	>
-</figure>
+There are many media queries we can use, but we’ll start with *width*—which is by far the most commonly-adjusted and really the core of *responsive design*. Usually when folks are talking about a page or site being *responsive*, they primarily mean with regards to its  `width`.
 
 > [!NOTE]
 >
-> Note that we still use `width` here—not the [logical property](../box-model/index.md#and-logical-properties) `inline-size`—because we are referencing the *physical* device characteristics, agnostic of the language being displayed.
+> Note that we still use `width` here—not the [logical property](../box-model/index.md#and-logical-properties) `inline-size`—because we are actually referencing the *physical* device characteristics, agnostic of the language being displayed.
 >
-> <sub>We’ll also continue to use `px` here, for ease of understanding: while `em`/`rem` are [technically *correct*](https://keithjgrant.com/posts/2023/05/px-vs-em-in-media-queries/) for media queries, we’ve decided [the tooling](../dev-tools/index.md#device-mode) around this is unclear.</sub>
+> <sub>We’ll also continue to use `px` with these, for ease of understanding: while `em`/`rem` are [technically *correct*](https://keithjgrant.com/posts/2023/05/px-vs-em-in-media-queries/) for media queries, we’ve decided [the tooling](../dev-tools/index.md#device-mode) around this is still unclear!</sub>
+
+#### There Is No Perfect Layout
+
+<div class="center verso">
+
+Width tends to vary the most across devices—from the ~`375px`–`428px` of your phones, through to the ~`1440px`–`1680px` of your laptops, and then on up to the ~`2560px`–`3440px` you might see with large, desktop displays.
 
 Since this `width` is usually our primary design constraint (`height` being handled through scrolling), we need *width-based* media queries to adjust our layouts across this wide range, lest our designs fall.
 
-**This is done in steps, at different widths, that we call *breakpoints*—the window/device/viewport sizes where the content *starts to break,* if it is not adjusted.**
+You might add a breakpoint because lines of text get too short or too long, becoming [hard to read](../typography/index.md#ragging). It might be to prevent a grid of images from becoming too small on a phone—while you can have many columns on desktop, often you can only have one (or two) on mobile.
+<!-- .before -->
+
+You can add as many *breakpoints* as you need to make your page/design work across devices. Don’t think of these as written for specific *devices*; write for your *design* and for your *content*!
+
+</div>
+
+<div class="recto">
+
+<figure class="sticky">
+<img src="devices.jpg">
+<figcaption>
+
+This is from more than a dozen years ago, now. It’s really only gotten worse! [<cite>↗</cite>](https://www.flickr.com/photos/brad_frost/7387824246)
+
+<figcaption>
+</figure>
+
+</div>
+
+**Our design responds in steps, at different widths, that we call *breakpoints*—the window/device/viewport sizes where the content *starts to break,* if it is not adjusted.**
+
+**There are very, *very* few layouts that won’t need some amount of horizontal responsiveness/breakpoints!**
 
 > If you think responsive's simple, I feel bad for you son. We got 99 viewports, but the iPhone’s just one.
 >
 > [<cite>Josh Brewer, 2012</cite>](https://web.archive.org/web/20120925123125/https://twitter.com/jbrewer/status/178528003402379265)
 
-You might add a breakpoint because lines of text get too short or too long, becoming hard to read. It might be to prevent a grid of images from becoming too small on a phone—while you can have many columns on desktop, often you can only have one (or two) on mobile.
+---
 
-You can add as many *breakpoints* as you need to make your page/design work across devices. Don’t think of these as written *for* specific devices; write *for* your design and for your content!
+#### So How Do They Work?
 
-**There are very, *very* few layouts that won’t need some amount of horizontal responsiveness/breakpoints!**
-
-In this example, we would refer to ~~`35rem`~~ `550px` as our *breakpoint*:
-<!-- .before--3 -->
+In this example, we would refer to `550px` as our *breakpoint*:
+<!-- .all -->
 
 <figure
 	@caption="Drag the code/example divide to the left to see it respond to the media query! You can <nobr>double-click</nobr> to reset it."

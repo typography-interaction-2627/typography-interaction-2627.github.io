@@ -7,7 +7,6 @@
 		align-items:  start;
 		anchor-scope: --figure-container;
 		display:      grid;
-		position:     relative;
 		row-gap:      var(--gap);
 
 		/* Default full-width. */

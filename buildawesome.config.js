@@ -197,7 +197,7 @@ export default (config) => {
 		const hairSpace = '\u200A'
 		const noBreak = '\u2060'
 		const noBreakDash = noBreak + '—'
-		const punctuationBefore = '(“‘…'
+		const punctuationBefore = '~(“‘…'
 		const punctuationAfter = '),;!?.’”:—/…'
 		const ignoredAncestors = new Set(['code', 'kbd', 'samp', 'pre', 'nobr'])
 
