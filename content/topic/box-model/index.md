@@ -338,7 +338,7 @@ Okay, so now we have all these box properties—but how do we specify the dimens
 
 <div class="balance center verso">
 
-<div class="before sticky" style="margin-block-end: 2rlh">
+<div class="sticky">
 
 Maybe the easiest ones to understand, these are fixed to physical (well… sort of) sizes.
 
@@ -384,7 +384,7 @@ In general, we try and avoid these in modern development as they are necessarily
 
 <div class="balance verso">
 
-<div class="before sticky" style="margin-block-end: 2rlh">
+<div class="sticky">
 
 Most of the time we want to use `relative` units, which depend on and respond to their context—particularly as we think ahead to *responsive* design.
 
@@ -471,9 +471,9 @@ Extending the idea of systematic/relationship-based dimensions, often you will w
 
 ### Constrained by `min-`/`max-`
 
-<div class="balance before start verso">
+<div class="balance start verso">
 
-<div class="before sticky" style="margin-block-end: 2rlh">
+<div class="sticky">
 
 You’ll often want to set limits/constraints on values—particularly with flexible, `relative` units (and *responsive design*, which we’ll talk about soon.)
 
@@ -517,8 +517,9 @@ p {
 
 These bring another programming concept of [*variables*](https://en.wikipedia.org/wiki/Variable_(computer_science)) into CSS. These are shorthand entities for *any* values (not just lengths) we want to reuse throughout a document.
 
-<section class="before" style="margin-block-end: 1rlh">
-<div class="balance before verso">
+<section>
+
+<div class="balance verso">
 
 Changing the value of a *variable* changes it everywhere it is referenced—no copy/pasting or find/replacing. You could think of a color *swatch*, if you are in an Adobe mindset; other tech folks call these *tokens*. Again, these are just for you—it is all the same to the computer. More ergonomics!
 
@@ -528,7 +529,7 @@ In your CSS, you *declare* (set) these with a `--` prefix in front of a subjecti
 
 </div>
 
-<div class="before recto">
+<div class="recto">
 
 ```css <!-- .sticky -->
 /* Special “entire document” selector, akin to `html`. */

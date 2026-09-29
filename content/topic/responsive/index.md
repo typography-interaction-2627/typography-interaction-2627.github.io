@@ -150,7 +150,7 @@ Like any other CSS—if there are multiple conditions that are met, or there is 
 
 </div>
 
-<div class="recto">
+<div class="before recto">
 
 ```css <!-- .sticky style="inset-block-start: 33vh; margin-block-end: 1rlh" -->
 /* Our CSS has all been out here! */
@@ -263,18 +263,21 @@ Again, drag the divider to see rules apply. Exact matches (like the  `width = 50
 
 ### Height-Based, Too
 
+<div class="rows--2 verso">
+
+<div class="balance sticky">
+
 You can also use the viewport’s other axis `height` in the same way—though again, with the usual vertical scrolling paradigm, <nobr>*height-based*</nobr> adjustments aren’t often as necessary or anywhere nearly as common as `width`.
+
+This example has the same *breakpoint* of `500px` as before, but now using `height`:
+
+</div>
+
+</div>
 
 [<cite>`height` media feature – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/height) \
 Less common, but still useful.
-<!-- .right -->
-
-<div class="start verso" style="block-size: -webkit-fill-available">
-
-This example has the same *breakpoint* of `500px` as before, but now using `height`:
-<!-- .balance .sticky style="inset-block-start: 45vh" -->
-
-</div>
+<!-- .before .right -->
 
 <figure class="recto" style="--lines: 22; --max: round(calc(0.9 * var(--svh)), 1rlh); margin-block-start: 1rlh">
 
@@ -390,7 +393,7 @@ This goes “[with the grain](../../week/7.md#reading-discussion),” following 
 	Web guru [Chris Coyier’s](https://chriscoyier.net/) robust overview.
 <!-- .right -->
 
-<div class="balance before--3 verso">
+<div class="balance before verso">
 
 These bring another programming concept of [*variables*](https://en.wikipedia.org/wiki/Variable_(computer_science)) into CSS. These are shorthand entities for values we want to reuse throughout a document—or, in a responsive context, want to modify at certain breakpoints.
 
@@ -400,7 +403,7 @@ In your CSS, you *declare* (set) these with a `--` prefix in front of a subjecti
 
 </div>
 
-<div class="before--3 recto">
+<div class="before recto">
 
 ```css <!-- .sticky style="inset-block-start: 35vh;" -->
 :root {
@@ -415,7 +418,7 @@ In your CSS, you *declare* (set) these with a `--` prefix in front of a subjecti
 </div>
 
 You can use these as values for *any* [CSS property](../css/index.md#css-rules)—colors, spacing, etc.—anything you use multiple times and want to be consistent, give a memorable name to, or easily change all together:
-<!-- .before--3 -->
+<!-- .before -->
 
 <figure style="--lines: 27">
 

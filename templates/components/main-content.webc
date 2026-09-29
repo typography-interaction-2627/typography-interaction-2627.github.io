@@ -166,7 +166,7 @@
 						position:          sticky;
 					}
 
-					*:where(:not(section)):has(> .sticky) { block-size: 100% }
+					*:where(:not(section)):has(> .sticky) { align-self: stretch }
 
 					.body + .right { margin-block-start: initial }
 				}
