@@ -185,7 +185,7 @@ export default (config) => {
 
 	// Nice `pre` blocks.
 	const markdownPreCode = (markdown) => markdown.renderer.rules.fence = (tokens, index, options, env, self) =>
-		`<pre ${self.renderAttrs(tokens[index])}><code class="language-${tokens[index].info.trim()}">${markdown.utils.escapeHtml(tokens[index].content)}</code></pre>`
+		`<pre ${self.renderAttrs(tokens[index])}><code class="language-${tokens[index].info.trim()}">${markdown.utils.escapeHtml(tokens[index].content.replace(/\n$/, ''))}</code></pre>`
 
 	// Keep our `inline-block` `code`, `kbd`, and `samp` from losing adjacent punctuation.
 	const markdownNobrCode = (markdown) => {
@@ -486,8 +486,8 @@ export default (config) => {
 			const inert = stack.at(-1).inert || heading.hasAttribute('inert')
 			const item = {
 				children: [],
-				html: `<a${inert ? '' : ` href="#${heading.id}"`}><p>${heading.innerHTML.trim()}</p></a>`,
-				inert,
+				href: inert ? '' : ` href="#${heading.id}"`,
+				label: heading.innerHTML.trim(),
 				level,
 			}
 
@@ -496,9 +496,14 @@ export default (config) => {
 			stack.push(item)
 		}
 
-		const renderItems = (items) => items.map(({ children, html }) =>
-			`<li>${html}${children.length ? `<ol>${renderItems(children)}</ol>` : ''}</li>`,
-		).join('\n')
+		const renderItems = (items) => items.map(({ children, href, label }) => {
+			const link = `<a${href}>\n<p>${label}</p>\n</a>`
+			const nested = children.length
+				? `\n<ol>\n${renderItems(children)}\n</ol>`
+				: ''
+
+			return `<li>\n${link}${nested}\n</li>`
+		}).join('\n')
 
 		return renderItems(root.children)
 	})

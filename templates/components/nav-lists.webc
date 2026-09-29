@@ -12,7 +12,7 @@
 
 			cite && (
 				link.set_content(`<p>${cite.innerHTML}</p>`),
-				item.set_content(link.outerHTML)
+				item.set_content(`\n${link.outerHTML.replace('><p>', '>\n<p>').replace('</p></a>', '</p>\n</a>')}\n`)
 			)
 		})
 

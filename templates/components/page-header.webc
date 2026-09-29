@@ -49,10 +49,7 @@
 	<hgroup>
 		<h1 :aria-label="stripTags((meta ?? $data).title)" @html="letterSpans((meta ?? $data).title)"></h1>
 		<div webc:if="(meta ?? $data).date || (meta ?? $data).page.url === '/'">
-			<p>
-				<time webc:if="(meta ?? $data).date" @html="displayDate((meta ?? $data).date)"></time>
-				<time webc:else>2026–2027</time>
-			</p>
+			<p><time webc:if="(meta ?? $data).date" @html="displayDate((meta ?? $data).date)"></time><time webc:else>2026–2027</time></p>
 		</div>
 	</hgroup>
 </header>

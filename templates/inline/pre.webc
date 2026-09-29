@@ -201,11 +201,7 @@
 </style>
 <template webc:nokeep webc:root="override">
 	<ti-preview webc:if="!nested" @attributes hide-output hide-tabs>
-		<pre>
-			<slot></slot>
-		</pre>
+		<pre><slot></slot></pre>
 	</ti-preview>
-	<pre webc:else>
-		<slot></slot>
-	</pre>
+	<pre webc:else><slot></slot></pre>
 </template>
