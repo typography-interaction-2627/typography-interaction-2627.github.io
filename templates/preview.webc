@@ -24,38 +24,44 @@
 		}
 
 		/* No-JS basics. */
-		&:has(ti-preview:not(:defined)) body {
-			align-content:       center;
-			padding-block-end:   calc(2 * var(--gutter));
-			padding-block-start: var(--gutter);
-			row-gap:             calc(2 * var(--gutter));
+		&:has(ti-preview:not(:defined)) {
+			overflow-y: auto;
 
-			&::before {
-				background-color:   white;
-				box-shadow:         var(--shadow--border), var(--shadow--double);
-				content:            'You need JS enabled to see these editable previews!';
-				inline-size:        max-content;
-				inset-inline-start: round(down, 50%, var(--1px));
-				max-inline-size:    var(--main);
-				padding:            1ex;
-				position:           relative;
-				text-box:           trim-both cap alphabetic;
-				translate:          round(-50%, var(--1px)) 0;
-			}
+			body {
+				align-content:       center;
+				block-size:          fit-content;
+				min-block-size:      100%;
+				padding-block-end:   calc(2 * var(--gutter));
+				padding-block-start: var(--gutter);
+				row-gap:             calc(2 * var(--gutter));
 
-			ti-preview {
-				display:               grid;
-				grid-template-columns: minmax(0, 1fr);
-				inline-size:           var(--page);
-				margin-inline-start:   round(down, calc((var(--vw) - var(--page)) / 2), var(--1px)); /* Land on-pattern. */
-				row-gap:               var(--gutter);
+				&::before {
+					background-color:   white;
+					box-shadow:         var(--shadow--border), var(--shadow--double);
+					content:            'You need JS enabled to see these editable previews!';
+					inline-size:        max-content;
+					inset-inline-start: round(down, 50%, var(--1px));
+					max-inline-size:    var(--main);
+					padding:            1ex;
+					position:           relative;
+					text-box:           trim-both cap alphabetic;
+					translate:          round(-50%, var(--1px)) 0;
+				}
 
-				figcaption {
-					background-color: var(--background);
-					box-shadow:       var(--shadow--border), var(--shadow--single);
-					inline-size:      fit-content;
-					padding:          1ex;
-					text-box:         trim-both cap alphabetic;
+				ti-preview {
+					display:               grid;
+					grid-template-columns: minmax(0, 1fr);
+					inline-size:           var(--page);
+					margin-inline-start:   round(down, calc((var(--vw) - var(--page)) / 2), var(--1px)); /* Land on-pattern. */
+					row-gap:               var(--gutter);
+
+					figcaption {
+						background-color: var(--background);
+						box-shadow:       var(--shadow--border), var(--shadow--single);
+						inline-size:      fit-content;
+						padding:          1ex;
+						text-box:         trim-both cap alphabetic;
+					}
 				}
 			}
 		}
