@@ -185,9 +185,7 @@ export default (config) => {
 
 	// Nice `pre` blocks.
 	const markdownPreCode = (markdown) => markdown.renderer.rules.fence = (tokens, index, options, env, self) =>
-		`<pre ${self.renderAttrs(tokens[index])}>
-			<code class="language-${tokens[index].info.trim()}">${markdown.utils.escapeHtml(tokens[index].content)}</code>
-		</pre>`
+		`<pre ${self.renderAttrs(tokens[index])}><code class="language-${tokens[index].info.trim()}">${markdown.utils.escapeHtml(tokens[index].content)}</code></pre>`
 
 	// Keep our `inline-block` `code`, `kbd`, and `samp` from losing adjacent punctuation.
 	const markdownNobrCode = (markdown) => {
