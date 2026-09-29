@@ -1,27 +1,9 @@
 <page-pattern></page-pattern>
-<script>
-	let scrollTimeout
-	let previousScrollY = scrollY
-	let scrollDirection
-
-	window.addEventListener('scroll', () => {
-		scrollDirection = Math.sign(scrollY - previousScrollY)
-		previousScrollY = scrollY
-
-		clearTimeout(scrollTimeout)
-
-		scrollTimeout = setTimeout(() => {
-			const style = getComputedStyle(document.documentElement)
-			const scaling = parseFloat(style.getPropertyValue('--scaling'))
-			const rounding = scrollDirection > 0 ? Math.ceil : Math.floor
-
-			scrollTo({ top: rounding(scrollY / scaling) * scaling })
-		}, 500)
-	})
-</script>
 <template webc:bucket="components" webc:nokeep>
 	<style>
 		:where(:root) {
+			/* TODO Restore some kind of `scrollend` rounding? */
+
 			/* TODO Measure scrollbar in JS for even `100vw` centering! */
 			scrollbar-gutter: both;
 			overflow-y:       scroll;
