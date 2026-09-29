@@ -11,8 +11,8 @@
 			const cite = link?.querySelector('cite')
 
 			cite && (
-				link.set_content(`<p>${cite.innerHTML}</p>`),
-				item.set_content(`\n${link.outerHTML.replace('><p>', '>\n<p>').replace('</p></a>', '</p>\n</a>')}\n`)
+				link.set_content(`\n<p>${cite.innerHTML}</p>\n`),
+				item.set_content(`\n${link.outerHTML}\n`)
 			)
 		})
 

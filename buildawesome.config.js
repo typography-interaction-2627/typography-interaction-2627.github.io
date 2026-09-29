@@ -486,8 +486,9 @@ export default (config) => {
 			const inert = stack.at(-1).inert || heading.hasAttribute('inert')
 			const item = {
 				children: [],
-				href: inert ? '' : ` href="#${heading.id}"`,
-				label: heading.innerHTML.trim(),
+				html: `<a${inert ? '' : ` href="#${heading.id}"`}>
+<p>${heading.innerHTML.trim()}</p>
+</a>`,
 				level,
 			}
 
@@ -496,13 +497,12 @@ export default (config) => {
 			stack.push(item)
 		}
 
-		const renderItems = (items) => items.map(({ children, href, label }) => {
-			const link = `<a${href}>\n<p>${label}</p>\n</a>`
+		const renderItems = (items) => items.map(({ children, html }) => {
 			const nested = children.length
 				? `\n<ol>\n${renderItems(children)}\n</ol>`
 				: ''
 
-			return `<li>\n${link}${nested}\n</li>`
+			return `<li>\n${html}${nested}\n</li>`
 		}).join('\n')
 
 		return renderItems(root.children)
