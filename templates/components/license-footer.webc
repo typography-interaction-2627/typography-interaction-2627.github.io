@@ -49,6 +49,9 @@
 
 				@media (width >= 138em) { --break: none }
 			}
+
+			/* TODO “Shrinkwrap” this? */
+			/* https://kizu.dev/shrinkwrap-solution/ */
 		}
 	}
 </style>
