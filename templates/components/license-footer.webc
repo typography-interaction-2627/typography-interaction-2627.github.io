@@ -12,19 +12,53 @@
 
 		margin-block-start: var(--break);
 
-		p {
+		section {
+			--break: none;
+			--max:   calc(var(--main) - 4 * var(--gutter));
+
 			background-color:   var(--background);
 			box-shadow:         var(--shadow--border), var(--shadow--double);
 			inline-size:        max-content;
 			inset-inline-start: round(down, 50%, var(--1px));
-			max-inline-size:    var(--main);
+			max-inline-size:    round(var(--max), var(--2px));
 			padding:            calc(1cap + var(--1px));
 			position:           relative;
 			text-align:         center;
 			translate:          round(-50%, var(--1px)) 0;
+
+			span {
+				display:           inline-flex;
+				gap:               var(--4px);
+				margin-inline-end: 1cap;
+
+				> svg { block-size: var(--7px) }
+			}
+
+			/* Do as I say, not as I do! */
+			br { display: var(--break) }
+
+			@media (width >= 64em) {
+				--break: inline;
+				--max:   calc(var(--main) - 2 * var(--gutter));
+			}
+
+			@media (width >= 92em) { --break: none }
+
+			@container style(--scaling: 3) {
+				--break: inline;
+
+				@media (width >= 138em) { --break: none }
+			}
 		}
 	}
 </style>
 <footer webc:root="override" id="license">
-	<p><a :href="license.repo + '#use-and-re-use'">Licensed</a> under <a :href="license.url" rel="license"><nobr @text="license.name"></nobr></a> for personal/educational, non-commercial use. The <a :href="`${license.repo}/blob/main/${$data.page.inputPath.replace('./', '')}`">source code</a> is also available!</p>
+	<section>
+		<p><span aria-label="Creative Commons badges">
+				<svg webc:nokeep @html="inlineSvg('assets/icons/license/cc.svg')"></svg>
+				<svg webc:nokeep @html="inlineSvg('assets/icons/license/cc--by.svg')"></svg>
+				<svg webc:nokeep @html="inlineSvg('assets/icons/license/cc--nc.svg')"></svg>
+				<svg webc:nokeep @html="inlineSvg('assets/icons/license/cc--sa.svg')"></svg>
+			</span><a :href="license.repo + '#use-and-re-use'">Licensed</a> under <a :href="license.url" rel="license"><nobr @text="license.name"></nobr></a> for personal and educational, <br><nobr>non-commercial</nobr> use. The <a :href="`${license.repo}/blob/main/${$data.page.inputPath.replace('./', '')}`">source code</a> is also available!</p>
+	</section>
 </footer>
