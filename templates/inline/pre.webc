@@ -89,6 +89,7 @@
 
 		--editor-background:           var(--color);
 		--editor-border-bottom:        var(--editor-border-top);
+		--editor-border-left:          var(--editor-border-top);
 		--editor-border-top:           var(--1px) solid var(--color);
 		--editor-caret-color:          var(--background);
 		--editor-font-family:          'Monaco', monospace;
@@ -99,6 +100,14 @@
 		--editor-selection-background: color-mix(in srgb, var(--background), transparent 80%);
 		--editor-text-box:             trim-both cap alphabetic;
 		--editor-width:                calc(100vw - 2 * (var(--column) + var(--alley)));
+
+		/* Tall ones. */
+		--editor-height: calc(round(60%, 1rlh) - var(--4px));
+
+		@media (aspect-ratio < 4 / 3) {
+			--editor-border-bottom: initial;
+			--editor-border-right:  var(--editor-border-top);
+		}
 
 		--output-background:            var(--background);
 		--output-border:                var(--editor-border-top);
