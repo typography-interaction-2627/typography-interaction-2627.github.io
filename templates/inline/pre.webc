@@ -179,9 +179,11 @@
 		/* TODO Pixel whitespace characters via `background` variables ! */
 
 		/* Tighten `code` on the big screen. */
-		@container style(--projector) {
-			--editor-font-size:  calc(var(--size--note) * var(--1px));
-			--tab-bar-font-size: calc(var(--size--code) * var(--1px));
+		&:not(.large) {
+			@container style(--projector) {
+				--editor-font-size:  calc(var(--size--note) * var(--1px));
+				--tab-bar-font-size: calc(var(--size--code) * var(--1px));
+			}
 		}
 
 		/* Chrome/Safari `opsz` dance, again; see `typography.css` */
@@ -192,9 +194,11 @@
 
 			@container style(--tablet) { --editor-font-family: 'Monaco 12' }
 
-			@container style(--projector) {
-				--editor-font-family:  'Monaco 9';
-				--tab-bar-font-family: 'Monaco 12';
+			&:not(.large) {
+				@container style(--projector) {
+					--editor-font-family:  'Monaco 9';
+					--tab-bar-font-family: 'Monaco 12';
+				}
 			}
 		}
 	}
