@@ -222,7 +222,7 @@ In this example, we would refer to `500px` as our *breakpoint*:
 
 <figure style="--lines: 7">
 
-***[Example](media-width/style.css)***
+***[Width Example](media-width/style.css)***
 
 <figcaption>
 
@@ -236,7 +236,7 @@ This width rule/test/criteria uses math [comparison operators](https://css-trick
 
 <figure style="--lines: 15">
 
-***[Example](media-width-min-max/style.css)***
+***[Width Min/Max Example](media-width-min-max/style.css)***
 
 <figcaption>
 
@@ -265,7 +265,7 @@ This example is the same *breakpoint* of `500px` as before, but now using `heigh
 <figure
 	class="recto" style="--lines: 22">
 
-***[Example](media-height-min-max/style.css)***
+***[Height Example](media-height-min-max/style.css)***
 
 <figcaption>
 
@@ -284,7 +284,7 @@ You can also be less specific about your `width`/`height` and instead use `orien
 
 <figure style="--lines: 11">
 
-***[Example](media-orientation/style.css)***
+***[Orientation Example](media-orientation/style.css)***
 
 <figcaption>
 
@@ -300,7 +300,7 @@ And speaking of *conditional statements*—you can also merge multiple media que
 
 <figure style="--lines: 11">
 
-***[Example](media-and/style.css)***
+***[“And” Example](media-and/style.css)***
 
 <figcaption>
 
@@ -313,7 +313,7 @@ You can also use comma-separated queries (similar to [*selector lists*](../css/i
 
 <figure style="--lines: 7">
 
-***[Example](media-or/style.css)***
+***[“Or” Example](media-or/style.css)***
 
 <figcaption>
 
@@ -356,7 +356,7 @@ Your design constraints will be tighter and more challenging, by tackling your s
 
 <figure style="--lines: 23">
 
-***[Example](media-mobile-first/style.css)***
+***[Mobile-First Example](media-mobile-first/style.css)***
 
 <figcaption>
 
@@ -406,7 +406,7 @@ You can use these as values for *any* [CSS property](../css/index.md#css-rules)�
 
 <figure style="--lines: 27">
 
-***[Example](css-variable/style.css)***
+***[Variable Example](css-variable/style.css)***
 
 <figcaption>
 
@@ -439,7 +439,7 @@ In all of our above examples, there is an implied *[media type](https://develope
 
 <figure style="--lines: 26">
 
-***[Example](media-print/style.css)***
+***[Print Example](media-print/style.css)***
 
 <figcaption>
 
@@ -468,7 +468,7 @@ Mobile *touch-based* systems don’t have this behavior (and often react oddly t
 
 <figure style="--lines: 12">
 
-***[Example](media-hover/style.css)***
+***[Hover Example](media-hover/style.css)***
 
 <figcaption>
 
@@ -489,7 +489,7 @@ You see this one more and more these days—`prefers-color-scheme` for switching
 
 <figure style="--lines: 22">
 
-***[Example](media-color-scheme/style.css)***
+***[Color-Scheme Example](media-color-scheme/style.css)***
 
 <figcaption>
 
