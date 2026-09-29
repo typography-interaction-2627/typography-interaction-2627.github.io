@@ -1,5 +1,7 @@
+/* Our “default“ style… */
 section { background-color: aquamarine; }
 
 @media (width > 500px) {
+	/* …adjusted only when this query is true: */
 	section { background-color: coral; }
 }

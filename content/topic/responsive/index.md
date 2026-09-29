@@ -27,6 +27,8 @@ This term was coined in 2010 or so [by Ethan Marcotte](https://alistapart.com/a
 There was a confluence of events that allowed this: modern, <nobr>self-updating</nobr> browsers, and then the explosion of *the mobile web*—precipitated, in no small part, by the *iPhone* in 2007.
 
 The iPhone was the first mobile device that ran a desktop-class browser (in terms of functionality), which hadn’t been available in a small screen before. And with its [crazy success](https://asymco.com/2026/09/28/the-best-selling-product-of-all-time/)—and the subsequent proliferation of its paradigm in *Android*—the web, and then world, scrambled to *respond*.
+
+You’ve probably noticed this kind of pattern:
 <!-- .before -->
 
 <figure class="borderless shadow verso" style="--max: initial">
@@ -105,13 +107,13 @@ You’ll see [this `<meta>` element](https://developer.mozilla.org/en-US/docs/We
 </div>
 
 - [<cite>Viewport concepts – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Viewport_concepts)
-We *usually* mean “the browser window.”
+*Usually* “the browser window.”
 
 - [<cite>`viewport` value – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) \
 	How the page should be sized!
 <!-- .right -->
 
-```html <!-- .all .before -->
+```html <!-- .all .before .large -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
@@ -152,7 +154,7 @@ Like any other CSS—if there are multiple conditions that are met, or there is 
 
 <div class="before recto">
 
-```css <!-- .sticky style="inset-block-start: 33vh; margin-block-end: 1rlh" -->
+```css <!-- .sticky style="inset-block-start: 33vh" -->
 /* Our CSS has all been out here! */
 
 @media (feature = value) {
@@ -219,12 +221,12 @@ This is from more than a dozen years ago, now. It’s really only gotten worse! 
 
 ---
 
-#### So How Do They Work? <!-- style="margin-block-start: initial" -->
+#### Let’s Try It Out <!-- style="margin-block-start: initial" -->
 
 In their simplest form, we just change whatever properties/values when they need adjustment! In this example, we would refer to the viewport `(width > 500px)` as our *breakpoint*:
-<!-- .before -->
+<!-- .balance -->
 
-<figure style="--lines: 7">
+<figure style="--lines: 9">
 
 ***[Width Example](media-width/style.css)***
 
@@ -235,29 +237,65 @@ Drag the code/example divider to the left to see it *respond* to the `@media` qu
 </figcaption>
 </figure>
 
-#### Adjusting *Variables*, *Comparisons*
+#### Adjusting *Variables*
 
-More systematically, we can instead just adjust the [`--variables`](../box-model/index.md#defined-as---variable) from our design system—making our intent more clear—“this *will* change.” Our queries can also use simple math [comparison operators](https://css-tricks.com/the-new-css-media-query-range-syntax/#aa-new-comparison-operators), `<` `>` `=` `<=` `>=`:
-<!-- .balance .before -->
+Thinking more systematically, we can instead adjust the [`--variables`](../box-model/index.md#defined-as---variable) from our design system—making our intent more clear—“this *will* change”:
+<!-- .balance -->
+
+<figure style="--lines: 8">
+
+***[Width Variable Example](media-width-variable/style.css)***
+
+<figcaption>
+
+Again, drag the divider to see rules apply. Same result as before! Try removing the first `--background` declaration.
+
+</figcaption>
+</figure>
+
+#### Using *Comparisons*
+
+Our queries can also use other simple math [comparison operators](https://css-tricks.com/the-new-css-media-query-range-syntax/#aa-new-comparison-operators), `<` `>` `=` `<=` `>=`:
+<!-- .balance -->
 
 [<cite>Query Range Syntax - CSS Tricks</cite>](https://css-tricks.com/the-new-css-media-query-range-syntax/#aa-new-comparison-operators) \
 More modern, more intuitive.
 <!-- .right -->
 
-<figure style="--lines: 16">
+<figure style="--lines: 15">
 
 ***[Width Min/Max Example](media-width-min-max/style.css)***
 
 <figcaption>
 
-Again, drag the divider to see rules apply. Exact matches (like the  `width = 500px` here) are rarely useful, though!
+Exact matches (like the  `width = 500px` here) are rarely useful, though!
+
+</figcaption>
+</figure>
+
+#### And Width *Ranges*
+
+This [new comparison syntax](https://web.dev/articles/media-query-range-syntax) also allows simple, intuitive *ranges* to be specified—to see if the viewport is *between* two lengths:
+<!-- .balance -->
+
+[<cite>New syntax for range media queries - web.dev</cite>](https://web.dev/articles/media-query-range-syntax) \
+Another comparison of old-and-new syntax.
+<!-- .right -->
+
+<figure style="--lines: 7">
+
+***[Width Range Example](media-width-range/style.css)***
+
+<figcaption>
+
+Be mindful about “painting yourself into corners” with these! They make it easier to have unconsidered (or worse, overlapping) scenarios.
 
 </figcaption>
 </figure>
 
 > [!WARNING]
 >
-> We’ll only be using the modern (and more intuitive) [range operator syntax](https://web.dev/articles/media-query-range-syntax) shown here.
+> We’ll only be using the modern (and more intuitive) [range operator syntax](https://css-tricks.com/the-new-css-media-query-range-syntax/#aa-new-comparison-operators) shown here!
 >
 > <sub>You’ll see lots of material out there referencing `min-width` or `max-width` media queries—but we should *not* see these in [*your*](../../syllabus.md#attribution) code!</sub>
 
@@ -304,7 +342,7 @@ Often more useful than `width` alone!
 
 <figcaption>
 
-Note the `:` instead of `=`. Everything was a painting before it was a photograph or a [web page](../everything/index.md).
+Note the `:`, instead of `=`. Everything was a painting before it was a photograph or a [web page](../everything/index.md)!
 
 </figcaption>
 </figure>

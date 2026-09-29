@@ -1,4 +1,3 @@
-/* The `background-color` is now applied in `setup.css`! */
 section { --background: aquamarine; }
 
 @media (width >= 500px) {
