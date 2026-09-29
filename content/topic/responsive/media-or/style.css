@@ -1,5 +1,5 @@
-section { background-color: aquamarine; }
+section { --background: aquamarine; }
 
 @media (width < 500px), (width > 700px) {
-	section { background-color: gold; }
+	section { --background: gold; }
 }

@@ -1,13 +1,14 @@
-section { background-color: aquamarine; }
+/* The `background-color` is now applied in `setup.css`! */
+section { --background: aquamarine; }
 
-@media (width > 500px) {
-	section:first-child { background-color: coral; }
+@media (width >= 500px) {
+	section:first-child { --background: coral; }
 }
 
 @media (width = 500px) {
-	section:nth-child(2) { background-color: orange; }
+	section:nth-child(2) { --background: orange; }
 }
 
-@media (width < 500px) {
-	section:last-child { background-color: gold; }
+@media (width <= 500px) {
+	section:last-child { --background: gold; }
 }

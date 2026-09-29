@@ -152,23 +152,30 @@ Like any other CSS—if there are multiple conditions that are met, or there is 
 
 <div class="recto">
 
-```css <!-- .sticky style="top: 33vh" -->
+```css <!-- .sticky style="inset-block-start: 33vh; margin-block-end: 1rlh" -->
 /* Our CSS has all been out here! */
 
-@media some-criteria-or-rule {
+@media (feature = value) {
 	/* CSS that only applies when true. */
 }
 ```
 
 </div>
 
-### Width-Based Breakpoints
+**In a broader code and programming context, it can be helpful to think of media queries as [conditional *if* statements](https://en.wikipedia.org/wiki/Conditional_(computer_programming)).**
 
-There are many media queries we can use, but we’ll start with *width*—which is by far the most commonly-adjusted and really the core of *responsive design*. Usually when folks are talking about a page or site being *responsive*, they primarily mean with regards to its  `width`.
+<sub>We’ll talk about this in detail later [with JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else), where conditionals are ubiquitous and powerful! You may have also heard of [*If This Then That*](https://ifttt.com), which takes its name from this kind of logic.</sub>
+
+### Width-Based *Breakpoints*
+
+There are many media queries we can use, but we’ll start with `width`—which is by far the most commonly-adjusted and really the core of *responsive design*. Usually when folks are talking about a page or site being *responsive*, they primarily mean with regards to its  `width`.
 
 [<cite>`width` media feature – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/width) \
 The most common, by far.
 <!-- .right -->
+
+**Our design responds in steps, at different `width`, that we call *breakpoints*—the window/device/viewport sizes where the content *starts to break,* if it is not adjusted.**
+<!-- .before -->
 
 > [!NOTE]
 >
@@ -180,11 +187,11 @@ The most common, by far.
 
 <div class="before center verso">
 
-Width tends to vary the most across devices—from the ~`375px`–`428px` of your phones, through to the ~`1440px`–`1680px` of your laptops, and then on up to the ~`2560px`–`3440px` you might see with large, desktop displays.
+The horizontal axis tends to vary the most across devices—from the ~`375px`–`428px` of your phones, through to the ~`1440px`–`1680px` of your laptops, and then on up to the ~`2560px`–`3440px` you might see with large, desktop displays.
 
 Since this `width` is usually our primary design constraint (`height` being handled through scrolling), we need *width-based* media queries to adjust our layouts across this wide range, lest our designs fall.
 
-You might add a breakpoint because lines of text get too short or too long, becoming [hard to read](../typography/index.md#ragging). It might be to prevent a grid of images from becoming too small on a phone—while you can have many columns on desktop, often you can only have one (or two) on mobile.
+You might add a *breakpoint* because lines of text get too short or too long, becoming [hard to read](../typography/index.md#ragging). It might be to prevent a grid of images from becoming too small on a phone—while you can have many columns on desktop, often you can only have one (or two) on mobile.
 <!-- .before -->
 
 You can add as many *breakpoints* as you need to make your page/design work across devices. Don’t think of these as written for specific *devices*; write for your *design* and for your *content*!
@@ -204,9 +211,6 @@ This is from more than a dozen years ago, now. It’s really only gotten worse! 
 
 </div>
 
-**Our design responds in steps, at different widths, that we call *breakpoints*—the window/device/viewport sizes where the content *starts to break,* if it is not adjusted.**
-<!-- .before -->
-
 **There are very, *very* few layouts that won’t need some amount of horizontal responsiveness/breakpoints!**
 
 > If you think responsive's simple, I feel bad for you son. We got 99 viewports, but the iPhone’s just one.
@@ -215,10 +219,10 @@ This is from more than a dozen years ago, now. It’s really only gotten worse! 
 
 ---
 
-#### So How Do They Work?
+#### So How Do They Work? <!-- style="margin-block-start: initial" -->
 
-In this example, we would refer to `500px` as our *breakpoint*:
-<!-- .all .before -->
+In their simplest form, we just change whatever properties/values when they need adjustment! In this example, we would refer to the viewport `(width > 500px)` as our *breakpoint*:
+<!-- .before -->
 
 <figure style="--lines: 7">
 
@@ -226,21 +230,27 @@ In this example, we would refer to `500px` as our *breakpoint*:
 
 <figcaption>
 
-Drag the code/example divide to the left to see it respond to the media query! You can <nobr>double-click</nobr> to reset it.
+Drag the code/example divider to the left to see it *respond* to the `@media` query! You can <nobr>double-click</nobr> to reset it.
 
 </figcaption>
 </figure>
 
-This width rule/test/criteria uses math [comparison operators](https://css-tricks.com/the-new-css-media-query-range-syntax/#aa-new-comparison-operators)—meaning you can use `<` `>` `=` `<=` `>=` :
-<!-- .balance -->
+#### Adjusting *Variables*, *Comparisons*
 
-<figure style="--lines: 15">
+More systematically, we can instead just adjust the [`--variables`](../box-model/index.md#defined-as---variable) from our design system—making our intent more clear—“this *will* change.” Our queries can also use simple math [comparison operators](https://css-tricks.com/the-new-css-media-query-range-syntax/#aa-new-comparison-operators), `<` `>` `=` `<=` `>=`:
+<!-- .balance .before -->
+
+[<cite>Query Range Syntax - CSS Tricks</cite>](https://css-tricks.com/the-new-css-media-query-range-syntax/#aa-new-comparison-operators) \
+More modern, more intuitive.
+<!-- .right -->
+
+<figure style="--lines: 16">
 
 ***[Width Min/Max Example](media-width-min-max/style.css)***
 
 <figcaption>
 
-Again, drag the divide to see rules apply. Exact matches (like the  `width = 500px` here) are rarely useful!
+Again, drag the divider to see rules apply. Exact matches (like the  `width = 500px` here) are rarely useful, though!
 
 </figcaption>
 </figure>
@@ -253,17 +263,20 @@ Again, drag the divide to see rules apply. Exact matches (like the  `width = 500
 
 ### Height-Based, Too
 
-<div class="center verso">
+You can also use the viewport’s other axis `height` in the same way—though again, with the usual vertical scrolling paradigm, <nobr>*height-based*</nobr> adjustments aren’t often as necessary or anywhere nearly as common as `width`.
 
-You can also use `height` in the same way—though again, with the usual vertical scrolling paradigm, <nobr>height-based</nobr> adjustments aren’t as necessary or anywhere nearly as common as `width`.
+[<cite>`height` media feature – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/height) \
+Less common, but still useful.
+<!-- .right -->
 
-This example is the same *breakpoint* of `500px` as before, but now using `height`:
-<!-- .balance -->
+<div class="start verso" style="block-size: -webkit-fill-available">
+
+This example has the same *breakpoint* of `500px` as before, but now using `height`:
+<!-- .balance .sticky style="inset-block-start: 45vh" -->
 
 </div>
 
-<figure
-	class="recto" style="--lines: 22">
+<figure class="recto" style="--lines: 22; --max: round(calc(0.9 * var(--svh)), 1rlh); margin-block-start: 1rlh">
 
 ***[Height Example](media-height-min-max/style.css)***
 
@@ -274,13 +287,13 @@ These code examples are responsive, themselves—stacking like this when they ar
 </figcaption>
 </figure>
 
-**In a broader code and programming context, it can be helpful to think of media queries as [conditional *if* statements](https://en.wikipedia.org/wiki/Conditional_(computer_programming)).**
-
-<sub>We’ll talk about this in detail later [with JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else), where conditionals are ubiquitous and powerful. You may have also heard of [*If This Then That*](https://ifttt.com), which takes its name from this kind of logic.</sub>
-
 ### Orientation
 
 You can also be less specific about your `width`/`height` and instead use `orientation`—like when you rotate your phone. The queries use the wonderfully tenacious names/values of `portrait` or `landscape`:
+
+[<cite>`orientation` media feature – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/orientation) \
+Often more useful than `width` alone!
+<!-- .right -->
 
 <figure style="--lines: 11">
 
@@ -288,7 +301,7 @@ You can also be less specific about your `width`/`height` and instead use `orien
 
 <figcaption>
 
-Everything was a painting before it was a photograph or a [web page](../everything/index.md).
+Note the `:` instead of `=`. Everything was a painting before it was a photograph or a [web page](../everything/index.md).
 
 </figcaption>
 </figure>

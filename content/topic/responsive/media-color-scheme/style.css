@@ -17,4 +17,4 @@ body {
 	color: var(--foreground);
 }
 
-section { background-color: var(--accent); }
+section { --background: var(--accent); }

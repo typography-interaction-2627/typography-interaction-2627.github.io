@@ -1,6 +1,6 @@
 :root { --background: aquamarine; }
 
-section { background-color: var(--background); }
+section { --background: var(--background); }
 
 a { text-decoration: underline; }
 
