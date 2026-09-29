@@ -6,7 +6,7 @@ main {
 
 section { background-color: aquamarine; }
 
-@media (width > 550px) {
+@media (width > 500px) {
 	section {
 		background-color: gold;
 		inline-size: calc((100% - 1rem) / 2);

@@ -94,8 +94,6 @@ Their full desktop site back then, scaled down, on an iPhone. [<cite>↗</cite>]
 </figcaption>
 </figure>
 
-</div>
-
 ### Viewport `<meta>` Tag
 
 <div class="balance body">
@@ -168,6 +166,10 @@ Like any other CSS—if there are multiple conditions that are met, or there is 
 
 There are many media queries we can use, but we’ll start with *width*—which is by far the most commonly-adjusted and really the core of *responsive design*. Usually when folks are talking about a page or site being *responsive*, they primarily mean with regards to its  `width`.
 
+[<cite>`width` media feature – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/width) \
+The most common, by far.
+<!-- .right -->
+
 > [!NOTE]
 >
 > Note that we still use `width` here—not the [logical property](../box-model/index.md#and-logical-properties) `inline-size`—because we are actually referencing the *physical* device characteristics, agnostic of the language being displayed.
@@ -176,7 +178,7 @@ There are many media queries we can use, but we’ll start with *width*—which 
 
 #### There Is No Perfect Layout
 
-<div class="center verso">
+<div class="before center verso">
 
 Width tends to vary the most across devices—from the ~`375px`–`428px` of your phones, through to the ~`1440px`–`1680px` of your laptops, and then on up to the ~`2560px`–`3440px` you might see with large, desktop displays.
 
@@ -189,9 +191,9 @@ You can add as many *breakpoints* as you need to make your page/design work acro
 
 </div>
 
-<div class="recto">
+<div class="before recto">
 
-<figure class="sticky">
+<figure class="sticky" style="margin-block-end: 1rlh">
 <img src="devices.jpg">
 <figcaption>
 
@@ -203,6 +205,7 @@ This is from more than a dozen years ago, now. It’s really only gotten worse! 
 </div>
 
 **Our design responds in steps, at different widths, that we call *breakpoints*—the window/device/viewport sizes where the content *starts to break,* if it is not adjusted.**
+<!-- .before -->
 
 **There are very, *very* few layouts that won’t need some amount of horizontal responsiveness/breakpoints!**
 
@@ -214,24 +217,32 @@ This is from more than a dozen years ago, now. It’s really only gotten worse! 
 
 #### So How Do They Work?
 
-In this example, we would refer to `550px` as our *breakpoint*:
-<!-- .all -->
+In this example, we would refer to `500px` as our *breakpoint*:
+<!-- .all .before -->
 
-<figure
-	@caption="Drag the code/example divide to the left to see it respond to the media query! You can <nobr>double-click</nobr> to reset it."
-	@source="media-width/preview/?active=style.css"
-	style="--lines: 9"
-	>
+<figure style="--lines: 7">
+
+***[Example](media-width/style.css)***
+
+<figcaption>
+
+Drag the code/example divide to the left to see it respond to the media query! You can <nobr>double-click</nobr> to reset it.
+
+</figcaption>
 </figure>
 
 This width rule/test/criteria uses math [comparison operators](https://css-tricks.com/the-new-css-media-query-range-syntax/#aa-new-comparison-operators)—meaning you can use `<` `>` `=` `<=` `>=` :
 <!-- .balance -->
 
-<figure
-	@caption="Again, drag the divide to see rules apply. Exact matches (like the  `width = 550px` here) are rarely useful!"
-	@source="media-width-min-max/preview/?active=style.css"
-	style="--lines: 17"
-	>
+<figure style="--lines: 15">
+
+***[Example](media-width-min-max/style.css)***
+
+<figcaption>
+
+Again, drag the divide to see rules apply. Exact matches (like the  `width = 500px` here) are rarely useful!
+
+</figcaption>
 </figure>
 
 > [!WARNING]
@@ -246,34 +257,40 @@ This width rule/test/criteria uses math [comparison operators](https://css-trick
 
 You can also use `height` in the same way—though again, with the usual vertical scrolling paradigm, <nobr>height-based</nobr> adjustments aren’t as necessary or anywhere nearly as common as `width`.
 
-This example is the same *breakpoint* of `550px` as before, but now using `height`:
+This example is the same *breakpoint* of `500px` as before, but now using `height`:
 <!-- .balance -->
 
 </div>
 
 <figure
-	@caption="These code examples are responsive, themselves—stacking like this when they are narrow."
-	@source="media-height-min-max/preview/?active=style.css"
-	class="recto"
-	style="--lines: 24"
-	>
+	class="recto" style="--lines: 22">
+
+***[Example](media-height-min-max/style.css)***
+
+<figcaption>
+
+These code examples are responsive, themselves—stacking like this when they are narrow.
+
+</figcaption>
 </figure>
 
 **In a broader code and programming context, it can be helpful to think of media queries as [conditional *if* statements](https://en.wikipedia.org/wiki/Conditional_(computer_programming)).**
 
 <sub>We’ll talk about this in detail later [with JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else), where conditionals are ubiquitous and powerful. You may have also heard of [*If This Then That*](https://ifttt.com), which takes its name from this kind of logic.</sub>
 
-</div>
-
 ### Orientation
 
 You can also be less specific about your `width`/`height` and instead use `orientation`—like when you rotate your phone. The queries use the wonderfully tenacious names/values of `portrait` or `landscape`:
 
-<figure
-	@caption="Everything was a painting before it was a photograph or a [web page](../everything/index.md)."
-	@source="media-orientation/preview/?active=style.css"
-	style="--lines: 13"
-	>
+<figure style="--lines: 11">
+
+***[Example](media-orientation/style.css)***
+
+<figcaption>
+
+Everything was a painting before it was a photograph or a [web page](../everything/index.md).
+
+</figcaption>
 </figure>
 
 ### And/Or Combinations
@@ -281,20 +298,28 @@ You can also be less specific about your `width`/`height` and instead use `orien
 And speaking of *conditional statements*—you can also merge multiple media queries into one test/check, using `and`. This is often used for a range (to apply something *between* two breakpoints) or to combine `width` and `height` checks, together:
 <!-- .balance -->
 
-<figure
-	@caption="The demo here is taller than `300px`, for the second one."
-	@source="media-and/preview/?active=style.css"
-	style="--lines: 13"
-	>
+<figure style="--lines: 11">
+
+***[Example](media-and/style.css)***
+
+<figcaption>
+
+The demo here is taller than `300px`, for the second one.
+
+</figcaption>
 </figure>
 
 You can also use comma-separated queries (similar to [*selector lists*](../css/index.md#compound-and-lists-selectorselector-selector-selector)) to apply *or* logic—setting the same styles for different scenarios:
 
-<figure
-	@caption="Note that you could do this with `and`, as in the example above, by just swapping the colors. Code logic!"
-	@source="media-or/preview/?active=style.css"
-	style="--lines: 9"
-	>
+<figure style="--lines: 7">
+
+***[Example](media-or/style.css)***
+
+<figcaption>
+
+Note that you could do this with `and`, as in the example above, by just swapping the colors. Code logic!
+
+</figcaption>
 </figure>
 
 There is also a `not` [logic operator](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries#not_logic_in_media_queries)—which will reverse the meaning of the media query. But this syntax gets confusing fast—especially with things like `>`/`<` rules making for double-negatives. So it is easier to avoid!
@@ -329,11 +354,15 @@ Your design constraints will be tighter and more challenging, by tackling your s
 	Similarly, this means writing your styles for mobile… first, *then* adding `width > #` breakpoints (cascading below them) to *progressively enhance* your design as it scales up.
 	<!-- .balance -->
 
-<figure
-	@caption="Note we added a `main` container. The `inline-size` here are kind of tricky—but this will be much easier with `grid`, we promise!"
-	@source="media-mobile-first/preview/?active=style.css"
-	style="--lines: 24"
-	>
+<figure style="--lines: 23">
+
+***[Example](media-mobile-first/style.css)***
+
+<figcaption>
+
+Note we added a `main` container. The `inline-size` here are kind of tricky—but this will be much easier with `grid`, we promise!
+
+</figcaption>
 </figure>
 
 This goes “[with the grain](../../week/7.md#reading-discussion),” following the general CSS pattern/paradigm of the cascade—and is much, much, *much* easier than adjusting desktop front-end after the fact. (Trust us.) Always think *mobile-first*&#x202F;!
@@ -375,11 +404,15 @@ In your CSS, you *declare* (set) these with a `--` prefix in front of a subjecti
 You can use these as values for *any* [CSS property](../css/index.md#css-rules)—colors, spacing, etc.—anything you use multiple times and want to be consistent, give a memorable name to, or easily change all together:
 <!-- .before--3 -->
 
-<figure
-	@caption="Changing the spacing here is *easy*, even though we use it a bunch."
-	@source="css-variable/preview/?active=style.css"
-	style="--lines: 21"
-	>
+<figure style="--lines: 27">
+
+***[Example](css-variable/style.css)***
+
+<figcaption>
+
+Changing the spacing here is *easy*, even though we use it a bunch.
+
+</figcaption>
 </figure>
 
 You’ll often declare a set of variables for mobile—type sizes, spacing, and so on—and then adjust them, once, for desktop. No need to write all the properties out again, with all their own redundant media-queries! Variables are *great*. It used to be *so much harder*.
@@ -404,11 +437,15 @@ In all of our above examples, there is an implied *[media type](https://develope
 	There are also some print-specific properties available.
 <!-- .right -->
 
-<figure
-	@caption="You can see the `print` style in action by going [directly to the example](media-print/), then <nobr><kbd>⌘</kbd> <kbd>P</kbd></nobr> to print. It is still *A Thing*, though often forgotten about in modern web design/projects."
-	@source="media-print/preview/?active=style.css"
-	style="--lines: 22"
-	>
+<figure style="--lines: 26">
+
+***[Example](media-print/style.css)***
+
+<figcaption>
+
+You can see the `print` style in action by going [directly to the example](media-print/), then <nobr><kbd>⌘</kbd> <kbd>P</kbd></nobr> to print. It is still *A Thing*, though often forgotten about in modern web design/projects.
+
+</figcaption>
 </figure>
 
 > [!TIP]
@@ -417,7 +454,7 @@ In all of our above examples, there is an implied *[media type](https://develope
 >
 > <sub>When you get [a PDF](https://pagedjs.org) [ticket](https://weasyprint.org)/[receipt](https://www.princexml.com) or [even read](https://www.w3.org/2012/12/global-publisher/slides/Day2/P1-w3c-paris-hachette.pdf) [a book](https://www.xml.com/articles/2017/02/20/beyond-xml-making-books-html/), it’s likely styled HTML! Your Kindle’s [`EPUB` files](https://en.wikipedia.org/wiki/EPUB) are just HTML/CSS, too!</sub>
 >
-> Remember: [Everything is a webpage](../everything/index.md#an-ever-present-visual-medium)!</sub>
+> Remember: [*everything* is a webpage](../everything/index.md#an-ever-present-visual-medium)!</sub>
 
 ### `hover`
 
@@ -429,11 +466,15 @@ Another common feature is `hover`, used to detect whether a browser has an input
 
 Mobile *touch-based* systems don’t have this behavior (and often react oddly to `:hover` CSS, “eating taps”), so you should adjust your interfaces to work in the absence of this state:
 
-<figure
-	@caption="If you view this on your phone, the `aside` should be visible without interaction. On your computer, you’ll have to mouse over the `div`. Note how this is written with a [*mobile-first*](#mobile-first-design) style, only adding the hover state later/lower for folks who have it!"
-	@source="media-hover/preview/?active=style.css"
-	style="--lines: 14"
-	>
+<figure style="--lines: 12">
+
+***[Example](media-hover/style.css)***
+
+<figcaption>
+
+If you view this on your phone, the `aside` should be visible without interaction. On your computer, you’ll have to mouse over the `div`. Note how this is written with a [*mobile-first*](#mobile-first-design) style, only adding the hover state later/lower for folks who have it!
+
+</figcaption>
 </figure>
 
 Hover states are a good feature for *progressive-enhancement*, as we did here—to add them in *after* you have a working mobile design. Maybe a third to a half of your audience (depending on your project) won’t see them—so don’t rely on them being seen!
@@ -446,11 +487,15 @@ You see this one more and more these days—`prefers-color-scheme` for switching
 	Michael prefers `dark`; Rijk prefers `light`.
 <!-- .right -->
 
-<figure
-	@caption="You’ll see this differently depending on whether your system is in light or dark mode."
-	@source="media-color-scheme/preview/?active=style.css"
-	style="--lines: 17"
-	>
+<figure style="--lines: 22">
+
+***[Example](media-color-scheme/style.css)***
+
+<figcaption>
+
+You’ll see this differently depending on whether your system is in light or dark mode.
+
+</figcaption>
 </figure>
 
 Sometimes this feels appropriate—especially in products/applications, like maybe a messaging service. But sometimes the color scheme of a site is its *brand* (like ours), and probably shouldn’t change based on this query. It’s up to you! Continuing our ongoing discussion of who has the control.
@@ -458,11 +503,12 @@ Sometimes this feels appropriate—especially in products/applications, like may
 ### `prefers-contrast` / `prefers-reduced-motion` <!-- .all -->
 
 These last two are primarily concerned with [accessiblity](https://developer.mozilla.org/en-US/docs/Web/Accessibility)—`prefers-contrast` for folks who run their device/browser in a high-contrast mode to help with their vision, or `prefers-reduced-motion` for those who have animations turned off for vestibular reasons.
+<!-- .body -->
 
-- [<cite>`prefers-contrast` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast) \
+- [<cite>`prefers-contrast` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast)
 - [<cite>`prefers-reduced-motion` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) \
 	You can think of both subtlety and motion as progressive enhancements.
-<!-- .right .rows--2 -->
+<!-- .right .rows--3 -->
 
 <sub>Or these are just their preference! None of your business.</sub>
 
@@ -488,12 +534,13 @@ p {
 }
 ```
 
-<figure
-	@caption="The corresponding settings in i&NoBreak;OS."
-	@source="contrast.png"
-	class="recto"
-	style="grid-column: four-start / five-end"
-	>
+<figure class="recto" style="grid-column: four-start / five-end">
+<img src="contrast.png">
+<figcaption>
+
+The corresponding settings in i&NoBreak;OS.
+
+</figcaption>
 </figure>
 
 ```css <!-- .center .verso -->
@@ -505,11 +552,8 @@ p {
 }
 ```
 
-<figure
-	@source="motion.png"
-	class="recto"
-	style="grid-column: four-start / five-end"
-	>
+<figure class="recto" style="grid-column: four-start / five-end">
+<img src="motion.png">
 </figure>
 
 > The power of the Web is in its universality.

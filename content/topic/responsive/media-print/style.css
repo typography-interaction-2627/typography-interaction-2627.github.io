@@ -5,7 +5,7 @@ section { background-color: var(--background); }
 a { text-decoration: underline; }
 
 /* We usually can leave `screen` off, as the default. */
-@media screen and (width > 550px) {
+@media screen and (width > 500px) {
 	:root { --background: coral; }
 }
 

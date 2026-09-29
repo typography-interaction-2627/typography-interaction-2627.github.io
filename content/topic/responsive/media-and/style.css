@@ -1,6 +1,6 @@
 section { background-color: aquamarine; }
 
-@media (width > 550px) and (width < 700px) {
+@media (width > 500px) and (width < 700px) {
 	section:first-child { background-color: gold; }
 }
 
