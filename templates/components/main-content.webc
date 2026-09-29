@@ -53,9 +53,9 @@
 				row-gap:             calc(2rlh - 1rcap);
 
 				grid-template-columns:
-					[ all-start aside-start body-start middle-start five-start four-start left-start one-start recto-start right-start six-start three-start two-start verso-start ]
+					[ all-start aside-start antibody-start body-start middle-start five-start four-start left-start one-start recto-start right-start six-start three-start two-start verso-start ]
 					var(--column)
-					[ all-end aside-end body-end middle-end five-end four-end left-end one-end recto-end right-end six-end three-end two-end verso-end ];
+					[ all-end aside-end antibody-start body-end middle-end five-end four-end left-end one-end recto-end right-end six-end three-end two-end verso-end ];
 
 				/* Default to body width. */
 				:where(&, details, section) > * { grid-column: body }
@@ -104,7 +104,7 @@
 				:where(.after) + * { margin-block-start: 1rlh }
 
 				/* Manual column placements. */
-				:where(div, .all, .aside, .body, .middle, .five, .four, .left, .one, .recto, .right, .six, .three, .two, .verso) {
+				:where(div, .all, .aside, .antibody, .body, .middle, .five, .four, .left, .one, .recto, .right, .six, .three, .two, .verso) {
 					grid-row: span var(--rows, 1);
 
 					* { grid-column: initial }
@@ -127,20 +127,21 @@
 
 				/* Only when on The Grid. */
 				:where(&, details, section) {
-					> .all    { grid-column: all }
-					> .aside  { grid-column: aside }
-					> .body   { grid-column: body }
-					> .five   { grid-column: five }
-					> .four   { grid-column: four }
-					> .left   { grid-column: left }
-					> .middle { grid-column: middle }
-					> .one    { grid-column: one }
-					> .recto  { grid-column: recto }
-					> .right  { grid-column: right }
-					> .six    { grid-column: six }
-					> .three  { grid-column: three }
-					> .two    { grid-column: two }
-					> .verso  { grid-column: verso }
+					> .all       { grid-column: all }
+					> .aside     { grid-column: aside }
+					> .antibody  { grid-column: antibody }
+					> .body      { grid-column: body }
+					> .five      { grid-column: five }
+					> .four      { grid-column: four }
+					> .left      { grid-column: left }
+					> .middle    { grid-column: middle }
+					> .one       { grid-column: one }
+					> .recto     { grid-column: recto }
+					> .right     { grid-column: right }
+					> .six       { grid-column: six }
+					> .three     { grid-column: three }
+					> .two       { grid-column: two }
+					> .verso     { grid-column: verso }
 				}
 
 				/* The actual columns. */
@@ -150,7 +151,7 @@
 						var(--column)
 						[ aside-start one-end two-start]
 						var(--column)
-						[ middle-start left-end three-start two-end ]
+						[ antibody-start middle-start left-end three-start two-end ]
 						var(--column)
 						[four-start recto-start three-end verso-end]
 						var(--column)
@@ -158,7 +159,7 @@
 						var(--column)
 						[ aside-end five-end six-start]
 						var(--column)
-						[ all-end recto-end right-end six-end];
+						[ all-end antibody-end recto-end right-end six-end];
 
 					.sticky {
 						inset-block-start: 4rlh;
