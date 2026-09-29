@@ -5,7 +5,7 @@
 		"@11ty/webc": "0.12.0-beta.2",
 		"@awesome.me/buildawesome": "4.0.0-alpha.10",
 		"@mdit-vue/plugin-component": "^3.0.2",
-		"@parsons/ti-preview": "^0.0.45",
+		"@parsons/ti-preview": "^0.0.46",
 		"github-slugger": "^2.0.0",
 		"js-beautify": "^2.0.3",
 		"markdown-it": "^15.0.0",

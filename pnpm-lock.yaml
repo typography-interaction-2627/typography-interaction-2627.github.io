@@ -24,8 +24,8 @@ importers:
         specifier: ^3.0.2
         version: 3.0.2
       '@parsons/ti-preview':
-        specifier: ^0.0.45
-        version: 0.0.45
+        specifier: ^0.0.46
+        version: 0.0.46
       github-slugger:
         specifier: ^2.0.0
         version: 2.0.0
@@ -515,8 +515,8 @@ packages:
     resolution: {integrity: sha512-XRO0zi2NIUKq2lUk3T1ecFSld1fMWRKE6naRFGkgkdeosx7IslyUKNv5Dcb5PJTja9tHJoFu0v/7yEpAkrkrTg==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24}
 
-  '@parsons/ti-preview@0.0.45':
-    resolution: {integrity: sha512-3Sb8vbHS0HAkFQpyuXiyEyeg+FEC0vDfUO/M5PpkdOnY9zea43j7R5+0kq/TRzcDZ0naqFAJXVGks6/6CRIYow==}
+  '@parsons/ti-preview@0.0.46':
+    resolution: {integrity: sha512-mN7LwZ+BOVnrR7y345ELGFLyzywglLc77Tl7HwqmBd3pK076DqkyNE3WnN5HIg7rczeMfwZhnqdINp6fuds34g==}
 
   '@pkgr/core@0.3.6':
     resolution: {integrity: sha512-SEeaJLb3qBNF/OaXnaR1NmmBbFYk1zC0ZH/52fATcRPLFg/p791YrcyFFy44Bo9sLaGuSuLp5Q6axbb/O+v/RA==}
@@ -2274,7 +2274,7 @@ snapshots:
 
   '@ota-meshi/ast-token-store@0.3.0': {}
 
-  '@parsons/ti-preview@0.0.45':
+  '@parsons/ti-preview@0.0.46':
     dependencies:
       '@codemirror/lang-css': 6.3.1
       '@codemirror/lang-html': 6.4.11
