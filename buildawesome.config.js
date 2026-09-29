@@ -198,7 +198,7 @@ export default (config) => {
 		const noBreak = '\u2060'
 		const noBreakDash = noBreak + '—'
 		const punctuationBefore = '~(“‘…'
-		const punctuationAfter = '),;!?.’”:—/…'
+		const punctuationAfter = '),;!?.’”:–—/…'
 		const ignoredAncestors = new Set(['code', 'kbd', 'samp', 'pre', 'nobr'])
 
 		markdown.render = (...args) => {
@@ -231,6 +231,7 @@ export default (config) => {
 				if (beforeStart > cursor && html[beforeStart - 1] === zeroWidthSpace) beforeStart--
 				if (beforeStart > cursor && punctuationBefore.includes(html[beforeStart - 1])) before = html[--beforeStart]
 				const beforeTag = html[beforeStart - 1] === '>'
+				const beforeSiblingTag = beforeTag && html[html.lastIndexOf('<', beforeStart - 1) + 1] === '/'
 
 				// Keep the word-joined em dash together; otherwise include one trailing punctuation character.
 				if (html.startsWith(noBreakDash, afterIndex)) after = noBreakDash
@@ -240,10 +241,11 @@ export default (config) => {
 				// Ragging inserts a zero-width space after slashes; the hair space replaces it here.
 				if (html[afterIndex] === zeroWidthSpace) afterIndex++
 				const afterTag = html[afterIndex] === '<'
+				const afterSiblingTag = afterTag && html[afterIndex + 1] !== '/'
 
-				// Add hair spaces where a code-like element touches an adjacent tag.
+				// Add hair spaces only where a code-like element touches a sibling tag.
 				output += html.slice(cursor, beforeStart)
-					+ `${beforeTag ? hairSpace : ''}<nobr>${before ? before + hairSpace : ''}${element}${after ? hairSpace + after : ''}</nobr>${afterTag ? hairSpace : ''}`
+					+ `${beforeSiblingTag ? hairSpace : ''}<nobr>${before ? before + hairSpace : ''}${element}${after ? hairSpace + after : ''}</nobr>${afterSiblingTag ? hairSpace : ''}`
 				cursor = afterIndex
 			}
 
