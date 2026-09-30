@@ -355,13 +355,13 @@ export default (config) => {
 	const markdownFigures = (markdown) => {
 		const element = (html) => parse(html.trim()).firstChild
 
-		markdown.core.ruler.after('commentsToCurlies', 'figures', (state) =>
+		markdown.core.ruler.before('commentsToCurlies', 'figures', (state) =>
 			state.src = state.src.replace(/(^ {0,3}(`{3,}|~{3,})[^\n]*\n[\s\S]*?^ {0,3}\2[^\n]*(?:\n|$))|(^<figure\b[^>]*>[\s\S]*?<\/figure>)/gmi, (html, fence) => {
 				if (fence) return fence
 
 				let id
 
-				const figure = parse(html).querySelector('figure')
+				const figure = parse(html, { comment: true }).querySelector('figure')
 				const caption = figure.querySelector(':scope > figcaption')
 
 				caption?.remove()
@@ -391,7 +391,10 @@ export default (config) => {
 					folder && link.parentNode.parentNode.replaceWith(element(`<iframe loading="lazy" src="${folder}preview/${file && `?active=${file}`}\"></iframe>`))
 				})
 
-				caption && figure.appendChild(caption)
+				if (caption) {
+					caption.innerHTML = markdownFigureCaption.render(caption.innerHTML.trim(), { figure: true }).trim()
+					figure.appendChild(caption)
+				}
 
 				// Nest in a container.
 				figure.querySelectorAll(':scope > img[src], :scope > iframe').forEach((media) => {
@@ -450,20 +453,15 @@ export default (config) => {
 		.use(markdownFigures)
 		.use(componentPlugin) // Allows custom inline HTML component names (otherwise made into strings/wrapped in paragraphs).
 
-	// Filter for component use.
-	// TODO We don’t use this anymore?
-	config.addFilter('markdown', (content) =>
-		markdownIt(markdownOptions)
-			.use(mardownAddAbbreviations)
-			.use(markdownItAbbr)
-			.use(markdownRagging)
-			.use(markdownLocalLinks)
-			.render(String(content))
-			.replace('<p>', '')
-			.replace('</p>', '')
-			.replace('&amp;', '&')
-			.trim(),
-	)
+	// Subset for `figcaption`.
+	const markdownFigureCaption = markdownIt(markdownOptions)
+		.use(mardownAddAbbreviations)
+		.use(markdownCommentsToCurlies)
+		.use(markdownItAbbr)
+		.use(markdownItAttrs)
+		.use(markdownNobrCode)
+		.use(markdownRagging)
+		.use(markdownLocalLinks)
 
 	// Overall Markdown use.
 	config.setLibrary('md', markdown)
