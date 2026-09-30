@@ -284,7 +284,7 @@ You can nest queries for your “global” [`:root` variables](../box-model/inde
 
 #### Using Comparisons
 
-Our queries can also use other simple math [comparison operators](https://css-tricks.com/the-new-css-media-query-range-syntax/#aa-new-comparison-operators), `<` `>` `=` `<=` `>=`:
+Our queries can also use other simple math [comparison operators](https://css-tricks.com/the-new-css-media-query-range-syntax/#aa-new-comparison-operators): `<` `>` `=` `<=` `>=`. These replace earlier `min-width` syntax, and are much easier to understand:
 <!-- .balance -->
 
 [<cite>Query Range Syntax - CSS Tricks</cite>](https://css-tricks.com/the-new-css-media-query-range-syntax/#aa-new-comparison-operators) \
@@ -304,11 +304,11 @@ Exact matches (like the  `width = 500px` here) are rarely useful, though!
 
 #### And Ranges
 
-This [new comparison syntax](https://web.dev/articles/media-query-range-syntax) also allows simple, intuitive *ranges* to be specified—to see if the viewport is *between* two lengths:
+This [new comparison syntax](https://web.dev/articles/media-query-range-syntax) also allows simple, combined *ranges* to be specified—to see if the viewport is *between* two lengths:
 <!-- .balance -->
 
 [<cite>New syntax for range media queries - web.dev</cite>](https://web.dev/articles/media-query-range-syntax) \
-Another comparison of old-and-new syntax.
+Comparison old-and-new syntax.
 <!-- .right -->
 
 <figure style="--lines: 7">
@@ -412,7 +412,7 @@ There is also a `not` [logic operator](https://developer.mozilla.org/en-US/docs/
 So this can all get very complicated, very quickly—especially with complex designs, overlapping rules, and the wide ranges of devices to consider.
 
 - [<cite>Mobile First – A Book Apart</cite>](http://www.ferrispark.com/audio/DOCUMENTS/mobile-first.pdf) \
-	[Luke Wroblewski](https://lukew.com/) wrote the book (and [the deck](https://static.lukew.com/MobileFirst_LukeW.pdf)).
+	[Luke Wroblewski](https://lukew.com/) wrote the book (and [the deck](https://static.lukew.com/MobileFirst_LukeW.pdf)).
 
 - [<cite>Progressive Enhancement – Wikipedia</cite>](https://en.wikipedia.org/wiki/Progressive_enhancement) \
 	The term coined by [Steve Champeon](https://www.webstandards.org/about/members/schampeo/index.html) and [Nick Finck](https://nickfinck.com/) in [2003](https://hesketh.com/publications/inclusive_web_design_for_the_future/).
