@@ -200,8 +200,10 @@ h1 {
 		.e:has(+ .b) { --kern: -1 }
 		.e:has(+ .k) { --kern: -1 }
 		.e:has(+ .l) { --kern: -1 }
+		.e:has(+ .s) { --kern: -1 }
 		.e:has(+ .v) { --kern: -1 }
 		.g:has(+ .e) { --kern: -1 }
+		.g:has(+ .n) { --kern: -1 }
 		.h:has(+ .e) { --kern: -1 }
 		.i:has(+ .p) { --kern: -1 }
 		.I:has(+ .s) { --kern: -2 }
@@ -209,6 +211,7 @@ h1 {
 		.l:has(+ .a) { --kern: -1 }
 		.M:has(+ .a) { --kern: -1 }
 		.M:has(+ .o) { --kern: -1 }
+		.n:has(+ .s) { --kern: -1 }
 		.n:has(+ .u) { --kern: -1 }
 		.o:has(+ .o) { --kern: 1 }
 		.o:has(+ .r) { --kern: 1 }
@@ -216,8 +219,10 @@ h1 {
 		.o:has(+ .x) { --kern: -1 }
 		.P:has(+ .r) { --kern: 1 }
 		.p:has(+ .t) { --kern: -1 }
+		.R:has(+ .e) { --kern: -1 }
 		.r:has(+ .i) { --kern: -1 }
 		.r:has(+ .o) { --kern: -1 }
+		.s:has(+ .i) { --kern: -1 }
 		.s:has(+ .p) { --kern: -1 }
 		.s:has(+ .s) { --kern: -1 }
 		.S:has(+ .S) { --kern: -1 }
@@ -277,13 +282,17 @@ h1 {
 		.e:has(+ .c) { --kern: 2 }
 		.e:has(+ .e) { --kern: 2 }
 		.e:has(+ .l) { --kern: -1 }
+		.e:has(+ .s) { --kern: -1 }
 		.e:has(+ .v) { --kern: 1 }
 		.g:has(+ .e) { --kern: 1 }
+		.g:has(+ .n) { --kern: 2 }
 		.h:has(+ .e) { --kern: 1 }
 		.H:has(+ .T) { --kern: 1 }
+		.i:has(+ .g) { --kern: -1 }
 		.i:has(+ .p) { --kern: -1 }
 		.I:has(+ .s) { --kern: -2 }
 		.I:has(+ .t) { --kern: -2 }
+		.i:has(+ .v) { --kern: -2 }
 		.j:has(+ .e) { --kern: 2 }
 		.l:has(+ .a) { --kern: -1 }
 		.l:has(+ .l) { --kern: -3 }
@@ -303,6 +312,7 @@ h1 {
 		.r:has(+ .i) { --kern: -1 }
 		.r:has(+ .o) { --kern: -1 }
 		.r:has(+ .y) { --kern: 2 }
+		.s:has(+ .i) { --kern: -2 }
 		.s:has(+ .p) { --kern: -1 }
 		.s:has(+ .s) { --kern: -2 }
 		.S:has(+ .S) { --kern: 2 }
