@@ -1,6 +1,8 @@
 :root {
 	--spacing: 1rem;
 
+	font-size: var(--spacing);
+
 	/* Adjust our “global” variables. */
 	@media (width > 700px) { --spacing: 1.333rem; }
 }
@@ -8,7 +10,6 @@
 main {
 	display: flex; /* We’ll talk about `flex` soon! */
 	flex-wrap: wrap;
-	font-size: var(--spacing);
 	gap: var(--spacing);
 }
 

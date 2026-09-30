@@ -10,5 +10,5 @@ section {
 	background-color: var(--background, deepskyblue);
 	padding: var(--spacing);
 
-	&:not(:first-child) { margin-block-start: var(--spacing); }
+	:is(&, p):not(:first-child) { margin-block-start: var(--spacing); }
 }

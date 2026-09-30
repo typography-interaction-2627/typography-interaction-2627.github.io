@@ -1,15 +1,15 @@
+/* Same as before… */
+:root { --spacing: 1rem; }
+
 body {
 	font-family: sans-serif;
-	padding: 1rem;
+	padding: var(--spacing);
 }
 
-aside,
-section {
-	padding: 1rem;
-}
+/* Added `aside`. */
+section, aside {
+	background-color: var(--background, deepskyblue);
+	padding: var(--spacing);
 
-aside,
-section:not(:first-child),
-p:not(:first-child) {
-	margin-block-start: 1rem;
+	:is(&, p):not(:first-child) { margin-block-start: var(--spacing); }
 }

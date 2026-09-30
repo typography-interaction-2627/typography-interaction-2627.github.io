@@ -1,13 +1,13 @@
 :root {
 	--accent: aquamarine;
 	--background: white;
-	--foreground: black;
+	--foreground: darkslategray;
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
 		--accent: teal;
-		--background: black;
+		--background: darkslategray;
 		--foreground: white;
 	}
 }

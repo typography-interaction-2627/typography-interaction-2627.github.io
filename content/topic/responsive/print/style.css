@@ -1,23 +1,22 @@
-:root { --background: aquamarine; }
+:root {
+	--background: aquamarine;
+	--spacing: 1rem;
 
-section { --background: var(--background); }
+	font-size: var(--spacing);
 
-a { text-decoration: underline; }
-
-/* We usually can leave `screen` off, as the default. */
-@media screen and (width > 500px) {
-	:root { --background: coral; }
+	/* We usually can leave `screen` off, as the default. */
+	@media screen and (width > 500px) { --background: coral; }
 }
 
 @media print {
 	:root {
-		--background: initial; /* Resets this. */
-
-		font-size: 18pt; /* Absolute units! */
+		--background: initial; /* Resets/clears this. */
+		--spacing: 18pt; /* Appropriate absolute units! */
 	}
 
+	/* And maybe we have some `print`-only properties. */
 	section {
-		border: 4pt solid black;
+		border: calc(var(--spacing) / 3) solid black;
 		font-family: serif;
 		padding: 0.5in;
 	}

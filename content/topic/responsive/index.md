@@ -448,7 +448,7 @@ Your mobile design constraints will be tighter and more challenging, by tackling
 	Similarly, this means writing your styles for mobile… first, *then* adding `width >` breakpoints (cascading below them) to *progressively enhance* your design as it scales up.
 <!-- .recto style="margin-inline-end: 1cap" -->
 
-<figure style="--lines: 23">
+<figure style="--lines: 24">
 
 ***[Mobile-First Example](mobile-first/style.css)***
 
@@ -467,48 +467,51 @@ This goes “[*with the grain*](../../week/7.md#reading-discussion),” followin
 
 ## Other Media Features
 
-By far, the most common media queries will be *width*/*height*/*orientation*—for adjusting your layouts across devices. But `@media` has some more tricks up its sleeve in testing for other browser features. We’ll look at some of the handy/common ones.
+By far, the most common media queries will be *width/height/orientation*—for adjusting your layouts across different devices. But `@media` has some more tricks up its sleeve in testing for other browser features. We’ll look at some of the handy/common ones, here.
 
 [<cite>`@media` types/features - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/@media#media_features) \
-	There are many of these! Meet your users where they are.
+	There are many of these! Meet your visitors where they are.
 <!-- .right -->
 
 ### `screen` vs. `print`
 
-In all of our above examples, there is an implied *[media type](https://developer.mozilla.org/en-US/docs/Web/CSS/@media#media_types)* of `screen`—since that is usually what we are concerned with, on the web. But there is also one for <nobr>`print`&#x202F;!</nobr> You can use these to segment styles to one medium or the other:
+In all of our above examples, there is an implied *[media type](https://developer.mozilla.org/en-US/docs/Web/CSS/@media#media_types)* of `screen`—since that is most often what we are concerned with, on the web. But there is also one for `print`! You can use these to segment styles to one medium or the other:
+<!-- .balance -->
 
 [<cite>CSS paged media - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_paged_media) \
 	There are also some print-specific properties available.
 <!-- .right -->
 
-<figure style="--lines: 26">
+<figure style="--lines: 25">
 
 ***[Print Example](print/style.css)***
 
 <figcaption>
 
-You can see the `print` style in action by going [directly to the example](print/), then <nobr><kbd>⌘</kbd> <kbd>P</kbd></nobr> to print. It is still *A Thing*, though often forgotten about in modern web design/projects.
+You can see the `print` style in action by going [directly to the example](print/)<!-- target="_blank" -->, then <kbd><kbd><span class="x2318">⌘</span>/Ctrl</kbd>+<kbd>P</kbd></kbd> to print. It is still *A Thing*, though often forgotten about in modern web design/projects!
 
 </figcaption>
 </figure>
 
-> [!TIP]
+> [!NOTE]
 >
-> Increasingly, this is how many “print” documents are created—starting as webpages with `print` styles!
+> Increasingly, this is how many actual “print” documents are created—starting as webpages with `print` styles!
 >
-> <sub>When you get [a PDF](https://pagedjs.org) [ticket](https://weasyprint.org)/[receipt](https://www.princexml.com) or [even read](https://www.w3.org/2012/12/global-publisher/slides/Day2/P1-w3c-paris-hachette.pdf) [a book](https://www.xml.com/articles/2017/02/20/beyond-xml-making-books-html/), it’s likely styled HTML! Your Kindle’s [`EPUB` files](https://en.wikipedia.org/wiki/EPUB) are just HTML/CSS, too!</sub>
+> <sub>When you get [a PDF](https://pagedjs.org) [ticket](https://weasyprint.org)/[receipt](https://www.princexml.com) or [even read](https://www.w3.org/2012/12/global-publisher/slides/Day2/P1-w3c-paris-hachette.pdf) [a book](https://www.xml.com/articles/2017/02/20/beyond-xml-making-books-html/), it’s likely styled HTML! (Our [submitted syllabus](../../../assets/PMCD_5001_F26.pdf) definitely is!) Your Kindle’s [EPUB files](https://en.wikipedia.org/wiki/EPUB) are just HTML/CSS, too!</sub>
 >
 > Remember: [*everything* is a webpage](../everything/index.md#an-ever-present-visual-medium)!</sub>
 
 ### `hover`
 
-Another common feature is `hover`, used to detect whether a browser has an input device that supports *hovering*—which really just means a mouse, usually on laptop/desktop computers.
+Another common feature to check for is [`hover`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover), detecting whether a browser has an input device that supports *hovering*—which really just means a mouse, usually on laptop/desktop computers. (But not always!)
 
 [<cite>`hover` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover) \
 	Mobile devices don’t have this!
 <!-- .right -->
 
-Mobile *touch-based* systems don’t have this behavior (and often react oddly to `:hover` CSS, “eating taps”), so you should adjust your interfaces to work in the absence of this state:
+Perhaps obviously, mobile *touch-based* systems don’t have this behavior—and often react oddly to `:hover` CSS, “[eating taps](https://css-tricks.com/annoying-mobile-double-tap-link-issue/).” So you should adjust your interfaces to work in the absence of this state—never assume a mouse!
+
+If you view this on your phone, the `aside` should be visible without interaction! On your computer, you’ll have to mouse over the `section`:
 
 <figure style="--lines: 12">
 
@@ -516,7 +519,7 @@ Mobile *touch-based* systems don’t have this behavior (and often react oddly t
 
 <figcaption>
 
-If you view this on your phone, the `aside` should be visible without interaction. On your computer, you’ll have to mouse over the `div`. Note how this is written with a [*mobile-first*](#mobile-first-design) style, only adding the hover state later/lower for folks who have it!
+Note how this is written with a [*mobile-first*](#mobile-first-design) style, only adding the hover state later/lower for folks who have it!
 
 </figcaption>
 </figure>
@@ -525,11 +528,13 @@ Hover states are a good feature for *progressive-enhancement*, as we did here—
 
 ### `prefers-color-scheme`
 
-You see this one more and more these days—`prefers-color-scheme` for switching up a site’s styles based on whether the user is in *light* or *dark mode*, popularized by the ol’ iPhone again:
+You see this one more and more these days—[`prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) for switching up a site’s styles based on whether the user is in *light* or *dark mode*, popularized by the ol’ iPhone again:
 
 [<cite>`prefers-color-scheme` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) \
-	Michael prefers `dark`; Rijk prefers `light`.
+	Michael prefers `dark`; Rijk prefers `light`. One of them is right!
 <!-- .right -->
+
+Sometimes this feels appropriate—especially in products/applications, like maybe a messaging service. But other times the color scheme of a site is its *brand* (like ours), and probably shouldn’t change based on this query. Continuing our ongoing discussion of who has the *control*—it’s up to you:
 
 <figure style="--lines: 22">
 
@@ -537,26 +542,29 @@ You see this one more and more these days—`prefers-color-scheme` for switching
 
 <figcaption>
 
-You’ll see this differently depending on whether your system is in light or dark mode.
+You’ll see this differently depending on whether your system is in light or dark mode!
 
 </figcaption>
 </figure>
 
-Sometimes this feels appropriate—especially in products/applications, like maybe a messaging service. But sometimes the color scheme of a site is its *brand* (like ours), and probably shouldn’t change based on this query. It’s up to you! Continuing our ongoing discussion of who has the control.
+### `prefers-contrast`&#x202F;/&thinsp;`prefers-reduced-motion`
 
-### `prefers-contrast` / `prefers-reduced-motion` <!-- .all -->
+<div>
 
 These last two are primarily concerned with [accessiblity](https://developer.mozilla.org/en-US/docs/Web/Accessibility)—`prefers-contrast` for folks who run their device/browser in a high-contrast mode to help with their vision, or `prefers-reduced-motion` for those who have animations turned off for vestibular reasons.
-<!-- .body -->
+
+<sub>Or these are just their preference! None of your business.</sub>
+
+</div>
 
 - [<cite>`prefers-contrast` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast)
 - [<cite>`prefers-reduced-motion` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) \
 	You can think of both subtlety and motion as progressive enhancements.
-<!-- .right .rows--3 -->
+<!-- .right -->
 
-<sub>Or these are just their preference! None of your business.</sub>
+<section style="margin-block-start: 2rlh">
 
-```css <!-- .center .verso -->
+```css <!-- .body .end -->
 :root {
 	/* Default to high contrast… */
 	--background: white;
@@ -578,7 +586,7 @@ p {
 }
 ```
 
-<figure class="recto" style="grid-column: four-start / five-end">
+<figure class="borderless right shadow" style="margin-inline-end: var(--gutter)">
 <img src="contrast.png">
 <figcaption>
 
@@ -587,7 +595,7 @@ The corresponding settings in i&NoBreak;OS.
 </figcaption>
 </figure>
 
-```css <!-- .center .verso -->
+```css <!-- .body .start -->
 /* When “Reduce Motion” is *not* enabled. */
 @media (prefers-reduced-motion: no-preference) {
 	button {
@@ -596,9 +604,11 @@ The corresponding settings in i&NoBreak;OS.
 }
 ```
 
-<figure class="recto" style="grid-column: four-start / five-end">
+<figure class="borderless right shadow" style="margin-inline-end: var(--gutter)">
 <img src="motion.png">
 </figure>
+
+</section>
 
 > The power of the Web is in its universality.
 >
