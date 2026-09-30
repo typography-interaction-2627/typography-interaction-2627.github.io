@@ -2,12 +2,13 @@
 	@scope (main) to (nav) {
 		:where(details) {
 			summary {
-				position:         relative;
 				background-color: var(--color);
 				display:          block;
 				inline-size:      fit-content;
 				margin-block-end: 1rlh;
 				padding:          1ex;
+				position:         relative;
+				touch-action:     manipulation;
 
 				&::after {
 					background: var(--background--check);
