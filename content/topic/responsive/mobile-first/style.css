@@ -1,9 +1,9 @@
 :root {
-	--spacing: 1rem;
+	--spacing: 1rem; /* Set what works for mobile, first. */
 
 	font-size: var(--spacing);
 
-	/* Adjust our “global” variables. */
+	/* Then adjust “global” variables when needed. */
 	@media (width > 700px) { --spacing: 1.333rem; }
 }
 
@@ -18,7 +18,7 @@ section {
 
 	inline-size: var(--inline, 100%);
 
-	/* And any per-element needs. */
+	/* And any per-element needs, going up. */
 	@media (width > 500px) {
 		--background: gold;
 		--inline: calc((100% - var(--spacing)) / 2);

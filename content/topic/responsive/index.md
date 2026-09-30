@@ -421,19 +421,22 @@ There is also a `not()` [logic operator](https://developer.mozilla.org/en-US/doc
 
 ## *Mobile-First* Design
 
-**This can all get very complicated, very quickly—especially with complex designs, overlapping rules, and the wide ranges of devices to consider.**
+**This can all get *very* complicated, very quickly—especially with complex designs, overlapping rules, and the wide ranges of devices to consider.**
 
-- [<cite>Mobile First – A Book Apart</cite>](http://www.ferrispark.com/audio/DOCUMENTS/mobile-first.pdf) \
-	[Luke Wroblewski](https://lukew.com/) wrote the book (and [the deck](https://static.lukew.com/MobileFirst_LukeW.pdf)).
+### Progressive Enhancement
+
+It will help to organize our thinking in a pattern of [*progressive enhancement*](https://en.wikipedia.org/wiki/Progressive_enhancement)—always starting with basic functionality, *then* enriching the experience, when possible.
 
 - [<cite>Progressive Enhancement – Wikipedia</cite>](https://en.wikipedia.org/wiki/Progressive_enhancement) \
 	The term coined by [Steve Champeon](https://www.webstandards.org/about/members/schampeo/index.html) and [Nick Finck](https://nickfinck.com/) in [2003](https://hesketh.com/publications/inclusive_web_design_for_the_future/).
+
+- [<cite>Mobile First – A Book Apart</cite>](http://www.ferrispark.com/audio/DOCUMENTS/mobile-first.pdf) \
+	[Luke Wroblewski](https://lukew.com/) wrote the book (and [the deck](https://static.lukew.com/MobileFirst_LukeW.pdf)).
 <!-- .right .rows--3 -->
 
-One of the easiest methodologies to keep things understandable (and resilient) is practicing [*mobile-first*](https://www.lukew.com/ff/entry.asp?933) design (and development). This has become kind of *buzzwordy* in the past decade or so, but it is a good philosophy to adhere to, nonetheless. It jives with the concept of [progressive enhancement](https://en.wikipedia.org/wiki/Progressive_enhancement).
-<!-- .before -->
+In terms of making our work responsive, this manifests as [*mobile-first*](https://www.lukew.com/ff/entry.asp?933) design (and development)—the easiest methodology to keep things understandable (and resilient). This has become kind of *buzzwordy* in the past decade or so, but it is a good philosophy to adhere to, nonetheless.
 
-Your mobile design constraints will be tighter and more challenging, by tackling your smallest layout first—but it is almost always easier to scale things *up* than scale them *down*. A mobile design *can* always work as a passable desktop one; the reverse is rarely true.
+Your mobile design constraints will be tighter and more challenging, by tackling your *smallest* layout first—but it is almost always easier to scale things *up* than scale them *down*. A mobile design *can* always work as a passable desktop one; the reverse is rarely true.
 
 **Another way to think of it: if it doesn’t work on *mobile*, it doesn’t *work*!**
 <!-- .after -->
@@ -448,22 +451,24 @@ Your mobile design constraints will be tighter and more challenging, by tackling
 	Similarly, this means writing your styles for mobile… first, *then* adding `width >` breakpoints (cascading below them) to *progressively enhance* your design as it scales up.
 <!-- .recto style="margin-inline-end: 1cap" -->
 
+### Start Small, Start Simple
+
+This also goes “[*with the grain*](../../week/7.md#reading-discussion)” of CSS, following the its general pattern/paradigm of the cascade—and jives with our “[*general to specific*](../css/index.md#avoiding-these-problems)” (or “*always to sometimes*”) approach to organizing our styles.
+
+It is much, much, *much* easier than adjusting desktop front-end after the fact. (Trust us.) Always think <nobr>*mobile-first*</nobr>! Here’s how that can look:
+
 <figure style="--lines: 24">
 
 ***[Mobile-First Example](mobile-first/style.css)***
 
 <figcaption>
 
-Note we added a `main` container. The `inline-size` here are kind of tricky—but this will be much easier with `grid`, we promise!
+Note we added a `main` container. The `calc()` here are kind of tricky—but this will be much easier with `grid`, we promise!
 
 </figcaption>
 </figure>
 
-This goes “[*with the grain*](../../week/7.md#reading-discussion),” following the general CSS pattern/paradigm of the cascade, echoing our “[always to sometimes](../css/index.md#avoiding-these-problems)” approach to CSS—and is much, much, *much* easier than adjusting desktop front-end after the fact. (Trust us.) Always think *mobile-first*&#x202F;!
-
-**Mobile can be the *majority* of your visitors—[especially internationally](https://gs.statcounter.com/platform-market-share/desktop-mobile/worldwide)!**
-
-**We’d like you to think of *mobile-first* design as a form of *accessibility*, in this light. Not everyone has your MacBook Pro!**
+**Mobile can be the *majority* of your visitors—[especially internationally](https://gs.statcounter.com/platform-market-share/desktop-mobile/worldwide)! We’d like you to think of *mobile-first* design as a form of *accessibility*, in this light. Not everyone has your MacBook Pro!**
 
 ## Other Media Features
 
