@@ -221,7 +221,7 @@ This is from more than a dozen years ago, now. It’s really only gotten worse! 
 
 ---
 
-#### Let’s Try It Out <!-- style="margin-block-start: initial" -->
+#### Changing Properties <!-- style="margin-block-start: initial" -->
 
 In their simplest form, we just change whatever properties/values when they need adjustment! In this example, we would refer to the viewport `(width > 500px)` as our *breakpoint*:
 <!-- .balance -->
@@ -373,9 +373,11 @@ Note the `:`, instead of `=`. Everything was a painting before it was a photogra
 </figcaption>
 </figure>
 
-### And/Or Combinations
+### Combinations
 
-And speaking of *conditional statements*—you can also merge multiple media queries into one test/check, using `and`. This is often used for a range (to apply something *between* two breakpoints) or to combine `width` and `height` checks, together:
+#### And
+
+Speaking of [*conditional statements*](https://en.wikipedia.org/wiki/Conditional_(computer_programming))—you can also merge multiple media queries into one test/check, `and`. This is how you *used* to make [ranges](#and-ranges)—but now it’s for combining two different checks together, like `width` *and* `height` *and* `orientation`:
 <!-- .balance -->
 
 <figure style="--lines: 11">
@@ -388,6 +390,8 @@ The demo here is taller than `300px`, for the second one.
 
 </figcaption>
 </figure>
+
+#### “Or”
 
 You can also use comma-separated queries (similar to [*selector lists*](../css/index.md#compound-and-lists-selectorselector-selector-selector)) to apply *or* logic—setting the same styles for different scenarios:
 
@@ -402,10 +406,14 @@ Note that you could do this with `and`, as in the example above, by just swappin
 </figcaption>
 </figure>
 
-There is also a `not` [logic operator](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries#not_logic_in_media_queries)—which will reverse the meaning of the media query. But this syntax gets confusing fast—especially with things like `>`/`<` rules making for double-negatives. So it is easier to avoid!
+#### *Not*
+
+There is also a `not` [logic operator](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries#not_logic_in_media_queries)—which will reverse the meaning of the media query. But this syntax gets really confusing, fast—especially with things like `>`/`<` rules making for double-negatives. So it is easier to avoid!
 <!-- .balance -->
 
-<sub>Why say `not` `portrait` when you can just say `landscape`?</sub>
+<sub>Why confusingly say `@media not (width < 500px)` when you can just say `@media (width > 500px)`?</sub>
+
+<sub>Or `@media not (orientation: portrait)`, when there is `@media (orientation: landscape)`?</sub>
 
 ## *Mobile-First* Design
 
