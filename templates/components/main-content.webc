@@ -97,7 +97,7 @@
 				/* Space after loose ones. */
 				:where(.before),
 				:where(details):not(:first-child),
-				:where(section > p:has(a > cite)) + * {
+				:where(section > p:has(a > cite):not(.right)) + * {
 					margin-block-start: 1rlh
 				}
 
