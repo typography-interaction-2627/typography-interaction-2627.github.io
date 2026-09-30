@@ -182,7 +182,7 @@
 					max-inline-size: 100%; /* Retain wrapping! */
 
 					/* Anchor. */
-					a {
+					a[href^='#'] {
 						--family:  'Geneva';
 						--generic: initial;
 						--size:    14;
