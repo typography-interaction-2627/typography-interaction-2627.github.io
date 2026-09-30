@@ -144,7 +144,7 @@ export default (config) => {
 	// Convert HTML comments to curly brackets for `markdownItAttrs` to pick up.
 	const markdownCommentsToCurlies = (markdown) => markdown.core.ruler.after('abbreviations', 'commentsToCurlies', (state) =>
 		// Only match `.class`…, `#id`…, `data`…, `style`…, `@attribute`…, or `:attribute`… so example/other comments aren’t transformed.
-		state.src = state.src.replace(/<!--\s*(\.(?:[\s\S]*?)|#(?:[\s\S]*?)|data(?:[\s\S]*?)|style(?:[\s\S]*?)|@(?:[\s\S]*?)|:(?:[\s\S]*?)|inert)\s*-->$/gm, '{ $1 }'),
+		state.src = state.src.replace(/<!--\s*((?:\.|#|data|style|@|:|target)[^>]*|inert)\s*-->/g, '{ $1 }'),
 	)
 
 	// Overrides (and anchors) back on the heading itself.
@@ -355,7 +355,7 @@ export default (config) => {
 	const markdownFigures = (markdown) => {
 		const element = (html) => parse(html.trim()).firstChild
 
-		markdown.core.ruler.after('normalize', 'figures', (state) =>
+		markdown.core.ruler.after('commentsToCurlies', 'figures', (state) =>
 			state.src = state.src.replace(/(^ {0,3}(`{3,}|~{3,})[^\n]*\n[\s\S]*?^ {0,3}\2[^\n]*(?:\n|$))|(^<figure\b[^>]*>[\s\S]*?<\/figure>)/gmi, (html, fence) => {
 				if (fence) return fence
 
