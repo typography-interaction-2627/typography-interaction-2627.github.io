@@ -232,7 +232,7 @@ In their simplest form, we just change whatever properties/values when they need
 
 <figcaption>
 
-Drag the code/example divider to the left to see it *respond* to the `@media` query! You can <nobr>double-click</nobr> to reset it.
+Our examples now all include the [viewport `<meta>` tag](#viewport-meta-tag)! Drag the divider to the left to see it *respond* to the `@media` query. You can also <nobr>double-click</nobr> to reset it.
 
 </figcaption>
 </figure>
