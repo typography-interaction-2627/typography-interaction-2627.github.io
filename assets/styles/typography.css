@@ -79,8 +79,6 @@ s {
 	/* Override pattern. */
 	background-clip: text;
 
-	@supports (font: -apple-system-body) { background-position-x: 0.2em } /* 🤷‍♀️ */
-
 	&::before {
 		background:        var(--background--border);
 		block-size:        var(--1px);
