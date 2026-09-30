@@ -1,0 +1,14 @@
+/* Same as before… */
+:root { --spacing: 1rem; }
+
+body {
+	font-family: sans-serif;
+	padding: var(--spacing);
+}
+
+section {
+	background-color: var(--background, deepskyblue);
+	padding: var(--spacing);
+
+	&:not(:first-child) { margin-block-start: var(--spacing); }
+}

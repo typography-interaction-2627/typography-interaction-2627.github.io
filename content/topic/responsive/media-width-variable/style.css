@@ -2,6 +2,6 @@
 section { --background: aquamarine; }
 
 @media (width > 500px) {
-	/* Now we only adjust the _variable_. */
+	/* Now we can only adjust the variable. */
 	section { --background: coral; }
 }

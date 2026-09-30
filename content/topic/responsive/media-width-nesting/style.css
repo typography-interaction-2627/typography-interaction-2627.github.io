@@ -1,0 +1,6 @@
+section {
+	--background: aquamarine;
+
+	/* Only adjusts the variable within this element. */
+	@media (width > 500px) { --background: coral; }
+}

@@ -202,7 +202,7 @@ You can add as many *breakpoints* as you need to make your page/design work acro
 
 <div class="before recto">
 
-<figure class="sticky" style="margin-block-end: 1rlh">
+<figure class="sticky">
 <img src="devices.jpg">
 <figcaption>
 
@@ -237,12 +237,12 @@ Drag the code/example divider to the left to see it *respond* to the `@media` qu
 </figcaption>
 </figure>
 
-#### Adjusting *Variables*
+#### Adjusting Variables
 
 Thinking more systematically, we can instead adjust the [`--variables`](../box-model/index.md#defined-as---variable) from our design system—making our intent more clear—“this *will* change”:
 <!-- .balance -->
 
-<figure style="--lines: 8">
+<figure style="--lines: 9">
 
 ***[Width Variable Example](media-width-variable/style.css)***
 
@@ -253,7 +253,36 @@ Again, drag the divider to see rules apply. Same result as before! Try removing 
 </figcaption>
 </figure>
 
-#### Using *Comparisons*
+> [!TIP]
+>
+> You’ll declare your [set of variables in `:root`](../box-model/index.md#defined-as---variable) (starting with *mobile*, as [we’ll see](#mobile-first-design))—sizes, spacing, and so on—and then often adjust them *just once* for larger breaks!
+>
+> <sub>No need to write all the properties again, with all their own redundant media-queries! They’ll help you avoid unwanted conflicts/cascade (applying the same property), especially across breakpoints. [*D.R.Y*](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)!</sub>
+>
+> <sub>But they also help to facilitate [*design system*](../box-model/index.md#design-systems) thinking—focusing your design on the relative *relationships* of things. Variables are *great*. It used to be *much harder*!</sub>
+<!-- style="margin-block-end: 1rlh" -->
+
+#### Nesting Queries
+
+We can also combine these with the pattern [*nesting*](../css/index.md#also-native-nesting) to make our rules and their code self-contained, and less redundant:
+<!-- .balance -->
+
+[<cite>Nesting at-rules – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Nesting/At-rules) \
+Don’t repeat yourself!
+<!-- .right -->
+
+<figure style="--lines: 8">
+
+***[Width Nesting Example](media-width-nesting/style.css)***
+
+<figcaption>
+
+You can nest queries for your “global” [`:root` variables](../box-model/index.mdhttp://localhost/topic/box-model/#css-variable-example), too!
+
+</figcaption>
+</figure>
+
+#### Using Comparisons
 
 Our queries can also use other simple math [comparison operators](https://css-tricks.com/the-new-css-media-query-range-syntax/#aa-new-comparison-operators), `<` `>` `=` `<=` `>=`:
 <!-- .balance -->
@@ -273,7 +302,7 @@ Exact matches (like the  `width = 500px` here) are rarely useful, though!
 </figcaption>
 </figure>
 
-#### And Width *Ranges*
+#### And Ranges
 
 This [new comparison syntax](https://web.dev/articles/media-query-range-syntax) also allows simple, intuitive *ranges* to be specified—to see if the viewport is *between* two lengths:
 <!-- .balance -->
@@ -295,29 +324,26 @@ Be mindful about “painting yourself into corners” with these! They make it e
 
 > [!WARNING]
 >
-> We’ll only be using the modern (and more intuitive) [range operator syntax](https://css-tricks.com/the-new-css-media-query-range-syntax/#aa-new-comparison-operators) shown here!
+> For simplicity and consistency, we’ll *only* be using the modern (and more intuitive) [range operator syntax](https://css-tricks.com/the-new-css-media-query-range-syntax/#aa-new-comparison-operators)—as in `(width > 500px)`.
 >
 > <sub>You’ll see lots of material out there referencing `min-width` or `max-width` media queries—but we should *not* see these in [*your*](../../syllabus.md#attribution) code!</sub>
 
 ### Height-Based, Too
 
-<div class="rows--2 verso">
-
-<div class="balance sticky">
-
-You can also use the viewport’s other axis `height` in the same way—though again, with the usual vertical scrolling paradigm, <nobr>*height-based*</nobr> adjustments aren’t often as necessary or anywhere nearly as common as `width`.
-
-This example has the same *breakpoint* of `500px` as before, but now using `height`:
-
-</div>
-
-</div>
+You can also use the viewport’s other axis `height` in the same way! Though again, with the usual vertical scrolling paradigm, <nobr>*height-based*</nobr> adjustments aren’t often as necessary or anywhere nearly as common as `width`.
 
 [<cite>`height` media feature – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/height) \
 Less common, but still useful.
-<!-- .before .right -->
+<!-- .right -->
 
-<figure class="recto" style="--lines: 22; --max: round(calc(0.9 * var(--svh)), 1rlh); margin-block-start: 1rlh">
+<div class="verso">
+
+This example has the same *breakpoint* of `500px` as before, but now using `height`:
+<!-- .balance .before .sticky style="inset-block-start: 45vh" -->
+
+</div>
+
+<figure class="recto" style="--lines: 22; --max: round(calc(0.9 * var(--svh)), 1rlh)">
 
 ***[Height Example](media-height-min-max/style.css)***
 
@@ -328,9 +354,9 @@ These code examples are responsive, themselves—stacking like this when they ar
 </figcaption>
 </figure>
 
-### Orientation
+### Also, Orientation
 
-You can also be less specific about your `width`/`height` and instead use `orientation`—like when you rotate your phone. The queries use the wonderfully tenacious names/values of `portrait` or `landscape`:
+Sometimes you can benefit from being *less*-specific about your `width`/`height` and instead use `orientation`—as when you rotate your phone. These queries help quickly handle many scenarios, using the wonderfully tenacious names/values of `portrait` or `landscape`:
 
 [<cite>`orientation` media feature – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/orientation) \
 Often more useful than `width` alone!
