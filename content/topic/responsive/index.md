@@ -228,7 +228,7 @@ In their simplest form, we just change whatever properties/values when they need
 
 <figure style="--lines: 9">
 
-***[Width Example](media-width/style.css)***
+***[Width Example](width/style.css)***
 
 <figcaption>
 
@@ -244,7 +244,7 @@ Thinking more systematically, we can instead adjust the [`--variables`](../box-m
 
 <figure style="--lines: 9">
 
-***[Width Variable Example](media-width-variable/style.css)***
+***[Variable Example](variable/style.css)***
 
 <figcaption>
 
@@ -273,7 +273,7 @@ Don’t repeat yourself!
 
 <figure style="--lines: 8">
 
-***[Width Nesting Example](media-width-nesting/style.css)***
+***[Nesting Example](nesting/style.css)***
 
 <figcaption>
 
@@ -293,7 +293,7 @@ More modern, more intuitive.
 
 <figure style="--lines: 15">
 
-***[Width Min/Max Example](media-width-min-max/style.css)***
+***[Comparison Example](comparison/style.css)***
 
 <figcaption>
 
@@ -313,7 +313,7 @@ Comparison old-and-new syntax.
 
 <figure style="--lines: 7">
 
-***[Width Range Example](media-width-range/style.css)***
+***[Range Example](range/style.css)***
 
 <figcaption>
 
@@ -345,7 +345,7 @@ This example has the same *breakpoint* of `500px` as before, but now using `hei
 
 <figure class="recto" style="--lines: 22; --max: round(calc(0.9 * var(--svh)), 1rlh)">
 
-***[Height Example](media-height-min-max/style.css)***
+***[Height Example](height/style.css)***
 
 <figcaption>
 
@@ -364,7 +364,7 @@ Often more useful than `width` alone!
 
 <figure style="--lines: 11">
 
-***[Orientation Example](media-orientation/style.css)***
+***[Orientation Example](orientation/style.css)***
 
 <figcaption>
 
@@ -382,7 +382,7 @@ Speaking of [*conditional statements*](https://en.wikipedia.org/wiki/Conditional
 
 <figure style="--lines: 11">
 
-***[“And” Example](media-and/style.css)***
+***[“And” Example](and/style.css)***
 
 <figcaption>
 
@@ -397,7 +397,7 @@ You can also use comma-separated queries (similar to [*selector lists*](../css/i
 
 <figure style="--lines: 7">
 
-***[“Or” Example](media-or/style.css)***
+***[“Or” Example](or/style.css)***
 
 <figcaption>
 
@@ -446,7 +446,7 @@ Your design constraints will be tighter and more challenging, by tackling your s
 
 <figure style="--lines: 23">
 
-***[Mobile-First Example](media-mobile-first/style.css)***
+***[Mobile-First Example](mobile-first/style.css)***
 
 <figcaption>
 
@@ -478,11 +478,11 @@ In all of our above examples, there is an implied *[media type](https://develope
 
 <figure style="--lines: 26">
 
-***[Print Example](media-print/style.css)***
+***[Print Example](print/style.css)***
 
 <figcaption>
 
-You can see the `print` style in action by going [directly to the example](media-print/), then <nobr><kbd>⌘</kbd> <kbd>P</kbd></nobr> to print. It is still *A Thing*, though often forgotten about in modern web design/projects.
+You can see the `print` style in action by going [directly to the example](print/), then <nobr><kbd>⌘</kbd> <kbd>P</kbd></nobr> to print. It is still *A Thing*, though often forgotten about in modern web design/projects.
 
 </figcaption>
 </figure>
@@ -507,7 +507,7 @@ Mobile *touch-based* systems don’t have this behavior (and often react oddly t
 
 <figure style="--lines: 12">
 
-***[Hover Example](media-hover/style.css)***
+***[Hover Example](hover/style.css)***
 
 <figcaption>
 
@@ -528,7 +528,7 @@ You see this one more and more these days—`prefers-color-scheme` for switching
 
 <figure style="--lines: 22">
 
-***[Color-Scheme Example](media-color-scheme/style.css)***
+***[Color-Scheme Example](color-scheme/style.css)***
 
 <figcaption>
 
