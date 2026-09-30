@@ -24,6 +24,7 @@ export default [
 	{ abbr: 'DOM',     title: 'Document Object Model' },
 	{ abbr: 'DPI',     title: 'Dots-per-inch' },
 	{ abbr: 'DRY',     title: 'Don’t Repeat Yourself' },
+	{ abbr: 'EPUB',    title: 'Electronic publication' },
 	{ abbr: 'ES',      title: '[European Computer Manufacturers Association] Script' },
 	{ abbr: 'FOSS',    title: 'Free and Open-Source Software' },
 	{ abbr: 'GIF',     title: 'Graphics Interchange Format' },
