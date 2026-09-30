@@ -191,13 +191,11 @@ h1 {
 		.A:has(+ .l) { --kern: -1 }
 		.A:has(+ .n) { --kern: -1 }
 		.a:has(+ .n) { --kern: 1 }
-		.a:has(+ .p) { --kern: -1 }
 		.a:has(+ .s) { --kern: -1 }
 		.b:has(+ .o) { --kern: -1 }
 		.b:has(+ .u) { --kern: -3 }
 		.c:has(+ .r) { --kern: 1 }
 		.C:has(+ .S) { --kern: 1 }
-		.c:has(+ .t) { --kern: 1 }
 		.D:has(+ .e) { --kern: 1 }
 		.e:has(+ .b) { --kern: -1 }
 		.e:has(+ .k) { --kern: -1 }
@@ -205,25 +203,19 @@ h1 {
 		.e:has(+ .v) { --kern: -1 }
 		.g:has(+ .e) { --kern: -1 }
 		.h:has(+ .e) { --kern: -1 }
-		.h:has(+ .y) { --kern: -1 }
-		.I:has(+ .n) { --kern: -1 }
 		.i:has(+ .p) { --kern: -1 }
 		.I:has(+ .s) { --kern: -2 }
 		.I:has(+ .t) { --kern: -2 }
 		.l:has(+ .a) { --kern: -1 }
 		.M:has(+ .a) { --kern: -1 }
 		.M:has(+ .o) { --kern: -1 }
-		.n:has(+ .t) { --kern: -1 }
 		.n:has(+ .u) { --kern: -1 }
-		.o:has(+ .g) { --kern: 1 }
 		.o:has(+ .o) { --kern: 1 }
 		.o:has(+ .r) { --kern: 1 }
 		.o:has(+ .u) { --kern: -1 }
 		.o:has(+ .x) { --kern: -1 }
-		.p:has(+ .h) { --kern: -1 }
 		.P:has(+ .r) { --kern: 1 }
 		.p:has(+ .t) { --kern: -1 }
-		.r:has(+ .a) { --kern: -1 }
 		.r:has(+ .i) { --kern: -1 }
 		.r:has(+ .o) { --kern: -1 }
 		.s:has(+ .p) { --kern: -1 }
@@ -233,17 +225,12 @@ h1 {
 		.T:has(+ .h) { --kern: -1 }
 		.T:has(+ .M) { --kern: -1 }
 		.T:has(+ .o) { --kern: -3 }
-		.T:has(+ .y) { --kern: -4 }
 		.u:has(+ .s) { --kern: -1 }
 		.u:has(+ .t) { --kern: -1 }
 		.v:has(+ .e) { --kern: -1 }
 		.v:has(+ .T) { --kern: -2 }
 		.W:has(+ .e) { --kern: -4 }
 		.y:has(+ .l) { --kern: -1 }
-		.y:has(+ .p) { --kern: -1 }
-
-		.amp:has(+ .I) { --kern: -3 }
-		.y:has(+ .amp) { --kern: -1 }
 
 		.rsquo:has(+ .s) { --kern: -2 }
 		.t:has(+ .rsquo) { --kern: -1 }
@@ -253,17 +240,30 @@ h1 {
 		*:has(+ .colon) { --kern: -1 }
 
 		.num1 { --kern: -3 }
+
+		/* Wordmark. */
+		.a:has(+ .p) { --kern: -1 }
+		.c:has(+ .t) { --kern: 1 }
+		.h:has(+ .y) { --kern: -1 }
+		.I:has(+ .n) { --kern: -1 }
+		.n:has(+ .t) { --kern: -1 }
+		.o:has(+ .g) { --kern: 1 }
+		.p:has(+ .h) { --kern: -1 }
+		.r:has(+ .a) { --kern: -1 }
+		.T:has(+ .y) { --kern: -4 }
+		.y:has(+ .p) { --kern: -1 }
+
+		.amp:has(+ .I) { --kern: -3 }
+		.y:has(+ .amp) { --kern: -1 }
 	}
 
 	/* Relative `---4px`. */
 	@container style(--size: 36) {
 		.A:has(+ .b) { --kern: -1 }
 		.a:has(+ .b) { --kern: 1 }
-		.a:has(+ .c) { --kern: 1 }
 		.a:has(+ .g) { --kern: 2 }
 		.A:has(+ .l) { --kern: -2 }
 		.a:has(+ .n) { --kern: 2 }
-		.a:has(+ .p) { --kern: 1 }
 		.a:has(+ .s) { --kern: 1 }
 		.b:has(+ .o) { --kern: 1 }
 		.B:has(+ .o) { --kern: 2 }
@@ -271,7 +271,6 @@ h1 {
 		.C:has(+ .l) { --kern: -1 }
 		.c:has(+ .r) { --kern: -1 }
 		.C:has(+ .S) { --kern: 1 }
-		.c:has(+ .t) { --kern: -1 }
 		.d:has(+ .e) { --kern: 1 }
 		.D:has(+ .e) { --kern: 1 }
 		.e:has(+ .b) { --kern: 1 }
@@ -280,11 +279,8 @@ h1 {
 		.e:has(+ .l) { --kern: -1 }
 		.e:has(+ .v) { --kern: 1 }
 		.g:has(+ .e) { --kern: 1 }
-		.g:has(+ .r) { --kern: 1 }
 		.h:has(+ .e) { --kern: 1 }
 		.H:has(+ .T) { --kern: 1 }
-		.I:has(+ .n) { --kern: -1 }
-		.i:has(+ .o) { --kern: -2 }
 		.i:has(+ .p) { --kern: -1 }
 		.I:has(+ .s) { --kern: -2 }
 		.I:has(+ .t) { --kern: -2 }
@@ -295,17 +291,13 @@ h1 {
 		.M:has(+ .a) { --kern: 2 }
 		.n:has(+ .g) { --kern: 1 }
 		.n:has(+ .s) { --kern: -1 }
-		.n:has(+ .t) { --kern: -1 }
 		.o:has(+ .d) { --kern: 2 }
-		.o:has(+ .g) { --kern: 1 }
 		.o:has(+ .j) { --kern: -1 }
-		.o:has(+ .n) { --kern: 1 }
 		.o:has(+ .o) { --kern: 3 }
 		.o:has(+ .r) { --kern: 1 }
 		.o:has(+ .u) { --kern: 2 }
 		.P:has(+ .a) { --kern: 1 }
 		.p:has(+ .e) { --kern: 1 }
-		.p:has(+ .h) { --kern: -2 }
 		.P:has(+ .r) { --kern: -1 }
 		.p:has(+ .t) { --kern: -1 }
 		.r:has(+ .i) { --kern: -1 }
@@ -316,10 +308,8 @@ h1 {
 		.S:has(+ .S) { --kern: 2 }
 		.S:has(+ .y) { --kern: 1 }
 		.t:has(+ .h) { --kern: -1 }
-		.t:has(+ .i) { --kern: -2 }
 		.T:has(+ .M) { --kern: 1 }
 		.T:has(+ .o) { --kern: -3 }
-		.T:has(+ .y) { --kern: -3 }
 		.u:has(+ .r) { --kern: -1 }
 		.u:has(+ .s) { --kern: -1 }
 		.u:has(+ .t) { --kern: -1 }
@@ -327,10 +317,7 @@ h1 {
 		.v:has(+ .T) { --kern: -1 }
 		.W:has(+ .e) { --kern: -3 }
 		.y:has(+ .l) { --kern: -1 }
-		.y:has(+ .p) { --kern: 1 }
 		.y:has(+ .t) { --kern: 2 }
-
-		.amp:has(+ .I) { --kern: -1 }
 
 		.rsquo:has(+ .s) { --kern: -3 }
 		.t:has(+ .rsquo) { --kern: -2 }
@@ -340,6 +327,23 @@ h1 {
 		*:has(+ .colon) { --kern: -1 }
 
 		.num1 { --kern: -3 }
+
+		/* Wordmark. */
+		.a:has(+ .c) { --kern: 1 }
+		.a:has(+ .p) { --kern: 1 }
+		.c:has(+ .t) { --kern: -1 }
+		.g:has(+ .r) { --kern: 1 }
+		.I:has(+ .n) { --kern: -1 }
+		.i:has(+ .o) { --kern: -2 }
+		.n:has(+ .t) { --kern: -1 }
+		.o:has(+ .g) { --kern: 1 }
+		.o:has(+ .n) { --kern: 1 }
+		.p:has(+ .h) { --kern: -2 }
+		.t:has(+ .i) { --kern: -2 }
+		.T:has(+ .y) { --kern: -3 }
+		.y:has(+ .p) { --kern: 1 }
+
+		.amp:has(+ .I) { --kern: -1 }
 	}
 }
 
