@@ -1,6 +1,14 @@
+:root {
+	--spacing: 1rem;
+
+	/* Adjust our “global” variables. */
+	@media (width > 700px) { --spacing: 1.333rem; }
+}
+
 main {
 	display: flex; /* We’ll talk about `flex` soon! */
 	flex-wrap: wrap;
+	font-size: var(--spacing);
 	gap: var(--spacing);
 }
 
@@ -8,18 +16,15 @@ section {
 	--background: aquamarine;
 
 	inline-size: var(--inline, 100%);
-}
 
-@media (width > 500px) {
-	section {
+	/* And any per-element needs. */
+	@media (width > 500px) {
 		--background: gold;
 		--inline: calc((100% - var(--spacing)) / 2);
 	}
-}
 
-@media (width > 700px) {
-	section {
+	@media (width > 700px) {
 		--background: orange;
-		--inline: calc((100% - 3 * var(--spacing)) / 4);
+		--inline: calc((100% - 2 * var(--spacing)) / 3);
 	}
 }

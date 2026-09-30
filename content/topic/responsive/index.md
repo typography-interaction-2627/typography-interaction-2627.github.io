@@ -308,7 +308,7 @@ This [new comparison syntax](https://web.dev/articles/media-query-range-syntax) 
 <!-- .balance -->
 
 [<cite>New syntax for range media queries - web.dev</cite>](https://web.dev/articles/media-query-range-syntax) \
-Comparison old-and-new syntax.
+Comparison of old vs. new syntax.
 <!-- .right -->
 
 <figure style="--lines: 7">
@@ -377,16 +377,20 @@ Note the `:`, instead of `=`. Everything was a painting before it was a photogra
 
 #### And
 
-Speaking of [*conditional statements*](https://en.wikipedia.org/wiki/Conditional_(computer_programming))—you can also merge multiple media queries into one test/check, `and`. This is how you *used* to make [ranges](#and-ranges)—but now it’s for combining two different checks together, like `width` *and* `height` *and* `orientation`:
+Speaking of [*conditional statements*](https://en.wikipedia.org/wiki/Conditional_(computer_programming))—you can also merge multiple media queries into one test, using `and` between them. This is how you *used* to make [ranges](#and-ranges)—but now it’s more for combining two different checks together, like `width` *and* `height`/`orientation`:
 <!-- .balance -->
 
-<figure style="--lines: 11">
+[<cite>Logic in CSS Media Queries – CSS Tricks</cite>](https://css-tricks.com/logic-in-css-media-queries/) \
+This can all get very complicated!
+<!-- .right -->
+
+<figure style="--lines: 13">
 
 ***[“And” Example](and/style.css)***
 
 <figcaption>
 
-The demo here is taller than `300px`, for the second one.
+The demo here is taller than `400px`, for the second one.
 
 </figcaption>
 </figure>
@@ -395,20 +399,20 @@ The demo here is taller than `300px`, for the second one.
 
 You can also use comma-separated queries (similar to [*selector lists*](../css/index.md#compound-and-lists-selectorselector-selector-selector)) to apply *or* logic—setting the same styles for different scenarios:
 
-<figure style="--lines: 7">
+<figure style="--lines: 8">
 
 ***[“Or” Example](or/style.css)***
 
 <figcaption>
 
-Note that you could do this with `and`, as in the example above, by just swapping the colors. Code logic!
+Note that you could do this again with [a range](#and-ranges) and swapping the colors. In code, there are often *many* ways to do achieve the same result!
 
 </figcaption>
 </figure>
 
 #### *Not*
 
-There is also a `not` [logic operator](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries#not_logic_in_media_queries)—which will reverse the meaning of the media query. But this syntax gets really confusing, fast—especially with things like `>`/`<` rules making for double-negatives. So it is easier to avoid!
+There is also a `not()` [logic operator](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries#not_logic_in_media_queries)—which will *reverse* the meaning of the media query. But this syntax gets really confusing, fast—especially with things like `>`/`<` rules making for double-negatives. So it is easier to avoid!
 <!-- .balance -->
 
 <sub>Why confusingly say `@media not (width < 500px)` when you can just say `@media (width > 500px)`?</sub>
@@ -417,7 +421,7 @@ There is also a `not` [logic operator](https://developer.mozilla.org/en-US/docs/
 
 ## *Mobile-First* Design
 
-So this can all get very complicated, very quickly—especially with complex designs, overlapping rules, and the wide ranges of devices to consider.
+**This can all get very complicated, very quickly—especially with complex designs, overlapping rules, and the wide ranges of devices to consider.**
 
 - [<cite>Mobile First – A Book Apart</cite>](http://www.ferrispark.com/audio/DOCUMENTS/mobile-first.pdf) \
 	[Luke Wroblewski](https://lukew.com/) wrote the book (and [the deck](https://static.lukew.com/MobileFirst_LukeW.pdf)).
@@ -426,23 +430,23 @@ So this can all get very complicated, very quickly—especially with complex des
 	The term coined by [Steve Champeon](https://www.webstandards.org/about/members/schampeo/index.html) and [Nick Finck](https://nickfinck.com/) in [2003](https://hesketh.com/publications/inclusive_web_design_for_the_future/).
 <!-- .right .rows--3 -->
 
-One of the easiest methodologies to keep things understandable is practicing [*mobile-first*](https://www.lukew.com/ff/entry.asp?933) design (and development). This has become kind of *buzzwordy* in the past decade or so, but it is a good philosophy to adhere to, nonetheless. It jives with the concept of [progressive enhancement](https://en.wikipedia.org/wiki/Progressive_enhancement).
+One of the easiest methodologies to keep things understandable (and resilient) is practicing [*mobile-first*](https://www.lukew.com/ff/entry.asp?933) design (and development). This has become kind of *buzzwordy* in the past decade or so, but it is a good philosophy to adhere to, nonetheless. It jives with the concept of [progressive enhancement](https://en.wikipedia.org/wiki/Progressive_enhancement).
 <!-- .before -->
 
-Your design constraints will be tighter and more challenging, by tackling your smallest layout first—but it is almost always easier to scale things *up* than scale them *down*. A mobile design can always work as a passable desktop one; the reverse is rarely true.
+Your mobile design constraints will be tighter and more challenging, by tackling your smallest layout first—but it is almost always easier to scale things *up* than scale them *down*. A mobile design *can* always work as a passable desktop one; the reverse is rarely true.
 
 **Another way to think of it: if it doesn’t work on *mobile*, it doesn’t *work*!**
 <!-- .after -->
 
 - **In Design**
 
-	*Mobile-first* means considering small screens and *then* adding complexity, limits, or considerations for larger screens. Start from your “worst-case scenario” and build *up*.
+	*Mobile-first* means considering small screens and *then* adding complexity, limits, or considerations for larger screens. Start from your “worst-case scenario” and build *up* your design.
 <!-- .verso -->
 
 * **In Code**
 
-	Similarly, this means writing your styles for mobile… first, *then* adding `width >` breakpoints (cascading below them) to *progressively enhance* your design as it scales up.
-<!-- .recto -->
+	Similarly, this means writing your styles for mobile… first, *then* adding `width >` breakpoints (cascading below them) to *progressively enhance* your design as it scales up.
+<!-- .recto style="margin-inline-end: 1cap" -->
 
 <figure style="--lines: 23">
 
@@ -455,10 +459,11 @@ Note we added a `main` container. The `inline-size` here are kind of tricky—bu
 </figcaption>
 </figure>
 
-This goes “[with the grain](../../week/7.md#reading-discussion),” following the general CSS pattern/paradigm of the cascade—and is much, much, *much* easier than adjusting desktop front-end after the fact. (Trust us.) Always think *mobile-first*&#x202F;!
+This goes “[*with the grain*](../../week/7.md#reading-discussion),” following the general CSS pattern/paradigm of the cascade, echoing our “[always to sometimes](../css/index.md#avoiding-these-problems)” approach to CSS—and is much, much, *much* easier than adjusting desktop front-end after the fact. (Trust us.) Always think *mobile-first*&#x202F;!
 
-**Mobile can be the majority of your traffic—[especially internationally](https://gs.statcounter.com/platform-market-share/desktop-mobile/worldwide)! We’d like you to think of *mobile-first* design as a form of accessibility, in this light. Not everyone has your MacBook Pro.**
+**Mobile can be the *majority* of your visitors—[especially internationally](https://gs.statcounter.com/platform-market-share/desktop-mobile/worldwide)!**
 
+**We’d like you to think of *mobile-first* design as a form of *accessibility*, in this light. Not everyone has your MacBook Pro!**
 
 ## Other Media Features
 

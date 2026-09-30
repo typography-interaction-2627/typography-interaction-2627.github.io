@@ -1,5 +1,6 @@
 section { --background: aquamarine; }
 
+/* When either/any are true. */
 @media (width < 500px), (width > 700px) {
 	section { --background: gold; }
 }

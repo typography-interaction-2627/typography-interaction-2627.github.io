@@ -1,9 +1,11 @@
 section { --background: aquamarine; }
 
-@media (width > 500px) and (width < 700px) {
+/* The same as `(500px <= width <= 700px)`! */
+@media (width >= 500px) and (width <= 700px) {
 	section:first-child { --background: gold; }
 }
 
-@media (width > 700px) and (height > 300px) {
+/* Has to match both/each test to apply. */
+@media (width > 500px) and (height > 400px) {
 	section:last-child { --background: orange; }
 }
