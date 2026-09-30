@@ -425,7 +425,7 @@ As tutors are only available a limited number of hours per week, it is advisable
 
 ### Recording Sessions
 
-We will take recordings of all of our class sessions for students to reference later. As these will include the students and their work, the recordings will be stored on our [Google Drive](https://drive.google.com/drive/folders/1gxl_TpXu0Sd7oJbW1pk7Dd89VNpJwsHK) and made available only to New School email users.
+We will take recordings of all of our class sessions for students to reference later. As these will include the students and their work, the recordings will be stored on our [Google Drive](https://drive.google.com/drive/folders/1gxl_TpXu0Sd7oJbW1pk7Dd89VNpJwsHK) and made available only to New School emails.
 
 ### Plagiarism and Derivative Work
 
