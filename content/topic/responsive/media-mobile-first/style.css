@@ -1,21 +1,25 @@
 main {
-	display: flex; /* We’ll talk about flex soon! */
+	display: flex; /* We’ll talk about `flex` soon! */
 	flex-wrap: wrap;
-	gap: 1rem;
+	gap: var(--spacing);
 }
 
-section { --background: aquamarine; }
+section {
+	--background: aquamarine;
+
+	inline-size: var(--inline, 100%);
+}
 
 @media (width > 500px) {
 	section {
-		background-color: gold;
-		inline-size: calc((100% - 1rem) / 2);
+		--background: gold;
+		--inline: calc((100% - var(--spacing)) / 2);
 	}
 }
 
 @media (width > 700px) {
 	section {
-		background-color: orange;
-		inline-size: calc((100% - 3rem) / 4);
+		--background: orange;
+		--inline: calc((100% - 3 * var(--spacing)) / 4);
 	}
 }

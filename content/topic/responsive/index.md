@@ -426,21 +426,23 @@ So this can all get very complicated, very quickly—especially with complex des
 	The term coined by [Steve Champeon](https://www.webstandards.org/about/members/schampeo/index.html) and [Nick Finck](https://nickfinck.com/) in [2003](https://hesketh.com/publications/inclusive_web_design_for_the_future/).
 <!-- .right .rows--3 -->
 
-One of the easiest methodologies to keep things understandable is practicing [*mobile-first*](https://www.lukew.com/ff/entry.asp?933) design (and development). This has become kind of *buzzwordy* in the past decade or so, but it is a good philosophy to adhere to, nonetheless. It jives with the concept of [progressive enhancement](https://en.wikipedia.org/wiki/Progressive_enhancement).
+One of the easiest methodologies to keep things understandable is practicing [*mobile-first*](https://www.lukew.com/ff/entry.asp?933) design (and development). This has become kind of *buzzwordy* in the past decade or so, but it is a good philosophy to adhere to, nonetheless. It jives with the concept of [progressive enhancement](https://en.wikipedia.org/wiki/Progressive_enhancement).
+<!-- .before -->
 
-Your design constraints will be tighter and more challenging, by tackling your smallest layout first—but it is almost always easier to scale things *up* than scale them *down*. A mobile design can always work as a passable desktop one; the reverse is rarely true. Another way to think of it:
+Your design constraints will be tighter and more challenging, by tackling your smallest layout first—but it is almost always easier to scale things *up* than scale them *down*. A mobile design can always work as a passable desktop one; the reverse is rarely true.
 
-**If it doesn’t work on mobile, it doesn’t work.**
+**Another way to think of it: if it doesn’t work on *mobile*, it doesn’t *work*!**
 <!-- .after -->
 
-- **In Design:**
+- **In Design**
 
-	*Mobile-first* means considering small screens and *then* adding complexity, limits, or considerations for larger screens. Start from your “worst-case scenario.”
+	*Mobile-first* means considering small screens and *then* adding complexity, limits, or considerations for larger screens. Start from your “worst-case scenario” and build *up*.
+<!-- .verso -->
 
-- **In Code:**
+* **In Code**
 
-	Similarly, this means writing your styles for mobile… first, *then* adding `width > #` breakpoints (cascading below them) to *progressively enhance* your design as it scales up.
-	<!-- .balance -->
+	Similarly, this means writing your styles for mobile… first, *then* adding `width >` breakpoints (cascading below them) to *progressively enhance* your design as it scales up.
+<!-- .recto -->
 
 <figure style="--lines: 23">
 
@@ -456,7 +458,6 @@ Note we added a `main` container. The `inline-size` here are kind of tricky—bu
 This goes “[with the grain](../../week/7.md#reading-discussion),” following the general CSS pattern/paradigm of the cascade—and is much, much, *much* easier than adjusting desktop front-end after the fact. (Trust us.) Always think *mobile-first*&#x202F;!
 
 **Mobile can be the majority of your traffic—[especially internationally](https://gs.statcounter.com/platform-market-share/desktop-mobile/worldwide)! We’d like you to think of *mobile-first* design as a form of accessibility, in this light. Not everyone has your MacBook Pro.**
-
 
 
 ## Other Media Features

@@ -10,5 +10,6 @@ section {
 	background-color: var(--background, deepskyblue);
 	padding: var(--spacing);
 
-	&:not(:first-child) { margin-block-start: var(--spacing); }
+	/* Using `flex` for a minute! */
+	/* &:not(:first-child) { margin-block-start: var(--spacing); } */
 }
