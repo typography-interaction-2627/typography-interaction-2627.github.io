@@ -307,7 +307,8 @@
 					}
 				}
 
-				hgroup + & { margin-block-start: initial }
+				/* “For Next Week.” */
+				hgroup:has(h2) + & { margin-block-start: initial }
 
 				/* For poking out as needed. */
 				> :where(dd, dt, li).all { inline-size: var(--main) }
