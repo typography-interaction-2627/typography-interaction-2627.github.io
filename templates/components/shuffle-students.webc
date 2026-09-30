@@ -8,6 +8,7 @@
 		inline-size:      fit-content;
 		margin-block-end: 1rlh;
 		padding:          calc(1ex + var(--1px)); /* Matching outlined `cite` links. */
+		touch-action:     manipulation;
 
 		&::after {
 			background: var(--background--check);
