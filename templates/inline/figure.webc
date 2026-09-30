@@ -16,7 +16,12 @@
 		&:where(:not(:last-child)) + * {
 			margin-block-start: 1rlh;
 
-			@container style(--columns) { margin-block-start: 3rlh }
+			@container style(--columns) {
+				margin-block-start: 3rlh;
+
+				/* Tighter on examples. */
+				&:where(:has(iframe:not([src*="https://"])[src*='/preview'])) { margin-block-start: 2rlh }
+			}
 		}
 
 		@container style(--columns) {
