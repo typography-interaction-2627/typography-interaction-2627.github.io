@@ -2,6 +2,7 @@
 	<link href="../../assets/styles/variables.css" rel="stylesheet">
 	<link href="../../assets/styles/fonts.css" rel="stylesheet">
 	<link href="../../assets/styles/typography.css" rel="stylesheet">
+	<link href="../../assets/styles/kerning.css" rel="stylesheet">
 	<link href="../../assets/styles/links.css" rel="stylesheet">
 	<link href="../../assets/styles/code.css" rel="stylesheet">
 </template>
