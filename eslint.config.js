@@ -44,6 +44,35 @@ const sortClasses = {
 	},
 }
 
+const pageTitles = new Map()
+
+// Duping examples leads to duped `title`.
+const noDuplicatePageTitles = {
+	create: (context) => ({
+		Tag: (node) => {
+			if (node.name !== 'head') return
+
+			const title = node.children.find((child) => child.type === 'Tag' && child.name === 'title')
+			const value = title?.children.filter((child) => child.type === 'Text')
+				.map(({ value }) => value).join('').replace(/\s+/g, ' ').trim().toLowerCase()
+			if (!value) return
+
+			const duplicate = pageTitles.get(value)
+			if (duplicate && duplicate !== context.filename) context.report({
+				data: { duplicate },
+				messageId: 'duplicate',
+				node: title,
+			})
+			else pageTitles.set(value, context.filename)
+		},
+	}),
+	meta: {
+		messages: { duplicate: 'Page title duplicates {{duplicate}}.' },
+		schema: [],
+		type: 'problem',
+	},
+}
+
 // Matches the shapes `commentsToCurlies` hands to `markdown-it-attrs` in `buildawesome.config.js`.
 const sortAttrComments = {
 	create: (context) => ({
@@ -72,7 +101,11 @@ const sortAttrComments = {
 
 const markupRules = { ...htmlPlugin.rules, 'sort-attr-comments': sortAttrComments, 'sort-classes': sortClasses }
 
-const localPlugin = { rules: { 'sort-attr-comments': sortAttrComments, 'sort-classes': sortClasses } }
+const localPlugin = { rules: {
+	'no-duplicate-page-titles': noDuplicatePageTitles,
+	'sort-attr-comments': sortAttrComments,
+	'sort-classes': sortClasses,
+} }
 
 // The same rules, made blind to Markdown code blocks.
 const markdownPlugin = {
@@ -194,6 +227,10 @@ export default [
 	},
 	{
 		files: ['**/*.html'], // Examples read better in conventional attribute order.
-		rules: { '@html-eslint/sort-attrs': 'off' },
+		rules: {
+			'@html-eslint/require-title': 'error',
+			'@html-eslint/sort-attrs': 'off',
+			'local/no-duplicate-page-titles': 'error',
+		},
 	},
 ]
