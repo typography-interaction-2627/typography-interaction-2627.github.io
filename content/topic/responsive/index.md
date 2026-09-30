@@ -244,7 +244,7 @@ Thinking more systematically, we can instead adjust the [`--variables`](../box-m
 
 <figure style="--lines: 9">
 
-***[Variable Example](variable/style.css)***
+***[Variable Example](variables/style.css)***
 
 <figcaption>
 
