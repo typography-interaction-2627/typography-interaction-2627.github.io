@@ -523,6 +523,8 @@ These bring another programming concept of [*variables*](https://en.wikipedia.o
 
 Changing the value of a *variable* changes it everywhere it is referenced—no copy/pasting or find/replacing. You could think of a color *swatch*, if you are in an Adobe mindset; other tech folks call these *tokens*. Again, these are just for you—it is all the same to the computer. More ergonomics!
 
+You can use these as values for *any* [CSS property](../css/index.md#css-rules)—colors, spacing, etc.—anything you use multiple times and want to be consistent, give a memorable name to, or easily change all together.
+
 In your CSS, you *declare* (set) these with a `--` prefix in front of a subjective name you make up, akin to a class name. And you *reference* (use) them by wrapping that variable name in `var()`.
 
 **You’re saying “these things are *meant* to be the same.”**
