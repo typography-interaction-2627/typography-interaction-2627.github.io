@@ -1,0 +1,4 @@
+section {
+	/* Scale with viewport, spacing “floor.” */
+	padding: max(5vw, var(--spacing));
+}

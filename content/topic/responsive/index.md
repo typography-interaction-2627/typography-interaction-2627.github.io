@@ -453,9 +453,9 @@ Your mobile design constraints will be tighter and more challenging, by tackling
 
 ### Start Small, Start Simple
 
-This also goes “[*with the grain*](../../week/7.md#reading-discussion)” of CSS, following the its general pattern/paradigm of the cascade—and jives with our “[*general to specific*](../css/index.md#avoiding-these-problems)” (or “*always to sometimes*”) approach to organizing our styles.
+This also goes “[*with the grain*](../../week/7.md#reading-discussion)” of CSS, following its general pattern/paradigm of the *cascade*—and likewise jives with our “[*general to specific*](../css/index.md#avoiding-these-problems)” (or “*always to sometimes*”) approach to organizing our styles.
 
-It is much, much, *much* easier than adjusting desktop front-end after the fact. (Trust us.) Always think <nobr>*mobile-first*</nobr>! Here’s how that can look:
+It is also much, much, *much* easier than adjusting desktop front-end after the fact. (Trust us.) Always think <nobr>*mobile-first*</nobr>! Here’s how that can look:
 
 <figure style="--lines: 24">
 
@@ -469,6 +469,75 @@ Note we added a `main` container. The `calc()` here are kind of tricky—but thi
 </figure>
 
 **Mobile can be the *majority* of your visitors—[especially internationally](https://gs.statcounter.com/platform-market-share/desktop-mobile/worldwide)! We’d like you to think of *mobile-first* design as a form of *accessibility*, in this light. Not everyone has your MacBook Pro!**
+
+## Responsive Lengths
+
+CSS also added some additional functions, beyond just [`calc()`](../box-model/index.md#combined-via-calc). As we consider resilient designs across varying/unknown screen sizes, these allow us to set limits/constraints beyond the basic [`min-`/`max-` sizes](../box-model/index.md#constrained-by-min-max-)—and crucially, apply them to *other* properties, like `margin`, `padding`, `font-size`, etc. You’ll often use these in conjunction with viewport-[relative units](../box-model/index.md#relative-units) like `vw`/`vh`.
+
+[<cite>CSS `min()`, `max()`, and `clamp()` – web.dev</cite>](https://web.dev/articles/min-max-clamp) \
+For more than just `-size`!
+<!-- .right -->
+
+**We can use these to make sure our designs work responsively, even *without* explicit [`@media` queries](#media-queries)!**
+
+### `min()`
+
+The [`min()` function](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/min) chooses the smallest value from its <nobr>comma-separate</nobr> list. Somewhat counterintuitively from its name, we can use this to set the *maximum* value for something—as the function selects whatever is lowest. You can think of this as a *ceiling* on your flexible values:
+
+[<cite>`min()` function - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/min)
+Select the smallest value.
+<!-- .right -->
+
+<figure style="--lines: 6">
+
+***[Min() Example](min/style.css)***
+
+<figcaption>
+
+Drag that divider! Note that you can do maths right within `min()`, no need to [`calc()`](../box-model/index.md#combined-via-calc)! (Same for [`max()`](#max) and [`clamp()`](#clamp), too.)
+
+</figcaption>
+</figure>
+
+### `max()`
+
+On the other end of things, the [`max()` function](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/max) chooses the largest value. We can use this to set the *minimum* value, as the function selects whatever is highest. It is the *floor* for our flexibility:
+
+[<cite>`max()` function - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/max)
+Or the largest.
+<!-- .right -->
+
+<figure style="--lines: 6">
+
+***[Max() Example](max/style.css)***
+
+<figcaption>
+
+We can also use these functions in variable definitions themselves, like `--spacing: max(5vw, 5rem);`
+
+</figcaption>
+</figure>
+
+### `clamp()`
+
+You’ll often want to set both a *floor* and a *ceiling* on flexible units, and we can do these together with the [`clamp()` function](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/clamp). It will *constrain* the preferred, middle value to within the range of the first (minimum) and last (maximum) boundaries:
+
+[<cite>`clamp()` function - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/clamp)
+Or *within* a minimum/maximum.
+<!-- .right -->
+
+<figure style="--lines: 11">
+
+***[Clamp() Example](clamp/style.css)***
+
+<figcaption>
+
+Best of both worlds! We can scale our designs—but not *too* small and not *too* big.
+
+</figcaption>
+</figure>
+
+**Use these functions to prevent your design from breaking—without having to know or plan for *every* scenario!**
 
 ## Other Media Features
 

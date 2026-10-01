@@ -1,0 +1,9 @@
+section{
+	/* Combined: “floor,” viewport scaling, and “ceiling.” */
+	padding: clamp(var(--spacing), 5vw, 3 * var(--spacing));
+}
+
+section:last-child {
+	/* Often used for dynamic type sizing! */
+	font-size: clamp(var(--spacing), 5vw, 3 * var(--spacing));
+}

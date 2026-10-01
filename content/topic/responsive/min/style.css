@@ -1,0 +1,4 @@
+section {
+	/* Scale with viewport, 3× spacing “ceiling.” */
+	padding: min(5vw, 3 * var(--spacing));
+}
