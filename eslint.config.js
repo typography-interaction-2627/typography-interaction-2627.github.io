@@ -77,9 +77,10 @@ const noDuplicatePageTitles = {
 const sortAttrComments = {
 	create: (context) => ({
 		Comment: (node) => {
-			const content = node.value.value
+			const content = node.value?.value
 
-			if (!/^\s*([.#@:]|data|style|inert)/.test(content)) return
+			// `<!---` comments parse without a `value`.
+			if (!content || !/^\s*([.#@:]|data|style|inert)/.test(content)) return
 
 			const tokens = content.match(/(?:[^\s"]+|"[^"]*")+/g) ?? []
 			const sorted = ` ${sortTokens(tokens).join(' ')} `
