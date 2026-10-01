@@ -257,7 +257,10 @@
 			}
 
 			/* Née ”intro.” */
-			:where(p:has(> strong:only-child)) {
+			:where(
+				p:has(> strong:only-child),
+				p:has(> strong:first-child + br + small)
+			) {
 				--size:    var(--size--h4);
 				--leading: 1rlh;
 				--wrap:    balance;
@@ -268,6 +271,8 @@
 
 				/* Space after. */
 				:where(:not(li)) > & + *:where(:not(&, section, .right)) { margin-block-start: 1rlh }
+
+				&:has(br + small) br { display: none }
 
 				@container style(--columns) {
 					/* …top level. */
@@ -357,6 +362,15 @@
 
 					/* Ordered `cite` lists (presentations), back on baseline. */
 					&:where(ol):has(> li > a > cite) a:has(> cite) { inset-block-start: -1rex }
+
+					/* Tighten these up. */
+					&.two-column {
+						grid-auto-flow:        column;
+						grid-template-columns: repeat(2, minmax(0, 1fr));
+						grid-template-rows:    repeat(5, min-content); /* TODO Use `sibling-count()`? */
+
+						@container style(--columns) { margin-block-start: 1rlh }
+					}
 				}
 
 				/* “Tight” lists. */
