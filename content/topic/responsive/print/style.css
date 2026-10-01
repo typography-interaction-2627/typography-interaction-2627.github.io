@@ -12,6 +12,8 @@
 	:root {
 		--background: initial; /* Resets/clears this. */
 		--spacing: 18pt; /* Appropriate absolute units! */
+
+		print-color-adjust: exact; /* Print backgrounds, etc! */
 	}
 
 	/* And maybe we have some `print`-only properties. */

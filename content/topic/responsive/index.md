@@ -487,7 +487,7 @@ In all of our above examples, there is an implied *[media type](https://develope
 	There are also some print-specific properties available.
 <!-- .right -->
 
-<figure style="--lines: 25">
+<figure style="--lines: 27">
 
 ***[Print Example](print/style.css)***
 
