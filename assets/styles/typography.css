@@ -82,7 +82,7 @@ s {
 	&::before {
 		content:           '';
 		inset:             0;
-		inset-block-start: calc(round(1ex, var(--1px)) + var(--1px));
+		inset-block-start: round(1ex + var(--1px), var(--1px));
 		position:          absolute;
 
 		background: repeating-linear-gradient(

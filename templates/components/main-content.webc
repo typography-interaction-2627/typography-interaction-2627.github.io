@@ -46,7 +46,7 @@
 				grid-auto-rows:      min-content;
 				inline-size:         var(--page);
 				isolation:           isolate; /* Internal `z-index`. */
-				margin-inline-start: round(down, calc((var(--vw) - var(--page)) / 2), var(--1px)); /* Land on-pattern. */
+				margin-inline-start: round(down, (var(--vw) - var(--page)) / 2, var(--1px)); /* Land on-pattern. */
 				padding-block-end:   calc(2 * var(--gutter) + var(--1px));
 				padding-block-start: calc(var(--gutter) + var(--1px));
 				padding-inline:      calc(var(--gutter) + var(--1px));
@@ -191,11 +191,11 @@
 						display:             inline-block;
 						font-weight:         normal;
 						inline-size:         var(--8px);
-						margin-inline-start: round(calc(var(--resolve) / 3), var(--1px));
+						margin-inline-start: round(var(--resolve) / 3, var(--1px));
 						opacity:             var(--opacity);
 						text-box:            trim-both cap alphabetic;
 						transition-delay:    var(--delay, 1s); /* “Coyote time.” */
-						translate:           0 round(up, calc(-1 * var(--resolve) / 3), var(--1px)); /* The hash glyph is weirdly high/small! */
+						translate:           0 round(up, -1 * var(--resolve) / 3, var(--1px)); /* The hash glyph is weirdly high/small! */
 
 						/* `opsz` dance. */
 						@supports (not (-moz-appearance: none)) { --font: 'Geneva 14' }

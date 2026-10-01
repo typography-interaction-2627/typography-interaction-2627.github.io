@@ -63,12 +63,12 @@
 
 		@media (width > 24.5em ) {
 			/* Split gutter. */
-			--inline: round(down, calc(var(--bleed) + var(--gutter) / 2), var(--1px));
+			--inline: round(down, var(--bleed) + var(--gutter) / 2, var(--1px));
 		}
 
 		@container style(--columns) {
 			/* Split bleed, or align to island. */
-			--inline: round(max(calc(var(--bleed) / 2), calc(var(--notch) - var(--gutter))), var(--1px));
+			--inline: round(max(var(--bleed) / 2, var(--notch) - var(--gutter)), var(--1px));
 			--gap:    var(--gutter);
 		}
 
@@ -76,7 +76,7 @@
 			/* Even spacing, split bleed. */
 			--block:      var(--inline);
 			--block--toc: var(--block);
-			--inline:     round(calc(var(--bleed) / 2), var(--1px));
+			--inline:     round(var(--bleed) / 2, var(--1px));
 			--gap:        var(--inline);
 			--padding:    1ex;
 		}

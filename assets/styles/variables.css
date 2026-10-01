@@ -100,7 +100,7 @@
 		--bleed:  var(--5px);
 		--gutter: calc(1rlh - 1rex); /* Visually between x-heights. */
 		--alley:  calc(var(--gutter) * 2); /* Check tablet */
-		--page:   min(round(down, calc(var(--vw) - 2 * var(--bleed)), var(--1px)), var(--max));
+		--page:   min(round(down, var(--vw) - 2 * var(--bleed), var(--1px)), var(--max));
 		--main:   calc(var(--page) - 2 * var(--gutter) - var(--2px)); /* Account for “border.” */
 		--column: var(--main);
 		--body:   var(--main);
@@ -108,7 +108,7 @@
 		--peek:  var(--gutter); /* Peek above fold. */
 		--notch: round(env(safe-area-inset-left), var(--1px));
 		--max:   calc(720 * var(--1px));
-		--break: round(calc(var(--vh) / 5), var(--1px));
+		--break: round(var(--vh) / 5, var(--1px));
 
 		--enlargement: var(--4px);
 
@@ -155,11 +155,11 @@
 
 		/* Explicit-sized for rounding. */
 		@container style(--columns) {
-			--column: round(down, calc(((var(--main) - (var(--alley) * (var(--columns) - 1)))) / var(--columns)), var(--1px));
+			--column: round(down, (var(--main) - (var(--alley) * (var(--columns) - 1))) / var(--columns), var(--1px));
 			--body:   calc(4 * var(--column) + 3 * var(--alley));
 		}
 
-		@container style(--columns) or style(--tablet) { --bleed: max(calc(2rlh - 1rcap), var(--notch)) }
+		@container style(--columns) or style(--tablet) { --bleed: max(2rlh - 1rcap, var(--notch)) }
 
 		@container style(--tablet) {
 			--gutter: var(--bleed);

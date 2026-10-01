@@ -1,7 +1,7 @@
 <style>
 	figure {
 		--gap:   1rlh;
-		--max:   round(calc(0.75 * var(--svh)), 1rlh);
+		--max:   round(0.75 * var(--svh), 1rlh);
 		--ratio: 16 / 9;
 
 		align-items:  start;
@@ -101,7 +101,7 @@
 		}
 
 		/* Video embeds. */
-		&:has(iframe[src*="https://"]) { inline-size: min(100%, calc(var(--max) * var(--ratio))) }
+		&:has(iframe[src*="https://"]) { inline-size: min(100%, var(--max) * var(--ratio)) }
 
 		/* Container for placing the dithered one/effects. */
 		> div {
@@ -137,7 +137,7 @@
 
 			img {
 				block-size:     var(--height);
-				max-block-size: round(calc(min(var(--max), var(--lines--adjusted, var(--max))) / var(--zoom, 1)), var(--1px));
+				max-block-size: round(min(var(--max), var(--lines--adjusted, var(--max))) / var(--zoom, 1), var(--1px));
 				zoom:           var(--zoom); /* So they aren’t as limited by intrinsic resolution. */
 
 				@container style(--scaling: 3) { --zoom: 1.5 }

@@ -13,7 +13,7 @@
 	font-size:                calc((var(--size) * var(--scaling) / 16) * 100%);
 	font-smooth:              never;
 	font-synthesis:           none;
-	line-height:              round(up, var(--leading), calc(1em / var(--size))); /* To scaled pixels. */
+	line-height:              round(up, var(--leading), 1em / var(--size)); /* To scaled pixels. */
 	text-rendering:           geometricPrecision;
 
 	:where(*, ::before, ::after) {

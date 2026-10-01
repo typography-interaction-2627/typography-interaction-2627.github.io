@@ -343,7 +343,7 @@ This example has the same *breakpoint* of `500px` as before, but now using `hei
 
 </div>
 
-<figure class="recto" style="--lines: 22; --max: round(calc(0.9 * var(--svh)), 1rlh)">
+<figure class="recto" style="--lines: 22; --max: round(0.9 * var(--svh), 1rlh)">
 
 ***[Height Example](height/style.css)***
 

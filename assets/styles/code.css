@@ -28,7 +28,7 @@ samp {
 
 	/* Land pattern with “chipped” corners. */
 	@supports (inline-size: calc-size(auto, size)) {
-		inline-size: calc-size(auto, round(up, calc(size + -1 * var(--kerning, 0em)), var(--2px)) - var(--1px));
+		inline-size: calc-size(auto, round(up, size + -1 * var(--kerning, 0em), var(--2px)) - var(--1px));
 	}
 
 	@container style(--size: 12) {
