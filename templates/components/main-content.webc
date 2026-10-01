@@ -314,7 +314,7 @@
 				> :where(dd, dt, li).all { inline-size: var(--main) }
 
 				/* Not `cite` lists. */
-				&:where(:not(:has(> li > a > cite, > li > p:only-child > a > cite))) {
+				&:where(:not(:has(> li > a > cite, > li > p:only-child > a > cite)), ol) {
 				/* TODO There still has to be a simpler way to check for these! */
 
 				--list: calc(2rlh - 1rcap);
@@ -354,6 +354,9 @@
 						grid-template-columns: minmax(0, 1fr);
 						row-gap:               calc(2rlh - 1rcap); /* Back to `main` spacing. */
 					}
+
+					/* Ordered `cite` lists (presentations), back on baseline. */
+					&:where(ol):has(> li > a > cite) a:has(> cite) { inset-block-start: -1rex }
 				}
 
 				/* “Tight” lists. */
