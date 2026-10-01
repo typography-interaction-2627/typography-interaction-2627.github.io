@@ -479,7 +479,7 @@ You’ll often want to set limits/constraints on your element sizes—particular
 
 You can set [*minimums*](https://developer.mozilla.org/en-US/docs/Web/CSS/min-inline-size) and [*maximums*](https://developer.mozilla.org/en-US/docs/Web/CSS/max-block-size) on your `-size` by using the prefixes `min-` and `max-`.
 
-**You’re saying “but not *too* big, and not *too* small.”**
+**You’re saying “but not *too* small, and not *too* big.”**
 
 </div>
 
