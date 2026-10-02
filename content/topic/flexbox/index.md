@@ -39,7 +39,9 @@ Flexbox is a *one-dimensional* layout system—meaning it is (*…usually*) focu
 
 <div class="before--2 verso">
 
-<figure @source="axes-row.svg"></figure>
+<figure>
+<img src="axes-row.svg">
+</figure>
 
 ```css <!-- .before--0 style="inline-size: 100%" -->
 .some-container {
@@ -52,7 +54,9 @@ Flexbox is a *one-dimensional* layout system—meaning it is (*…usually*) focu
 
 <div class="before--2 recto">
 
-<figure @source="axes-column.svg"></figure>
+<figure>
+<img src="axes-column.svg">
+</figure>
 
 ```css <!-- .before--0 style="inline-size: 100%" -->
 .some-container {
@@ -72,7 +76,9 @@ Flex also lets us position elements along/within the axes, in both directions—
 
 <div class="before--2 verso">
 
-<figure @source="justify-align-row.svg"></figure>
+<figure>
+<img src="justify-align-row.svg">
+</figure>
 
 ```css <!-- .before--0 style="inline-size: 100%" -->
 .some-container {
@@ -87,7 +93,9 @@ Flex also lets us position elements along/within the axes, in both directions—
 
 <div class="before--2 recto">
 
-<figure @source="justify-align-column.svg"></figure>
+<figure>
+<img src="justify-align-column.svg">
+</figure>
 
 ```css <!-- .before--0 style="inline-size: 100%" -->
 .some-container {
@@ -130,20 +138,24 @@ After specifying an element as *flex*, we can set its main axis with the `flex-
 	Always `row` by default.
 <!-- .right -->
 
-<figure
-	@caption="The first list is `display: block;` by default. Also note that we gave them all a `min-block-size`, to show `start`/`end`!"
-	@source="flex-direction/preview/?active=style.css"
-	style="--lines: 15"
-	>
+<figure style="--lines: 15">
+
+***[Direction Example](direction/style.css)***
+
+<figcaption>
+
+The first list is `display: block;` by default. Also note that we gave them all a `min-block-size`, to show `start`/`end`!
+
+</figcaption>
 </figure>
 
 You can also combine these with a `-reverse` suffix, which visually reorders the items along the *main axis*, flipping the `start` and `end`:
 <!-- .balance -->
 
-<figure
-	@source="flex-direction-reverse/preview/?active=style.css"
-	style="--lines: 12"
-	>
+<figure style="--lines: 12">
+
+***[Direction-Reverse Example](direction-reverse/style.css)***
+
 </figure>
 
 Keep in mind that all flex reordering is only *visual*—it obviously can’t change the order in your HTML. This means that keyboard navigation and screen readers still sequence through the items as they are in your code. So for good, logical accessibility, keep in mind the semantic reading order!
@@ -157,11 +169,15 @@ Since flexbox is *one-dimensional*, by default it will try to cram everything in
 	The only *two-dimensional* flex use.
 <!-- .right -->
 
-<figure
-	@caption="Without the height restriction, the last one would just grow taller, by default."
-	@source="flex-wrap/preview/?active=style.css"
-	style="--lines: 22"
-	>
+<figure style="--lines: 22">
+
+***[Wrap Example](wrap/style.css)***
+
+<figcaption>
+
+Without the height restriction, the last one would just grow taller, by default.
+
+</figcaption>
 </figure>
 
 <aside>
@@ -175,11 +191,15 @@ You *can* use this to make grids, and it is sometimes sufficient. But but [the m
 There is also a `-reverse` suffix when wrapping, which will sequence items from `end` to `start`:
 <!-- .balance .before--3 -->
 
-<figure
-	@caption="You could do some weird, unique layouts with these—but keep in mind the order is still only *visual*!"
-	@source="flex-wrap-reverse/preview/?active=style.css"
-	style="--lines: 22"
-	>
+<figure style="--lines: 22">
+
+***[Wrap-Reverse Example](wrap-reverse/style.css)***
+
+<figcaption>
+
+You could do some weird, unique layouts with these—but keep in mind the order is still only *visual*!
+
+</figcaption>
 </figure>
 
 ### `justify-content`
@@ -192,20 +212,28 @@ So most of what we’ve seen here is… somewhat possible using `float` and `po
 
 But the `justify-content` property is where flexbox starts to allow novel layouts, by dividing up the extra/available free space between elements—akin to *distribute* options in Figma/Adobe applications. `justify-content` does this on our *main axis*:
 
-<figure
-	@caption="The `start`/`end` values [have some nuance](https://csslayout.news/whats-the-difference-between-the-alignment-values-of-start-flex-start-and-self-start/) with different writing directions, but this doesn’t come up often."
-	@source="flex-justify-content/preview/?active=style.css"
-	style="--lines: 15"
-	>
+<figure style="--lines: 15">
+
+***[Justify-Content Example](justify-content/style.css)***
+
+<figcaption>
+
+The `start`/`end` values [have some nuance](https://csslayout.news/whats-the-difference-between-the-alignment-values-of-start-flex-start-and-self-start/) with different writing directions, but this doesn’t come up often.
+
+</figcaption>
 </figure>
 
 When our *main axis* is vertical, with `flex-direction: column;`:
 
-<figure
-	@caption="These only works with the `block-size` to *justify* within—otherwise the container would cinch up to the content height, as usual."
-	@source="flex-justify-content-column/preview/?active=style.css"
-	style="--lines: 21"
-	>
+<figure style="--lines: 21">
+
+***[Justify-Content-Column Example](justify-content-column/style.css)***
+
+<figcaption>
+
+These only works with the `block-size` to *justify* within—otherwise the container would cinch up to the content height, as usual.
+
+</figcaption>
 </figure>
 
 ### `align-items`
@@ -217,18 +245,18 @@ And then perpendicular to `justify` along the *main axis*, flexbox has the `alig
 	For the cross/perpendicular axis.
 <!-- .right -->
 
-<figure
-	@source="flex-align-items/preview/?active=style.css"
-	style="--lines: 25"
-	>
+<figure style="--lines: 25">
+
+***[Align-Items Example](align-items/style.css)***
+
 </figure>
 
 And for the vertical:
 
-<figure
-	@source="flex-align-items-column/preview/?active=style.css"
-	style="--lines: 22"
-	>
+<figure style="--lines: 22">
+
+***[Align-Items-Column Example](align-items-column/style.css)***
+
 </figure>
 
 ### `align-content`
@@ -240,11 +268,15 @@ When we have a flex element with `flex-wrap` set, we can also position the *line
 	When there is extra room.
 <!-- .right -->
 
-<figure
-	@caption="These wouldn’t do anything without the `block-size` and the `flex-wrap`."
-	@source="flex-align-content/preview/?active=style.css"
-	style="--lines: 21"
-	>
+<figure style="--lines: 21">
+
+***[Align-Content Example](align-content/style.css)***
+
+<figcaption>
+
+These wouldn’t do anything without the `block-size` and the `flex-wrap`.
+
+</figcaption>
 </figure>
 
 <sub>`align-content` can also be used with a vertical/`flex-direction: column;` axis, not shown here. This doesn’t often come up, as you have to specify/know a height to force a column wrap.</sub>
@@ -262,11 +294,15 @@ While you could use *margin* to separate your flex children, it would apply to t
 
 Flex added support for intuitive [`gap` properties](https://developer.mozilla.org/en-US/docs/Web/CSS/gap), which fix this problem—by applying spacing only *between* children. This is particularly helpful with dynamic, wrapping content and responsive designs—where you won’t always know which element ends or starts a line (to take their margin off):
 
-<figure
-	@caption="Note the last one, `gap` are really *minimums* and only apply when there isn’t otherwise space."
-	@source="flex-gap/preview/?active=style.css"
-	style="--lines: 25"
-	>
+<figure style="--lines: 25">
+
+***[Gap Example](gap/style.css)***
+
+<figcaption>
+
+Note the last one, `gap` are really *minimums* and only apply when there isn’t otherwise space.
+
+</figcaption>
 </figure>
 
 <aside>
@@ -294,10 +330,10 @@ Kind of like the `-reverse` suffix—you can individually apply the `order` prop
 	Visual/display only!
 <!-- .right -->
 
-<figure
-	@source="flex-order/preview/?active=style.css"
-	style="--lines: 25"
-	>
+<figure style="--lines: 25">
+
+***[Order Example](order/style.css)***
+
 </figure>
 
 Other order-based selectors (like `:first-child`) won’t be fooled by this reordering—as you can see, we used them here. They still use the HTML/DOM order. And again, this change is only *visual*—so don’t use it when screen reader/content sequence accessibility is a concern!
@@ -313,10 +349,10 @@ These properties tell the flex items to… `grow` or `shrink`, if necessary—de
 
 It takes a *unitless* proportional value, akin to fractions or a factor/multiplier. If you give one flexed child `flex-grow: 1;` it will take up all the extra space; another element with `flex-grow: 2;` would then take twice as much of that space as the first one (the available space with 3 total units):
 
-<figure
-	@source="flex-grow-shrink/preview/?active=style.css"
-	style="--lines: 25"
-	>
+<figure style="--lines: 25">
+
+***[Grow-Shrink Example](grow-shrink/style.css)***
+
 </figure>
 
 And `flex-shrink` works the same way—defining what proportion an element should shrink when forced to by the flex layout. The most use you’ll see of this is `flex-shrink: 0;`, which tells all the *other* items to shrink instead!
@@ -334,11 +370,15 @@ The `flex-basis` property is a little like `inline-size` and `block-size`—depe
 This defaults to `auto`, which falls back to any specified `inline-size` or `block-size`—and if those aren’t present, will just use the size of the content. You specify this `flex-basis` with [length units](/topic/box-model/#and-their-units) like `%` and `px` :
 <!-- .balance -->
 
-<figure
-	@caption="You are [usually fine](https://stackoverflow.com/a/34355447) just specifying `inline-size` / `block-size`."
-	@source="flex-basis/preview/?active=style.css"
-	style="--lines: 14"
-	>
+<figure style="--lines: 14">
+
+***[Basis Example](basis/style.css)***
+
+<figcaption>
+
+You are [usually fine](https://stackoverflow.com/a/34355447) just specifying `inline-size` / `block-size`.
+
+</figcaption>
 </figure>
 
 ### `align-self`
@@ -349,10 +389,10 @@ Finally, we have an individual override for an [`align-items`](#align-items) pro
 	Overrides this child! Rebels.
 <!-- .right -->
 
-<figure
-	@source="flex-align-self/preview/?active=style.css"
-	style="--lines: 25"
-	>
+<figure style="--lines: 25">
+
+***[Align-Self Example](align-self/style.css)***
+
 </figure>
 
 This is a lot of stuff! Flex can sometimes be tough to wrap one’s head around, but it is *so much better* than `float` and `inline-size` and `margin` shenanigans.

@@ -71,7 +71,9 @@ Area
 
 <div class="recto start sticky">
 
-<figure @source="terminology.svg"></figure>
+<figure>
+<img src="terminology.svg">
+</figure>
 
 </div>
 
@@ -199,11 +201,15 @@ Setting `display: grid;` won’t do much until you also declare some columns or 
 	Define your *tracks*.
 <!-- .right -->
 
-<figure
-	@caption="Notice in the second example, the items do *not* wrap to a new column—because `grid-auto-flow: row;` is the default setting. The third example sets this to `column` to make it flow to a new one."
-	@source="grid-template/preview/?active=style.css"
-	style="--lines: 19"
-	>
+<figure style="--lines: 19">
+
+***[Template Example](template/style.css)***
+
+<figcaption>
+
+Notice in the second example, the items do *not* wrap to a new column—because `grid-auto-flow: row;` is the default setting. The third example sets this to `column` to make it flow to a new one.
+
+</figcaption>
 </figure>
 
 Again like flex, there is similar behavior on the horizontal/vertical *axes*—with the defaults around horizontal/row based behavior since width is usually our constraint (with pages scrolling vertically).
@@ -212,11 +218,15 @@ Again like flex, there is similar behavior on the horizontal/vertical *axes*—w
 So for many uses, you will only need to specify your column structure—leaving the rows to create themselves, as needed. This is called an *implicit grid* (vs. an *explicit grid* that we set/define):
 <!-- .balance .before--2 -->
 
-<figure
-	@caption="Drag that divider! The additional rows are automatically added, as needed. Note that they size vertically to their largest content!"
-	@source="grid-template-columns/preview/?active=style.css"
-	style="--lines: 16"
-	>
+<figure style="--lines: 16">
+
+***[Template-Columns Example](template-columns/style.css)***
+
+<figcaption>
+
+Drag that divider! The additional rows are automatically added, as needed. Note that they size vertically to their largest content!
+
+</figcaption>
 </figure>
 
 ### `grid-auto-columns` / `grid-auto-rows`
@@ -229,10 +239,10 @@ By default, these *implicit grid* tracks are sized `auto` (the largest content),
 	Lets the content create the *tracks*.
 <!-- .right -->
 
-<figure
-	@source="grid-auto-rows/preview/?active=style.css"
-	style="--lines: 17"
-	>
+<figure style="--lines: 17">
+
+***[Auto-Rows Example](auto-rows/style.css)***
+
 </figure>
 
 The perpendicular `grid-auto-columns` only comes up if you force the columns to wrap with `grid-auto-flow: column;` as in the earlier example. Again—height is usually not our main constraint, with scrolling!
@@ -248,11 +258,15 @@ Grid also shares the `gap`, `column-gap`, and `row-gap` [properties with flex](/
 	The exact same as with [flex](/topic/flexbox/#gap-row-gap-and-column-gap)!
 <!-- .right -->
 
-<figure
-	@caption="You rarely see a `grid` without a `gap`."
-	@source="grid-gap/preview/?active=style.css"
-	style="--lines: 19"
-	>
+<figure style="--lines: 19">
+
+***[Gap Example](gap/style.css)***
+
+<figcaption>
+
+You rarely see a `grid` without a `gap`
+
+.</figcaption>
 </figure>
 
 ### `justify-items`
@@ -265,10 +279,10 @@ Also [like flex](/topic/flexbox/#justify-content) (there’s a pattern here), we
 
 The terminology here is always a bit confusing, but think of it this way—in grid, the main axis is *always* the horizontal row. So *justify* always means left/right, and *align* always means top/bottom. Easier to remember than flex! No flipping axes:
 
-<figure
-	@source="grid-justify-items/preview/?active=style.css"
-	style="--lines: 22"
-	>
+<figure style="--lines: 22">
+
+***[Justify-Items Example](justify-items/style.css)***
+
 </figure>
 
 ### `align-items`
@@ -280,20 +294,24 @@ And `align-items` directly corresponds to the [flex values](/topic/flexbox/#alig
 Same as [flex](/topic/flexbox/#align-items), again!
 <!-- .right -->
 
-<figure
-	@caption="Note that there isn’t any change on the last *implicit* row with the default `auto`/content height."
-	@source="grid-align-items/preview/?active=style.css"
-	style="--lines: 22"
-	>
+<figure style="--lines: 22">
+
+***[Align-Items Example](align-items/style.css)***
+
+<figcaption>
+
+Note that there isn’t any change on the last *implicit* row with the default `auto`/content height.
+
+</figcaption>
 </figure>
 
 There are also `baseline` alignment values, to keep text on the same line across your columns:
 <!-- .balance -->
 
-<figure
-	@source="grid-align-baseline/preview/?active=style.css"
-	style="--lines: 13"
-	>
+<figure style="--lines: 13">
+
+***[Align-Baseline Example](align-baseline/style.css)***
+
 </figure>
 
 ### `justify-content` / `align-content`
@@ -306,11 +324,15 @@ If the total size of your grid is less than the container (because of your *expl
 	When there is extra space.
 <!-- .right -->
 
-<figure
-	@caption="Again, [this is just](/topic/flexbox/#justify-content) [like flex](/topic/flexbox/#align-items)! Same syntax, same behavior—you get the idea. Grid is like *Flex+*."
-	@source="grid-justify-align-content/preview/?active=style.css"
-	style="--lines: 12"
-	>
+<figure style="--lines: 12">
+
+***[Justify/Align-Content Example](justify-align-content/style.css)***
+
+<figcaption>
+
+Again, [this is just](/topic/flexbox/#justify-content) [like flex](/topic/flexbox/#align-items)! Same syntax, same behavior—you get the idea. Grid is like *Flex+
+
+*.</figcaption>
 </figure>
 
 ### Shorthand?
@@ -332,11 +354,15 @@ Grid’s `repeat` function is very commonly used to make even-column grids. And 
 
 <sub>The `()` indicates this is a [*function*](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_values_and_units/CSS_value_functions) (like our friend `calc()`) that you would pass *arguments*—a common [software paradigm](https://en.wikipedia.org/wiki/Function_(computer_programming)).</sub>
 
-<figure
-	@caption="Notice that the *items* always stick to the grid structure—independent of their content—unlike our previous `flex-wrap` pseudo-grids."
-	@source="grid-template-columns-repeat/preview/?active=style.css"
-	style="--lines: 18"
-	>
+<figure style="--lines: 18">
+
+***[Template-Columns Repeat Example](template-columns-repeat/style.css)***
+
+<figcaption>
+
+Notice that the *items* always stick to the grid structure—independent of their content—unlike our previous `flex-wrap` pseudo-grids.
+
+</figcaption>
 </figure>
 
 **Flex is [sometimes referred](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Relationship_of_Grid_Layout) to in this way as *content-out,* while grid is a *layout-in* system.**
@@ -350,11 +376,15 @@ You can also use the `repeat` function without specifying an exact number of col
 	Better than MDN, for this.
 <!-- .right -->
 
-<figure
-	@caption="Drag the divider over to see the difference in `auto-fill` / `auto-fit` behaviors."
-	@source="grid-template-columns-repeat-auto/preview/?active=style.css"
-	style="--lines: 20"
-	>
+<figure style="--lines: 20">
+
+***[Template-Columns-Repeat-Auto Example](template-columns-repeat-auto/style.css)***
+
+<figcaption>
+
+Drag the divider over to see the difference in `auto-fill` / `auto-fit` behaviors.
+
+</figcaption>
 </figure>
 
 ### `grid-template-areas`
@@ -404,10 +434,10 @@ If you’ve defined `grid-template-areas` (as [above](#grid-template-areas)), yo
 	These go on the items/children.
 <!-- .right -->
 
-<figure
-	@source="grid-area/preview/?active=style.css"
-	style="--lines: 20"
-	>
+<figure style="--lines: 20">
+
+***[Area Example](area/style.css)***
+
 </figure>
 
 **This is the [kind of common layout](https://en.wikipedia.org/wiki/Holy_grail_(web_design)) that was *unnecessarily* hard before grid! It’s so much easier now.**
@@ -425,11 +455,15 @@ You can also control *item* placement in unnamed (and *implicit*) grid areas wit
 These take two values, divided with a `/` (because CSS is inconsistent), which specify the *start line* and *end line*. There is also a `span` value for bridging across tracks:
 <!-- .balance -->
 
-<figure
-	@caption="Notice that we can leave off the *end line* if it doesn’t `span` multiple tracks, and also that you either add a `span` *or* a specific *end line* number."
-	@source="grid-column-row/preview/?active=style.css"
-	style="--lines: 22"
-	>
+<figure style="--lines: 22">
+
+***[Column-Row Example](column-row/style.css)***
+
+<figcaption>
+
+Notice that we can leave off the *end line* if it doesn’t `span` multiple tracks, and also that you either add a `span` *or* a specific *end line* number.
+
+</figcaption>
 </figure>
 
 These are *technically* [shorthand](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column) [properties](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row), but we’ll allow it here—they are *easier* to read!
@@ -438,21 +472,29 @@ These are *technically* [shorthand](https://developer.mozilla.org/en-US/docs/Web
 You can also leave off the *start line* if you just want to specify a `span`, regardless of where the item falls in the grid:
 <!-- .balance -->
 
-<figure
-	@caption="We’ve added `grid-auto-flow: dense;` to the container—allowing the seventh item to [scoot up](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow) “before” the bigger one."
-	@source="grid-column-row-span/preview/?active=style.css"
-	style="--lines: 15"
-	>
+<figure style="--lines: 15">
+
+***[Column-Row-Span Example](column-row-span/style.css)***
+
+<figcaption>
+
+We’ve added `grid-auto-flow: dense;` to the container—allowing the seventh item to [scoot up](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow) “before” the bigger one.
+
+</figcaption>
 </figure>
 
 And if you specify non-contiguous rows or columns, grid will dutifully create as many *implicit* tracks as it needs to accommodate them—even if they are empty. Not every cell or track must be filled:
 <!-- #empty-tracks .balance -->
 
-<figure
-	@caption="Note that just like `order` in flex, this arrangement is only visual! Keep your DOM in a logical, semantic sequence."
-	@source="grid-column-row-implicit/preview/?active=style.css"
-	style="--lines: 24"
-	>
+<figure style="--lines: 24">
+
+***[Column-Row-Implicit Example](column-row-implicit/style.css)***
+
+<figcaption>
+
+Note that just like `order` in flex, this arrangement is only visual! Keep your DOM in a logical, semantic sequence.
+
+</figcaption>
 </figure>
 
 Keep in mind that with both `grid-area` and `grid-column` / `grid-row`, you are able to tell multiple *grid items* to land in the same *cell*—there isn’t any kind of fancy/automatic collision-prevention. If this <em>is</em> what you want, you can use `z-index` to specify which one is visually [in front](/topic/box-model/#depth)!
@@ -468,11 +510,15 @@ Finally, just like flex—you can position individual *grid items* within their 
 	Same as in flex!
 <!-- .right -->
 
-<figure
-	@caption="You can mix and match these `justify`/`align` values, of course!"
-	@source="grid-justify-align-self/preview/?active=style.css"
-	style="--lines: 17"
-	>
+<figure style="--lines: 17">
+
+***[Justify-Align-Self Example](justify-align-self/style.css)***
+
+<figcaption>
+
+You can mix and match these `justify`/`align` values, of course!
+
+</figcaption>
 </figure>
 
 > The grid system is an aid, not a guarantee.
