@@ -1,0 +1,12 @@
+body {
+	font-family: sans-serif;
+	padding: 1rem;
+}
+
+ol { background-color: gold; }
+li {
+	background-color: tomato;
+	border-block-end: 0.1rem solid firebrick;
+	border-inline-end: 0.1rem solid firebrick;
+	padding: 0.5rem;
+}

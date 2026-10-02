@@ -1,0 +1,11 @@
+ol {
+	display: flex;
+	flex-direction: column; /* Vertical. */
+}
+
+ol:nth-child(1) { align-items: stretch; } /* Default. */
+ol:nth-child(2) { align-items: start; }
+ol:nth-child(3) { align-items: center; }
+ol:nth-child(4) { align-items: end; }
+
+/* `align-items: baseline;` wouldn’t do anything, here! */

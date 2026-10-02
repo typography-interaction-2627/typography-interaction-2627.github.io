@@ -1,0 +1,16 @@
+ol { display: grid; }
+
+ol:first-child {
+	/* Fill as many `6rem` columns as possible. */
+	grid-template-columns: repeat(auto-fill, 6rem);
+}
+
+ol:nth-child(2) {
+	/* Add flexible `1fr` columns when larger than `6rem`. */
+	grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
+}
+
+ol:last-child {
+	/* Same, but always fit them to the row! */
+	grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+}

@@ -1,0 +1,12 @@
+ol {
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+@media (width > 400px) {
+	ol { grid-template-columns: 2fr 1fr; }
+}
+
+@media (width > 550px) {
+	ol { grid-template-columns: 1fr 1fr 1fr; }
+}

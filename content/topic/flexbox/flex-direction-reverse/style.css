@@ -1,0 +1,8 @@
+ol {
+	display: flex;
+	min-block-size: 9rem;
+}
+
+ol:first-child { flex-direction: row-reverse; }
+
+ol:last-child { flex-direction: column-reverse; }

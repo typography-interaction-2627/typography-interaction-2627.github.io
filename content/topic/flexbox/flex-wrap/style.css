@@ -1,0 +1,15 @@
+ol {
+	display: flex;
+	flex-wrap: nowrap; /* Default. */
+	min-block-size: 9rem;
+}
+
+ol:not(:first-child) { flex-wrap: wrap; }
+
+ol:nth-child(3),
+ol:nth-child(4) {
+	flex-direction: column;
+}
+
+/* Force the wrap. */
+ol:nth-child(4) { max-block-size: 9rem; }

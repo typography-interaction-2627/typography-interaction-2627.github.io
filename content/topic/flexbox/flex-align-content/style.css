@@ -1,0 +1,17 @@
+ol {
+	block-size: 9rem;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+li { inline-size: 9rem; } /* So they wrap. */
+
+ol:nth-child(1) { align-content: stretch; } /* Default. */
+ol:nth-child(2) { align-content: start; }
+ol:nth-child(3) { align-content: center; }
+ol:nth-child(4) { align-content: end; }
+ol:nth-child(5) { align-content: space-between; }
+ol:nth-child(6) { align-content: space-around; }
+ol:nth-child(7) { align-content: space-evenly; }
+
+ol:nth-child(5) { background: orange } /* Just for easier counting. */

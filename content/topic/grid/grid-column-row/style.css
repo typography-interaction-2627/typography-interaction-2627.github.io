@@ -1,0 +1,18 @@
+ol {
+	display: grid;
+	grid-template-columns: 2fr 1fr; /* “Unnamed” tracks. */
+	grid-template-rows: 6rem 60vh 6rem;
+}
+
+li:first-child {
+	background-color: crimson;
+	grid-column: 1 / span 2; /* When it starts / when it ends. */
+}
+
+li:nth-child(2) { background-color: hotpink; }
+
+li:nth-child(3) {
+	background-color: lightsalmon;
+	grid-column: 2;
+	grid-row: 2 / 4; /* Instead of span. */
+}

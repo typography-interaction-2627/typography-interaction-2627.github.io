@@ -1,0 +1,23 @@
+ol {
+	block-size: 9rem;
+	display: flex;
+}
+
+li { flex-grow: 1; }
+
+li:nth-child(1) { align-self: stretch; } /* Default. */
+
+li:nth-child(2) {
+	background-color: lightsalmon;
+	align-self: start;
+}
+
+li:nth-child(3) {
+	background-color: crimson;
+	align-self: center;
+}
+
+li:nth-child(4) {
+	background-color: hotpink;
+	align-self: end;
+}

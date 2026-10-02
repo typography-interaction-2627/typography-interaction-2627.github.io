@@ -1,0 +1,12 @@
+ol {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+}
+
+ol:first-child { align-items: stretch; } /* Default. */
+
+ol:nth-child(2) { align-items: start; }
+
+ol:nth-child(3) { align-items: center; }
+
+ol:last-child { align-items: end; }

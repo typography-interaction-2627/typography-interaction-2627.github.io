@@ -1,0 +1,11 @@
+ol {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-auto-flow: dense;
+}
+
+li:nth-child(2),
+li:nth-child(6) {
+	grid-column: span 2;
+	grid-row: span 2;
+}

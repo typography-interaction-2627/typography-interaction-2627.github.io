@@ -1,0 +1,9 @@
+ol {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+}
+
+li:first-child { font-size: 200% }
+
+ol:first-child { align-items: baseline; } /* Same as `first baseline`. */
+ol:last-child { align-items: last baseline; }

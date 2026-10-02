@@ -1,0 +1,25 @@
+ol {
+	display: grid;
+	grid-auto-rows: 12rem;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+li:first-child {
+	justify-self: stretch; /* Defaults. */
+	align-self: stretch;
+}
+
+li:nth-child(2) {
+	justify-self: start;
+	align-self: start;
+}
+
+li:nth-child(3) {
+	justify-self: center;
+	align-self: center;
+}
+
+li:nth-child(4) {
+	justify-self: end;
+	align-self: end;
+}

@@ -1,0 +1,10 @@
+ol {
+	block-size: 9rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+li:nth-child(1) {
+	background-color: lightsalmon;
+	flex-basis: 50%;
+}

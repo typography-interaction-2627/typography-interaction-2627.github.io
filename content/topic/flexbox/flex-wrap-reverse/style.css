@@ -1,0 +1,14 @@
+ol {
+	display: flex;
+	flex-wrap: wrap-reverse;
+	min-block-size: 9rem;
+}
+
+ol:nth-child(2) { flex-direction: row-reverse; }
+
+ol:nth-child(3) { flex-direction: column; }
+
+ol:nth-child(4) {
+	flex-direction: column-reverse;
+	max-block-size: 9rem; /* Force the wrap. */
+}

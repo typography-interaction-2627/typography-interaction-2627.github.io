@@ -1,0 +1,16 @@
+ol {
+	block-size: 9rem;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+ol:nth-child(1) { gap: 1rem; }
+ol:nth-child(2) { row-gap: 1rem; }
+ol:nth-child(3) { column-gap: 1rem; }
+ol:nth-child(4) { gap: 1rem 1rem; } /* Shorthand. */
+
+ol:nth-child(5) {
+	justify-content: space-between;
+	align-content: space-between;
+	gap: 1rem; /* No effect, here! */
+}

@@ -1,0 +1,11 @@
+ol {
+	block-size: 4rem;
+	display: flex;
+}
+
+ol:nth-child(1) { justify-content: start; } /* Default. */
+ol:nth-child(2) { justify-content: center; }
+ol:nth-child(3) { justify-content: end; }
+ol:nth-child(4) { justify-content: space-between; }
+ol:nth-child(5) { justify-content: space-around; }
+ol:nth-child(6) { justify-content: space-evenly; }

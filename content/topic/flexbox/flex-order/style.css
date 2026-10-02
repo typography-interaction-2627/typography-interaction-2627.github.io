@@ -1,0 +1,21 @@
+ol {
+	block-size: 9rem;
+	display: flex;
+}
+
+li { order: 0; } /* Default, will use the DOM order. */
+
+li:nth-child(1) {
+	background-color: crimson;
+	order: 1;
+}
+
+li:nth-child(2) {
+	background-color: hotpink;
+	order: 2;
+}
+
+li:nth-child(5) {
+	background-color: lightsalmon;
+	order: -1; /* Negative numbers move stuff to the start! */
+}

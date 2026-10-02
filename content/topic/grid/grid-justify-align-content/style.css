@@ -1,0 +1,8 @@
+ol {
+	align-content: center; /* Vertically. */
+	block-size: 85vh; /* So the alignment has an effect. */
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: 8rem 4rem; /* Force a wrap. */
+	justify-content: space-evenly; /* Horizontally. */
+}

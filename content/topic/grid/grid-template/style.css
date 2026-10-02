@@ -1,0 +1,15 @@
+ol { display: grid; }
+
+ol:first-child { grid-template-columns: 2fr 1fr; }
+
+ol:nth-child(2),
+ol:nth-child(3) {
+	grid-template-rows: 2fr 1fr;
+}
+
+ol:nth-child(3) { grid-auto-flow: column; }
+
+ol:last-child {
+	grid-template-columns: 2fr 1fr;
+	grid-template-rows: 2fr 1fr;
+}

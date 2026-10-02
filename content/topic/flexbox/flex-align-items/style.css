@@ -1,0 +1,12 @@
+ol {
+	block-size: 9rem;
+	display: flex;
+}
+
+ol:nth-child(1) { align-items: stretch; } /* Default. */
+ol:nth-child(2) { align-items: start; }
+ol:nth-child(3) { align-items: center; }
+ol:nth-child(4) { align-items: end; }
+ol:nth-child(5) { align-items: baseline; }
+
+ol:nth-child(5) li:nth-child(1) { font-size: 200%; }

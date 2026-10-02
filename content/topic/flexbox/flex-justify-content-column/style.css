@@ -1,0 +1,17 @@
+body {
+	block-size: 100vh; /* Force a height. */
+	display: flex; /* Puts the `ol` in a row! */
+	column-gap: 1rem; /* Will talk about this, below. */
+}
+
+ol {
+	display: flex;
+	flex-direction: column; /* Vertical! */
+}
+
+ol:nth-child(1) { justify-content: start; } /* Default. */
+ol:nth-child(2) { justify-content: center; }
+ol:nth-child(3) { justify-content: end; }
+ol:nth-child(4) { justify-content: space-between; }
+ol:nth-child(5) { justify-content: space-around; }
+ol:nth-child(6) { justify-content: space-evenly; }
