@@ -382,7 +382,7 @@ You can also use the `repeat` function without specifying an exact number of col
 
 <figcaption>
 
-Drag the divider over to see the difference in `auto-fill` / `auto-fit` behaviors.
+Drag the divider over to see the difference in `auto-fill`/`auto-fit` behaviors!
 
 </figcaption>
 </figure>
@@ -497,11 +497,11 @@ Note that just like `order` in flex, this arrangement is only visual! Keep your 
 </figcaption>
 </figure>
 
-Keep in mind that with both `grid-area` and `grid-column` / `grid-row`, you are able to tell multiple *grid items* to land in the same *cell*—there isn’t any kind of fancy/automatic collision-prevention. If this <em>is</em> what you want, you can use `z-index` to specify which one is visually [in front](/topic/box-model/#depth)!
+Keep in mind that with both `grid-area` and `grid-column`/`grid-row`, you are able to tell multiple *grid items* to land in the same *cell*—there isn’t any kind of fancy/automatic collision-prevention. If this *is what you want, you can use `z-index` to specify which one is visually [in front](/topic/box-model/#depth)!
 
 ### `justify-self` / `align-self`
 
-Finally, just like flex—you can position individual *grid items* within their *tracks* using `justify-self` and `align-self`. The syntax is the same as [align in flex](/topic/flexbox/#align-self), again—but as with `justify-items` / `align-items` above, you don’t have to flip axes:
+Finally, just like flex—you can position individual *grid items* within their *tracks* using `justify-self` and `align-self`. The syntax is the same as [align in flex](/topic/flexbox/#align-self), again—but as with `justify-items`/`align-items` above, you don’t have to flip axes:
 <!-- .balance -->
 
 - [<cite>`justify-self` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-self)

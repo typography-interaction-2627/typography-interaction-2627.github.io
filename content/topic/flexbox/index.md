@@ -351,7 +351,7 @@ It takes a *unitless* proportional value, akin to fractions or a factor/multipli
 
 <figure style="--lines: 25">
 
-***[`flex-grow`/`flex-shrink` Example](grow-shrink/style.css)***
+***[`flex-grow` / `flex-shrink` Example](grow-shrink/style.css)***
 
 </figure>
 
@@ -376,7 +376,7 @@ This defaults to `auto`, which falls back to any specified `inline-size` or `blo
 
 <figcaption>
 
-You are [usually fine](https://stackoverflow.com/a/34355447) just specifying `inline-size` / `block-size`.
+You are [usually fine](https://stackoverflow.com/a/34355447) just specifying `inline-size`/`block-size`.
 
 </figcaption>
 </figure>

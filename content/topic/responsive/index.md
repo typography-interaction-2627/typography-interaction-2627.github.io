@@ -621,7 +621,7 @@ You’ll see this differently depending on whether your system is in light or da
 </figcaption>
 </figure>
 
-### `prefers-contrast`&#x202F;/&thinsp;`prefers-reduced-motion`
+### `prefers-contrast` / `prefers-reduced-motion`
 
 <div>
 

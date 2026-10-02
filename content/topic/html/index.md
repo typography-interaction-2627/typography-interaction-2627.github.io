@@ -276,7 +276,7 @@ These wrap around bits of text (within [headings](#headings) or `<p>`) for seman
 
 <dt id="list">
 
-Lists: `ol` / `<ul>`
+Lists: `ol`/`<ul>`
 
 </dt>
 <dd>
@@ -399,7 +399,7 @@ Same thing for an `<iframe>`, which is [a little window](https://developer.mozil
 
 <dt id="dimensions">
 
-Dimensions: `width` / `height`
+Dimensions: `width`/`height`
 
 </dt>
 <dd>

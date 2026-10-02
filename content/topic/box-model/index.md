@@ -199,7 +199,7 @@ block-size: 20rem;
 inline-size: 20rem;
 ```
 
-<sub>This `start` / `end` terminology will come up later with `flexbox` and `grid`, so it is a good habit/mindset to get into!</sub>
+<sub>This `start`/`end` terminology will come up later with `flexbox` and `grid`, so it is a good habit/mindset to get into!</sub>
 
 This allows your design/styles to behave in a *logically* (if not *physically*) consistent way across languages with varied [writing modes](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode) and different [text directions](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir). You can write styles that work even when your site is translated! (And the two-direction shorthand is nice, here.)
 <!-- .before -->
@@ -469,7 +469,7 @@ Extending the idea of systematic/relationship-based dimensions, often you will w
 
 </div>
 
-### Constrained by `min-`/`max-`
+### Constrained by `min-` / `max-`
 
 <div class="balance start verso">
 
