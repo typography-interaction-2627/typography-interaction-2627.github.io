@@ -371,7 +371,7 @@ export default (config) => {
 				figure.querySelectorAll('a[href^="https://youtu.be/"], a[href^="https://vimeo.com/"]').forEach((link) => {
 					const { hostname, pathname } = new URL(link.getAttribute('href'))
 					const src = hostname === 'youtu.be'
-						? `https://www.youtube.com/embed${pathname}`
+						? `https://www.youtube.com/embed${pathname}?rel=0`
 						: `https://player.vimeo.com/video${pathname}`
 
 					id = link.getAttribute('href')

@@ -43,7 +43,7 @@
 		</template>
 		<template webc:else webc:nokeep>
 			<div>
-				<iframe :src="`https://www.youtube.com/embed/${video}`"></iframe>
+				<iframe :src="`https://www.youtube.com/embed/${video}?rel=0`"></iframe>
 			</div>
 			<figcaption>
 				<p>Watch this recording <a :href="`https://www.youtube.com/watch?v=${video}`">on YouTube</a>! <a :href="`https://www.youtube.com/watch?v=${video}`"><cite>↗</cite></a></p>
