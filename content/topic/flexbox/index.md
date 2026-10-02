@@ -25,14 +25,9 @@ const draft = true
 
 And let us tell you—being a web designer was [a *whole lot harder*](http://meyerweb.com/eric/thoughts/2009/02/17/wanted-layout-system/) before flex came on the front-end scene. (Hence the “Finally.”) Notice, for instance, that we haven’t talked about any *vertical* centering at all yet—you don’t want to know! And you don’t have to worry about it. Flex encapsulates a lot of practical, helpful design paradigms in its system.
 
-<blockquote
-	@attribution="Elika J. Etemad (Fantasai), 2007"
-	@citation="https://lists.w3.org/Archives/Public/www-style/2007Feb/0137.html"
-	>
-
-I was told that the “flexbox” model would solve the problems, but there hasn't been any progress on that front these past few years…
-
-</blockquote>
+> I was told that the “flexbox” model would solve the problems, but there hasn't been any progress on that front these past few years…
+>
+> [<cite>Elika J. Etemad (Fantasai), 2007</cite>](https://lists.w3.org/Archives/Public/www-style/2007Feb/0137.html)
 
 ## Main and Cross Axes
 
@@ -282,14 +277,9 @@ Note that the `justify`, `align`, and `gap` properties are also shared (in name 
 
 </aside>
 
-<blockquote
-	@attribution="Fantasai again, 2015"
-	@citation="https://fantasai.inkedblade.net/style/events/flexbox-workshop"
-	>
-
-If we did a Flexbox spec workshop, where we went over the whole spec in excruciating detail and sketched illustrations, who would come?
-
-</blockquote>
+>If we did a Flexbox spec workshop, where we went over the whole spec in excruciating detail and sketched illustrations, who would come?
+>
+> [<cite>Fantasai again, 2015</cite>](https://fantasai.inkedblade.net/style/events/flexbox-workshop)
 
 ## Item (Child) Properties
 
@@ -370,15 +360,10 @@ This is a lot of stuff! Flex can sometimes be tough to wrap one’s head around,
 
 **Much of what you look at on the web is laid out in flexbox (and its followup which we keep mentioning, [CSS Grid](/topic/grid/)).**
 
-<blockquote
-	@attribution="Fantasai, 2017"
-	@citation="https://lists.w3.org/Archives/Public/www-style/2017Dec/0057.html"
-	>
-
-Flexbox is a new layout model for CSS.
-
-The contents of a flex container can be laid out in any direction, can be reordered, can be aligned and justified within their container, and can “flex”their sizes and positions to respond to the available space.
-
-We expect this model to be particularly useful for UI layouts.
-
-</blockquote>
+> Flexbox is a new layout model for CSS.
+>
+> The contents of a flex container can be laid out in any direction, can be reordered, can be aligned and justified within their container, and can “flex”their sizes and positions to respond to the available space.
+>
+> We expect this model to be particularly useful for UI layouts.
+>
+> [<cite>Fantasai, finally, 2017</cite>](https://lists.w3.org/Archives/Public/www-style/2017Dec/0057.html)
