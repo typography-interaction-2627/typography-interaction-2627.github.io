@@ -33,16 +33,14 @@ const draft = true
 	Like the Froggy game, but for grid.
 <!-- .right .rows--6 -->
 
-We had some of this two-dimensionality with [`flex-wrap`](/topic/flexbox/#flex-wrap), but grid offers us *much* more structure and control.
-<!-- .note -->
+<sub>We had some of this two-dimensionality with [`flex-wrap`](/topic/flexbox/#flex-wrap), but grid offers us *much* more structure and control.</sub>
 
 Grid is *a lot* like flex (this will be a running theme)—a [*display*](https://developer.mozilla.org/en-US/docs/Web/CSS/display) property applied on a parent/container element. This `display: grid;` tells its (immediate) children/*grid items* how they should be laid out. Also like flex, there is `display: inline-grid;` which behaves the same internally—but with the parent behaving as an inline element.
 <!-- .before--3 -->
 
 Grid truly supplants many of the previous box model layout approaches (like `float`, `margin`-centering, etc.) and, like flex, works much closer to how we *think* about layouts *as designers*. It can still get complicated, but makes most layouts (especially responsive ones) much, much easier to implement.
 
-There are many novel, powerful uses for *grid*—it is really the backbone of modern web layout. Let’s take a look.
-<!-- .body .intro -->
+**There are many novel, powerful uses for *grid*—it is really the backbone of modern web layout. Let’s take a look.**
 
 <blockquote
 	@attribution="Josef M<span class='dieresis'>ü</span>ller-Brockmann, 1961"
@@ -57,8 +55,7 @@ So human activity itself has, since the earliest times, been distinguished by t
 
 ## Grid Terminology
 
-Grid introduces us to some new vocabulary:
-<!-- .intro -->
+**Grid introduces us to some new vocabulary:**
 
 Line
 
@@ -89,8 +86,7 @@ Area
 
 <div class="sticky">
 
-Grid also introduces some specific new [length units](/topic/box-model/#and-their-units):
-<!-- .intro -->
+**Grid also introduces some specific new [length units](/topic/box-model/#and-their-units):**
 
 </div>
 
@@ -141,7 +137,7 @@ Grid also introduces some specific new [length units](/topic/box-model/#and-thei
 	}
 	```
 
-	You can use these last three values in grid properties <em>(</em>`min-`, `max-`, and `fit-content`<em>)</em>, as we’ll see below—but they are also usable anywhere [length units](/topic/box-model/#and-their-units) work—like `inline-size` or `block-size`. <!-- .before .note -->
+	<sub>You can use these last three values in grid properties <em>(</em>`min-`, `max-`, and `fit-content`<em>)</em>, as we’ll see below—but they are also usable anywhere [length units](/topic/box-model/#and-their-units) work—like `inline-size` or `block-size`.</sub>
 
 </div>
 
@@ -149,8 +145,7 @@ Grid also introduces some specific new [length units](/topic/box-model/#and-thei
 
 <div class="sticky">
 
-…and also [functions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Functions) to use the units:
-<!-- .intro -->
+**…and also [functions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Functions) to use the units:**
 
 </div>
 
@@ -197,8 +192,7 @@ As a general rule: whenever you are writing the same exact code over and over, t
 
 ## Container (Parent) Properties
 
-Again, grid is a lot like flex—primarily properties that are applied on a container/parent element.
-<!-- .intro -->
+**Again, grid is a lot like flex—primarily properties that are applied on a container/parent element.**
 
 ### `grid-template-columns` / `grid-template-rows` <!-- .all -->
 
@@ -328,11 +322,9 @@ If the total size of your grid is less than the container (because of your *expl
 
 Grid also has [shorthand properties](https://developer.mozilla.org/en-US/docs/Web/CSS/grid) for many of these, like just `grid`, `grid-template`, `place-items`, and `place-content`. However just like everything else, grid is complicated enough as it is! The shorthands really obfuscate the behavior, and aren’t worth the slightly tighter syntax.
 
-Okay, so far this is mostly like flex! To the point where you can often use them interchangeably for some layouts. *You get it.*
-<!-- .after--0 .before--3 .intro -->
+**Okay, so far this is mostly like flex! To the point where you can often use them interchangeably for some layouts. *You get it.***
 
-But now let’s look at where grid offers more *specific* and *powerful* control.
-<!-- .intro -->
+**But now let’s look at where grid offers more *specific* and *powerful* control.**
 
 ### Using `repeat()`
 
@@ -343,8 +335,7 @@ Grid’s `repeat` function is very commonly used to make even-column grids. And 
 	Remember, D.R.Y!
 <!-- .right -->
 
-The `()` indicates this is a [*function*](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_values_and_units/CSS_value_functions) (like our friend `calc()`&#x202F;) that you would pass *arguments*—a common [software paradigm](https://en.wikipedia.org/wiki/Function_(computer_programming)).
-<!-- .note -->
+<sub>The `()` indicates this is a [*function*](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_values_and_units/CSS_value_functions) (like our friend `calc()`) that you would pass *arguments*—a common [software paradigm](https://en.wikipedia.org/wiki/Function_(computer_programming)).</sub>
 
 <figure
 	@caption="Notice that the *items* always stick to the grid structure—independent of their content—unlike our previous `flex-wrap` pseudo-grids."
@@ -353,8 +344,7 @@ The `()` indicates this is a [*function*](https://developer.mozilla.org/en-US/do
 	>
 </figure>
 
-Flex is [sometimes referred](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Relationship_of_Grid_Layout) to in this way as *content-out,* while grid is a *layout-in* system.
-<!-- .intro -->
+**Flex is [sometimes referred](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Relationship_of_Grid_Layout) to in this way as *content-out,* while grid is a *layout-in* system.**
 
 ### `auto-fill` / `auto-fit`
 
@@ -384,8 +374,7 @@ Grid is really useful for scaffolding out layouts, and sometimes it is helpful t
 
 This is done with a bit of [ASCII art](https://en.wikipedia.org/wiki/ASCII_art) to reflect the layout! Repeating the name of a *grid area* makes the content span those cells. The syntax itself then provides an ergonomic visualization of the grid structure (for us humans):
 
-You can also [name grid lines](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows#syntax) with `[linename] length` syntax, but you don’t see this done as much.
-<!-- .note -->
+<sub>You can also [name grid lines](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows#syntax) with `[linename] length` syntax, but you don’t see this done as much.</sub>
 
 </div>
 
@@ -426,8 +415,7 @@ If you’ve defined `grid-template-areas` (as [above](#grid-template-areas)), yo
 	>
 </figure>
 
-This is the [kind of common layout](https://en.wikipedia.org/wiki/Holy_grail_(web_design)) that was *unnecessarily* hard before grid! It’s so much easier now.
-<!-- .intro -->
+**This is the [kind of common layout](https://en.wikipedia.org/wiki/Holy_grail_(web_design)) that was *unnecessarily* hard before grid! It’s so much easier now.**
 
 ### `grid-column` / `grid-row`
 

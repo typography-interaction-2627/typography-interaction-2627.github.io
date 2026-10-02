@@ -38,11 +38,9 @@ I was told that the “flexbox” model would solve the problems, but there hasn
 
 Flexbox is a *one-dimensional* layout system—meaning it is (*…usually*) focused on arranging items either horizontally in rows, or vertically in columns.
 
-These are called the *axes*.
-<!-- .after--0 .intro -->
+**These are called the *axes*.**
 
-The one running in the direction of your flex items is your *main axis*; perpendicular to this is your *cross axis*:
-<!-- .intro -->
+**The one running in the direction of your flex items is your *main axis*; perpendicular to this is your *cross axis*:**
 
 <div class="before--2 verso">
 
@@ -75,8 +73,7 @@ The one running in the direction of your flex items is your *main axis*; perpend
 Flex also lets us position elements along/within the axes, in both directions—in relation to the `start` or the `end` of the direction.
 <!-- .balance -->
 
-For the *main* axis, you `justify`&#x202F;; for the *cross* axis, you `align`&#x202F;:
-<!-- .intro -->
+**For the *main* axis, you `justify`; for the *cross* axis, you `align`:**
 
 <div class="before--2 verso">
 
@@ -89,8 +86,7 @@ For the *main* axis, you `justify`&#x202F;; for the *cross* axis, you `align`&#x
 }
 ```
 
-For rows (the default): `justify` moves items inline (left/right); `align` moves block (top/bottom).
-<!-- .note -->
+<sub>For rows (the default): `justify` moves items inline (left/right); `align` moves block (top/bottom).</sub>
 
 </div>
 
@@ -105,8 +101,7 @@ For rows (the default): `justify` moves items inline (left/right); `align` moves
 }
 ```
 
-For columns (rotated): `justify` moves items block (top/bottom); `align` moves inline (left/right).
-<!-- .note -->
+<sub>For columns (rotated): `justify` moves items block (top/bottom); `align` moves inline (left/right).</sub>
 
 </div>
 
@@ -122,8 +117,7 @@ But again, we would avoid them—the system can be hard enough to understand. Th
 Unlike most (…all?) of the CSS we’ve been introduced to, *flex* is applied on a *parent* element—but actually adjusts the layout of the *children*. An element with `display: flex;` is really telling you what its kids are going to be doing.
 <!-- .balance -->
 
-There is also `display: inline-flex;` which behaves the same, but the parent behaves as an `inline` element while its children are flexing. You don’t see it used very much.
-<!-- .note -->
+<sub>There is also `display: inline-flex;` which behaves the same, but the parent behaves as an `inline` element while its children are flexing. You don’t see it used very much.</sub>
 
 <aside>
 
@@ -135,7 +129,7 @@ Figma’s *[auto layout](https://help.figma.com/hc/en-us/articles/360040451373-E
 
 ### `flex-direction`
 
-After specifying an element as *flex*, we can set its main axis with the `flex-direction` property. By default (you don’t have to write it), this behaves as `flex-direction: row;`—so you’ll generally only be adding it when you want something going vertical, with `flex-direction: column;`&#x202F;:
+After specifying an element as *flex*, we can set its main axis with the `flex-direction` property. By default (you don’t have to write it), this behaves as `flex-direction: row;`—so you’ll generally only be adding it when you want something going vertical, with `flex-direction: column;`:
 
 [<cite>`flex-direction` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction)
 	Always `row` by default.
@@ -210,7 +204,7 @@ But the `justify-content` property is where flexbox starts to allow novel layout
 	>
 </figure>
 
-When our *main axis* is vertical, with `flex-direction: column;`&#x202F;:
+When our *main axis* is vertical, with `flex-direction: column;`:
 
 <figure
 	@caption="These only works with the `block-size` to *justify* within—otherwise the container would cinch up to the content height, as usual."
@@ -258,8 +252,7 @@ When we have a flex element with `flex-wrap` set, we can also position the *line
 	>
 </figure>
 
-`align-content` can also be used with a vertical/`flex-direction: column;` axis, not shown here. This doesn’t often come up, as you have to specify/know a height to force a column wrap.
-<!-- .note -->
+<sub>`align-content` can also be used with a vertical/`flex-direction: column;` axis, not shown here. This doesn’t often come up, as you have to specify/know a height to force a column wrap.</sub>
 
 ### `gap` / `row-gap` / `column-gap`
 
@@ -304,7 +297,7 @@ Flexbox is *usually* applied on the parent/container. But once you’ve set `dis
 
 ### `order`
 
-Kind of like the `-reverse` suffix—you can individually apply the `order` property to a *flex item* (child). Items with the same/tied order (like everything with the default of `order: 0;`&#x202F;) will be displayed in their HTML/source order:
+Kind of like the `-reverse` suffix—you can individually apply the `order` property to a *flex item* (child). Items with the same/tied order (like everything with the default of `order: 0;`) will be displayed in their HTML/source order:
 <!-- .balance -->
 
 [<cite>`order` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/order)
@@ -336,7 +329,7 @@ It takes a *unitless* proportional value, akin to fractions or a factor/multipli
 	>
 </figure>
 
-And `flex-shrink` works the same way—defining what proportion an element should shrink when forced to by the flex layout. The most use you’ll see of this is `flex-shrink: 0;`&#x202F;, which tells all the *other* items to shrink instead!
+And `flex-shrink` works the same way—defining what proportion an element should shrink when forced to by the flex layout. The most use you’ll see of this is `flex-shrink: 0;`, which tells all the *other* items to shrink instead!
 <!-- .balance -->
 
 ### `flex-basis`
@@ -375,8 +368,7 @@ Finally, we have an individual override for an [`align-items`](#align-items) pro
 This is a lot of stuff! Flex can sometimes be tough to wrap one’s head around, but it is *so much better* than `float` and `inline-size` and `margin` shenanigans.
 <!-- .balance -->
 
-Much of what you look at on the web is laid out in flexbox (and its followup which we keep mentioning, [CSS Grid](/topic/grid/)).
-<!-- .intro -->
+**Much of what you look at on the web is laid out in flexbox (and its followup which we keep mentioning, [CSS Grid](/topic/grid/)).**
 
 <blockquote
 	@attribution="Fantasai, 2017"
