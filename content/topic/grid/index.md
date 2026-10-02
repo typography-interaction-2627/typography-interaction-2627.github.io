@@ -203,7 +203,7 @@ Setting `display: grid;` won’t do much until you also declare some columns or 
 
 <figure style="--lines: 19">
 
-***[Template Example](template/style.css)***
+***[`grid-template` Example](template/style.css)***
 
 <figcaption>
 
@@ -220,7 +220,7 @@ So for many uses, you will only need to specify your column structure—leaving 
 
 <figure style="--lines: 16">
 
-***[Template-Columns Example](template-columns/style.css)***
+***[`grid-template-columns` Example](template-columns/style.css)***
 
 <figcaption>
 
@@ -241,7 +241,7 @@ By default, these *implicit grid* tracks are sized `auto` (the largest content),
 
 <figure style="--lines: 17">
 
-***[Auto-Rows Example](auto-rows/style.css)***
+***[`grid-auto-rows` Example](auto-rows/style.css)***
 
 </figure>
 
@@ -260,7 +260,7 @@ Grid also shares the `gap`, `column-gap`, and `row-gap` [properties with flex](/
 
 <figure style="--lines: 19">
 
-***[Gap Example](gap/style.css)***
+***[`gap` Example](gap/style.css)***
 
 <figcaption>
 
@@ -281,7 +281,7 @@ The terminology here is always a bit confusing, but think of it this way—in gr
 
 <figure style="--lines: 22">
 
-***[Justify-Items Example](justify-items/style.css)***
+***[`justify-items` Example](justify-items/style.css)***
 
 </figure>
 
@@ -296,7 +296,7 @@ Same as [flex](/topic/flexbox/#align-items), again!
 
 <figure style="--lines: 22">
 
-***[Align-Items Example](align-items/style.css)***
+***[`align-items` Example](align-items/style.css)***
 
 <figcaption>
 
@@ -310,7 +310,7 @@ There are also `baseline` alignment values, to keep text on the same line across
 
 <figure style="--lines: 13">
 
-***[Align-Baseline Example](align-baseline/style.css)***
+***[`align-items: baseline` Example](align-baseline/style.css)***
 
 </figure>
 
@@ -326,7 +326,7 @@ If the total size of your grid is less than the container (because of your *expl
 
 <figure style="--lines: 12">
 
-***[Justify/Align-Content Example](justify-align-content/style.css)***
+***[`justify-content`/`align-content` Example](justify-align-content/style.css)***
 
 <figcaption>
 
@@ -356,7 +356,7 @@ Grid’s `repeat` function is very commonly used to make even-column grids. And 
 
 <figure style="--lines: 18">
 
-***[Template-Columns Repeat Example](template-columns-repeat/style.css)***
+***[`repeat()` Example](repeat/style.css)***
 
 <figcaption>
 
@@ -378,7 +378,7 @@ You can also use the `repeat` function without specifying an exact number of col
 
 <figure style="--lines: 20">
 
-***[Template-Columns-Repeat-Auto Example](template-columns-repeat-auto/style.css)***
+***[`auto-fill`/`auto-fit` Example](auto-fill-fit/style.css)***
 
 <figcaption>
 
@@ -436,7 +436,7 @@ If you’ve defined `grid-template-areas` (as [above](#grid-template-areas)), yo
 
 <figure style="--lines: 20">
 
-***[Area Example](area/style.css)***
+***[`grid-area` Example](area/style.css)***
 
 </figure>
 
@@ -457,7 +457,7 @@ These take two values, divided with a `/` (because CSS is inconsistent), which s
 
 <figure style="--lines: 22">
 
-***[Column-Row Example](column-row/style.css)***
+***[`grid-column`/`grid-row` Example](column-row/style.css)***
 
 <figcaption>
 
@@ -474,7 +474,7 @@ You can also leave off the *start line* if you just want to specify a `span`, re
 
 <figure style="--lines: 15">
 
-***[Column-Row-Span Example](column-row-span/style.css)***
+***[`grid-column`/`grid-row` `span` Example](column-row-span/style.css)***
 
 <figcaption>
 
@@ -488,7 +488,7 @@ And if you specify non-contiguous rows or columns, grid will dutifully create as
 
 <figure style="--lines: 24">
 
-***[Column-Row-Implicit Example](column-row-implicit/style.css)***
+***[`grid-column`/`grid-row` Implicit Example](column-row-implicit/style.css)***
 
 <figcaption>
 
@@ -512,7 +512,7 @@ Finally, just like flex—you can position individual *grid items* within their 
 
 <figure style="--lines: 17">
 
-***[Justify-Align-Self Example](justify-align-self/style.css)***
+***[`justify-self`/`align-self` Example](justify-align-self/style.css)***
 
 <figcaption>
 

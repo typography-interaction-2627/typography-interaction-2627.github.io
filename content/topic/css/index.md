@@ -828,7 +828,7 @@ Besides the basic examples above, [*color*](https://developer.mozilla.org/en-US/
 
 <figure style="--lines: 31">
 
-***[Color Example](color/style.css)***
+***[`color` Example](color/style.css)***
 
 <figcaption>
 
@@ -854,7 +854,7 @@ So most importantly for us, you’ll always be customizing your [typography](htt
 
 <figure style="--lines: 28">
 
-***[Font-Family Example](font-family/style.css)***
+***[`font-family` Example](font-family/style.css)***
 
 <figcaption>
 
@@ -879,7 +879,7 @@ Once you’ve got a `font-family` in, there are many additional properties to co
 
 <figure style="--lines: 39">
 
-***[Font Example](font/style.css)***
+***[`font` Example](font/style.css)***
 
 <figcaption>
 

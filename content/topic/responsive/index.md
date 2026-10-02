@@ -228,7 +228,7 @@ In their simplest form, we just change whatever properties/values when they need
 
 <figure style="--lines: 9">
 
-***[Width Example](width/style.css)***
+***[`width` Example](width/style.css)***
 
 <figcaption>
 
@@ -345,7 +345,7 @@ This example has the same *breakpoint* of `500px` as before, but now using `hei
 
 <figure class="recto" style="--lines: 22; --max: round(0.9 * var(--svh), 1rlh)">
 
-***[Height Example](height/style.css)***
+***[`height` Example](height/style.css)***
 
 <figcaption>
 
@@ -364,7 +364,7 @@ Often more useful than `width` alone!
 
 <figure style="--lines: 11">
 
-***[Orientation Example](orientation/style.css)***
+***[`orientation` Example](orientation/style.css)***
 
 <figcaption>
 
@@ -386,7 +386,7 @@ This can all get very complicated!
 
 <figure style="--lines: 13">
 
-***[“And” Example](and/style.css)***
+***[`and` Example](and/style.css)***
 
 <figcaption>
 
@@ -490,7 +490,7 @@ Select the smallest value.
 
 <figure style="--lines: 6">
 
-***[Min() Example](min/style.css)***
+***[`min()` Example](min/style.css)***
 
 <figcaption>
 
@@ -509,7 +509,7 @@ Or the largest.
 
 <figure style="--lines: 6">
 
-***[Max() Example](max/style.css)***
+***[`max()` Example](max/style.css)***
 
 <figcaption>
 
@@ -528,7 +528,7 @@ Or *within* a minimum/maximum.
 
 <figure style="--lines: 11">
 
-***[Clamp() Example](clamp/style.css)***
+***[`clamp()` Example](clamp/style.css)***
 
 <figcaption>
 
@@ -558,7 +558,7 @@ In all of our above examples, there is an implied *[media type](https://develope
 
 <figure style="--lines: 27">
 
-***[Print Example](print/style.css)***
+***[`print` Example](print/style.css)***
 
 <figcaption>
 
@@ -589,7 +589,7 @@ If you view this on your phone, the `aside` should be visible without interactio
 
 <figure style="--lines: 12">
 
-***[Hover Example](hover/style.css)***
+***[`hover` Example](hover/style.css)***
 
 <figcaption>
 
@@ -612,7 +612,7 @@ Sometimes this feels appropriate—especially in products/applications, like may
 
 <figure style="--lines: 22">
 
-***[Color-Scheme Example](color-scheme/style.css)***
+***[`prefers-color-scheme` Example](color-scheme/style.css)***
 
 <figcaption>
 

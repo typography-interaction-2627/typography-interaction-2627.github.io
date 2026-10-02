@@ -102,7 +102,7 @@ Next comes [`padding`](https://developer.mozilla.org/en-US/docs/Web/CSS/padding)
 
 <figure style="--lines: 15">
 
-***[Padding Example](padding/style.css)***
+***[`padding` Example](padding/style.css)***
 
 </figure>
 
@@ -224,7 +224,7 @@ Back to our box model, moving outwards, with [`border`](https://developer.mozill
 
 <figure style="--lines: 11">
 
-***[Border Example](border/style.css)***
+***[`border` Example](border/style.css)***
 
 <figcaption>
 
@@ -243,7 +243,7 @@ There are also various [`border-style`](https://developer.mozilla.org/en-US/docs
 
 <figure style="--lines: 19">
 
-***[Border-style Example](border-style/style.css)***
+***[`border-style` Example](border-style/style.css)***
 
 <figcaption>
 
@@ -262,7 +262,7 @@ It’s much more common these days to see the [`border-radius`](https://develope
 
 <figure style="--lines: 18">
 
-***[Border-radius Example](border-radius/style.css)***
+***[`border-radius` Example](border-radius/style.css)***
 
 </figure>
 
@@ -277,7 +277,7 @@ The last part of our box is [`margin`](https://developer.mozilla.org/en-US/docs/
 
 <figure style="--lines: 11">
 
-***[Margin Example](margin/style.css)***
+***[`margin` Example](margin/style.css)***
 
 <figcaption>
 
@@ -297,7 +297,7 @@ Margin has a couple tricks up its sleeve. First, it can have *negative* values�
 
 <figure style="--lines: 11">
 
-***[Negative Margin Example](margin-negative/style.css)***
+***[Negative `margin` Example](margin-negative/style.css)***
 
 <figcaption>
 
@@ -316,7 +316,7 @@ Also `margin` can [*collapse*](https://developer.mozilla.org/en-US/docs/Web/CSS/
 
 <figure style="--lines: 13">
 
-***[Margin Collapse Example](margin-collapse/style.css)***
+***[`margin` Collapse Example](margin-collapse/style.css)***
 
 <figcaption>
 
@@ -556,7 +556,7 @@ main {
 
 <figure style="--lines: 25">
 
-***[Variable Example](css-variable/setup.css)***
+***[CSS Variable Example](css-variable/setup.css)***
 
 <figcaption>
 
@@ -598,7 +598,7 @@ By default, every element is `static`—just meaning its normal, stacked positio
 
 <figure style="--lines: 13">
 
-***[Static Example](position-static/style.css)***
+***[`position: static` Example](position-static/style.css)***
 
 <figcaption>
 
@@ -617,7 +617,7 @@ Once you have set `position: relative;` you can use the logical `inset-block-sta
 
 <figure style="--lines: 13">
 
-***[Relative Example](position-relative/style.css)***
+***[`position: relative` Example](position-relative/style.css)***
 
 <figcaption>
 
@@ -641,7 +641,7 @@ Importantly, `position: absolute;` also *removes* the element from the normal do
 
 <figure style="--lines: 24">
 
-***[Absolute Example](position-absolute/style.css)***
+***[`position: absolute` Example](position-absolute/style.css)***
 
 <figcaption>
 
@@ -662,7 +662,7 @@ So `position: fixed;` brings the element *completely* out of the page’s normal
 
 <figure style="--lines: 13">
 
-***[Fixed Example](position-fixed/style.css)***
+***[`position: fixed` Example](position-fixed/style.css)***
 
 <figcaption>
 
@@ -680,7 +680,7 @@ The most recent addition to the *position* party, `position: sticky;` elements a
 
 <figure style="--lines: 13">
 
-***[Sticky Example](position-sticky/style.css)***
+***[`position: sticky` Example](position-sticky/style.css)***
 
 <figcaption>
 
@@ -703,7 +703,7 @@ By default, items that are lower in the HTML (coming *after* each other) are in 
 
 <figure style="--lines: 16">
 
-***[Z-index Example](z-index/style.css)***
+***[`z-index` Example](z-index/style.css)***
 
 <figcaption>
 
@@ -738,7 +738,7 @@ As we discussed, many HTML elements are [*block-level*](../html/index.md#block-e
 
 <figure style="--lines: 13">
 
-***[Display Block Example](display-block/style.css)***
+***[`display: block` Example](display-block/style.css)***
 
 <figcaption>
 
@@ -754,7 +754,7 @@ And then going the other way, you can force *block* elements to be [*inline*](..
 
 <figure style="--lines: 11">
 
-***[Display Inline Example](display-inline/style.css)***
+***[`display: inline` Example](display-inline/style.css)***
 
 <figcaption>
 
@@ -770,7 +770,7 @@ You can also combine the qualities of `block` and `inline` with `display: inline
 
 <figure style="--lines: 15">
 
-***[Display Inline-Block Example](display-inline-block/style.css)***
+***[`display: inline-block` Example](display-inline-block/style.css)***
 
 <figcaption>
 
@@ -789,7 +789,7 @@ This is a common way to hide/show (by setting another `display` property) elemen
 
 <figure style="--lines: 7">
 
-***[Display None Example](display-none/style.css)***
+***[`display: none` Example](display-none/style.css)***
 
 <figcaption>
 
@@ -812,7 +812,7 @@ Setting `visibility: hidden;` keeps the space an element had before, but makes i
 
 <figure style="--lines: 7">
 
-***[Visibility Example](visibility/style.css)***
+***[`visibility` Example](visibility/style.css)***
 
 </figure>
 
@@ -827,7 +827,7 @@ Another way to hide an element visually is to adjust `opacity`, which uses value
 
 <figure style="--lines: 7">
 
-***[Opacity Example](opacity/style.css)***
+***[`opacity` Example](opacity/style.css)***
 
 <figcaption>
 
@@ -863,7 +863,7 @@ Any text *siblings* will then flow around the element—like a *text wrap*—fil
 
 <figure style="--lines: 15">
 
-***[Float Example](float/style.css)***
+***[`float` Example](float/style.css)***
 
 </figure>
 
@@ -877,7 +877,7 @@ Applied on the following element, it will make it stay entirely below (clear of)
 
 <figure style="--lines: 17">
 
-***[Float/Clear Example](float-clear/style.css)***
+***[`float`/`clear` Example](float-clear/style.css)***
 
 <figcaption>
 
@@ -894,7 +894,7 @@ You can solve this broken look with a [*clearfix hack*](https://developer.mozill
 
 <figure style="--lines: 21">
 
-***[Float Clearfix Example](float-clearfix/style.css)***
+***[`float` Clearfix Example](float-clearfix/style.css)***
 
 <figcaption>
 

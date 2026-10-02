@@ -140,7 +140,7 @@ After specifying an element as *flex*, we can set its main axis with the `flex-
 
 <figure style="--lines: 15">
 
-***[Direction Example](direction/style.css)***
+***[`flex-direction` Example](direction/style.css)***
 
 <figcaption>
 
@@ -154,7 +154,7 @@ You can also combine these with a `-reverse` suffix, which visually reorders the
 
 <figure style="--lines: 12">
 
-***[Direction-Reverse Example](direction-reverse/style.css)***
+***[`flex-direction` `reverse` Example](direction-reverse/style.css)***
 
 </figure>
 
@@ -171,7 +171,7 @@ Since flexbox is *one-dimensional*, by default it will try to cram everything in
 
 <figure style="--lines: 22">
 
-***[Wrap Example](wrap/style.css)***
+***[`flex-wrap` Example](wrap/style.css)***
 
 <figcaption>
 
@@ -193,7 +193,7 @@ There is also a `-reverse` suffix when wrapping, which will sequence items from 
 
 <figure style="--lines: 22">
 
-***[Wrap-Reverse Example](wrap-reverse/style.css)***
+***[`flex-wrap` `reverse` Example](wrap-reverse/style.css)***
 
 <figcaption>
 
@@ -214,7 +214,7 @@ But the `justify-content` property is where flexbox starts to allow novel layout
 
 <figure style="--lines: 15">
 
-***[Justify-Content Example](justify-content/style.css)***
+***[`justify-content` Example](justify-content/style.css)***
 
 <figcaption>
 
@@ -227,7 +227,7 @@ When our *main axis* is vertical, with `flex-direction: column;`:
 
 <figure style="--lines: 21">
 
-***[Justify-Content-Column Example](justify-content-column/style.css)***
+***[`justify-content` `column` Example](justify-content-column/style.css)***
 
 <figcaption>
 
@@ -247,7 +247,7 @@ And then perpendicular to `justify` along the *main axis*, flexbox has the `alig
 
 <figure style="--lines: 25">
 
-***[Align-Items Example](align-items/style.css)***
+***[`align-items` Example](align-items/style.css)***
 
 </figure>
 
@@ -255,7 +255,7 @@ And for the vertical:
 
 <figure style="--lines: 22">
 
-***[Align-Items-Column Example](align-items-column/style.css)***
+***[`align-items` `column` Example](align-items-column/style.css)***
 
 </figure>
 
@@ -270,7 +270,7 @@ When we have a flex element with `flex-wrap` set, we can also position the *line
 
 <figure style="--lines: 21">
 
-***[Align-Content Example](align-content/style.css)***
+***[`align-content` Example](align-content/style.css)***
 
 <figcaption>
 
@@ -296,7 +296,7 @@ Flex added support for intuitive [`gap` properties](https://developer.mozilla.or
 
 <figure style="--lines: 25">
 
-***[Gap Example](gap/style.css)***
+***[`gap` Example](gap/style.css)***
 
 <figcaption>
 
@@ -332,7 +332,7 @@ Kind of like the `-reverse` suffix—you can individually apply the `order` prop
 
 <figure style="--lines: 25">
 
-***[Order Example](order/style.css)***
+***[`order` Example](order/style.css)***
 
 </figure>
 
@@ -351,7 +351,7 @@ It takes a *unitless* proportional value, akin to fractions or a factor/multipli
 
 <figure style="--lines: 25">
 
-***[Grow-Shrink Example](grow-shrink/style.css)***
+***[`flex-grow`/`flex-shrink` Example](grow-shrink/style.css)***
 
 </figure>
 
@@ -372,7 +372,7 @@ This defaults to `auto`, which falls back to any specified `inline-size` or `blo
 
 <figure style="--lines: 14">
 
-***[Basis Example](basis/style.css)***
+***[`flex-basis` Example](basis/style.css)***
 
 <figcaption>
 
@@ -391,7 +391,7 @@ Finally, we have an individual override for an [`align-items`](#align-items) pro
 
 <figure style="--lines: 25">
 
-***[Align-Self Example](align-self/style.css)***
+***[`align-self` Example](align-self/style.css)***
 
 </figure>
 
