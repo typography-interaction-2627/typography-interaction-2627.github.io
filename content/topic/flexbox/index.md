@@ -37,7 +37,7 @@ Flexbox is a *one-dimensional* layout system—meaning it is (*…&NoBreak;usual
 
 **The one running in the direction of your flex items is your *main axis*; perpendicular to this is your *cross axis*:**
 
-<div class="before--2 verso">
+<div class="before verso">
 
 <figure>
 <img src="axes-row.svg">
@@ -52,7 +52,7 @@ Flexbox is a *one-dimensional* layout system—meaning it is (*…&NoBreak;usual
 
 </div>
 
-<div class="before--2 recto">
+<div class="before recto">
 
 <figure>
 <img src="axes-column.svg">
@@ -74,7 +74,7 @@ Flex also lets us position elements along/within the axes, in both directions—
 
 **For the *main* axis, you `justify`; for the *cross* axis, you `align`:**
 
-<div class="before--2 verso">
+<div class="before verso">
 
 <figure>
 <img src="justify-align-row.svg">
@@ -91,7 +91,7 @@ Flex also lets us position elements along/within the axes, in both directions—
 
 </div>
 
-<div class="before--2 recto">
+<div class="before recto">
 
 <figure>
 <img src="justify-align-column.svg">
@@ -185,7 +185,7 @@ Without the height restriction, the last one would just grow taller, by default.
 > <sub>We’ll talk about `grid` shortly!</sub>
 
 There is also a `-reverse` suffix when wrapping, which will sequence items from `end` to `start`:
-<!-- .balance .before--3 -->
+<!-- .balance .before -->
 
 <figure style="--lines: 22">
 

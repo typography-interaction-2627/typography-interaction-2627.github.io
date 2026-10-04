@@ -36,7 +36,7 @@ const draft = true
 <sub>We had some of this two-dimensionality with [`flex-wrap`](../flexbox/index.md#flex-wrap), but grid offers us *much* more structure and control.</sub>
 
 Grid is *a lot* like flex (this will be a running theme)—a [*display*](https://developer.mozilla.org/en-US/docs/Web/CSS/display) property applied on a parent/container element. This `display: grid;` tells its (immediate) children/*grid items* how they should be laid out. Also like flex, there is `display: inline-grid;` which behaves the same internally—but with the parent behaving as an inline element.
-<!-- .before--3 -->
+<!-- .before -->
 
 Grid truly supplants many of the previous box model layout approaches (like `float`, `margin`-centering, etc.) and, like flex, works much closer to how we *think* about layouts *as designers*. It can still get complicated, but makes most layouts (especially responsive ones) much, much easier to implement.
 
@@ -187,7 +187,7 @@ Area
 
 **Again, grid is a lot like flex—primarily properties that are applied on a container/parent element.**
 
-### `grid-template-columns` / `grid-template-rows` <!-- .all -->
+### `grid-template-columns` / `grid-template-rows`
 
 Setting `display: grid;` won’t do much until you also declare some columns or rows. You can specify `grid-template-columns`, `grid-template-rows`, or both. These properties are followed by a *track list* of the size for each track:
 <!-- .balance -->
@@ -212,7 +212,7 @@ Again like flex, there is similar behavior on the horizontal/vertical *axes*—w
 <!-- .balance -->
 
 So for many uses, you will only need to specify your column structure—leaving the rows to create themselves, as needed. This is called an *implicit grid* (vs. an *explicit grid* that we set/define):
-<!-- .balance .before--2 -->
+<!-- .balance .before -->
 
 <figure style="--lines: 16">
 
@@ -391,7 +391,7 @@ Grid is really useful for scaffolding out layouts, and sometimes it is helpful t
 	These are grid’s real designer superpower.
 <!-- .right -->
 
-<div class="balance before--3 center verso">
+<div class="balance before center verso">
 
 This is done with a bit of [ASCII art](https://en.wikipedia.org/wiki/ASCII_art) to reflect the layout! Repeating the name of a *grid area* makes the content span those cells. The syntax itself then provides an ergonomic visualization of the grid structure (for us humans):
 
@@ -401,7 +401,7 @@ This is done with a bit of [ASCII art](https://en.wikipedia.org/wiki/ASCII_art) 
 
 <!-- TODO Update these to not be semantic names! -->
 
-<div class="before--3 recto start">
+<div class="before recto start">
 
 ```css
 section {
