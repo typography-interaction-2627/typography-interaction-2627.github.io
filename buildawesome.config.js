@@ -520,7 +520,8 @@ export default (config) => {
 
 	// Spans for “kerning.”
 	const span = (name, character) => `<span aria-hidden="true" class="${name}">${character}</span>`
-	const characterClasses = { '&': 'amp', ':': 'colon', '‘': 'lsquo', '’': 'rsquo', '“': 'ldquo', '”': 'rdquo' }
+	const characterClasses = { ',': 'comma', ':': 'colon', '‘': 'lsquo', '’': 'rsquo', '“': 'ldquo', '”': 'rdquo', '&': 'amp', '(': 'lparen', ')': 'rparen' }
+	const characterPattern = new RegExp(`[a-z\\d${Object.keys(characterClasses).join('')}]`, 'gi')
 
 	// Tags and numeric entities pass through; named entities reuse their own name as the class.
 	config.addFilter('letterSpans', (content) => String(content)
@@ -528,7 +529,7 @@ export default (config) => {
 			tag ?? numeric
 			?? (named ? span(named.slice(1, -1), named) : null)
 			?? (ampersand ? span('amp', '&amp;') : null)
-			?? text.replace(/[a-z\d:‘’“”]/gi, (character) =>
+			?? text.replace(characterPattern, (character) =>
 				span(characterClasses[character] ?? (/\d/.test(character) ? `num${character}` : character), character),
 			),
 		),
