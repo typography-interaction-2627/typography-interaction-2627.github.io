@@ -122,13 +122,11 @@ Unlike most (…all?) of the CSS we’ve been introduced to, *flex* is applied o
 
 <sub>There is also `display: inline-flex;` which behaves the same, but the parent behaves as an `inline` element while its children are flexing. You don’t see it used very much.</sub>
 
-<aside>
-
-<mark>Design tools offer approximations</mark>
-
-Figma’s *[auto layout](https://help.figma.com/hc/en-us/articles/360040451373-Explore-auto-layout-properties)* system maps [almost directly](https://medium.com/timeless/figmas-flexbox-cdebb6968c29) to flexbox, in defining rows or columns and then distributing items—and is likewise applied on the parent/container.
-
-</aside>
+> [!NOTE]
+>
+> Figma’s *[auto layout](https://help.figma.com/hc/en-us/articles/360040451373-Explore-auto-layout-properties)* system maps [almost directly](https://medium.com/timeless/figmas-flexbox-cdebb6968c29) to flexbox, in defining rows or columns and then distributing items—and is likewise applied on the parent/container!
+>
+> <sub>Remember that our design tools are [approximations](https://help.figma.com/hc/en-us/articles/42031586813719-Use-auto-layout-with-CSS-Flexbox-in-mind) of our actual medium!</sub>
 
 ### `flex-direction`
 
@@ -180,13 +178,11 @@ Without the height restriction, the last one would just grow taller, by default.
 </figcaption>
 </figure>
 
-<aside>
-
-<mark>If you want to make a grid, use (CSS) grid</mark>
-
-You *can* use this to make grids, and it is sometimes sufficient. But but [the more recent CSS Grid](/topic/grid/) properties will give you more control! We’ll talk about `grid` shortly!
-
-</aside>
+> [!TIP]
+>
+> If you want to make a grid, use (CSS) grid! You [*can*](../responsive/index.md#mobile-first-example) use `flex-wrap` to make grids, and it is sometimes sufficient. But but [the more recent CSS Grid](/topic/grid/) properties will give you more control.
+>
+> <sub>We’ll talk about `grid` shortly!</sub>
 
 There is also a `-reverse` suffix when wrapping, which will sequence items from `end` to `start`:
 <!-- .balance .before--3 -->
@@ -305,13 +301,9 @@ Note the last one, `gap` are really *minimums* and only apply when there isn’t
 </figcaption>
 </figure>
 
-<aside>
-
-<mark>`flex` and `grid` share vocabulary</mark>
-
-Note that the `justify`, `align`, and `gap` properties are also shared (in name and behavior) with [CSS Grid](/topic/grid/), up next!
-
-</aside>
+> [!NOTE]
+>
+> Note that `flex` and `grid` share a lot of vocabulary! The `justify`, `align`, and `gap` properties are the same (in name and behavior) with [CSS Grid](/topic/grid/), up next!
 
 >If we did a Flexbox spec workshop, where we went over the whole spec in excruciating detail and sketched illustrations, who would come?
 >

@@ -179,13 +179,9 @@ Area
 
 </div>
 
-<aside>
-
-<mark>Hand-repeating code is brittle and boring</mark>
-
-As a general rule: whenever you are writing the same exact code over and over, there is almost certainly a shorter way. Refactor to avoid it; [Don’t repeat yourself](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)! Stay *DRY.*
-
-</aside>
+> As a general rule: whenever you are writing the same exact code over and over, there is almost certainly a shorter way!
+>
+> <sub>[Refactor](https://en.wikipedia.org/wiki/Code_refactoring) to avoid it; [Don’t repeat yourself](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)! Stay *DRY.*</sub>
 
 ## Container (Parent) Properties
 
