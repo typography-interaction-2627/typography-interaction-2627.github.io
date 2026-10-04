@@ -240,7 +240,6 @@ The `src` likewise can point to a local image file or an external URL! `alt` pr
 Containers
 
 </dt>
-
 <dd>
 
 ```html

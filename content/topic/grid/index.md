@@ -59,7 +59,6 @@ Grid truly supplants many of the previous box model layout approaches (like `flo
 Line
 
 </dt>
-
 <dd>
 
 The dividing lines that define the grid, vertical or horizontal. (Think *gutters*.)
@@ -71,7 +70,6 @@ The dividing lines that define the grid, vertical or horizontal. (Think *gutters
 Track
 
 </dt>
-
 <dd>
 
 The horizontal or vertical space between the lines. (Think *rows* and *columns*.)
@@ -83,7 +81,6 @@ The horizontal or vertical space between the lines. (Think *rows* and *columns*.
 Cell
 
 </dt>
-
 <dd>
 
 The intersection of a horizontal and vertical track. This is different from a *grid item*—the cell is the spot/placement, the item is the actual element—since as you’ll see, you can position *items* in an arbitrary *cell*.
@@ -95,7 +92,6 @@ The intersection of a horizontal and vertical track. This is different from a *g
 Area
 
 </dt>
-
 <dd>
 
 You can combine one or more adjacent grid cells into a rectangular *area.* Often you give these a subjective name, for convenience/ergonomics.
@@ -128,7 +124,6 @@ You can combine one or more adjacent grid cells into a rectangular *area.* Often
 `fr`
 
 </dt>
-
 <dd>
 
 This [new unit](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout#the_fr_unit) represents a *fraction* of the available space in the grid container—usually, `inline-size` (*width*). This is very similar to using whole numbers in `flex-basis`. It is very handy; you’ll use it a lot with grid:
@@ -147,7 +142,6 @@ This [new unit](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout
 `min-content`
 
 </dt>
-
 <dd>
 
 The [*intrinsic* minimum size](https://developer.mozilla.org/en-US/docs/Web/CSS/min-content) of an element. With text, this is the longest single word:
@@ -166,7 +160,6 @@ The [*intrinsic* minimum size](https://developer.mozilla.org/en-US/docs/Web/CSS/
 `max-content`
 
 </dt>
-
 <dd>
 Same for [the maximum](https://developer.mozilla.org/en-US/docs/Web/CSS/max-content). With text, this is the whole sentence/line:
 
@@ -184,7 +177,6 @@ Same for [the maximum](https://developer.mozilla.org/en-US/docs/Web/CSS/max-cont
 `fit-content`
 
 </dt>
-
 <dd>
 
 A [combo of the min/max](https://developer.mozilla.org/en-US/docs/Web/CSS/fit-content). Uses the available space—but never less than `min-content` *and* never more than `max-content`:
@@ -216,7 +208,6 @@ A [combo of the min/max](https://developer.mozilla.org/en-US/docs/Web/CSS/fit-co
 `minmax()`
 
 </dt>
-
 <dd>
 
 A function that [defines a range](https://developer.mozilla.org/en-US/docs/Web/CSS/minmax) for a *track*—setting a minimum and maximum length *together*. These are really useful for setting reasonable limits on responsive grid designs:
@@ -235,7 +226,6 @@ A function that [defines a range](https://developer.mozilla.org/en-US/docs/Web/C
 `repeat()`
 
 </dt>
-
 <dd>
 
 This function [repeats a *track* list](https://developer.mozilla.org/en-US/docs/Web/CSS/repeat), so you don’t have to write it over and over:
