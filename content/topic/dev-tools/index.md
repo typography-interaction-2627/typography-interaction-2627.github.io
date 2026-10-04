@@ -3,7 +3,7 @@ const week = 4
 const order = 2
 ```
 
-# DevTools&#x202F;/&thinsp;Web Inspector
+# DevTools / Web Inspector
 
 ## Browsers Are Our Imperfect Venue
 
@@ -29,7 +29,7 @@ You’ll often hear people (Michael) call it the *Web Inspector*, or just *The 
 
 ## Inspecting Pages
 
-<div class="center verso">
+<div class="end verso">
 
 In Chrome, you can bring them up by right-clicking on any element/part of a page and clicking <samp>Inspect</samp>:
 
@@ -39,7 +39,7 @@ You can also hit <kbd><kbd><span class="x2318">⌘</span>/Ctrl</kbd>+<kbd><span 
 
 </div>
 
-<figure class="borderless center justify-center recto shadow" style="--height: 273px">
+<figure class="borderless center justify-center recto shadow" style="--height: 307px">
 <img src="right-click.png">
 </figure>
 
@@ -107,7 +107,7 @@ On the right, you can see the sum *Computed* (or *rendered*) values of all the 
 >
 > <sub>Any edits in the DevTools will be lost when you leave or reload the page! They are just for you.</sub>
 
-## Device Mode <!-- inert -->
+## Device Mode
 
 Enter *device mode* with the little phone/laptop <samp><span class="x2ff8">⿸</span></samp> button, in the upper left of the DevTools:
 
@@ -120,28 +120,28 @@ Be sure to *hard-refresh* with <kbd><kbd><span class="x2318">⌘</span>/Ctrl</kb
 </figcaption>
 </figure>
 
-<figure class="all borderless">
+<figure class="all borderless justify-center">
 <img src="device-bar.svg">
 </figure>
 
 <div class="center left">
 
-Generally, use the <samp>Responsive <span class="x25be">▾</span></samp> mode that lets you type in specific pixel dimensions for width/height. Or you can use the divided bar underneath to quickly jump through common/ballpark widths.
+Generally, use the <samp>Responsive <span class="x25be">▾</span></samp> mode that lets you try varied pixel dimensions for width/height—dragging the viewport out to test fluidly. Or you can use the divided bar underneath to quickly jump through some common/ballpark widths.
 
 The *Preview Zoom* also allows you to approximate views *larger* than your current screen! You can specify larger dimensions, and it will scale down to show the entire viewport. This is great for developing on a laptop—it won’t be precise, but it’ll give you some idea of big screens.
 
 </div>
 
-<figure class="borderless middle shadow start" style="--height: 489px">
+<figure class="borderless middle shadow start" style="--height: 428px">
 <img src="responsive.png">
 <figcaption>
 
-The <samp>Device List <span class="x25be">▾</span></samp> is… *ancient* and inaccurate—they don’t account for the browser’s own interface, so they are all too tall!
+The <samp>Device List <span class="x25be">▾</span></samp> is old and inaccurate—they don’t account for the browser’s own interface, so they are all too tall!
 
 </figcaption>
 </figure>
 
-<figure class="borderless right shadow" style="--height: 260px">
+<figure class="borderless right shadow" style="--height: 235px">
 <img src="options.png">
 <figcaption>
 
@@ -150,7 +150,7 @@ The <samp>More Options <span class="x22ee">⋮</span></samp> menu here has some 
 </figcaption>
 </figure>
 
-**Remember that you are not targeting specific devices; you are looking for when your design/content *breaks*!**
+**Remember that you are *not* [targeting specific devices](../responsive/index.md#there-is-no-perfect-layout); you are looking for when your own design/content *breaks*!**
 
 > [!IMPORTANT]
 >
