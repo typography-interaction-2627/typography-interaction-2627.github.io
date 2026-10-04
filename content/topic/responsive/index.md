@@ -468,7 +468,11 @@ Note we added a `main` container. The `calc()` here are kind of tricky—but thi
 </figcaption>
 </figure>
 
-**Mobile can be the *majority* of your visitors—[especially internationally](https://gs.statcounter.com/platform-market-share/desktop-mobile/worldwide)! We’d like you to think of *mobile-first* design as a form of *accessibility*, in this light. Not everyone has your MacBook Pro!**
+> [!NOTE]
+>
+> Mobile can be the *majority* of your visitors—[especially internationally](https://gs.statcounter.com/platform-market-share/desktop-mobile/worldwide)! We’d like you to think of *mobile-first* design as a form of *accessibility*, in this light.
+>
+> <sub>Not everyone has your MacBook Pro!</sub>
 
 ## Responsive Lengths
 
