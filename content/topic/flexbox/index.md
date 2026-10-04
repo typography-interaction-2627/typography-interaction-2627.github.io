@@ -31,7 +31,7 @@ And let us tell you—being a web designer was [a *whole lot harder*](http://mey
 
 ## Main and Cross Axes
 
-Flexbox is a *one-dimensional* layout system—meaning it is (*…usually*) focused on arranging items either horizontally in rows, or vertically in columns.
+Flexbox is a *one-dimensional* layout system—meaning it is (*…&NoBreak;usually*) focused on arranging items either horizontally in rows, or vertically in columns.
 
 **These are called the *axes*.**
 
