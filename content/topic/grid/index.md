@@ -52,22 +52,57 @@ Grid truly supplants many of the previous box model layout approaches (like `flo
 
 **Grid introduces us to some new vocabulary:**
 
+<dl class="balance verso">
+
+<dt>
+
 Line
 
-: The dividing lines that define the grid, vertical or horizontal. (Think *gutters*.)
+</dt>
+
+<dd>
+
+The dividing lines that define the grid, vertical or horizontal. (Think *gutters*.)
+
+</dd>
+
+<dt>
 
 Track
 
-: The horizontal or vertical space between the lines. (Think *rows* and *columns*.)
+</dt>
+
+<dd>
+
+The horizontal or vertical space between the lines. (Think *rows* and *columns*.)
+
+</dd>
+
+<dt>
 
 Cell
 
-: The intersection of a horizontal and vertical track. This is different from a *grid item*—the cell is the spot/placement, the item is the actual element—since as you’ll see, you can position *items* in an arbitrary *cell*.
+</dt>
+
+<dd>
+
+The intersection of a horizontal and vertical track. This is different from a *grid item*—the cell is the spot/placement, the item is the actual element—since as you’ll see, you can position *items* in an arbitrary *cell*.
+
+</dd>
+
+<dt>
 
 Area
 
-: You can combine one or more adjacent grid cells into a rectangular *area.* Often you give these a subjective name, for convenience/ergonomics.
-<!-- .balance .verso -->
+</dt>
+
+<dd>
+
+You can combine one or more adjacent grid cells into a rectangular *area.* Often you give these a subjective name, for convenience/ergonomics.
+
+</dd>
+
+</dl>
 
 <div class="recto start sticky">
 
@@ -81,107 +116,152 @@ Area
 
 <div class="left">
 
-<div class="sticky">
-
 **Grid also introduces some specific new [length units](../box-model/index.md#css-lengths):**
+<!-- .sticky -->
 
 </div>
 
-</div>
+<dl class="antibody balance before">
 
-<div class="balance before--2" style="grid-column: middle-start / all-end">
+<dt>
 
 `fr`
 
-: This [new unit](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout#the_fr_unit) represents a *fraction* of the available space in the grid container—usually, `inline-size` (*width*). This is very similar to using whole numbers in `flex-basis`. It is very handy; you’ll use it a lot with grid:
+</dt>
 
-	```css
-	.two-thirds-one-third {
-		display: grid;
-		grid-template-columns: 2fr 1fr;
-	}
-	```
+<dd>
+
+This [new unit](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout#the_fr_unit) represents a *fraction* of the available space in the grid container—usually, `inline-size` (*width*). This is very similar to using whole numbers in `flex-basis`. It is very handy; you’ll use it a lot with grid:
+
+```css
+.two-thirds-one-third {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+}
+```
+
+</dd>
+
+<dt>
 
 `min-content`
 
-: The [*intrinsic* minimum size](https://developer.mozilla.org/en-US/docs/Web/CSS/min-content) of an element. With text, this is the longest single word:
+</dt>
 
-	```css
-	.narrow-sidebar {
-		display: grid;
-		grid-template-columns: 1fr min-content;
-	}
-	```
+<dd>
+
+The [*intrinsic* minimum size](https://developer.mozilla.org/en-US/docs/Web/CSS/min-content) of an element. With text, this is the longest single word:
+
+```css
+.narrow-sidebar {
+	display: grid;
+	grid-template-columns: 1fr min-content;
+}
+```
+
+</dd>
+
+<dt>
 
 `max-content`
-: Same for [the maximum](https://developer.mozilla.org/en-US/docs/Web/CSS/max-content). With text, this is the whole sentence/line:
 
-	```css
-	.wider-sidebar {
-		display: grid;
-		grid-template-columns: 1fr max-content;
-	}
-	```
+</dt>
+
+<dd>
+Same for [the maximum](https://developer.mozilla.org/en-US/docs/Web/CSS/max-content). With text, this is the whole sentence/line:
+
+```css
+.wider-sidebar {
+	display: grid;
+	grid-template-columns: 1fr max-content;
+}
+```
+
+</dd>
+
+<dt>
 
 `fit-content`
 
-: A [combo of the min/max](https://developer.mozilla.org/en-US/docs/Web/CSS/fit-content). Uses the available space—but never less than `min-content` *and* never more than `max-content`:
+</dt>
 
-	```css
-	.fit-sidebar {
-		display: grid;
-		grid-template-columns: 1fr fit-content;
-	}
-	```
+<dd>
 
-	<sub>You can use these last three values in grid properties <em>(</em>`min-`, `max-`, and `fit-content`<em>)</em>, as we’ll see below—but they are also usable anywhere [length units](../box-model/index.md#css-lengths) work—like `inline-size` or `block-size`.</sub>
+A [combo of the min/max](https://developer.mozilla.org/en-US/docs/Web/CSS/fit-content). Uses the available space—but never less than `min-content` *and* never more than `max-content`:
 
-</div>
+```css
+.fit-sidebar {
+	display: grid;
+	grid-template-columns: 1fr fit-content;
+}
+```
 
-<div class="before--4 left">
+<sub>You can use these last three values in grid properties <em>(</em>`min-`, `max-`, and `fit-content`<em>)</em>, as we’ll see below—but they are also usable anywhere [length units](../box-model/index.md#css-lengths) work—like `inline-size` or `block-size`.</sub>
 
-<div class="sticky">
+</dd>
+
+</dl>
+
+<div class="before left">
 
 **…and also [functions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Functions) to use the units:**
+<!-- .sticky -->
 
 </div>
 
-</div>
+<dl class="antibody balance before">
 
-<div class="balance before--3" style="grid-column: middle-start / all-end">
+<dt>
 
 `minmax()`
 
-: A function that [defines a range](https://developer.mozilla.org/en-US/docs/Web/CSS/minmax) for a *track*—setting a minimum and maximum length *together*. These are really useful for setting reasonable limits on responsive grid designs:
+</dt>
 
-	```css
-	.flexible-sidebar {
-		display: grid;
-		grid-template-columns: 1fr minmax(12rem, 25rem);
-	}
-	```
+<dd>
+
+A function that [defines a range](https://developer.mozilla.org/en-US/docs/Web/CSS/minmax) for a *track*—setting a minimum and maximum length *together*. These are really useful for setting reasonable limits on responsive grid designs:
+
+```css
+.flexible-sidebar {
+	display: grid;
+	grid-template-columns: 1fr minmax(12rem, 25rem);
+}
+```
+
+</dd>
+
+<dt>
 
 `repeat()`
 
-: This function [repeats a *track* list](https://developer.mozilla.org/en-US/docs/Web/CSS/repeat), so you don’t have to write it over and over:
+</dt>
 
-	```css
-	.twelve-columns {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-		/* How many columns is this? 👆 */
-	}
-	.also-twelve-columns {
-		display: grid;
-		grid-template-columns: repeat(12, 1fr); /* Much better. */
-	}
-	```
+<dd>
 
-</div>
+This function [repeats a *track* list](https://developer.mozilla.org/en-US/docs/Web/CSS/repeat), so you don’t have to write it over and over:
 
+```css
+.twelve-columns {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	/* How many columns is this? 👆 */
+}
+
+.also-twelve-columns {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr); /* Much better. */
+}
+```
+
+</dd>
+
+</dl>
+
+> [!TIP]
+>
 > As a general rule: whenever you are writing the same exact code over and over, there is almost certainly a shorter way!
 >
-> <sub>[Refactor](https://en.wikipedia.org/wiki/Code_refactoring) to avoid it; [Don’t repeat yourself](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)! Stay *DRY.*</sub>
+> <sub>[*Refactor*](https://en.wikipedia.org/wiki/Code_refactoring) to avoid it; [don’t repeat yourself](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)! Stay *DRY.*</sub>
 
 ## Container (Parent) Properties
 
