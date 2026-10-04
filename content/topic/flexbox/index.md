@@ -21,7 +21,7 @@ const draft = true
 	A little game.
 <!-- .right .rows--4 -->
 
-*Flex* was created to facilitate and allow CSS layouts that [*the box model*](/topic/box-model/) (despite its `float` and `position`) either made difficult, brittle, or even impossible. It is a *[display](/topic/box-model/#display)* property. It’s extremely useful and widely-used.
+*Flex* was created to facilitate and allow CSS layouts that [*the box model*](../box-model/index.md) (despite its `float` and `position`) either made difficult, brittle, or even impossible. It is a [`display`](../box-model/index.md#display) property. It’s extremely useful and widely-used.
 
 And let us tell you—being a web designer was [a *whole lot harder*](http://meyerweb.com/eric/thoughts/2009/02/17/wanted-layout-system/) before flex came on the front-end scene. (Hence the “Finally.”) Notice, for instance, that we haven’t talked about any *vertical* centering at all yet—you don’t want to know! And you don’t have to worry about it. Flex encapsulates a lot of practical, helpful design paradigms in its system.
 
@@ -180,7 +180,7 @@ Without the height restriction, the last one would just grow taller, by default.
 
 > [!TIP]
 >
-> If you want to make a grid, use (CSS) grid! You [*can*](../responsive/index.md#mobile-first-example) use `flex-wrap` to make grids, and it is sometimes sufficient. But but [the more recent CSS Grid](/topic/grid/) properties will give you more control.
+> If you want to make a grid, use (CSS) grid! You [*can*](../responsive/index.md#mobile-first-example) use `flex-wrap` to make grids, and it is sometimes sufficient. But but [the more recent CSS Grid](../grid/index.md) properties will give you more control.
 >
 > <sub>We’ll talk about `grid` shortly!</sub>
 
@@ -277,15 +277,15 @@ These wouldn’t do anything without the `block-size` and the `flex-wrap`.
 
 <sub>`align-content` can also be used with a vertical/`flex-direction: column;` axis, not shown here. This doesn’t often come up, as you have to specify/know a height to force a column wrap.</sub>
 
-### `gap` / `row-gap` / `column-gap`
+### `gap` / `column-gap` / `row-gap`
 
 While you could use *margin* to separate your flex children, it would apply to the items on the outer edges, too. (Hence our many `:not(:first-child)` selectors for `margin` in the examples, so far.)
 <!-- .balance -->
 
 - [<cite>`gap` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/gap)
-- [<cite>`row-gap` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/row-gap)
 - [<cite>`column-gap` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/column-gap)
-	These are common with [CSS grid](/topic/grid/#gap-column-gap-row-gap)!
+- [<cite>`row-gap` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/row-gap)
+	These are common with [CSS grid](../grid/index.md#gap-column-gap-row-gap)!
 <!-- .right .rows--2 -->
 
 Flex added support for intuitive [`gap` properties](https://developer.mozilla.org/en-US/docs/Web/CSS/gap), which fix this problem—by applying spacing only *between* children. This is particularly helpful with dynamic, wrapping content and responsive designs—where you won’t always know which element ends or starts a line (to take their margin off):
@@ -303,7 +303,7 @@ Note the last one, `gap` are really *minimums* and only apply when there isn’t
 
 > [!NOTE]
 >
-> Note that `flex` and `grid` share a lot of vocabulary! The `justify`, `align`, and `gap` properties are the same (in name and behavior) with [CSS Grid](/topic/grid/), up next!
+> Note that `flex` and `grid` share a lot of vocabulary! The `justify`, `align`, and `gap` properties are the same (in name and behavior) with [CSS Grid](../grid/index.md), up next!
 
 >If we did a Flexbox spec workshop, where we went over the whole spec in excruciating detail and sketched illustrations, who would come?
 >
@@ -359,7 +359,7 @@ The `flex-basis` property is a little like `inline-size` and `block-size`—depe
 	How much of the space.
 <!-- .right -->
 
-This defaults to `auto`, which falls back to any specified `inline-size` or `block-size`—and if those aren’t present, will just use the size of the content. You specify this `flex-basis` with [length units](/topic/box-model/#and-their-units) like `%` and `px` :
+This defaults to `auto`, which falls back to any specified `inline-size` or `block-size`—and if those aren’t present, will just use the size of the content. You specify this `flex-basis` with [length units](../box-model/index.md#css-lengths) like `%` and `px` :
 <!-- .balance -->
 
 <figure style="--lines: 14">
@@ -390,7 +390,7 @@ Finally, we have an individual override for an [`align-items`](#align-items) pro
 This is a lot of stuff! Flex can sometimes be tough to wrap one’s head around, but it is *so much better* than `float` and `inline-size` and `margin` shenanigans.
 <!-- .balance -->
 
-**Much of what you look at on the web is laid out in flexbox (and its followup which we keep mentioning, [CSS Grid](/topic/grid/)).**
+**Much of what you look at on the web is laid out in flexbox (and its followup which we keep mentioning, [CSS Grid](../grid/index.md)).**
 
 > Flexbox is a new layout model for CSS.
 >

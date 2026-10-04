@@ -9,7 +9,7 @@ const draft = true
 
 ## From Flex to Grid
 
-[CSS grid layout](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids#line-based_placement) (from here on, just *grid*) is another, even more recent addition to CSS, continuing on from where [*flexbox*](/topic/flexbox/) left off. While flex is primarily a *one-dimensional* layout system—focused on horizontal *or* vertical arrangements—grid is *two-dimensional* system, integrating the two directions together.
+[CSS grid layout](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids#line-based_placement) (from here on, just *grid*) is another, even more recent addition to CSS, continuing on from where [*flexbox*](../flexbox/index.md) left off. While flex is primarily a *one-dimensional* layout system—focused on horizontal *or* vertical arrangements—grid is *two-dimensional* system, integrating the two directions together.
 
 - [<cite>A Complete Guide to Grid – CSS Tricks</cite>](https://css-tricks.com/snippets/css/complete-guide-grid/)
 	The *grid* version of the *flexbox* classic.
@@ -33,7 +33,7 @@ const draft = true
 	Like the Froggy game, but for grid.
 <!-- .right .rows--6 -->
 
-<sub>We had some of this two-dimensionality with [`flex-wrap`](/topic/flexbox/#flex-wrap), but grid offers us *much* more structure and control.</sub>
+<sub>We had some of this two-dimensionality with [`flex-wrap`](../flexbox/index.md#flex-wrap), but grid offers us *much* more structure and control.</sub>
 
 Grid is *a lot* like flex (this will be a running theme)—a [*display*](https://developer.mozilla.org/en-US/docs/Web/CSS/display) property applied on a parent/container element. This `display: grid;` tells its (immediate) children/*grid items* how they should be laid out. Also like flex, there is `display: inline-grid;` which behaves the same internally—but with the parent behaving as an inline element.
 <!-- .before--3 -->
@@ -83,7 +83,7 @@ Area
 
 <div class="sticky">
 
-**Grid also introduces some specific new [length units](/topic/box-model/#and-their-units):**
+**Grid also introduces some specific new [length units](../box-model/index.md#css-lengths):**
 
 </div>
 
@@ -134,7 +134,7 @@ Area
 	}
 	```
 
-	<sub>You can use these last three values in grid properties <em>(</em>`min-`, `max-`, and `fit-content`<em>)</em>, as we’ll see below—but they are also usable anywhere [length units](/topic/box-model/#and-their-units) work—like `inline-size` or `block-size`.</sub>
+	<sub>You can use these last three values in grid properties <em>(</em>`min-`, `max-`, and `fit-content`<em>)</em>, as we’ll see below—but they are also usable anywhere [length units](../box-model/index.md#css-lengths) work—like `inline-size` or `block-size`.</sub>
 
 </div>
 
@@ -245,13 +245,13 @@ The perpendicular `grid-auto-columns` only comes up if you force the columns to 
 
 ### `gap` / `column-gap` / `row-gap`
 
-Grid also shares the `gap`, `column-gap`, and `row-gap` [properties with flex](/topic/flexbox/#gap-row-gap-and-column-gap)—to add gutters between the *tracks*. The syntax and behavior is the same:
+Grid also shares the `gap`, `column-gap`, and `row-gap` [properties with flex](../flexbox/index.md#gap-column-gap-row-gap)—to add gutters between the *tracks*. The syntax and behavior is the same:
 <!-- .balance -->
 
 - [<cite>`gap` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/gap)
-- [<cite>`row-gap` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/row-gap)
 - [<cite>`column-gap` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/column-gap)
-	The exact same as with [flex](/topic/flexbox/#gap-row-gap-and-column-gap)!
+- [<cite>`row-gap` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/row-gap)
+	The exact same as with [flex](../flexbox/index.md#gap-column-gap-row-gap)!
 <!-- .right -->
 
 <figure style="--lines: 19">
@@ -267,7 +267,7 @@ You rarely see a `grid` without a `gap`
 
 ### `justify-items`
 
-Also [like flex](/topic/flexbox/#justify-content) (there’s a pattern here), we can position items within the tracks—but now we have control over both axes and the overall placement. To start, `justify-items` positions all the *grid items* along their row axis.
+Also [like flex](../flexbox/index.md#justify-content) (there’s a pattern here), we can position items within the tracks—but now we have control over both axes and the overall placement. To start, `justify-items` positions all the *grid items* along their row axis.
 
 [<cite>`justify-items` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-items)
 	This only works with grid.
@@ -283,11 +283,11 @@ The terminology here is always a bit confusing, but think of it this way—in gr
 
 ### `align-items`
 
-And `align-items` directly corresponds to the [flex values](/topic/flexbox/#align-items), to position all the *items* vertically along their column axis:
+And `align-items` directly corresponds to the [flex values](../flexbox/index.md#align-items), to position all the *items* vertically along their column axis:
 <!-- .balance -->
 
 [<cite>`align-items` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items)
-Same as [flex](/topic/flexbox/#align-items), again!
+Same as [flex](../flexbox/index.md#align-items), again!
 <!-- .right -->
 
 <figure style="--lines: 22">
@@ -326,7 +326,7 @@ If the total size of your grid is less than the container (because of your *expl
 
 <figcaption>
 
-Again, [this is just](/topic/flexbox/#justify-content) [like flex](/topic/flexbox/#align-items)! Same syntax, same behavior—you get the idea. Grid is like *Flex+
+Again, [this is just](../flexbox/index.md#justify-content) [like flex](../flexbox/index.md#align-content)! Same syntax, same behavior—you get the idea. Grid is like *Flex+
 
 *.</figcaption>
 </figure>
@@ -341,7 +341,7 @@ Grid also has [shorthand properties](https://developer.mozilla.org/en-US/docs/We
 
 ### Using `repeat()`
 
-Grid’s `repeat` function is very commonly used to make even-column grids. And of course, they can be made responsive with [media queries](/topic/responsive/#media-queries) and [CSS variables](/topic/responsive/#briefly-css-variables)!
+Grid’s `repeat` function is very commonly used to make even-column grids. And of course, they can be made responsive with [media queries](../responsive/index.md#media-queries) and [CSS variables](../box-model/index.md#defined-as---variable)!
 <!-- .balance -->
 
 [<cite>`repeat()` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/repeat)
@@ -493,11 +493,11 @@ Note that just like `order` in flex, this arrangement is only visual! Keep your 
 </figcaption>
 </figure>
 
-Keep in mind that with both `grid-area` and `grid-column`/`grid-row`, you are able to tell multiple *grid items* to land in the same *cell*—there isn’t any kind of fancy/automatic collision-prevention. If this *is what you want, you can use `z-index` to specify which one is visually [in front](/topic/box-model/#depth)!
+Keep in mind that with both `grid-area` and `grid-column`/`grid-row`, you are able to tell multiple *grid items* to land in the same *cell*—there isn’t any kind of fancy/automatic collision-prevention. If this *is what you want, you can use `z-index` to specify which one is visually [in front](../box-model/index.md#depth-with-z-index)!
 
 ### `justify-self` / `align-self`
 
-Finally, just like flex—you can position individual *grid items* within their *tracks* using `justify-self` and `align-self`. The syntax is the same as [align in flex](/topic/flexbox/#align-self), again—but as with `justify-items`/`align-items` above, you don’t have to flip axes:
+Finally, just like flex—you can position individual *grid items* within their *tracks* using `justify-self` and `align-self`. The syntax is the same as [`align` in flex](../flexbox/index.md#align-self), again—but as with `justify-items`/`align-items` above, you don’t have to flip axes:
 <!-- .balance -->
 
 - [<cite>`justify-self` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-self)
