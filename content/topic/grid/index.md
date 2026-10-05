@@ -469,8 +469,6 @@ This is done with a bit of [ASCII art](https://en.wikipedia.org/wiki/ASCII_art) 
 
 </div>
 
-<!-- TODO Update these to not be semantic names! -->
-
 <div class="before recto start">
 
 ```css
@@ -478,9 +476,9 @@ section {
 	display: grid;
 	grid-template-columns: 2fr 1fr;
 	grid-template-areas:
-		"header header "
-		"main   sidebar"
-		"footer sidebar";
+		'intro intro  '
+		'copy  sidebar'
+		'legal sidebar';
 }
 ```
 
@@ -504,6 +502,11 @@ If you’ve defined `grid-template-areas` (as [above](#grid-template-areas)), yo
 
 ***[`grid-area` Example](area/style.css)***
 
+<figcaption>
+
+These `grid-area` names can be anything! They’re just for you.
+
+</figcaption>
 </figure>
 
 **This is the [kind of common layout](https://en.wikipedia.org/wiki/Holy_grail_(web_design)) that was *unnecessarily* hard before grid! It’s so much easier now.**

@@ -3,24 +3,24 @@ body {
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: 6rem 65vh 6rem;
 	grid-template-areas:
-		'header header header'
-		'main   main   aside '
-		'footer footer aside '; /* Set up our grid. */
+		'intro intro intro  '
+		'copy  copy  sidebar'
+		'legal legal sidebar'; /* Set up our grid. */
 }
 
 header {
 	background-color: crimson;
-	grid-area: header; /* Assign the item/children! */
+	grid-area: intro; /* Assign the item/children! */
 }
 
 main {
 	background-color: hotpink;
-	grid-area: main;
+	grid-area: copy;
 }
 
 aside {
 	background-color: lightsalmon;
-	grid-area: aside;
+	grid-area: sidebar;
 }
 
-footer { grid-area: footer; }
+footer { grid-area: legal; }
