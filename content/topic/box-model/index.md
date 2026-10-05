@@ -19,13 +19,13 @@ Beyond the basic [color and type properties](../css/index.md#color-and-type-prop
 </div>
 
 - [<cite>Introduction to CSS Layout – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Introduction) \
-	As usual!
+	<sub>As usual!</sub>
 
 - [<cite>Layout – web.dev</cite>](https://web.dev/learn/css/layout/) \
-	This gets into `grid` and `flex`; we’ll talk about those [next unit](../../syllabus.md#unit-2-there-is-no-perfect-layout).
+	<sub>This gets into `grid` and `flex`; we’ll talk about those [next unit](../../syllabus.md#unit-2-there-is-no-perfect-layout).</sub>
 
 - [<cite>Learn CSS Layout</cite>](https://learnlayout.com) \
-	An old-but-still-good run-through.
+	<sub>An old-but-still-good run-through.</sub>
 <!-- .right -->
 
 > …use the effectiveness of the former “background” quite deliberately, and consider the blank white spaces on the paper as formal elements just as much as the areas of black type.
@@ -37,7 +37,7 @@ Beyond the basic [color and type properties](../css/index.md#color-and-type-prop
 By default, all browsers’ *user-agent styles* have an unfortunate default—`box-sizing: content-box;`—which means that the `padding` (and `border`) exists *outside* the content `inline-size`/`width` or `block-size`/`height`—so `padding` (and `border`) is then an *outset.*
 
 [<cite>`box-sizing` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/box-sizing) \
-	We’ll usually flip the default for this!
+	<sub>We’ll usually flip the default for this!</sub>
 <!-- .right -->
 
 <figure class="borderless verso">
@@ -71,7 +71,7 @@ This is often unintuitive for designers and doesn’t fit with most web design p
 The [*content area*](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/Introduction#content_area) is the guts of the element, usually text or an image. Its dimensions are usually defined by the [intrinsic size](https://developer.mozilla.org/en-US/docs/Glossary/Intrinsic_Size) of that content, but also can be specified directly via `width` or `height`—or `inline-size` and `block-size`. (More on those soon.)
 
 [<cite>Introduction to the CSS box model - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/Introduction#content_area) \
-	Going inside-to-outside, the very inside.
+	<sub>Going inside-to-outside, the very inside.</sub>
 <!-- .right -->
 
 <figure style="--lines: 9">
@@ -97,7 +97,7 @@ Next comes [`padding`](https://developer.mozilla.org/en-US/docs/Web/CSS/padding)
 <!-- .balance -->
 
 [<cite>Padding – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/padding) \
-	There will be many of these links!
+	<sub>There will be many of these links!</sub>
 <!-- .right -->
 
 <figure style="--lines: 15">
@@ -111,7 +111,7 @@ Next comes [`padding`](https://developer.mozilla.org/en-US/docs/Web/CSS/padding)
 Know that `padding`—and many other CSS properties, including `border` and <nobr>`margin`—</nobr>can be specified with a [*shorthand* property](https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties) to make it “easier” to use the same spacing all around, or shared top/bottom and left/right.
 
 [<cite>Shorthand Properties – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties) \
-	Be wary of the siren call of shorthands!
+	<sub>Be wary of the siren call of shorthands!</sub>
 <!-- .right -->
 
 <section>
@@ -161,7 +161,7 @@ You can also now define all your box model properties using [*logical* directio
 <!-- .balance -->
 
 [<cite>CSS Logical Properties</cite>](https://adrianroselli.com/2019/11/css-logical-properties.html) \
-	[Adrian Roselli](https://adrianroselli.com/) has a very thorough explanation.
+	<sub>[Adrian Roselli](https://adrianroselli.com/) has a very thorough explanation.</sub>
 <!-- .right -->
 
 In horizontal, left-to-right writing modes (as in English):
@@ -219,7 +219,7 @@ Back to our box model, moving outwards, with [`border`](https://developer.mozill
 <!-- .balance -->
 
 [<cite>Border – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/border) \
-	Our first non-text design element! You are allowed.
+	<sub>Our first non-text design element! You are allowed.</sub>
 <!-- .right -->
 
 <figure style="--lines: 11">
@@ -238,7 +238,7 @@ The shorthand `border-block-start` property value order here doesn’t matter! I
 There are also various [`border-style`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border-style) options to change the… style of border. You’ll most often see this for `dotted` lines, and as a *shorthand* for all sides—but we don’t get much control over them beyond `-color` and `-width`:
 
 [<cite>`border-style` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border-style) \
-	Some of these are good; some of these are bad.
+	<sub>Some of these are good; some of these are bad.</sub>
 <!-- .right -->
 
 <figure style="--lines: 19">
@@ -257,7 +257,7 @@ Look at all those borders.
 It’s much more common these days to see the [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border-radius) property, to give an element rounded corners. This is also how you can make simple ovals/circles—which are just rounded rectangles:
 
 [<cite>`border-radius` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border-radius) \
-	“Sand down” your sharp edges.
+	<sub>“Sand down” your sharp edges.</sub>
 <!-- .right -->
 
 <figure style="--lines: 18">
@@ -272,7 +272,7 @@ The last part of our box is [`margin`](https://developer.mozilla.org/en-US/docs/
 <!-- .balance -->
 
 [<cite>Margin – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/margin) \
-	The space between things.
+	<sub>The space between things.</sub>
 <!-- .right -->
 
 <figure style="--lines: 11">
@@ -292,7 +292,7 @@ Margin has a couple tricks up its sleeve. First, it can have *negative* values�
 <!-- .balance -->
 
 [<cite>Are negative CSS margins bad practice? – dev.to</cite>](https://dev.to/itstrueintheory/are-negative-css-margins-bad-practice-lh7) \
-	Some example uses. “It depends!”
+	<sub>Some example uses. “It depends!”</sub>
 <!-- .right -->
 
 <figure style="--lines: 11">
@@ -311,7 +311,7 @@ The first element pulls the second element closer with a *negative* margin.
 Also `margin` can [*collapse*](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/Margin_collapsing), meaning that they are sometimes combined (*collapsed*) into a single value—whichever is largest—between two elements. This happens most often on adjacent siblings, and is both useful *and* an absolute pain, sometimes:
 
 [<cite>Mastering margin collapsing – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/Margin_collapsing) \
-	Brilliant *or* annoying!
+	<sub>Brilliant *or* annoying!</sub>
 <!-- .right -->
 
 <figure style="--lines: 13">
@@ -331,7 +331,7 @@ Okay, so now we have all these box properties—but how do we specify the dimens
 <!-- .balance -->
 
 [<cite>`<length>` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/length) \
-	*Length* is used by many properties!
+	<sub>*Length* is used by many properties!</sub>
 <!-- .right -->
 
 ### Absolute Units
@@ -512,7 +512,7 @@ p {
 - [<cite>Using CSS Custom Properties – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
 
 - [<cite>CSS Custom Properties Guide – CSS Tricks</cite>](https://css-tricks.com/a-complete-guide-to-custom-properties/) \
-	Web guru [Chris Coyier’s](https://chriscoyier.net/) robust overview.
+	<sub>Web guru [Chris Coyier’s](https://chriscoyier.net/) robust overview.</sub>
 <!-- .right .rows--3 -->
 
 These bring another programming concept of [*variables*](https://en.wikipedia.org/wiki/Variable_(computer_science)) into CSS. These are shorthand entities for *any* values (not just lengths) we want to reuse throughout a document.
@@ -586,7 +586,7 @@ With an idea of how elements take up space, now we’ll look at how they exist a
 <!-- .balance -->
 
 [<cite>Position – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/position) \
-	Interesting web work often uses `position`.
+	<sub>Interesting web work often uses `position`.</sub>
 <!-- .right -->
 
 ### Static
@@ -695,7 +695,7 @@ Okay, `z-index` is not strictly *positioning*—it is a separate property. You c
 <!-- .balance -->
 
 - [<cite>`z-index` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index) \
-	This can be tricky to work with!
+	<sub>This can be tricky to work with!</sub>
 <!-- .right -->
 
 By default, items that are lower in the HTML (coming *after* each other) are in front of higher, earlier elements:
@@ -716,7 +716,7 @@ A whole lot of things make a new [*stacking context*](https://developer.mozilla.
 <!-- .balance -->
 
 - [<cite>The stacking context – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context) \
-	Each of these is a stacking “group.”
+	<sub>Each of these is a stacking “group.”</sub>
 <!-- .right -->
 
 No amount of internal `z-index` adjustments can “break” something out of that group—which is one of the reasons why *z* can be really difficult to understand and tricky to use. But you can always adjust the `z-index` of the group, as we do here!
@@ -728,7 +728,7 @@ In our [HTML introduction](../html/index.md) we briefly talked about `block` and
 <!-- .balance -->
 
 [<cite>Display – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/display) \
-	Our `block` and `inline` elements (and later, `grid` and `flex`). \
+	<sub>Our `block` and `inline` elements (and later, `grid` and `flex`). \</sub>
 <!-- .right -->
 
 ### Block
@@ -804,7 +804,7 @@ You can also hide something visually *without* taking it out of the document *fl
 <!-- .balance -->
 
 [<cite>Visibility – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility) \
-	This also hides elements from assistive technologies (screen readers).
+	<sub>This also hides elements from assistive technologies (screen readers).</sub>
 <!-- .right .rows--2 -->
 
 Setting `visibility: hidden;` keeps the space an element had before, but makes it invisible and unable to be interacted with. The value `visible` is the default:
@@ -822,7 +822,7 @@ Another way to hide an element visually is to adjust `opacity`, which uses value
 <!-- .balance -->
 
 [<cite>Opacity – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity) \
-	The entire element *and* its descendents are adjusted, as one.
+	<sub>The entire element *and* its descendents are adjusted, as one.</sub>
 <!-- .right -->
 
 <figure style="--lines: 7">
@@ -844,7 +844,7 @@ Oh right, floats. Sometimes you’ll want to have an image or block flow *within
 <!-- .balance -->
 
 [<cite>Floats – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Floats) \
-	You don’t see these used as much anymore!
+	<sub>You don’t see these used as much anymore!</sub>
 <!-- .right -->
 
 > [!NOTE]

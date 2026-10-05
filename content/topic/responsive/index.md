@@ -12,13 +12,13 @@ const draft = true
 <!-- .body data-description -->
 
 - [<cite>Responsive Design – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design) \
-	A pretty nice overview.
+	<sub>A pretty nice overview.</sub>
 
 - [<cite>Beginner's Guide to Media Queries – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries) \
-	Slightly overlapping, but also good.
+	<sub>Slightly overlapping, but also good.</sub>
 
 - [<cite>Using Media Queries – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#media_features) \
-	Okay, that’s probably enough MDN.
+	<sub>Okay, that’s probably enough MDN.</sub>
 <!-- .right .rows--3 -->
 
 This term was coined in 2010 or so [by Ethan Marcotte](https://alistapart.com/article/responsive-web-design/)—wrapping a name around a [*progressive enhancement*](https://alistapart.com/article/understandingprogressiveenhancement/) and [*mobile-first*](https://www.lukew.com/ff/entry.asp?933) web design approach/philosophy that had been growing in the mid-2000s (sometimes called *liquid, flexible, fluid,* or *elastic* design).
@@ -110,7 +110,7 @@ You’ll see [this `<meta>` element](https://developer.mozilla.org/en-US/docs/We
 *Usually* “the browser window.”
 
 - [<cite>`viewport` value – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) \
-	How the page should be sized!
+	<sub>How the page should be sized!</sub>
 <!-- .right -->
 
 ```html <!-- .all .before .large -->
@@ -138,7 +138,7 @@ The *Times* wasn’t fully responsive until *2018*! They still maintained a sepa
 Responsive design could really only flourish when CSS (and browsers) added the `@media` [<nobr>*at-rule*</nobr>](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries) to work with this new device information.
 
 - [<cite>CSS media queries – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries) \
-	Checking for viewport values.
+	<sub>Checking for viewport values.</sub>
 <!-- .right -->
 
 <div class="balance before verso">
@@ -173,7 +173,7 @@ Like any other CSS—if there are multiple conditions that are met, or there is 
 There are many media queries we can use, but we’ll start with `width`—which is by far the most commonly-adjusted and really the core of *responsive design*. Usually when folks are talking about a page or site being *responsive*, they primarily mean with regards to its  `width`.
 
 [<cite>`width` media feature – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/width) \
-The most common, by far.
+<sub>The most common, by far.</sub>
 <!-- .right -->
 
 **Our design responds in steps, at different `width`, that we call *breakpoints*—the window/device/viewport sizes where the content *starts to break,* if it is not adjusted.**
@@ -268,7 +268,7 @@ We can also combine these with the pattern [*nesting*](../css/index.md#also-nati
 <!-- .balance -->
 
 [<cite>Nesting at-rules – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Nesting/At-rules) \
-Don’t repeat yourself!
+<sub>Don’t repeat yourself!</sub>
 <!-- .right -->
 
 <figure style="--lines: 8">
@@ -288,7 +288,7 @@ Our queries can also use other simple math [comparison operators](https://css-tr
 <!-- .balance -->
 
 [<cite>Query Range Syntax - CSS Tricks</cite>](https://css-tricks.com/the-new-css-media-query-range-syntax/#aa-new-comparison-operators) \
-More modern, more intuitive.
+<sub>More modern, more intuitive.</sub>
 <!-- .right -->
 
 <figure style="--lines: 15">
@@ -308,7 +308,7 @@ This [new comparison syntax](https://web.dev/articles/media-query-range-syntax) 
 <!-- .balance -->
 
 [<cite>New syntax for range media queries - web.dev</cite>](https://web.dev/articles/media-query-range-syntax) \
-Comparison of old vs. new syntax.
+<sub>Comparison of old vs. new syntax.</sub>
 <!-- .right -->
 
 <figure style="--lines: 7">
@@ -333,7 +333,7 @@ Be mindful about “painting yourself into corners” with these! They make it e
 You can also use the viewport’s other axis `height` in the same way! Though again, with the usual vertical scrolling paradigm, <nobr>*height-based*</nobr> adjustments aren’t often as necessary or anywhere nearly as common as `width`.
 
 [<cite>`height` media feature – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/height) \
-Less common, but still useful.
+<sub>Less common, but still useful.</sub>
 <!-- .right -->
 
 <div class="verso">
@@ -359,7 +359,7 @@ These code examples are responsive, themselves—stacking like this when they ar
 Sometimes you can benefit from being *less*-specific about your `width`/`height` and instead use `orientation`—as when you rotate your phone. These queries help quickly handle many scenarios, using the wonderfully tenacious names/values of `portrait` or `landscape`:
 
 [<cite>`orientation` media feature – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/orientation) \
-Often more useful than `width` alone!
+<sub>Often more useful than `width` alone!</sub>
 <!-- .right -->
 
 <figure style="--lines: 11">
@@ -381,7 +381,7 @@ Speaking of [*conditional statements*](https://en.wikipedia.org/wiki/Conditional
 <!-- .balance -->
 
 [<cite>Logic in CSS Media Queries – CSS Tricks</cite>](https://css-tricks.com/logic-in-css-media-queries/) \
-This can all get very complicated!
+<sub>This can all get very complicated!</sub>
 <!-- .right -->
 
 <figure style="--lines: 13">
@@ -428,10 +428,10 @@ There is also a `not()` [logic operator](https://developer.mozilla.org/en-US/doc
 It will help to organize our thinking in a pattern of [*progressive enhancement*](https://en.wikipedia.org/wiki/Progressive_enhancement)—always starting with basic functionality, *then* enriching the experience, when possible.
 
 - [<cite>Progressive Enhancement – Wikipedia</cite>](https://en.wikipedia.org/wiki/Progressive_enhancement) \
-	The term coined by [Steve Champeon](https://www.webstandards.org/about/members/schampeo/index.html) and [Nick Finck](https://nickfinck.com/) in [2003](https://hesketh.com/publications/inclusive_web_design_for_the_future/).
+	<sub>The term coined by [Steve Champeon](https://www.webstandards.org/about/members/schampeo/index.html) and [Nick Finck](https://nickfinck.com/) in [2003](https://hesketh.com/publications/inclusive_web_design_for_the_future/).</sub>
 
 - [<cite>Mobile First – A Book Apart</cite>](http://www.ferrispark.com/audio/DOCUMENTS/mobile-first.pdf) \
-	[Luke Wroblewski](https://lukew.com/) wrote the book (and [the deck](https://static.lukew.com/MobileFirst_LukeW.pdf)).
+	<sub>[Luke Wroblewski](https://lukew.com/) wrote the book (and [the deck](https://static.lukew.com/MobileFirst_LukeW.pdf)).</sub>
 <!-- .right .rows--3 -->
 
 In terms of making our work responsive, this manifests as [*mobile-first*](https://www.lukew.com/ff/entry.asp?933) design (and development)—the easiest methodology to keep things understandable (and resilient). This has become kind of *buzzwordy* in the past decade or so, but it is a good philosophy to adhere to, nonetheless.
@@ -479,7 +479,7 @@ Note we added a `main` container. The `calc()` here are kind of tricky—but thi
 CSS also added some additional functions, beyond just [`calc()`](../box-model/index.md#combined-via-calc). As we consider resilient designs across varying/unknown screen sizes, these allow us to set limits/constraints beyond the basic [`min-`/`max-` sizes](../box-model/index.md#constrained-by-min-max-)—and crucially, apply them to *other* properties, like `margin`, `padding`, `font-size`, etc. You’ll often use these in conjunction with viewport-[relative units](../box-model/index.md#relative-units) like `vw`/`vh`.
 
 [<cite>CSS `min()`, `max()`, and `clamp()` – web.dev</cite>](https://web.dev/articles/min-max-clamp) \
-For more than just `-size`!
+<sub>For more than just `-size`!</sub>
 <!-- .right -->
 
 **We can use these to make sure our designs work responsively, even *without* explicit [`@media` queries](#media-queries)!**
@@ -548,7 +548,7 @@ Best of both worlds! We can scale our designs—but not *too* small and not *too
 By far, the most common media queries will be *width/height/orientation*—for adjusting your layouts across different devices. But `@media` has some more tricks up its sleeve in testing for other browser features. We’ll look at some of the handy/common ones, here.
 
 [<cite>`@media` types/features - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/@media#media_features) \
-	There are many of these! Meet your visitors where they are.
+	<sub>There are many of these! Meet your visitors where they are.</sub>
 <!-- .right -->
 
 ### `screen` vs. `print`
@@ -557,7 +557,7 @@ In all of our above examples, there is an implied *[media type](https://develope
 <!-- .balance -->
 
 [<cite>CSS paged media - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_paged_media) \
-	There are also some print-specific properties available.
+	<sub>There are also some print-specific properties available.</sub>
 <!-- .right -->
 
 <figure style="--lines: 27">
@@ -584,7 +584,7 @@ You can see the `print` style in action by going [directly to the example](print
 Another common feature to check for is [`hover`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover), detecting whether a browser has an input device that supports *hovering*—which really just means a mouse, usually on laptop/desktop computers. (But not always!)
 
 [<cite>`hover` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover) \
-	Mobile devices don’t have this!
+	<sub>Mobile devices don’t have this!</sub>
 <!-- .right -->
 
 Perhaps obviously, mobile *touch-based* systems don’t have this behavior—and often react oddly to `:hover` CSS, “[eating taps](https://css-tricks.com/annoying-mobile-double-tap-link-issue/).” So you should adjust your interfaces to work in the absence of this state—never assume a mouse!
@@ -609,7 +609,7 @@ Hover states are a good feature for *progressive-enhancement*, as we did here—
 You see this one more and more these days—[`prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) for switching up a site’s styles based on whether the user is in *light* or *dark mode*, popularized by the ol’ iPhone again:
 
 [<cite>`prefers-color-scheme` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) \
-	Michael prefers `dark`; Rijk prefers `light`. One of them is right!
+	<sub>Michael prefers `dark`; Rijk prefers `light`. One of them is right!</sub>
 <!-- .right -->
 
 Sometimes this feels appropriate—especially in products/applications, like maybe a messaging service. But other times the color scheme of a site is its *brand* (like ours), and probably shouldn’t change based on this query. Continuing our ongoing discussion of who has the *control*—it’s up to you:
@@ -637,7 +637,7 @@ These last two are primarily concerned with [accessiblity](https://developer.moz
 
 - [<cite>`prefers-contrast` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast)
 - [<cite>`prefers-reduced-motion` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) \
-	You can think of both subtlety and motion as progressive enhancements.
+	<sub>You can think of both subtlety and motion as progressive enhancements.</sub>
 <!-- .right -->
 
 <section style="margin-block-start: 2rlh">

@@ -12,25 +12,25 @@ const draft = true
 [CSS grid layout](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids#line-based_placement) (from here on, just *grid*) is another, even more recent addition to CSS, continuing on from where [*flexbox*](../flexbox/index.md) left off. While flex is primarily a *one-dimensional* layout system—focused on horizontal *or* vertical arrangements—grid is *two-dimensional* system, integrating the two directions together.
 
 - [<cite>A Complete Guide to Grid – CSS Tricks</cite>](https://css-tricks.com/snippets/css/complete-guide-grid/) \
-	The *grid* version of the *flexbox* classic.
+	<sub>The *grid* version of the *flexbox* classic.</sub>
 
 - [<cite>CSS Grid Layout: A New Layout Module for the Web</cite>](https://webkit.org/blog/7434/css-grid-layout-a-new-layout-module-for-the-web/) \
-	WebKit (Safari’s) overview, from 2017.
+	<sub>WebKit (Safari’s) overview, from 2017.</sub>
 
 - [<cite>Basic Concepts of Grid Layout - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout) \
-	Back to MDN.
+	<sub>Back to MDN.</sub>
 
 - [<cite>Basics of CSS Grid</cite>](https://www.youtube.com/watch?v=FEnRpy9Xfes) \
-	From web guru [Jen Simmons](https://jensimmons.com).
+	<sub>From web guru [Jen Simmons](https://jensimmons.com).</sub>
 
 - [<cite>Flexbox vs. CSS Grid</cite>](https://www.youtube.com/watch?v=hs3piaN4b5I) \
-	Jen unpacks when to use each regime.
+	<sub>Jen unpacks when to use each regime.</sub>
 
 - [<cite>Grid by Example</cite>](https://gridbyexample.com/examples/) \
-	Loads of examples.
+	<sub>Loads of examples.</sub>
 
 - [<cite>Grid Garden</cite>](https://cssgridgarden.com) \
-	Like the Froggy game, but for grid.
+	<sub>Like the Froggy game, but for grid.</sub>
 <!-- .right .rows--6 -->
 
 <sub>We had some of this two-dimensionality with [`flex-wrap`](../flexbox/index.md#flex-wrap), but grid offers us *much* more structure and control.</sub>
@@ -264,7 +264,7 @@ Setting `display: grid;` won’t do much until you also declare some columns or 
 
 - [<cite>`grid-template-columns` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns)
 - [<cite>`grid-template-rows` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows) \
-	Define your *tracks*.
+	<sub>Define your *tracks*.</sub>
 <!-- .right -->
 
 <figure style="--lines: 19">
@@ -302,7 +302,7 @@ By default, these *implicit grid* tracks are sized `auto` (the largest content),
 
 - [<cite>`grid-auto-columns` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-columns)
 - [<cite>`grid-auto-rows` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows) \
-	Lets the content create the *tracks*.
+	<sub>Lets the content create the *tracks*.</sub>
 <!-- .right -->
 
 <figure style="--lines: 17">
@@ -321,7 +321,7 @@ Grid also shares the `gap`, `column-gap`, and `row-gap` [properties with flex](.
 - [<cite>`gap` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/gap)
 - [<cite>`column-gap` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/column-gap)
 - [<cite>`row-gap` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/row-gap) \
-	The exact same as with [flex](../flexbox/index.md#gap-column-gap-row-gap)!
+	<sub>The exact same as with [flex](../flexbox/index.md#gap-column-gap-row-gap)!</sub>
 <!-- .right -->
 
 <figure style="--lines: 19">
@@ -340,7 +340,7 @@ You rarely see a `grid` without a `gap`
 Also [like flex](../flexbox/index.md#justify-content) (there’s a pattern here), we can position items within the tracks—but now we have control over both axes and the overall placement. To start, `justify-items` positions all the *grid items* along their row axis.
 
 [<cite>`justify-items` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-items) \
-	This only works with grid.
+	<sub>This only works with grid.</sub>
 <!-- .right -->
 
 The terminology here is always a bit confusing, but think of it this way—in grid, the main axis is *always* the horizontal row. So *justify* always means left/right, and *align* always means top/bottom. Easier to remember than flex! No flipping axes:
@@ -357,7 +357,7 @@ And `align-items` directly corresponds to the [flex values](../flexbox/index.md#
 <!-- .balance -->
 
 [<cite>`align-items` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items) \
-Same as [flex](../flexbox/index.md#align-items), again!
+<sub>Same as [flex](../flexbox/index.md#align-items), again!</sub>
 <!-- .right -->
 
 <figure style="--lines: 22">
@@ -387,7 +387,7 @@ If the total size of your grid is less than the container (because of your *expl
 
 - [<cite>`justify-content` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content)
 - [<cite>`align-content` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/align-content) \
-	When there is extra space.
+	<sub>When there is extra space.</sub>
 <!-- .right -->
 
 <figure style="--lines: 12">
@@ -415,7 +415,7 @@ Grid’s `repeat` function is very commonly used to make even-column grids. And 
 <!-- .balance -->
 
 [<cite>`repeat()` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/repeat) \
-	Remember, D.R.Y!
+	<sub>Remember, D.R.Y!</sub>
 <!-- .right -->
 
 <sub>The `()` indicates this is a [*function*](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_values_and_units/CSS_value_functions) (like our friend `calc()`) that you would pass *arguments*—a common [software paradigm](https://en.wikipedia.org/wiki/Function_(computer_programming)).</sub>
@@ -439,7 +439,7 @@ You can also use the `repeat` function without specifying an exact number of col
 <!-- .balance -->
 
 - [<cite>Auto-Sizing Columns in CSS Grid – CSS Tricks</cite>](https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/) \
-	Better than MDN, for this.
+	<sub>Better than MDN, for this.</sub>
 <!-- .right -->
 
 <figure style="--lines: 20">
@@ -458,7 +458,7 @@ Drag the divider over to see the difference in `auto-fill`/`auto-fit` behaviors!
 Grid is really useful for scaffolding out layouts, and sometimes it is helpful to give your *grid areas* qualitative/descriptive names that reflect their usage. This also makes it possible for the *grid items* (children) to reference them, below.
 
 [<cite>`grid-template-areas` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas) \
-	These are grid’s real designer superpower.
+	<sub>These are grid’s real designer superpower.</sub>
 <!-- .right -->
 
 <div class="balance before center verso">
@@ -495,7 +495,7 @@ If you’ve defined `grid-template-areas` (as [above](#grid-template-areas)), yo
 <!-- .balance -->
 
 [<cite>`grid-area` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-area) \
-	These go on the items/children.
+	<sub>These go on the items/children.</sub>
 <!-- .right -->
 
 <figure style="--lines: 20">
@@ -518,7 +518,7 @@ You can also control *item* placement in unnamed (and *implicit*) grid areas wit
 
 - [<cite>`grid-column` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column)
 - [<cite>`grid-row` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row) \
-	Where should the item go?
+	<sub>Where should the item go?</sub>
 <!-- .right .rows--2 -->
 
 These take two values, divided with a `/` (because CSS is inconsistent), which specify the *start line* and *end line*. There is also a `span` value for bridging across tracks:
@@ -574,10 +574,10 @@ Finally, just like flex—you can position individual *grid items* within their 
 <!-- .balance -->
 
 - [<cite>`justify-self` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-self) \
-	Just for grid.
+	<sub>Just for grid.</sub>
 
 - [<cite>`align-self` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/align-self) \
-	Same as in flex!
+	<sub>Same as in flex!</sub>
 <!-- .right -->
 
 <figure style="--lines: 17">

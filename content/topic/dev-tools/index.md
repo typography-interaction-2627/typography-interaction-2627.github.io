@@ -10,13 +10,13 @@ const order = 2
 **There is no single *best* browser; they are all kind of differently bad, in [different ways](https://en.wikipedia.org/wiki/Anna_Karenina_principle).**
 
 - [<cite>Chrome DevTools</cite>](https://developer.chrome.com/docs/devtools/) \
-We’ll be using these.
+<sub>We’ll be using these.</sub>
 
 - [<cite>Safari Web Development Tools</cite>](https://developer.apple.com/safari/tools/) \
-Got some long-overdue love way back in [*Sonoma*](https://developer.apple.com/videos/play/wwdc2023/10118), but [little](https://webkit.org/blog/15865/webkit-features-in-safari-18-0/#web-inspector) [since](https://webkit.org/blog/17333/webkit-features-in-safari-26-0/#web-inspector) [then](https://webkit.org/blog/17967/news-from-wwdc26-webkit-in-safari-27-beta/#web-inspector).
+<sub>Got some long-overdue love way back in [*Sonoma*](https://developer.apple.com/videos/play/wwdc2023/10118), but [little](https://webkit.org/blog/15865/webkit-features-in-safari-18-0/#web-inspector) [since](https://webkit.org/blog/17333/webkit-features-in-safari-26-0/#web-inspector) [then](https://webkit.org/blog/17967/news-from-wwdc26-webkit-in-safari-27-beta/#web-inspector).</sub>
 
 - [<cite>Firefox DevTools User Docs</cite>](https://developer.mozilla.org/en-US/docs/Tools) \
-Spiritual successor to [*Firebug*](https://thehistoryoftheweb.com/checking-under-the-hood-of-code/), the first suite.
+<sub>Spiritual successor to [*Firebug*](https://thehistoryoftheweb.com/checking-under-the-hood-of-code/), the first suite.</sub>
 <!-- .right .rows--4 -->
 
 Many developers use [Chrome](https://www.google.com/chrome) for [its popularity/hegemony](https://gs.statcounter.com/browser-market-share), before testing in other browsers. It also arguably has the most robust set of *DevTools*—though [Safari](https://www.apple.com/safari/) and [Firefox](https://developer.mozilla.org/en-US/docs/Tools) have their own versions, too. Much of this is just preference, but ultimately you’ll want to see what your visitors are seeing.
