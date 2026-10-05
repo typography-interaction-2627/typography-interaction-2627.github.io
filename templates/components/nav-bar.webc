@@ -61,6 +61,8 @@
 		/* Prevent collisions when there is a ToC. */
 		body:has(main > nav) & { --floor: calc(var(--block--toc) + var(--nav)) }
 
+		@media (width < 23.5em) { --inline: var(--padding) }
+
 		@media (width > 24.5em ) {
 			/* Split gutter. */
 			--inline: round(down, var(--bleed) + var(--gutter) / 2, var(--1px));
