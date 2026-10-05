@@ -728,7 +728,7 @@ In our [HTML introduction](../html/index.md) we briefly talked about `block` and
 <!-- .balance -->
 
 [<cite>Display – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/display) \
-<sub>Our `block` and `inline` elements (and later, `grid` and `flex`). \</sub>
+<sub>Our `block` and `inline` elements (and later, `grid` and `flex`).</sub>
 <!-- .right -->
 
 ### Block
