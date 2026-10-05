@@ -396,14 +396,21 @@ export default (config) => {
 					figure.appendChild(caption)
 				}
 
+				// Safari still blurs SVG `img`; use an `object` instead.
+				figure.querySelectorAll('img[src$=".svg"]').forEach((image) => {
+					image.tagName = 'object'
+					image.setAttribute('data', image.getAttribute('src'))
+					image.removeAttribute('src')
+				})
+
 				// Nest in a container.
-				figure.querySelectorAll(':scope > img[src], :scope > iframe').forEach((media) => {
+				figure.querySelectorAll(':scope > img[src], :scope > iframe, :scope > object[data]').forEach((media) => {
 					// …adding dithered images when we can.
-					const dither = media.localName === 'img'
-						? `<as-dithered-image crunch="2" src="${markdown.utils.escapeHtml(media.getAttribute('src'))}"></as-dithered-image>`
+					const dither = media.localName !== 'iframe'
+						? `<as-dithered-image crunch="2" src="${markdown.utils.escapeHtml(media.getAttribute(media.localName === 'img' ? 'src' : 'data'))}"></as-dithered-image>`
 						: ''
 
-					id ||= media.getAttribute('src')?.split('.')[0]
+					id ||= (media.getAttribute('src') ?? media.getAttribute('data'))?.split('.')[0]
 
 					media.replaceWith(element(`<div>${media.outerHTML}${dither}</div>`))
 				})

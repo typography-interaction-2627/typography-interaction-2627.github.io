@@ -108,7 +108,7 @@
 			anchor-name: --figure-container;
 			position:    relative;
 
-			&:has(img) {
+			&:has(img, object) {
 				inline-size: fit-content;
 
 				@supports (inline-size: calc-size(fit-content, size)) {
@@ -118,7 +118,7 @@
 			}
 
 			/* TODO How to have this always snap to pixel height? Takes “windows” off-pattern! */
-			img, iframe {
+			:is(img, iframe, object) {
 				--lines--adjusted: calc((var(--lines)) * 1rlh + 1rcap + var(--4px));
 
 				filter:          saturate(var(--in-view)) contrast(calc(2 - var(--in-view))) brightness(calc(2 - var(--in-view)));
@@ -135,7 +135,7 @@
 				}
 			}
 
-			img {
+			:is(img, object) {
 				block-size:     var(--height);
 				max-block-size: round(min(var(--max), var(--lines--adjusted, var(--max))) / var(--zoom, 1), var(--1px));
 				zoom:           var(--zoom); /* So they aren’t as limited by intrinsic resolution. */
@@ -196,12 +196,12 @@
 			&:hover {
 				--in-view: 1;
 
-				img, iframe, as-dithered-image { animation-name: none }
+				img, iframe, object, as-dithered-image { animation-name: none }
 			}
 
 			/* Leave them “dithered.” */
 			[inert] & {
-				img {
+				:is(img, object) {
 					animation: initial;
 					filter:    initial;
 				}
@@ -214,7 +214,7 @@
 		}
 
 		/* A “border” around these. */
-		&:not(.borderless) div:has(img, iframe) {
+		&:not(.borderless) div:has(img, iframe, object) {
 			background-color: var(--color);
 
 			&::after {
