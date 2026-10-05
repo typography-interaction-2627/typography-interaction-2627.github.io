@@ -405,12 +405,14 @@ export default (config) => {
 
 				// Nest in a container.
 				figure.querySelectorAll(':scope > img[src], :scope > iframe, :scope > object[data]').forEach((media) => {
+					const src = media.getAttribute(media.localName === 'object' ? 'data' : 'src')
+
 					// …adding dithered images when we can.
 					const dither = media.localName !== 'iframe'
-						? `<as-dithered-image crunch="2" src="${markdown.utils.escapeHtml(media.getAttribute(media.localName === 'img' ? 'src' : 'data'))}"></as-dithered-image>`
+						? `<as-dithered-image crunch="2" src="${markdown.utils.escapeHtml(src)}"></as-dithered-image>`
 						: ''
 
-					id ||= (media.getAttribute('src') ?? media.getAttribute('data'))?.split('.')[0]
+					id ||= src?.split('.')[0]
 
 					media.replaceWith(element(`<div>${media.outerHTML}${dither}</div>`))
 				})
