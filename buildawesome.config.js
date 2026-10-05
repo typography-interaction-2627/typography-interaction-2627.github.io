@@ -430,7 +430,7 @@ export default (config) => {
 
 	// Convert standalone `<sub>…</sub>` source to `<small>…</small>` for “notes” from GFM.
 	const markdownSupSmall = (markdown) => markdown.core.ruler.before('normalize', 'supSmall', (state) =>
-		state.src = state.src.replace(/^((?: {0,3}>[ \t]*)+)?<sub(\s[^>]*)?>([\s\S]*?)<\/sub>$/gim, '$1<small$2>$3</small>'),
+		state.src = state.src.replace(/^((?: {0,3}>[ \t]*)+|[ \t]+)?<sub(\s[^>]*)?>([\s\S]*?)<\/sub>$/gim, '$1<small$2>$3</small>'),
 	)
 
 	const markdown = markdownIt(markdownOptions)
