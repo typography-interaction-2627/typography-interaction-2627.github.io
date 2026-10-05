@@ -3,30 +3,14 @@
 	:where(p, li):has(a > cite):not(:has(ul)) {
 		--wrap: balance;
 
-		inline-size: fit-content; /* Cinch (for `:hover`). */
+		inline-size:     fit-content; /* Cinch (for `:hover`). */
 		max-inline-size: initial;
-
-		/* With a note after. */
-		/* TODO Use `small` for this? Adjusting Markdown. */
-		&:has(br) {
-			/* TODO Bobble with/without this—type inset? */
-			--size: var(--size--note);
-
-			em { line-height: 1 } /* Helps with `em` and rounding? */
-
-			> a:has(> cite) { margin-block-end: calc(var(---4px)) }
-
-			/* `opsz` dance. */
-			@supports (not (-moz-appearance: none)) { --font: 'Geneva 9' }
-		}
 
 		> a:has(> cite) {
 			--size: var(--size--root);
 
-			inline-size:         fit-content;
-			isolation:           isolate;
-			margin-inline-end:   var(--right);
-			margin-inline-start: var(--left);
+			inline-size: fit-content;
+			isolation:   isolate;
 
 			:where(cite) {
 				--padding: 1ex;
@@ -41,6 +25,19 @@
 				position:             relative;
 				z-index:              1; /* In front of the link enlargement. */
 			}
+		}
+
+		/* With a note after. */
+		> small {
+			display:            block;
+			margin-block-start: var(---5px);
+			text-box:           trim-both cap alphabetic;
+		}
+
+		/* Don’t double-inset. */
+		> :is(a:has(> cite), small) {
+			margin-inline-end:   var(--right);
+			margin-inline-start: var(--left);
 		}
 	}
 </style>
