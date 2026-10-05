@@ -144,7 +144,7 @@ And as designers—they also help us to organize our systems, and give us hooks 
 **[Elements](https://developer.mozilla.org/en-US/docs/Glossary/Element) are composed of *tags* and their content:**
 
 [<cite>HTML Elements Reference – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) \
-	<sub>MDN will always go deep; this is *all* the elements.</sub>
+<sub>MDN will always go deep; this is *all* the elements.</sub>
 <!-- .right -->
 
 <figure class="all borderless justify-center">
@@ -299,7 +299,7 @@ If you have three of something, it is probably [a list](#lists)! There are also 
 **All HTML elements can have [attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes), which provide more information about the element:**
 
 [<cite>HTML Attribute Reference – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes) \
-	<sub>There are a lot of them.</sub>
+<sub>There are a lot of them.</sub>
 <!-- .right -->
 
 <figure class="all borderless justify-center">
@@ -468,7 +468,7 @@ The `class` attribute provides an additional way to select the element in CSS or
 Generally speaking, HTML doesn’t care about capitalization, extra white space, or line breaks (one exception, [below](#inline-whitespace)). The browser will just read everything from left to right, as if it is one long, running sentence. So the shouty `<html>` and quieter `<html>` are interpreted the same.
 
 [<cite>How Whitespace Is Handled – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Whitespace) \
-	<sub>It depends! It always depends.</sub>
+<sub>It depends! It always depends.</sub>
 <!-- .right .rows--2 -->
 
 **The browser parses both of these in the exact same way:**
@@ -507,7 +507,7 @@ There are a lot of common patterns used—like indenting to indicate hierarchy/
 [*Block-level elements*](https://developer.mozilla.org/en-US/docs/Glossary/Block-level_content) always start on a new line, and take up the full width available—stretching out to the left and right of their parent/container. They stack on top of each other. Importantly, block elements can have a top and bottom margin, unlike inline elements:
 
 [<cite>Block-level content – MDN</cite>](https://developer.mozilla.org/en-US/docs/Glossary/Block-level_content) \
-	<sub>Our larger elements, stacked up.</sub>
+<sub>Our larger elements, stacked up.</sub>
 <!-- .right -->
 
 <section class="nowrap" style="--leading: 1.5rlh">
@@ -560,7 +560,7 @@ These are live, *editable* examples! Whatever is on the left is rendered on the 
 [*Inline elements*](https://developer.mozilla.org/en-US/docs/Glossary/Inline-level_content) do *not* start on a new line, and only take up as much width as necessary. You can think of these as the little metal slugs [from printing](<https://en.wikipedia.org/wiki/Slug_(typesetting)>), within text. Other text and inline elements will continue to flow around them, and they can wrap to new lines:
 
 [<cite>Inline-level content – MDN</cite>](https://developer.mozilla.org/en-US/docs/Glossary/Inline-level_content) \
-	<sub>Smaller, moving within our text.</sub>
+<sub>Smaller, moving within our text.</sub>
 <!-- .right -->
 
 [`<abbr>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr) [`<a>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a) [`<br>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br) [`<button>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) [`<cite>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/cite) [`<code>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/code) [`<del>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/del) [`<em>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/em) [`<img>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) [`<ins>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ins) [`<kbd>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/kbd) [`<mark>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/mark) [`<q>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q) [`<samp>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/samp) [`<small>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/small) [`<span>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/span) [`<strong>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong) [`<sub>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sub) [`<sup>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sup) [`<time>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time) [`<var>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/var) [`<wbr>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/wbr)
@@ -599,7 +599,7 @@ Inline elements [are the exception](https://developer.mozilla.org/en-US/docs/Web
 You can *comment* part of the code and the browser won’t show it. [Comments](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started#html_comments) are often used to explain your thinking, organize your code, “turn off” a bit of code, or temporarily hide whatever you’d like.
 
 [<cite>Using HTML comments – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Comments) \
-	<sub>Always. Be. Commenting.</sub>
+<sub>Always. Be. Commenting.</sub>
 <!-- .right -->
 
 <figure style="--lines: 11">
@@ -628,7 +628,7 @@ Keep in mind these are still readable in the *source*.
 Any time you have more than two of something, you probably have [a *list*](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Lists). These are commonly used for semantic navigation elements, as well—think *“here’s a list of links in this site”*:
 
 [<cite>Lists – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Lists) \
-	<sub>Lists are everywhere!</sub>
+<sub>Lists are everywhere!</sub>
 <!-- .right -->
 
 <figure style="--lines: 21">
@@ -642,7 +642,7 @@ Any time you have more than two of something, you probably have [a *list*](https
 There are [specific lists](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl) for defining things:
 
 [<cite>Description list element – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dl) \
-	<sub>A more-specific, underused type.</sub>
+<sub>A more-specific, underused type.</sub>
 <!-- .right -->
 
 <figure style="--lines: 16">
@@ -661,7 +661,7 @@ These aren’t much to look at without CSS, though. Soon!
 Often (especially in our work), you’ll want to differentiate/indicate some enclosed text with a [`blockquote` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/blockquote):
 
 [<cite>Block quotation element – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/blockquote) \
-	<sub>In print parlance, also a [*pull quote*](https://en.wikipedia.org/wiki/Pull_quote).</sub>
+<sub>In print parlance, also a [*pull quote*](https://en.wikipedia.org/wiki/Pull_quote).</sub>
 <!-- .right -->
 
 <figure style="--lines: 15">
@@ -680,7 +680,7 @@ Again, these aren’t much to look at without CSS but they have an important *se
 [*Tables*](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table) can we used to display [*tabular*](https://en.wikipedia.org/wiki/Table_(format)) data:
 
 [<cite>Table element – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/table) \
-	<sub>Before everything was a `div`, it was a `table`.</sub>
+<sub>Before everything was a `div`, it was a `table`.</sub>
 <!-- .right -->
 
 <figure style="--lines: 25">
@@ -701,7 +701,7 @@ They used to be the only way to achieve multi-column or grid layouts, but that 
 There is even some basic interactivity (way, way ahead of JavaScript) with [*details disclosure*](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) elements that open and close:
 
 [<cite>Details disclosure element – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/details) \
-	<sub>Some basic interactivity!</sub>
+<sub>Some basic interactivity!</sub>
 <!-- .right -->
 
 <figure style="--lines: 18">
@@ -720,7 +720,7 @@ You can do a lot with these, without any JavaScript! Our navigation is built wit
 HTML continues to evolve, very recently adding native (non-JS) support for [*popovers*](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover)—click one thing, display another! You can do this natively now:
 
 [<cite>`popover` attribute – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover) \
-	<sub>Even more flexible interactivity!</sub>
+<sub>Even more flexible interactivity!</sub>
 <!-- .right -->
 
 <figure style="--lines: 18">

@@ -744,7 +744,7 @@ Move the `.warning` above `.note` to see the change.
 To add some even more confusion, [some CSS properties](https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance) set on a parent also apply to their children—such as `color` or `font-family` (and most other type styles). Most spacing/layout properties, like `size` and `margin` do not. (More on those, next week!)
 
 [<cite>Inheritance – web.dev</cite>](https://web.dev/learn/css/inheritance) \
-	<sub>Google is better on this one.</sub>
+<sub>Google is better on this one.</sub>
 <!-- .right -->
 
 Inheritance allows you to quickly set some properties globally, without having many brittle/redundant rules, as we did before—often the fastest way to approach your design:
@@ -823,7 +823,7 @@ header {
 Besides the basic examples above, [*color*](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value) can be specified in a handful of different ways. What works best for you will depend on your project (and mindset); here are some of the approaches:
 
 [<cite>CSS Colors – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_colors) \
-	<sub>Come for the picker, stay for all the info.</sub>
+<sub>Come for the picker, stay for all the info.</sub>
 <!-- .right -->
 
 <figure style="--lines: 31">
@@ -846,7 +846,7 @@ Named colors are quick to work with when you know a few, but [`hsla`](https://d
 Remember, the web is text [*all the way down*](../everything/index.md#so-what-are-web-pages)&#x202F;! Much of your design vocabulary will come from your type and its decisions—especially when starting out. Everything you work on will start here.
 
 [<cite>Fundamental Text and Font Styling – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals) \
-	<sub>All your properties.</sub>
+<sub>All your properties.</sub>
 <!-- .right .rows--2 -->
 
 So most importantly for us, you’ll always be customizing your [typography](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals)—starting with the [`font-family` property](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family):
@@ -874,7 +874,7 @@ Web font licensing is a *Whole Big Thing*—so we’ll start out by making use o
 Once you’ve got a `font-family` in, there are many additional properties to control the typography—you’ll want to investigate all of these to make your type your own:
 
 [<cite>Web Typography –<br>Interneting Is Hard</cite>](https://internetingishard.netlify.app/html-and-css/web-typography) \
-	<sub>A more qualitative take.</sub>
+<sub>A more qualitative take.</sub>
 <!-- .right -->
 
 <figure style="--lines: 39">

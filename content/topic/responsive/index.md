@@ -548,7 +548,7 @@ Best of both worlds! We can scale our designs—but not *too* small and not *too
 By far, the most common media queries will be *width/height/orientation*—for adjusting your layouts across different devices. But `@media` has some more tricks up its sleeve in testing for other browser features. We’ll look at some of the handy/common ones, here.
 
 [<cite>`@media` types/features - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/@media#media_features) \
-	<sub>There are many of these! Meet your visitors where they are.</sub>
+<sub>There are many of these! Meet your visitors where they are.</sub>
 <!-- .right -->
 
 ### `screen` vs. `print`
@@ -557,7 +557,7 @@ In all of our above examples, there is an implied *[media type](https://develope
 <!-- .balance -->
 
 [<cite>CSS paged media - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_paged_media) \
-	<sub>There are also some print-specific properties available.</sub>
+<sub>There are also some print-specific properties available.</sub>
 <!-- .right -->
 
 <figure style="--lines: 27">
@@ -584,7 +584,7 @@ You can see the `print` style in action by going [directly to the example](print
 Another common feature to check for is [`hover`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover), detecting whether a browser has an input device that supports *hovering*—which really just means a mouse, usually on laptop/desktop computers. (But not always!)
 
 [<cite>`hover` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover) \
-	<sub>Mobile devices don’t have this!</sub>
+<sub>Mobile devices don’t have this!</sub>
 <!-- .right -->
 
 Perhaps obviously, mobile *touch-based* systems don’t have this behavior—and often react oddly to `:hover` CSS, “[eating taps](https://css-tricks.com/annoying-mobile-double-tap-link-issue/).” So you should adjust your interfaces to work in the absence of this state—never assume a mouse!
@@ -609,7 +609,7 @@ Hover states are a good feature for *progressive-enhancement*, as we did here—
 You see this one more and more these days—[`prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) for switching up a site’s styles based on whether the user is in *light* or *dark mode*, popularized by the ol’ iPhone again:
 
 [<cite>`prefers-color-scheme` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) \
-	<sub>Michael prefers `dark`; Rijk prefers `light`. One of them is right!</sub>
+<sub>Michael prefers `dark`; Rijk prefers `light`. One of them is right!</sub>
 <!-- .right -->
 
 Sometimes this feels appropriate—especially in products/applications, like maybe a messaging service. But other times the color scheme of a site is its *brand* (like ours), and probably shouldn’t change based on this query. Continuing our ongoing discussion of who has the *control*—it’s up to you:

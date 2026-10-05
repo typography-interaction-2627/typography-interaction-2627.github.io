@@ -133,7 +133,7 @@ Unlike most (…all?) of the CSS we’ve been introduced to, *flex* is applied o
 After specifying an element as *flex*, we can set its main axis with the `flex-direction` property. By default (you don’t have to write it), this behaves as `flex-direction: row;`—so you’ll generally only be adding it when you want something going vertical, with `flex-direction: column;`:
 
 [<cite>`flex-direction` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction) \
-	<sub>Always `row` by default.</sub>
+<sub>Always `row` by default.</sub>
 <!-- .right -->
 
 <figure style="--lines: 15">
@@ -164,7 +164,7 @@ Since flexbox is *one-dimensional*, by default it will try to cram everything in
 <!-- .balance -->
 
 [<cite>`flex-wrap` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap) \
-	<sub>The only *two-dimensional* flex use.</sub>
+<sub>The only *two-dimensional* flex use.</sub>
 <!-- .right -->
 
 <figure style="--lines: 22">
@@ -203,7 +203,7 @@ You could do some weird, unique layouts with these—but keep in mind the order 
 So most of what we’ve seen here is… somewhat possible using `float` and `position`—though not at all easily and only when you know the size/counts of your content.
 
 [<cite>`justify-content` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content) \
-	<sub>How should we space items out?</sub>
+<sub>How should we space items out?</sub>
 <!-- .right -->
 
 But the `justify-content` property is where flexbox starts to allow novel layouts, by dividing up the extra/available free space between elements—akin to *distribute* options in Figma/Adobe applications. `justify-content` does this on our *main axis*:
@@ -238,7 +238,7 @@ And then perpendicular to `justify` along the *main axis*, flexbox has the `alig
 <!-- .balance -->
 
 [<cite>`align-items` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items) \
-	<sub>For the cross/perpendicular axis.</sub>
+<sub>For the cross/perpendicular axis.</sub>
 <!-- .right -->
 
 <figure style="--lines: 25">
@@ -261,7 +261,7 @@ When we have a flex element with `flex-wrap` set, we can also position the *line
 <!-- .balance -->
 
 [<cite>`align-content` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/align-content) \
-	<sub>When there is extra room.</sub>
+<sub>When there is extra room.</sub>
 <!-- .right -->
 
 <figure style="--lines: 21">
@@ -319,7 +319,7 @@ Kind of like the `-reverse` suffix—you can individually apply the `order` prop
 <!-- .balance -->
 
 [<cite>`order` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/order) \
-	<sub>Visual/display only!</sub>
+<sub>Visual/display only!</sub>
 <!-- .right -->
 
 <figure style="--lines: 25">
@@ -356,7 +356,7 @@ The `flex-basis` property is a little like `inline-size` and `block-size`—depe
 <!-- .balance -->
 
 [<cite>`flex-basis` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis) \
-	<sub>How much of the space.</sub>
+<sub>How much of the space.</sub>
 <!-- .right -->
 
 This defaults to `auto`, which falls back to any specified `inline-size` or `block-size`—and if those aren’t present, will just use the size of the content. You specify this `flex-basis` with [length units](../box-model/index.md#css-lengths) like `%` and `px` :
@@ -378,7 +378,7 @@ You are [usually fine](https://stackoverflow.com/a/34355447) just specifying `in
 Finally, we have an individual override for an [`align-items`](#align-items) property set on the parent—the `align-self` property—which adjusts (with the same keywords/values) the alignment of the *specific* child item it is applied to:
 
 [<cite>`align-self` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/align-self) \
-	<sub>Overrides this child! Rebels.</sub>
+<sub>Overrides this child! Rebels.</sub>
 <!-- .right -->
 
 <figure style="--lines: 25">

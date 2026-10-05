@@ -340,7 +340,7 @@ You rarely see a `grid` without a `gap`
 Also [like flex](../flexbox/index.md#justify-content) (there’s a pattern here), we can position items within the tracks—but now we have control over both axes and the overall placement. To start, `justify-items` positions all the *grid items* along their row axis.
 
 [<cite>`justify-items` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-items) \
-	<sub>This only works with grid.</sub>
+<sub>This only works with grid.</sub>
 <!-- .right -->
 
 The terminology here is always a bit confusing, but think of it this way—in grid, the main axis is *always* the horizontal row. So *justify* always means left/right, and *align* always means top/bottom. Easier to remember than flex! No flipping axes:
@@ -415,7 +415,7 @@ Grid’s `repeat` function is very commonly used to make even-column grids. And 
 <!-- .balance -->
 
 [<cite>`repeat()` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/repeat) \
-	<sub>Remember, D.R.Y!</sub>
+<sub>Remember, D.R.Y!</sub>
 <!-- .right -->
 
 <sub>The `()` indicates this is a [*function*](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_values_and_units/CSS_value_functions) (like our friend `calc()`) that you would pass *arguments*—a common [software paradigm](https://en.wikipedia.org/wiki/Function_(computer_programming)).</sub>
@@ -458,7 +458,7 @@ Drag the divider over to see the difference in `auto-fill`/`auto-fit` behaviors!
 Grid is really useful for scaffolding out layouts, and sometimes it is helpful to give your *grid areas* qualitative/descriptive names that reflect their usage. This also makes it possible for the *grid items* (children) to reference them, below.
 
 [<cite>`grid-template-areas` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas) \
-	<sub>These are grid’s real designer superpower.</sub>
+<sub>These are grid’s real designer superpower.</sub>
 <!-- .right -->
 
 <div class="balance before center verso">
@@ -495,7 +495,7 @@ If you’ve defined `grid-template-areas` (as [above](#grid-template-areas)), yo
 <!-- .balance -->
 
 [<cite>`grid-area` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-area) \
-	<sub>These go on the items/children.</sub>
+<sub>These go on the items/children.</sub>
 <!-- .right -->
 
 <figure style="--lines: 20">
