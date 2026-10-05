@@ -476,7 +476,7 @@ Note we added a `main` container. The `calc()` here are kind of tricky—but thi
 
 ## Responsive Lengths
 
-CSS also added some additional functions, beyond just [`calc()`](../box-model/index.md#combined-via-calc). As we consider resilient designs across varying/unknown screen sizes, these allow us to set limits/constraints beyond the basic [`min-`/`max-` sizes](../box-model/index.md#constrained-by-min-max-)—and crucially, apply them to *other* properties, like `margin`, `padding`, `font-size`, etc. You’ll often use these in conjunction with viewport-[relative units](../box-model/index.md#relative-units) like `vw`/`vh`.
+CSS also added some additional functions, beyond just [`calc()`](../box-model/index.md#combined-via-calc). As we consider resilient designs across varying/unknown screen sizes, these allow us to set limits/constraints beyond the basic [`min-`/`max-` sizes](../box-model/index.md#constrained-by-min-max-)—and crucially, apply them to *other* properties, like `margin`, `padding`, `font-size`, etc. You’ll often use these in conjunction with viewport-[relative units](../box-model/index.md#relative-units) like `vw`/`vh`.
 
 [<cite>CSS `min()`, `max()`, and `clamp()` – web.dev</cite>](https://web.dev/articles/min-max-clamp) \
 For more than just `-size`!

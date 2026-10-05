@@ -3,7 +3,7 @@ const week = 4
 const order = 2
 ```
 
-# DevTools / Web Inspector
+# DevTools&#x202F;/&thinsp;Web Inspector
 
 ## Browsers Are Our Imperfect Venue
 
@@ -154,7 +154,7 @@ The <samp>More Options <span class="x22ee">⋮</span></samp> menu here has some 
 
 > [!IMPORTANT]
 >
-> Always check your work on the *real thing*. DevTools are only an approximation!
+> Always check your work on the *real thing*! DevTools are only an approximation.
 >
 > <sub>This is just a quicker preview, but isn’t always perfectly accurate—and also won’t reflect any platform-specific behaviors around scrolling or rotating. (We’re looking at you, [i&NoBreak;OS Safari](https://developer.apple.com/forums/thread/800125).)</sub>
 
