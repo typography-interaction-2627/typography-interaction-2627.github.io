@@ -48,6 +48,8 @@
 
 		/* The “dropdown.” */
 		&::details-content {
+			--cap: 9 * var(--1px); /* Based on `nav-list.webc` spacing. */
+
 			background-color:    var(--background);
 			block-size:          fit-content;
 			border-block-start:  var(--border);
@@ -55,7 +57,7 @@
 			inline-size:         max-content;
 			inset-block:         var(--inset, calc(anchor(end) - var(--1px)) auto);
 			margin-inline-start: var(--inline);
-			max-block-size:      calc(round(down, var(--safe), 2cap) - var(--3px)); /* Cut through a line. */
+			max-block-size:      calc(round(down, var(--safe), 2 * var(--cap)) - var(--3px)); /* Cut through a line. */
 			max-inline-size:     round(min(var(--limit, 100vw), 80vw), var(--1px));
 			overflow-y:          scroll;
 			position-anchor:     --nav-details;
