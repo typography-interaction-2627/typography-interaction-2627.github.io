@@ -1,5 +1,5 @@
 import { readFileSync } from 'fs'
-import { readdir, readFile, writeFile } from 'fs/promises'
+import { readdir, readFile } from 'fs/promises'
 import { resolve, join, dirname, normalize } from 'path'
 import path from 'path'
 
