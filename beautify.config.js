@@ -15,6 +15,9 @@ const options = {
 		preserve_newlines: false,
 	},
 	indent_with_tabs: true,
+	js: {
+		preserve_newlines: true,
+	},
 }
 
 for (const [extension, formatter] of [['html', beautify.html], ['css', beautify.css], ['js', beautify.js]])
