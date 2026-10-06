@@ -496,6 +496,7 @@ export default (config) => {
 				html: `<a${inert ? '' : ` href="#${heading.id}"`}>
 <p>${heading.innerHTML.trim()}</p>
 </a>`,
+				inert,
 				level,
 			}
 
