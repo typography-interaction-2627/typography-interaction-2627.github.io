@@ -22,7 +22,7 @@
 
 		--ceiling: calc(var(--block) + var(--nav)); /* Inside edge of nav. */
 		--floor:   var(--gutter);
-		--safe:    calc(var(--dvh) - var(--ceiling) - var(--floor) - var(--gap));
+		--safe:    calc(var(--dvh) - var(--ceiling) - var(--floor));
 
 		column-gap:          var(--gap);
 		display:             flex;
