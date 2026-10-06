@@ -135,15 +135,15 @@
 						order:               1;
 					}
 
+					/* Shrug emoji. */
+					@supports (font: -apple-system-body) { &:has(small) { gap: calc(2cap + 0.1em) } }
+
 					/* Drafts, `inert` in-page. */
 					&:not([href]) p {
 						-webkit-user-select: none;
 						mask:                var(--background--check);
 						pointer-events:      none;
 						user-select:         none;
-
-						/* Shrug emoji. */
-						@supports (font: -apple-system-body) { padding-inline: 0.01em }
 					}
 
 					/* Dates. */
