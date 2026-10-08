@@ -4,6 +4,32 @@ const week = 7
 
 # Responsive Design
 
+## Why Do We Care?
+
+Underneath the “buzzwords” of *responsive design* (or something being *fully responsive*)—what might this concept have to offer us, as designers?
+
+<details>
+<summary>
+
+Why should a designer care about “responsive design”?
+
+</summary>
+
+- **It’s underlying premise of *progressive enhancement* (or [*mobile-first*](#mobile-first-design), below) will help us organize our design process.**
+
+- **It makes us unpack the *reasoning* and *rationale* for our design decisions—in order for them to work in many different scenarios.**
+
+- **Starting with the tightest/hardest constraints, first, makes later decisions much easier.**
+
+- **It’s a form of *accessibility*—meeting our audience where they are, on whatever device they have.**
+
+- **There are *so* many different devices out there! And it’s always changing.**
+
+- **It sure beats designing (and building) separate things!**
+<!-- .balance -->
+
+</details>
+
 ## What’s all this about *Responsive Design*?
 
 **Instead of designing, implementing, and serving separate sites for different devices and specific scenarios—we can adapt just one to work across them all. This is *responsive design*.**
