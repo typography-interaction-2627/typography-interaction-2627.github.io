@@ -104,8 +104,8 @@ You’ll see [this `<meta>` element](https://developer.mozilla.org/en-US/docs/We
 
 </div>
 
-- [<cite>Viewport concepts – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Viewport_concepts)
-*Usually* “the browser window.”
+- [<cite>Viewport concepts – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Viewport_concepts) \
+	<sub>*Usually* “the browser window.”</sub>
 
 - [<cite>`viewport` value – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) \
 	<sub>How the page should be sized!</sub>
@@ -135,8 +135,8 @@ The *Times* wasn’t fully responsive until *2018*! They still maintained a sepa
 
 Responsive design could really only flourish when CSS (and browsers) added the `@media` [<nobr>*at-rule*</nobr>](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries) to work with this new device information.
 
-- [<cite>CSS media queries – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries) \
-	<sub>Checking for viewport values.</sub>
+[<cite>CSS media queries – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries) \
+<sub>Checking for viewport values.</sub>
 <!-- .right -->
 
 <div class="balance before verso">
@@ -486,8 +486,8 @@ CSS also added some additional functions, beyond just [`calc()`](../box-model/in
 
 The [`min()` function](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/min) chooses the smallest value from its <nobr>comma-separate</nobr> list. Somewhat counterintuitively from its name, we can use this to set the *maximum* value for something—as the function selects whatever is lowest. You can think of this as a *ceiling* on your flexible values:
 
-[<cite>`min()` function - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/min)
-Select the smallest value.
+[<cite>`min()` function - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/min) \
+<sub>Select the smallest value.</sub>
 <!-- .right -->
 
 <figure style="--lines: 6">
@@ -505,8 +505,8 @@ Drag that divider! Note that you can do maths right within `min()`, no need to [
 
 On the other end of things, the [`max()` function](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/max) chooses the largest value. We can use this to set the *minimum* value, as the function selects whatever is highest. It is the *floor* for our flexibility:
 
-[<cite>`max()` function - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/max)
-Or the largest.
+[<cite>`max()` function - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/max) \
+<sub>Or the largest.</sub>
 <!-- .right -->
 
 <figure style="--lines: 6">
@@ -524,8 +524,8 @@ We can also use these functions in variable definitions themselves, like `--spac
 
 You’ll often want to set both a *floor* and a *ceiling* on flexible units, and we can do these together with the [`clamp()` function](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/clamp). It will *constrain* the preferred, middle value to within the range of the first (minimum) and last (maximum) boundaries:
 
-[<cite>`clamp()` function - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/clamp)
-Or *within* a minimum/maximum.
+[<cite>`clamp()` function - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/clamp) \
+<sub>Or *within* a minimum/maximum.</sub>
 <!-- .right -->
 
 <figure style="--lines: 11">
