@@ -213,7 +213,7 @@ This is from more than a dozen years ago, now. It’s really only gotten worse! 
 
 **There are very, *very* few layouts that won’t need some amount of horizontal responsiveness/breakpoints!**
 
-> If you think responsive's simple, I feel bad for you son. We got 99 viewports, but the iPhone’s just one.
+> If you think responsive's simple, I feel bad for you son. We got 99 viewports, but the iPhone’s just one.
 >
 > [<cite>Josh Brewer, 2012</cite>](https://web.archive.org/web/20120925123125/https://twitter.com/jbrewer/status/178528003402379265)
 
