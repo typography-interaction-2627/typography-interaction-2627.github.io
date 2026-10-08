@@ -258,8 +258,8 @@
 
 			/* Née ”intro.” */
 			:where(
-				p:has(> strong:only-child),
-				p:has(> strong:first-child + br + small)
+				:where(p, li):has(> strong:only-child),
+				:where(p, li):has(> strong:first-child + br + small)
 			) {
 				--size:    var(--size--h4);
 				--leading: 1rlh;
