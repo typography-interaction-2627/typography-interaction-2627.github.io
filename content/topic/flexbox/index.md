@@ -103,6 +103,8 @@ But [again](../box-model/index.md#a-sidebar-about-shorthand), we would generally
 
 ## Container (Parent) Properties
 
+### `display: flex;`
+
 Unlike most (…all?) of the CSS we’ve been introduced to, *flex* is applied on a *parent* element—but actually adjusts the layout of the *children*. An element with `display: flex;` is really telling you what its kids are going to be doing.
 <!-- .balance -->
 
@@ -110,7 +112,7 @@ Unlike most (…all?) of the CSS we’ve been introduced to, *flex* is applied o
 
 > [!NOTE]
 >
-> Figma’s *[auto layout](https://help.figma.com/hc/en-us/articles/360040451373-Explore-auto-layout-properties)* system maps [almost directly](https://medium.com/timeless/figmas-flexbox-cdebb6968c29) to flexbox, in defining rows or columns and then distributing items—and is likewise applied on the parent/container!
+> Figma’s *[auto layout](https://help.figma.com/hc/en-us/articles/360040451373-Guide-to-auto-layout-in-Figma)* system maps [almost directly](https://medium.com/timeless/figmas-flexbox-cdebb6968c29) to flexbox, in defining rows or columns and then distributing items—and is likewise applied on the parent/container!
 >
 > <sub>Remember that our design tools are [approximations](https://help.figma.com/hc/en-us/articles/42031586813719-Use-auto-layout-with-CSS-Flexbox-in-mind) of our actual medium!</sub>
 

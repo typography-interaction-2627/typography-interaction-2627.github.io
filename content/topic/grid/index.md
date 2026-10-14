@@ -257,7 +257,17 @@ This function [repeats a *track* list](https://developer.mozilla.org/en-US/docs/
 
 ## Container (Parent) Properties
 
-**Again, grid is a lot like flex—primarily properties that are applied on a container/parent element.**
+### `display: grid;`
+
+Again, grid is a lot like flex—it starts with `display: grid;` and other properties, applied on a container/parent element—telling the children what they will be up to.
+
+<sub>Same as flex, there is also `display: inline-grid;`—but again, you don’t see it used very much.</sub>
+
+> [!NOTE]
+>
+> Figma’s *auto layout* also added support for [grid layout flows](https://help.figma.com/hc/en-us/articles/31289469907863-Use-the-grid-auto-layout-flow)—modeled after the [CSS behaviors](https://uxdesign.cc/figmas-new-grid-you-must-understand-css-grid-as-a-designer-fbb00416e1cc)!
+>
+> <sub>It’s still [just an approximation](https://nearform.com/digital-community/figmas-new-grid-auto-layout-what-it-does-and-doesnt-yet-do/), though!</sub>
 
 ### `grid-template-columns` / `grid-template-rows`
 
