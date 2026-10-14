@@ -47,11 +47,15 @@ Grid truly supplants many of the previous box model layout approaches (like `flo
 >
 > [<cite>Josef Müller-Brockmann, 1961</cite>](https://monoskop.org/images/a/a4/Mueller-Brockmann_Josef_Grid_Systems_in_Graphic_Design_Raster_Systeme_fuer_die_Visuele_Gestaltung_English_German_no_OCR.pdf)
 
-## Grid Terminology
+## Grid Concepts
 
-**Grid introduces us to some new vocabulary:**
+### New Terminology
 
-<dl class="balance verso">
+<div class="balance verso">
+
+**Grid introduces some new vocabulary:**
+
+<dl>
 
 <dt>
 
@@ -99,15 +103,13 @@ You can combine one or more adjacent grid cells into a rectangular *area.* Often
 
 </dl>
 
-<div class="recto start sticky">
+</div>
 
-<figure>
+<figure class="borderless recto start sticky" style="margin-block-start: initial">
 <img src="terminology.svg">
 </figure>
 
-</div>
-
-## New Units and Functions
+### New Units and Functions
 
 <div class="left">
 
@@ -160,6 +162,7 @@ The [*intrinsic* minimum size](https://developer.mozilla.org/en-US/docs/Web/CSS/
 
 </dt>
 <dd>
+
 Same for [the maximum](https://developer.mozilla.org/en-US/docs/Web/CSS/max-content). With text, this is the whole sentence/line:
 
 ```css
@@ -229,7 +232,7 @@ A function that [defines a range](https://developer.mozilla.org/en-US/docs/Web/C
 
 This function [repeats a *track* list](https://developer.mozilla.org/en-US/docs/Web/CSS/repeat), so you don’t have to write it over and over:
 
-```css
+```css <!-- style="max-inline-size: 100%" -->
 .twelve-columns {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;

@@ -32,21 +32,21 @@ And let us tell you—being a web designer was [a *whole lot harder*](http://mey
 >
 > [<cite>Elika J. Etemad (Fantasai), 2007</cite>](https://lists.w3.org/Archives/Public/www-style/2007Feb/0137.html)
 
-## Main and Cross Axes
+## Flex Concepts
 
-Flexbox is a *one-dimensional* layout system—meaning it is (*…&NoBreak;usually*) focused on arranging items either horizontally in rows, or vertically in columns.
+### Main and Cross Axes
 
-**These are called the *axes*.**
+Flexbox is a *one-dimensional* layout system—meaning it is (*…usually*) focused on arranging items either horizontally in rows, or vertically in columns.
 
-**The one running in the direction of your flex items is your *main axis*; perpendicular to this is your *cross axis*:**
+**These are called the *axes*. The one running in the direction of your flex items is your *main axis*; perpendicular to this is your *cross axis*:**
 
 <div class="before verso">
 
-<figure>
+<figure class="before borderless">
 <img src="axes-row.svg">
 </figure>
 
-```css <!-- .before--0 style="inline-size: 100%" -->
+```css <!-- style="margin-block-start: initial; inline-size: 100%" -->
 .some-container {
 	display: flex;
 	flex-direction: row; /* Default! */
@@ -57,11 +57,11 @@ Flexbox is a *one-dimensional* layout system—meaning it is (*…&NoBreak;usual
 
 <div class="before recto">
 
-<figure>
+<figure class="before borderless">
 <img src="axes-column.svg">
 </figure>
 
-```css <!-- .before--0 style="inline-size: 100%" -->
+```css <!-- style="margin-block-start: initial; inline-size: 100%" -->
 .some-container {
 	display: flex;
 	flex-direction: column; /* Rotated! */
@@ -70,53 +70,36 @@ Flexbox is a *one-dimensional* layout system—meaning it is (*…&NoBreak;usual
 
 </div>
 
-## Start/End, Justify/Align
+### Start vs. End, Justify vs. Align
 
 Flex also lets us position elements along/within the axes, in both directions—in relation to the `start` or the `end` of the direction.
 <!-- .balance -->
 
 **For the *main* axis, you `justify`; for the *cross* axis, you `align`:**
 
-<div class="before verso">
-
-<figure>
+<figure class="before borderless verso">
 <img src="justify-align-row.svg">
+<figcaption>
+
+For rows (the default): `justify` moves items inline (left/right); `align` moves block (top/bottom).
+
+</figcaption>
 </figure>
 
-```css <!-- .before--0 style="inline-size: 100%" -->
-.some-container {
-	display: flex;
-	flex-direction: row; /* Default! */
-}
-```
-
-<sub>For rows (the default): `justify` moves items inline (left/right); `align` moves block (top/bottom).</sub>
-
-</div>
-
-<div class="before recto">
-
-<figure>
+<figure class="before borderless recto">
 <img src="justify-align-column.svg">
+<figcaption>
+
+For columns (rotated): `justify` moves items block (top/bottom); `align` moves inline (left/right).
+
+</figcaption>
 </figure>
 
-```css <!-- .before--0 style="inline-size: 100%" -->
-.some-container {
-	display: flex;
-	flex-direction: column; /* Rotated! */
-}
-```
-
-<sub>For columns (rotated): `justify` moves items block (top/bottom); `align` moves inline (left/right).</sub>
-
-</div>
-
-### Shorthand
+### Shorthand?
 
 Like a lot of CSS, *flex* has [shorthand](https://developer.mozilla.org/en-US/docs/Web/CSS/flex) [properties](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-flow).
 
-But again, we would avoid them—the system can be hard enough to understand. This will be true when we get to `grid` as well—often being a little bit more verbose in your code will make things easier to understand, especially starting out.
-<!-- .balance -->
+But [again](../box-model/index.md#a-sidebar-about-shorthand), we would generally avoid them—the system can be hard enough to understand. This will be true when we get to `grid` as well—often being a little bit more verbose in your code will make things easier to understand, especially starting out.
 
 ## Container (Parent) Properties
 
