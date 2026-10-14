@@ -1,15 +1,23 @@
+:root { --spacing: 1rem; }
+
 body {
 	font-family: sans-serif;
-	padding: 1rem;
+	padding: var(--spacing);
 }
 
-ol { background-color: gold; }
+ol {
+	background-color: gold;
 
-ol:not(:first-child) { margin-block-start: 1rem; }
+	&:not(:first-child) { margin-block-start: var(--spacing); }
 
-li {
-	background-color: tomato;
-	border-block-end: 0.1rem solid firebrick;
-	border-inline-end: 0.1rem solid firebrick;
-	padding: 0.5rem;
+	li {
+		--edge: calc(var(--spacing) / 10) solid firebrick;
+
+		background-color: tomato;
+		border-block-end: var(--edge);
+		border-inline-end: var(--edge);
+		padding: calc(var(--spacing) / 2);
+
+		&:nth-child(even) { background-color: salmon; }
+	}
 }

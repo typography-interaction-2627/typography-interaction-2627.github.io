@@ -1,11 +1,18 @@
+:root { --spacing: 1rem; }
+
 body {
 	font-family: sans-serif;
-	padding: 1rem;
-}
+	padding: var(--spacing);
 
-body > * {
-	background-color: tomato;
-	border-block-end: 0.1rem solid firebrick;
-	border-inline-end: 0.1rem solid firebrick;
-	padding: 0.5rem;
+	/* Not just lists, in this example! */
+	> * {
+		--edge: calc(var(--spacing) / 10) solid firebrick;
+
+		background-color: tomato;
+		border-block-end: var(--edge);
+		border-inline-end: var(--edge);
+		padding: calc(var(--spacing) / 2);
+
+		&:nth-child(even) { background-color: salmon; }
+	}
 }
