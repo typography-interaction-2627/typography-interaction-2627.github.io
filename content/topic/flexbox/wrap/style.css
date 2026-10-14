@@ -1,15 +1,14 @@
 ol {
 	display: flex;
 	flex-wrap: nowrap; /* Default. */
-	min-block-size: 9rem;
+
+	&:not(:first-child) { flex-wrap: wrap; }
+
+	&:nth-child(3),
+	&:nth-child(4) {
+		flex-direction: column;
+	}
+
+	/* Force the wrap. */
+	&:nth-child(4) { max-block-size: calc(8 * var(--spacing)); }
 }
-
-ol:not(:first-child) { flex-wrap: wrap; }
-
-ol:nth-child(3),
-ol:nth-child(4) {
-	flex-direction: column;
-}
-
-/* Force the wrap. */
-ol:nth-child(4) { max-block-size: 9rem; }

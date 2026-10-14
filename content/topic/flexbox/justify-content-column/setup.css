@@ -8,7 +8,8 @@ body {
 ol {
 	background-color: gold;
 
-	&:not(:first-child) { margin-block-start: var(--spacing); }
+	/* Not when in a `row`, here. */
+	/* &:not(:first-child) { margin-block-start: var(--spacing); } */
 
 	li {
 		--edge: calc(var(--spacing) / 10) solid firebrick;

@@ -1,29 +1,33 @@
 ol {
-	block-size: 9rem;
+	block-size: calc(8 * var(--spacing));
 	display: flex;
-}
 
-/* All grow equally. */
-ol:nth-child(2) li { flex-grow: 1; }
+	/* All grow equally. */
+	&:nth-child(2) li { flex-grow: 1; }
 
-ol:nth-child(3) li:nth-child(1) {
-	background-color: hotpink;
-	flex-grow: 1; /* Just grow this one. */
-}
+	&:nth-child(3) li:first-child {
+		background-color: hotpink;
+		flex-grow: 1; /* Just grow this one. */
+	}
 
-ol:nth-child(4) li:nth-child(1) {
-	background-color: hotpink;
-	flex-grow: 1;
-}
+	&:nth-child(4) li {
+		&:nth-child(1) {
+			background-color: hotpink;
+			flex-grow: 1;
+		}
 
-ol:nth-child(4) li:nth-child(2) {
-	background-color: crimson;
-	flex-grow: 2; /* Grow twice as much. */
-}
+		&:nth-child(2) {
+			background-color: crimson;
+			flex-grow: 2; /* Grow twice as much. */
+		}
+	}
 
-ol:nth-child(5) li { inline-size: 50%; } /* With 3 `li` would be 150%. */
+	&:nth-child(5) li {
+		inline-size: 50%; /* With 3 `li` would be 150%. */
 
-ol:nth-child(5) li:nth-child(1) {
-	background-color: lightsalmon;
-	flex-shrink: 0; /* Don’t shrink this one! */
+		&:first-child {
+			background-color: lightsalmon;
+			flex-shrink: 0; /* Don’t shrink this one! */
+		}
+	}
 }

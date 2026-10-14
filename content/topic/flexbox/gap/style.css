@@ -1,16 +1,16 @@
 ol {
-	block-size: 9rem;
+	block-size: calc(8 * var(--spacing));
 	display: flex;
 	flex-wrap: wrap;
-}
 
-ol:nth-child(1) { gap: 1rem; }
-ol:nth-child(2) { row-gap: 1rem; }
-ol:nth-child(3) { column-gap: 1rem; }
-ol:nth-child(4) { gap: 1rem 1rem; } /* Shorthand. */
+	&:nth-child(1) { gap: var(--spacing); }
+	&:nth-child(2) { row-gap: var(--spacing); }
+	&:nth-child(3) { column-gap: calc(2 * var(--spacing)); }
+	&:nth-child(4) { gap: var(--spacing) calc(2 * var(--spacing)); } /* Shorthand. */
 
-ol:nth-child(5) {
-	justify-content: space-between;
-	align-content: space-between;
-	gap: 1rem; /* No effect, here! */
+	&:nth-child(5) {
+		justify-content: space-between;
+		align-content: space-between;
+		gap: var(--spacing); /* No effect, here! */
+	}
 }

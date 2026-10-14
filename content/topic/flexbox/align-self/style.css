@@ -1,23 +1,26 @@
 ol {
-	block-size: 9rem;
+	block-size: calc(8 * var(--spacing));
 	display: flex;
-}
 
-li { flex-grow: 1; }
+	li {
+		flex-grow: 1;
 
-li:nth-child(1) { align-self: stretch; } /* Default. */
+		&:nth-child(1) { align-self: stretch; } /* Default. */
 
-li:nth-child(2) {
-	background-color: lightsalmon;
-	align-self: start;
-}
+		&:nth-child(2) {
+			background-color: lightsalmon;
+			align-self: start;
+		}
 
-li:nth-child(3) {
-	background-color: crimson;
-	align-self: center;
-}
+		&:nth-child(3) {
+			background-color: crimson;
+			align-self: center;
+		}
 
-li:nth-child(4) {
-	background-color: hotpink;
-	align-self: end;
+		&:nth-child(4) {
+			background-color: hotpink;
+			align-self: end;
+		}
+	}
+
 }

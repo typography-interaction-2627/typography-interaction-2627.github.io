@@ -124,7 +124,7 @@ After specifying an element as *flex*, we can set its main axis with the `flex-
 <sub>Always `row` by default.</sub>
 <!-- .right -->
 
-<figure style="--lines: 15">
+<figure style="--lines: 14">
 
 ***[`flex-direction` Example](direction/style.css)***
 
@@ -138,7 +138,7 @@ The first list is `display: block;` by default. Also note that we gave them all 
 You can also combine these with a `-reverse` suffix, which visually reorders the items along the *main axis*, flipping the `start` and `end`:
 <!-- .balance -->
 
-<figure style="--lines: 12">
+<figure style="--lines: 9">
 
 ***[`flex-direction` `reverse` Example](direction-reverse/style.css)***
 
@@ -155,7 +155,7 @@ Since flexbox is *one-dimensional*, by default it will try to cram everything in
 <sub>The only *two-dimensional* flex use.</sub>
 <!-- .right -->
 
-<figure style="--lines: 22">
+<figure style="--lines: 17">
 
 ***[`flex-wrap` Example](wrap/style.css)***
 
@@ -170,12 +170,12 @@ Without the height restriction, the last one would just grow taller, by default.
 >
 > If you want to make a grid, use (CSS) grid! You [*can*](../responsive/index.md#mobile-first-example) use `flex-wrap` to make grids, and it is sometimes sufficient. But but [the more recent CSS Grid](../grid/index.md) properties will give you more control.
 >
-> <sub>We’ll talk about `grid` shortly!</sub>
+> <sub>We’ll talk about `grid` [shortly](../grid/index.md)!</sub>
 
 There is also a `-reverse` suffix when wrapping, which will sequence items from `end` to `start`:
 <!-- .balance .before -->
 
-<figure style="--lines: 22">
+<figure style="--lines: 17">
 
 ***[`flex-wrap` `reverse` Example](wrap-reverse/style.css)***
 
@@ -196,7 +196,7 @@ So most of what we’ve seen here is… somewhat possible using `float` and `po
 
 But the `justify-content` property is where flexbox starts to allow novel layouts, by dividing up the extra/available free space between elements—akin to *distribute* options in Figma/Adobe applications. `justify-content` does this on our *main axis*:
 
-<figure style="--lines: 15">
+<figure style="--lines: 12">
 
 ***[`justify-content` Example](justify-content/style.css)***
 
@@ -209,7 +209,7 @@ The `start`/`end` values [have some nuance](https://csslayout.news/whats-the-dif
 
 When our *main axis* is vertical, with `flex-direction: column;`:
 
-<figure style="--lines: 21">
+<figure style="--lines: 19">
 
 ***[`justify-content` `column` Example](justify-content-column/style.css)***
 
@@ -229,7 +229,7 @@ And then perpendicular to `justify` along the *main axis*, flexbox has the `alig
 <sub>For the cross/perpendicular axis.</sub>
 <!-- .right -->
 
-<figure style="--lines: 25">
+<figure style="--lines: 17">
 
 ***[`align-items` Example](align-items/style.css)***
 
@@ -237,7 +237,7 @@ And then perpendicular to `justify` along the *main axis*, flexbox has the `alig
 
 And for the vertical:
 
-<figure style="--lines: 22">
+<figure style="--lines: 23">
 
 ***[`align-items` `column` Example](align-items-column/style.css)***
 
@@ -252,7 +252,7 @@ When we have a flex element with `flex-wrap` set, we can also position the *line
 <sub>When there is extra room.</sub>
 <!-- .right -->
 
-<figure style="--lines: 21">
+<figure style="--lines: 22">
 
 ***[`align-content` Example](align-content/style.css)***
 
@@ -278,7 +278,7 @@ While you could use *margin* to separate your flex children, it would apply to t
 
 Flex added support for intuitive [`gap` properties](https://developer.mozilla.org/en-US/docs/Web/CSS/gap), which fix this problem—by applying spacing only *between* children. This is particularly helpful with dynamic, wrapping content and responsive designs—where you won’t always know which element ends or starts a line (to take their margin off):
 
-<figure style="--lines: 25">
+<figure style="--lines: 23">
 
 ***[`gap` Example](gap/style.css)***
 
@@ -310,7 +310,7 @@ Kind of like the `-reverse` suffix—you can individually apply the `order` prop
 <sub>Visual/display only!</sub>
 <!-- .right -->
 
-<figure style="--lines: 25">
+<figure style="--lines: 23">
 
 ***[`order` Example](order/style.css)***
 
@@ -329,7 +329,7 @@ These properties tell the flex items to… `grow` or `shrink`, if necessary—de
 
 It takes a *unitless* proportional value, akin to fractions or a factor/multiplier. If you give one flexed child `flex-grow: 1;` it will take up all the extra space; another element with `flex-grow: 2;` would then take twice as much of that space as the first one (the available space with 3 total units):
 
-<figure style="--lines: 25">
+<figure style="--lines: 23">
 
 ***[`flex-grow` / `flex-shrink` Example](grow-shrink/style.css)***
 
@@ -350,7 +350,7 @@ The `flex-basis` property is a little like `inline-size` and `block-size`—depe
 This defaults to `auto`, which falls back to any specified `inline-size` or `block-size`—and if those aren’t present, will just use the size of the content. You specify this `flex-basis` with [length units](../box-model/index.md#css-lengths) like `%` and `px` :
 <!-- .balance -->
 
-<figure style="--lines: 14">
+<figure style="--lines: 12">
 
 ***[`flex-basis` Example](basis/style.css)***
 
@@ -369,7 +369,7 @@ Finally, we have an individual override for an [`align-items`](#align-items) pro
 <sub>Overrides this child! Rebels.</sub>
 <!-- .right -->
 
-<figure style="--lines: 25">
+<figure style="--lines: 24">
 
 ***[`align-self` Example](align-self/style.css)***
 

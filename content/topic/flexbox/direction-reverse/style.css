@@ -1,8 +1,7 @@
 ol {
 	display: flex;
-	min-block-size: 9rem;
+	min-block-size: calc(8 * var(--spacing));
+
+	&:first-child { flex-direction: row-reverse; }
+	&:last-child { flex-direction: column-reverse; }
 }
-
-ol:first-child { flex-direction: row-reverse; }
-
-ol:last-child { flex-direction: column-reverse; }

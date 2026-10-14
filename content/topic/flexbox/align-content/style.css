@@ -1,17 +1,20 @@
 ol {
-	block-size: 9rem;
+	block-size: calc(8 * var(--spacing));
 	display: flex;
 	flex-wrap: wrap;
+
+	&:nth-child(1) { align-content: stretch; } /* Default. */
+	&:nth-child(2) { align-content: start; }
+	&:nth-child(3) { align-content: center; }
+	&:nth-child(4) { align-content: end; }
+
+	&:nth-child(5) {
+		align-content: space-between;
+		background: orange; /* Just for easier counting. */
+	}
+
+	&:nth-child(6) { align-content: space-around; }
+	&:nth-child(7) { align-content: space-evenly; }
+
+	li { inline-size: 50% } /* So they wrap. */
 }
-
-li { inline-size: 9rem; } /* So they wrap. */
-
-ol:nth-child(1) { align-content: stretch; } /* Default. */
-ol:nth-child(2) { align-content: start; }
-ol:nth-child(3) { align-content: center; }
-ol:nth-child(4) { align-content: end; }
-ol:nth-child(5) { align-content: space-between; }
-ol:nth-child(6) { align-content: space-around; }
-ol:nth-child(7) { align-content: space-evenly; }
-
-ol:nth-child(5) { background: orange } /* Just for easier counting. */
