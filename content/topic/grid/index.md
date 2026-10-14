@@ -9,7 +9,7 @@ const draft = true
 
 ## From Flex to Grid
 
-[CSS grid layout](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids#line-based_placement) (from here on, just *grid*) is another, even more recent addition to CSS, continuing on from where [*flexbox*](../flexbox/index.md) left off. While flex is primarily a *one-dimensional* layout system—focused on horizontal *or* vertical arrangements—grid is *two-dimensional* system, integrating the two directions together.
+**[*CSS grid layout*](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids)—which everyone just calls *grid*—is a <nobr>two-dimensional</nobr> (columns *and* rows together) layout system. It picks up from [*flexbox*](../flexbox/index.md)’s single direction.**
 
 - [<cite>A Complete Guide to Grid – CSS Tricks</cite>](https://css-tricks.com/snippets/css/complete-guide-grid/) \
 	<sub>The *grid* version of the *flexbox* classic.</sub>
@@ -33,14 +33,13 @@ const draft = true
 	<sub>Like the Froggy game, but for grid.</sub>
 <!-- .right .rows--6 -->
 
-<sub>We had some of this two-dimensionality with [`flex-wrap`](../flexbox/index.md#flex-wrap), but grid offers us *much* more structure and control.</sub>
-
-Grid is *a lot* like flex (this will be a running theme)—a [*display*](https://developer.mozilla.org/en-US/docs/Web/CSS/display) property applied on a parent/container element. This `display: grid;` tells its (immediate) children/*grid items* how they should be laid out. Also like flex, there is `display: inline-grid;` which behaves the same internally—but with the parent behaving as an inline element.
+We had some of this two-dimensionality with [`flex-wrap`](../flexbox/index.md#flex-wrap), but grid offers us *much* more structure and control. It is *a lot* like flex (this will be a running theme)—a [*display*](https://developer.mozilla.org/en-US/docs/Web/CSS/display) property applied on a parent/container element. This `display: grid;` tells its (immediate) children/*grid items* how they should be laid out. Also like flex, there is `display: inline-grid;` which behaves the same internally—but with the parent behaving as an inline element.
 <!-- .before -->
 
 Grid truly supplants many of the previous box model layout approaches (like `float`, `margin`-centering, etc.) and, like flex, works much closer to how we *think* about layouts *as designers*. It can still get complicated, but makes most layouts (especially responsive ones) much, much easier to implement.
 
-**There are many novel, powerful uses for *grid*—it is really the backbone of modern web layout. Let’s take a look.**
+**There are many novel, powerful uses for *grid*—it is really the backbone of modern web layout!**
+<!-- .body -->
 
 > As in nature, systems of order govern the growth and structure of animate and inanimate matter.
 >

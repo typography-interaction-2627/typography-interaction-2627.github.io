@@ -9,7 +9,7 @@ const draft = true
 
 ## A Long Time Coming
 
-[*Flexbox*](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox), short for *flexible boxes*—which folks will often just shorten all the way to *flex*—is a later (mid-2010s, [slow adoption](https://annairish.github.io/historicizing/history)) addition to CSS.
+**[*Flexbox*](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)—short for *flexible boxes*, which folks often just shorten down to *flex*—is a <nobr>one-dimensional</nobr> (column *or* row) layout system. It goes past [box-model](../box-model/index.md) basics.**
 
 - [<cite>CSS Flexbox Layout Guide – CSS Tricks</cite>](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) \
 	<sub>This page is a classic! It probably bought [Chris Coyier](https://chriscoyier.net) a house.</sub>
@@ -21,9 +21,12 @@ const draft = true
 	<sub>A little game.</sub>
 <!-- .right .rows--4 -->
 
-*Flex* was created to facilitate and allow CSS layouts that [*the box model*](../box-model/index.md) (despite its `float` and `position`) either made difficult, brittle, or even impossible. It is a [`display`](../box-model/index.md#display) property. It’s extremely useful and widely-used.
+*Flex* was created in the mid-2010s (with [*slow* adoption](https://annairish.github.io/historicizing/history)) to facilitate and allow CSS layouts that [*the box model*](../box-model/index.md) (despite its `float` and `position`) either made difficult, brittle, or even impossible. It is a [`display`](../box-model/index.md#display) property. It’s extremely useful and widely-used.
 
-And let us tell you—being a web designer was [a *whole lot harder*](http://meyerweb.com/eric/thoughts/2009/02/17/wanted-layout-system/) before flex came on the front-end scene. (Hence the “Finally.”) Notice, for instance, that we haven’t talked about any *vertical* centering at all yet—you don’t want to know! And you don’t have to worry about it. Flex encapsulates a lot of practical, helpful design paradigms in its system.
+And let us tell you—being a web designer was [a *whole lot harder*](http://meyerweb.com/eric/thoughts/2009/02/17/wanted-layout-system/) before flex came on the front-end scene. (Hence the “Finally.”) Notice, for instance, that we haven’t talked about any *vertical* centering at all yet—you don’t want to know! And you don’t have to worry about it.
+
+**Flex encapsulates a lot of practical, helpful design paradigms in its system. It ushered in our era of modern web layout!**
+<!-- .body -->
 
 > I was told that the “flexbox” model would solve the problems, but there hasn't been any progress on that front these past few years…
 >
