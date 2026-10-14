@@ -417,11 +417,10 @@ Again, [this is just](../flexbox/index.md#justify-content) [like flex](../flexbo
 *.</figcaption>
 </figure>
 
-### Shorthand?
+## Less Like Flex
 
-Grid also has [shorthand properties](https://developer.mozilla.org/en-US/docs/Web/CSS/grid) for many of these, like just `grid`, `grid-template`, `place-items`, and `place-content`. However just like everything else, grid is complicated enough as it is! The shorthands really obfuscate the behavior, and aren’t worth the slightly tighter syntax.
-
-**Okay, so far this is mostly like flex! To the point where you can often use them interchangeably for some layouts. *You get it.***
+Okay, so far this is mostly like flex! To the point where you can often use them interchangeably for some layouts. *You get it.*
+<!-- .balance -->
 
 **But now let’s look at where grid offers more *specific* and *powerful* control.**
 
