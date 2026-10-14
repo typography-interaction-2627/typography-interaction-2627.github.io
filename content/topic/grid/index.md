@@ -255,6 +255,10 @@ This function [repeats a *track* list](https://developer.mozilla.org/en-US/docs/
 >
 > <sub>[*Refactor*](https://en.wikipedia.org/wiki/Code_refactoring) to avoid it; [don’t repeat yourself](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)! Stay *DRY.*</sub>
 
+### …shorthand?
+
+Grid also has [some shorthand properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/grid), [but](../box-model/index.md#a-sidebar-about-shorthand) [again](../flexbox/index.md#shorthand) we would avoid them! And they’re less commonly used, because of the complexity of the layout system.
+
 ## Container (Parent) Properties
 
 ### `display: grid;`
