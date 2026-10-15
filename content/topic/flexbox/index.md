@@ -8,7 +8,7 @@ const order = 1
 
 ## A Long Time Coming
 
-**[*Flexbox*](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)—short for *flexible boxes*, which folks often just shorten down to *flex*—is a <nobr>one-dimensional</nobr> (column *or* row) layout system. It goes past [box-model](../box-model/index.md) basics.**
+**[*Flexbox*](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)—short for *flexible boxes*, which folks often just shorten down to *flex*—is a <nobr>one-dimensional</nobr> (column *or* row) layout system. It goes past the [box-model](../box-model/index.md) basics.**
 
 - [<cite>CSS Flexbox Layout Guide – CSS Tricks</cite>](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) \
 	<sub>This page is a classic! It probably bought [Chris Coyier](https://chriscoyier.net) a house.</sub>
@@ -26,6 +26,8 @@ And let us tell you—being a web designer was [a *whole lot harder*](http://mey
 
 **Flex encapsulates a lot of practical, helpful design paradigms in its system. It ushered in our era of modern web layout!**
 <!-- .body -->
+
+---
 
 > I was told that the “flexbox” model would solve the problems, but there hasn't been any progress on that front these past few years…
 >
@@ -107,17 +109,17 @@ But [again](../box-model/index.md#a-sidebar-about-shorthand), we would generally
 Unlike most (…all?) of the CSS we’ve been introduced to, *flex* is applied on a *parent* element—but actually adjusts the layout of the *children*. An element with `display: flex;` is really telling you what its kids are going to be doing.
 <!-- .balance -->
 
-<sub>There is also `display: inline-flex;` which behaves the same, but the parent behaves as an `inline` element while its children are flexing. You don’t see it used very much.</sub>
+<sub>There is also `display: inline-flex;` which behaves the same, but the parent behaves as an `inline` element while its children are `flex`. You don’t see it used very much!</sub>
 
 > [!NOTE]
 >
-> Figma’s [*auto layout*](https://help.figma.com/hc/en-us/articles/360040451373-Guide-to-auto-layout-in-Figma)system maps [almost directly](https://medium.com/timeless/figmas-flexbox-cdebb6968c29) to flexbox, in defining rows or columns and then distributing items—and is likewise applied on the parent/container!
+> Figma’s [*auto layout*](https://help.figma.com/hc/en-us/articles/360040451373-Guide-to-auto-layout-in-Figma) system maps [almost directly](https://medium.com/timeless/figmas-flexbox-cdebb6968c29) to flexbox, in defining rows or columns and then distributing items—and is likewise applied on the parent/container!
 >
 > <sub>Remember that our design tools are [approximations](https://help.figma.com/hc/en-us/articles/42031586813719-Use-auto-layout-with-CSS-Flexbox-in-mind) of our actual medium!</sub>
 
 ### `flex-direction`
 
-After specifying an element as *flex*, we can set its main axis with the `flex-direction` property. By default (you don’t have to write it), this behaves as `flex-direction: row;`—so you’ll generally only be adding it when you want something going vertical, with `flex-direction: column;`:
+After specifying an element as *flex*, we can set its main axis with the `flex-direction` property. By default (meaning you don’t have to write it), this behaves as `flex-direction: row;`—so you’ll generally only be adding it when you want something going vertical, with `flex-direction: column;`:
 
 [<cite>`flex-direction` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction) \
 <sub>Always `row` by default.</sub>
@@ -167,9 +169,9 @@ Without the height restriction, the last one would just grow taller, by default.
 
 > [!TIP]
 >
-> If you want to make a grid, use (CSS) grid! You [*can*](../responsive/index.md#mobile-first-example) use `flex-wrap` to make grids, and it is sometimes sufficient. But but [the more recent CSS Grid](../grid/index.md) properties will give you more control.
+> If you want to make a grid, use [(CSS) grid](../grid/index.md)! You [*can*](../responsive/index.md#mobile-first-example) use `flex-wrap` to make grids, and it is sometimes sufficient. But but the more recent/robust CSS Grid properties will give you more control.
 >
-> <sub>We’ll talk about `grid` [shortly](../grid/index.md)!</sub>
+> <sub>We’ll talk about `grid` shortly!</sub>
 
 There is also a `-reverse` suffix when wrapping, which will sequence items from `end` to `start`:
 <!-- .balance .before -->
@@ -193,7 +195,7 @@ So most of what we’ve seen here is… somewhat possible using `float` and `po
 <sub>How should we space items out?</sub>
 <!-- .right -->
 
-But the `justify-content` property is where flexbox starts to allow novel layouts, by dividing up the extra/available free space between elements—akin to *distribute* options in Figma/Adobe applications. `justify-content` does this on our *main axis*:
+But the `justify-content` property is where flexbox starts to allow novel, flexible layouts, by dividing up the extra/available free space between elements—akin to *distribute* options in Figma/Adobe applications. `justify-content` does this on our *main axis*:
 
 <figure style="--lines: 12">
 
@@ -201,7 +203,7 @@ But the `justify-content` property is where flexbox starts to allow novel layout
 
 <figcaption>
 
-The `start`/`end` values [have some nuance](https://csslayout.news/whats-the-difference-between-the-alignment-values-of-start-flex-start-and-self-start/) with different writing directions, but this doesn’t come up often.
+The `start`/`end` values [have some nuance](https://csslayout.news/a/3mttbkzx3k423-whats-the-difference-between-the-alignment-values-of-start-flex-start-and-self-start) with different writing directions, but this doesn’t come up often.
 
 </figcaption>
 </figure>
@@ -262,7 +264,7 @@ These wouldn’t do anything without the `block-size` and the `flex-wrap`.
 </figcaption>
 </figure>
 
-<sub>`align-content` can also be used with a vertical/`flex-direction: column;` axis, not shown here. This doesn’t often come up, as you have to specify/know a height to force a column wrap.</sub>
+`align-content` can also be used with a vertical/`flex-direction: column;` axis, not shown here. This doesn’t often come up, as you have to know/specify a height to force a column wrap.
 
 ### `gap` / `column-gap` / `row-gap`
 
@@ -275,7 +277,7 @@ While you could use *margin* to separate your flex children, it would apply to t
 	<sub>These are common with [CSS grid](../grid/index.md#gap-column-gap-row-gap)!</sub>
 <!-- .right .rows--2 -->
 
-Flex added support for intuitive [`gap` properties](https://developer.mozilla.org/en-US/docs/Web/CSS/gap), which fix this problem—by applying spacing only *between* children. This is particularly helpful with dynamic, wrapping content and responsive designs—where you won’t always know which element ends or starts a line (to take their margin off):
+Flex added support for more intuitive [`gap` properties](https://developer.mozilla.org/en-US/docs/Web/CSS/gap), which fix this problem—by applying spacing only *between* children. This is particularly helpful with dynamic, wrapping content and responsive designs—where you won’t always know which element ends or starts a line (to take their margin off):
 
 <figure style="--lines: 23">
 
@@ -290,7 +292,9 @@ Note the last one, `gap` are really *minimums* and only apply when there isn’t
 
 > [!NOTE]
 >
-> Note that `flex` and `grid` share a lot of vocabulary! The `justify`, `align`, and `gap` properties are the same (in name and behavior) with [CSS Grid](../grid/index.md), up next!
+> Note that `flex` and `grid` share *a lot* of vocabulary! The `justify`, `align`, and `gap` properties are the same (in name and behavior) with [CSS Grid](../grid/index.md), up next!
+
+---
 
 >If we did a Flexbox spec workshop, where we went over the whole spec in excruciating detail and sketched illustrations, who would come?
 >
@@ -378,6 +382,8 @@ This is a lot of stuff! Flex can sometimes be tough to wrap one’s head around,
 <!-- .balance -->
 
 **Much of what you look at on the web is laid out in flexbox (and its followup which we keep mentioning, [CSS Grid](../grid/index.md)).**
+
+---
 
 > Flexbox is a new layout model for CSS.
 >
