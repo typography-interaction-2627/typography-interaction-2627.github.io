@@ -72,9 +72,10 @@ abbr:where(:not(nav abbr)) {
 }
 
 s {
-	background: var(--background--check);
-	color:      transparent;
-	position:   relative;
+	background:     var(--background--check);
+	color:          transparent;
+	pointer-events: none;
+	position:       relative;
 
 	/* Override pattern. */
 	background-clip: text;
@@ -84,12 +85,22 @@ s {
 		inset:             0;
 		inset-block-start: round(1ex + var(--1px), var(--1px));
 		position:          absolute;
+		z-index:           1;
 
 		background: repeating-linear-gradient(
 			to bottom,
 			var(--color) 0 var(--1px),
 			transparent 0 1lh
 		);
+	}
+
+	> * {
+		color:          white;
+		mask:           var(--background--check);
+		mix-blend-mode: multiply;
+
+		/* TODO Figure this out? `inline-block` something something. */
+		code { translate: 0.0001em 0 }
 	}
 }
 
@@ -218,6 +229,9 @@ span.x2298 {
 
 	/* Vertically center in these. */
 	:where(code, kbd, samp) & { translate: 0 var(---1px) }
+
+	/* TODO Figure out the `background-clip` on these! */
+	:where(s) & { visibility: hidden }
 }
 
 span.darr  {
