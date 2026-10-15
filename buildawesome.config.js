@@ -117,7 +117,7 @@ export default (config) => {
 
 	// Override the built-in `@sindresorhus/slugify`-backed filter to match GFM `id` exactly.
 	// Our own ragging swaps some spaces for `&nbsp;` which `slug()` strips instead of hyphenating, so undo that first.
-	config.addFilter('slugify', (str) => slug(String(str).replace(/\u00A0/g, ' ')))
+	config.addFilter('slugify', (str) => slug(String(str).replace(/\u00A0/g, ' ')).replace(/-{2,}/g, '-'))
 
 	// Markdown stuff.
 	const markdownOptions = {
