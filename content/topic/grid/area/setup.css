@@ -12,7 +12,5 @@ body {
 		border-block-end: var(--edge);
 		border-inline-end: var(--edge);
 		padding: calc(var(--spacing) / 2);
-
-		&:nth-child(even) { background-color: salmon; }
 	}
 }

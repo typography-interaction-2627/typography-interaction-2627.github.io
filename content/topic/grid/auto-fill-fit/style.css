@@ -1,16 +1,20 @@
-ol { display: grid; }
+ol {
+	--column: calc(6 * var(--spacing));
 
-ol:first-child {
-	/* Fill as many `6rem` columns as possible. */
-	grid-template-columns: repeat(auto-fill, 6rem);
-}
+	display: grid;
 
-ol:nth-child(2) {
-	/* Add flexible `1fr` columns when larger than `6rem`. */
-	grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
-}
+	&:nth-child(1) {
+		/* Fill as many `--column` columns as possible. */
+		grid-template-columns: repeat(auto-fill, var(--column));
+	}
 
-ol:last-child {
-	/* Same, but always fit them to the row! */
-	grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+	&:nth-child(2) {
+		/* Add flexible `1fr` columns when larger than `--column`. */
+		grid-template-columns: repeat(auto-fill, minmax(var(--column), 1fr));
+	}
+
+	&:nth-child(3) {
+		/* Same, but always fit them to the row! */
+		grid-template-columns: repeat(auto-fit, minmax(var(--column), 1fr));
+	}
 }

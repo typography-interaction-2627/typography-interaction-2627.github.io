@@ -1,7 +1,9 @@
 body {
+	--side: calc(6 * var(--spacing));
+
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: 6rem 65vh 6rem;
+	grid-template-rows: var(--side) 60vh var(--side);
 	grid-template-areas:
 		'intro intro intro  '
 		'copy  copy  sidebar'

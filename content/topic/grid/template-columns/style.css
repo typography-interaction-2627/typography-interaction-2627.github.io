@@ -1,12 +1,7 @@
 ol {
 	display: grid;
-	grid-template-columns: 1fr;
-}
+	grid-template-columns: var(--columns, 1fr);
 
-@media (width > 500px) {
-	ol { grid-template-columns: 2fr 1fr; }
-}
-
-@media (width > 700px) {
-	ol { grid-template-columns: 1fr 1fr 1fr; }
+	@media (width > 500px) { --columns: 2fr 1fr; }
+	@media (width > 700px) { --columns: 1fr 1fr 1fr; }
 }

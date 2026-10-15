@@ -1,15 +1,19 @@
-ol { display: grid; }
+ol {
+	--two-to-one: 2fr 1fr;
 
-ol:first-child { grid-template-columns: 2fr 1fr; }
+	display: grid;
 
-ol:nth-child(2),
-ol:nth-child(3) {
-	grid-template-rows: 2fr 1fr;
-}
+	&:nth-child(1) { grid-template-columns: var(--two-to-one); }
 
-ol:nth-child(3) { grid-auto-flow: column; }
+	&:nth-child(2),
+	&:nth-child(3) {
+		grid-template-rows: var(--two-to-one);
+	}
 
-ol:last-child {
-	grid-template-columns: 2fr 1fr;
-	grid-template-rows: 2fr 1fr;
+	&:nth-child(3) { grid-auto-flow: column; }
+
+	&:nth-child(4) {
+		grid-template-columns: var(--two-to-one);
+		grid-template-rows: var(--two-to-one);
+	}
 }

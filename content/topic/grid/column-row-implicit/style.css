@@ -1,20 +1,20 @@
 ol {
 	display: grid;
-	grid-auto-rows: 6rem; /* Give the implicit tracks a size. */
+	grid-auto-rows: 15vh; /* Give the implicit tracks a size. */
 	grid-auto-columns: 1fr;
-}
 
-li:nth-child(2) {
-	grid-column: 2;
-	grid-row: 4;
-}
+	li:nth-child(2) {
+		grid-column: 2;
+		grid-row: 4;
+	}
 
-li:nth-child(3) {
-	grid-column: 5;
-	grid-row: 2;
-}
+	li:nth-child(3) {
+		grid-column: 5;
+		grid-row: 2;
+	}
 
-li:last-child {
-	grid-column: 6;
-	grid-row: 6;
+	li:nth-child(4) {
+		grid-column: 6;
+		grid-row: 6;
+	}
 }

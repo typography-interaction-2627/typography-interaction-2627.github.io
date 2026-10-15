@@ -3,21 +3,14 @@
 body {
 	font-family: sans-serif;
 	padding: var(--spacing);
-}
 
-ol {
-	background-color: gold;
-
-	&:not(:first-child) { margin-block-start: var(--spacing); }
-
-	li {
+	/* Not just lists, in this example! */
+	> * {
 		--edge: calc(var(--spacing) / 10) solid firebrick;
 
 		background-color: tomato;
 		border-block-end: var(--edge);
 		border-inline-end: var(--edge);
 		padding: calc(var(--spacing) / 2);
-
-		&:nth-child(even) { background-color: salmon; }
 	}
 }

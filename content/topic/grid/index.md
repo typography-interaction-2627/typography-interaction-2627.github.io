@@ -129,8 +129,8 @@ You can combine one or more adjacent grid cells into a rectangular *area.* Often
 
 This [new unit](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout#the_fr_unit) represents a *fraction* of the available space in the grid container—usually, `inline-size` (*width*). This is very similar to using whole numbers in `flex-basis`. It is very handy; you’ll use it a lot with grid:
 
-```css
-.two-thirds-one-third {
+```css <!-- style="max-inline-size: 100%" -->
+.two-to-one {
 	display: grid;
 	grid-template-columns: 2fr 1fr;
 }
@@ -147,7 +147,7 @@ This [new unit](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout
 
 The [*intrinsic* minimum size](https://developer.mozilla.org/en-US/docs/Web/CSS/min-content) of an element. With text, this is the longest single word:
 
-```css
+```css <!-- style="max-inline-size: 100%" -->
 .narrow-sidebar {
 	display: grid;
 	grid-template-columns: 1fr min-content;
@@ -165,7 +165,7 @@ The [*intrinsic* minimum size](https://developer.mozilla.org/en-US/docs/Web/CSS/
 
 Same for [the maximum](https://developer.mozilla.org/en-US/docs/Web/CSS/max-content). With text, this is the whole sentence/line:
 
-```css
+```css <!-- style="max-inline-size: 100%" -->
 .wider-sidebar {
 	display: grid;
 	grid-template-columns: 1fr max-content;
@@ -183,7 +183,7 @@ Same for [the maximum](https://developer.mozilla.org/en-US/docs/Web/CSS/max-cont
 
 A [combo of the min/max](https://developer.mozilla.org/en-US/docs/Web/CSS/fit-content). Uses the available space—but never less than `min-content` *and* never more than `max-content`:
 
-```css
+```css <!-- style="max-inline-size: 100%" -->
 .fit-sidebar {
 	display: grid;
 	grid-template-columns: 1fr fit-content;
@@ -214,7 +214,7 @@ A [combo of the min/max](https://developer.mozilla.org/en-US/docs/Web/CSS/fit-co
 
 A function that [defines a range](https://developer.mozilla.org/en-US/docs/Web/CSS/minmax) for a *track*—setting a minimum and maximum length *together*. These are really useful for setting reasonable limits on responsive grid designs:
 
-```css
+```css <!-- style="max-inline-size: 100%" -->
 .flexible-sidebar {
 	display: grid;
 	grid-template-columns: 1fr minmax(12rem, 25rem);
@@ -300,7 +300,7 @@ Again like flex, there is similar behavior on the horizontal/vertical *axes*—w
 So for many uses, you will only need to specify your column structure—leaving the rows to create themselves, as needed. This is called an *implicit grid* (vs. an *explicit grid* that we set/define):
 <!-- .balance .before -->
 
-<figure style="--lines: 16">
+<figure style="--lines: 13">
 
 ***[`grid-template-columns` Example](template-columns/style.css)***
 
@@ -321,13 +321,13 @@ By default, these *implicit grid* tracks are sized `auto` (the largest content),
 	<sub>Lets the content create the *tracks*.</sub>
 <!-- .right -->
 
-<figure style="--lines: 17">
+<figure style="--lines: 15">
 
 ***[`grid-auto-rows` Example](auto-rows/style.css)***
 
 </figure>
 
-The perpendicular `grid-auto-columns` only comes up if you force the columns to wrap with `grid-auto-flow: column;` as in the earlier example. Again—height is usually not our main constraint, with scrolling!
+The perpendicular `grid-auto-columns` only comes up if you force the columns to wrap with `grid-auto-flow: column;` as in the earlier example. Again—height is usually not our main constraint, with scrolling!
 
 ### `gap` / `column-gap` / `row-gap`
 
@@ -390,7 +390,7 @@ Note that there isn’t any change on the last *implicit* row with the default `
 There are also `baseline` alignment values, to keep text on the same line across your columns:
 <!-- .balance -->
 
-<figure style="--lines: 13">
+<figure style="--lines: 12">
 
 ***[`align-items: baseline` Example](align-baseline/style.css)***
 
@@ -412,9 +412,9 @@ If the total size of your grid is less than the container (because of your *expl
 
 <figcaption>
 
-Again, [this is just](../flexbox/index.md#justify-content) [like flex](../flexbox/index.md#align-content)! Same syntax, same behavior—you get the idea. Grid is like *Flex+
+Again, [this is just](../flexbox/index.md#justify-content) [like flex](../flexbox/index.md#align-content)! Same syntax, same behavior—you get the idea. Grid is like *Flex*+.
 
-*.</figcaption>
+</figcaption>
 </figure>
 
 ## Less Like Flex
@@ -553,10 +553,12 @@ Notice that we can leave off the *end line* if it doesn’t `span` multiple trac
 These are *technically* [shorthand](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column) [properties](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row), but we’ll allow it here—they are *easier* to read!
 <!-- .balance -->
 
+### `span` / `dense`
+
 You can also leave off the *start line* if you just want to specify a `span`, regardless of where the item falls in the grid:
 <!-- .balance -->
 
-<figure style="--lines: 15">
+<figure style="--lines: 13">
 
 ***[`grid-column`/`grid-row` `span` Example](column-row-span/style.css)***
 
@@ -567,10 +569,12 @@ We’ve added `grid-auto-flow: dense;` to the container—allowing the seventh i
 </figcaption>
 </figure>
 
+### Implicit Tracks
+
 And if you specify non-contiguous rows or columns, grid will dutifully create as many *implicit* tracks as it needs to accommodate them—even if they are empty. Not every cell or track must be filled:
 <!-- #empty-tracks .balance -->
 
-<figure style="--lines: 24">
+<figure style="--lines: 22">
 
 ***[`grid-column`/`grid-row` Implicit Example](column-row-implicit/style.css)***
 
@@ -595,7 +599,7 @@ Finally, just like flex—you can position individual *grid items* within their 
 	<sub>Same as in flex!</sub>
 <!-- .right -->
 
-<figure style="--lines: 17">
+<figure style="--lines: 23">
 
 ***[`justify-self`/`align-self` Example](justify-align-self/style.css)***
 
