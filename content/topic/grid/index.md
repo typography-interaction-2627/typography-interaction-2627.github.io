@@ -40,6 +40,8 @@ Grid truly supplants many of the previous box model layout approaches (like `flo
 **There are many novel, powerful uses for *grid*—it is really the backbone of modern web layout!**
 <!-- .body -->
 
+---
+
 > As in nature, systems of order govern the growth and structure of animate and inanimate matter.
 >
 > So human activity itself has, since the earliest times, been distinguished by the quest for order.
@@ -345,9 +347,9 @@ Grid also shares the `gap`, `column-gap`, and `row-gap` [properties with flex](.
 
 <figcaption>
 
-You rarely see a `grid` without a `gap`
+You rarely see a `grid` without a `gap`.
 
-.</figcaption>
+</figcaption>
 </figure>
 
 ### `justify-items`
@@ -584,7 +586,7 @@ Note that just like `order` in flex, this arrangement is only visual! Keep your 
 </figcaption>
 </figure>
 
-Keep in mind that with both `grid-area` and `grid-column`/`grid-row`, you are able to tell multiple *grid items* to land in the same *cell*—there isn’t any kind of fancy/automatic collision-prevention. If this *is what you want, you can use `z-index` to specify which one is visually [in front](../box-model/index.md#depth-with-z-index)!
+Keep in mind that with both `grid-area` and `grid-column`/`grid-row`, you are able to tell multiple *grid items* to land in the same *cell*—there isn’t any kind of fancy/automatic collision-prevention. If this *is* what you want, you can use `z-index` to specify which one is visually [in front](../box-model/index.md#depth-with-z-index)!
 
 ### `justify-self` / `align-self`
 
@@ -608,6 +610,8 @@ You can mix and match these `justify`/`align` values, of course!
 
 </figcaption>
 </figure>
+
+---
 
 > The grid system is an aid, not a guarantee.
 >

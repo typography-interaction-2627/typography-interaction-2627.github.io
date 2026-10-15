@@ -1,6 +1,6 @@
 ol {
 	display: grid;
-	grid-auto-rows: 20vh;
+	grid-auto-rows: 20vh; /* Add rows with this size. */
 	grid-template-columns: var(--columns, 1fr);
 
 	@media (width > 500px) { --columns: 2fr 1fr; }

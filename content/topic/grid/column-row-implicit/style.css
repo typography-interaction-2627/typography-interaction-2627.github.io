@@ -1,7 +1,7 @@
 ol {
 	display: grid;
-	grid-auto-rows: 15vh; /* Give the implicit tracks a size. */
-	grid-auto-columns: 1fr;
+	grid-auto-rows: 15vh; /* Give the implicit rows a size. */
+	grid-auto-columns: 1fr; /* Same for columns. */
 
 	li:nth-child(2) {
 		grid-column: 2;
