@@ -39,7 +39,7 @@ But we can use this behavior *intentionally* to crop our content, or create inte
 </figure>
 
 Importantly, this creates a new *stacking context*—which means things with `position` (namely, `position: sticky`)—and some other properties—will now use the `overflow` container as their reference/origin:
-<!-- .balance .before--3 -->
+<!-- .balance .before -->
 
 [<cite>The stacking context – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context)
 <sub>*Always* confusing; think of these as *frames* or *groups* in Figma.</sub>
@@ -85,7 +85,7 @@ You have probably noticed that HTML renders a lot of extra space around text ele
 It is based on the `font-family`, the `font-size`, and the `line-height`, which basically means it is different all the time—and crucially, often different from Adobe/Figma to HTML. This makes it difficult to position type precisely—especially at large, expressive sizes like your headings! It’s always annoying, and you’ll often be adding/subtracting your spacing (`margin` or `padding`) to account for it, if you want to line everything up *just right*, optically.
 
 Let’s avoid it. We can use [pseudo-elements](../css/index.md#pseudo-elements-selectorpseudo), `::after`/`::before`—which you may remember are entirely created by CSS, not in your HTML—to negate this vertical space with a negative margin. By doing this on the pseudo-elements, we can still position the parent element normally, otherwise:
-<!-- .balance .before--3 -->
+<!-- .balance .before -->
 
 <figure
 	@caption="Here we also move the text with `margin-inline-start` and `margin-inline-end`, though usually this adjustment is much more minor (to the point of ignoring)."
@@ -255,23 +255,64 @@ These have corresponding `backdrop-filter` values—which apply the effect to th
 <div class="body">
 
 Beyond our standard sizing and layout afforded by CSS, you can also *visually* manipulate elements using CSS [transforms](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)—scaling, skewing, translating, or rotating elements *after* they are laid out in the DOM. It’s like grabbing the “corner handles” in Adobe/Figma!
-<!-- .after--3 -->
+<!-- .after -->
+
+<dl class="balance">
+<dt>
 
 `scale()`/`scaleX()`/`scaleY()`/`scaleZ()`/`scale3d()`
-: Change the displayed size of the element—as if it is an image.
+
+</dt>
+<dd>
+
+Change the displayed size of the element—as if it is an image.
+
+</dd>
+
+<dt>
 
 `skew()`/`skewX()`/`skewY()`
-: Tilt an element to the left or right, like turning a rectangle into a parallelogram.
+
+</dt>
+<dd>
+
+Tilt an element to the left or right, like turning a rectangle into a parallelogram.
+
+</dd>
+
+<dt>
 
 `translate()`/`translateX()`/`translateY()`/`translate3d()`
-: Move an element left/right and up/down, and also in three-dimensional space.
+
+</dt>
+<dd>
+
+Move an element left/right and up/down, and also in three-dimensional space.
+
+</dd>
+
+<dt>
 
 `rotate()`/`rotate3d()`
-: Rotate the element.
+
+</dt>
+<dd>
+
+Rotate the element.
+
+</dd>
+
+<dt>
 
 `perspective()`
-: Doesn’t affect the element itself, but sets the distance between the user and the <nobr>three-dimensional</nobr> plane.
-<!-- .balance -->
+
+</dt>
+<dd>
+
+Doesn’t affect the element itself, but sets the distance between the user and the <nobr>three-dimensional</nobr> plane.
+
+</dd>
+</dl>
 
 </div>
 
@@ -284,29 +325,22 @@ Beyond our standard sizing and layout afforded by CSS, you can also *visually* m
 </div>
 
 The units for these are all a bit different; [MDN is your friend](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function) here, as usual. You can apply single or multiple transforms, which are written *space-separated* and applied one after the other:
-<!-- .balance .before--3 -->
+<!-- .balance .before -->
 
-<div class="before--1 left">
-
-```css
+```css <!-- .before .verso -->
 .rotated {
 	transform: rotate(-5deg);
 }
 ```
 
-</div>
-
-<div class="before--1" style="grid-column: left-end / five-end">
-
-```css
+```css <!-- .before .recto -->
 .rotated-and-scaled {
 	transform: rotate(-5deg) scale(120%);
 }
 ```
-</div>
 
 Keep in mind that these transformations are applied *after* the rest of the CSS is parsed, and thus treat your element a bit like an image. And like `overflow` [above](#overflows-and-scrolling), `transform` also creates a new [*stacking context*](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context) for its children:
-<!-- .balance .before--2 -->
+<!-- .balance .before -->
 
 <figure
 	@caption="Note how the elements *don’t* take up more space in the document flow/layout—but they *do* cause an overflow!"
@@ -331,21 +365,16 @@ Instead of having a property take effect *immediately* when a pseudo-class is ap
 <!-- .balance -->
 
 You’ll often see a `transition` in shorthand:
-<!-- .before--3 -->
+<!-- .before -->
 
-<div class="before verso">
-
-```css
+```css <!-- .before .verso -->
 .some-cool-transition {
 	transition: all 2s 1s linear;
 }
 ```
 
-</div>
+```css <!-- .before .recto -->
 
-<div class="before recto">
-
-```css
 .some-cool-transition {
 	transition-delay: 1s;
 	transition-duration: 2s;
@@ -354,10 +383,8 @@ You’ll often see a `transition` in shorthand:
 }
 ```
 
-</div>
-
 You can also control how different properties of an element transition independently, with a *comma-separated* list:
-<!-- .balance .before--3 -->
+<!-- .balance .before -->
 
 ```css <!-- .before .verso -->
 .some-cool-transition {
@@ -376,7 +403,7 @@ You can also control how different properties of an element transition independe
 <sub>Sometimes the shorthand here is easier than discrete properties, where you have to maintain the same order across all of them. It’s all the same to the computer!</sub>
 
 Often, CSS transitions will be used *with* JavaScript when adding/removing classes, to make a state change less abrupt. For now, we’ll use [*pseudo-classes*](../css/index.md#pseudo-classes-selectorstate-selectorinstance) to demonstrate:
-<!-- .balance .before--3 -->
+<!-- .balance .before -->
 
 <figure
 	@caption="You can get even more control over the easing with a [custom curve function](https://easings.net)."
@@ -397,7 +424,7 @@ Sometimes, transitioning a property from one value to another isn’t enough—y
 <!-- .right .rows--2 -->
 
 To create a keyframe animation, we define an element’s initial state in CSS—then an `animation` property, which includes timing and behavior, as well as an animation name (something that you make up). Again, you’ll often see these in shorthand:
-<!-- .balance .before--3 -->
+<!-- .balance .before -->
 
 <div class="verso">
 
@@ -419,7 +446,7 @@ section {
 ```
 
 Importantly, we then define the actual keyframes of an animation in a separate [*at-rule*](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_syntax/At-rule). Each *keyframe* is specified with a percentage of the animation’s duration, and can specify multiple properties—a bit like *selectors* for the time:
-<!-- .balance .before--3 -->
+<!-- .balance .before -->
 
 <figure
 	@caption="Don’t go overboard! A little animation goes a long way."
