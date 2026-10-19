@@ -26,7 +26,7 @@ An `overflow` in CSS happens when there is too much content to fit in a contain
 
 - [<cite>`overflow` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow)
 - [<cite>Overflowing Content – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Overflowing_content)
-	There are going to be a lot of MDNs, here.
+	<sub>Lot of MDNs, here.</sub>
 <!-- .right .rows--2 -->
 
 But we can use this behavior *intentionally* to crop our content, or create interally-scrolling areas:
@@ -41,8 +41,8 @@ But we can use this behavior *intentionally* to crop our content, or create inte
 Importantly, this creates a new *stacking context*—which means things with `position` (namely, `position: sticky`)—and some other properties—will now use the `overflow` container as their reference/origin:
 <!-- .balance .before--3 -->
 
-- [<cite>The stacking context – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context)
-	*Always* confusing; think of these as *frames* or *groups* in Figma.
+[<cite>The stacking context – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context)
+<sub>*Always* confusing; think of these as *frames* or *groups* in Figma.</sub>
 <!-- .right -->
 
 <figure
@@ -59,9 +59,9 @@ You can also *excerpt* text (perhaps on a landing page) with the `text-overflow`
 <!-- .balance -->
 
 - [<cite>`text-overflow` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow)
-	For single lines…
+	<sub>For single lines…</sub>
 - [<cite>`-webkit-line-clamp` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-line-clamp)
-	And multiple lines!
+	<sub>And multiple lines!</sub>
 <!-- .right -->
 
 <figure
@@ -76,9 +76,10 @@ You can also *excerpt* text (perhaps on a landing page) with the `text-overflow`
 You have probably noticed that HTML renders a lot of extra space around text elements, called the *line box* (or, in design software parlance, the *bounding box*).
 
 - [<cite>Font Metrics, Line-&NoBreak;Height and Vertical-&NoBreak;Align</cite>](https://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align)
-	A deep-dive on type positioning.
+	<sub>A deep-dive on type positioning.</sub>
+
 - [<cite>Vertical Spacing and Line-Height in Design Systems – Google Fonts</cite>](https://fonts.google.com/knowledge/using_type/vertical_spacing_and_line_height_in_design_systems)
-	It’s all very complicated.
+	<sub>It’s all very complicated.</sub>
 <!-- .right .rows--3 -->
 
 It is based on the `font-family`, the `font-size`, and the `line-height`, which basically means it is different all the time—and crucially, often different from Adobe/Figma to HTML. This makes it difficult to position type precisely—especially at large, expressive sizes like your headings! It’s always annoying, and you’ll often be adding/subtracting your spacing (`margin` or `padding`) to account for it, if you want to line everything up *just right*, optically.
@@ -100,7 +101,7 @@ Figma was actually *ahead* of CSS here with its [recent <samp>Vertical Trim</sam
 
 - [<cite>`text-box` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/text-box)
 - [<cite>`text-box-trim` - web.dev</cite>](https://developer.chrome.com/blog/css-text-box-trim)
-	So… much… easier!
+	<sub>So… much… easier!</sub>
 <!-- .right -->
 
 <aside>
@@ -124,8 +125,8 @@ But we can do a handful of things to make for *better* ragging/wraps, given the 
 The `hyphens` property allows long, multi-syllable words to be [hyphenated](https://en.wikipedia.org/wiki/Hyphen#Justification_and_line-wrapping) when they wrap across multiple lines. This can be done automatically by the browser, or by manually inserting `&shy;` (for [*soft hyphen*](https://en.wikipedia.org/wiki/Soft_hyphen)) as an [HTML character/entity references](https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references#:~:text=All%20named%20character%20entity%20references):
 <!-- .balance -->
 
-- [<cite>`hyphens` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/hyphens)
-	This depends on the browser and [`lang`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/lang), unless you manually add `&shy;`.
+[<cite>`hyphens` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/hyphens)
+<sub>This depends on the browser and [`lang`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/lang), unless you manually add `&shy;`.</sub>
 <!-- .right -->
 
 <figure
@@ -141,7 +142,7 @@ Somewhat related/similar to `&shy;`, the `<wbr>` is a <nobr>(void/empty)</nobr> 
 <!-- .balance -->
 
 [<cite>`wbr` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/wbr)
-	These are often needed with slashes/URLs.
+<sub>These are often needed with slashes/URL&NoBreak;s.</sub>
 <!-- .right -->
 
 <figure
@@ -155,9 +156,10 @@ Somewhat related/similar to `&shy;`, the `<wbr>` is a <nobr>(void/empty)</nobr> 
 But much more often, you’ll want to keep certain words *together*—to avoid a [widow or orphan](../typography/index.md#widows-and-orphans), or to keep important/related text together—like in dates, *October 24*, or with  names like *van Zanten*.
 
 - [<cite>`white-space` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/white-space)
-	*Prevents* text from wrapping.
+	<sub>*Prevents* text from wrapping.</sub>
+
 - [<cite>`nobr` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nobr)
-	This is *technically* deprecated. But [one of your instructors](https://michaelfehrenbach.com) is a “stan.”
+	<sub>This is *technically* deprecated. But [one of your instructors](https://michaelfehrenbach.com) is a “stan.”</sub>
 <!-- .right .rows--3 -->
 
 You can keep multiple words (or whole phrases) together with `white-space: nowrap;`. Historically, the `<nobr>` tag applied this—keeping in mind that like `<em>` or `<strong>`the default behavior is cleared by most [resets](../css/index.md#resets) (ours included)—so likewise you have to restore the property in your own CSS.
@@ -177,7 +179,7 @@ After many, many years of patient, typographic waiting (and [some JS](https://gi
 <!-- .balance -->
 
 [<cite>`text-wrap` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap)
-	Don’t overuse/abuse this in running text, though!
+<sub>Don’t overuse/abuse this in running text, though!</sub>
 <!-- .right -->
 
 <figure
@@ -192,8 +194,8 @@ After many, many years of patient, typographic waiting (and [some JS](https://gi
 Ideally we could set punctuation *outside* of our text blocks, for visual alignment based solely on the letters—a traditional design technique called [*hanging punctuation*](https://en.wikipedia.org/wiki/Hanging_punctuation). (There *is* actually a [CSS property](https://developer.mozilla.org/en-US/docs/Web/CSS/hanging-punctuation) for this, but [only Safari](https://caniuse.com/?search=hanging-punctuation) supports it! …ish.) But we can still approximate the behavior, at least for quotes:
 <!-- .balance -->
 
-- [<cite>`::before` and `::after` – CSS Tricks</cite>](https://css-tricks.com/almanac/selectors/a/after-and-before/)
-	Another great *CSS Tricks* article.
+[<cite>`::before` and `::after` – CSS Tricks</cite>](https://css-tricks.com/almanac/selectors/a/after-and-before/)
+<sub>Another great *CSS Tricks* article.</sub>
 	<!-- .right -->
 
 <figure
@@ -222,8 +224,8 @@ Do it when feasible—and give more attention to your large headings, then your 
 CSS can apply visual effects on elements—adjusting their graphical display *after* they are laid out and rendered in the page—with the `filter` property:
 <!-- .balance -->
 
-- [<cite>`filter` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/filter)
-	Back to MDN.
+[<cite>`filter` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/filter)
+<sub>Back to MDN.</sub>
 <!-- .right -->
 
 <figure
@@ -238,7 +240,7 @@ These have corresponding `backdrop-filter` values—which apply the effect to th
 
 - [<cite>`backdrop-filter` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter)
 - [<cite>`mix-blend-mode` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode)
-	Often used together.
+	<sub>Often used together.</sub>
 <!-- .right -->
 
 <figure
@@ -276,7 +278,7 @@ Beyond our standard sizing and layout afforded by CSS, you can also *visually* m
 <div class="right">
 
 [<cite>`transform` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)
-	These are fun—but should *not* be used for actual layout!
+<sub>These are fun—but should *not* be used for actual layout!</sub>
 <!-- .sticky -->
 
 </div>
@@ -321,8 +323,8 @@ You shouldn’t use `transform` for layout—as in, don’t use `translate` when
 
 CSS [transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions) allow us to move nicely between CSS property values.
 
-- [<cite>Using CSS Transitions – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)
-	Every state change is better with some easing.
+[<cite>Using CSS Transitions – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)
+<sub>Every state change is better with some easing.</sub>
 <!-- .right .rows--2 -->
 
 Instead of having a property take effect *immediately* when a pseudo-class is applied (or later, and more commonly, with JS—a proper class), we can tell a CSS property to *transition* from one value to another over a given amount of time (`duration`), and with a specific acceleration (`timing-function`), or a delay. Motion can quickly get very complex!
@@ -390,8 +392,8 @@ Nearly all CSS properties can be transitioned—but keep in mind that changes th
 Sometimes, transitioning a property from one value to another isn’t enough—you may need more complicated (or repeating) motion behavior. CSS `animation` allows precise state sequencing with `@keyframes` (akin to… *keyframes* or a timeline in other software contexts).
 <!-- .balance -->
 
-- [<cite>Using CSS Animations – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)
-	Some of you already got into these!
+[<cite>Using CSS Animations – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)
+<sub>Make things feel more alive.</sub>
 <!-- .right .rows--2 -->
 
 To create a keyframe animation, we define an element’s initial state in CSS—then an `animation` property, which includes timing and behavior, as well as an animation name (something that you make up). Again, you’ll often see these in shorthand:
