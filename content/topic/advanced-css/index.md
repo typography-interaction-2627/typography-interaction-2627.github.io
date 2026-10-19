@@ -19,63 +19,10 @@ A good pattern to follow in web (and all) development is to use each technology 
 >
 > [<cite>William of Ockham, 1324</cite>](https://mathshistory.st-andrews.ac.uk/Biographies/Ockham)
 
-## Overflows and Scrolling
+## Advanced Typography
 
-An `overflow` in CSS happens when there is too much content to fit in a container—usually because you have manually constrained its `block-size` or `inline-size`. (By default, the browser will try to show you everything!)
-<!-- .balance -->
+### `text-box-trim`
 
-- [<cite>`overflow` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow)
-- [<cite>Overflowing Content – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Overflowing_content)
-	<sub>Lot of MDNs, here.</sub>
-<!-- .right .rows--2 -->
-
-But we can use this behavior *intentionally* to crop our content, or create interally-scrolling areas:
-<!-- .balance -->
-
-<figure style="--lines: 23">
-
-***[Overflow Example](overflow/style.css)***
-
-</figure>
-
-Importantly, this creates a new *stacking context*—which means things with `position` (namely, `position: sticky`)—and some other properties—will now use the `overflow` container as their reference/origin:
-<!-- .balance .before -->
-
-[<cite>The stacking context – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context)
-<sub>*Always* confusing; think of these as *frames* or *groups* in Figma.</sub>
-<!-- .right -->
-
-<figure style="--lines: 16">
-
-***[Overflow Sticky Example](overflow-sticky/style.css)***
-
-</figure>
-
-<!-- TODO: scroll-behavior: smooth; example! -->
-
-### `text-overflow` / `-webkit-line-clamp`
-
-You can also *excerpt* text (perhaps on a landing page) with the `text-overflow` (for a single line) or `-webkit-line-clamp` (for multiple lines) properties—which will add [an ellipsis](https://en.wikipedia.org/wiki/Ellipsis) <samp>…</samp> where the text overflows. Only do this when the full text is available on a subsequent page:
-<!-- .balance -->
-
-- [<cite>`text-overflow` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow)
-	<sub>For single lines…</sub>
-- [<cite>`-webkit-line-clamp` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-line-clamp)
-	<sub>And multiple lines!</sub>
-<!-- .right -->
-
-<figure style="--lines: 18">
-
-***[Text-overflow Example](text-overflow/style.css)***
-
-<figcaption>
-
-This `-webkit` stuff is hokey, but still how it is done! Browsers are weird.
-
-</figcaption>
-</figure>
-
-## Precise Text Positioning
 
 You have probably noticed that HTML renders a lot of extra space around text elements, called the *line box* (or, in design software parlance, the *bounding box*).
 
@@ -122,13 +69,33 @@ After a decade of workarounds and discussion, both shipping Chrome and Safari [n
 
 </aside>
 
-## Text Ragging (Kinda)
+### Hanging Punctuation (Kinda)
+
+Ideally we could set punctuation *outside* of our text blocks, for visual alignment based solely on the letters—a traditional design technique called [*hanging punctuation*](https://en.wikipedia.org/wiki/Hanging_punctuation). (There *is* actually a [CSS property](https://developer.mozilla.org/en-US/docs/Web/CSS/hanging-punctuation) for this, but [only Safari](https://caniuse.com/?search=hanging-punctuation) supports it! …ish.) But we can still approximate the behavior, at least for quotes:
+<!-- .balance -->
+
+[<cite>`::before` and `::after` – CSS Tricks</cite>](https://css-tricks.com/almanac/selectors/a/after-and-before/)
+<sub>Another great *CSS Tricks* article.</sub>
+	<!-- .right -->
+
+<figure style="--lines: 28">
+
+***[Hanging Punctuation Example](hanging-punctuation/style.css)***
+
+<figcaption>
+
+Note that the (pasted-in) [curly quotation marks](https://en.wikipedia.org/wiki/Quotation_mark) are *not* in the HTML here in the last example! [Pseudo-elements](../css/index.md#pseudo-elements-selectorpseudo) again, `::before` and `::after`.
+
+</figcaption>
+</figure>
+
+### Text Ragging (Sorta)
 
 We’ve gone on-and-on about how you can’t treat the web like print—always [perfectly ragging](../typography/index.md#ragging) your text for nice, smooth blocks. In modern (responsive) web design we don’t always know what our text will be, nor where it will wrap!
 
 But we can do a handful of things to make for *better* ragging/wraps, given the unknowns—judiciously using `hyphens`/`&shy;`, `<wbr>`, `white-space`, `<nobr>` and `&nbsp;`, and `text-wrap` to *somewhat* control your line breaks.
 
-### `hyphens` / `&shy;`
+#### `hyphens` / `&shy;`
 
 The `hyphens` property allows long, multi-syllable words to be [hyphenated](https://en.wikipedia.org/wiki/Hyphen#Justification_and_line-wrapping) when they wrap across multiple lines. This can be done automatically by the browser, or by manually inserting `&shy;` (for [*soft hyphen*](https://en.wikipedia.org/wiki/Soft_hyphen)) as an [HTML character/entity references](https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references#:~:text=All%20named%20character%20entity%20references):
 <!-- .balance -->
@@ -148,7 +115,7 @@ Note `<html lang="en">` is needed—as the `auto` property works from each brows
 </figcaption>
 </figure>
 
-### `<wbr>`
+#### `<wbr>`
 
 Somewhat related/similar to `&shy;`, the `<wbr>` is a <nobr>(void/empty)</nobr> HTML element that denotes a *word break* opportunity—a bit like an optional `<br>`! You can use these to manually control where single long word will wrap, *without* a hyphen:
 <!-- .balance -->
@@ -163,7 +130,7 @@ Somewhat related/similar to `&shy;`, the `<wbr>` is a <nobr>(void/empty)</nobr> 
 
 </figure>
 
-### `white-space: nowrap;` / `<nobr>` / `&nbsp;`
+#### `white-space: nowrap;` / `<nobr>` / `&nbsp;`
 
 But much more often, you’ll want to keep certain words *together*—to avoid a [widow or orphan](../typography/index.md#widows-and-orphans), or to keep important/related text together—like in dates, *October 24*, or with  names like *van Zanten*.
 
@@ -189,7 +156,7 @@ On a Mac, you can insert an *encoded* `&&NoBreak;nbsp;` with <kbd><kbd><span cla
 </figcaption>
 </figure>
 
-### `text-wrap: balance;`
+#### `text-wrap: balance;`
 
 After many, many years of patient, typographic waiting (and [some JS](https://github.com/adobe/balance-text) [shenanigans](https://www.ctrl.blog/entry/text-wrap-balance.html)) we now have widespread (and mostly even) [browser support](https://caniuse.com/css-text-wrap-balance) for “balancing” uneven line lengths with `text-wrap: balance;`:
 <!-- .balance -->
@@ -209,26 +176,6 @@ This is particularly noticeable (and helpful) for centered text! There is also [
 </figcaption>
 </figure>
 
-## Hanging Punctuation (Sorta)
-
-Ideally we could set punctuation *outside* of our text blocks, for visual alignment based solely on the letters—a traditional design technique called [*hanging punctuation*](https://en.wikipedia.org/wiki/Hanging_punctuation). (There *is* actually a [CSS property](https://developer.mozilla.org/en-US/docs/Web/CSS/hanging-punctuation) for this, but [only Safari](https://caniuse.com/?search=hanging-punctuation) supports it! …ish.) But we can still approximate the behavior, at least for quotes:
-<!-- .balance -->
-
-[<cite>`::before` and `::after` – CSS Tricks</cite>](https://css-tricks.com/almanac/selectors/a/after-and-before/)
-<sub>Another great *CSS Tricks* article.</sub>
-	<!-- .right -->
-
-<figure style="--lines: 28">
-
-***[Hanging Punctuation Example](hanging-punctuation/style.css)***
-
-<figcaption>
-
-Note that the (pasted-in) [curly quotation marks](https://en.wikipedia.org/wiki/Quotation_mark) are *not* in the HTML here in the last example! [Pseudo-elements](../css/index.md#pseudo-elements-selectorpseudo) again, `::before` and `::after`.
-
-</figcaption>
-</figure>
-
 **When in doubt, *[The Elements of Typographic Style](https://readings.design/PDF/the_elements_of_typographic_style.pdf)* explains these conventions.**
 
 **But also, as Bringhurst says, “read the text before designing it.” Always put yourself in the mind of your reader!**
@@ -243,7 +190,65 @@ Do it when feasible—and give more attention to your large headings, then your 
 
 </aside>
 
-## Filters!
+## Overflows and Scrolling
+
+### `overflow`
+
+An `overflow` in CSS happens when there is too much content to fit in a container—usually because you have manually constrained its `block-size` or `inline-size`. (By default, the browser will try to show you everything!)
+<!-- .balance -->
+
+- [<cite>`overflow` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow)
+- [<cite>Overflowing Content – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Overflowing_content)
+	<sub>Lot of MDNs, here.</sub>
+<!-- .right .rows--2 -->
+
+But we can use this behavior *intentionally* to crop our content, or create interally-scrolling areas:
+<!-- .balance -->
+
+<figure style="--lines: 23">
+
+***[Overflow Example](overflow/style.css)***
+
+</figure>
+
+Importantly, this creates a new *stacking context*—which means things with `position` (namely, `position: sticky`)—and some other properties—will now use the `overflow` container as their reference/origin:
+<!-- .balance .before -->
+
+[<cite>The stacking context – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context)
+<sub>*Always* confusing; think of these as *frames* or *groups* in Figma.</sub>
+<!-- .right -->
+
+<figure style="--lines: 16">
+
+***[Overflow Sticky Example](overflow-sticky/style.css)***
+
+</figure>
+
+### `text-overflow` / `-webkit-line-clamp`
+
+You can also *excerpt* text (perhaps on a landing page) with the `text-overflow` (for a single line) or `-webkit-line-clamp` (for multiple lines) properties—which will add [an ellipsis](https://en.wikipedia.org/wiki/Ellipsis) <samp>…</samp> where the text overflows. Only do this when the full text is available on a subsequent page:
+<!-- .balance -->
+
+- [<cite>`text-overflow` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow)
+	<sub>For single lines…</sub>
+- [<cite>`-webkit-line-clamp` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-line-clamp)
+	<sub>And multiple lines!</sub>
+<!-- .right -->
+
+<figure style="--lines: 18">
+
+***[Text-overflow Example](text-overflow/style.css)***
+
+<figcaption>
+
+This `-webkit` stuff is hokey, but still how it is done! Browsers are weird.
+
+</figcaption>
+</figure>
+
+## Compositing Effects
+
+### `filter`
 
 CSS can apply visual effects on elements—adjusting their graphical display *after* they are laid out and rendered in the page—with the `filter` property:
 <!-- .balance -->
@@ -262,6 +267,8 @@ Note that multiple filters are applied in *sequence*—changing the order change
 
 </figcaption>
 </figure>
+
+### `backdrop-filter` / `mix-blend-mode`
 
 These have corresponding `backdrop-filter` values—which apply the effect to the page *behind* an element! You’ll often use these in conjunction with an [`opacity` (or semi-transparent `color`)](../css/index.md#color) or a `mix-blend-mode` for interesting Photoshop/Figma-like layer-blending effects:
 <!-- .balance -->
@@ -282,7 +289,7 @@ These are “hot rn.”
 </figcaption>
 </figure>
 
-## Transforms!
+### `transform`
 
 <div class="body">
 
@@ -389,7 +396,9 @@ You shouldn’t use `transform` for layout—as in, don’t use `translate` when
 
 **Use `transform` only for what other properties can’t accomplish!**
 
-## Transitions!
+## And Motion!
+
+### `transition`
 
 CSS [transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions) allow us to move nicely between CSS property values.
 
@@ -454,7 +463,7 @@ You can get even more control over the easing with a [custom curve function](htt
 
 Nearly all CSS properties can be transitioned—but keep in mind that changes that cause a *reflow* (re-triggering *layout*, sometimes called *paint*) [are slow](https://web.dev/animations-guide/#triggers) and can make your page feel glitchy—especially when you start having many of them. Each in-between state causes the browser to re-render your entire document! So stick to changes of `color`, `opacity`, and `transform` for the smoothest performance.
 
-## And Animations!
+### `animation`
 
 Sometimes, transitioning a property from one value to another isn’t enough—you may need more complicated (or repeating) motion behavior. CSS `animation` allows precise state sequencing with `@keyframes` (akin to… *keyframes* or a timeline in other software contexts).
 <!-- .balance -->
