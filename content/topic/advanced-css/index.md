@@ -118,7 +118,7 @@ After a decade of workarounds and discussion, both shipping Chrome and Safari [n
 
 We’ve gone on-and-on about how you can’t treat the web like print—always [perfectly ragging](../typography/index.md#ragging) your text for nice, smooth blocks. In modern (responsive) web design we don’t always know what our text will be, nor where it will wrap!
 
-But we can do a handful of things to make for *better* ragging/wraps, given the unknowns—judiciously using `hyphens`&#x202F;/&thinsp;`&shy;`, `<wbr>`, `white-space`, `<nobr>` and `&nbsp;`, and `text-wrap` to *somewhat* control your line breaks.
+But we can do a handful of things to make for *better* ragging/wraps, given the unknowns—judiciously using `hyphens`/`&shy;`, `<wbr>`, `white-space`, `<nobr>` and `&nbsp;`, and `text-wrap` to *somewhat* control your line breaks.
 
 ### `hyphens` / `&shy;`
 
@@ -138,7 +138,7 @@ The `hyphens` property allows long, multi-syllable words to be [hyphenated](http
 
 ### `<wbr>`
 
-Somewhat related/similar to `&shy;`, the `<wbr>` is a <nobr>(void/empty)</nobr> HTML element that denotes a *word break* opportunity—a bit like an optional `<br>`&#x202F;! You can use these to manually control where single long word will wrap, *without* a hyphen:
+Somewhat related/similar to `&shy;`, the `<wbr>` is a <nobr>(void/empty)</nobr> HTML element that denotes a *word break* opportunity—a bit like an optional `<br>`! You can use these to manually control where single long word will wrap, *without* a hyphen:
 <!-- .balance -->
 
 [<cite>`wbr` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/wbr)
@@ -167,7 +167,7 @@ You can keep multiple words (or whole phrases) together with `white-space: nowra
 You can also use a manual `&nbsp;` [character/entity reference](https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references#:~:text=All%20named%20character%20entity%20references) between words:
 
 <figure
-	@caption="On a Mac, you can insert an *encoded* `&&NoBreak;nbsp;` with <nobr><kbd>⌥</kbd> <kbd>Space</kbd></nobr>&#x202F;. (It’s apparently [much harder](https://superuser.com/a/1414666) on Windows.) This works in many programs, not just your IDE! It’s harder to see, but easier to read."
+	@caption="On a Mac, you can insert an *encoded* `&&NoBreak;nbsp;` with <kbd><kbd><span class="x2325">⌥</span></kbd>+<kbd>Space</kbd></kbd>. (It’s apparently [much harder](https://superuser.com/a/1414666) on Windows.) This works in many programs, not just your IDE! It’s harder to see, but easier to read."
 	@source="nobr-nbsp/preview/?active=index.html"
 	style="--lines: 23"
 	>
@@ -175,7 +175,7 @@ You can also use a manual `&nbsp;` [character/entity reference](https://en.wikip
 
 ### `text-wrap: balance;`
 
-After many, many years of patient, typographic waiting (and [some JS](https://github.com/adobe/balance-text) [shenanigans](https://www.ctrl.blog/entry/text-wrap-balance.html)) we now have widespread (and mostly even) [browser support](https://caniuse.com/css-text-wrap-balance) for “balancing” uneven line lengths with `text-wrap: balance;`&#x202F;:
+After many, many years of patient, typographic waiting (and [some JS](https://github.com/adobe/balance-text) [shenanigans](https://www.ctrl.blog/entry/text-wrap-balance.html)) we now have widespread (and mostly even) [browser support](https://caniuse.com/css-text-wrap-balance) for “balancing” uneven line lengths with `text-wrap: balance;`:
 <!-- .balance -->
 
 [<cite>`text-wrap` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap)
@@ -257,16 +257,16 @@ These have corresponding `backdrop-filter` values—which apply the effect to th
 Beyond our standard sizing and layout afforded by CSS, you can also *visually* manipulate elements using CSS [transforms](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)—scaling, skewing, translating, or rotating elements *after* they are laid out in the DOM. It’s like grabbing the “corner handles” in Adobe/Figma!
 <!-- .after--3 -->
 
-`scale()`&#x202F;/&thinsp;`scaleX()`&#x202F;/&thinsp;`scaleY()`&#x202F;/&thinsp;`scaleZ()`&#x202F;/&thinsp;`scale3d()`
+`scale()`/`scaleX()`/`scaleY()`/`scaleZ()`/`scale3d()`
 : Change the displayed size of the element—as if it is an image.
 
-`skew()`&#x202F;/&thinsp;`skewX()`&#x202F;/&thinsp;`skewY()`
+`skew()`/`skewX()`/`skewY()`
 : Tilt an element to the left or right, like turning a rectangle into a parallelogram.
 
-`translate()`&#x202F;/&thinsp;`translateX()`&#x202F;/&thinsp;`translateY()`&#x202F;/&thinsp;`translate3d()`
+`translate()`/`translateX()`/`translateY()`/`translate3d()`
 : Move an element left/right and up/down, and also in three-dimensional space.
 
-`rotate()`&#x202F;/&thinsp;`rotate3d()`
+`rotate()`/`rotate3d()`
 : Rotate the element.
 
 `perspective()`
