@@ -32,10 +32,10 @@ An `overflow` in CSS happens when there is too much content to fit in a contain
 But we can use this behavior *intentionally* to crop our content, or create interally-scrolling areas:
 <!-- .balance -->
 
-<figure
-	@source="overflow/preview/?active=style.css"
-	style="--lines: 23"
-	>
+<figure style="--lines: 23">
+
+***[Overflow Example](overflow/style.css)***
+
 </figure>
 
 Importantly, this creates a new *stacking context*—which means things with `position` (namely, `position: sticky`)—and some other properties—will now use the `overflow` container as their reference/origin:
@@ -45,10 +45,10 @@ Importantly, this creates a new *stacking context*—which means things with `po
 <sub>*Always* confusing; think of these as *frames* or *groups* in Figma.</sub>
 <!-- .right -->
 
-<figure
-	@source="overflow-sticky/preview/?active=style.css"
-	style="--lines: 16"
-	>
+<figure style="--lines: 16">
+
+***[Overflow Sticky Example](overflow-sticky/style.css)***
+
 </figure>
 
 <!-- TODO: scroll-behavior: smooth; example! -->
@@ -64,11 +64,15 @@ You can also *excerpt* text (perhaps on a landing page) with the `text-overflow`
 	<sub>And multiple lines!</sub>
 <!-- .right -->
 
-<figure
-	@caption="This `-webkit` stuff is hokey, but still how it is done! Browsers are weird."
-	@source="text-overflow/preview/?active=style.css"
-	style="--lines: 18"
-	>
+<figure style="--lines: 18">
+
+***[Text-overflow Example](text-overflow/style.css)***
+
+<figcaption>
+
+This `-webkit` stuff is hokey, but still how it is done! Browsers are weird.
+
+</figcaption>
 </figure>
 
 ## Precise Text Positioning
@@ -87,11 +91,15 @@ It is based on the `font-family`, the `font-size`, and the `line-height`, which 
 Let’s avoid it. We can use [pseudo-elements](../css/index.md#pseudo-elements-selectorpseudo), `::after`/`::before`—which you may remember are entirely created by CSS, not in your HTML—to negate this vertical space with a negative margin. By doing this on the pseudo-elements, we can still position the parent element normally, otherwise:
 <!-- .balance .before -->
 
-<figure
-	@caption="Here we also move the text with `margin-inline-start` and `margin-inline-end`, though usually this adjustment is much more minor (to the point of ignoring)."
-	@source="bounding-box/preview/?active=style.css"
-	style="--lines: 31"
-	>
+<figure style="--lines: 31">
+
+***[Bounding Box Example](bounding-box/style.css)***
+
+<figcaption>
+
+Here we also move the text with `margin-inline-start` and `margin-inline-end`, though usually this adjustment is much more minor (to the point of ignoring).
+
+</figcaption>
 </figure>
 
 ### `text-box` is coming
@@ -129,11 +137,15 @@ The `hyphens` property allows long, multi-syllable words to be [hyphenated](http
 <sub>This depends on the browser and [`lang`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/lang), unless you manually add `&shy;`.</sub>
 <!-- .right -->
 
-<figure
-	@caption='Note `<html lang="en">` is needed—as the `auto` property works from each browser’s different, internal (and usually, only English) dictionary—so this all has somewhat limited utility/reliability/consistency.'
-	@source="hyphens/preview/?active=style.css"
-	style="--lines: 15"
-	>
+<figure style="--lines: 15">
+
+***[Hyphens Example](hyphens/style.css)***
+
+<figcaption>
+
+Note `<html lang="en">` is needed—as the `auto` property works from each browser’s different, internal (and usually, only English) dictionary—so this all has somewhat limited utility/reliability/consistency.
+
+</figcaption>
 </figure>
 
 ### `<wbr>`
@@ -145,10 +157,10 @@ Somewhat related/similar to `&shy;`, the `<wbr>` is a <nobr>(void/empty)</nobr> 
 <sub>These are often needed with slashes/URL&NoBreak;s.</sub>
 <!-- .right -->
 
-<figure
-	@source="wbr/preview/?active=index.html"
-	style="--lines: 20"
-	>
+<figure style="--lines: 20">
+
+***[Wbr Example](wbr/index.html)***
+
 </figure>
 
 ### `white-space: nowrap;` / `<nobr>` / `&nbsp;`
@@ -166,11 +178,15 @@ You can keep multiple words (or whole phrases) together with `white-space: nowra
 
 You can also use a manual `&nbsp;` [character/entity reference](https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references#:~:text=All%20named%20character%20entity%20references) between words:
 
-<figure
-	@caption="On a Mac, you can insert an *encoded* `&&NoBreak;nbsp;` with <kbd><kbd><span class="x2325">⌥</span></kbd>+<kbd>Space</kbd></kbd>. (It’s apparently [much harder](https://superuser.com/a/1414666) on Windows.) This works in many programs, not just your IDE! It’s harder to see, but easier to read."
-	@source="nobr-nbsp/preview/?active=index.html"
-	style="--lines: 23"
-	>
+<figure style="--lines: 23">
+
+***[Nobr/Nbsp example](nobr-nbsp/index.html)***
+
+<figcaption>
+
+On a Mac, you can insert an *encoded* `&&NoBreak;nbsp;` with <kbd><kbd><span class="x2325">⌥</span></kbd>+<kbd>Space</kbd></kbd>. (It’s apparently [much harder](https://superuser.com/a/1414666) on Windows.) This works in many programs, not just your IDE! It’s harder to see, but easier to read.
+
+</figcaption>
 </figure>
 
 ### `text-wrap: balance;`
@@ -182,11 +198,15 @@ After many, many years of patient, typographic waiting (and [some JS](https://gi
 <sub>Don’t overuse/abuse this in running text, though!</sub>
 <!-- .right -->
 
-<figure
-	@caption="This is particularly noticeable (and helpful) for centered text! There is also [`pretty`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap#pretty), but Safari *just* started [to support it](https://caniuse.com/mdn-css_properties_text-wrap_pretty) and Firefox still doesn’t."
-	@source="balance/preview/?active=style.css"
-	style="--lines: 9"
-	>
+<figure style="--lines: 9">
+
+***[Balance Example](balance/style.css)***
+
+<figcaption>
+
+This is particularly noticeable (and helpful) for centered text! There is also [`pretty`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap#pretty), but Safari *just* started [to support it](https://caniuse.com/mdn-css_properties_text-wrap_pretty) and Firefox still doesn’t.
+
+</figcaption>
 </figure>
 
 ## Hanging Punctuation (Sorta)
@@ -198,11 +218,15 @@ Ideally we could set punctuation *outside* of our text blocks, for visual alignm
 <sub>Another great *CSS Tricks* article.</sub>
 	<!-- .right -->
 
-<figure
-	@caption="Note that the (pasted-in) [curly quotation marks](https://en.wikipedia.org/wiki/Quotation_mark) are *not* in the HTML here in the last example! [Pseudo-elements](../css/index.md#pseudo-elements-selectorpseudo) again, `::before` and `::after`."
-	@source="hanging-punctuation/preview/?active=style.css"
-	style="--lines: 28"
-	>
+<figure style="--lines: 28">
+
+***[Hanging Punctuation Example](hanging-punctuation/style.css)***
+
+<figcaption>
+
+Note that the (pasted-in) [curly quotation marks](https://en.wikipedia.org/wiki/Quotation_mark) are *not* in the HTML here in the last example! [Pseudo-elements](../css/index.md#pseudo-elements-selectorpseudo) again, `::before` and `::after`.
+
+</figcaption>
 </figure>
 
 **When in doubt, *[The Elements of Typographic Style](https://readings.design/PDF/the_elements_of_typographic_style.pdf)* explains these conventions.**
@@ -228,11 +252,15 @@ CSS can apply visual effects on elements—adjusting their graphical display *af
 <sub>Back to MDN.</sub>
 <!-- .right -->
 
-<figure
-	@caption="Note that multiple filters are applied in *sequence*—changing the order changes the end/rendered result."
-	@source="filter/preview/?active=style.css"
-	style="--lines: 24"
-	>
+<figure style="--lines: 24">
+
+***[Filter Example](filter/style.css)***
+
+<figcaption>
+
+Note that multiple filters are applied in *sequence*—changing the order changes the end/rendered result.
+
+</figcaption>
 </figure>
 
 These have corresponding `backdrop-filter` values—which apply the effect to the page *behind* an element! You’ll often use these in conjunction with an [`opacity` (or semi-transparent `color`)](../css/index.md#color) or a `mix-blend-mode` for interesting Photoshop/Figma-like layer-blending effects:
@@ -243,11 +271,15 @@ These have corresponding `backdrop-filter` values—which apply the effect to th
 	<sub>Often used together.</sub>
 <!-- .right -->
 
-<figure
-	@caption="These are “hot rn.”"
-	@source="backdrop-filter/preview/?active=style.css"
-	style="--lines: 29"
-	>
+<figure style="--lines: 29">
+
+***[Backdrop Filter Example](backdrop-filter/style.css)***
+
+<figcaption>
+
+These are “hot rn.”
+
+</figcaption>
 </figure>
 
 ## Transforms!
@@ -342,11 +374,15 @@ The units for these are all a bit different; [MDN is your friend](https://develo
 Keep in mind that these transformations are applied *after* the rest of the CSS is parsed, and thus treat your element a bit like an image. And like `overflow` [above](#overflows-and-scrolling), `transform` also creates a new [*stacking context*](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context) for its children:
 <!-- .balance .before -->
 
-<figure
-	@caption="Note how the elements *don’t* take up more space in the document flow/layout—but they *do* cause an overflow!"
-	@source="transform/preview/?active=style.css"
-	style="--lines: 20"
-	>
+<figure style="--lines: 20">
+
+***[Transform example](transform/style.css)***
+
+<figcaption>
+
+Note how the elements *don’t* take up more space in the document flow/layout—but they *do* cause an overflow!
+
+</figcaption>
 </figure>
 
 You shouldn’t use `transform` for layout—as in, don’t use `translate` when `margin`, `padding`, `flex`, or `grid` can achieve your layout. This is *bad* practice, and usually very brittle! Especially when working responsively.
@@ -405,11 +441,15 @@ You can also control how different properties of an element transition independe
 Often, CSS transitions will be used *with* JavaScript when adding/removing classes, to make a state change less abrupt. For now, we’ll use [*pseudo-classes*](../css/index.md#pseudo-classes-selectorstate-selectorinstance) to demonstrate:
 <!-- .balance .before -->
 
-<figure
-	@caption="You can get even more control over the easing with a [custom curve function](https://easings.net)."
-	@source="transition/preview/?active=style.css"
-	style="--lines: 15"
-	>
+<figure style="--lines: 15">
+
+***[Transition Example](transition/style.css)***
+
+<figcaption>
+
+You can get even more control over the easing with a [custom curve function](https://easings.net).
+
+</figcaption>
 </figure>
 
 Nearly all CSS properties can be transitioned—but keep in mind that changes that cause a *reflow* (re-triggering *layout*, sometimes called *paint*) [are slow](https://web.dev/animations-guide/#triggers) and can make your page feel glitchy—especially when you start having many of them. Each in-between state causes the browser to re-render your entire document! So stick to changes of `color`, `opacity`, and `transform` for the smoothest performance.
@@ -448,11 +488,15 @@ section {
 Importantly, we then define the actual keyframes of an animation in a separate [*at-rule*](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_syntax/At-rule). Each *keyframe* is specified with a percentage of the animation’s duration, and can specify multiple properties—a bit like *selectors* for the time:
 <!-- .balance .before -->
 
-<figure
-	@caption="Don’t go overboard! A little animation goes a long way."
-	@source="animation/preview/?active=style.css"
-	style="--lines: 22"
-	>
+<figure style="--lines: 22">
+
+***[Animation Example](animation/style.css)***
+
+<figcaption>
+
+Don’t go overboard! A little animation goes a long way.
+
+</figcaption>
 </figure>
 
 **For accessibility, it is best-practice to *scope* your transitions and animations to folks who don’t mind the motion with [media queries](../responsive/index.md#prefers-contrast-prefers-reduced-motion).**
