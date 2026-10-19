@@ -1,0 +1,15 @@
+body {
+	--base: 1rem;
+
+	display: grid;
+	font-family: 'Helvetica', sans-serif;
+	gap: calc(2 * var(--base));
+	padding: var(--base);
+}
+
+section {
+	background-color: gold;
+	padding: calc(var(--base) / 2);
+}
+
+h2 { font-size: calc(var(--base) * 3); }

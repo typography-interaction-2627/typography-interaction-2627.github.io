@@ -1,0 +1,28 @@
+h2 {
+	/* Just to see things better, and a transparent blue. */
+	font-size: calc(var(--base) * 5);
+	background-color: hsla(200, 100%, 50%, 33%);
+}
+
+.precise {
+	--block--start:  -0.2em;  /* Font/line-height-dependent! */
+	--block--end:    -0.23em; /* Just adjust until you get it. */
+	--inline--start: -0.07em;
+	--inline--end:   -0.06em;
+
+	display: flow-root; /* Cinches the `block-size`. */
+	inline-size: fit-content; /* Cinches the `inline-size`. */
+	margin-inline-end: var(--inline--end);
+	margin-inline-start: var(--inline--start);
+
+	/* The `&` (nested selector) here just means `.precise`. */
+	&::before,
+	&::after {
+		content: ''; /* Gives us “empty” pseudos to work with. */
+		display: block;
+		visibility: hidden; /* We don’t need to see it or click it. */
+	}
+
+	&::before { margin-block-start: var(--block--start); }
+	&::after { margin-block-end: var(--block--start); }
+}

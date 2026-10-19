@@ -1,0 +1,14 @@
+section { overflow: hidden; } /* Prevent parent from overflowing. */
+
+section:nth-child(2) p {
+	overflow: hidden; /* Needed here, too. */
+	text-overflow: ellipsis; /* Add the … */
+	white-space: nowrap; /* Force to one line! */
+}
+
+section:nth-child(3) p {
+	display: -webkit-box; /* Needed for `line-clamp` to work! */
+	overflow: hidden; /* Same as before. */
+	-webkit-box-orient: vertical; /* Which direction to clamp. */
+	-webkit-line-clamp: 3; /* Number of lines. */
+}

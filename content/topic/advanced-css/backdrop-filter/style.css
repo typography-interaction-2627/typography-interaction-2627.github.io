@@ -1,0 +1,25 @@
+section { position: relative } /* For the `absolute`. */
+
+section::after {
+	color: white;
+	content: 'Appears in front!'; /* Give us an element to work with. */
+	inset: 2em;
+	position: absolute;
+	padding: 1em;
+}
+
+section:first-child::after {
+	backdrop-filter: blur(0.5rem); /* `blur` is a common use. */
+	background-color: color-mix(in srgb, #333, transparent) /* Shade it. */
+}
+
+section:nth-child(2)::after {
+	background-color: tomato;
+	mix-blend-mode: multiply; /* Just like Photoshop/Figma! */
+}
+
+section:nth-child(3)::after {
+	backdrop-filter: invert(1);
+	background-color: deepskyblue;
+	mix-blend-mode: multiply; /* You can do crazy combinations. */
+}

@@ -1,0 +1,24 @@
+section { padding: calc(3 * var(--base)); }
+
+p { margin-block-start: var(--base); }
+
+section:nth-child(2) h2::first-letter { /* Target via pseudo-element. */
+	color: tomato; /* There is no `last-letter`, unforunately. */
+	margin-inline-start: -0.4em; /* Adjusted to the width of the `“` */
+}
+
+section:nth-child(3) h2 {
+	/* Nested `&` selector again for less repetition. */
+	&::before {
+		content: '“'; /* Add the quotes themselves via pseudo-elements. */
+		margin-inline-start: -0.5em; /* Manually adjust this. */
+	}
+
+	&::after { content: '”'; }
+
+	&::before,
+	&::after {
+		color: tomato;
+		font-family: serif; /* You have much more control this way! */
+	}
+}

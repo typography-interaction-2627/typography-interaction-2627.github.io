@@ -1,0 +1,18 @@
+@keyframes blinking {
+	0% {
+		opacity: 1;
+		transform: translateY(0vh);
+	}
+
+	50% {
+		opacity: 0;
+		transform: translateY(75vh);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0vh);
+	}
+}
+
+section { animation: blinking 10s infinite ease-in-out; }

@@ -1,0 +1,5 @@
+/* Restore “default” behavior. */
+nobr { white-space: nowrap; }
+
+/* You could also do this! And use it wherever/on a `span`. */
+.nowrap { white-space: nowrap; }
