@@ -18,8 +18,7 @@ It is vain to do with more what can be done with less.
 
 A good pattern to follow in web (and all) development is to use each technology *only* for what it does *best*—using HTML for semantic meaning, CSS to handle how we form a page, and, later, JavaScript to introduce more interaction. But even before we get to JS, we can start to layer in some more interest and liveliness with our CSS.
 
-Let’s look at some examples.
-<!-- .intro -->
+**Let’s look at some examples.**
 
 ## Overflows and Scrolling
 
@@ -205,11 +204,9 @@ Ideally we could set punctuation *outside* of our text blocks, for visual alignm
 	>
 </figure>
 
-When in doubt, *[The Elements of Typographic Style](https://readings.design/PDF/the_elements_of_typographic_style.pdf)* explains these conventions.
-<!-- .after--0 .intro -->
+**When in doubt, *[The Elements of Typographic Style](https://readings.design/PDF/the_elements_of_typographic_style.pdf)* explains these conventions.**
 
-But also, as Bringhurst says, “read the text before designing it.” Always put yourself in the mind of your reader!
-<!-- .intro -->
+**But also, as Bringhurst says, “read the text before designing it.” Always put yourself in the mind of your reader!**
 
 <aside>
 
@@ -319,8 +316,7 @@ Keep in mind that these transformations are applied *after* the rest of the CSS 
 
 You shouldn’t use `transform` for layout—as in, don’t use `translate` when `margin`, `padding`, `flex`, or `grid` can achieve your layout. This is *bad* practice, and usually very brittle! Especially when working responsively.
 
-Use transform only for what other properties can’t accomplish!
-<!-- .intro -->
+**Use `transform` only for what other properties can’t accomplish!**
 
 ## Transitions!
 
@@ -376,8 +372,7 @@ You can also control how different properties of an element transition independe
 }
 ```
 
-Sometimes the shorthand here is easier than discrete properties, where you have to maintain the same order across all of them. It’s all the same to the computer!
-<!-- .note -->
+<sub>Sometimes the shorthand here is easier than discrete properties, where you have to maintain the same order across all of them. It’s all the same to the computer!</sub>
 
 Often, CSS transitions will be used *with* JavaScript when adding/removing classes, to make a state change less abrupt. For now, we’ll use [*pseudo-classes*](/topic/css/#pseudo-classes-selector-state-selector-instance) to demonstrate:
 <!-- .balance .before--3 -->
@@ -432,8 +427,7 @@ Importantly, we then define the actual keyframes of an animation in a separate [
 	>
 </figure>
 
-For accessibility, it is best-practice to *scope* your transitions and animations to folks who don’t mind the motion with [media queries](/topic/responsive/#prefers-contrast-prefers-reduced-motion).
-<!-- .intro -->
+**For accessibility, it is best-practice to *scope* your transitions and animations to folks who don’t mind the motion with [media queries](/topic/responsive/#prefers-contrast-prefers-reduced-motion).**
 
 <blockquote
 	@attribution="Stan Lee, 1962"
