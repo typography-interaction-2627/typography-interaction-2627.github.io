@@ -5,15 +5,19 @@ const draft = true
 
 # Some Additional, Advanced CSS
 
-Our HTML/CSS focus up to this point has been relatively broad, to start with the basics. Here we want to sand down some of the rough edges, and introduce you to some specific, advanced techniques you can use to refine and enliven your work—still with just CSS, no JavaScript (yet)!
+## Nuance and Webbiness
 
-> It is vain to do with more what can be done with less.
->
-> [<cite>William of Ockham, 1324</cite>](https://mathshistory.st-andrews.ac.uk/Biographies/Ockham)
+Our HTML/CSS focus up to this point has been relatively broad, to start with the basics. Here we want to sand down some of the rough edges, and introduce you to some specific, advanced techniques you can use to refine and enliven your work—still with just CSS, no JavaScript (yet)!
 
 A good pattern to follow in web (and all) development is to use each technology *only* for what it does *best*—using HTML for semantic meaning, CSS to handle how we form a page, and, later, JavaScript to introduce more interaction. But even before we get to JS, we can start to layer in some more interest and liveliness with our CSS.
 
 **Let’s look at some examples.**
+
+---
+
+> It is vain to do with more what can be done with less.
+>
+> [<cite>William of Ockham, 1324</cite>](https://mathshistory.st-andrews.ac.uk/Biographies/Ockham)
 
 ## Overflows and Scrolling
 
@@ -79,7 +83,7 @@ You have probably noticed that HTML renders a lot of extra space around text ele
 
 It is based on the `font-family`, the `font-size`, and the `line-height`, which basically means it is different all the time—and crucially, often different from Adobe/Figma to HTML. This makes it difficult to position type precisely—especially at large, expressive sizes like your headings! It’s always annoying, and you’ll often be adding/subtracting your spacing (`margin` or `padding`) to account for it, if you want to line everything up *just right*, optically.
 
-Let’s avoid it. We can use [pseudo-elements](/topic/css/#pseudo-elements-selector-pseudo), `::after`&#x202F;/&thinsp;`::before`—which you may remember are entirely created by CSS, not in your HTML—to negate this vertical space with a negative margin. By doing this on the pseudo-elements, we can still position the parent element normally, otherwise:
+Let’s avoid it. We can use [pseudo-elements](../css/index.md#pseudo-elements-selectorpseudo), `::after`/`::before`—which you may remember are entirely created by CSS, not in your HTML—to negate this vertical space with a negative margin. By doing this on the pseudo-elements, we can still position the parent element normally, otherwise:
 <!-- .balance .before--3 -->
 
 <figure
@@ -111,7 +115,7 @@ After a decade of workarounds and discussion, both shipping Chrome and Safari [n
 
 ## Text Ragging (Kinda)
 
-We’ve gone on-and-on about how you can’t treat the web like print—always [perfectly ragging](/topic/typography/#ragging) your text for nice, smooth blocks. In modern (responsive) web design we don’t always know what our text will be, nor where it will wrap!
+We’ve gone on-and-on about how you can’t treat the web like print—always [perfectly ragging](../typography/index.md#ragging) your text for nice, smooth blocks. In modern (responsive) web design we don’t always know what our text will be, nor where it will wrap!
 
 But we can do a handful of things to make for *better* ragging/wraps, given the unknowns—judiciously using `hyphens`&#x202F;/&thinsp;`&shy;`, `<wbr>`, `white-space`, `<nobr>` and `&nbsp;`, and `text-wrap` to *somewhat* control your line breaks.
 
@@ -148,7 +152,7 @@ Somewhat related/similar to `&shy;`, the `<wbr>` is a <nobr>(void/empty)</nobr> 
 
 ### `white-space: nowrap;` / `<nobr>` / `&nbsp;`
 
-But much more often, you’ll want to keep certain words *together*—to avoid a [widow or orphan](/topic/typography/#widows-and-orphans), or to keep important/related text together—like in dates, *October 24*, or with  names like *van Zanten*.
+But much more often, you’ll want to keep certain words *together*—to avoid a [widow or orphan](../typography/index.md#widows-and-orphans), or to keep important/related text together—like in dates, *October 24*, or with  names like *van Zanten*.
 
 - [<cite>`white-space` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/white-space)
 	*Prevents* text from wrapping.
@@ -156,7 +160,7 @@ But much more often, you’ll want to keep certain words *together*—to avoid 
 	This is *technically* deprecated. But [one of your instructors](https://michaelfehrenbach.com) is a “stan.”
 <!-- .right .rows--3 -->
 
-You can keep multiple words (or whole phrases) together with `white-space: nowrap;`. Historically, the `<nobr>` tag applied this—keeping in mind that like `<em>` or `<strong>`the default behavior is cleared by most [resets](/topic/css/#resets) (ours included)—so likewise you have to restore the property in your own CSS.
+You can keep multiple words (or whole phrases) together with `white-space: nowrap;`. Historically, the `<nobr>` tag applied this—keeping in mind that like `<em>` or `<strong>`the default behavior is cleared by most [resets](../css/index.md#resets) (ours included)—so likewise you have to restore the property in your own CSS.
 
 You can also use a manual `&nbsp;` [character/entity reference](https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references#:~:text=All%20named%20character%20entity%20references) between words:
 
@@ -193,7 +197,7 @@ Ideally we could set punctuation *outside* of our text blocks, for visual alignm
 	<!-- .right -->
 
 <figure
-	@caption="Note that the (pasted-in) [curly quotation marks](https://en.wikipedia.org/wiki/Quotation_mark) are *not* in the HTML here in the last example! [Pseudo-elements](/topic/css/#pseudo-elements-selector-pseudo) again, `::before` and `::after`."
+	@caption="Note that the (pasted-in) [curly quotation marks](https://en.wikipedia.org/wiki/Quotation_mark) are *not* in the HTML here in the last example! [Pseudo-elements](../css/index.md#pseudo-elements-selectorpseudo) again, `::before` and `::after`."
 	@source="hanging-punctuation/preview/?active=style.css"
 	style="--lines: 28"
 	>
@@ -229,7 +233,7 @@ CSS can apply visual effects on elements—adjusting their graphical display *af
 	>
 </figure>
 
-These have corresponding `backdrop-filter` values—which apply the effect to the page *behind* an element! You’ll often use these in conjunction with an [`opacity` (or semi-transparent `color`)](/topic/css/#color) or a `mix-blend-mode` for interesting Photoshop/Figma-like layer-blending effects:
+These have corresponding `backdrop-filter` values—which apply the effect to the page *behind* an element! You’ll often use these in conjunction with an [`opacity` (or semi-transparent `color`)](../css/index.md#color) or a `mix-blend-mode` for interesting Photoshop/Figma-like layer-blending effects:
 <!-- .balance -->
 
 - [<cite>`backdrop-filter` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter)
@@ -369,7 +373,7 @@ You can also control how different properties of an element transition independe
 
 <sub>Sometimes the shorthand here is easier than discrete properties, where you have to maintain the same order across all of them. It’s all the same to the computer!</sub>
 
-Often, CSS transitions will be used *with* JavaScript when adding/removing classes, to make a state change less abrupt. For now, we’ll use [*pseudo-classes*](/topic/css/#pseudo-classes-selector-state-selector-instance) to demonstrate:
+Often, CSS transitions will be used *with* JavaScript when adding/removing classes, to make a state change less abrupt. For now, we’ll use [*pseudo-classes*](../css/index.md#pseudo-classes-selectorstate-selectorinstance) to demonstrate:
 <!-- .balance .before--3 -->
 
 <figure
@@ -422,7 +426,9 @@ Importantly, we then define the actual keyframes of an animation in a separate [
 	>
 </figure>
 
-**For accessibility, it is best-practice to *scope* your transitions and animations to folks who don’t mind the motion with [media queries](/topic/responsive/#prefers-contrast-prefers-reduced-motion).**
+**For accessibility, it is best-practice to *scope* your transitions and animations to folks who don’t mind the motion with [media queries](../responsive/index.md#prefers-contrast-prefers-reduced-motion).**
+
+---
 
 > With great power there must also come great responsibility.
 >
