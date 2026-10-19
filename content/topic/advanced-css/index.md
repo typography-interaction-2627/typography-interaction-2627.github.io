@@ -7,14 +7,9 @@ const draft = true
 
 Our HTML/CSS focus up to this point has been relatively broad, to start with the basics. Here we want to sand down some of the rough edges, and introduce you to some specific, advanced techniques you can use to refine and enliven your work—still with just CSS, no JavaScript (yet)!
 
-<blockquote
-	@attribution="William of Ockham, 1324"
-	@citation="https://mathshistory.st-andrews.ac.uk/Biographies/Ockham"
-	>
-
-It is vain to do with more what can be done with less.
-
-</blockquote>
+> It is vain to do with more what can be done with less.
+>
+> [<cite>William of Ockham, 1324</cite>](https://mathshistory.st-andrews.ac.uk/Biographies/Ockham)
 
 A good pattern to follow in web (and all) development is to use each technology *only* for what it does *best*—using HTML for semantic meaning, CSS to handle how we form a page, and, later, JavaScript to introduce more interaction. But even before we get to JS, we can start to layer in some more interest and liveliness with our CSS.
 
@@ -429,11 +424,6 @@ Importantly, we then define the actual keyframes of an animation in a separate [
 
 **For accessibility, it is best-practice to *scope* your transitions and animations to folks who don’t mind the motion with [media queries](/topic/responsive/#prefers-contrast-prefers-reduced-motion).**
 
-<blockquote
-	@attribution="Stan Lee, 1962"
-	@citation="https://en.wikipedia.org/wiki/With_great_power_comes_great_responsibility"
-	>
-
-With great power there must also come great responsibility.
-
-</blockquote>
+> With great power there must also come great responsibility.
+>
+> [<cite>Stan Lee, 1962</cite>](https://en.wikipedia.org/wiki/With_great_power_comes_great_responsibility)
