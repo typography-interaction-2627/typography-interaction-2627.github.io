@@ -361,7 +361,12 @@ export default (config) => {
 
 				let id
 
-				const figure = parse(html, { comment: true }).querySelector('figure')
+				const figure = parse(
+					html.replace(/(?<=<figcaption\b[^>]*>)[\s\S]*?(?=<\/figcaption>)/i, (content) =>
+						markdownFigureCaption.render(content.trim(), { figure: true }).trim(),
+					),
+					{ comment: true },
+				).querySelector('figure')
 				const caption = figure.querySelector(':scope > figcaption')
 
 				caption?.remove()
@@ -391,10 +396,7 @@ export default (config) => {
 					folder && link.parentNode.parentNode.replaceWith(element(`<iframe loading="lazy" src="${folder}preview/${file && `?active=${file}`}\"></iframe>`))
 				})
 
-				if (caption) {
-					caption.innerHTML = markdownFigureCaption.render(caption.innerHTML.trim(), { figure: true }).trim()
-					figure.appendChild(caption)
-				}
+				if (caption) figure.appendChild(caption)
 
 				// Safari still blurs SVG `img`; use an `object` instead.
 				figure.querySelectorAll('img[src$=".svg"]').forEach((image) => {
