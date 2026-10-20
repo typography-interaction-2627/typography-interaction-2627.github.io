@@ -9,4 +9,4 @@ body {
 
 section { background-color: gold; }
 
-h2 { font-size: calc(var(--spacing) * 3); }
+h2 { font-size: calc(3 * var(--spacing)); }

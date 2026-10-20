@@ -12,7 +12,7 @@ section {
 	padding: calc(var(--spacing) / 2);
 }
 
-h2 { font-size: calc(var(--spacing) * 3); }
+h2 { font-size: calc(3 * var(--spacing)); }
 
 section {
 	/* Limit the height. */
