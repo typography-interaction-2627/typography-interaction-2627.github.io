@@ -1,11 +1,10 @@
-section:nth-child(1) {
-	hyphens: none; /* Default. */
-}
+section {
+	/* Default. */
+	&:nth-child(1) { hyphens: none; }
 
-section:nth-child(2) {
-	hyphens: auto; /* Browser decides (based on `lang`). */
-}
+	/* Browser decides (based on `lang`). */
+	&:nth-child(2) { hyphens: auto; }
 
-section:nth-child(3) {
-	hyphens: manual; /* Specify with `&shy;` */
+	/* Specify with `&shy;` in the HTML. */
+	&:nth-child(3) { hyphens: manual; }
 }

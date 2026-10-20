@@ -1,0 +1,15 @@
+:root { --spacing: 1rem; }
+
+body {
+	display: grid;
+	font-family: sans-serif;
+	gap: calc(2 * var(--spacing));
+	padding: var(--spacing);
+}
+
+section {
+	background-color: gold;
+	padding: calc(var(--spacing) / 2);
+}
+
+h2 { font-size: calc(var(--spacing) * 3); }
