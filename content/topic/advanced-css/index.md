@@ -83,7 +83,7 @@ Note that the (pasted-in) [curly quotation marks](https://en.wikipedia.org/wiki/
 
 We’ve gone on-and-on about how you can’t treat the web like print—always [perfectly ragging](../typography/index.md#ragging) your text for nice, smooth blocks. In modern (responsive) web design we don’t always know what our text will be, nor where it will wrap!
 
-But we can do a handful of things to make for *better* ragging/wraps, given the unknowns—judiciously using `hyphens`/`&shy;`, `<wbr>`, `white-space`, `<nobr>` and `&nbsp;`, and `text-wrap` to *somewhat* control your line breaks.
+But we *can* do a handful of things to make for *better* ragging/wraps, given the unknowns—judiciously using `hyphens`/`&shy;`, `<wbr>`, `white-space`, `<nobr>` and `&nbsp;`, and `text-wrap` to *somewhat* control our line breaks, for better readability.
 
 #### `hyphens` / `&shy;`
 
@@ -94,7 +94,7 @@ The `hyphens` property allows long, multi-syllable words to be [hyphenated](http
 <sub>This depends on the browser and [`lang`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/lang), unless you manually add `&shy;`.</sub>
 <!-- .right -->
 
-<figure style="--lines: 15">
+<figure style="--lines: 16">
 
 ***[Hyphens Example](hyphens/style.css)***
 
@@ -122,7 +122,7 @@ Somewhat related/similar to `&shy;`, the `<wbr>` is a <nobr>(void/empty)</nobr> 
 
 #### `white-space: nowrap;` / `<nobr>` / `&nbsp;`
 
-But much more often, you’ll want to keep certain words *together*—to avoid a [widow or orphan](../typography/index.md#widows-and-orphans), or to keep important/related text together—like in dates, *October 24*, or with  names like *van Zanten*.
+But much more often, you’ll want to keep certain words *together*—to avoid a [widow or orphan](../typography/index.md#widows-and-orphans), or to keep important/related text together—like in dates, *October 22*, or with  names like *van Zanten*.
 
 - [<cite>`white-space` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/white-space)
 	<sub>*Prevents* text from wrapping.</sub>
@@ -134,28 +134,29 @@ But much more often, you’ll want to keep certain words *together*—to avoid 
 You can keep multiple words (or whole phrases) together with `white-space: nowrap;`. Historically, the `<nobr>` tag applied this—keeping in mind that like `<em>` or `<strong>`the default behavior is cleared by most [resets](../css/index.md#resets) (ours included)—so likewise you have to restore the property in your own CSS.
 
 You can also use a manual `&nbsp;` [character/entity reference](https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references#:~:text=All%20named%20character%20entity%20references) between words:
+<!-- .balance .before -->
 
-<figure style="--lines: 23">
+<figure style="--lines: 15">
 
 ***[Nobr/Nbsp example](nobr-nbsp/index.html)***
 
 <figcaption>
 
-On a Mac, you can insert an *encoded* `&&NoBreak;nbsp;` with <kbd><kbd><span class="x2325">⌥</span></kbd>+<kbd>Space</kbd></kbd>. (It’s apparently [much harder](https://superuser.com/a/1414666) on Windows.) This works in many programs, not just your IDE! It’s harder to see, but easier to read.
+On a Mac, you can insert an *encoded* `&nbsp;` with <kbd><kbd><span class="x2325">⌥</span></kbd>+<kbd>Space</kbd></kbd>. (It’s apparently [much harder](https://superuser.com/a/1414666) on Windows.) This works in many programs, not just your IDE! It’s harder to see, but easier to read.
 
 </figcaption>
 </figure>
 
 #### `text-wrap: balance;`
 
-After many, many years of patient, typographic waiting (and [some JS](https://github.com/adobe/balance-text) [shenanigans](https://www.ctrl.blog/entry/text-wrap-balance.html)) we now have widespread (and mostly even) [browser support](https://caniuse.com/css-text-wrap-balance) for “balancing” uneven line lengths with `text-wrap: balance;`:
+After many, *many* years of patient, typographic waiting (and [some JS](https://github.com/adobe/balance-text) [shenanigans](https://www.ctrl.blog/entry/text-wrap-balance.html)) we now have widespread [browser support](https://caniuse.com/css-text-wrap-balance) for “balancing” uneven line lengths with `text-wrap: balance;`:
 <!-- .balance -->
 
 [<cite>`text-wrap` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap)
 <sub>Don’t overuse/abuse this in running text, though!</sub>
 <!-- .right -->
 
-<figure style="--lines: 9">
+<figure style="--lines: 8">
 
 ***[Balance Example](balance/style.css)***
 
@@ -166,17 +167,17 @@ This is particularly noticeable (and helpful) for centered text! There is also [
 </figcaption>
 </figure>
 
-**When in doubt, *[The Elements of Typographic Style](https://readings.design/PDF/the_elements_of_typographic_style.pdf)* explains these conventions.**
+**When in doubt, *[The Elements of Typographic Style](https://readings.design/PDF/the_elements_of_typographic_style.pdf)* explains many of these conventions.**
 
-**But also, as Bringhurst says, “read the text before designing it.” Always put yourself in the mind of your reader!**
+**But also, as Bringhurst says, “read the text before designing it.” Always put yourself in the mind of your reader!**
 
 <aside>
 
-<mark>Reminder: *There is no perfect layout*</mark>
+Remember that [*there is no perfect layout*](../../syllabus.md#unit-2-there-is-no-perfect-layout)!
 
-These strategies only work if you can *manually* edit your text content, which is not always feasible—with templating/content management systems, editors, time, and so on.
+These strategies only work if you can *manually* edit your text content, which is often not feasible—with templating/content management systems, editors, time, and so on.
 
-Do it when feasible—and give more attention to your large headings, then your body copy, etc. going down your hierarchy.
+<sub>Do it when you can—and give more attention to your large headings, then your body copy, etc. going down your hierarchy.</sub>
 
 </aside>
 
