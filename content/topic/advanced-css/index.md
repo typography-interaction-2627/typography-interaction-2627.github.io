@@ -242,15 +242,15 @@ This `-webkit` stuff is hokey, but still how it is done! Browsers are weird.
 </figcaption>
 </figure>
 
-## Compositing Effects
+## Visual and Compositing Effects
 
 ### `filter`
 
-CSS can apply visual effects on elements—adjusting their graphical display *after* they are laid out and rendered in the page—with the `filter` property:
+CSS can apply visual and compositing effects on elements—adjusting their graphical display *after* they are laid out and rendered in the page—with the [`filter` property](https://developer.mozilla.org/en-US/docs/Web/CSS/filter):
 <!-- .balance -->
 
 [<cite>`filter` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/filter)
-<sub>Back to MDN.</sub>
+<sub>Applied *after* everything else.</sub>
 <!-- .right -->
 
 <figure style="--lines: 24">
@@ -274,13 +274,13 @@ These have corresponding `backdrop-filter` values—which apply the effect to th
 	<sub>Often used together.</sub>
 <!-- .right -->
 
-<figure style="--lines: 29">
+<figure style="--lines: 24">
 
 ***[Backdrop Filter Example](backdrop-filter/style.css)***
 
 <figcaption>
 
-These are “hot rn.”
+These are “hot rn.” Always mind your legibility/readability, though!
 
 </figcaption>
 </figure>
