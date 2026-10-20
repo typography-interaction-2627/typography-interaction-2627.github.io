@@ -190,7 +190,7 @@ An [`overflow`](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow) in CS
 
 - [<cite>`overflow` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow)
 - [<cite>Overflowing Content – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Overflowing_content)
-	<sub>Lot of MDNs, here.</sub>
+	<sub>What to do when things don’t fit.</sub>
 <!-- .right .rows--2 -->
 
 But we can use this behavior *intentionally* to crop our content, or create interally-scrolling areas:
@@ -204,7 +204,7 @@ But we can use this behavior *intentionally* to crop our content, or create inte
 
 <!-- TODO Update this to `overflow-block`/`overflow-inline` next year! -->
 
-### Stacking Context
+### `oveflow` / `sticky`
 
 Importantly, `overflow` creates a new [*stacking context*](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context)—which means things with `position` (namely, `position: sticky;`)—and some other properties—will now use the `overflow` container as their reference/origin:
 <!-- .balance .before -->
@@ -221,11 +221,12 @@ Importantly, `overflow` creates a new [*stacking context*](https://developer.moz
 
 ### `text-overflow` / `-webkit-line-clamp`
 
-You can also *excerpt* text (perhaps on a landing page) with the `text-overflow` (for a single line) or `-webkit-line-clamp` (for multiple lines) properties—which will add [an ellipsis](https://en.wikipedia.org/wiki/Ellipsis) <samp>…</samp> where the text overflows. Only do this when the full text is available on a subsequent page:
+You can also *excerpt* text (perhaps on a landing page) with the [`text-overflow`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow) (for a single line) or [`-webkit-line-clamp`](https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-line-clamp) (for multiple lines) properties—which will add [an ellipsis](https://en.wikipedia.org/wiki/Ellipsis) <samp>…</samp> where the text overflows. Only do this when the full text is available on a subsequent page:
 <!-- .balance -->
 
 - [<cite>`text-overflow` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow)
 	<sub>For single lines…</sub>
+
 - [<cite>`-webkit-line-clamp` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-line-clamp)
 	<sub>And multiple lines!</sub>
 <!-- .right -->

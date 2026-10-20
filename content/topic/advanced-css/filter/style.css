@@ -1,18 +1,20 @@
-section:nth-child(2) { filter: blur(0.2rem); }
-section:nth-child(3) { filter: brightness(125%); }
-section:nth-child(4) { filter: contrast(75%); }
+section {
+	&:nth-child(2) { filter: blur(0.2em); }
+	&:nth-child(3) { filter: brightness(125%); }
+	&:nth-child(4) { filter: contrast(75%); }
 
-section:nth-child(5) {
-	filter: drop-shadow(0 0.5rem 0.2rem rgb(0 0 0 / 25%));
-}
+	&:nth-child(5) {
+		filter: drop-shadow(0 0.5em 0.2em rgb(0 0 0 / 25%));
+	}
 
-section:nth-child(6) { filter: grayscale(1); } /* Like `saturate` */
-section:nth-child(7) { filter: hue-rotate(20deg); }
-section:nth-child(8) { filter: invert(1); }
-section:nth-child(9) { filter: opacity(50%); }
-section:nth-child(10) { filter: saturate(50%); }
-section:nth-child(11) { filter: sepia(100%); }
+	&:nth-child(6) { filter: grayscale(1); } /* Like `saturate` */
+	&:nth-child(7) { filter: hue-rotate(20deg); }
+	&:nth-child(8) { filter: invert(1); }
+	&:nth-child(9) { filter: opacity(50%); }
+	&:nth-child(10) { filter: saturate(50%); }
+	&:nth-child(11) { filter: sepia(100%); }
 
-section:nth-child(12) {
-	filter: hue-rotate(-50deg) drop-shadow(0.2rem 0.2rem tomato);
+	&:nth-child(12) {
+		filter: hue-rotate(-50deg) drop-shadow(0.2em 0.2em tomato);
+	}
 }

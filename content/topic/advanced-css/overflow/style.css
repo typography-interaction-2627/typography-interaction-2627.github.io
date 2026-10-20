@@ -14,13 +14,12 @@ section {
 	&:nth-child(5) {
 		background-color: tomato;
 		display: flex; /* Horizontal layout. */
-		gap: calc(2 * var(--spacing));
 		overflow-x: auto; /* Scroll horizontally! */
 		overflow-y: hidden;
 
 		* {
 			flex-shrink: 0; /* Don’t shrink! */
-			inline-size: 85%; /* Always “peek” the next block. */
+			inline-size: 90%; /* Always “peek” the next block. */
 		}
 	}
 }
