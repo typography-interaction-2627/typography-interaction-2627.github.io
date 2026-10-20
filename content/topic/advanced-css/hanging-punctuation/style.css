@@ -1,6 +1,6 @@
-section { padding: calc(3 * var(--base)); }
+section { padding: calc(3 * var(--spacing)); }
 
-p { margin-block-start: var(--base); }
+p { margin-block-start: var(--spacing); }
 
 section:nth-child(2) h2::first-letter { /* Target via pseudo-element. */
 	color: tomato; /* There is no `last-letter`, unforunately. */

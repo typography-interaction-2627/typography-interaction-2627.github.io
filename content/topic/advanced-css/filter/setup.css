@@ -1,15 +1,15 @@
-body {
-	--base: 1rem;
+:root { --spacing: 1rem; }
 
+body {
 	display: grid;
-	font-family: 'Helvetica', sans-serif;
-	gap: calc(2 * var(--base));
-	padding: var(--base);
+	font-family: sans-serif;
+	gap: calc(2 * var(--spacing));
+	padding: var(--spacing);
 }
 
 section {
 	background-color: gold;
-	padding: calc(var(--base) / 2);
+	padding: calc(var(--spacing) / 2);
 }
 
-h2 { font-size: calc(var(--base) * 3); }
+h2 { font-size: calc(var(--spacing) * 4); }

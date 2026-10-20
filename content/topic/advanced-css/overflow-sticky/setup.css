@@ -1,21 +1,21 @@
-body {
-	--base: 1rem;
+:root { --spacing: 1rem; }
 
+body {
 	display: grid;
-	font-family: 'Helvetica', sans-serif;
-	gap: calc(2 * var(--base));
-	padding: var(--base);
+	font-family: sans-serif;
+	gap: calc(2 * var(--spacing));
+	padding: var(--spacing);
 }
 
 section {
 	background-color: gold;
-	padding: calc(var(--base) / 2);
+	padding: calc(var(--spacing) / 2);
 }
 
-h2 { font-size: calc(var(--base) * 3); }
+h2 { font-size: calc(var(--spacing) * 4); }
 
 /* Limit the height. */
-section:not(:first-child) { block-size: calc(var(--base) * 7); }
+section:not(:first-child) { block-size: calc(var(--spacing) * 7); }
 
 section:nth-child(2) {
 	overflow-x: hidden;
@@ -24,7 +24,7 @@ section:nth-child(2) {
 
 section:nth-child(3) {
 	display: flex; /* Horizontal layout. */
-	gap: calc(2 * var(--base));
+	gap: calc(2 * var(--spacing));
 	overflow-x: auto; /* Scroll horizontally! */
 	overflow-y: hidden;
 
