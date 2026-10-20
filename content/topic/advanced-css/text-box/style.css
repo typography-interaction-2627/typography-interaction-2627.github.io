@@ -1,10 +1,12 @@
-section:not(:first-child) h2 {
-	text-box-edge: cap alphabetic; /* Cinch over/under. */
-	text-box-trim: trim-both; /* Which block edges. */
+section {
+	&:not(:first-child) h2 {
+		text-box-edge: cap alphabetic; /* Cinch over/under. */
+		text-box-trim: trim-both; /* Which block edges. */
 
-	/* Less noticeable, cinch inline edges via relative negative `margin`. */
-	margin-inline: -0.06em;
-	background-color: color-mix(in srgb, deepskyblue, transparent);
+		/* Less noticeable, cinch inline edges via relative negative `margin`. */
+		margin-inline: -0.06em;
+		background-color: color-mix(in srgb, deepskyblue, transparent);
+	}
+
+	&:last-child h2 { text-box-edge: ex alphabetic; } /* To the x-height. */
 }
-
-section:last-child h2 { text-box-edge: ex alphabetic; } /* To the x-height. */

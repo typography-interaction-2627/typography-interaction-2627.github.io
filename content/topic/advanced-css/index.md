@@ -21,7 +21,7 @@ A good pattern to follow in web (and all) development is to use each technology 
 
 ## Advanced Typography
 
-### Precise/Optical `text-box`
+### Precise, Optical `text-box`
 
 You have probably noticed that HTML renders a lot of extra space around text elements, called the *line box* (or, in design software parlance, the *bounding box*).
 
@@ -43,7 +43,7 @@ It is based on the `font-family`, the `font-size`, and the `line-height`, which 
 But we can avoid it, now! After a decade of workarounds and discussion, browsers recently [added support](https://caniuse.com/css-text-box-trim) for the super-easy [`text-box`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-box) properties to give us control:
 <!-- .balance .before -->
 
-<figure style="--lines: 12">
+<figure style="--lines: 14">
 
 ***[Text-Box Example](text-box/style.css)***
 
@@ -56,18 +56,19 @@ You you might consider doing this on *everything* with the shorthand `* { text-b
 
 > [!NOTE]
 >
-> Figma was actually *ahead* of CSS here with its [recent <samp>Vertical Trim</samp> option](https://help.figma.com/hc/en-us/articles/360039956634-Explore-text-properties#h_01H96FW9Z3W7J7Z2HEN8V17BZT).
+> Figma was actually *ahead* of CSS here with its [recent <samp>Vertical Trim</samp> option](https://help.figma.com/hc/en-us/articles/360039956634-Explore-text-properties#h_01H96FW9Z3W7J7Z2HEN8V17BZT)!
 
 ### Hanging Punctuation (Kinda)
 
-Ideally we could set punctuation *outside* of our text blocks, for visual alignment based solely on the letters—a traditional design technique called [*hanging punctuation*](https://en.wikipedia.org/wiki/Hanging_punctuation). (There *is* actually a [CSS property](https://developer.mozilla.org/en-US/docs/Web/CSS/hanging-punctuation) for this, but [only Safari](https://caniuse.com/?search=hanging-punctuation) supports it! …ish.) But we can still approximate the behavior, at least for quotes:
-<!-- .balance -->
+Ideally we could set our punctuation *outside* of our text blocks, for nice visual alignment based solely on the letters—a traditional design technique called [*hanging punctuation*](https://en.wikipedia.org/wiki/Hanging_punctuation).
 
-[<cite>`::before` and `::after` – CSS Tricks</cite>](https://css-tricks.com/almanac/selectors/a/after-and-before/)
+[<cite>7 Practical Uses for `::before` and `::after` – CSS Tricks</cite>](https://css-tricks.com/7-practical-uses-for-the-before-and-after-pseudo-elements-in-css/)
 <sub>Another great *CSS Tricks* article.</sub>
-	<!-- .right -->
+	<!-- .right .rows--2 -->
 
-<figure style="--lines: 28">
+There *is* actually a [`hanging-punctuation` property](https://developer.mozilla.org/en-US/docs/Web/CSS/hanging-punctuation) for this—but [only Safari](https://caniuse.com/?search=hanging-punctuation) supports it! But we can still approximate the behavior in a few ways, at least for quotes:
+
+<figure style="--lines: 23">
 
 ***[Hanging Punctuation Example](hanging-punctuation/style.css)***
 
@@ -113,7 +114,7 @@ Somewhat related/similar to `&shy;`, the `<wbr>` is a <nobr>(void/empty)</nobr> 
 <sub>These are often needed with slashes/URL&NoBreak;s.</sub>
 <!-- .right -->
 
-<figure style="--lines: 20">
+<figure style="--lines: 18">
 
 ***[Wbr Example](wbr/index.html)***
 
