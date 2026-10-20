@@ -360,10 +360,9 @@ export default (config) => {
 				if (fence) return fence
 
 				let id
-
 				const figure = parse(
-					html.replace(/(?<=<figcaption\b[^>]*>)[\s\S]*?(?=<\/figcaption>)/i, (content) =>
-						markdownFigureCaption.render(content.trim(), { figure: true }).trim(),
+					html.replace(/(<figcaption\b[^>]*>)([\s\S]*?)<\/figcaption>/i, (_, open, content) =>
+						`${open}${markdownFigureCaption.render(content.trim(), { figure: true }).trim()}</figcaption>`,
 					),
 					{ comment: true },
 				).querySelector('figure')
