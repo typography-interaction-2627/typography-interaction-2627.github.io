@@ -1,16 +1,29 @@
-section { filter: drop-shadow(0 0.2rem 0.2rem rgb(0 0 0 / 25%)); }
+section {
+	filter: drop-shadow(0 0.2em 0.2em rgb(0 0 0 / 25%)); /* Just to see overlaps. */
 
-section:nth-child(2) { transform: scale(150%); }
+	&:nth-child(2) { transform: scale(150%); } /* Same as `scale: 150%;` */
 
-section:nth-child(3) {
-	transform: scale(150%);
-	transform-origin: top left; /* Center is default. */
+	&:nth-child(3) {
+		transform: scale(150%);
+		transform-origin: top left; /* Center is default. */
+	}
+
+	&:nth-child(4) { transform: skew(10deg); }
+	&:nth-child(5) { transform: translate(50%, 25%); }
+	&:nth-child(6) { transform: rotate(10deg); }
+
+	/* Multiple, applied in order. */
+	&:nth-child(7) {
+		background-color: orange;
+		transform: rotate(-5deg) scale(125%);
+	}
+
+	/* Or using individual properties. */
+	&:nth-child(8) {
+		background-color: tomato;
+		translate: 50% 25%;
+		rotate: 10deg;
+		scale: 150%;
+		transform: skew(10deg);
+	}
 }
-
-section:nth-child(4) { transform: skew(10deg); }
-
-section:nth-child(5) { transform: translate(50%, 25%); }
-
-section:nth-child(6) { transform: rotate(10deg); }
-
-section:nth-child(7) { transform: rotate(-5deg) scale(125%); }

@@ -1,11 +1,17 @@
-section:hover {
-	background-color: aquamarine;
-	transform: scale(110%);
-}
+section {
+	--duration: 1s;
+	--scale: 110%;
 
-section:nth-child(2) {
-	transition-duration: 2s, 1s;
-	transition-property: background-color, transform;
-	transition-timing-function: linear, ease-in-out;
-	will-change: transform; /* Improves the scaling performance! */
+	&:hover {
+		background-color: aquamarine;
+		transform: scale(var(--scale));
+	}
+
+	&:nth-child(2) {
+		transition-delay: var(--duration);
+		transition-duration: calc(2 * var(--duration)), var(--duration);
+		transition-property: background-color, transform;
+		transition-timing-function: linear, ease-in-out;
+		will-change: transform; /* Improves the scaling performance! */
+	}
 }

@@ -287,9 +287,11 @@ These are “hot rn.” Always mind your legibility/readability, though!
 
 ### `transform`
 
+#### Transform `function()`
+
 <div class="body">
 
-Beyond our standard sizing and layout afforded by CSS, you can also *visually* manipulate elements using CSS [transforms](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)—scaling, skewing, translating, or rotating elements *after* they are laid out in the DOM. It’s like grabbing the “corner handles” in Adobe/Figma!
+Beyond our standard [sizing and layout](../box-model/index.md) afforded by CSS, you can also *visually* manipulate elements using CSS [transforms](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)—scaling, skewing, translating, or rotating elements *after* they are laid out in the DOM. It’s like grabbing the “corner handles” in Adobe/Figma!
 <!-- .after -->
 
 <dl class="balance">
@@ -300,7 +302,7 @@ Beyond our standard sizing and layout afforded by CSS, you can also *visually* m
 </dt>
 <dd>
 
-Change the displayed size of the element—as if it is an image.
+[Change the displayed size](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/transform-function/scale) of the element—as if it is an image.
 
 </dd>
 
@@ -311,7 +313,7 @@ Change the displayed size of the element—as if it is an image.
 </dt>
 <dd>
 
-Tilt an element to the left or right, like turning a rectangle into a parallelogram.
+[Tilt an element](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/transform-function/skew) to the left or right, like turning a rectangle into a parallelogram.
 
 </dd>
 
@@ -322,7 +324,7 @@ Tilt an element to the left or right, like turning a rectangle into a parallelog
 </dt>
 <dd>
 
-Move an element left/right and up/down, and also in three-dimensional space.
+[Move an element](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/transform-function/translate) left/right and up/down, and also in three-dimensional space.
 
 </dd>
 
@@ -333,7 +335,7 @@ Move an element left/right and up/down, and also in three-dimensional space.
 </dt>
 <dd>
 
-Rotate the element.
+[Spin the element](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/transform-function/rotate).
 
 </dd>
 
@@ -344,23 +346,31 @@ Rotate the element.
 </dt>
 <dd>
 
-Doesn’t affect the element itself, but sets the distance between the user and the <nobr>three-dimensional</nobr> plane.
+Doesn’t affect the element itself, but [sets the distance](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/transform-function/perspective) between the user and the <nobr>three-dimensional</nobr> plane.
 
 </dd>
 </dl>
+
+<sub>The units for these are all a bit different; [MDN is your friend](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function) here, as usual!</sub>
+<!-- .before -->
 
 </div>
 
 <div class="right">
 
-[<cite>`transform` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)
-<sub>These are fun—but should *not* be used for actual layout!</sub>
+- [<cite>`transform` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)
+	<sub>These are fun—but should *not* be used for actual layout!</sub>
+
+- [<cite>`<transform-function>` type – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/transform-function)
+	<sub>The different types.</sub>
 <!-- .sticky -->
 
 </div>
 
-The units for these are all a bit different; [MDN is your friend](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function) here, as usual. You can apply single or multiple transforms, which are written *space-separated* and applied one after the other:
-<!-- .balance .before -->
+#### Multiple Transforms <!-- .before -->
+
+ You can also have multiple transforms on a single element, which are written *space-separated* (no comma!) and then are applied one after the other:
+<!-- .balance .before style="margin-block-end: 1rlh" -->
 
 ```css <!-- .before .verso -->
 .rotated {
@@ -368,16 +378,39 @@ The units for these are all a bit different; [MDN is your friend](https://develo
 }
 ```
 
-```css <!-- .before .recto -->
+```css <!-- .after .before .recto -->
 .rotated-and-scaled {
 	transform: rotate(-5deg) scale(120%);
 }
 ```
 
-Keep in mind that these transformations are applied *after* the rest of the CSS is parsed, and thus treat your element a bit like an image. And like `overflow` [above](#overflows-and-scrolling), `transform` also creates a new [*stacking context*](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context) for its children:
+#### Individual Properties <!-- .before -->
+
+The most commonly used `transform` types [now](https://caniuse.com/mdn-css_properties_translate) also have their own separate, individual properties: [`translate`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/translate), [`rotate`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/rotate), and [`scale`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/scale)—which are applied in that order!
+
+You just pull the values out of the function, without the `()`. This can make complicated `transform` combinations much easier to read/understand:
+
+```css <!-- .before .body .center -->
+.transformed {
+	transform: translate(1rem 1rem) rotate(-5deg) scale(120%) skew(5deg);
+}
+```
+
+```css <!-- .before .right -->
+.transformed-individually {
+	translate: 1rem 1rem;
+	rotate: -5deg;
+	scale: 120%;
+	transform: skew(10deg);
+}
+```
+
+#### Okay, What Do They Do? <!-- .before -->
+
+Keep in mind that these transformations are also applied *after* the rest of the CSS is parsed (like [`filter`](#filter)), and thus treat your element a bit like an image. And like `overflow` [above](#overflow), `transform` also creates a new [*stacking context*](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context) for its children:
 <!-- .balance .before -->
 
-<figure style="--lines: 20">
+<figure style="--lines: 24">
 
 ***[Transform example](transform/style.css)***
 
@@ -388,27 +421,53 @@ Note how the elements *don’t* take up more space in the document flow/layout�
 </figcaption>
 </figure>
 
-You shouldn’t use `transform` for layout—as in, don’t use `translate` when `margin`, `padding`, `flex`, or `grid` can achieve your layout. This is *bad* practice, and usually very brittle! Especially when working responsively.
-
-**Use `transform` only for what other properties can’t accomplish!**
+> [!CAUTION]
+>
+> You should *not* use `transform` for layout—only for what other properties *can’t* accomplish!
+>
+> <sub>It might be tempting, but don’t use `translate` when `margin`/`padding` or `flex`/`grid` can achieve your layout. This is *bad* practice, and usually very brittle! Especially when working responsively.</sub>
+>
 
 ## And Motion!
 
 ### `transition`
 
-CSS [transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions) allow us to move nicely between CSS property values.
+CSS [transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions) allow us to move nicely between changing CSS property values—triggered by interaction.
 
-[<cite>Using CSS Transitions – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)
-<sub>Every state change is better with some easing.</sub>
-<!-- .right .rows--2 -->
+- [<cite>Using CSS Transitions – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)
+	<sub>Every state change is better with some easing.</sub>
 
-Instead of having a property take effect *immediately* when a pseudo-class is applied (or later, and more commonly, with JS—a proper class), we can tell a CSS property to *transition* from one value to another over a given amount of time (`duration`), and with a specific acceleration (`timing-function`), or a delay. Motion can quickly get very complex!
+- [<cite>Easing Functions</cite>](https://easings.net/)
+	<sub>Custom [`cubic-bezier()`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/easing-function/cubic-bezier) curves for acceleration control.</sub>
+<!-- .right .rows--3 -->
+
+Instead of having a property take effect *immediately* when a change is applied, we can tell a CSS property to *transition* from one value to another over a given amount of time ([a *duration*](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/transition-duration)), and with a specific acceleration ([a *timing-function*](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/transition-timing-function)), or after some time ([a *delay*](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/transition-delay)). Motion can quickly get very complex!
 <!-- .balance -->
 
-You’ll often see a `transition` in shorthand:
+#### You Need Two States to Transition!
+
+Frequently, CSS transitions will be used *with* JavaScript (later, for us) when adding/removing classes—to make a *state* change (before vs. after) less abrupt.
+
+For now, we’ll use [*pseudo-classes*](../css/index.md#pseudo-classes-selectorstate-selectorinstance) to demonstrate different *states*, the most common being `:hover`:
+<!-- .balance -->
+
+<figure style="--lines: 19">
+
+***[Transition Example](transition/style.css)***
+
+<figcaption>
+
+`:hover` changes can often use a bit of [*coyote time*](https://en.wiktionary.org/wiki/coyote_time) to feel less flickery/glitchy!.
+
+</figcaption>
+</figure>
+
+#### Shorthand?
+
+You’ll often see a `transition` in shorthand, but [again](../box-model/index.md#a-sidebar-about-shorthand) it can be clearer with the discrete properties:
 <!-- .before -->
 
-```css <!-- .before .verso -->
+```css <!-- .before .center .verso -->
 .some-cool-transition {
 	transition: all 2s 1s linear;
 }
@@ -424,10 +483,12 @@ You’ll often see a `transition` in shorthand:
 }
 ```
 
-You can also control how different properties of an element transition independently, with a *comma-separated* list:
-<!-- .balance .before -->
+#### Multiple Transitions? <!-- .before -->
 
-```css <!-- .before .verso -->
+You can also control how different properties of an element transition independently, with a *comma-separated* list:
+<!-- .balance -->
+
+```css <!-- .before .center .verso -->
 .some-cool-transition {
 	transition: background-color 2s linear, transform 1s ease-in-out;
 }
@@ -441,23 +502,13 @@ You can also control how different properties of an element transition independe
 }
 ```
 
-<sub>Sometimes the shorthand here is easier than discrete properties, where you have to maintain the same order across all of them. It’s all the same to the computer!</sub>
+<sub>The shorthand here is *sometimes* easier than discrete properties, where you have to maintain the same order across all of them. It’s all the same to the computer!</sub>
 
-Often, CSS transitions will be used *with* JavaScript when adding/removing classes, to make a state change less abrupt. For now, we’ll use [*pseudo-classes*](../css/index.md#pseudo-classes-selectorstate-selectorinstance) to demonstrate:
-<!-- .balance .before -->
+#### Avoid Reflows!
 
-<figure style="--lines: 15">
+Nearly all CSS properties can be transitioned—but keep in mind that changes that cause a *reflow* (re-triggering *layout*, sometimes called *paint*) [are slow](https://web.dev/animations-guide/#triggers) and can make your page feel glitchy—especially when you start having many of them, or they’re easy to trigger (like `:hover`).
 
-***[Transition Example](transition/style.css)***
-
-<figcaption>
-
-You can get even more control over the easing with a [custom curve function](https://easings.net).
-
-</figcaption>
-</figure>
-
-Nearly all CSS properties can be transitioned—but keep in mind that changes that cause a *reflow* (re-triggering *layout*, sometimes called *paint*) [are slow](https://web.dev/animations-guide/#triggers) and can make your page feel glitchy—especially when you start having many of them. Each in-between state causes the browser to re-render your entire document! So stick to changes of `color`, `opacity`, and `transform` for the smoothest performance.
+Each and every in-between state causes the browser to re-render your entire document! So stick to changes of `color`, `opacity`, and `transform` for the smoothest performance.
 
 ### `animation`
 
