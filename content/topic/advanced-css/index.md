@@ -9,7 +9,7 @@ const draft = true
 
 Our HTML/CSS focus up to this point has been relatively broad, to start with the basics. Here we want to sand down some of the rough edges, and introduce you to some specific, advanced techniques you can use to refine and enliven your work—still with just CSS, no JavaScript (yet)!
 
-A good pattern to follow in web (and all) development is to use each technology *only* for what it does *best*—using HTML for semantic meaning, CSS to handle how we form a page, and, later, JavaScript to introduce more interaction. But even before we get to JS, we can start to layer in some more interest and liveliness with our CSS.
+A good pattern to follow in web (and all) development is to use each technology *only* for what it does *best*—using HTML for semantic meaning, CSS to handle how we form a page, and, later, JavaScript to introduce more interaction. But even before we get to JS, we can start to layer in some more nuance, interest, and liveliness with our CSS.
 
 **Let’s look at some examples.**
 
@@ -21,8 +21,7 @@ A good pattern to follow in web (and all) development is to use each technology 
 
 ## Advanced Typography
 
-### `text-box-trim`
-
+### Precise/Optical `text-box`
 
 You have probably noticed that HTML renders a lot of extra space around text elements, called the *line box* (or, in design software parlance, the *bounding box*).
 
@@ -31,43 +30,33 @@ You have probably noticed that HTML renders a lot of extra space around text ele
 
 - [<cite>Vertical Spacing and Line-Height in Design Systems – Google Fonts</cite>](https://fonts.google.com/knowledge/using_type/vertical_spacing_and_line_height_in_design_systems)
 	<sub>It’s all very complicated.</sub>
-<!-- .right .rows--3 -->
 
-It is based on the `font-family`, the `font-size`, and the `line-height`, which basically means it is different all the time—and crucially, often different from Adobe/Figma to HTML. This makes it difficult to position type precisely—especially at large, expressive sizes like your headings! It’s always annoying, and you’ll often be adding/subtracting your spacing (`margin` or `padding`) to account for it, if you want to line everything up *just right*, optically.
+- [<cite>`text-box` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/text-box)
+	<sub>Now, control the *bounding box*!</sub>
 
-Let’s avoid it. We can use [pseudo-elements](../css/index.md#pseudo-elements-selectorpseudo), `::after`/`::before`—which you may remember are entirely created by CSS, not in your HTML—to negate this vertical space with a negative margin. By doing this on the pseudo-elements, we can still position the parent element normally, otherwise:
+- [<cite>`text-box-trim` - web.dev</cite>](https://developer.chrome.com/blog/css-text-box-trim)
+	<sub>So… much… easier!</sub>
+<!-- .right .rows--4 -->
+
+It is based on the `font-family`, the `font-size`, and the `line-height`, which basically means it is different all the time—and crucially, often different from Adobe/Figma to HTML. This makes it difficult to position type visually and precisely—especially at large, expressive sizes like your headings! It’s always annoying, and you’ll often be adding/subtracting your spacing (`margin` or `padding`) to account for it, if you want to line everything up *just right*, optically.
+
+But we can avoid it, now! After a decade of workarounds and discussion, browsers recently [added support](https://caniuse.com/css-text-box-trim) for the super-easy [`text-box`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-box) properties to give us control:
 <!-- .balance .before -->
 
-<figure style="--lines: 31">
+<figure style="--lines: 12">
 
-***[Bounding Box Example](bounding-box/style.css)***
+***[Text-Box Example](text-box/style.css)***
 
 <figcaption>
 
-Here we also move the text with `margin-inline-start` and `margin-inline-end`, though usually this adjustment is much more minor (to the point of ignoring).
+You you might consider doing this on *everything* with the shorthand `* { text-box: trim-both cap alphabetic; }`! Note though that Chrome [doesn’t apply it](https://caniuse.com/mdn-css_properties_text-box-trim_inline_elements) on `inline` elements, for some reason.
 
 </figcaption>
 </figure>
 
-### `text-box` is coming
-
-Figma was actually *ahead* of CSS here with its [recent <samp>Vertical Trim</samp> option](https://help.figma.com/hc/en-us/articles/360039956634-Explore-text-properties#h_01H96FW9Z3W7J7Z2HEN8V17BZT). The code for this kind of thing is getting *much* easier with the analogous `text-box-trim` and `text-box-edge` properties! These will negate all this pseudo-element, negative-margin dance with one line of code.
-<!-- .balance -->
-
-- [<cite>`text-box` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/text-box)
-- [<cite>`text-box-trim` - web.dev</cite>](https://developer.chrome.com/blog/css-text-box-trim)
-	<sub>So… much… easier!</sub>
-<!-- .right -->
-
-<aside>
-
-<mark>Caution: uneven browser support</mark>
-
-After a decade of workarounds and discussion, both shipping Chrome and Safari [now support](https://caniuse.com/css-text-box-trim) the super-easy `text-box` properties! But Firefox still does not, and it might be some time there.
-
-(This course site uses these heavily—among the reasons it appears slightly broken in Firefox/older browsers!)
-
-</aside>
+> [!NOTE]
+>
+> Figma was actually *ahead* of CSS here with its [recent <samp>Vertical Trim</samp> option](https://help.figma.com/hc/en-us/articles/360039956634-Explore-text-properties#h_01H96FW9Z3W7J7Z2HEN8V17BZT).
 
 ### Hanging Punctuation (Kinda)
 
