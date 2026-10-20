@@ -1,3 +1,5 @@
-section { text-align: center; }
+section {
+	text-align: center;
 
-section:nth-child(2) { text-wrap: balance; }
+	&:nth-child(2) { text-wrap: balance; }
+}

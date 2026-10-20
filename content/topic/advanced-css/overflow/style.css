@@ -1,41 +1,26 @@
-:root { --spacing: 1rem; }
-
-body {
-	display: grid;
-	font-family: sans-serif;
-	gap: calc(2 * var(--spacing));
-	padding: var(--spacing);
-}
-
 section {
-	background-color: gold;
-	padding: calc(var(--spacing) / 2);
-}
+	/* Limit the height. */
+	&:not(:first-child) { block-size: calc(var(--spacing) * 7); }
 
-h2 { font-size: calc(var(--spacing) * 3); }
+	&:nth-child(2) { overflow: visible; } /* Default. */
+	&:nth-child(3) { overflow: hidden; } /* “Crop” contents. */
 
-/* Limit the height. */
-section:not(:first-child) { block-size: calc(var(--spacing) * 7); }
+	&:nth-child(4) {
+		background-color: orange;
+		overflow-x: hidden;
+		overflow-y: auto; /* Scroll vertically! */
+	}
 
-section:nth-child(2) { overflow: visible; } /* Default. */
+	&:nth-child(5) {
+		background-color: tomato;
+		display: flex; /* Horizontal layout. */
+		gap: calc(2 * var(--spacing));
+		overflow-x: auto; /* Scroll horizontally! */
+		overflow-y: hidden;
 
-section:nth-child(3) { overflow: hidden; } /* “Crop” contents. */
-
-section:nth-child(4) {
-	background-color: orange;
-	overflow-x: hidden;
-	overflow-y: auto; /* Scroll vertically! */
-}
-
-section:nth-child(5) {
-	background-color: tomato;
-	display: flex; /* Horizontal layout. */
-	gap: calc(2 * var(--spacing));
-	overflow-x: auto; /* Scroll horizontally! */
-	overflow-y: hidden;
-
-	* {
-		flex-shrink: 0; /* Don’t shrink! */
-		inline-size: 85%; /* Always “peek” the next block. */
+		* {
+			flex-shrink: 0; /* Don’t shrink! */
+			inline-size: 85%; /* Always “peek” the next block. */
+		}
 	}
 }

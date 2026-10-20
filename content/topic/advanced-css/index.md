@@ -87,7 +87,7 @@ But we *can* do a handful of things to make for *better* ragging/wraps, given th
 
 #### `hyphens` / `&shy;`
 
-The `hyphens` property allows long, multi-syllable words to be [hyphenated](https://en.wikipedia.org/wiki/Hyphen#Justification_and_line-wrapping) when they wrap across multiple lines. This can be done automatically by the browser, or by manually inserting `&shy;` (for [*soft hyphen*](https://en.wikipedia.org/wiki/Soft_hyphen)) as an [HTML character/entity references](https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references#:~:text=All%20named%20character%20entity%20references):
+The [`hyphens` property](https://developer.mozilla.org/en-US/docs/Web/CSS/hyphens) allows long, multi-syllable words to be [hyphenated](https://en.wikipedia.org/wiki/Hyphen#Justification_and_line-wrapping) when they wrap across multiple lines. This can be done automatically by the browser, or by manually inserting `&shy;` (for [*soft hyphen*](https://en.wikipedia.org/wiki/Soft_hyphen)) as an [HTML character/entity references](https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references#:~:text=All%20named%20character%20entity%20references):
 <!-- .balance -->
 
 [<cite>`hyphens` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/hyphens)
@@ -131,25 +131,25 @@ But much more often, you’ll want to keep certain words *together*—to avoid 
 	<sub>This is *technically* deprecated. But [one of your instructors](https://michaelfehrenbach.com) is a “stan.”</sub>
 <!-- .right .rows--3 -->
 
-You can keep multiple words (or whole phrases) together with `white-space: nowrap;`. Historically, the `<nobr>` tag applied this—keeping in mind that like `<em>` or `<strong>`the default behavior is cleared by most [resets](../css/index.md#resets) (ours included)—so likewise you have to restore the property in your own CSS.
+You can keep multiple words (or whole phrases) together with `white-space: nowrap;`. Historically, the `<nobr>` tag applied this—keeping in mind that like `<em>` or `<strong>`the default behavior is cleared by most [resets](../css/index.md#resets) (ours included)—so likewise you have to restore the property in your own CSS.
 
 You can also use a manual `&nbsp;` [character/entity reference](https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references#:~:text=All%20named%20character%20entity%20references) between words:
 <!-- .balance .before -->
 
-<figure style="--lines: 15">
+<figure style="--lines: 21">
 
 ***[Nobr/Nbsp example](nobr-nbsp/index.html)***
 
 <figcaption>
 
-On a Mac, you can insert an *encoded* `&nbsp;` with <kbd><kbd><span class="x2325">⌥</span></kbd>+<kbd>Space</kbd></kbd>. (It’s apparently [much harder](https://superuser.com/a/1414666) on Windows.) This works in many programs, not just your IDE! It’s harder to see, but easier to read.
+On a Mac, you can insert an *encoded* `&nbsp;` with <kbd><kbd><span class="x2325">⌥</span></kbd>+<kbd>Space</kbd></kbd>. (It’s apparently [*much* harder](https://superuser.com/a/1414666) on Windows!) This works in many programs, not just your IDE! It’s harder to see, but easier to read.
 
 </figcaption>
 </figure>
 
 #### `text-wrap: balance;`
 
-After many, *many* years of patient, typographic waiting (and [some JS](https://github.com/adobe/balance-text) [shenanigans](https://www.ctrl.blog/entry/text-wrap-balance.html)) we now have widespread [browser support](https://caniuse.com/css-text-wrap-balance) for “balancing” uneven line lengths with `text-wrap: balance;`:
+After many, *many* years of patient, typographic waiting (and [some JS](https://github.com/adobe/balance-text) [shenanigans](https://www.ctrl.blog/entry/text-wrap-balance.html)) we now have widespread [browser support](https://caniuse.com/css-text-wrap-balance) for “balancing” uneven line lengths with [`text-wrap: balance;`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap):
 <!-- .balance -->
 
 [<cite>`text-wrap` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap)
@@ -185,7 +185,7 @@ These strategies only work if you can *manually* edit your text content, which i
 
 ### `overflow`
 
-An `overflow` in CSS happens when there is too much content to fit in a container—usually because you have manually constrained its `block-size` or `inline-size`. (By default, the browser will try to show you everything!)
+An [`overflow`](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow) in CSS happens when there is too much content to fit in a container—usually because you have manually constrained its `block-size` or `inline-size`. (By default, the browser will try to show you everything!)
 <!-- .balance -->
 
 - [<cite>`overflow` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow)
@@ -196,16 +196,20 @@ An `overflow` in CSS happens when there is too much content to fit in a contain
 But we can use this behavior *intentionally* to crop our content, or create interally-scrolling areas:
 <!-- .balance -->
 
-<figure style="--lines: 23">
+<figure style="--lines: 24">
 
 ***[Overflow Example](overflow/style.css)***
 
 </figure>
 
-Importantly, this creates a new *stacking context*—which means things with `position` (namely, `position: sticky`)—and some other properties—will now use the `overflow` container as their reference/origin:
+<!-- TODO Update this to `overflow-block`/`overflow-inline` next year! -->
+
+### Stacking Context
+
+Importantly, `overflow` creates a new [*stacking context*](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context)—which means things with `position` (namely, `position: sticky;`)—and some other properties—will now use the `overflow` container as their reference/origin:
 <!-- .balance .before -->
 
-[<cite>The stacking context – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context)
+[<cite>Stacking Context – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context)
 <sub>*Always* confusing; think of these as *frames* or *groups* in Figma.</sub>
 <!-- .right -->
 
