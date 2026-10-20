@@ -149,6 +149,13 @@ hgroup:has(h4), dt {
 			@container style(--tablet) { --font: 'Geneva 14' }
 		}
 	}
+
+	/* Slashes between `code` siblings. */
+	&:where(dt) nobr:has(> code) {
+		--kerning: initial;
+
+		font-weight: initial;
+	}
 }
 
 /* Code stuff! */
