@@ -49,7 +49,7 @@ But we can avoid it, now! After a decade of workarounds and discussion, browsers
 
 <figcaption>
 
-You you might consider doing this on *everything* with the shorthand `* { text-box: trim-both cap alphabetic; }`! Note though that Chrome [doesn’t apply it](https://caniuse.com/mdn-css_properties_text-box-trim_inline_elements) on `inline` elements, for some reason.
+You you might consider doing this on *everything* with the [shorthand](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-box) `* { text-box: trim-both cap alphabetic; }`! Note though that Chrome [doesn’t apply it](https://caniuse.com/mdn-css_properties_text-box-trim_inline_elements) on `inline` elements, for some reason.
 
 </figcaption>
 </figure>
@@ -221,7 +221,7 @@ Importantly, `overflow` creates a new [*stacking context*](https://developer.moz
 
 ### `text-overflow` / `-webkit-line-clamp`
 
-You can also *excerpt* text (perhaps on a landing page) with the [`text-overflow`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow) (for a single line) or [`-webkit-line-clamp`](https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-line-clamp) (for multiple lines) properties—which will add [an ellipsis](https://en.wikipedia.org/wiki/Ellipsis) <samp>…</samp> where the text overflows. Only do this when the full text is available on a subsequent page:
+You can also *excerpt* text (perhaps on a landing page) with the [`text-overflow`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow) (for a single line) or [`-webkit-line-clamp`](https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-line-clamp) (for multiple lines) properties—which will add [an ellipsis](https://en.wikipedia.org/wiki/Ellipsis) <samp>…</samp> where the text overflows. Only do this when the full text is available on a subsequent page, though:
 <!-- .balance -->
 
 - [<cite>`text-overflow` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow)
@@ -430,12 +430,41 @@ Note how the elements *don’t* take up more space in the document flow/layout�
 
 ## And Motion!
 
+### “Icing on the Cake”
+
+**Motion can add a lot to our work—making it feel less static, more interactive, and more alive! But should always be considered a [*progressive enhancement*](../responsive/index.md#progressive-enhancement) on top of work that functions without it.**
+
+[<cite>Inspect and modify CSS animation effects – web.dev</cite>](https://developer.chrome.com/docs/devtools/css/animations/)
+	<sub>Use the *Animations* tab in your [DevTools](../dev-tools/index.md) to diagnose motion.</sub>
+<!-- .right -->
+
+#### Honor Reader Preferences
+
+Relatedly, some folks might also want a motion-free experience, whether for accessibility or just preference—so we’ll always “scope” our transitions and animations to those who don’t mind, using [`@media` queries](../responsive/index.md#prefers-contrast-prefers-reduced-motion).
+
+[<cite>Sometimes less movement is more - web.dev</cite>](https://web.dev/articles/prefers-reduced-motion)
+<sub>Don’t force anything on your visitor!</sub>
+<!-- .right -->
+
+#### Avoid Causing Reflows
+
+Many CSS properties *can* be transitioned/animated—but keep in mind that changes that cause a *reflow* (re-triggering *layout*, sometimes called *paint*) [are slow](https://web.dev/articles/animations-overview) and can make your page feel glitchy—especially when you start having many of them, or they’re easy to trigger (like `:hover`).
+
+[<cite>Why are some animations slow? - web.dev</cite>](https://web.dev/articles/animations-overview)
+<sub>Avoid expensive/slow reflows!</sub>
+<!-- .right -->
+
+Each and every in-between state causes the browser to re-render your entire document! So always stick to changes of `color`, `opacity`, and `transform` for the smoothest performance.
+
 ### `transition`
 
 CSS [transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions) allow us to move nicely between changing CSS property values—triggered by interaction.
 
 - [<cite>Using CSS Transitions – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)
 	<sub>Every state change is better with some easing.</sub>
+
+- [<cite>An Interactive Guide to CSS Transitions</cite>](https://www.joshwcomeau.com/animation/css-transitions/)
+	<sub>Nice run-through from [Josh Comeau](https://www.joshwcomeau.com/).</sub>
 
 - [<cite>Easing Functions</cite>](https://easings.net/)
 	<sub>Custom [`cubic-bezier()`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/easing-function/cubic-bezier) curves for acceleration control.</sub>
@@ -446,25 +475,25 @@ Instead of having a property take effect *immediately* when a change is applied,
 
 #### You Need Two States to Transition!
 
-Frequently, CSS transitions will be used *with* JavaScript (later, for us) when adding/removing classes—to make a *state* change (before vs. after) less abrupt.
+Frequently, CSS transitions will be used *with* JavaScript (later, for us) when adding/removing classes—to make a [*state*](https://en.wikipedia.org/wiki/State_(computer_science)#Program_state) change (before vs. after) less abrupt.
 
 For now, we’ll use [*pseudo-classes*](../css/index.md#pseudo-classes-selectorstate-selectorinstance) to demonstrate different *states*, the most common being `:hover`:
 <!-- .balance -->
 
-<figure style="--lines: 19">
+<figure style="--lines: 24">
 
 ***[Transition Example](transition/style.css)***
 
 <figcaption>
 
-`:hover` changes can often use a bit of [*coyote time*](https://en.wiktionary.org/wiki/coyote_time) to feel less flickery/glitchy!.
+`:hover` changes can often use a bit of [*coyote time*](https://en.wiktionary.org/wiki/coyote_time) to feel less flickery/glitchy!
 
 </figcaption>
 </figure>
 
 #### Shorthand?
 
-You’ll often see a `transition` in shorthand, but [again](../box-model/index.md#a-sidebar-about-shorthand) it can be clearer with the discrete properties:
+You’ll often see a `transition` in [shorthand](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/transition), but [again](../box-model/index.md#a-sidebar-about-shorthand) it can be clearer with the discrete properties:
 <!-- .before -->
 
 ```css <!-- .before .center .verso -->
@@ -504,47 +533,27 @@ You can also control how different properties of an element transition independe
 
 <sub>The shorthand here is *sometimes* easier than discrete properties, where you have to maintain the same order across all of them. It’s all the same to the computer!</sub>
 
-#### Avoid Reflows!
-
-Nearly all CSS properties can be transitioned—but keep in mind that changes that cause a *reflow* (re-triggering *layout*, sometimes called *paint*) [are slow](https://web.dev/animations-guide/#triggers) and can make your page feel glitchy—especially when you start having many of them, or they’re easy to trigger (like `:hover`).
-
-Each and every in-between state causes the browser to re-render your entire document! So stick to changes of `color`, `opacity`, and `transform` for the smoothest performance.
-
 ### `animation`
 
-Sometimes, transitioning a property from one value to another isn’t enough—you may need more complicated (or repeating) motion behavior. CSS `animation` allows precise state sequencing with `@keyframes` (akin to… *keyframes* or a timeline in other software contexts).
+Sometimes, transitioning a property from one value to another isn’t enough—you may need more complicated (or repeating) motion behavior. CSS `animation` allows precise state sequencing with [*keyframes*](https://en.wikipedia.org/wiki/Key_frame), a timeline-based concept from animation (and other software).
 <!-- .balance -->
 
 [<cite>Using CSS Animations – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)
-<sub>Make things feel more alive.</sub>
+	<sub>Make things feel more alive.</sub>
 <!-- .right .rows--2 -->
 
-To create a keyframe animation, we define an element’s initial state in CSS—then an `animation` property, which includes timing and behavior, as well as an animation name (something that you make up). Again, you’ll often see these in shorthand:
-<!-- .balance .before -->
+#### Keyframes
 
-<div class="verso">
+To create a keyframe animation, we define an element’s initial (or motion-free) state normally in CSS—then an [`animation` property](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation), which includes timing and behavior, as well as an `animation-name` (something that you make up).
+<!-- .balance -->
 
-```css <!-- .before .verso -->
-section {
-	animation: blinking 3s infinite ease-in-out;
-}
-```
+[<cite>`@keyframes` at-rule – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@keyframes)
+<sub>Akin to other timeline-based animations, the percentage complete.</sub>
+<!-- .right -->
 
-</div>
+We then define the actual keyframes of an animation in a separate [*at-rule*](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_syntax/At-rule). Each `@keyframes` is specified with a percentage of the animation’s duration, and can specify multiple properties—a bit like *selectors*, but for time:
 
-```css <!-- .before .recto -->
-section {
-	animation-duration: 3s;
-	animation-iteration-count: infinite;
-	animation-name: blinking;
-	animation-timing-function: ease-in-out;
-}
-```
-
-Importantly, we then define the actual keyframes of an animation in a separate [*at-rule*](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_syntax/At-rule). Each *keyframe* is specified with a percentage of the animation’s duration, and can specify multiple properties—a bit like *selectors* for the time:
-<!-- .balance .before -->
-
-<figure style="--lines: 22">
+<figure style="--lines: 24">
 
 ***[Animation Example](animation/style.css)***
 
@@ -555,7 +564,25 @@ Don’t go overboard! A little animation goes a long way.
 </figcaption>
 </figure>
 
-**For accessibility, it is best-practice to *scope* your transitions and animations to folks who don’t mind the motion with [media queries](../responsive/index.md#prefers-contrast-prefers-reduced-motion).**
+#### Shorthand, Again?
+Again, you’ll very commonly see these in [shorthand](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation)—but [again](#shorthand), writing out the separate properties can make things more clear—or maybe you just want to adjust one aspect:
+<!-- .balance .before -->
+
+```css <!-- .before .center .verso -->
+section {
+	animation: blinking 3s infinite ease-in-out;
+}
+```
+
+```css <!-- .before .recto -->
+section {
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+	animation-name: blinking;
+	animation-timing-function: ease-in-out;
+}
+```
+
 
 ---
 
