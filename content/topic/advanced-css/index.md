@@ -7,7 +7,7 @@ const draft = true
 
 ## Nuance and Webbiness
 
-Our HTML/CSS focus up to this point has been relatively broad, to start with the basics. Here we want to sand down some of the rough edges, and introduce you to some specific, advanced techniques you can use to refine and enliven your work—still with just CSS, no JavaScript (yet)!
+Our HTML/CSS efforts up to this point have been relatively broad, to start with the basics. Here we want to sand down some of the rough edges, and introduce you to some specific, advanced techniques you can use to refine and enliven your work—still with just CSS, no JavaScript (yet)!
 
 A good pattern to follow in web (and all) development is to use each technology *only* for what it does *best*—using HTML for semantic meaning, CSS to handle how we form a page, and, later, JavaScript to introduce more interaction. But even before we get to JS, we can start to layer in some more nuance, interest, and liveliness with our CSS.
 
@@ -18,6 +18,32 @@ A good pattern to follow in web (and all) development is to use each technology 
 > It is vain to do with more what can be done with less.
 >
 > [<cite>William of Ockham, 1324</cite>](https://mathshistory.st-andrews.ac.uk/Biographies/Ockham)
+
+## Keyboard Navigation/Focus
+
+With a lens of accessibility, we want to ensure folks using a keyboard to navigate the web have a good experience on our sites. The first way we do this is via [well-structured HTML](../html/index.md)—that follows a logical, reading order for our page/content—especially as we work responsively.
+
+- [<cite>`:focus` pseudo-class</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:focus)
+
+- [<cite>`:focus-visible` pseudo-class</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:focus-visible)
+	<sub>Let’s restore these indicators!</sub>
+
+- [<cite>A guide to designing accessible focus indicators</cite>](https://www.sarasoueidan.com/blog/focus-indicators/)
+	<sub>Deep-dive from [Sara Soueidan](https://www.sarasoueidan.com/).</sub>
+<!-- .right .rows--3 -->
+
+But as we know, our [reset](../css/index.md#resets) clears *all* the browser visual defaults—including the stock [*focus indicator*](https://en.wikipedia.org/wiki/Focus_%28computing%29#:~:text=Focus%20%28computing%29%20In,this%20element.%20%5B2%5D) outlines that show when a link is selected, by keyboard. We can restore (and customize) these in our CSS, using the [`:focus`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:focus) and [`:focus-visible`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:focus-visible) pseudo-classes, usually adding an [`outline`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/outline):
+
+<figure style="--lines: 13">
+
+***[Focus Example](focus/style.css)***
+
+<figcaption>
+
+Click in the example, and then use <samp>Tab</samp> to move between links. Ensure the focus works with *your* site design!
+
+</figcaption>
+</figure>
 
 ## Advanced Typography
 
