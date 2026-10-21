@@ -1,17 +1,22 @@
 section {
-	--duration: 1s;
-	--scale: 110%;
+	@media (hover: hover) { /* When `:hover` is supported. */
+		--duration: 1s;
+		--scale: 110%;
 
-	&:hover {
-		background-color: aquamarine;
-		transform: scale(var(--scale));
-	}
+		&:hover {
+			background-color: aquamarine;
+			transform: scale(var(--scale));
+		}
 
-	&:nth-child(2) {
-		transition-delay: var(--duration);
-		transition-duration: calc(2 * var(--duration)), var(--duration);
-		transition-property: background-color, transform;
-		transition-timing-function: linear, ease-in-out;
-		will-change: transform; /* Improves the scaling performance! */
+		/* Only when they don’t mind! */
+		@media (prefers-reduced-motion: no-preference) {
+			&:nth-child(2) {
+				transition-delay: var(--duration); /* “Coyote time. */
+				transition-duration: calc(2 * var(--duration)), var(--duration);
+				transition-property: background-color, transform;
+				transition-timing-function: linear, ease-in-out;
+				will-change: transform; /* Improves the scaling performance! */
+			}
+		}
 	}
 }

@@ -15,4 +15,8 @@
 	}
 }
 
-section { animation: blinking 10s infinite ease-in-out; }
+section {
+	@media (prefers-reduced-motion: no-preference) {
+		animation: blinking 10s infinite ease-in-out;
+	}
+}
