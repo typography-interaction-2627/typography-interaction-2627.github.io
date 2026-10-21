@@ -1,6 +1,6 @@
 section {
 	@media (hover: hover) { /* When `:hover` is supported. */
-		--duration: 1s;
+		--duration: 1s; /* `s` for seconds; `ms` for milliseconds. */
 		--scale: 110%;
 
 		&:hover {

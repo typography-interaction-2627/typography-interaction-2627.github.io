@@ -594,19 +594,18 @@ Again, you’ll very commonly see these in [shorthand](https://developer.mozilla
 
 ```css <!-- .before .center .verso -->
 section {
-	animation: blinking 3s infinite ease-in-out;
+	animation: pulse-slide 5s infinite ease-in-out;
 }
 ```
 
 ```css <!-- .before .recto -->
 section {
-	animation-duration: 3s;
+	animation-duration: 5s;
 	animation-iteration-count: infinite;
-	animation-name: blinking;
+	animation-name: pulse-slide;
 	animation-timing-function: ease-in-out;
 }
 ```
-
 
 ---
 
