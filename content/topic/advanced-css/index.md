@@ -568,7 +568,7 @@ Sometimes, transitioning a property from one value to another isn’t enough—y
 
 #### Keyframes
 
-To create a keyframe animation, we define an element’s initial (or motion-free) state normally in CSS—then an [`animation` property](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation), which includes timing and behavior, as well as an `animation-name` (something that you make up).
+To create a keyframe animation, we define an element’s initial (or motion-free) state normally in CSS—then [`animation-` properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation#constituent_properties), which include `animation-duration` and `animation-iteration-count`, as well as an `animation-name` (something that you make up).
 <!-- .balance -->
 
 [<cite>`@keyframes` at-rule – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@keyframes)
