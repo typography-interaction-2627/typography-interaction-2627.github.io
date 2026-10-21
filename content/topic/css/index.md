@@ -400,7 +400,7 @@ You can use various other HTML [attributes](../html/index.md#attributes) as sele
 These are [special selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes), added to `element`, `.class`, or `#id`, separated with `:`, which target unique *states* or *instances* of HTML elements. For example, you’ll often see these used to target [link states](https://web.dev/learn/css/pseudo-classes/#historic-states):
 
 - [<cite>Pseudo-classes – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes) \
-	<sub>Select elements in a particular *state*.</sub>
+	<sub>Select elements in a particular [*state*](https://en.wikipedia.org/wiki/State_(computer_science)#Program_state).</sub>
 <!-- .right -->
 
 <figure style="--lines: 13">
