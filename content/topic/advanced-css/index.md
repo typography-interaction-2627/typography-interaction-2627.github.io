@@ -23,8 +23,6 @@ A good pattern to follow in web (and all) development is to use each technology 
 
 With a lens of accessibility, we want to ensure folks using a keyboard to navigate the web have a good experience on our sites. The first way we do this is via [well-structured HTML](../html/index.md)—that follows a logical, reading order for our page/content—especially as we work responsively.
 
-- [<cite>`:focus` pseudo-class</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:focus)
-
 - [<cite>`:focus-visible` pseudo-class</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:focus-visible)
 	<sub>Let’s restore these indicators!</sub>
 
@@ -32,7 +30,7 @@ With a lens of accessibility, we want to ensure folks using a keyboard to naviga
 	<sub>Deep-dive from [Sara Soueidan](https://www.sarasoueidan.com/).</sub>
 <!-- .right .rows--3 -->
 
-But as we know, our [reset](../css/index.md#resets) clears *all* the browser visual defaults—including the stock [*focus indicator*](https://en.wikipedia.org/wiki/Focus_%28computing%29#:~:text=Focus%20%28computing%29%20In,this%20element.%20%5B2%5D) outlines that show when a link is selected, by keyboard. We can restore (and customize) these in our CSS, using the [`:focus`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:focus) and [`:focus-visible`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:focus-visible) pseudo-classes, usually adding an [`outline`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/outline):
+But as we know, our [reset](../css/index.md#resets) clears *all* the browser visual defaults—including the stock [*focus indicator*](https://en.wikipedia.org/wiki/Focus_%28computing%29#:~:text=Focus%20%28computing%29%20In,this%20element.%20%5B2%5D) outlines that show when a link is selected, by keyboard. We can restore (and customize) these in our CSS, using the [`:focus-visible`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:focus-visible) pseudo-class, usually adding an [`outline`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/outline):
 
 <figure style="--lines: 13">
 
