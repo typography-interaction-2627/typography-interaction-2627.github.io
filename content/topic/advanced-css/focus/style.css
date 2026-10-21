@@ -4,7 +4,7 @@ section:nth-child(2) {
 	/* When the link is focused, and the focus is visible. */
 	a:focus:focus-visible {
 		outline-color: black;
-		outline-offset: 0.5em;
+		outline-offset: 0.25em;
 		outline-style: solid;
 		outline-width: 0.2rem;
 	}
