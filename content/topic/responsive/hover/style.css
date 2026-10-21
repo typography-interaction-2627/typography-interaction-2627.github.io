@@ -2,7 +2,7 @@ section { --background: aquamarine; }
 
 aside { --background: gold; }
 
-/* When the device supports `hover`. */
+/* When the device supports `:hover`. */
 @media (hover: hover) {
 	aside { visibility: hidden; }
 
