@@ -7,6 +7,9 @@ body {
 	padding: var(--spacing);
 }
 
-section { background-color: gold; }
+section {
+	background-color: gold;
+	/* padding: calc(var(--spacing) / 2); */
+}
 
 h2 { font-size: calc(3 * var(--spacing)); }
