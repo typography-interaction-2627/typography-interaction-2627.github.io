@@ -57,11 +57,16 @@ The Customize <samp><span class="x22ee">⋮</span></samp> button will let you ch
 <img src="customize.svg">
 </figure>
 
-## Elements Panel
+### Elements Panel
 
-<div class="verso">
+The top part of the tools shows us [*the DOM*](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)—you can expand/collapse all the [nested HTML *elements*](https://developer.chrome.com/docs/devtools/dom) on the opened page.
+<!-- .balance -->
 
-The top part of the tools is [*the DOM*](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)—you can expand/collapse all the nested HTML *elements* on the opened page.
+[<cite>View and change the DOM</cite>](https://developer.chrome.com/docs/devtools/dom)
+<sub>View and temporarily edit the rendered page HTML.</sub>
+<!-- .right -->
+
+<div class="end verso">
 
 The first <samp><span class="x21f1">⇱</span></samp> button in the upper-left lets you mouse over on the page, and will then show you that element nested/hierarchically within the DOM.
 
@@ -78,11 +83,16 @@ The <samp>flex</samp>/<samp>grid</samp> badges (pills?) toggle their layout over
 <sub>Handy tip: <kbd><kbd><span class="x2318">⌘</span>/Ctrl</kbd>+<kbd>F</kbd></kbd> in here will let you search for elements or text by name/class/contents!</sub>
 <!-- .right style="margin-block-start: initial" -->
 
-## Styles Tab
+### Styles Tab
 
-<div class="verso">
+The area below is for [styles](https://developer.chrome.com/docs/devtools/css). It shows whatever *CSS properties* apply to the element you have selected above, in the DOM/Elements panel.
+<!-- .balance -->
 
-The area below is for the styles. It shows whatever *CSS properties* apply to the element you have selected above, in the DOM/Elements panel.
+[<cite>View and change CSS</cite>](https://developer.chrome.com/docs/devtools/css)
+<sub>See what styles are applied, and temporarily edit them.</sub>
+<!-- .right -->
+
+<div class="end verso">
 
 These are ordered (somewhat unintuitively) in a *more*-[specific](../css/index.md#specificity), *reverse*-[cascade](../css/index.md#oh-right-the-cascade) sequence—inline styles at the top, external and internal stylesheets, then *user-agent* styles at the bottom—with any cascading/conflicting rules crossed out, as you go down.
 
@@ -109,7 +119,11 @@ On the right, you can see the sum *Computed* (or *rendered*) values of all the 
 
 ## Device Mode
 
-Enter *device mode* with the little phone/laptop <samp><span class="x2ff8">⿸</span></samp> button, in the upper left of the DevTools:
+It’s always best to check our work on other screen-sizes/actual devices, but we can also emulate them quickly with [*device mode*](https://developer.chrome.com/docs/devtools/device-mode/). Enable it with the little phone/laptop <samp><span class="x2ff8">⿸</span></samp> button, in the upper left of the DevTools:
+
+[<cite>Simulate mobile devices with device mode</cite>](https://developer.chrome.com/docs/devtools/device-mode/)
+<sub>Approximate how your page looks/behaves on a mobile device.</sub>
+<!-- .right -->
 
 <figure class="all borderless justify-center shadow">
 <img src="device.png">
