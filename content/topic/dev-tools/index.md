@@ -138,6 +138,8 @@ Be sure to *hard-refresh* with <kbd><kbd><span class="x2318">⌘</span>/Ctrl</kb
 <img src="device-bar.svg">
 </figure>
 
+### Dimensions: Responsive
+
 <div class="center left">
 
 Generally, use the <samp>Responsive <span class="x25be">▾</span></samp> mode that lets you try varied pixel dimensions for width/height—dragging the viewport out to test fluidly. Or you can use the divided bar underneath to quickly jump through some common/ballpark widths.
@@ -163,6 +165,43 @@ The <samp>More Options <span class="x22ee">⋮</span></samp> menu here has some 
 
 </figcaption>
 </figure>
+
+### Rendering Tab
+
+Beyond checking different devices/screen sizes, we will also want to test [other media features](../responsive/index.md#other-media-features). We *could* actually print a page, or change our OS settings—but the [Rendering tab](https://developer.chrome.com/docs/devtools/rendering/) is quicker!
+<!-- .balance -->
+
+[<cite>Rendering tab overview</cite>](https://developer.chrome.com/docs/devtools/rendering/)
+<sub>Emulate other media features!</sub>
+<!-- .right -->
+
+With our DevTools open, <kbd><kbd><span class="x2318">⌘</span>/Ctrl</kbd>+<kbd><span class="x21e7">⇧</span>/Shift</kbd>+<kbd>P</kbd></kbd> will open the [<samp>Command Menu</samp>](https://developer.chrome.com/docs/devtools/command-menu/)—then type <kbd>rendering</kbd> and select <samp>Show Rendering</samp>:
+<!-- .before .center .verso -->
+
+<figure class="borderless justify-end recto shadow" style="--height: 320px">
+<img src="show-rendering.png">
+</figure>
+
+<div class="verso">
+
+This gives us a number of options to emulate settings and see how our page will behave: `prefers-color-scheme` (for testing light/dark mode), media type (for checking `print`), accessibility settings for `prefers-contrast` and `prefers-reduced-motion`, etc:
+<!-- .sticky -->
+
+</div>
+
+<figure class="borderless justify-end recto" style="--height: 1262px; --max: initial">
+<img src="rendering-options.png">
+</figure>
+
+### Print Preview
+
+When emulating `print` rendering, we can set our viewport dimensions to <nobr>`816px` <span class="times">×</span></nobr> `1056px` (<nobr>8.5 <span class="times">×</span></nobr> 11" <nobr>@ `96px`&#x202F;/inch</nobr>) to quickly preview the page—while still being able to check and edit the DOM/CSS:
+
+<figure class="all borderless justify-center shadow">
+<img src="rendering-print.png">
+</figure>
+
+---
 
 **Remember that you are *not* [targeting specific devices](../responsive/index.md#there-is-no-perfect-layout); you are looking for when your own design/content *breaks*!**
 
