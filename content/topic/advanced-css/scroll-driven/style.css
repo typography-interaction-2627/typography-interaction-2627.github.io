@@ -1,0 +1,21 @@
+@keyframes scale-fade-in {
+	0% {
+		opacity: 0;
+		scale: 80%;
+	}
+	25% { scale: 100%; }
+	33% { opacity: 1; }
+}
+
+section {
+	/* Only for browsers that understand it (Chrome, Safari). */
+	@supports (animation-range: cover) {
+		/* Only when they don’t mind! */
+		@media (prefers-reduced-motion: no-preference) {
+			animation-name: scale-fade-in;
+			animation-range: cover; /* The default! */
+			animation-timeline: view(); /* Try `scroll()` for the whole page length! */
+			animation-timing-function: ease-in-out;
+		}
+	}
+}

@@ -588,8 +588,39 @@ Don’t go overboard! A little animation goes a long way.
 </figcaption>
 </figure>
 
-#### Shorthand, Again?
-Again, you’ll very commonly see these in [shorthand](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation)—but [again](#shorthand), writing out the separate properties can make things more clear—or maybe you just want to adjust one aspect:
+#### Scroll-Driven Animations
+
+CSS animations have historically been time-based—just playing out as it passes. But recently [Chrome and Safari](https://caniuse.com/wf-scroll-driven-animations) added support for [*scroll-driven animations*](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Scroll-driven_animations)—which instead iterate using the document (or [container](#overflows-and-scrolling)) scroll position to control the timeline.
+
+- [<cite>Scroll-driven animations – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Scroll-driven_animations)
+	<sub>One of the most-common types, no-JS!</sub>
+
+- [<cite>Scroll-Driven Animations</cite>](https://www.joshwcomeau.com/animation/scroll-driven-animations/)
+	<sub>[Josh](https://www.joshwcomeau.com/) again, with a nice explainer.</sub>
+<!-- .right .rows--2 -->
+
+Previously, this required some JavaScript—but is such a common scenario that it’s been added to CSS. (Designers *love* [this sort of thing](https://frankchimero.com/blog/2015/the-webs-grain/#:~:text=This%20is%20how%20I%20feel%20about%20so%20many%20of%20the%20fancy%20websites%20I%20see.%20%E2%80%9CIt%20is%20fascinating%20that%20you%20can%20do%20that%2C%20but%20it%E2%80%99s%20really%20not%20what%20a%20website%20is%20supposed%20to%20do.%E2%80%9D%20For%20example%2C%20behold%20Apple%E2%80%99s%20Mac%20Pro%20website.)!) It adds the [`animation-range`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-range) and [`animation-timeline`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-timeline) properties for control:
+
+<figure style="--lines: 23">
+
+***[Scroll-Driven Animation Example](scroll-driven/style.css)***
+
+<figcaption>
+
+But: if *everything* is animated, is *anything* animated?
+
+</figcaption>
+</figure>
+
+> [!NOTE]
+>
+> Normally we wouldn’t suggest something entirely unsupported by Firefox—but this is an interpretation of *progressive enhancement*.
+>
+> <sub>Because your site shouldn’t *rely* on this kind of animation, it can be seen as “[icing on the cake](#icing-on-the-cake)” for the (much more widely-used) browsers that do support it.</sub>
+
+#### Shorthand, Again? <!-- .before -->
+
+Again, you’ll very commonly see `animation` [shorthand](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation)—but [again](#shorthand), writing out the separate properties can make things more clear—or maybe you just want to adjust one aspect:
 <!-- .balance .before -->
 
 ```css <!-- .before .center .verso -->
