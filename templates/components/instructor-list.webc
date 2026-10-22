@@ -24,7 +24,7 @@
 				<cite @raw="instructor.name"></cite>
 			</a>
 			<br>
-			<a :href="`mailto:${instructor.email}`" @text="instructor.email"></a>
+			<small><a :href="`mailto:${instructor.email}`" @text="instructor.email"></a></small>
 		</p>
 	</li>
 </ul>

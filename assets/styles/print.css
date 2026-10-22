@@ -74,6 +74,9 @@ main, section {
 	display: block; /* Needed for break (fragmentation) control! */
 
 	> *:where(:not(:first-child)) { margin-block-start: calc(2rlh - 1rcap) }
+
+	/* Override inline styles. */
+	> *:where([style*="margin-block-start: initial"]) { padding-block-start: calc(2rlh - 1rcap) }
 }
 
 section:has(> hgroup > h2) {
