@@ -31,13 +31,15 @@
 /* Make this animatable for scroll-driven stuff. */
 @property --in-view { inherits: true; initial-value: 1; syntax: '<number>' }
 
-@keyframes in-view {
-	0%   { --in-view: 0 }
-	25%  { --in-view: 0 }
-	40%  { --in-view: 1 }
-	60%  { --in-view: 1 }
-	75%  { --in-view: 0 }
-	100% { --in-view: 0 }
+@media screen {
+	@keyframes in-view {
+		0%   { --in-view: 0 }
+		25%  { --in-view: 0 }
+		40%  { --in-view: 1 }
+		60%  { --in-view: 1 }
+		75%  { --in-view: 0 }
+		100% { --in-view: 0 }
+	}
 }
 
 :where(:root) {
