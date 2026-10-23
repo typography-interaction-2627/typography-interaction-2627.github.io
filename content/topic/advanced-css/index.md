@@ -216,7 +216,7 @@ An [`overflow`](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow) in CS
 	<sub>What to do when things don’t fit.</sub>
 <!-- .right .rows--2 -->
 
-But we can use this behavior *intentionally* to crop our content, or create interally-scrolling areas:
+But we can use this behavior *intentionally* to crop our content, or create internally-scrolling areas:
 <!-- .balance -->
 
 <figure style="--lines: 24">
@@ -227,7 +227,7 @@ But we can use this behavior *intentionally* to crop our content, or create inte
 
 <!-- TODO Update this to `overflow-block`/`overflow-inline` next year! -->
 
-### `oveflow` / `sticky`
+### `overflow` / `sticky`
 
 Importantly, `overflow` creates a new [*stacking context*](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context)—which means things with `position` (namely, `position: sticky;`)—and some other properties—will now use the `overflow` container as their reference/origin:
 <!-- .balance .before -->
