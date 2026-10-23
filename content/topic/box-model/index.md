@@ -822,7 +822,7 @@ Another way to hide an element visually is to adjust `opacity`, which uses value
 <!-- .balance -->
 
 [<cite>Opacity – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity) \
-<sub>The entire element *and* its descendents are adjusted, as one.</sub>
+<sub>The entire element *and* its descendants are adjusted, as one.</sub>
 <!-- .right -->
 
 <figure style="--lines: 7">

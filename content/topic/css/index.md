@@ -222,7 +222,7 @@ Each lower/subsequent layer takes precedent over the previous—no matter the se
 	<sub>Divide your big problems into smaller ones!</sub>
 <!-- .right -->
 
-It's *much* easier to understand how it all comes together if you keep the code for these three behaviors in separate files. Your IDE will be easier to use; your diffs more sensical; you’ll know where to start looking to figure something out.
+It's *much* easier to understand how it all comes together if you keep the code for these three behaviors in separate files. Your IDE will be easier to use; your diffs more sensible; you’ll know where to start looking to figure something out.
 
 > [!WARNING]
 >

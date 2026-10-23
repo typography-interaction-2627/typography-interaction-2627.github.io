@@ -88,7 +88,7 @@ Often, words and forms were expressed into a particular physical medium with wha
 <img src="pen.jpg">
 <figcaption>
 
-Brush and pen strokes defining typeforms. [<cite>↗</cite>](https://www.thing.net/~grist/ld/TextBackHome/Roman.htm)
+Brush and pen strokes defining letterforms. [<cite>↗</cite>](https://www.thing.net/~grist/ld/TextBackHome/Roman.htm)
 
 </figcaption>
 </figure>

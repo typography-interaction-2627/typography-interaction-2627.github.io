@@ -84,7 +84,7 @@ A typical/example *responsive* layout, adjusting the content to reflow based on 
 
 ## The Viewport
 
-There wasn’t much of a *mobile web*, prior to the iPhone. *Some* sites had barebones [WAP](https://en.wikipedia.org/wiki/Wireless_Application_Protocol) mobile versions, designed for the tiny screens and limited hardware of the era.
+There wasn’t much of a *mobile web*, prior to the iPhone. *Some* sites had bare-bones [WAP](https://en.wikipedia.org/wiki/Wireless_Application_Protocol) mobile versions, designed for the tiny screens and limited hardware of the era.
 <!-- .before .center -->
 
 <figure class="right" style="margin-block-start: initial">
@@ -653,7 +653,7 @@ You’ll see this differently depending on whether your system is in light or da
 
 <div>
 
-These last two are primarily concerned with [accessiblity](https://developer.mozilla.org/en-US/docs/Web/Accessibility)—`prefers-contrast` for folks who run their device/browser in a high-contrast mode to help with their vision, or `prefers-reduced-motion` for those who have animations turned off for vestibular reasons.
+These last two are primarily concerned with [accessibility](https://developer.mozilla.org/en-US/docs/Web/Accessibility)—`prefers-contrast` for folks who run their device/browser in a high-contrast mode to help with their vision, or `prefers-reduced-motion` for those who have animations turned off for vestibular reasons.
 
 <sub>Or these are just their preference! None of your business.</sub>
 
