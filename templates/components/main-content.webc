@@ -491,7 +491,8 @@
 		main.querySelectorAll('[id]:not(figure)').forEach((id) => {
 			if (id.closest('[inert]')) return
 
-			const section = id.closest('section')
+			const definition = id.closest('dt')?.nextElementSibling
+			const section = definition?.checkVisibility() ? definition : id.closest('section')
 
 			if (section && !sections.has(section)) {
 				sections.add(section)
@@ -502,7 +503,7 @@
 						if (hashNavigation) return
 
 						(entry.isIntersecting)
-							? (history.replaceState(null, '', `#${section.querySelector('[id]')?.id}`),
+							? (history.replaceState(null, '', `#${section === definition ? id.id : section.querySelector('[id]')?.id}`),
 							window.dispatchEvent(new Event('scrollhashchange'))) // Custom for the ToC indicator.
 							: ((section === ([...sections][0]) && entry.boundingClientRect.top >= 0)
 								|| (section === ([...sections].at(-1)) && entry.boundingClientRect.top <= 0)) &&
