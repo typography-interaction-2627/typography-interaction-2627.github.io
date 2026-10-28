@@ -418,8 +418,9 @@ export default (config) => {
 					media.replaceWith(element(`<div>${media.outerHTML}${dither}</div>`))
 				})
 
-				if (id) {
-					id = config.getFilter('slugify')(id)
+				if (id || figure.getAttribute('id')) {
+					id = figure.getAttribute('id') || config.getFilter('slugify')(id)
+
 					figure.setAttribute('id', id)
 
 					id.includes('-example')
