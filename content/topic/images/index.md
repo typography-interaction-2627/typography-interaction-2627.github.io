@@ -49,14 +49,14 @@ Remember that images *weren’t* a part of the [early web](../everything/index.m
 </div>
 
 <dl class="antibody balance before" id="formats">
-<dt id="gif">
+<dt>
 
-[<cite>`.gif` / Graphics Interchange Format</cite>](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types#gif_graphics_interchange_format)
+<h4 id="gif" tabindex="-1"><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types#gif_graphics_interchange_format"><cite><code>.gif</code> / Graphics Interchange Format</cite></a></h4>
 
 </dt>
 <dd>
 
-<figure class="borderless" style="--height: 150px">
+<figure class="borderless" id="tim-gif" style="--height: 150px">
 <img src="tim.gif">
 </figure>
 
@@ -67,14 +67,14 @@ GIF compression is primitive and so they can quickly have *huge* file-sizes—an
 <sub>We say GIF with a hard *G* (as in *gift*), and we are your instructors and are right.</sub>
 
 </dd>
-<dt id="jpg">
+<dt>
 
-[<cite>`.jpg` / Joint Photographic [Experts] Group</cite>](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types#jpeg_joint_photographic_experts_group_image)
+<h4 id="jpg" tabindex="-1"><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types#jpeg_joint_photographic_experts_group_image"><cite><code>.jpg</code> / Joint Photographic [Experts] Group</cite></a></h4>
 
 </dt>
 <dd>
 
-<figure class="borderless" style="--height: 150px">
+<figure class="borderless" id="tim-jpg" style="--height: 150px">
 <img src="tim.jpg">
 </figure>
 
@@ -85,14 +85,14 @@ The combination of busyness and blurriness in photos tends to hide the resulting
 <sub>Folks pretty much always call these *jay-pegs*.</sub>
 
 </dd>
-<dt id="png">
+<dt>
 
-[<cite>`.png` / Portable Network Graphics</cite>](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types#png_portable_network_graphics)
+<h4 id="png" tabindex="-1"><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types#png_portable_network_graphics"><cite><code>.png</code> / Portable Network Graphics</cite></a></h4>
 
 </dt>
 <dd>
 
-<figure class="borderless" style="--height: 150px">
+<figure class="borderless" id="tim-png" style="--height: 150px">
 <img src="tim.png">
 </figure>
 
@@ -105,14 +105,14 @@ You’ll often use PNG&NoBreak;s for illustrations and graphics—things with la
 <sub>Many people use the acronym; you’ll also sometimes hear *pings*.</sub>
 
 </dd>
-<dt id="svg">
+<dt>
 
-[<cite>`.svg` / Scalable Vector Graphics</cite>](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types#svg_scalable_vector_graphics)
+<h4 id="svg" tabindex="-1"><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types#svg_scalable_vector_graphics"><cite><code>.svg</code> / Scalable Vector Graphics</cite></a></h4>
 
 </dt>
 <dd>
 
-<figure class="borderless" style="--height: 150px">
+<figure class="borderless" id="tim-svg" style="--height: 150px">
 <img src="tim.svg">
 </figure>
 
@@ -125,7 +125,7 @@ They store the vectors in code (a bit like HTML, we’ll see), and can be scaled
 </dd>
 </dl>
 
-### “Modern” Formats
+### Other, “Modern” Formats
 
 After *years* of discussion and [competing standards](https://xkcd.com/927/), several “modern” replacement formats are starting to gain browser support and developer/designer traction. They are all designed to overcome the various shortcomings of the legacy formats above—usually around compression efficiency.
 <!-- style="margin-block-end: 1rlh" -->

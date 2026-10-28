@@ -395,7 +395,7 @@
 				> dt {
 					&:where(:not(:first-of-type)) { margin-block-start: 1rlh }
 
-					&:where(:has(p > a > cite):not(:first-child)) { margin-block-start: calc(1rlh + 1rex) }
+					&:where(:has(a > cite):not(:first-child)) { margin-block-start: calc(1rlh + 1rex) }
 				}
 			}
 

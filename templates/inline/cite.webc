@@ -1,6 +1,6 @@
 <style>
 	/* TODO This could be better (”For Next Week”). */
-	:where(p, li):has(a > cite):not(:has(ul)) {
+	:where(h4, p, li):has(a > cite):not(:has(ul)) {
 		--wrap: balance;
 
 		inline-size:     fit-content; /* Cinch (for `:hover`). */

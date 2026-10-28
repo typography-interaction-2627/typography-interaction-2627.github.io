@@ -151,10 +151,16 @@ hgroup:has(h4), dt {
 	}
 
 	/* Slashes between `code` siblings, `cite` links. */
-	&:where(dt) :is(nobr:has(> code), p:has(a > cite)) {
+	&:where(dt) nobr:has(> code),
+	a:has(> cite) {
 		--kerning: initial;
 
 		font-weight: initial;
+
+		code {
+			font-weight:    inherit;
+			letter-spacing: inherit;
+		}
 	}
 }
 
