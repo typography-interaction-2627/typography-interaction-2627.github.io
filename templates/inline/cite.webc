@@ -39,6 +39,9 @@
 			margin-inline-end:   var(--right);
 			margin-inline-start: var(--left);
 		}
+
+		/* On images topic. */
+		dt > & { margin-block-start: -1rex }
 	}
 </style>
 <cite webc:root="override"><slot></slot></cite>

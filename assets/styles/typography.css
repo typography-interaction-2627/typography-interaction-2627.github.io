@@ -150,8 +150,8 @@ hgroup:has(h4), dt {
 		}
 	}
 
-	/* Slashes between `code` siblings. */
-	&:where(dt) nobr:has(> code) {
+	/* Slashes between `code` siblings, `cite` links. */
+	&:where(dt) :is(nobr:has(> code), p:has(a > cite)) {
 		--kerning: initial;
 
 		font-weight: initial;
