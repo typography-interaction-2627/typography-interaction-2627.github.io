@@ -37,86 +37,149 @@ Remember that images *weren’t* a part of the [early web](/topic/everything/#wh
 
 <sub>(I DON’T KNOW IF WE TOLD YOU, BUT HTML [USED TO SHOUT](https://www.w3.org/TR/html40/struct/global.html).)</sub>
 
-## Image Formats!
+## Image Types
+
+### Common Formats
+
+<div class="before left">
 
 **There are several commonly used image formats on the web, each with their own purpose:**
+<!-- .sticky -->
+
+</div>
+
+<dl class="antibody balance before" id="formats">
+<dt id="gif">
 
 [<cite>`.gif` / Graphics Interchange Format</cite>](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types#gif_graphics_interchange_format)
 
-:	<img src="tim.gif">
+</dt>
+<dd>
 
-	An early [raster/bitmap format](https://en.wikipedia.org/wiki/Raster_graphics), heavily compressed with reduced palettes. It survives now because it does animations! This is the only reason to use this format, nowadays.
+<figure class="borderless" style="--height: 150px">
+<img src="tim.gif">
+</figure>
 
-	GIF compression is primitive and so they can quickly have *huge* file-sizes—and can still slow down computers (downloading and rendering), even now. Be careful with these. (If you have longer motion needs, consider a proper [`video` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video).)
+An early [raster/bitmap format](https://en.wikipedia.org/wiki/Raster_graphics), heavily compressed with reduced palettes. It survives now because it does animations! This is the only reason to use this format, nowadays.
 
-	<sub>We say GIF with a hard *G* (as in *gift*), and we are your instructors and are right.</sub>
+GIF compression is primitive and so they can quickly have *huge* file-sizes—and can still slow down computers (downloading and rendering), even now. Be careful with these. (If you have longer motion needs, consider a proper [`video` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video).)
 
-[<cite>`.jpg` / Joint Photographic <br>[Experts] Group</cite>](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types#jpeg_joint_photographic_experts_group_image)
+<sub>We say GIF with a hard *G* (as in *gift*), and we are your instructors and are right.</sub>
 
-:	<img src="tim.jpg">
+</dd>
+<dt id="jpg">
 
-	Ancient-but-timeless raster/bitmap format that remains a good choice for photos. JPG&NoBreak;s can compress images down to much, much smaller file-sizes with adjustable, *lossy* [compression ratios](https://en.wikipedia.org/wiki/JPEG#Effects_of_JPEG_compression).
+[<cite>`.jpg` / Joint Photographic [Experts] Group</cite>](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types#jpeg_joint_photographic_experts_group_image)
 
-	The combination of busyness and blurriness in photos tends to hide the resulting *compression artifacts* better than simple illustrations/graphics, so JPG lives on as a common, widely-used image format. When you are looking at a photo online, it is almost certainly a JPG.
+</dt>
+<dd>
 
-	<sub>Folks pretty much always call these *jay-pegs*.</sub>
+<figure class="borderless" style="--height: 150px">
+<img src="tim.jpg">
+</figure>
+
+Ancient-but-timeless raster/bitmap format that remains a good choice for photos. JPG&NoBreak;s can compress images down to much, much smaller file-sizes with adjustable, *lossy* [compression ratios](https://en.wikipedia.org/wiki/JPEG#Effects_of_JPEG_compression).
+
+The combination of busyness and blurriness in photos tends to hide the resulting *compression artifacts* better than simple illustrations/graphics, so JPG lives on as a common, widely-used image format. When you are looking at a photo online, it is almost certainly a JPG.
+
+<sub>Folks pretty much always call these *jay-pegs*.</sub>
+
+</dd>
+<dt id="png">
 
 [<cite>`.png` / Portable Network Graphics</cite>](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types#png_portable_network_graphics)
 
-:	<img src="tim.png">
+</dt>
+<dd>
 
-	Still raster/bitmap, but better than GIF&NoBreak;s (if you don’t need animation) and JPG&NoBreak;s (if you don’t care about file-size) as they can use [*lossless* compression](https://en.wikipedia.org/wiki/Portable_Network_Graphics#Advantages)—meaning they won’t leave crunchy edges around high-contrast areas.
+<figure class="borderless" style="--height: 150px">
+<img src="tim.png">
+</figure>
 
-	They also support [<nobr>*alpha-channel*</nobr>](https://en.wikipedia.org/wiki/Alpha_compositing) (*partial/smooth/aliased/masked*) transparency, letting you overlay things on other backgrounds.
+Still raster/bitmap, but better than GIF&NoBreak;s (if you don’t need animation) and JPG&NoBreak;s (if you don’t care about file-size) as they can use [*lossless* compression](https://en.wikipedia.org/wiki/Portable_Network_Graphics#Advantages)—meaning they won’t leave crunchy edges around high-contrast areas.
 
-	You’ll often use PNG&NoBreak;s for illustrations and graphics—things with large areas of repeated colors—or where you need exact color accuracy, or the transparency. (But many of these should be SVG&NoBreak;s, up next.) You *can* save photos as PNG&NoBreak;s, but they will be much larger than JPG&NoBreak;s. It’s a good “utility” format.
+They also support [<nobr>*alpha-channel*</nobr>](https://en.wikipedia.org/wiki/Alpha_compositing) (*partial/smooth/aliased/masked*) transparency, letting you overlay things on other backgrounds.
 
-	<sub>Many people use the acronym; you’ll also sometimes hear *pings*.</sub>
+You’ll often use PNG&NoBreak;s for illustrations and graphics—things with large areas of repeated colors—or where you need exact color accuracy, or the transparency. (But many of these should be SVG&NoBreak;s, up next.) You *can* save photos as PNG&NoBreak;s, but they will be much larger than JPG&NoBreak;s. It’s a good “utility” format.
+
+<sub>Many people use the acronym; you’ll also sometimes hear *pings*.</sub>
+
+</dd>
+<dt id="svg">
 
 [<cite>`.svg` / Scalable Vector Graphics</cite>](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types#svg_scalable_vector_graphics)
 
-:	<img src="tim.svg">
+</dt>
+<dd>
 
-	Finally, a [vector format](https://en.wikipedia.org/wiki/Vector_graphics)! SVG&NoBreak;s should be used for any icons, logos, or illustrations where you have access to the original source artwork for the vectors (shapes). You can also “hand” draw them yourself, in code! More on that [below](#svg-s-for-ui).
+<figure class="borderless" style="--height: 150px">
+<img src="tim.svg">
+</figure>
 
-	They store the vectors in code (a bit like HTML, we’ll see), and can be scaled cleanly for different sizes/resolutions. You can also target them with CSS, if they are *inlined* (embedded) directly into your DOM.
+Finally, a [vector format](https://en.wikipedia.org/wiki/Vector_graphics)! SVG&NoBreak;s should be used for any icons, logos, or illustrations where you have access to the original source artwork for the vectors (shapes). You can also “hand” draw them yourself, in code! More on that [below](#svg-s-for-ui).
 
-	<sub>Everyone says *S-V-G*.</sub>
-<!-- #formats .balance -->
+They store the vectors in code (a bit like HTML, we’ll see), and can be scaled cleanly for different sizes/resolutions. You can also target them with CSS, if they are *inlined* (embedded) directly into your DOM.
+
+<sub>Everyone says *S-V-G*.</sub>
+
+</dd>
+</dl>
 
 ### “Modern” Formats
 
-After *years* of discussion and [competing standards](https://xkcd.com/927/), several “modern” replacement formats are starting to gain browser support and developer/designer traction. They are all designed to overcome the various shortcomings of the legacy formats above—usually around compression efficiency. But it’s still a confusing, evolving mess out there! Here are some you might encounter:
+After *years* of discussion and [competing standards](https://xkcd.com/927/), several “modern” replacement formats are starting to gain browser support and developer/designer traction. They are all designed to overcome the various shortcomings of the legacy formats above—usually around compression efficiency.
+<!-- style="margin-block-end: 1rlh" -->
+
+<div class="before left">
+
+**It’s still a confusing, evolving mess out there! But here are some other, “modern” formats you might encounter:**
+<!-- .sticky -->
+
+</div>
+
+<dl class="antibody balance before">
+<dt>
 
 [<cite>AVIF</cite>](https://en.wikipedia.org/wiki/AVIF)
 
-:	<sub>*AV1 Image File Format*, the new(est) replacement for everything. It… *might* be the next big one.</sub>
+</dt>
+<dd>
+
+*AV1 Image File Format*, the new(est) replacement for everything. It… *might* be the next big one.
+
+<dt>
 
 [<cite>HEIC/HEIF</cite>](https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format)
 
-:	<sub>*High Efficiency Image File Format*, intended to replace JPG&NoBreak;s—you might have seen `.heic` from your iPhones, annoying folks.</sub>
+</dt>
+<dd>
+
+*High Efficiency Image File Format*, intended to replace JPG&NoBreak;s—you might have seen `.heic` from your iPhones, annoying folks.
+
+<dt>
 
 [<cite>JPEG XL</cite>](https://en.wikipedia.org/wiki/JPEG_XL)
 
-:	<sub>I guess the “L” is for long-term? This is a competitor to AVIF as the *One Format to Rule Them All*.</sub>
+</dt>
+<dd>
+
+I guess the “L” is for long-term? This is a competitor to AVIF as the *One Format to Rule Them All*.
+
+<dt>
 
 [<cite>WebP</cite>](https://en.wikipedia.org/wiki/WebP)
 
-:	<span class="note">*Web Picture format*, Google’s been pushing this since 2010—the first of these improved formats. Finally has pretty wide support.</span>
-<!-- .balance .before--2 -->
+</dt>
+<dd>
 
-**You still can’t go wrong with <nobr>GIF&ZeroWidthSpace;/&ZeroWidthSpace;JPG&ZeroWidthSpace;/&ZeroWidthSpace;PNG&ZeroWidthSpace;/&ZeroWidthSpace;SVG&NoBreak;s</nobr>, used appropriately!**
-<!-- .before--2 -->
+*Web Picture format*, Google’s been pushing this since 2010—the first of these improved formats. Finally has pretty wide support.
 
-<style>
-	#formats dt { margin-block-start: 2rlh }
+</dd>
+</dl>
 
-	dd img {
-		margin-block-start: 1rlh;
-		block-size:         calc(3rlh + 1rcap);
-		align-self:         start;
-	}
-</style>
+---
+
+**You still can’t go wrong with GIF&NoBreak;/&NoBreak;JPG&NoBreak;/&NoBreak;PNG&NoBreak;/&NoBreak;SVG&NoBreak;s, used appropriately!**
 
 ## Sizing and Containers
 

@@ -24,6 +24,12 @@
 			}
 		}
 
+		dd > & {
+			margin-block-start: initial;
+
+			+ * { margin-block-start: initial}
+		}
+
 		@container style(--columns) {
 			hgroup + & { margin-block-start: 2rlh }
 
