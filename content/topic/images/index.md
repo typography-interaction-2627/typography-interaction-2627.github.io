@@ -5,7 +5,7 @@ const draft = true
 
 # Working With Images
 
-## A thousand words?
+## A Thousand Words?
 
 Let’s look at the specifics around using images on the web! (Finally.)
 
@@ -18,25 +18,22 @@ Let’s look at the specifics around using images on the web! (Finally.)
 
 Remember that images *weren’t* a part of the [early web](/topic/everything/#when-was-the-web-invented), and so—much like CSS—can feel somewhat “bolted on” and are still often tricky to work with. (Our guy Tim Berners-Lee was even [reticent](https://www.wired.com/1997/04/a-brief-history-of-html/)). It has gotten much better recently, though!
 
-<blockquote
-	@attribution="Marc Andreessen, 1993"
-	@citation="http://1997.webhistory.org/www.lists/www-talk.1993q1/0182.html"
-	>
+---
 
-I'd like to propose a new, optional HTML tag: `IMG`
-
-Required argument is `SRC="url"`.
-
-This names a bitmap file for the browser to attempt to pull over the network and interpret as an image, to be embedded in the text at the point of the tag's occurrence. An example is:
-
-<!-- eslint-disable-next-line -- Keep the caps! -->
-`<IMG SRC="file://foobar.com/​foo/bar/blargh.xbm">`<!-- style="overflow-wrap: anywhere; white-space: normal" -->
-
-…
-
-Let me know what you think.&NoBreak;.&NoBreak;.&NoBreak;.&NoBreak;.&NoBreak;.&NoBreak;.&NoBreak;.&NoBreak;.
-
-</blockquote>
+> I'd like to propose a new, optional HTML tag: `IMG`
+>
+> Required argument is `SRC="url"`.
+>
+> This names a bitmap file for the browser to attempt to pull over the network and interpret as an image, to be embedded in the text at the point of the tag's occurrence. An example is:
+>
+> <!-- eslint-disable-next-line -- Keep the caps! -->
+> `<IMG SRC="file://foobar.com/​foo/bar/blargh.xbm">`<!-- style="overflow-wrap: anywhere; white-space: normal" -->
+>
+> …
+>
+> Let me know what you think.&NoBreak;.&NoBreak;.&NoBreak;.&NoBreak;.&NoBreak;.&NoBreak;.&NoBreak;.&NoBreak;.
+>
+> [<cite>Marc Andreessen, 1993</cite>](http://1997.webhistory.org/www.lists/www-talk.1993q1/0182.html)
 
 <sub>(I DON’T KNOW IF WE TOLD YOU, BUT HTML [USED TO SHOUT](https://www.w3.org/TR/html40/struct/global.html).)</sub>
 
@@ -334,15 +331,11 @@ When targeting (or directly editing) SVG contents, note they have slightly diffe
 <sub>HTML/CSS are nothing if not inconsistent.</sub>
 <!-- .right -->
 
-<blockquote
-	@attribution="Ben Shneiderman, 1999"
-	@citation="https://www.cs.umd.edu/~ben/papers/Shneiderman2001Supporting.pdf"
-	class="add-before--3"
-	>
+---
 
-A picture is often said to be worth a thousand words. Similarly, an interface is worth a thousand pictures.
-
-</blockquote>
+> A picture is often said to be worth a thousand words. Similarly, an interface is worth a thousand pictures.
+>
+> [<cite>Ben Shneiderman, 1999</cite>](https://www.cs.umd.edu/~ben/papers/Shneiderman2001Supporting.pdf)
 
 <!-- TODO Re-using SVG without re-embedding -->
 <!-- TODO Talk about file-sizes? -->
