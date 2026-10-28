@@ -1,7 +1,9 @@
+:root { --spacing: 1rem; }
+
 body {
-	padding: 1rem;
+	padding: var(--spacing);
 	display: grid; /* Just for some separation. */
-	row-gap: 1rem;
+	row-gap: var(--spacing);
 }
 
 svg {

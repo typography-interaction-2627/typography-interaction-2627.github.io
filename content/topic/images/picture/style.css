@@ -1,8 +1,13 @@
-body, figure { padding: 1rem; }
+:root { --spacing: 1rem; }
 
-figure { background-color: gold; }
+body { padding: var(--spacing); }
 
-figcaption {
-	font-family: sans-serif;
-	margin-block-start: 1rem;
+figure {
+	background-color: gold;
+	padding: var(--spacing);
+
+	figcaption {
+		font-family: sans-serif;
+		margin-block-start: var(--spacing);
+	}
 }

@@ -184,26 +184,40 @@ I guess the “L” is for long-term? This is a competitor to AVIF as the *One F
 
 ## Sizing and Containers
 
-If you remember *waaaay* back to our [HTML intro](../html/index.md), images are a special HTML element:
-<!-- .after .balance -->
+### The `img` Element
+
+<div>
+
+If you remember *waaaay* back to our [HTML intro](../html/index.md#images), images are a special HTML element:
+<!-- .balance -->
 
 ```html
 <img src="tim.jpg" alt="Tim Berners-Lee at a computer.">
 ```
 
-The `src` attribute can point to a local image file (as it does here—a JPG in the same directory) or an external URL! The `alt` provides a description for [accessibility/screen readers](https://axesslab.com/alt-texts/).
-<!-- .balance .before -->
+</div>
+
+[<cite>`<img>` image embed element - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img) \
+<sub>How we add images to our HTML.</sub>
+<!-- .right -->
+
+In their most basic, simplest form—the `src` attribute can point to a local image file (as it does here—a JPG in the same directory) or an external URL! The `alt` provides a description for [accessibility/screen readers](https://axesslab.com/alt-texts/).
+<!-- .before -->
 
 ### Intrinsic and Inline
 
 By default, images will scale to their *intrinsic* size—the (`1x`) pixel dimensions of the file itself—and are *inline* elements:
 <!-- .balance -->
 
-<figure
-	@caption="This image file is 250 (actual) pixels wide, and is (likely) blurry on your (probably) high-resolution display. Also note the extra space at the bottom, from `display: inline;`&#x202F;!"
-	@source="image/preview"
-	@style="--lines: 17"
-	>
+<figure style="--lines: 16">
+
+***[Inline Example](inline/index.html)***
+
+<figcaption>
+
+This image file is 250 (actual) pixels wide, and is (likely) blurry on your (probably) high-resolution display. Also note the extra space at the bottom, from `display: inline;`&#x202F;!
+
+</figcaption>
 </figure>
 
 This default intrinsic/inline behavior is rarely what you want, though—more often your image should be sized *from* your design, not vice-versa. Also by default the image is scaled to [CSS pixels](https://tomroth.com.au/dpr/), so it is blurry on modern *Hi&NoBreak;DPI* (a.k.a. [*retina*](https://en.wikipedia.org/wiki/Retina_display)/`2x`, even `3x`) screens—which is really most of our screens, these days.
@@ -230,13 +244,17 @@ But this *forces* the image into a fixed size, which usually doesn’t work well
 <!-- .before -->
 
 So you’ll often want to set images to `display: block;`&#x202F;, and then control their size/positioning via CSS—just like any other elements. Make sure your actual actual image dimensions are (at least) roughly twice their displayed, *CSS-pixel* size, so nothing is blurry:
-<!-- .before--3 -->
+<!-- .before -->
 
-<figure
-	@caption="This image file is intrinsically 1600 pixels wide, plenty more than twice the container size. Nice and sharp!"
-	@source="block/preview/?active=style.css"
-	@style="--lines: 16"
-	>
+<figure style="--lines: 16">
+
+***[Block Example](block/style.css)***
+
+<figcaption>
+
+This image file is intrinsically 1600 pixels wide, plenty more than twice the container size. Nice and sharp!
+
+</figcaption>
 </figure>
 
 ### `object-fit` / `object-position`
@@ -248,11 +266,15 @@ CSS also added the `object-fit` and corresponding `object-position` properties f
 	<sub>This used to be *much* harder!</sub>
 <!-- .right -->
 
-<figure
-	@caption="Note the `block-size` on the section, otherwise the container would still resize to the image. Adjust the divider to see the behavior!"
-	@source="object-fit/preview/?active=style.css"
-	@style="--lines: 29"
-	>
+<figure style="--lines: 29">
+
+***[Object-fit Example](object-fit/style.css)***
+
+<figcaption>
+
+Note the `block-size` on the section, otherwise the container would still resize to the image. Adjust the divider to see the behavior!
+
+</figcaption>
 </figure>
 
 ### `aspect-ratio`
@@ -266,11 +288,15 @@ CSS also added an `aspect-ratio` property to control the width-to-height ratio o
 This is not *just* for images (you can use it on *any* element!), but it commonly comes up when using/constraining them in your design:
 <!-- .balance -->
 
-<figure
-	@caption="Note that without the `object-fit: cover;`, Tim would be distorted to the ratio! Don’t distort Tim (or generally, most images) unless you *really* [mean to](https://www.moma.org/calendar/exhibitions/1646)."
-	@source="aspect-ratio/preview/?active=style.css"
-	@style="--lines: 14"
-	>
+<figure style="--lines: 14">
+
+***[Aspect-Ratio Example](aspect-ratio/style.css)***
+
+<figcaption>
+
+Note that without the `object-fit: cover;`, Tim would be distorted to the ratio! Don’t distort Tim (or generally, most images) unless you *really* [mean to](https://www.moma.org/calendar/exhibitions/1646).
+
+</figcaption>
 </figure>
 
 ### `background-image` / `-size` / `-origin`
@@ -285,11 +311,15 @@ You can also use images as backgrounds on elements with the `background-image`, 
 
 However this isn’t very semantic, as it blurs the content/presentation boundaries—since the image paths are moved into your CSS, and there is no `alt` text description available for screen-readers. So you should *only* use this for contextual or decorative images—not actual content:
 
-<figure
-	@caption="I wouldn’t use something like this as a `background`&#x202F;. Mind your legibility! And your accessibility."
-	@source="background/preview/?active=style.css"
-	@style="--lines: 14"
-	>
+<figure style="--lines: 14">
+
+***[Background Example](background/style.css)***
+
+<figcaption>
+
+I wouldn’t use something like this as a `background`&#x202F;. Mind your legibility! And your accessibility.
+
+</figcaption>
 </figure>
 
 <aside>
@@ -309,11 +339,15 @@ Speaking of semantics—HTML also has a `figure` element that you can use to ass
 	<sub>Many of your images should be in `figure` containers.</sub>
 <!-- .right -->
 
-<figure
-	@caption="These can also be used to group things like videos, illustrations, and diagrams with their captions. There can be multiple visuals in each `figure`, if needed."
-	@source="figure/preview/?active=style.css"
-	@style="--lines: 12"
-	>
+<figure style="--lines: 12">
+
+***[Figure Example](figure/style.css)***
+
+<figcaption>
+
+These can also be used to group things like videos, illustrations, and diagrams with their captions. There can be multiple visuals in each `figure`, if needed.
+
+</figcaption>
 </figure>
 
 <aside>
@@ -345,11 +379,15 @@ Our venerable `<img>` element added some control for this with the addition of t
 
 The `<picture>` element is a wrapper/container for an `<img>`, giving it alternate `<source>` tags that offer different image files for different scenarios. They use [media-query-like](../responsive/index.md#media-queries) syntax to change what image is loaded and displayed:
 
-<figure
-	@caption="This is all in the HTML; there is no (relevant) CSS. Adjust the divider to see the swaps!"
-	@source="picture/preview"
-	@style="--lines: 22"
-	>
+<figure style="--lines: 22">
+
+***[Picture Example](picture/index.html)***
+
+<figcaption>
+
+This is all in the HTML; there is no (relevant) CSS. Adjust the divider to see the swaps!
+
+</figcaption>
 </figure>
 
 Note that you still include the `<img>` as a *fallback*—put your largest size there. We’ve found it helpful to follow the same *mobile-first* philosophy here as you do in the rest of your code—putting your smaller images first, and your larger lower. You can have as many `<source>` elements as you need—for image sizing, crops, or both.
@@ -380,13 +418,17 @@ Anything you can draw in Figma (or Sketch, or Illustrator before it) lends itse
 ```
 
 In addition to being our only vector/scaleable format, SVG&NoBreak;s have another trick up their sleeve. You can use the files as a `src`, like all the examples above—but their code can also be included directly into your HTML! This is called *inlining* (though some folks say *embedding*):
-<!-- .before--3 -->
+<!-- .before -->
 
-<figure
-	@caption="Be sure to look at the `styles.css`—targeting the SVG nodes just like any other HTML elements!"
-	@source="svg/preview"
-	@style="--lines: 21"
-	>
+<figure style="--lines: 21">
+
+***[SVG Example](svg/index.html)***
+
+<figcaption>
+
+Be sure to look at the `styles.css`—targeting the SVG nodes just like any other HTML elements!
+
+</figcaption>
 </figure>
 
 When targeting (or directly editing) SVG contents, note they have slightly different syntax than HTML/CSS—using `fill` and `stroke` instead of `background-color` and `border`, for example. Also remember that `width` and `height` attributes will set the default SVG size (just like on an `img`)—but you can override this with your styles.

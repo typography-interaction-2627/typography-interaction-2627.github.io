@@ -1,12 +1,15 @@
-body, section { padding: 1rem; }
+:root { --spacing: 1rem; }
+
+body { padding: var(--spacing); }
 
 section {
 	background-color: gold;
 	display: flex;
 	justify-content: center;
-}
+	padding: var(--spacing);
 
-img {
-	display: block;
-	inline-size: 66%;
+	img {
+		display: block;
+		inline-size: 66%;
+	}
 }
