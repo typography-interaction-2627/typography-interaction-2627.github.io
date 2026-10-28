@@ -3,7 +3,7 @@ const week = 11
 const draft = true
 ```
 
-# Working with Images
+# Working With Images
 
 ## A thousand words?
 
@@ -38,13 +38,11 @@ Let me know what you think.&NoBreak;.&NoBreak;.&NoBreak;.&NoBreak;.&NoBreak;.&No
 
 </blockquote>
 
-(I DON’T KNOW IF WE TOLD YOU, BUT HTML [USED TO SHOUT](https://www.w3.org/TR/html40/struct/global.html).)
-<!-- .note -->
+<sub>(I DON’T KNOW IF WE TOLD YOU, BUT HTML [USED TO SHOUT](https://www.w3.org/TR/html40/struct/global.html).)</sub>
 
 ## Image Formats!
 
-There are several commonly used image formats on the web, each with their own purpose:
-<!-- .intro -->
+**There are several commonly used image formats on the web, each with their own purpose:**
 
 [<cite>`.gif` / Graphics Interchange Format</cite>](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types#gif_graphics_interchange_format)
 
@@ -54,7 +52,7 @@ There are several commonly used image formats on the web, each with their own pu
 
 	GIF compression is primitive and so they can quickly have *huge* file-sizes—and can still slow down computers (downloading and rendering), even now. Be careful with these. (If you have longer motion needs, consider a proper [`video` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video).)
 
-	We say GIF with a hard *G* (as in *gift*), and we are your instructors and are right. <!-- .note -->
+	<sub>We say GIF with a hard *G* (as in *gift*), and we are your instructors and are right.</sub>
 
 [<cite>`.jpg` / Joint Photographic <br>[Experts] Group</cite>](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types#jpeg_joint_photographic_experts_group_image)
 
@@ -64,7 +62,7 @@ There are several commonly used image formats on the web, each with their own pu
 
 	The combination of busyness and blurriness in photos tends to hide the resulting *compression artifacts* better than simple illustrations/graphics, so JPG lives on as a common, widely-used image format. When you are looking at a photo online, it is almost certainly a JPG.
 
-	Folks pretty much always call these *jay-pegs*. <!-- .note -->
+	<sub>Folks pretty much always call these *jay-pegs*.</sub>
 
 [<cite>`.png` / Portable Network Graphics</cite>](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types#png_portable_network_graphics)
 
@@ -76,7 +74,7 @@ There are several commonly used image formats on the web, each with their own pu
 
 	You’ll often use PNG&NoBreak;s for illustrations and graphics—things with large areas of repeated colors—or where you need exact color accuracy, or the transparency. (But many of these should be SVG&NoBreak;s, up next.) You *can* save photos as PNG&NoBreak;s, but they will be much larger than JPG&NoBreak;s. It’s a good “utility” format.
 
-	Many people use the acronym; you’ll also sometimes hear *pings*. <!-- .note -->
+	<sub>Many people use the acronym; you’ll also sometimes hear *pings*.</sub>
 
 [<cite>`.svg` / Scalable Vector Graphics</cite>](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types#svg_scalable_vector_graphics)
 
@@ -86,7 +84,7 @@ There are several commonly used image formats on the web, each with their own pu
 
 	They store the vectors in code (a bit like HTML, we’ll see), and can be scaled cleanly for different sizes/resolutions. You can also target them with CSS, if they are *inlined* (embedded) directly into your DOM.
 
-	Everyone says *S-V-G*. <!-- .note -->
+	<sub>Everyone says *S-V-G*.</sub>
 <!-- #formats .balance -->
 
 ### “Modern” Formats
@@ -95,26 +93,23 @@ After *years* of discussion and [competing standards](https://xkcd.com/927/), se
 
 [<cite>AVIF</cite>](https://en.wikipedia.org/wiki/AVIF)
 
-:	*AV1 Image File Format*, the new(est) replacement for everything. It… *might* be the next big one.
-	<!-- .note -->
+:	<sub>*AV1 Image File Format*, the new(est) replacement for everything. It… *might* be the next big one.</sub>
 
 [<cite>HEIC/HEIF</cite>](https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format)
 
-:	*High Efficiency Image File Format*, intended to replace JPG&NoBreak;s—you might have seen `.heic` from your iPhones, annoying folks.
-	<!-- .note -->
+:	<sub>*High Efficiency Image File Format*, intended to replace JPG&NoBreak;s—you might have seen `.heic` from your iPhones, annoying folks.</sub>
 
 [<cite>JPEG XL</cite>](https://en.wikipedia.org/wiki/JPEG_XL)
 
-:	I guess the “L” is for long-term? This is a competitor to AVIF as the *One Format to Rule Them All*.
-	<!-- .note -->
+:	<sub>I guess the “L” is for long-term? This is a competitor to AVIF as the *One Format to Rule Them All*.</sub>
 
 [<cite>WebP</cite>](https://en.wikipedia.org/wiki/WebP)
 
 :	<span class="note">*Web Picture format*, Google’s been pushing this since 2010—the first of these improved formats. Finally has pretty wide support.</span>
 <!-- .balance .before--2 -->
 
-You still can’t go wrong with <nobr>GIF&ZeroWidthSpace;/&ZeroWidthSpace;JPG&ZeroWidthSpace;/&ZeroWidthSpace;PNG&ZeroWidthSpace;/&ZeroWidthSpace;SVG<small>s</small></nobr>, used appropriately!
-<!-- .before--2 .intro -->
+**You still can’t go wrong with <nobr>GIF&ZeroWidthSpace;/&ZeroWidthSpace;JPG&ZeroWidthSpace;/&ZeroWidthSpace;PNG&ZeroWidthSpace;/&ZeroWidthSpace;SVG&NoBreak;s</nobr>, used appropriately!**
+<!-- .before--2 -->
 
 <style>
 	#formats dt { margin-block-start: 2rlh }
@@ -168,8 +163,7 @@ In the past, you would manually set an image size within your HTML via special `
 ```html <!-- .all -->
 <img src="tim.jpg" alt="Tim Berners-Lee at a computer." width="230" height="150">
 ```
-No units, even.
-<!-- .note -->
+<sub>No units, even.</sub>
 
 But this *forces* the image into a fixed size, which usually doesn’t work well in our modern, responsive, many-device-width contexts.
 <!-- .before -->
@@ -277,8 +271,7 @@ With regards to their layout, you make images responsive in the same way you (sh
 
 But using images introduces some additional considerations, going across breakpoints. You might want to serve/show *different* images at different sizes—whether for dimensional (file-size, bandwidth, performance) or <nobr>art-direction</nobr> (scale, crop) reasons.
 
-The exact same image file is *rarely* ideal at both `375px` and `2560px`.
-<!-- .intro -->
+**The exact same image file is *rarely* ideal at both `375px` and `2560px`.**
 
 ### `picture` / `source`
 
@@ -302,10 +295,9 @@ Note that you still include the `<img>` as a *fallback*—put your largest size 
 
 *Unlike* CSS’s cascade, though—the browser stops at the first “matching” image! (So it doesn’t download any unnecessary files.) Thus we use `width <` limiting queries here, instead of our usual `>`.
 
-Responsive images (like the rest of this) can get [very complicated](https://web.dev/learn/design/picture-element/), very quickly—so always start with the basics (and mobile) first.
-<!-- .intro -->
+**Responsive images (like the rest of this) can get [very complicated](https://web.dev/learn/design/picture-element/), very quickly—so always start with the basics (and mobile) first.**
 
-## SVG<small>s</small> for UI
+## SVG&NoBreak;s for UI
 
 SVG&NoBreak;s are a (digital) designer’s best friend—mixing the adaptability and maintainability of code with the freedom and flexibility of visual design.
 
