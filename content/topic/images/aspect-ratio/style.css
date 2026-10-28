@@ -1,0 +1,10 @@
+body, section { padding: 1rem; }
+
+section { background-color: gold; }
+
+img {
+	aspect-ratio: 1 / 1; /* Width / height. */
+	inline-size: 66%;
+	object-fit: cover;
+	overflow: clip; /* For Chrome again. */
+}

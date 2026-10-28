@@ -1,0 +1,12 @@
+body, section { padding: 1rem; }
+
+section {
+	background-color: gold;
+	display: flex;
+	justify-content: center;
+}
+
+img {
+	display: block;
+	inline-size: 66%;
+}

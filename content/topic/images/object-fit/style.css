@@ -1,0 +1,25 @@
+body, section { padding: 1rem; }
+
+section {
+	background-color: gold;
+	block-size: 33vh;
+}
+
+section:not(:first-child) { margin-block-start: 1rem;}
+
+img {
+	background-color: orange;
+	block-size: 100%; /* Fill the parent. */
+	inline-size: 100%;
+}
+
+section:first-child img {
+	object-fit: contain; /* Fit the image. */
+	object-position: left top; /* Corner. */
+}
+
+section:last-child img {
+	object-fit: cover; /* Cover the parent. */
+	object-position: right center; /* Side. */
+	overflow: clip; /* Chrome needs this to hide extra. */
+}

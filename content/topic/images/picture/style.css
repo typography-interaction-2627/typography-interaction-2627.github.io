@@ -1,0 +1,8 @@
+body, figure { padding: 1rem; }
+
+figure { background-color: gold; }
+
+figcaption {
+	font-family: sans-serif;
+	margin-block-start: 1rem;
+}
