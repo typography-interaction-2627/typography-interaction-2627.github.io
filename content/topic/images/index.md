@@ -16,7 +16,7 @@ Let’s look at the specifics around using images on the web! (Finally.)
 	<sub>Also discusses *Retina*/High DPI (Hi&NoBreak;DPI) screens.</sub>
 <!-- .right .rows--3 -->
 
-Remember that images *weren’t* a part of the [early web](/topic/everything/#when-was-the-web-invented), and so—much like CSS—can feel somewhat “bolted on” and are still often tricky to work with. (Our guy Tim Berners-Lee was even [reticent](https://www.wired.com/1997/04/a-brief-history-of-html/)). It has gotten much better recently, though!
+Remember that images *weren’t* a part of the [early web](../everything/index.md#when-was-the-web-invented), and so—much like CSS—can feel somewhat “bolted on” and are still often tricky to work with. (Our guy Tim Berners-Lee was even [reticent](https://www.wired.com/1997/04/a-brief-history-of-html/)). It has gotten much better recently, though!
 
 ---
 
@@ -183,7 +183,7 @@ I guess the “L” is for long-term? This is a competitor to AVIF as the *One F
 
 ## Sizing and Containers
 
-If you remember *waaaay* back to our [HTML intro](/topic/html/#images), images are a special HTML element:
+If you remember *waaaay* back to our [HTML intro](../html/index.md), images are a special HTML element:
 <!-- .after .balance -->
 
 ```html
@@ -211,7 +211,7 @@ This default intrinsic/inline behavior is rarely what you want, though—more of
 
 <mark>Images must be controlled at all times</mark>
 
-Most [resets (like ours)](/topic/css/#resets) include a `max-inline-size: 100%` for images—otherwise, large images will often poke/overflow out of their containers, by default!
+Most [resets](../css/index.md#resets) (like [ours](/assets/reset.css)) include a `max-inline-size: 100%` for images—otherwise, large images will often poke/overflow out of their containers, by default!
 
 </aside>
 
@@ -327,7 +327,7 @@ Always strive for this kind of broad benefit (a.k.a. *universal design*) in all 
 
 ## Responsive Images
 
-With regards to their layout, you make images responsive in the same way you (should) make all your page structure responsive—by writing [*mobile-first*](/topic/responsive/#mobile-first-design) front-end for their containers. You can change their flow, size, shape, and <nobr>so-on</nobr>—all via the box you put them in.
+With regards to their layout, you make images responsive in the same way you (should) make all your page structure responsive—by writing [*mobile-first*](../responsive/index.md#mobile-first-design) front-end for their containers. You can change their flow, size, shape, and <nobr>so-on</nobr>—all via the box you put them in.
 
 But using images introduces some additional considerations, going across breakpoints. You might want to serve/show *different* images at different sizes—whether for dimensional (file-size, bandwidth, performance) or <nobr>art-direction</nobr> (scale, crop) reasons.
 
@@ -342,7 +342,7 @@ Our venerable `<img>` element added some control for this with the addition of t
 	<sub>These containers/children allow you to make your `img` responsive.</sub>
 <!-- .right .rows--2 -->
 
-The `<picture>` element is a wrapper/container for an `<img>`, giving it alternate `<source>` tags that offer different image files for different scenarios. They use [media-query-like](/topic/responsive/#media-queries) syntax to change what image is loaded and displayed:
+The `<picture>` element is a wrapper/container for an `<img>`, giving it alternate `<source>` tags that offer different image files for different scenarios. They use [media-query-like](../responsive/index.md#media-queries) syntax to change what image is loaded and displayed:
 
 <figure
 	@caption="This is all in the HTML; there is no (relevant) CSS. Adjust the divider to see the swaps!"
