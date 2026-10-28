@@ -9,11 +9,11 @@ const draft = true
 
 Let’s look at the specifics around using images on the web! (Finally.)
 
-- [<cite>HTML Images – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML)
-	Pretty good overview.
+- [<cite>HTML Images – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML) \
+	<sub>Pretty good overview.</sub>
 
-- [<cite>Choose the Right Image Format – web.dev</cite>](https://web.dev/choose-the-right-image-format/)
-	Also discusses *Retina*/High DPI (Hi&NoBreak;DPI) screens.
+- [<cite>Choose the Right Image Format – web.dev</cite>](https://web.dev/choose-the-right-image-format/) \
+	<sub>Also discusses *Retina*/High DPI (Hi&NoBreak;DPI) screens.</sub>
 <!-- .right .rows--3 -->
 
 Remember that images *weren’t* a part of the [early web](/topic/everything/#when-was-the-web-invented), and so—much like CSS—can feel somewhat “bolted on” and are still often tricky to work with. (Our guy Tim Berners-Lee was even [reticent](https://www.wired.com/1997/04/a-brief-history-of-html/)). It has gotten much better recently, though!
@@ -183,8 +183,8 @@ So you’ll often want to set images to `display: block;`&#x202F;, and then cont
 CSS also added the `object-fit` and corresponding `object-position` properties for sizing images *within* their containers—as if the image file is a child of `img`. This is often used when setting an `img` to fill a container size set by your design:
 
 - [<cite>`object-fit` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit)
-- [<cite>`object-position` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/object-position)
-	This used to be *much* harder!
+- [<cite>`object-position` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/object-position) \
+	<sub>This used to be *much* harder!</sub>
 <!-- .right -->
 
 <figure
@@ -198,8 +198,8 @@ CSS also added the `object-fit` and corresponding `object-position` properties f
 
 CSS also added an `aspect-ratio` property to control the width-to-height ratio of an element—maintaining this relationship as an element scales. (This used to be [*unnecessarily* hard](https://css-tricks.com/aspect-ratio-boxes/) to achieve. CSS heights are always weird! You kids have it easy.)
 
-- [<cite>`aspect-ratio` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio)
-	So much easier now.
+[<cite>`aspect-ratio` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio) \
+<sub>So much easier now.</sub>
 <!-- .right .rows--2 -->
 
 This is not *just* for images (you can use it on *any* element!), but it commonly comes up when using/constraining them in your design:
@@ -218,9 +218,9 @@ You can also use images as backgrounds on elements with the `background-image`, 
 
 - [<cite>`background-image` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/background-image)
 - [<cite>`background-size` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size)
-- [<cite>`background-origin` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/background-origin)
-	Careful with these!
-	<!-- .right .rows--2 -->
+- [<cite>`background-origin` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/background-origin) \
+	<sub>Careful with these!</sub>
+<!-- .right .rows--2 -->
 
 However this isn’t very semantic, as it blurs the content/presentation boundaries—since the image paths are moved into your CSS, and there is no `alt` text description available for screen-readers. So you should *only* use this for contextual or decorative images—not actual content:
 
@@ -244,8 +244,8 @@ Always ask yourself, “would this page make sense if I couldn’t see this imag
 Speaking of semantics—HTML also has a `figure` element that you can use to associate an image (or other visual) with a visible `figcaption` description or legend. These containers formally link the meaning/context of the elements together:
 
 - [<cite>`figure` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure)
-- [<cite>`figcaption` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figcaption)
-	Many of your images should be in `figure` containers.
+- [<cite>`figcaption` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figcaption) \
+	<sub>Many of your images should be in `figure` containers.</sub>
 <!-- .right -->
 
 <figure
@@ -278,8 +278,8 @@ But using images introduces some additional considerations, going across breakpo
 Our venerable `<img>` element added some control for this with the addition of the [`srcset`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-srcset) and [`sizes`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-sizes) attributes. But we think it is much easier (at least ergonomically) to skip right into using the modern `picture` container element.
 
 - [<cite>`picture` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture)
-- [<cite>`source` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source)
-	These containers/children allow you to make your `img` responsive.
+- [<cite>`source` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source) \
+	<sub>These containers/children allow you to make your `img` responsive.</sub>
 <!-- .right .rows--2 -->
 
 The `<picture>` element is a wrapper/container for an `<img>`, giving it alternate `<source>` tags that offer different image files for different scenarios. They use [media-query-like](/topic/responsive/#media-queries) syntax to change what image is loaded and displayed:
@@ -301,11 +301,11 @@ Note that you still include the `<img>` as a *fallback*—put your largest size 
 
 SVG&NoBreak;s are a (digital) designer’s best friend—mixing the adaptability and maintainability of code with the freedom and flexibility of visual design.
 
-- [<cite>Including Vector Graphics in HTML – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Including_vector_graphics_in_HTML#what_is_svg)
-	Good overview.
+- [<cite>Including Vector Graphics in HTML – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Including_vector_graphics_in_HTML#what_is_svg) \
+	<sub>Good overview.</sub>
 
-- [<cite>How to Code SVG Icons by Hand</cite>](https://www.aleksandrhovhannisyan.com/blog/svg-tutorial/)
-	Aleksandr Hovhannisyan goes deep on making SVG&NoBreak;s. This is how the *Pros* do.
+- [<cite>How to Code SVG Icons by Hand</cite>](https://www.aleksandrhovhannisyan.com/blog/svg-tutorial/) \
+	<sub>Aleksandr Hovhannisyan goes deep on making SVG&NoBreak;s. This is how the *Pros* do.</sub>
 <!-- .right .rows--3 -->
 
 Anything you can draw in Figma (or Sketch, or Illustrator before it) lends itself to this hybrid representation. It’s common to export out `.svg` vector work from a design program, but you can also create (or at least edit) these files yourself—just like any other code:
@@ -330,8 +330,8 @@ In addition to being our only vector/scaleable format, SVG&NoBreak;s have anothe
 
 When targeting (or directly editing) SVG contents, note they have slightly different syntax than HTML/CSS—using `fill` and `stroke` instead of `background-color` and `border`, for example. Also remember that `width` and `height` attributes will set the default SVG size (just like on an `img`)—but you can override this with your styles.
 
-- [<cite>Fills and strokes – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Fills_and_Strokes)
-	HTML/CSS are nothing if not inconsistent.
+[<cite>Fills and strokes – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Fills_and_Strokes) \
+<sub>HTML/CSS are nothing if not inconsistent.</sub>
 <!-- .right -->
 
 <blockquote
