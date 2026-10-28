@@ -22,10 +22,10 @@ A good pattern to follow in web (and all) development is to use each technology 
 
 With a lens of accessibility, we want to ensure folks using a keyboard to navigate the web have a good experience on our sites. The first way we do this is via [well-structured HTML](../html/index.md)—that follows a logical, reading order for our page/content—especially as we work responsively.
 
-- [<cite>`:focus-visible` pseudo-class</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:focus-visible)
+- [<cite>`:focus-visible` pseudo-class</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:focus-visible) \
 	<sub>Let’s restore these indicators!</sub>
 
-- [<cite>A guide to designing accessible focus indicators</cite>](https://www.sarasoueidan.com/blog/focus-indicators/)
+- [<cite>A guide to designing accessible focus indicators</cite>](https://www.sarasoueidan.com/blog/focus-indicators/) \
 	<sub>Deep-dive from [Sara Soueidan](https://www.sarasoueidan.com/).</sub>
 <!-- .right .rows--3 -->
 
@@ -48,16 +48,16 @@ Click in the example, and then use <samp>Tab</samp> to move between links. Ensur
 
 You have probably noticed that HTML renders a lot of extra space around text elements, called the *line box* (or, in design software parlance, the *bounding box*).
 
-- [<cite>Font Metrics, Line-&NoBreak;Height and Vertical-&NoBreak;Align</cite>](https://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align)
+- [<cite>Font Metrics, Line-&NoBreak;Height and Vertical-&NoBreak;Align</cite>](https://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align) \
 	<sub>A deep-dive on type positioning.</sub>
 
-- [<cite>Vertical Spacing and Line-Height in Design Systems – Google Fonts</cite>](https://fonts.google.com/knowledge/using_type/vertical_spacing_and_line_height_in_design_systems)
+- [<cite>Vertical Spacing and Line-Height in Design Systems – Google Fonts</cite>](https://fonts.google.com/knowledge/using_type/vertical_spacing_and_line_height_in_design_systems) \
 	<sub>It’s all very complicated.</sub>
 
-- [<cite>`text-box` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/text-box)
+- [<cite>`text-box` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/text-box) \
 	<sub>Now, control the *bounding box*!</sub>
 
-- [<cite>`text-box-trim` - web.dev</cite>](https://developer.chrome.com/blog/css-text-box-trim)
+- [<cite>`text-box-trim` - web.dev</cite>](https://developer.chrome.com/blog/css-text-box-trim) \
 	<sub>So… much… easier!</sub>
 <!-- .right .rows--4 -->
 
@@ -85,7 +85,7 @@ You you might consider doing this on *everything* with the [shorthand](https://d
 
 Ideally we could set our punctuation *outside* of our text blocks, for nice visual alignment based solely on the letters—a traditional design technique called [*hanging punctuation*](https://en.wikipedia.org/wiki/Hanging_punctuation).
 
-[<cite>7 Practical Uses for `::before` and `::after` – CSS Tricks</cite>](https://css-tricks.com/7-practical-uses-for-the-before-and-after-pseudo-elements-in-css/)
+[<cite>7 Practical Uses for `::before` and `::after` – CSS Tricks</cite>](https://css-tricks.com/7-practical-uses-for-the-before-and-after-pseudo-elements-in-css/) \
 <sub>Another great *CSS Tricks* article.</sub>
 	<!-- .right .rows--2 -->
 
@@ -113,7 +113,7 @@ But we *can* do a handful of things to make for *better* ragging/wraps, given th
 The [`hyphens` property](https://developer.mozilla.org/en-US/docs/Web/CSS/hyphens) allows long, multi-syllable words to be [hyphenated](https://en.wikipedia.org/wiki/Hyphen#Justification_and_line-wrapping) when they wrap across multiple lines. This can be done automatically by the browser, or by manually inserting `&shy;` (for [*soft hyphen*](https://en.wikipedia.org/wiki/Soft_hyphen)) as an [HTML character/entity references](https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references#:~:text=All%20named%20character%20entity%20references):
 <!-- .balance -->
 
-[<cite>`hyphens` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/hyphens)
+[<cite>`hyphens` - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/hyphens) \
 <sub>This depends on the browser and [`lang`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/lang), unless you manually add `&shy;`.</sub>
 <!-- .right -->
 
@@ -133,7 +133,7 @@ Note `<html lang="en">` is needed—as the `auto` property works from each brows
 Somewhat related/similar to `&shy;`, the `<wbr>` is a <nobr>(void/empty)</nobr> HTML element that denotes a *word break* opportunity—a bit like an optional `<br>`! You can use these to manually control where single long word will wrap, *without* a hyphen:
 <!-- .balance -->
 
-[<cite>`wbr` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/wbr)
+[<cite>`wbr` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/wbr) \
 <sub>These are often needed with slashes/URL&NoBreak;s.</sub>
 <!-- .right -->
 
@@ -147,10 +147,10 @@ Somewhat related/similar to `&shy;`, the `<wbr>` is a <nobr>(void/empty)</nobr> 
 
 But much more often, you’ll want to keep certain words *together*—to avoid a [widow or orphan](../typography/index.md#widows-and-orphans), or to keep important/related text together—like in dates, *October 22*, or with  names like *van Zanten*.
 
-- [<cite>`white-space` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/white-space)
+- [<cite>`white-space` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/white-space) \
 	<sub>*Prevents* text from wrapping.</sub>
 
-- [<cite>`nobr` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nobr)
+- [<cite>`nobr` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nobr) \
 	<sub>This is *technically* deprecated. But [one of your instructors](https://michaelfehrenbach.com) is a “stan.”</sub>
 <!-- .right .rows--3 -->
 
@@ -175,7 +175,7 @@ On a Mac, you can insert an *encoded* `&nbsp;` with <kbd><kbd><span class="x2325
 After many, *many* years of patient, typographic waiting (and [some JS](https://github.com/adobe/balance-text) [shenanigans](https://www.ctrl.blog/entry/text-wrap-balance.html)) we now have widespread [browser support](https://caniuse.com/css-text-wrap-balance) for “balancing” uneven line lengths with [`text-wrap: balance;`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap):
 <!-- .balance -->
 
-[<cite>`text-wrap` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap)
+[<cite>`text-wrap` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap) \
 <sub>Don’t overuse/abuse this in running text, though!</sub>
 <!-- .right -->
 
@@ -212,7 +212,7 @@ An [`overflow`](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow) in CS
 <!-- .balance -->
 
 - [<cite>`overflow` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow)
-- [<cite>Overflowing Content – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Overflowing_content)
+- [<cite>Overflowing Content – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Overflowing_content) \
 	<sub>What to do when things don’t fit.</sub>
 <!-- .right .rows--2 -->
 
@@ -232,7 +232,7 @@ But we can use this behavior *intentionally* to crop our content, or create inte
 Importantly, `overflow` creates a new [*stacking context*](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context)—which means things with `position` (namely, `position: sticky;`)—and some other properties—will now use the `overflow` container as their reference/origin:
 <!-- .balance .before -->
 
-[<cite>Stacking Context – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context)
+[<cite>Stacking Context – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context) \
 <sub>*Always* confusing; think of these as *frames* or *groups* in Figma.</sub>
 <!-- .right -->
 
@@ -242,15 +242,17 @@ Importantly, `overflow` creates a new [*stacking context*](https://developer.moz
 
 </figure>
 
+<!-- TODO: scroll-behavior: smooth; example! -->
+
 ### `text-overflow` / `-webkit-line-clamp`
 
 You can also *excerpt* text (perhaps on a landing page) with the [`text-overflow`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow) (for a single line) or [`-webkit-line-clamp`](https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-line-clamp) (for multiple lines) properties—which will add [an ellipsis](https://en.wikipedia.org/wiki/Ellipsis) <samp>…</samp> where the text overflows. Only do this when the full text is available on a subsequent page, though:
 <!-- .balance -->
 
-- [<cite>`text-overflow` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow)
+- [<cite>`text-overflow` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow) \
 	<sub>For single lines…</sub>
 
-- [<cite>`-webkit-line-clamp` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-line-clamp)
+- [<cite>`-webkit-line-clamp` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-line-clamp) \
 	<sub>And multiple lines!</sub>
 <!-- .right -->
 
@@ -272,7 +274,7 @@ This `-webkit` stuff is hokey, but still how it is done! Browsers are weird.
 CSS can apply visual and compositing effects on elements—adjusting their graphical display *after* they are laid out and rendered in the page—with the [`filter` property](https://developer.mozilla.org/en-US/docs/Web/CSS/filter):
 <!-- .balance -->
 
-[<cite>`filter` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/filter)
+[<cite>`filter` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) \
 <sub>Applied *after* everything else.</sub>
 <!-- .right -->
 
@@ -293,7 +295,7 @@ These have corresponding `backdrop-filter` values—which apply the effect to th
 <!-- .balance -->
 
 - [<cite>`backdrop-filter` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter)
-- [<cite>`mix-blend-mode` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode)
+- [<cite>`mix-blend-mode` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode) \
 	<sub>Often used together.</sub>
 <!-- .right -->
 
@@ -381,10 +383,10 @@ Doesn’t affect the element itself, but [sets the distance](https://developer.m
 
 <div class="right">
 
-- [<cite>`transform` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)
+- [<cite>`transform` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/transform) \
 	<sub>These are fun—but should *not* be used for actual layout!</sub>
 
-- [<cite>`<transform-function>` type – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/transform-function)
+- [<cite>`<transform-function>` type – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/transform-function) \
 	<sub>The different types.</sub>
 <!-- .sticky -->
 
@@ -457,15 +459,15 @@ Note how the elements *don’t* take up more space in the document flow/layout�
 
 **Motion can add a lot to our work—making it feel less static, more interactive, and more alive! But should always be considered a [*progressive enhancement*](../responsive/index.md#progressive-enhancement) on top of work that functions without it.**
 
-[<cite>Inspect and modify CSS animation effects – web.dev</cite>](https://developer.chrome.com/docs/devtools/css/animations/)
-	<sub>Use the *Animations* tab in your [DevTools](../dev-tools/index.md) to diagnose motion.</sub>
+[<cite>Inspect and modify CSS animation effects – web.dev</cite>](https://developer.chrome.com/docs/devtools/css/animations/) \
+<sub>Use the *Animations* tab in your [DevTools](../dev-tools/index.md) to diagnose motion.</sub>
 <!-- .right -->
 
 #### Honor Reader Preferences
 
 Relatedly, some folks might also want a motion-free experience, whether for accessibility or just preference—so we’ll always “scope” our transitions and animations to those who don’t mind, using [`@media` queries](../responsive/index.md#prefers-contrast-prefers-reduced-motion).
 
-[<cite>Sometimes less movement is more - web.dev</cite>](https://web.dev/articles/prefers-reduced-motion)
+[<cite>Sometimes less movement is more - web.dev</cite>](https://web.dev/articles/prefers-reduced-motion) \
 <sub>Don’t force anything on your visitor!</sub>
 <!-- .right -->
 
@@ -473,7 +475,7 @@ Relatedly, some folks might also want a motion-free experience, whether for acc
 
 Many CSS properties *can* be transitioned/animated—but keep in mind that changes that cause a *reflow* (re-triggering *layout*, sometimes called *paint*) [are slow](https://web.dev/articles/animations-overview) and can make your page feel glitchy—especially when you start having many of them, or they’re easy to trigger (like `:hover`).
 
-[<cite>Why are some animations slow? - web.dev</cite>](https://web.dev/articles/animations-overview)
+[<cite>Why are some animations slow? - web.dev</cite>](https://web.dev/articles/animations-overview) \
 <sub>Avoid expensive/slow reflows!</sub>
 <!-- .right -->
 
@@ -483,13 +485,13 @@ Each and every in-between state causes the browser to re-render your entire docu
 
 CSS [transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions) allow us to move nicely between changing CSS property values—triggered by interaction.
 
-- [<cite>Using CSS Transitions – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)
+- [<cite>Using CSS Transitions – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions) \
 	<sub>Every state change is better with some easing.</sub>
 
-- [<cite>An Interactive Guide to CSS Transitions</cite>](https://www.joshwcomeau.com/animation/css-transitions/)
+- [<cite>An Interactive Guide to CSS Transitions</cite>](https://www.joshwcomeau.com/animation/css-transitions/) \
 	<sub>Nice run-through from [Josh Comeau](https://www.joshwcomeau.com/).</sub>
 
-- [<cite>Easing Functions</cite>](https://easings.net/)
+- [<cite>Easing Functions</cite>](https://easings.net/) \
 	<sub>Custom [`cubic-bezier()`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/easing-function/cubic-bezier) curves for acceleration control.</sub>
 <!-- .right .rows--3 -->
 
@@ -561,8 +563,8 @@ You can also control how different properties of an element transition independe
 Sometimes, transitioning a property from one value to another isn’t enough—you may need more complicated (or repeating) motion behavior. CSS `animation` allows precise state sequencing with [*keyframes*](https://en.wikipedia.org/wiki/Key_frame), a timeline-based concept from animation (and other software).
 <!-- .balance -->
 
-[<cite>Using CSS Animations – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)
-	<sub>Make things feel more alive.</sub>
+[<cite>Using CSS Animations – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations) \
+<sub>Make things feel more alive.</sub>
 <!-- .right .rows--2 -->
 
 #### Keyframes
@@ -570,7 +572,7 @@ Sometimes, transitioning a property from one value to another isn’t enough—y
 To create a keyframe animation, we define an element’s initial (or motion-free) state normally in CSS—then [`animation-` properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation#constituent_properties), which include `animation-duration` and `animation-iteration-count`, as well as an `animation-name` (something that you make up).
 <!-- .balance -->
 
-[<cite>`@keyframes` at-rule – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@keyframes)
+[<cite>`@keyframes` at-rule – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@keyframes) \
 <sub>Akin to other timeline-based animations, the percentage complete.</sub>
 <!-- .right -->
 
@@ -591,10 +593,10 @@ Don’t go overboard! A little animation goes a long way.
 
 CSS animations have historically been time-based—just playing out as it passes. But recently [Chrome and Safari](https://caniuse.com/wf-scroll-driven-animations) added support for [*scroll-driven animations*](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Scroll-driven_animations)—which instead iterate using the document (or [container](#overflows-and-scrolling)) scroll position to control the timeline.
 
-- [<cite>Scroll-driven animations – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Scroll-driven_animations)
+- [<cite>Scroll-driven animations – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Scroll-driven_animations) \
 	<sub>One of the most-common types, no-JS!</sub>
 
-- [<cite>Scroll-Driven Animations</cite>](https://www.joshwcomeau.com/animation/scroll-driven-animations/)
+- [<cite>Scroll-Driven Animations</cite>](https://www.joshwcomeau.com/animation/scroll-driven-animations/) \
 	<sub>[Josh](https://www.joshwcomeau.com/) again, with a nice explainer.</sub>
 <!-- .right .rows--2 -->
 
