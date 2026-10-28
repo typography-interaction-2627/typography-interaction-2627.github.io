@@ -35,7 +35,7 @@ Remember that images *weren’t* a part of the [early web](../everything/index.m
 >
 > [<cite>Marc Andreessen, 1993</cite>](http://1997.webhistory.org/www.lists/www-talk.1993q1/0182.html)
 
-<sub>(I DON’T KNOW IF WE TOLD YOU, BUT HTML [USED TO SHOUT](https://www.w3.org/TR/html40/struct/global.html).)</sub>
+<sub>(I DON’T KNOW IF WE TOLD YOU, BUT HTML [USED TO SHOUT](https://www.w3.org/TR/html40/struct/global.html)!)</sub>
 
 ## Image Types
 
@@ -180,6 +180,7 @@ I guess the “L” is for long-term? This is a competitor to AVIF as the *One F
 ---
 
 **You still can’t go wrong with GIF&NoBreak;/&NoBreak;JPG&NoBreak;/&NoBreak;PNG&NoBreak;/&NoBreak;SVG&NoBreak;s, used appropriately!**
+<!-- style="margin-block-start: initial" -->
 
 ## Sizing and Containers
 
