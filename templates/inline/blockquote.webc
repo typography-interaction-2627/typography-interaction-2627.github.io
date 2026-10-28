@@ -40,6 +40,8 @@
 			margin-block-start: 1rlh;
 		}
 
+		p code { font-weight: bold }
+
 		/* That damn Håkon quote. */
 		pre {
 			background:     linear-gradient(var(--background)) padding-box, var(--background--check) border-box;

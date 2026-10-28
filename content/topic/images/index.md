@@ -27,7 +27,7 @@ Remember that images *weren’t* a part of the [early web](../everything/index.m
 > This names a bitmap file for the browser to attempt to pull over the network and interpret as an image, to be embedded in the text at the point of the tag's occurrence. An example is:
 >
 > <!-- eslint-disable-next-line -- Keep the caps! -->
-> `<IMG SRC="file://foobar.com/​foo/bar/blargh.xbm">`<!-- style="overflow-wrap: anywhere; white-space: normal" -->
+> `<IMG SRC="file://foobar.com/​foo/bar/blargh.xbm">`
 >
 > …
 >
