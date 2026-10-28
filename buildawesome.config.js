@@ -485,8 +485,12 @@ export default (config) => {
 		for (const heading of parse(content ?? '').querySelectorAll('h2, h3, h4')) {
 			if (!heading.id) continue
 
-			// Drop permalink anchors (and their `nobr` wrapper) from labels.
-			heading.querySelectorAll('a').forEach((link) => (link.parentNode.rawTagName === 'nobr' ? link.parentNode : link).remove())
+			// Drop permalink anchors and unwrap other links in labels.
+			heading.querySelectorAll('a').forEach((link) => {
+				link.getAttribute('href')?.startsWith('#')
+					? (link.parentNode.rawTagName === 'nobr' ? link.parentNode : link).remove()
+					: link.replaceWith(...link.childNodes)
+			})
 
 			const level = +heading.tagName[1]
 			while (stack.at(-1).level >= level) stack.pop()
