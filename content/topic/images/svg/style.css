@@ -8,15 +8,15 @@ body {
 
 svg {
 	background-color: deepskyblue; /* Just to see the edges! */
-	block-size: 50vw;
+	block-size: 50vw; /* Override “intrinsic” size. */
 
 	line {
-		stroke: tomato;
-		stroke-width: 4;
+		stroke: tomato; /* Instead of `border`. */
+		stroke-width: 4; /* No units! */
 	}
 
 	polyline {
-		fill: gold;
+		fill: gold; /* Instead of `background`. */
 		stroke: none; /* Overrides the attribute in the code. */
 	}
 }

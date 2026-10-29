@@ -1,13 +1,14 @@
 :root { --spacing: 1rem; }
 
-body { padding: var(--spacing); }
+body {
+	font-family: sans-serif;
+	padding: var(--spacing);
+}
 
+/* Now a semantic container! */
 figure {
 	background-color: gold;
 	padding: var(--spacing);
 
-	figcaption {
-		font-family: sans-serif;
-		margin-block-start: var(--spacing);
-	}
+	figcaption { margin-block-start: var(--spacing); }
 }

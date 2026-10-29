@@ -1,6 +1,9 @@
 :root { --spacing: 1rem; }
 
-body { padding: var(--spacing); }
+body {
+	font-family: sans-serif;
+	padding: var(--spacing);
+}
 
 section {
 	background-color: gold;

@@ -1,15 +1,6 @@
-:root { --spacing: 1rem; }
-
-body { padding: var(--spacing); }
-
-section {
-	background-color: gold;
-	padding: var(--spacing);
-
-	img {
-		aspect-ratio: 1 / 1; /* Width / height. */
-		inline-size: 66%;
-		object-fit: cover;
-		overflow: clip; /* For Chrome again. */
-	}
+img {
+	aspect-ratio: 1 / 1; /* Width / height. */
+	inline-size: 66%;
+	object-fit: cover;
+	overflow: clip; /* For Chrome again. */
 }

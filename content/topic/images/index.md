@@ -35,7 +35,7 @@ Remember that images *weren’t* a part of the [early web](../everything/index.m
 >
 > [<cite>Marc Andreessen, 1993</cite>](http://1997.webhistory.org/www.lists/www-talk.1993q1/0182.html)
 
-<sub>(I DON’T KNOW IF WE TOLD YOU, BUT HTML [USED TO SHOUT](https://www.w3.org/TR/html40/struct/global.html)!)</sub>
+<sub>(DON’T KNOW IF WE TOLD YOU, BUT HTML [USED TO SHOUT](https://www.w3.org/TR/html40/struct/global.html)!)</sub>
 
 ## Image Types
 
@@ -163,7 +163,7 @@ After *years* of discussion and [competing standards](https://xkcd.com/927/), se
 </dt>
 <dd>
 
-I guess the “L” is for long-term? This is a competitor to AVIF as the *One Format to Rule Them All*.
+Guess the “L” is for long-term? This is a competitor to AVIF as the *One Format to Rule Them All*.
 
 <dt>
 
@@ -182,7 +182,7 @@ I guess the “L” is for long-term? This is a competitor to AVIF as the *One F
 **You still can’t go wrong with GIF&NoBreak;/&NoBreak;JPG&NoBreak;/&NoBreak;PNG&NoBreak;/&NoBreak;SVG&NoBreak;s, used appropriately!**
 <!-- style="margin-block-start: initial" -->
 
-## Sizing and Containers
+## Images and Sizing
 
 ### The `img` Element
 
@@ -204,7 +204,7 @@ If you remember *waaaay* back to our [HTML intro](../html/index.md#images), ima
 In their most basic, simplest form—the `src` [attribute](../html/index.md#attributes) can point to a local image file (as it does here—a JPG in the same directory) or an external URL! The `alt` provides a description for [accessibility/screen readers](https://axesslab.com/alt-texts/).
 <!-- .before -->
 
-### Intrinsic and Inline
+### Intrinsic, Inline
 
 By default, images will scale to their [*intrinsic* size](https://developer.mozilla.org/en-US/docs/Glossary/Intrinsic_Size)—the (`1x` density) pixel dimensions of the file itself—and are [*inline*](../html/index.md#inline-elements) elements:
 <!-- .balance -->
@@ -237,7 +237,7 @@ Also by default the image pixles are scaled up to [CSS pixels](https://tomroth.d
 >
 >
 
-### `width` and `height`
+### `width` / `height`
 
 In the past, you would manually set an image size within your HTML via special `width` and `height` [attributes](../html/index.md#attributes):
 <!-- .balance -->
@@ -266,14 +266,14 @@ So you’ll often want to set images to [`display: block;`](../box-model/index.m
 
 ### `object-fit` / `object-position`
 
-CSS also added the `object-fit` and corresponding `object-position` properties for sizing images *within* their containers—as if the image file is a child of `img`. This is often used when setting an `img` to fill a container size set by your design:
+CSS added the [`object-fit`](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit) and corresponding [`object-position`](https://developer.mozilla.org/en-US/docs/Web/CSS/object-position) properties for sizing images *within* their containers—as if the image file is a child of `img`. This is often used when setting an `img` to fill a container size set by your design:
 
 - [<cite>`object-fit` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit)
 - [<cite>`object-position` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/object-position) \
 	<sub>This used to be *much* harder!</sub>
 <!-- .right -->
 
-<figure style="--lines: 29">
+<figure style="--lines: 24">
 
 ***[Object-fit Example](object-fit/style.css)***
 
@@ -286,16 +286,16 @@ Note the `block-size` on the section, otherwise the container would still resize
 
 ### `aspect-ratio`
 
-CSS also added an `aspect-ratio` property to control the width-to-height ratio of an element—maintaining this relationship as an element scales. (This used to be [*unnecessarily* hard](https://css-tricks.com/aspect-ratio-boxes/) to achieve. CSS heights are always weird! You kids have it easy.)
+CSS also added an [`aspect-ratio` property](https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio) to control the width-to-height ratio of an element—maintaining this relationship as an element scales. (This used to be [*unnecessarily* hard](https://css-tricks.com/aspect-ratio-boxes/) to achieve. CSS heights are always weird! You kids have it easy.)
 
 [<cite>`aspect-ratio` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio) \
 <sub>So much easier now.</sub>
-<!-- .right .rows--2 -->
+<!-- .right -->
 
-This is not *just* for images (you can use it on *any* element!), but it commonly comes up when using/constraining them in your design:
+This is not *just* for images (you can use it on *any* element!), but it commonly comes up when using/constraining them in your design:
 <!-- .balance -->
 
-<figure style="--lines: 14">
+<figure style="--lines: 8">
 
 ***[Aspect-Ratio Example](aspect-ratio/style.css)***
 
@@ -308,7 +308,7 @@ Note that without the `object-fit: cover;`, Tim would be distorted to the ratio!
 
 ### `background-image` / `-size` / `-origin`
 
-You can also use images as backgrounds on elements with the `background-image`, `background-size`, and `background-origin` properties—particularly if you want to put something in front of them, like text.
+You can also use images as backgrounds on elements with the [`background-image`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-image), [`background-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size), and [`background-origin` properties](https://developer.mozilla.org/en-US/docs/Web/CSS/background-origin)—particularly if you want to put something in front of them, like text.
 
 - [<cite>`background-image` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/background-image)
 - [<cite>`background-size` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size)
@@ -318,37 +318,37 @@ You can also use images as backgrounds on elements with the `background-image`, 
 
 However this isn’t very semantic, as it blurs the content/presentation boundaries—since the image paths are moved into your CSS, and there is no `alt` text description available for screen-readers. So you should *only* use this for contextual or decorative images—not actual content:
 
-<figure style="--lines: 14">
+<figure style="--lines: 8">
 
 ***[Background Example](background/style.css)***
 
 <figcaption>
 
-I wouldn’t use something like this as a `background`&#x202F;. Mind your legibility! And your accessibility.
+We wouldn’t use something like this as a `background`&#x202F;. Mind your legibility! And your accessibility.
 
 </figcaption>
 </figure>
 
-<aside>
+> [!CAUTION]
+>
+> Accessibility is our responsibility! Always ask yourself, “would this page make sense if I couldn’t see this image?”
+>
+> <sub>[If the answer](https://www.w3.org/WAI/tutorials/images/decision-tree/) is “no,” then use an `<img>` with an `alt`, instead—using the `alt` text to convey the *meaning* of the image in your page.</sub>
 
-<mark>Accessibility is your responsibility</mark>
+## Semantic Containers
 
-Always ask yourself, “would this page make sense if I couldn’t see this image?” [If the answer](https://www.w3.org/WAI/tutorials/images/decision-tree/) is “no,” then use an `<img>` with an `alt`, instead—using the `alt` text to convey the *meaning* of the image in your page.
+### `<figure>` / `<figcaption>`
 
-</aside>
-
-### `figure` / `figcaption`
-
-Speaking of semantics—HTML also has a `figure` element that you can use to associate an image (or other visual) with a visible `figcaption` description or legend. These containers formally link the meaning/context of the elements together:
+Speaking of semantics—HTML also has a [`figure` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure) that you can use to associate an image (or other visual) with a visible [`figcaption`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figcaption) description or legend. These containers formally link the meaning/context of the elements together:
 
 - [<cite>`figure` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure)
 - [<cite>`figcaption` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figcaption) \
 	<sub>Many of your images should be in `figure` containers.</sub>
 <!-- .right -->
 
-<figure style="--lines: 12">
+<figure style="--lines: 17">
 
-***[Figure Example](figure/style.css)***
+***[Figure Example](figure/index.html)***
 
 <figcaption>
 
@@ -357,13 +357,11 @@ These can also be used to group things like videos, illustrations, and diagrams 
 </figcaption>
 </figure>
 
-<aside>
-
-<mark>Everyone benefits from a “curb cut”</mark>
-
-Including visible captions is a good example of a [“curb-cut” approach](https://en.wikipedia.org/wiki/Curb_cut_effect) towards accessibility. Your `alt` text description could be useful for more than just folks using screen readers!
-
-Always strive for this kind of broad benefit (a.k.a. *universal design*) in all your work.
+> [!TIP]
+>
+> Including visible captions is a good example of a [*“curb-cut”* approach](https://en.wikipedia.org/wiki/Curb_cut_effect) towards accessibility. Your `alt` text description could be useful for more than just folks using screen readers!
+>
+> <sub>Always strive for this kind of broad benefit (a.k.a. *universal design*) in all your work. Everyone benefits from a “curb cut”!</sub>
 
 </aside>
 
@@ -371,22 +369,27 @@ Always strive for this kind of broad benefit (a.k.a. *universal design*) in all 
 
 With regards to their layout, you make images responsive in the same way you (should) make all your page structure responsive—by writing [*mobile-first*](../responsive/index.md#mobile-first-design) front-end for their containers. You can change their flow, size, shape, and <nobr>so-on</nobr>—all via the box you put them in.
 
+[<cite>Using responsive images in HTML – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Responsive_images) \
+<sub>Improve them across devices!</sub>
+<!-- .right -->
+
 But using images introduces some additional considerations, going across breakpoints. You might want to serve/show *different* images at different sizes—whether for dimensional (file-size, bandwidth, performance) or <nobr>art-direction</nobr> (scale, crop) reasons.
 
-**The exact same image file is *rarely* ideal at both `375px` and `2560px`.**
+**The exact same image file is *rarely* ideal at both `375px` and `2560px`! Let’s make them responsive.**
 
-### `picture` / `source`
+### `<picture>` / `<source>`
 
-Our venerable `<img>` element added some control for this with the addition of the [`srcset`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-srcset) and [`sizes`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-sizes) attributes. But we think it is much easier (at least ergonomically) to skip right into using the modern `picture` container element.
+Our venerable `<img>` element added some control for this with the addition of the [`srcset`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-srcset) and [`sizes`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-sizes) attributes. But we think it is much easier (at least ergonomically) to skip right into using the modern `picture` container.
 
 - [<cite>`picture` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture)
 - [<cite>`source` – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source) \
 	<sub>These containers/children allow you to make your `img` responsive.</sub>
 <!-- .right .rows--2 -->
 
-The `<picture>` element is a wrapper/container for an `<img>`, giving it alternate `<source>` tags that offer different image files for different scenarios. They use [media-query-like](../responsive/index.md#media-queries) syntax to change what image is loaded and displayed:
+The [`<picture>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture) is a wrapper/container for an `<img>`, giving it alternate [`<source>` tags](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source) that offer different image files for different scenarios. They use [media-query-like](../responsive/index.md#media-queries) syntax to change what image is loaded and displayed:
+<!-- .before -->
 
-<figure style="--lines: 22">
+<figure style="--lines: 21">
 
 ***[Picture Example](picture/index.html)***
 
@@ -399,13 +402,13 @@ This is all in the HTML; there is no (relevant) CSS. Adjust the divider to see t
 
 Note that you still include the `<img>` as a *fallback*—put your largest size there. We’ve found it helpful to follow the same *mobile-first* philosophy here as you do in the rest of your code—putting your smaller images first, and your larger lower. You can have as many `<source>` elements as you need—for image sizing, crops, or both.
 
-*Unlike* CSS’s cascade, though—the browser stops at the first “matching” image! (So it doesn’t download any unnecessary files.) Thus we use `width <` limiting queries here, instead of our usual `>`.
+<sub>*Unlike* CSS’s cascade, though—the browser stops at the first “matching” image! (So it doesn’t download any unnecessary files.) Thus we use `width <` limiting queries here, instead of our usual `>`.</sub>
 
-**Responsive images (like the rest of this) can get [very complicated](https://web.dev/learn/design/picture-element/), very quickly—so always start with the basics (and mobile) first.**
+**Responsive images (like the rest of this) can get [very complicated](https://web.dev/learn/design/picture-element/), very quickly—so always start with the basics (and mobile) first!**
 
 ## SVG&NoBreak;s for UI
 
-SVG&NoBreak;s are a (digital) designer’s best friend—mixing the adaptability and maintainability of code with the freedom and flexibility of visual design.
+**SVG&NoBreak;s are a (digital) designer’s best friend—mixing the adaptability and maintainability of code with the freedom and flexibility of visual design.**
 
 - [<cite>Including Vector Graphics in HTML – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Including_vector_graphics_in_HTML#what_is_svg) \
 	<sub>Good overview.</sub>
@@ -415,19 +418,25 @@ SVG&NoBreak;s are a (digital) designer’s best friend—mixing the adaptability
 <!-- .right .rows--3 -->
 
 Anything you can draw in Figma (or Sketch, or Illustrator before it) lends itself to this hybrid representation. It’s common to export out `.svg` vector work from a design program, but you can also create (or at least edit) these files yourself—just like any other code:
-<!-- .after -->
+<!-- .before -->
 
-```html
+```html <!-- .all -->
 <svg width="48" height="40" viewBox="0 0 48 40" xmlns="http://www.w3.org/2000/svg">
 	<line x1="2" y1="20" x2="44" y2="20" stroke="black" />
 	<polyline points="26,4 44,20 26,36" fill="none" stroke="black" />
 </svg>
 ```
 
+### Inlining / Embedding
+
 In addition to being our only vector/scaleable format, SVG&NoBreak;s have another trick up their sleeve. You can use the files as a `src`, like all the examples above—but their code can also be included directly into your HTML! This is called *inlining* (though some folks say *embedding*):
 <!-- .before -->
 
-<figure style="--lines: 21">
+[<cite>SVG in HTML introduction - MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/SVG/Guides/SVG_in_HTML)
+<sub>More control than as a `src=`</sub>
+<!-- .right -->
+
+<figure style="--lines: 20">
 
 ***[SVG Example](svg/index.html)***
 
@@ -438,11 +447,13 @@ Be sure to look at the `styles.css`—targeting the SVG nodes just like any othe
 </figcaption>
 </figure>
 
-When targeting (or directly editing) SVG contents, note they have slightly different syntax than HTML/CSS—using `fill` and `stroke` instead of `background-color` and `border`, for example. Also remember that `width` and `height` attributes will set the default SVG size (just like on an `img`)—but you can override this with your styles.
+When targeting (or directly editing) SVG contents, note they have slightly different syntax than HTML/CSS—using [`fill`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/fill) and [`stroke`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/stroke) instead of `background-color` and `border`, for example. There are many other [special properties](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Fills_and_Strokes) for adjusting/controling your inlined SVG&NoBreak;s!
 
 [<cite>Fills and strokes – MDN</cite>](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Fills_and_Strokes) \
 <sub>HTML/CSS are nothing if not inconsistent.</sub>
 <!-- .right -->
+
+<sub>Also remember that any `width` and `height` attributes will set the default SVG size (just like on an `img`)—but you can override this with your styles.</sub>
 
 ---
 

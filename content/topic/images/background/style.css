@@ -1,11 +1,6 @@
-:root { --spacing: 1rem; }
-
-body { padding: var(--spacing); }
-
 section {
 	background-image: url("tim.jpg");
 	background-size: cover;
-	padding: var(--spacing);
 
-	h1 { font-size: 400%; }
+	h1 { font-size: calc(4 * var(--spacing)); }
 }

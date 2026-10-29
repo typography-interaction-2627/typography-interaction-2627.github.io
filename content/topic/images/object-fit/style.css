@@ -1,11 +1,5 @@
-:root { --spacing: 1rem; }
-
-body { padding: var(--spacing); }
-
 section {
-	background-color: gold;
-	block-size: 33vh;
-	padding: var(--spacing);
+	block-size: 33vh; /* Just to see the behavior. */
 
 	img {
 		background-color: orange;
