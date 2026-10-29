@@ -20,16 +20,29 @@ th {
 
 em {
 	--italic: 1;
+	--shift: round(0.125em, var(--1px));
 
 	/* TODO `-webkit-` version here breaks `balance` in Safari! */
 	box-decoration-break: clone;
 	font-style:           italic;
 	position:             relative;
-	margin-inline-end:    round(0.125em, var(--1px));
-	inset-inline-start:   round(-0.125em, var(--1px));
+	margin-inline-end:    var(--shift);
+	inset-inline-start:   calc(-1 * var(--shift));
 
 	/* `font-style` does *not* set `ital` axes! */
 	/* https://arrowtype.github.io/vf-slnt-test/slnt-ital-tests/index.html */
+
+	code, em {
+		--italic: initial;
+
+		font-style: initial;
+		position:   relative;
+	}
+
+	em {
+		inset-inline-start: calc(2 * var(--shift));
+		margin-inline-end:  initial;
+	}
 }
 
 strong {
