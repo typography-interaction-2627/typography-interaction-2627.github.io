@@ -164,7 +164,7 @@ In our final Fall unit, we will focus on creating advanced, multi-page layouts w
 - [<cite>*Design Interface: How Man and Machine Communicate*</cite>](https://i-n-t-e-r-f-a-c-e.org/media/pdf/Design-Interface.pdf) \
 	<sub>Gianni Barbacetto, 1987</sub>
 
-- [<cite>*A Software Design Manifesto*</cite>](https://hci.stanford.edu/publications/bds/1-kapor.html) \
+- [<cite>*A Software Design Manifesto*</cite>](https://web.archive.org/web/20261007115917/https://hci.stanford.edu/publications/bds/1-kapor.html) \
 	<sub>Mitchell Kapor, 1990</sub>
 
 - [<cite>*Typeface As Programme*</cite>](https://www.typotheque.com/articles/typeface_as_programme) \
