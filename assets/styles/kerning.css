@@ -13,12 +13,14 @@ h1 {
 		.A:has(+ .l) { --kern: -1 }
 		.A:has(+ .n) { --kern: -1 }
 		.a:has(+ .s) { --kern: -1 }
+		.B:has(+ .i) { --kern: -1 }
 		.b:has(+ .o) { --kern: -1 }
 		.b:has(+ .u) { --kern: -3 }
 		.c:has(+ .r) { --kern: 1 }
 		.C:has(+ .S) { --kern: 1 }
 		.d:has(+ .d) { --kern: -1 }
 		.D:has(+ .e) { --kern: 1 }
+		.d:has(+ .i) { --kern: -1 }
 		.e:has(+ .a) { --kern: -1 }
 		.e:has(+ .b) { --kern: -1 }
 		.e:has(+ .c) { --kern: -1 }
@@ -127,6 +129,7 @@ h1 {
 		.A:has(+ .l) { --kern: -2 }
 		.a:has(+ .n) { --kern: 2 }
 		.a:has(+ .s) { --kern: 1 }
+		.B:has(+ .i) { --kern: -1 }
 		.B:has(+ .o) { --kern: 2 }
 		.b:has(+ .u) { --kern: -1 }
 		.C:has(+ .l) { --kern: -1 }
