@@ -85,30 +85,20 @@ abbr:where(:not(nav abbr)) {
 }
 
 s {
-	background:     var(--background--check);
-	color:          transparent;
-	pointer-events: none;
-	position:       relative;
+	background:                var(--background--check);
+	color:                     transparent;
+	pointer-events:            none;
+	text-decoration-color:     var(--color);
+	text-decoration-line:      underline;
+	text-decoration-skip-ink:  none;
+	text-decoration-thickness: var(--1px);
+	text-underline-offset:     var(---4px);
 
 	/* Override pattern. */
 	background-clip: text;
 
-	&::before {
-		content:           '';
-		inset:             0;
-		inset-block-start: round(1ex + var(--1px), var(--1px));
-		position:          absolute;
-		z-index:           1;
-
-		background: repeating-linear-gradient(
-			to bottom,
-			var(--color) 0 var(--1px),
-			transparent 0 1lh
-		);
-	}
-
 	> * {
-		color:          white;
+		color:          inherit;
 		mask:           var(--background--check);
 		mix-blend-mode: multiply;
 
