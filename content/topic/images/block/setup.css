@@ -1,0 +1,8 @@
+:root { --spacing: 1rem; }
+
+body { padding: var(--spacing); }
+
+section {
+	background-color: gold;
+	padding: var(--spacing);
+}

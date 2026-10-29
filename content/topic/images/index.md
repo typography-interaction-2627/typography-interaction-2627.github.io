@@ -7,7 +7,7 @@ const draft = true
 
 ## A Thousand Words?
 
-Let’s look at the specifics around using images on the web! (Finally.)
+**Let’s look at the specifics around using images on the web! (Finally.)**
 
 - [<cite>HTML Images – MDN</cite>](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML) \
 	<sub>Pretty good overview.</sub>
@@ -201,13 +201,17 @@ If you remember *waaaay* back to our [HTML intro](../html/index.md#images), ima
 <sub>How we add images to our HTML.</sub>
 <!-- .right -->
 
-In their most basic, simplest form—the `src` attribute can point to a local image file (as it does here—a JPG in the same directory) or an external URL! The `alt` provides a description for [accessibility/screen readers](https://axesslab.com/alt-texts/).
+In their most basic, simplest form—the `src` [attribute](../html/index.md#attributes) can point to a local image file (as it does here—a JPG in the same directory) or an external URL! The `alt` provides a description for [accessibility/screen readers](https://axesslab.com/alt-texts/).
 <!-- .before -->
 
 ### Intrinsic and Inline
 
-By default, images will scale to their *intrinsic* size—the (`1x`) pixel dimensions of the file itself—and are *inline* elements:
+By default, images will scale to their [*intrinsic* size](https://developer.mozilla.org/en-US/docs/Glossary/Intrinsic_Size)—the (`1x` density) pixel dimensions of the file itself—and are [*inline*](../html/index.md#inline-elements) elements:
 <!-- .balance -->
+
+[<cite>Intrinsic size – MDN</cite>](https://developer.mozilla.org/en-US/docs/Glossary/Intrinsic_Size) \
+<sub>Based the content, not any layout/CSS.</sub>
+<!-- .right -->
 
 <figure style="--lines: 16">
 
@@ -215,44 +219,47 @@ By default, images will scale to their *intrinsic* size—the (`1x`) pixel dimen
 
 <figcaption>
 
-This image file is 250 (actual) pixels wide, and is (likely) blurry on your (probably) high-resolution display. Also note the extra space at the bottom, from `display: inline;`&#x202F;!
+This [image file](./inline/tim.jpg) is 250 (actual) pixels wide, and is (likely) blurry on your (probably) high-resolution display. Also note the extra space at the bottom, from the `display: inline;` default!
 
 </figcaption>
 </figure>
 
-This default intrinsic/inline behavior is rarely what you want, though—more often your image should be sized *from* your design, not vice-versa. Also by default the image is scaled to [CSS pixels](https://tomroth.com.au/dpr/), so it is blurry on modern *Hi&NoBreak;DPI* (a.k.a. [*retina*](https://en.wikipedia.org/wiki/Retina_display)/`2x`, even `3x`) screens—which is really most of our screens, these days.
+**This default intrinsic/inline behavior is rarely what you want, though—more often your image should be sized *from* your design, not vice-versa.**
 
-<aside>
+Also by default the image pixles are scaled up to [CSS pixels](https://tomroth.dev/dpr/), so it is blurry on modern [*Hi&NoBreak;DPI*](https://web.dev/articles/high-dpi) (a.k.a. [*retina*](https://en.wikipedia.org/wiki/Retina_display)/`2x`, even `3x`) screens—which is really most of our screens, these days.
+<!-- .balance -->
 
-<mark>Images must be controlled at all times</mark>
+> [!NOTE]
+>
+> Most [resets](../css/index.md#resets) (like [ours](/assets/reset.css)) include `img { max-inline-size: 100%; }`, to keep them under control.
+>
+> <sub>Otherwise large images will often poke/[overflow](../advanced-css/index.md#overflow) out of their containers, by default—breaking your design!</sub>
+>
+>
 
-Most [resets](../css/index.md#resets) (like [ours](/assets/reset.css)) include a `max-inline-size: 100%` for images—otherwise, large images will often poke/overflow out of their containers, by default!
+### `width` and `height`
 
-</aside>
-
-### Width and Height
-
-In the past, you would manually set an image size within your HTML via special `width` and `height` attributes:
-<!-- .after .balance -->
+In the past, you would manually set an image size within your HTML via special `width` and `height` [attributes](../html/index.md#attributes):
+<!-- .balance -->
 
 ```html <!-- .all -->
 <img src="tim.jpg" alt="Tim Berners-Lee at a computer." width="230" height="150">
 ```
-<sub>No units, even.</sub>
+<sub>No [units](../box-model/index.md#css-lengths), even!</sub>
 
-But this *forces* the image into a fixed size, which usually doesn’t work well in our modern, responsive, many-device-width contexts.
+But this *forces* the image into a fixed size, which usually doesn’t work well in our modern, responsive, many-device-width-and-varied-content contexts.
 <!-- .before -->
 
-So you’ll often want to set images to `display: block;`&#x202F;, and then control their size/positioning via CSS—just like any other elements. Make sure your actual actual image dimensions are (at least) roughly twice their displayed, *CSS-pixel* size, so nothing is blurry:
+So you’ll often want to set images to [`display: block;`](../box-model/index.md#block), and then control their size/positioning via CSS—just like any other elements. Make sure your actual actual image dimensions are (at least) about twice their displayed, *CSS-pixel* size, so nothing is blurry:
 <!-- .before -->
 
-<figure style="--lines: 16">
+<figure style="--lines: 13">
 
 ***[Block Example](block/style.css)***
 
 <figcaption>
 
-This image file is intrinsically 1600 pixels wide, plenty more than twice the container size. Nice and sharp!
+*This* [image file](./block/tim.jpg) is intrinsically 1600 pixels wide, plenty more than twice the container size. Nice and sharp!
 
 </figcaption>
 </figure>
