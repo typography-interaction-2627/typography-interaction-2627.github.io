@@ -486,11 +486,17 @@ Here’s how we think we can use these tools to support our learning: <br><br>
 
 - We still want students to *write* their code—not just copy/paste LLM (or other) code and add comments. There is value in the speed and (literal) muscle memory!
 
-- We’ll be working from template repos for our projects, each of which will include an `CLAUDE.md`/`AGENTS.md` with some per-project guidelines for our acceptable usage.
+- We’ll be working from template repos for our projects, each of which will include an `AGENTS.md`/`CLAUDE.md` with some per-project guidelines for our acceptable usage.
+
+- If using an LLM without access to these instructions, the student must “load” (copy and paste) them in first. Every “conversation” should begin with them. <!-- .bold -->
+
+- These “conversations” should be kept short, and focus on specific lines of questioning. We do not want long, open-ended back-and-forths. Start new threads when you have a new question. <!-- .bold -->
 
 - In the [attribution](#attribution) for each LLM use, we’ll have students include links to the actual, corresponding “conversation” with their questions alongside their explanations.
 
-- These questions should clearly demonstrate the tool is being used to *aid our understanding*, not as a *shortcut*—always think of them as questions one would ask their instructors.
+- The LLM should not be asked to provide or “write” our attributions. The explanations are *your* understanding. <!-- .bold -->
+
+- Our questions should clearly demonstrate the tool is being used to *aid our understanding*, not as a *shortcut*—always think of them as questions one would ask their instructors.
 
 - If a student cannot furnish a link to their “conversation” and questions, they cannot use the tool nor its output.
 
