@@ -45,7 +45,7 @@ em {
 	}
 }
 
-strong {
+strong, .bold {
 	font-weight: bold;
 
 	@container style(--size >= 12) { --kerning: var(---1px) }
