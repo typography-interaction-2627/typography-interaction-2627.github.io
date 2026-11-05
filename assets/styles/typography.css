@@ -92,7 +92,7 @@ s {
 	text-decoration-line:      underline;
 	text-decoration-skip-ink:  none;
 	text-decoration-thickness: var(--1px);
-	text-underline-offset:     var(---4px);
+	text-underline-offset:     round(up, -0.6ex, var(--1px));
 
 	/* Override pattern. */
 	background-clip: text;
