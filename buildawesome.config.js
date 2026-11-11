@@ -1,5 +1,5 @@
 import { readFileSync } from 'fs'
-import { readdir, readFile } from 'fs/promises'
+import { readdir, readFile, writeFile } from 'fs/promises'
 import { resolve, join, dirname, normalize } from 'path'
 import path from 'path'
 
@@ -550,6 +550,21 @@ export default (config) => {
 			),
 		),
 	)
+
+	// Sitemap.
+	config.on('buildawesome.after', async ({ directories, results, runMode }) => runMode === 'build' && await writeFile(
+		join(directories.output, 'sitemap.xml'),
+		`<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${results
+		.filter(({ inputPath }) => inputPath.endsWith('.md')) // Only actual/content pages.
+		.map(({ url }) => `	<url>
+		<loc>https://typography-interaction-2627.github.io${url}</loc>
+	</url>`)
+		.join('\n')}
+</urlset>
+`,
+	))
 
 	// Serve `_site` files to Puppeteer.
 	const openLocalPage = async (browser, output) => {
