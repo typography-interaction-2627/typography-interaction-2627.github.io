@@ -1,3 +1,4 @@
+import { execFileSync } from 'child_process'
 import { readFileSync } from 'fs'
 import { readdir, readFile, writeFile } from 'fs/promises'
 import { resolve, join, dirname, normalize } from 'path'
@@ -554,16 +555,20 @@ export default (config) => {
 	// Sitemap.
 	config.on('buildawesome.after', async ({ directories, results, runMode }) => runMode === 'build' && await writeFile(
 		join(directories.output, 'sitemap.xml'),
-		`<?xml version="1.0" encoding="utf-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${results
-		.filter(({ inputPath }) => inputPath.endsWith('.md')) // Only actual/content pages.
-		.map(({ url }) => `	<url>
-		<loc>https://typography-interaction-2627.github.io${url}</loc>
-	</url>`)
-		.join('\n')}
-</urlset>
-`,
+		[
+			'<?xml version="1.0" encoding="utf-8"?>',
+			'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+			...results
+				.filter(({ inputPath }) => inputPath.endsWith('.md')) // Only actual/content pages.
+				.flatMap(({ inputPath, url }) => [
+					'	<url>',
+					`		<loc>https://typography-interaction-2627.github.io${url}</loc>`,
+					`		<lastmod>${execFileSync('git', ['log', '-1', '--format=%cs', '--', inputPath], { encoding: 'utf8' }).trim() || new Date().toISOString().slice(0, 10)}</lastmod>`, // `%cs` is `YYYY-MM-DD`; today if uncommitted.
+					'	</url>',
+				]),
+			'</urlset>',
+			'', // Trailing newline.
+		].join('\n'),
 	))
 
 	// Serve `_site` files to Puppeteer.
