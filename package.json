@@ -24,6 +24,7 @@
 			"version": ">=26.3.0"
 		}
 	},
+	"homepage": "https://typography-interaction-2627.github.io",
 	"packageManager": "pnpm@11.21.0",
 	"scripts": {
 		"prepare": "git config core.hooksPath .githooks && pnpm fonts",
