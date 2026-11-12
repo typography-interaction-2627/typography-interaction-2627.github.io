@@ -1,6 +1,5 @@
 ```javascript
 const week = 11
-const draft = true
 ```
 
 # Working With Images
@@ -60,7 +59,7 @@ Remember that images *weren’t* a part of the [early web](../everything/index.m
 <img src="tim.gif">
 </figure>
 
-An early [raster/bitmap format](https://en.wikipedia.org/wiki/Raster_graphics), heavily compressed with reduced palettes. It survives now because it does animations! This is the only reason to use this format, nowadays.
+An early [raster/bitmap format](https://en.wikipedia.org/wiki/Raster_graphics), heavily compressed with reduced palettes. It survives now because it does animations! This is the *only* reason to use this format, nowadays.
 
 GIF compression is primitive and so they can quickly have *huge* file-sizes—and can still slow down computers (downloading and rendering), even now. Be careful with these. (If you have longer motion needs, consider a proper [`video` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video).)
 
