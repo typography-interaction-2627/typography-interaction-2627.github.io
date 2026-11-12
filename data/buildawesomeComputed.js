@@ -58,7 +58,7 @@ const getSequence = (data) => [
 const inCollection = (data, name) => data.collections[name]?.some((item) => item.inputPath === data.page.inputPath)
 
 // Allow in-Markdown `title` via H1.
-const getH1 = (data) => (data.page.rawInput.match(/^# (.+)/m)?.[1].trim() || data.title)
+const getH1 = (data) => (data.page.rawInput.match?.(/^# (.+)/m)?.[1].trim() || data.title)
 
 export default {
 	currentWeek: (data) => data.collections.weeks

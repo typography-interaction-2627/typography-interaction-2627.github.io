@@ -1,6 +1,6 @@
 import { execFileSync } from 'child_process'
 import { readFileSync } from 'fs'
-import { readdir, readFile, writeFile } from 'fs/promises'
+import { readdir, readFile } from 'fs/promises'
 import { resolve, join, dirname, normalize } from 'path'
 import path from 'path'
 
@@ -552,24 +552,32 @@ export default (config) => {
 		),
 	)
 
-	// Sitemap.
-	config.on('buildawesome.after', async ({ directories, results, runMode }) => runMode === 'build' && await writeFile(
-		join(directories.output, 'sitemap.xml'),
-		[
-			'<?xml version="1.0" encoding="utf-8"?>',
-			'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-			...results
-				.filter(({ inputPath }) => inputPath.endsWith('.md')) // Only actual/content pages.
-				.flatMap(({ inputPath, url }) => [
-					'	<url>',
-					`		<loc>https://typography-interaction-2627.github.io${url}</loc>`,
-					`		<lastmod>${execFileSync('git', ['log', '-1', '--format=%cs', '--', inputPath], { encoding: 'utf8' }).trim() || new Date().toISOString().slice(0, 10)}</lastmod>`, // `%cs` is `YYYY-MM-DD`; today if uncommitted.
-					'	</url>',
-				]),
-			'</urlset>',
-			'', // Trailing newline.
-		].join('\n'),
-	))
+	// Indexing stuff.
+	config.addTemplate('robots.11ty.js', ({ pkg }) => `Sitemap: ${pkg.homepage}/sitemap.xml\n`, {
+		buildawesomeComputed: { layout: false }, // Beat the global computed `layout`.
+		buildawesomeExcludeFromCollections: true,
+		permalink: '/robots.txt',
+	})
+
+	config.addTemplate('sitemap.11ty.js', ({ collections, pkg }) => [
+		'<?xml version="1.0" encoding="utf-8"?>',
+		'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+		...collections.all
+			.filter(({ url }) => url) // Drafts are `false`.
+			.toSorted((a, b) => a.data.sequence - b.data.sequence) // Course order.
+			.flatMap(({ inputPath, url }) => [
+				'	<url>',
+				`		<loc>${pkg.homepage}${url}</loc>`,
+				`		<lastmod>${execFileSync('git', ['log', '-1', '--format=%cs', '--', inputPath], { encoding: 'utf8' }).trim() || new Date().toISOString().slice(0, 10)}</lastmod>`, // `%cs` is `YYYY-MM-DD`; today if uncommitted.
+				'	</url>',
+			]),
+		'</urlset>',
+		'', // Trailing newline.
+	].join('\n'), {
+		buildawesomeComputed: { layout: false }, // Beat the global computed `layout`.
+		buildawesomeExcludeFromCollections: true,
+		permalink: '/sitemap.xml',
+	})
 
 	// Serve `_site` files to Puppeteer.
 	const openLocalPage = async (browser, output) => {
