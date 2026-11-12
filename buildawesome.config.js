@@ -547,7 +547,6 @@ export default (config) => {
 			.map((node) => node?.clone())
 			.map((clone) => (clone?.querySelectorAll('s').forEach((s) => s.remove()), clone?.rawText ?? '') // Exclude `<s>`; `rawText` keeps entities encoded.
 				.replace(/\s+/g, ' ') // Collapse white space.
-				.trim()
 				.replace(/:$/, '.')) // Fix ending colons.
 			.join(' ')
 
