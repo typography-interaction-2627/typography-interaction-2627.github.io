@@ -65,7 +65,7 @@ export default (config) => {
 		layout: 'base',
 		permalink: false,
 	})
-	config.addGlobalData('buildawesomeComputed.layout', () => ({ page }) => page.templateSyntax.includes('md') ? 'page' : 'base')
+	config.addGlobalData('buildawesomeComputed.layout', () => ({ page }) => ({ md: 'page', webc: 'base' })[page.templateSyntax])
 
 	// Previews for examples.
 	config.addTemplate('templates/preview.webc', readFileSync('templates/preview.webc'), {
@@ -562,7 +562,6 @@ export default (config) => {
 			`Sitemap: ${pkg.homepage}/sitemap.xml`,
 			'',
 		].join('\n'), {
-			buildawesomeComputed: { layout: false }, // Beat the global computed `layout`.
 			buildawesomeExcludeFromCollections: true,
 			permalink: '/robots.txt',
 		})
@@ -582,7 +581,6 @@ export default (config) => {
 			'</urlset>',
 			'', // Trailing newline.
 		].join('\n'), {
-			buildawesomeComputed: { layout: false }, // Beat the global computed `layout`.
 			buildawesomeExcludeFromCollections: true,
 			permalink: '/sitemap.xml',
 		})
