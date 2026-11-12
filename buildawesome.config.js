@@ -580,10 +580,6 @@ export default (config) => {
 			'Disallow: /topic/*/*/ # Examples and their previews.',
 			'Disallow: /*meta.html # `og:image` sources.',
 			'',
-			// AI-only crawlers (not search).
-			...['Applebot-Extended', 'CCBot', 'ClaudeBot', 'Google-Extended', 'GPTBot'].map((bot) => `User-agent: ${bot}`),
-			'Disallow: /',
-			'',
 			`Sitemap: ${pkg.homepage}/sitemap.xml`,
 			'',
 		].join('\n'), {
