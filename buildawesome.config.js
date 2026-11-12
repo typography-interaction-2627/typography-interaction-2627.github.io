@@ -554,7 +554,14 @@ export default (config) => {
 
 	// Indexing stuff, only on build.
 	if (process.env.BUILDAWESOME_RUN_MODE === 'build') {
-		config.addTemplate('robots.11ty.js', ({ pkg }) => `Sitemap: ${pkg.homepage}/sitemap.xml\n`, {
+		config.addTemplate('robots.11ty.js', ({ pkg }) => [
+			'User-agent: *',
+			'Disallow: /topic/*/*/ # Examples and their previews.',
+			'Disallow: /*meta.html # `og:image` sources.',
+			'',
+			`Sitemap: ${pkg.homepage}/sitemap.xml`,
+			'',
+		].join('\n'), {
 			buildawesomeComputed: { layout: false }, // Beat the global computed `layout`.
 			buildawesomeExcludeFromCollections: true,
 			permalink: '/robots.txt',
