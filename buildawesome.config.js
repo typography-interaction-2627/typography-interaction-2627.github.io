@@ -556,6 +556,7 @@ export default (config) => {
 	if (process.env.BUILDAWESOME_RUN_MODE === 'build') {
 		config.addTemplate('robots.11ty.js', ({ pkg }) => [
 			'User-agent: *',
+			'Content-Signal: ai-train=no, search=yes, ai-input=yes',
 			'Disallow: /topic/*/*/ # Examples and their previews.',
 			'Disallow: /*meta.html # `og:image` sources.',
 			'',
