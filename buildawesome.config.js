@@ -535,25 +535,25 @@ export default (config) => {
 	config.addFilter('toArray', (value) => Array.isArray(value) ? value : [value])
 	config.addFilter('pluralize', (word, count) => `${word}${count > 1 ? 's' : ''}`)
 
-	// Fill an empty `meta` description from `data-description` (or first `p`), then remove the attributes.
-	const formatDescription = (html) => stripTags(html) // Entities stay encoded for the attribute.
-		.trim()
-		.replace(/\s+/g, ' ') // Collapse white space.
-		.replace(/:$/, '.') // Fix ending colons.
-
+	// Fill an empty `meta` description from `data-description` blocks (or first `p`), else remove it.
 	config.addTransform('description', function (content) {
 		if (!this.page.outputPath?.endsWith?.('.html')) return content
 
-		const document = parse(content)
-		const meta = document.querySelector('meta[name="description"]:not([content]), meta[name="description"][content=""]')
+		const document = parse(content) // Also strips comments.
+		const meta = document.querySelector('meta[name="description"]:not([content])') // WebC omits `content` when `undefined`.
 		const descriptions = document.querySelectorAll('main [data-description]')
 
-		meta?.setAttribute('content', descriptions.length
-			? descriptions
-				.map((node) => node.clone())
-				.map((clone) => (clone.querySelectorAll('s').forEach((s) => s.remove()), formatDescription(clone.innerHTML))) // Exclude `<s>` children.
-				.join(' ')
-			: formatDescription(document.querySelector('main p:not(.print p, figcaption p, header p, nav p)')?.innerHTML || ''))
+		const description = (descriptions.length ? descriptions : [document.querySelector('main p:not(.print p, figcaption p, header p, nav p)')])
+			.map((node) => node?.clone())
+			.map((clone) => (clone?.querySelectorAll('s').forEach((s) => s.remove()), clone?.rawText ?? '') // Exclude `<s>`; `rawText` keeps entities encoded.
+				.replace(/\s+/g, ' ') // Collapse white space.
+				.trim()
+				.replace(/:$/, '.')) // Fix ending colons.
+			.join(' ')
+
+		description
+			? meta?.replaceWith(`<meta content="${description}" name="description">`) // Not `setAttribute`, to keep attributes alphabetical.
+			: meta?.remove()
 
 		document.querySelectorAll('[data-description]').forEach((node) => node.removeAttribute('data-description'))
 

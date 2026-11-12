@@ -8,7 +8,7 @@
 			<!-- TODO Generate /preview metadata? -->
 			<link :href="`${pkg.homepage}${$data.page.url}`" rel="canonical">
 			<link href="#license" rel="license">
-			<meta :content="description || ''" name="description">
+			<meta :content="description" name="description">
 			<meta :content="`${pkg.homepage}${$data.page.url}meta.png`" property="og:image">
 			<script webc:keep src="/assets/scripts/as-dithered-image/as-dithered-image.js"></script>
 		</template>
