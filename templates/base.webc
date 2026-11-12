@@ -9,6 +9,8 @@
 			export const getDescription = ({ content, description }) => {
 				const document = parseHtml(content)
 
+				document.querySelectorAll('main [data-description] s').forEach((s) => s.remove()) // Exclude `<s>` children.
+
 				const descriptions = document.querySelectorAll('main [data-description]')
 
 				const formatDescription = (html) => stripTags(html)
